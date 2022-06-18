@@ -1,0 +1,28 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.navbar
+{
+    background-color: #000;
+}
+
+/* a.navbar-item img {
+    background-color: black;
+} */
+
+
+p.is-size-1.block {
+    text-transform: capitalize;
+    font-weight: bold;
+    /* font-size: 143px; */
+    color: white;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+/* .main
+{
+    background-color: black;
+} */
