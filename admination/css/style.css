@@ -22,6 +22,27 @@ p.is-size-1.block {
     font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
 
+.section {
+    background-image: url(../images/black_paper.png);
+}
+
+section.second {
+    background-image: url(../images/black_paper.png);
+}
+
+section.hero {
+    background-image: url(../images/paper_3.png);
+}
+
+.forth
+{
+    background-image: url(../images/black_paper.png);
+}
+
+.block.mt-4.inquairy_section {
+    background-image: url(../images/paper_3.png);
+}
+
 /* .main
 {
     background-color: black;

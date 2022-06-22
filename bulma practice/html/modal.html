@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Modal</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.9.4/css/bulma.min.css"
+    />
+  </head>
+  <body>
+    <div id="modal-js-example" class="modal">
+      <div class="modal-background"></div>
+      <div class="modal-content">
+        <div class="box">
+          <p>Modal JS example</p>
+          <!-- Your content -->
+          <p>
+            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Deserunt
+            omnis similique eveniet, inventore expedita vero ratione accusamus
+            voluptates consequuntur vitae provident tenetur ipsam sunt magnam ab
+            laboriosam a magni minima.
+          </p>
+        </div>
+      </div>
+      <button class="modal-close is-large" aria-label="close"></button>
+    </div>
+    <button class="js-modal-trigger button" data-target="modal-js-example">
+      Open JS example modal
+    </button>
+
+    <script src="../js/modal.js"></script>
+  </body>
+</html>
