@@ -1,0 +1,18 @@
+/* Bottom left text */
+  /* .bottom-left {
+    position: absolute;
+    bottom: 8px;
+    left: 16px;
+  } */
+
+.card-image {
+    position: relative;
+    text-align: center;
+} 
+/* Bottom left text */
+
+.image-text {
+    position: absolute;
+    bottom: 8px;
+    left:16px;
+}
