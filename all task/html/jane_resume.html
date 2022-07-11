@@ -1,88 +1,233 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Jane resume landing page</title>
-    <!-- main css file -->
-    <link rel="stylesheet" href="../css/jane_resume.css">
-    <!-- bulma link -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.9.4/css/bulma.min.css">
-    <!-- font awesome link -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
-</head>
-<body>
-    <div class="container">
-        <div class="columns">
-            <div class="column is-4">
-                <div class="section">
-                    <div class="card">
-                        <div class="card-image">
-                          <figure class="image is-128X128">
-                            <img src="../images/avatar_hat.jpg">
-                            <div class="image-text">
-                                <h1 class="subtitle is-capitalized">jane doe</h1>
-                            </div> 
-                          </figure>
-                        </div>
-                        <div class="card-content">
-                            <div class="media">
-                                <div class="media-left is-family-monospace">
-                                    <div class="icon-text">
-                                        <span class="icon has-text-primary">
-                                            <i class="fa-solid fa-briefcase"></i>
-                                        </span>
-                                        <span class="is-capitalized">designer</span>
-                                    </div>
-                                    <br>
-                                    <div class="icon-text">
-                                        <span class="icon has-text-primary">
-                                            <i class="fa-solid fa-home"></i>
-                                        </span>
-                                        <span class="is-capitalized">london, uk</span>
-                                    </div>
-                                    <br>
-                                    <div class="icon-text">
-                                        <span class="icon has-text-primary">
-                                            <i class="fa-solid fa-envelope"></i>
-                                        </span>
-                                        <span>ex@mail.com</span>
-                                    </div>
-                                    <br>
-                                    <div class="icon-text">
-                                        <span class="icon has-text-primary">
-                                            <i class="fa-solid fa-phone"></i>
-                                        </span>
-                                        <span>121234567890</span>
-                                    </div>
-                                </div>
-                            </div>
-                            <!-- <hr class="has-text-background-gray"> -->
-                            <div class="media">
-                                <div class="media-left is-family-monospace">
-                                    <div class="icon-text">
-                                        <span class="icon has-text-primary">
-                                            <i class="fa-solid fa-star-of-life"></i>
-                                        </span>
-                                        <span class="is-capitalized">skills</span>
-                                    </div>
-                                    <br>
-                                    <div class="photoshop">
-                                        <h6 class="subtitle is-6">Adobe Photoshop</h6>
-                                        <progress class="progress is-success is-fullwidth" value="90" max="100">60%</progress>
-                                    </div>
-                                </div>
-                            </div>    
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="column">
 
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Jane resume landing page</title>
+  <!-- main css file -->
+  <link rel="stylesheet" href="../css/jane_resume.css" />
+  <!-- bulma link -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.9.4/css/bulma.min.css" />
+  <!-- font awesome link -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" />
+</head>
+
+<body>
+  <div class="container-fluid has-background-white-ter">
+    <div class="section">
+      <div class="columns">
+        <div class="column is-4">
+          <div class="card">
+            <div class="card-image">
+              <figure class="image is-128X128">
+                <img src="../images/avatar_hat.jpg" />
+                <div class="image-text">
+                  <h1 class="subtitle is-capitalized">jane doe</h1>
+                </div>
+              </figure>
             </div>
+            <div class="card-content">
+              <div class="media">
+                <div class="media-left is-family-monospace">
+                  <div class="icon-text">
+                    <span class="icon has-text-primary">
+                      <i class="fa-solid fa-briefcase"></i>
+                    </span>
+                    <span class="is-capitalized">designer</span>
+                  </div>
+                  <br />
+                  <div class="icon-text">
+                    <span class="icon has-text-primary">
+                      <i class="fa-solid fa-home"></i>
+                    </span>
+                    <span class="is-capitalized">london, uk</span>
+                  </div>
+                  <br />
+                  <div class="icon-text">
+                    <span class="icon has-text-primary">
+                      <i class="fa-solid fa-envelope"></i>
+                    </span>
+                    <span>ex@mail.com</span>
+                  </div>
+                  <br />
+                  <div class="icon-text">
+                    <span class="icon has-text-primary">
+                      <i class="fa-solid fa-phone"></i>
+                    </span>
+                    <span>121234567890</span>
+                  </div>
+                </div>
+              </div>
+              <div class="media">
+                <div class="media-left is-family-monospace">
+                  <div class="icon-text">
+                    <span class="icon has-text-primary">
+                      <i class="fa-solid fa-star-of-life"></i>
+                    </span>
+                    <span class="is-capitalized">skills</span>
+                  </div>
+                </div>
+              </div>
+              <div class="photoshop block">
+                <h6 class="subtitle is-6">Adobe Photoshop</h6>
+                <progress class="progress is-success is-fullwidth is-small" value="90" max="100">
+                  90%
+                </progress>
+                <h6 class="subtitle is-6">Photograpghy</h6>
+                <progress class="progress is-success is-fullwidth is-small" value="70" max="100">
+                  70%
+                </progress>
+                <h6 class="subtitle is-6">illstrator</h6>
+                <progress class="progress is-success is-fullwidth is-small" value="45" max="100">
+                  45%
+                </progress>
+                <h6 class="subtitle is-6">media</h6>
+                <progress class="progress is-success is-fullwidth is-small" value="40" max="100">
+                  40%
+                </progress>
+              </div>
+              <div class="media">
+                <div class="media-left is-family-monospace">
+                  <div class="icon-text">
+                    <span class="icon has-text-primary">
+                      <i class="fa-solid fa-earth-asia"></i>
+                    </span>
+                    <span class="is-capitalized">languages</span>
+                  </div>
+                </div>
+              </div>
+              <div class="languages block">
+                <h6 class="subtitle is-6">English</h6>
+                <progress class="progress is-fullwidth is-success is-small" value="100" max="100">
+                  90%
+                </progress>
+                <h6 class="subtitle is-6">Spanish</h6>
+                <progress class="progress is-success is-fullwidth is-small" value="55" max="100">
+                  70%
+                </progress>
+                <h6 class="subtitle is-6">German</h6>
+                <progress class="progress is-success is-fullwidth is-small" value="25" max="100">
+                  45%
+                </progress>
+              </div>
+            </div>
+          </div>
         </div>
-        <div class="footer"></div>
+        <div class="column is-8">
+          <div class="card">
+            <div class="card-content">
+              <div class="header">
+                <span class="icon-text">
+                  <span class="icon has-text-primary">
+                    <i class="fa-solid fa-briefcase fa-2x"></i>
+                  </span>
+                  <span class="is-capitalized subtitle is-4  ml-4"> work experience</span>
+                </span> 
+              </div>
+              <br>
+              <div class="block">
+                <h3 class="subtitle is-capitalized">front end developers / w3school.com</h3>
+                  <span class="icon-text">
+                    <span class="icon has-text-primary">
+                      <i class="fa-solid fa-calendar-days"></i>
+                    </span>
+                    <span class="is-capitalized subtitle has-text-primary">jan 2015 - current</span>
+                  </span>
+                  <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Alias animi corporis obcaecati facilis, ullam vitae! Eius officiis omnis debitis, itaque temporibus neque dolore ad ullam.</p>
+              </div>
+              <hr>
+              <div class="block">
+                <h3 class="subtitle is-capitalized">web developers / something.com</h3>
+                  <span class="icon-text">
+                    <span class="icon has-text-primary">
+                      <i class="fa-solid fa-calendar-days"></i>
+                    </span>
+                    <span class="is-capitalized subtitle has-text-primary">mar 2012 - dec 2014</span>
+                  </span>
+                  <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Alias animi corporis obcaecati facilis, ullam vitae! Eius officiis omnis debitis, itaque temporibus neque dolore ad ullam.</p>
+              </div>
+              <hr>
+              <div class="block">
+                <h3 class="subtitle is-capitalized">graphic designer / designsomething.com</h3>
+                  <span class="icon-text">
+                    <span class="icon has-text-primary">
+                      <i class="fa-solid fa-calendar-days"></i>
+                    </span>
+                    <span class="is-capitalized subtitle has-text-primary">jun 2010 - mar 2012</span>
+                  </span>
+                  <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Alias animi corporis obcaecati facilis, ullam vitae! Eius officiis omnis debitis, itaque temporibus neque dolore ad ullam.</p>
+              </div>   
+            </div>
+          </div>
+          <br>
+          <div class="card">
+            <div class="card-content">
+              <div class="header">
+                <span class="icon-text">
+                  <span class="icon has-text-primary">
+                    <i class="fa-solid fa-briefcase fa-2x"></i>
+                  </span>
+                  <span class="is-capitalized subtitle is-4  ml-4"> education</span>
+                </span> 
+              </div>
+              <br>
+              <div class="block">
+                <h3 class="subtitle is-capitalized">w3school.com</h3>
+                  <span class="icon-text">
+                    <span class="icon has-text-primary">
+                      <i class="fa-solid fa-calendar-days"></i>
+                    </span>
+                    <span class="is-capitalized subtitle has-text-primary">forever</span>
+                  </span>
+                  <p>web develoapment all! i need to know in one place</p>
+              </div>
+              <hr>
+              <div class="block">
+                <h3 class="subtitle is-capitalized">london business school</h3>
+                  <span class="icon-text">
+                    <span class="icon has-text-primary">
+                      <i class="fa-solid fa-calendar-days"></i>
+                    </span>
+                    <span class="is-capitalized subtitle has-text-primary">2013 - 2015</span>
+                  </span>
+                  <p>master degree.</p>
+              </div>
+              <hr>
+              <div class="block">
+                <h3 class="subtitle is-capitalized">school of coding</h3>
+                  <span class="icon-text">
+                    <span class="icon has-text-primary">
+                      <i class="fa-solid fa-calendar-days"></i>
+                    </span>
+                    <span class="is-capitalized subtitle has-text-primary">2010 - 2013</span>
+                  </span>
+                  <p>bachelor degree.</p>
+              </div>   
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
+
+    <footer class="footer is-small has-background-primary">
+      <div class="content">
+        <p class="is-capitalized has-text-centered has-text-white-bis has-text-weight-bold is-size-5">find me on social media.</p>
+        
+        <div class="icons has-text-centered is-size-5 has-text-white mr-3">
+          <i class="fa-brands fa-facebook"></i>
+          <i class="fa-brands fa-instagram"></i>
+          <i class="fa-brands fa-twitter"></i>
+          <i class="fa-brands fa-whatsapp"></i>
+          <i class="fa-brands fa-youtube"></i>
+          <i class="fa-brands fa-linkedin"></i>
+        </div>
+        
+        <p class="has-text-white has-text-centered">powered by <a href="#" class="has-text-white has-text-centered">w3css.css</a></p>
+      </div>
+    </footer>
+  </div>
 </body>
+
 </html>
