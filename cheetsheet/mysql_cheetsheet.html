@@ -1,0 +1,521 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mysql Cheetsheet</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.3/css/bulma.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" />
+</head>
+
+<body>
+    <section class="section has-background-light">
+        <div class="container">
+            <h1 class="title has-text-centered has-text-grey-dark"> MySQL Cheetsheet </h1>
+            <div class="columns">
+                <div class="column">
+                    <div class="box">
+                        <h1 class="subtitle has-text-link">Browsing
+                            <hr class="has-background-link-light">
+                        </h1>
+                        <p>SHOW DATABASES;</p>
+                        <p>SHOW TABLES;</p>
+                        <p>SHOW FIELDS FROM table / DESCRIBE table;</p>
+                        <p>SHOW CREATE TABLE table;</p>
+                        <p>SHOW PROCESSLIST;</p>
+                        <p>KILL process_number;</p>
+                    </div>
+                    <div class="box">
+                        <h1 class="subtitle has-text-link">Select - Join
+                            <hr class="has-background-link-light">
+                        </h1>
+                        <p>SELECT ... FROM t1 JOIN t2 ON t1.id1 = t2.id2 WHERE condition;</p>
+                        <p>SELECT ... FROM t1 LEFT JOIN t2 ON t1.id1 = t2.id2 WHERE condition;</p>
+                        <p>SELECT ... FROM t1 LEFT JOIN t2 ON t1.id1 = t2.id2 WHERE condition;</p>
+                    </div>
+                    <div class="box">
+                        <h1 class="subtitle has-text-link">Create / Open / Delete Database
+                            <hr class="has-background-link-light">
+                        </h1>
+                        <P>CREATE DATABASE DatabaseName;</P>
+                        <P>CREATE DATABASE DatabaseName CHARACTER SET utf8;</P>
+                        <P>USE DatabaseName;</P>
+                        <P>DROP DATABASE DatabaseName;</P>
+                        <P>ALTER DATABASE DatabaseName CHARACTER SET utf8;</P>
+                    </div>
+                    <div class="box">
+                        <h1 class="subtitle has-text-link">Backup Database to SQL File
+                            <hr class="has-background-link-light">
+                        </h1>
+                        <p>mysqldump -u Username -p dbNameYouWant > databasename_backup.sql</p>
+                    </div>
+                    <div class="box">
+                        <h1 class="subtitle has-text-link">Repair Tables After Unclean Shutdown
+                            <hr class="has-background-link-light">
+                        </h1>
+                        <p>mysqlcheck --all-databases;</p>
+                        <p>mysqlcheck --all-databases --fast;</p>
+                    </div>
+                    <div class="box">
+                        <h1 class="subtitle has-text-link">Update
+                            <hr class="has-background-link-light">
+                        </h1>
+                        <p>UPDATE table1 SET field1=new_value1 WHERE condition;</p>
+                        <p>UPDATE table1, table2 SET field1=new_value1, field2=new_value2, ... WHERE
+                            table1.id1 = table2.id2 AND condition;</p>
+                    </div>
+                    <div class="box">
+                        <h1 class="subtitle has-text-link">Create / Delete / Modify Table
+                            <hr class="has-background-link-light">
+                        </h1>
+
+                        <div class="message is-light">
+                            <div class="message-header is-medium px-2">
+                                <p>Create</p>
+                                <!-- <button class="delete" aria-label="delete"></button> -->
+                            </div>
+                            <div class="notification">
+                                <p>CREATE TABLE table (field1 type1, field2 type2);</p>
+                                <p>CREATE TABLE table (field1 type1, field2 type2, INDEX (field));</p>
+                                <p>CREATE TABLE table (field1 type1, field2 type2, PRIMARY KEY (field1));</p>
+                                <p>CREATE TABLE table (field1 type1, field2 type2, PRIMARY KEY (field1,field2));</p>
+
+                                <p>CREATE TABLE table1 (fk_field1 type1, field2 type2, ...,
+                                    FOREIGN KEY (fk_field1) REFERENCES table2 (t2_fieldA))
+                                    [ON UPDATE|ON DELETE] [CASCADE|SET NULL]</p>
+
+                                <hr class="has-background-grey-lighter">
+
+                                <p>CREATE TABLE table1 (fk_field1 type1, fk_field2 type2, ...,
+                                    FOREIGN KEY (fk_field1, fk_field2) REFERENCES table2 (t2_fieldA, t2_fieldB))</p>
+
+                                <p class="py-3">CREATE TABLE table IF NOT EXISTS;</p>
+
+                                <hr class="has-background-grey-lighter">
+
+                                <p class="py-3">CREATE TEMPORARY TABLE table;</p>
+                            </div>
+
+                            <!-- Drop -->
+                            <div class="message-header is-medium px-2">
+                                <p>Drop</p>
+                                <!-- <button class="delete" aria-label="delete"></button> -->
+                            </div>
+
+                            <div class="notification">
+                                <p>DROP TABLE table;</p>
+                                <p>DROP TABLE IF EXISTS table;</p>
+                                <p>DROP TABLE table1, table2, ...</p>
+                            </div>
+
+                            <!-- <br class="py-1"> -->
+
+                            <!-- Alter -->
+                            <div class="message-header is-medium px-2">
+                                <p>Alter</p>
+                            </div>
+
+                            <div class="notification ">
+                                <p>ALTER TABLE table MODIFY field1 type1</p>
+                                <p>ALTER TABLE table MODIFY field1 type1 NOT NULL ...</p>
+                                <p>ALTER TABLE table CHANGE old_name_field1 new_name_field1 type1</p>
+                                <p>ALTER TABLE table CHANGE old_name_field1 new_name_field1 type1 NOT NULL ...</p>
+                                <p>ALTER TABLE table ALTER field1 SET DEFAULT ...</p>
+                                <p>ALTER TABLE table ALTER field1 DROP DEFAULT</p>
+                                <p>ALTER TABLE table ADD new_name_field1 type1</p>
+                                <p>ALTER TABLE table ADD new_name_field1 type1 FIRST</p>
+                                <p>ALTER TABLE table ADD new_name_field1 type1 AFTER another_field</p>
+                                <p>ALTER TABLE table DROP field1</p>
+                                <p>ALTER TABLE table ADD INDEX (field);</p>
+                            </div>
+
+                            <!-- <br class="py-1"> -->
+
+                            <div class="message-header is-medium px-2">
+                                <p>Change field order</p>
+                            </div>
+
+                            <div class="notification">
+                                <p>ALTER TABLE table MODIFY field1 type1 FIRST</p>
+                                <p>ALTER TABLE table MODIFY field1 type1 AFTER another_field</p>
+                                <p>ALTER TABLE table CHANGE old_name_field1 new_name_field1 type1 FIRST</p>
+                                <p>ALTER TABLE table CHANGE old_name_field1 new_name_field1 type1 AFTER
+                                    another_field</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="box">
+                        <h1 class="subtitle has-text-link">Reset Root Password
+                            <hr class="has-background-link-light">
+                        </h1>
+
+                        <div class="notification">
+                            <p>$ /etc/init.d/mysql stop</p>
+                            <hr class="has-background-grey-lighter">
+                            <p>$ mysql # on another terminal
+                                mysql> UPDATE mysql.user SET password=PASSWORD('new_pass') WHERE user='root';</p>
+                            <p>## Switch back to the mysqld_safe terminal and kill the process using Control + \
+                                $ /etc/init.d/mysql start</p>
+                            <hr class="has-background-grey-lighter">
+                            <p>Your commands may vary depending on your OS.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="column">
+                    <div class="box">
+                        <h1 class="subtitle has-text-link-dark">Select
+                            <hr class="has-background-link-light">
+                        </h1>
+                        <p>SELECT * FROM table;</p>
+                        <p>SELECT * FROM table1, table2;</p>
+                        <p>SELECT field1, field2 FROM table1, table2;</p>
+                        <p>SELECT ... FROM ... WHERE condition</p>
+                        <p>SELECT ... FROM ... WHERE condition GROUPBY field;</p>
+                        <p>SELECT ... FROM ... WHERE condition GROUPBY field HAVING condition2;</p>
+                        <p>SELECT ... FROM ... WHERE condition ORDER BY field1, field2;</p>
+                        <p>SELECT ... FROM ... WHERE condition ORDER BY field1, field2 DESC;</p>
+                        <p>SELECT ... FROM ... WHERE condition LIMIT 10;</p>
+                        <p>SELECT DISTINCT field1 FROM ...</p>
+                        <p>SELECT DISTINCT field1, field2 FROM ...</p>
+                    </div>
+                    <div class="box">
+                        <h1 class="subtitle has-text-link-dark">Conditions
+                            <hr class="has-background-link-light">
+                        </h1>
+                        <p>field1 = value1</p>
+                        <p>field1 <> value1</p>
+                        <p>field1 LIKE 'value _ %'</p>
+                        <p>field1 IS NULL</p>
+                        <p>field1 IS NOT NULL</p>
+                        <p>field1 IS IN (value1, value2)</p>
+                        <p>field1 IS NOT IN (value1, value2)</p>
+                        <p>condition1 AND condition2</p>
+                        <p>condition1 OR condition2</p>
+                    </div>
+                    <div class="box">
+                        <h1 class="subtitle has-text-link">Restore from backup SQL File
+                            <hr class="has-background-link-light">
+                        </h1>
+                        <div class="message is-link">
+                            <div class="message-body">
+                                <p>mysqldump -u Username -p dbNameYouWant > databasename_backup.sql</p>
+                            </div>
+                        </div>
+
+                    </div>
+                    <div class="box">
+                        <h1 class="subtitle has-text-link">Insert
+                            <hr class="has-background-link-light">
+                        </h1>
+                        <div class="message is-primary">
+                            <div class="message-body">
+                                <p>INSERT INTO table1 (field1, field2) VALUES (value1, value2);</p>
+                            </div>
+                        </div>
+
+                    </div>
+
+                    <div class="box">
+                        <h1 class="subtitle has-text-link">Delete
+                            <hr class="has-background-link-light">
+                        </h1>
+                        <div class="message is-warning">
+                            <div class="message-body">
+                                <p>DELETE FROM table1 / TRUNCATE table1</p>
+                                <p>DELETE FROM table1 WHERE condition</p>
+                                <p>DELETE FROM table1, table2 FROM table1, table2 WHERE table1.id1 =
+                                    table2.id2 AND condition</p>
+                            </div>
+                        </div>
+
+                    </div>
+
+                    <div class="box">
+                        <h1 class="subtitle has-text-link">Keys
+                            <hr class="has-background-link-light">
+                        </h1>
+
+                        <div class="message">
+                            <p>CREATE TABLE table (..., PRIMARY KEY (field1, field2))</p>
+                            <p>CREATE TABLE table (..., FOREIGN KEY (field1, field2) REFERENCES table2
+                                (t2_field1, t2_field2))</p>
+                        </div>
+                    </div>
+
+                    <div class="box">
+                        <h1 class="subtitle has-text-link">Users and Privileges
+                            <hr class="has-background-link-light">
+                        </h1>
+
+                        <div class="message">
+                            <p>CREATE USER 'user'@'localhost';</p>
+                            <p>GRANT ALL PRIVILEGES ON base.* TO 'user'@'localhost' IDENTIFIED BY 'password';</p>
+                            <p>GRANT SELECT, INSERT, DELETE ON base.* TO 'user'@'localhost' IDENTIFIED BY 'password';
+                            </p>
+                            <p> REVOKE ALL PRIVILEGES ON base.* FROM 'user'@'host'; -- one permission only</p>
+                            <p>REVOKE ALL PRIVILEGES, GRANT OPTION FROM 'user'@'host'; -- all permissions</p>
+                            <p>FLUSH PRIVILEGES;</p>
+
+                            <br>
+
+                            <p>SET PASSWORD = PASSWORD('new_pass');</p>
+                            <p>SET PASSWORD FOR 'user'@'host' = PASSWORD('new_pass');</p>
+                            <p>SET PASSWORD = OLD_PASSWORD('new_pass');</p>
+
+                            <hr class="has-background-grey-lighter">
+
+                            <p>DROP USER 'user'@'host';</p>
+
+                            <hr class="has-background-grey-lighter">
+
+                            <p class="has-background-light py-2">Host ‘%’ indicates any host.</p>
+                        </div>
+                    </div>
+
+                    <div class="box">
+                        <h1 class="subtitle has-text-link">Main Data Types
+                            <hr class="has-background-link-light">
+                        </h1>
+
+                        <p>TINYINT (1o: -217+128)</p>
+                        <p>SMALLINT (2o: +-65 000)</p>
+                        <p>MEDIUMINT (3o: +-16 000 000)</p>
+                        <p>INT (4o: +- 2 000 000 000)</p>
+                        <p>BIGINT (8o: +-9.10^18)</p>
+
+                        <hr class="has-background-link-light">
+
+                        <p>Precise interval: -(2^(8*N-1)) -> (2^8*N)-1</p>
+
+                        <hr class="has-background-link-light">
+
+                        <p class="has-background-light py-2">⚠ INT(2) = “2 digits displayed” – NOT “number with 2 digits
+                            max”</p>
+                        <hr class="has-background-link-light">
+
+                        <p>FLOAT(M,D)</p>
+                        <p>DOUBLE(M,D)</p>
+                        <p>FLOAT(D=0->53)</p>
+
+                        <hr class="has-background-light-grey">
+
+                        <p class="has-background-light py-2">⚠ 8,3 -> 12345,678 – NOT 12345678,123!</p>
+                        <hr class="has-background-link-light">
+
+                        <p>TIME (HH:MM)</p>
+                        <p>YEAR (AAAA)</p>
+                        <p>DATE (AAAA-MM-JJ)</p>
+                        <p>DATETIME (AAAA-MM-JJ HH:MM; années 1000->9999)</p>
+                        <p>TIMESTAMP (like DATETIME, but 1970->2038, compatible with Unix)</p>
+
+                        <hr class="has-background-link-light">
+
+                        <p>VARCHAR (single-line; explicit size)</p>
+                        <p>TEXT (multi-lines; max size=65535)</p>
+                        <p>BLOB (binary; max size=65535)</p>
+
+
+                        <hr class="has-background-link-light">
+
+                        <div class="has-background-light py-2">
+                            <p>Variants for TEXT&BLOB: TINY (max=255), MEDIUM (max=~16000), and LONG (max=4Go).</p>
+                            <p>Ex: VARCHAR(32), TINYTEXT, LONGBLOB, MEDIUMTEXT</p>
+                        </div>
+
+                        <hr class="has-background-link-light">
+                        <p>ENUM ('value1', 'value2', ...) -- (default NULL, or '' if NOT NULL)</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="section has-background-light">
+
+        <hr class="has-background-grey-lighter">
+
+        <div class="comment">
+            <span class="icon-text">
+                <span class="icon has-text-black">
+                    <i class="fas fa-hand-point-right"></i>
+                </span>
+                <span> 11 <strong> Comments </strong> for this cheatsheet. <u> Write yours! </u> </span>
+            </span>
+        </div>
+        <hr class="has-background-grey-lighter">
+
+        <div class="box">
+            <div class="columns">
+                <div class="column">
+                    <div class="field">
+                        <p class="control has-icons-left has-icons-right">
+                            <input class="input is-hovered" type="text" placeholder="Search Cheetshets">
+                            <span class="icon is-right">
+                                <i class="fas fa-search fa-lg"></i>
+                            </span>
+                        </p>
+                    </div>
+                </div>
+                <div class="column">
+                    <div class="tabs is-centered">
+                        <ul>
+                            <li>
+                                <a>
+                                    <span class="icon has-text-link-dark"><i class="fas fa-home fa-lg"
+                                            aria-hidden="true"></i></span>
+                                    <span class="has-text-link-dark">Home</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a>
+                                    <span class="icon has-text-info-dark"><i class="far fa-file-alt fa-lg"
+                                            aria-hidden="true"></i></span>
+                                    <span class="has-text-info-dark">Documents</span>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <hr class="has-background-grey-lighter">
+
+        <div class="columns">
+            <div class="column is-3 py-6">
+                <div class="box py-6 has-background-grey-lighter has-text-centered">
+                    <span class="icon py-5 is-size-1">
+                        <i class="fas fa-chevron-circle-left"></i>
+                    </span>
+                    <br>
+                    <span class="block has-text-centered">Over 352 curated cheatsheets, by developers for
+                        developers.</span>
+                    <br>
+                    <br>
+                    <span class="notification py-3 is-small">Devhints.home</span>
+                </div>
+            </div>
+            <div class="column is-4">
+                <h3 class="title is-4 has-text-centered"> Other Databases cheatsheets</h3>
+                <hr class="has-background-grey-lighter">
+                <div class="columns">
+                    <div class="column">
+                        <div class="box has-background-primary-light">
+                            <span class="subtitle is-6">SQL Joins</span>
+                            <span>Cheetsheet
+                                <div class="icon">
+                                    <i class="fas fa-circle is-size-7"></i>
+                                </div>
+                            </span>
+                        </div>
+                    </div>
+                    <div class="column">
+                        <div class="box has-background-warning-light">
+                            <span class="subtitle is-6">Knex Joins</span>
+                            <span>Cheetsheet
+                                <div class="icon">
+                                    <i class="fas fa-circle is-size-7"></i>
+                                </div>
+                            </span>
+                        </div>
+                    </div>
+                </div>
+                <div class="columns">
+                    <div class="column">
+                        <div class="box has-background-success-light">
+                            <span class="subtitle is-6">PostgreSQL JSON</span>
+                            <span>Cheetsheet
+                                <div class="icon is-primary">
+                                    <i class="fas fa-circle is-size-7"></i>
+                                </div>
+                            </span>
+                        </div>
+                    </div>
+                    <div class="column">
+                        <div class="box has-background-grey-lighter">
+                            <span class="subtitle is-6">PostgreSQL</span>
+                            <span>Cheetsheet
+                                <div class="icon">
+                                    <i class="fas fa-circle is-size-7"></i>
+                                </div>
+                            </span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="column is-5">
+                <h3 class="title is-4 has-text-centered"> Top cheatsheets</h3>
+                <hr class="has-background-grey-lighter">
+                <div class="columns">
+                    <div class="column">
+                        <div class="box has-background-grey-lighter">
+                            <span class="subtitle is-6">React Js</span>
+                            <span>Cheetsheet
+                                <div class="icon">
+                                    <i class="fas fa-circle is-size-7"></i>
+                                </div>
+                            </span>
+                        </div>
+                    </div>
+                    <div class="column">
+                        <div class="box has-background-warning-light">
+                            <span class="subtitle is-6">Elixir</span>
+                            <span>Cheetsheet
+                                <div class="icon">
+                                    <i class="fas fa-circle is-size-7"></i>
+                                </div>
+                            </span>
+                        </div>
+                    </div>
+                </div>
+                <div class="columns">
+                    <div class="column">
+                        <div class="box has-background-grey-light">
+                            <span class="subtitle is-6">ES2015+</span>
+                            <span>Cheetsheet
+                                <div class="icon">
+                                    <i class="fas fa-circle is-size-7"></i>
+                                </div>
+                            </span>
+                        </div>
+                    </div>
+                    <div class="column">
+                        <div class="box has-background-black-light">
+                            <span class="subtitle is-6">Vimdiff</span>
+                            <span>Cheetsheet
+                                <div class="icon">
+                                    <i class="fas fa-circle is-size-7"></i>
+                                </div>
+                            </span>
+                        </div>
+                    </div>
+                </div>
+                <div class="columns">
+                    <div class="column">
+                        <div class="box has-background-link-light">
+                            <span class="subtitle is-6">Vim</span>
+                            <span>Cheetsheet
+                                <div class="icon">
+                                    <i class="fas fa-circle is-size-7"></i>
+                                </div>
+                            </span>
+                        </div>
+                    </div>
+                    <div class="column">
+                        <div class="box has-background-success-light">
+                            <span class="subtitle is-6">Vim script</span>
+                            <span>Cheetsheet
+                                <div class="icon">
+                                    <i class="fas fa-circle is-size-7"></i>
+                                </div>
+                            </span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+</body>
+
+</html>
