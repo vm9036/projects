@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>simple example table</title>
+</head>
+<body>
+    <table border="1" cellpadding="2" cellspacing="2">
+        <caption>time table</caption>
+        <thead>
+            <tr>
+                <th>roll no</th>
+                <th>name</th>
+                <th>marks</th>
+                <th>marks(English)</th>
+                <th>marks(science)</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>1</td>
+                <td>joe</td>
+                <td>3rd</td>
+                <td colspan="2" style="background-color: red; text-align:center;">30</td>
+            </tr>
+            <tr>
+                <td>2</td>
+                <td>nick</td>
+                <td rowspan="2" style="background-color: yellow; text-align: center;">4th</td>
+                <td>45</td>
+                <td>30</td>
+            </tr>
+            <tr>
+                <td>3</td>
+                <td>priyanka</td>
+                <td>40</td>
+                <td>50</td>
+            </tr>
+        </tbody>
+        <tfoot>
+            <th>roll no</th>
+            <th>name</th>
+            <th>marks</th>
+            <th>marks(English)</th>
+            <th>marks(science)</th>
+        </tfoot>
+    </table>
+
+    <br>
+    <table border="1" cellpadding="2" cellspacing="2">
+        <caption>time table</caption>
+        <thead>
+            <tr>
+                <th></th>
+                <th></th>
+                <th>bob</th>
+                <th>alice</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <th rowspan="2">favorite</th>
+                <th>color</th>
+                <td>blue</td>
+                <td>purple</td>
+            </tr>
+            <tr>
+                <th>color</th>
+                <td>blue</td>
+                <td>purple</td>
+            </tr>
+            <tr>
+                <th rowspan="2">least favorite</th>
+                <th>color</th>
+                <td>blue</td>
+                <td>purple</td>
+            </tr>
+            <tr>
+                <th>color</th>
+                <td>blue</td>
+                <td>purple</td>
+            </tr>
+        </tbody>
+    </table>
+</body>
+</html>
