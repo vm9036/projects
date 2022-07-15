@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- bulma link -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.9.4/css/bulma.min.css" />
+    <title>Addition with using in onclick function</title>
+</head>
+<body>
+    <!-- this program is used for using onclick function program -->
+    <div class="container">
+        <div class="section">
+            <div class="box">
+                <div class="block">
+                    <h3 class="title is-3 has-text-centered">Addition with onclick</h1>
+                </div>
+                <div class="block">
+                    <div class="field">
+                        <label class="label">Enter number1 :</label>
+                        <p class="control">
+                          <input class="input is-info" type="number" placeholder="number input" id="number1">
+                        </p>
+                    </div>
+                    <div class="field">
+                        <label class="label">Enter number2 :</label>
+                        <p class="control">
+                          <input class="input is-info" type="number" placeholder="number input" id="number2">
+                        </p>
+                    </div>
+                    <div class="field has-text-centered">
+                        <p class="control">
+                            <button class="button is-capitalized is-primary" onclick ="addition()">addition</button> <!-- function calling -->
+                            <button class="button is-capitalized is-primary" onclick ="subtraction()">subtraction</button>
+                            <button class="button is-capitalized is-primary" onclick ="multiplication()">multiplication</button>
+                            <button class="button is-capitalized is-primary" onclick ="division()">division</button>
+                        </p>
+                    </div>
+                    <div class="field">
+                        <label class="label">See the output : </label>
+                        <p class="control">
+                          <input class="input is-success" type="number" placeholder="number input" id="output">
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    
+    
+    <script>
+        // function created
+        // only used for addition
+        function addition(){
+            var number1 = parseInt(document.getElementById("number1").value);
+            var number2 = parseInt(document.getElementById("number2").value);
+
+            var addition_number = number1 + number2;
+            alert(document.getElementById("output").value = addition_number);
+        }
+
+        // this function used for subtraction
+        function subtraction(){
+            var number1 = parseInt(document.getElementById("number1").value);
+            var number2 = parseInt(document.getElementById("number2").value);
+
+            var subtration_number = number1 - number2;
+            alert(document.getElementById("output").value = subtration_number);
+        }
+
+        // this function is used for multiplication
+        function multiplication(){
+            var number1 = parseInt(document.getElementById("number1").value);
+            var number2 = parseInt(document.getElementById("number2").value);
+
+            var multiplication_number = number1 * number2;
+            alert(document.getElementById("output").value = multiplication_number);
+        }
+
+        // this function is used for division
+        function division(){
+            var number1 = parseInt(document.getElementById("number1").value);
+            var number2 = parseInt(document.getElementById("number2").value);
+
+            var division_number = number1 / number2;
+            alert(document.getElementById("output").value = division_number);
+        }
+    </script>
+</body>
+</html>
