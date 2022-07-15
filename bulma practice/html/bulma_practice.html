@@ -10,7 +10,7 @@
     <!-- font - awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
     <title>bulma tutorial practice</title>
-    <link rel="stylesheet" href="../bulma tutorial/css/debug.css" />
+    <link rel="stylesheet" href="../css/debug.css" />
     <style>
         .center {
             display: flex;
@@ -21,7 +21,7 @@
 </head>
 
 <body>
-    <!-- <section class="section">
+    <section class="section">
         <div class="container">
             <h1 class="title">
                 hello bulma
@@ -30,7 +30,7 @@
                 my first website with <strong>bulma</strong>
             </p>
         </div> 
-    </section> -->
+    </section>
 
     <section class="hero">
         <div class="hero-body">
@@ -49,15 +49,14 @@
                     <article class="media notification is-primary">
                         <figure class="media-left">
                             <span class="icon">
-                                <i class="fa-solid fa-landmark-dome is-size-3"></i>
+                                <i class="fa-brands fa-2x fa-css3-alt"></i>
                             </span>
                         </figure>
                         <div class="media-content">
                             <div class="content">
-                                <h1 class="title">Bulma ?</h1>
-                                <p class="is-size-5">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Itaque
-                                eos aliquid eveniet unde exercitationem magni neque voluptatum
-                                vel, quae sequi esse? Corporis distinctio aut quibusdam?</p>
+                                <h1 class="title is-size-4">Bulma ?</h1>
+                                <p class="is-size-5">Bulma is a modern CSS framework from @jgthms, based on Flexbox.
+                                Using Bulma, we can describe our website's design using just classes. ᕕ( ᐛ )ᕗ</p>
                             </div>
                         </div>
                         <div class="media-right">
@@ -65,24 +64,157 @@
                         </div>
                     </article>
                 </div>
-
                 <div class="column">
-                    <div class="notification is-info">
-                        <p class="is-size-5">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Itaque
-                            eos aliquid eveniet unde exercitationem magni neque voluptatum
-                            vel, quae sequi esse? Corporis distinctio aut quibusdam?</p>
-                    </div>
+                    <article class="media notification is-info">
+                        <figure class="media-left">
+                            <span class="icon">
+                                <i class="fas fa-2x fa-align-justify"></i>
+                            </span>
+                        </figure>
+                        <div class="media-content">
+                            <div class="content">
+                                <h1 class="title is-size-4">Flexbox ?</h1>
+                                <p class="is-size-5">Flexbox is a CSS spec that makes sectioning and aligning more natural.
+                                We don't need to know Flexbox but it's how Bulma works behind-the-scenes. ⦤(^ー^)⦥</p>
+                            </div>
+                        </div>
+                        <div class="media-right">
+                            <button class="delete"></button>
+                        </div>
+                    </article>
                 </div>
                 <div class="column">
-                    <div class="notification is-warning">
-                        <p class="is-size-5">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Itaque
-                            eos aliquid eveniet unde exercitationem magni neque voluptatum
-                            vel, quae sequi esse? Corporis distinctio aut quibusdam?</p>
-                    </div>
+                    <article class="media notification is-warning">
+                        <figure class="media-left">
+                            <span class="icon">
+                                <i class="fas fa-2x fa-shield-alt"></i>
+                            </span>
+                        </figure>
+                        <div class="media-content">
+                            <div class="content">
+                                <h1 class="title is-size-4">…Classes ? </h1>
+                                <p class="is-size-5">Instead of writing our CSS per-element, we can use predefined classes.
+								With enough classes, we can describe our website design using semantics. <span class="emoticon">٩(^ᴗ^)۶</span></p>
+                            </div>
+                        </div>
+                        <div class="media-right">
+                            <button class="delete"></button>
+                        </div>
+                    </article>
                 </div>
             </div>
         </div>
     </section>
-</body>
 
+    <!-- .section -->
+		<section class="section">
+			<div class="container">
+				<div class="columns is-multiline">
+					<div class="column is-one-fourth">
+						<article class="media notification has-background-white">
+							<figure class="media-left">
+								<span class="icon">
+									<i class="fas fa-lg fa-columns has-text-warning"></i>
+								</span>
+							</figure>
+							<div class="media-content">
+								<div class="content">
+									<h1 class="title is-size-4">Columns</h1>
+									<p class="subtitle is-size-5">
+										The power of <strong>Flexbox</strong> in a simple interface
+									</p>
+								</div>
+							</div>
+						</article>
+					</div>
+					<div class="column is-one-third">
+						<article class="media notification has-background-white">
+							<figure class="media-left">
+								<span class="icon has-text-info">
+									<i class="fab fa-lg fa-wpforms"></i>
+								</span>
+							</figure>
+							<div class="media-content">
+								<div class="content">
+									<h1 class="title is-size-4">Form</h1>
+									<p class="subtitle is-size-5">
+										The indispensable <strong>form controls</strong>, designed for maximum clarity
+									</p>
+								</div>
+							</div>
+						</article>
+					</div>
+					<div class="column is-one-third">
+						<article class="media notification has-background-white">
+							<figure class="media-left">
+								<span class="icon has-text-danger">
+									<i class="fas fa-lg fa-cubes"></i>
+								</span>
+							</figure>
+							<div class="media-content">
+								<div class="content">
+									<h1 class="title is-size-4">Components</h1>
+									<p class="subtitle is-size-5">
+										Advanced multi-part components with lots of possibilities
+									</p>
+								</div>
+							</div>
+						</article>
+					</div>
+					<div class="column is-one-third">
+						<article class="media notification has-background-white">
+							<figure class="media-left">
+								<span class="icon has-text-grey">
+									<i class="fas fa-lg fa-cogs"></i>
+								</span>
+							</figure>
+							<div class="media-content">
+								<div class="content">
+									<h1 class="title is-size-4">Modifiers</h1>
+									<p class="subtitle is-size-5">
+										An <strong>easy-to-read</strong> naming system designed for humans
+									</p>
+								</div>
+							</div>
+						</article>
+					</div>
+					<div class="column is-one-third">
+						<article class="media notification has-background-white">
+							<figure class="media-left">
+								<span class="icon has-text-primary">
+									<i class="fas fa-lg fa-warehouse"></i>
+								</span>
+							</figure>
+							<div class="media-content">
+								<div class="content">
+									<h1 class="title is-size-4">Layout</h1>
+									<p class="subtitle is-size-5">
+										Design the <strong>structure</strong> of your webpage with these CSS classes
+									</p>
+								</div>
+							</div>
+						</article>
+					</div>
+					<div class="column is-one-third">
+						<article class="media notification has-background-white">
+							<figure class="media-left">
+								<span class="icon has-text-danger">
+									<i class="fas fa-lg fa-cube"></i>
+								</span>
+							</figure>
+							<div class="media-content">
+								<div class="content">
+									<h1 class="title is-size-4">Elements</h1>
+									<p class="subtitle is-size-5">
+										Essential interface elements that only require a <strong>single CSS class</strong>
+									</p>
+								</div>
+							</div>
+						</article>
+					</div>
+				</div>
+			</div>
+		</section>
+		<!-- /.section -->
+</body>
 </html>
