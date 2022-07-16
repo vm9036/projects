@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Experiment Program</title>
+    <!-- bulma link -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.9.4/css/bulma.min.css" />
+</head>
+
+<body>
+    <div class="section">
+        <div class="container">
+            <div class="box has-background-grey-lighter">
+                <h1 class="title is-3 has-text-centered">Experiment program</h1>
+                <div class="field ">
+                    <label class="label">Enter number1 :</label>
+                    <div class="control ">
+                        <input type="number" id="number1" placeholder="5" class="input is-primary">
+                    </div>
+                </div>
+                <div class="field">
+                    <label class="label">Enter number2 : </label>
+                    <div class="control">
+                        <input type="number" id="number2" placeholder="10" class="input is-primary">
+                    </div>
+                </div>
+                <div class="field mt-5">
+                    <div class="control has-text-centered">
+                        <button class="button is-primary is-medium" onclick="experiment()" onclick="document.getElementById('bulb').src = '../images/bulb_on.png'" type="button">Result</button>
+                    </div>
+                </div>
+                <div class="field">
+                    <label class="label">Output :</label>
+                    <div class="control">
+                        <input type="text"  id="output" placeholder="15" class="input is-success">
+                    </div>
+                </div>
+                <!-- <div class="field">
+                    <figure class="image">
+                        <img id="bulb" src="../images/bulb_off.png" alt="bulb off">
+                    </figure>
+                </div> -->
+                <div class="block has-text-centered">
+                    <button class="button" onclick="document.getElementById('bulb').src = '../images/bulb_off.png'">click bulb off</button>  
+                    <img id="bulb" src="../images/bulb_off.png" alt="bulb off">
+                    <button class="button" onclick="document.getElementById('bulb').src = '../images/bulb_on.png'">click bulb on</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function experiment()
+        {
+            var number1 = document.getElementById("number1").value;
+            var number2 = document.getElementById("number2").value;
+
+            var result = parseInt(number1) + parseInt(number2);
+            if(result % 2 == 0 )
+            {
+                document.getElementById("output").value = result + " " + "number is even";
+
+            }
+            else
+            {
+                document.getElementById("output").value = result + " " + "number is odd";
+            }
+        }
+    </script>
+</body>
+
+</html>
