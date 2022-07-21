@@ -15,7 +15,7 @@
         <div class="container">
             <div class="box has-background-grey-lighter">
                 <h1 class="title is-3 has-text-centered">Experiment program</h1>
-                <div class="field ">
+                <div class="field">
                     <label class="label">Enter number1 :</label>
                     <div class="control ">
                         <input type="number" id="number1" placeholder="5" class="input is-primary">
@@ -29,7 +29,7 @@
                 </div>
                 <div class="field mt-5">
                     <div class="control has-text-centered">
-                        <button class="button is-primary is-medium" onclick="experiment()" onclick="document.getElementById('bulb').src = '../images/bulb_on.png'" type="button">Result</button>
+                        <button class="button is-primary is-medium" onclick="experiment()"789 onclick="turnOff()" onclick="trunOn()">Result</button>
                     </div>
                 </div>
                 <div class="field">
@@ -44,31 +44,40 @@
                     </figure>
                 </div> -->
                 <div class="block has-text-centered">
-                    <button class="button" onclick="document.getElementById('bulb').src = '../images/bulb_off.png'">click bulb off</button>  
+                    <!-- <button class="button" onclick="document.getElementById('bulb').src = '../images/bulb_off.png'">click bulb off</button>   -->
                     <img id="bulb" src="../images/bulb_off.png" alt="bulb off">
-                    <button class="button" onclick="document.getElementById('bulb').src = '../images/bulb_on.png'">click bulb on</button>
+                    <!-- <button class="button" onclick="document.getElementById('bulb').src = '../images/bulb_on.png'">click bulb on</button> -->
+                    <!-- <button class="button" onclick="turnOff()">new click bulb off</button>   -->
+                    <!-- <button class="button" onclick="trunOn()">new click bulb on</button> -->
                 </div>
             </div>
         </div>
     </div>
 
     <script>
+         function turnOff(){
+        document.getElementById('bulb').src = '../images/bulb_off.png';
+    }
+    function turnOn(){
+        document.getElementById('bulb').src = '../images/bulb_on.png';
+    }
         function experiment()
         {
             var number1 = document.getElementById("number1").value;
             var number2 = document.getElementById("number2").value;
-
-            var result = parseInt(number1) + parseInt(number2);
+            var result = number1 + number2;
             if(result % 2 == 0 )
             {
                 document.getElementById("output").value = result + " " + "number is even";
-
+                turnOn();
             }
             else
             {
                 document.getElementById("output").value = result + " " + "number is odd";
+                turnOff();
             }
         }
+       
     </script>
 </body>
 
