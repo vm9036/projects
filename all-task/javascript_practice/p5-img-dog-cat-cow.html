@@ -1,0 +1,25 @@
+<html>
+    <head>
+        <title>use of img</title>
+    </head>
+    <body>
+        <img id="image" src="../images/tiger-img.jfif" alt="tiger-img">
+        <button onclick="catImg()">cat</button>
+        <button onclick="dogImg()">dog</button>
+        <button onclick="cowImg()">cow</button>
+    </body>
+    <script>
+        function catImg()
+        {
+            document.getElementById("image").src = "../images/img-cat.jpg"
+        }
+        function cowImg()
+        {
+            document.getElementById("image").src = "../images/img-cow.jpg";
+        }
+        function dogImg()
+        {
+            document.getElementById("image").src = "../images/img-dog.jpg";
+        }
+    </script>
+</html>

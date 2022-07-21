@@ -10,6 +10,12 @@
     <h1>what javascript can do ?</h1>
     <p id="demo">change the text</p>
 
-    <button type="button" onclick='document.getElementById("demo").innerHTML = "Hello JavaScript!" ' >click me !</button>
+    <!-- <button type="button" onclick='document.getElementById("demo").innerHTML = "Hello JavaScript!" ' >click me !</button> -->
+    <button onclick="onClick()">change the text</button>
+    <script>
+        function onClick() {
+            document.getElementById("demo").innerHTML = "hello javascript";
+        }
+    </script>
 </body>
 </html>
