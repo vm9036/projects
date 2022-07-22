@@ -1,0 +1,173 @@
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>javascript</title>
+</head>
+<body>
+    <h2>What Can JavaScript Do?</h2>
+    <p>JavaScript can change HTML attribute values.</p>
+    <p>In this case JavaScript changes the value of the src (source) attribute of an image.</p>
+
+    <button onclick="document.getElementById('bulb').src = '../images/bulb_off.png'">click bulb off</button>    
+    <img id="bulb" src="../images/bulb_off.png" alt="bulb off">
+    <button onclick="document.getElementById('bulb').src = '../images/bulb_on.png'">click bulb on</button> -->
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
+<script>
+
+    document.addEventListener('DOMContentLoaded', initPageLoad());
+
+    function initPageLoad() {
+        printVishal();
+        printPrime();
+    }
+
+    function printVishal() {
+
+        let strVishal = "vishalmakwana**";
+        let i;
+        let counter = 0;
+        let stringC = ""
+        for (i = 1; i <= 5; i++) {
+            for (j = 1; j <= i; j++) {
+                stringC = stringC + "\t" + strVishal[counter++];
+
+                // even =even + 2
+            }
+            console.log(stringC);
+            stringC = "";
+
+        }
+    }
+
+    function printPrime() {
+        let i;
+        let prime = 2;
+        let stringC = ""
+        for (i = 1; i <= 10; i++) {
+            for (j = 1; j <= i; j++) {
+                stringC = stringC + "\t" + prime;
+                prime = getMeTheNextPrimeNumber(prime);
+                // even =even + 2
+            }
+            console.log(stringC);
+            stringC = "";
+
+        }
+    }
+
+    function getMeTheNextPrimeNumber(currentPrime) {
+        let i = currentPrime + 1;
+
+        for (; ; i++) {
+
+            let isPrime = isNumberPrime(i);
+
+            if (isPrime) {
+                return i;
+            }
+
+        }
+
+    }
+
+    function isNumberPrime(number) {
+        let i = 2;
+        for (i = 2; i <= number; i++) {
+            if (number % i == 0) {
+                if (i == number) {
+                    return true;
+                } else {
+                    break;
+                }
+            }
+            return false;
+        }
+
+        
+    }
+
+    function btnCheckPrime() {
+        let value = document.getElementById("txtPrime").value;
+        alert(isNumberPrime(value));
+
+    }
+
+    function printTenPrimeNumber() {
+        let counter = 0;
+        let primeString = "";
+
+        let primeStringTable = "<table class='table is-bordered is-striped is-narrow is-hoverable is-fullwidth'>";
+
+        let counterLimit = parseInt(document.getElementById("counter").value);
+
+        for (let i = 2; ; i++) {
+
+
+            if (isNumberPrime(i)) {
+                console.log(i);
+                primeString = primeString + i + ",";
+                primeStringTable = primeStringTable + "<tr><td>" + i + "</td></tr>";
+                counter++
+            }
+            if (counter == counterLimit) {
+                break;
+            }
+        }
+        primeStringTable = primeStringTable + "</table>";
+
+        document.getElementById("txtPrime").value = primeString;
+        document.getElementById("txtPrimeArea").value = primeString;
+
+        document.getElementById("primeTable").innerHTML = primeStringTable;
+    }
+</script>
+​
+<input type="text" id="txtPrime">
+​
+<textarea id="txtPrimeArea" name="w3review" rows="4" cols="50">
+
+    </textarea>
+​
+<div class="table-container" id="primeTable">
+    <table class="table is-bordered is-striped is-narrow is-hoverable is-fullwidth">
+        <tbody>
+            <tr>
+                <td>2</td>
+            </tr>
+            <tr>
+                <td>3</td>
+            </tr>
+            <tr>
+                <td>5</td>
+            </tr>
+            <tr>
+                <td>7</td>
+            </tr>
+            <tr>
+                <td>11</td>
+            </tr>
+            <tr>
+                <td>13</td>
+            </tr>
+            <tr>
+                <td>17</td>
+            </tr>
+            <tr>
+                <td>19</td>
+            </tr>
+            <tr>
+                <td>23</td>
+            </tr>
+            <tr>
+                <td>29</td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+<input type="text" id="counter" value="10">
+<button value="CheckPrime" onclick="btnCheckPrime();">CheckPrime</button>
+<button onclick="printTenPrimeNumber();">Print 10 Prime</button>
