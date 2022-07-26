@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EvenOdd And LeapYear MixProgram</title>
+</head>
+<body>
+    <h5 style="text-align: center;">if leap year than print number odd like 3,5,7;
+        if not a leap year than print number even like 2,4,6;</h5>
+    <input type="text" id="inputNumber" placeholder="Please enter the number...">
+    <button onclick="findEvenOddAndLeapYear()">click output</button>
+    <p id="printNumber"></p>
+    <p id="printNumber1"></p>
+    <p id="outputNumber"></p>
+
+    <script>
+        function findEvenOddAndLeapYear()
+        {
+            let number = Number(document.getElementById("inputNumber").value);
+            let number1 = number;
+            
+            if(number % 2 == 0)
+            {
+                document.getElementById("printNumber1").innerHTML = number + " " + "is even";
+                
+                if((number1 % 4 == 0) && (number1 % 100 != 0) || (number1 % 400 == 0))
+                {
+                    document.getElementById("printNumber").innerHTML = number + " " + "is leap year.";
+                }
+            }
+            else
+            {
+                document.getElementById("printNumber1").innerHTML = number + " " + "is odd";
+                
+                if((number1 % 4 != 0) && (number1 % 100 != 0) || (number1 % 400 != 0))
+                {
+                    document.getElementById("printNumber").innerHTML = number + " " + "is not leap year.";
+                }
+            }
+        }
+    </script>    
+</body>
+</html>

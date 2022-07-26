@@ -1,22 +1,24 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Find maximum two numbers and three numbers</title>
 </head>
+
 <body>
     <h2>maximum and minimum number check</h2>
     <button type="button" onclick="minimumTwoNumber()">minimumTwoNumber</button>
     <button onclick="minimumThreeNumber()">minimumThreeNumber</button>
     <button type="button" onclick="maximumTwoNumber()">maximumTwoNumber</button>
     <button onclick="maximumThreeNumber()">maximumThreeNumber</button>
-    <br>
+
     <br>
     <h2> number is negetive,positive or zero.</h2>
     <button onclick="findNumber()">findnumber</button>
-    
+
     <br>
     <h3>number is divisible by 5 and 11 or not.</h3>
     <input type="text " id="checkNumber">
@@ -26,7 +28,7 @@
     <br>
     <h3>even or odd program:</h3>
     <input type="text" id="inputOddEven">
-    <button type="button" onclick="findEvenOdd()" >click me</button>
+    <button type="button" onclick="findEvenOdd()">click me</button>
     <p id="outputOddEven"></p>
 
     <br>
@@ -34,56 +36,46 @@
     <input type="text" id="inputLeapYear">
     <button onclick="findLeapYear()">click me</button>
     <input type="text" id="outputLeapYear">
-
+ 
     <br>
-    
+
     <script>
-
-
-        function findLeapYear()
-        {
+        function findLeapYear() {
             let number = document.getElementById("inputLeapYear").value;
 
-            if(number % 4 == 0)
-            {
+            if (number % 4 == 0) {
                 document.getElementById("outputLeapYear").value = number + " " + "is leap year";
             }
-            else
-            {
+            else {
                 document.getElementById("outputLeapYear").value = number + " " + "is not leap year";
             }
         }
 
-        // this function work find the number even or odd
-        function findEvenOdd()
-        {
+        // this func
+        tion work find the number even or odd
+        function findEvenOdd() {
             let number = document.getElementById("inputOddEven").value;
 
-            if(number % 2 == 0)
-            {
+            if (number % 2 == 0) {
                 document.getElementById("outputOddEven").innerHTML = number + " " + "is even";
             }
-            else
-            {
+            else {
                 document.getElementById("outputOddEven").innerHTML = number + " " + "is odd";
             }
         }
 
         // this function works is divide the number
-        function divisibleNumber()
-        {
+        function divisibleNumber() {
             let number = document.getElementById("checkNumber").value;
 
 
-            if(number % 5 == 0 && number % 11 == 0)
-            {
+            if (number % 5 == 0 && number % 11 == 0) {
                 // document.getElementById("getNumber").innerHTML = number + " is divisible. ";
                 document.getElementById("getNumber").value = number + " is divisible. ";
                 // document.write(number + "is divisible.")
                 // console.log(number + "is divisible.")
             }
-            else
-            {
+            else {
                 // document.getElementById("getNumber").innerHTML = number + " is not divisible. ";
                 document.getElementById("getNumber").value = number + " is not divisible. ";
                 // document.write(number + "is not divisible.")
@@ -92,103 +84,82 @@
         }
 
         // this function work is find the number
-        function findNumber()
-        {
+        function findNumber() {
             let number = 15;
 
-            if(number > 0)
-            {
+            if (number > 0) {
                 document.write(number + " " + " is positive.")
             }
-            else if(number < 0)
-            {
+            else if (number < 0) {
                 document.write(number + " " + " is negetive.")
             }
-            else
-            {
+            else {
                 document.write(number + " " + " is zero.")
             }
         }
 
         // maximum three number finds this function
-        function minimumThreeNumber()
-            {
-                let numberOne = 15;
-                let numberTwo = 5;
-                let numberThree = 2;
+        function minimumThreeNumber() {
+            let numberOne = 15;
+            let numberTwo = 5;
+            let numberThree = 2;
 
-                if(numberOne < numberTwo && numberOne < numberThree)
-                {
-                    document.write(numberOne + " " + "numberOne is minimum.")
-                }
-                else if(numberTwo < numberOne &&  numberTwo < numberThree)
-                {
-                    document.write(numberTwo + " " + "numberTwo is minimum.")
-                }
-                else
-                {
-                    document.write(numberThree + " " + "numberThree is minimum.")
-                }
+            if (numberOne < numberTwo && numberOne < numberThree) {
+                document.write(numberOne + " " + "numberOne is minimum.")
             }
+            else if (numberTwo < numberOne && numberTwo < numberThree) {
+                document.write(numberTwo + " " + "numberTwo is minimum.")
+            }
+            else {
+                document.write(numberThree + " " + "numberThree is minimum.")
+            }
+        }
 
         //minimum number finds this function
-        function minimumTwoNumber()
-            {
-                let numberOne = 15;
-                let numberTwo = 25;
+        function minimumTwoNumber() {
+            let numberOne = 15;
+            let numberTwo = 25;
 
-                if(numberOne < numberTwo)
-                {
-                    document.write(numberOne + " " + "numberOne is minimum.");
-                    console.log(numberOne);
-                }
-                else
-                {
-                    document.write(numberTwo + " " + "numberTwo is minimum.");
-                    console.log(numberTwo)
-                } 
+            if (numberOne < numberTwo) {
+                document.write(numberOne + " " + "numberOne is minimum.");
+                console.log(numberOne);
             }
+            else {
+                document.write(numberTwo + " " + "numberTwo is minimum.");
+                console.log(numberTwo)
+            }
+        }
 
         // maximum two number finds this function
-        function maximumTwoNumber()
-        {
+        function maximumTwoNumber() {
             let numberOne = 15;
             let numberTwo = 20;
 
-            if(numberOne > numberTwo)
-            {
+            if (numberOne > numberTwo) {
                 document.write(numberOne + " " + "numberOne is greater.");
             }
-            else
-            {
+            else {
                 document.write(numberTwo + " " + "numberTwo is greater.");
-            } 
+            }
         }
 
         // maximum three number finds this function
-        function maximumThreeNumber()
-        {
+        function maximumThreeNumber() {
             let numberOne = 15;
             let numberTwo = 20;
             let numberThree = 25;
 
-            if(numberOne > numberTwo && numberOne > numberThree)
-            {
+            if (numberOne > numberTwo && numberOne > numberThree) {
                 document.write(numberOne + " " + "number is greater.")
             }
-            else if(numberTwo > numberOne &&  numberTwo > numberThree)
-            {
+            else if (numberTwo > numberOne && numberTwo > numberThree) {
                 document.write(numberTwo + " " + "number is greater.")
             }
-            else
-            {
+            else {
                 document.write(numberThree + " " + "number is greater.")
             }
-        }
-
-
-        
+        } 
     </script>
 </body>
+
 </html>
-    
