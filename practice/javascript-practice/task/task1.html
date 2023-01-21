@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.9.4/css/bulma.min.css" />
+    <title>Task 1 Dom Manipulation</title>
+</head>
+<body>
+    <p id="displayMessage">Hello</p>
+    <input id="a" type="text" class="input is-large"/>
+    <br/>
+    <br/>
+    <button class="button is-primary" onclick="task()" > Process </button><br>
+    <button id="eleTask">Task</button>
+    <script>
+        function process(){
+            let eleDisplayMessage = document.getElementById("displayMessage");
+            let eleA = document.getElementById("a");
+            let aValue = eleA.value;
+           eleDisplayMessage.innerHTML = aValue;
+           eleDisplayMessage.classList.add("title");
+
+        // // Element task
+
+        // let eleTask = document.getElementById("eleTask");
+        // eleTask.classList.add("is-primary");
+
+        }
+
+        function task(){
+            // Element task
+
+        let eleTask = document.getElementById("eleTask");
+        // let task1 = eleTask.value;
+        // eleTask.inn
+        // eleTask.innerHTML = "<button class='button is-link'>Task</button>";
+        eleTask.classList.add("button");
+        eleTask.classList.add("is-link");
+
+        }
+    </script>
+</body>
+</html>

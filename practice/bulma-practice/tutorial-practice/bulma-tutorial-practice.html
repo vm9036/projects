@@ -1,0 +1,474 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.9.4/css/bulma.min.css" />
+
+    <title>Bulma Tutorial Practice</title>
+</head>
+
+<body>
+
+    <div class="container mt-4">
+        <nav class="panel is-success">
+            <p class="panel-heading">
+                Overview Of Vim Cheat Sheet
+            </p>
+            <!-- Vim Cheat Sheets Overviw starts -->
+            <div class="section">
+                <div class="columns">
+                    <div class="column">
+                        <!-- Clipboard Starts -->
+                        <div class="panel is-info">
+                            <div class="panel-heading">
+                                <!-- <div class="heading block "> -->
+                                    <h5 class="is-size-5 is-capitalized ">Clipboard</h5>
+                                <!-- </div> -->
+                            </div>
+                            <div class="box">
+                                <table class="table is-fullwidth is-striped is-hoverable">
+                                    <tr>
+                                        <td>x</td>
+                                        <td class="has-text-right">Delete character</td>
+                                    </tr>
+                                    <tr>
+                                        <td>dd </td>
+                                        <td class="has-text-right">Delete line (Cut)</td>
+                                    </tr>
+                                    <tr>
+                                        <td>yy</td>
+                                        <td class="has-text-right">Yank line (Copy)</td>
+                                    </tr>
+                                    <tr>
+                                        <td>p</td>
+                                        <td class="has-text-right">paste</td>
+                                    </tr>
+                                    <tr>
+                                        <td>P</td>
+                                        <td class="has-text-right">paste before</td>
+                                    </tr>
+                                    <tr>
+                                        <td>"*p / "+p</td>
+                                        <td class="has-text-right">Paste from system clipboard</td>
+                                    </tr>
+                                    <tr>
+                                        <td>"*y / "+y</td>
+                                        <td class="has-text-right">Paste to system clipboard</td>
+                                    </tr>
+                                </table>
+                            </div>
+                        </div>
+                        <!-- Clipboard Ends -->
+
+                        <!-- Exiting insert mode Starts-->
+                        <div class="panel">
+                            <div class="panel-heading">
+                                <!-- <div class="heading  mt-4"> -->
+                                    <h5 class="is-size-5 is-capitalized ">Exiting insert mode</h5>
+                                <!-- </div> -->
+                            </div>
+                        </div>
+                        
+                        <div class="box">
+                            <table class="table is-fullwidth is-striped is-hoverable">
+                                <tbody>
+                                    <tr>
+                                        <td> Esc / C-[ </td>
+                                        <td class="has-text-right">Exit insert mode</td>
+                                    </tr>
+                                    <tr>
+                                        <td> [C-C] </td>
+                                        <td class="has-text-right">Exit insert mode, and abort current command</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                        <!-- Exiting insert mode Starts-->
+
+                        <!-- Know more about VIM Starts -->
+                        <div class="notification is-link">
+                            <div class="heading block mt-4">
+                                <h5 class="is-size-5 is-capitalized">Know more about VIM</h5>
+                            </div>
+                            <div class="box">
+                                <div id="loadYoutube"></div>
+                            </div>
+                        </div>
+                        
+                        
+                        <!-- Know more about VIM Ends -->
+
+
+                        <!-- Exiting Starts -->
+                            <div class="heading block mt-4">
+                                <h5 class="is-size-5 is-capitalized has-text-link">Exiting</h5>
+                            </div>
+                            <div class="box">
+                                <table class="table is-fullwidth is-striped is-hoverable">
+                                    <tr>
+                                        <td>: qa</td>
+                                        <td class="has-text-right">close all files</td>
+                                    </tr>
+                                    <tr>
+                                        <td>: qa !</td>
+                                        <td class="has-text-right">Close all files, abandon changes</td>
+                                    </tr>
+                                    <tr>
+                                        <td>: w</td>
+                                        <td class="has-text-right">Save</td>
+                                    </tr>
+                                    <tr>
+                                        <td>: wq / : x</td>
+                                        <td class="has-text-right">Save and close file</td>
+                                    </tr>
+                                    <tr>
+                                        <td>: q</td>
+                                        <td class="has-text-right">Close file</td>
+                                    </tr>
+                                    <tr>
+                                        <td>: q !</td>
+                                        <td class="has-text-right">Close file, abandon changes</td>
+                                    </tr>
+                                    <tr>
+                                        <td>ZZ</td>
+                                        <td class="has-text-right">Save and quit</td>
+                                    </tr>
+                                    <tr>
+                                        <td>ZQ</td>
+                                        <td class="has-text-right">Quit without checking changes</td>
+                                    </tr>
+                                </table>
+                            </div>
+                        <!-- Exiting Ends -->
+                    </div>
+                    <div class="column">
+                        <div class="heading block">
+                            <h5 class="is-size-5 is-capitalized has-text-link">Visual Mode</h5>
+                        </div>
+                        <div class="box">
+                            <table class="table is-fullwidth is-striped is-hoverable">
+                                <tr>
+                                    <td>v</td>
+                                    <td>Enter visual mode</td>
+                                </tr>
+                                <tr>
+                                    <td>V</td>
+                                    <td>Enter visual line mode</td>
+                                </tr>
+                                <tr>
+                                    <td>C-V </td>
+                                    <td>Enter visual block mode</td>
+                                </tr>
+                                <tr>
+                                    <td>d / x</td>
+                                    <td>Delete selection</td>
+                                </tr>
+                                <tr>
+                                    <td>s</td>
+                                    <td>Replace selection</td>
+                                </tr>
+                                <tr>
+                                    <td>y</td>
+                                    <td>Yank selection (Copy)</td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <p>See <a href="#">Operators</a> for other things you can do.</p>
+                                    </td>
+                                </tr>
+                            </table>
+                        </div>
+
+                        <div class="heading block">
+                            <h5 class="is-size-5 is-capitalized has-text-link">Editing</h5>
+                        </div>
+                        <div class="box">
+                            <table class="table is-fullwidth is-striped is-hoverable">
+                                <tr>
+                                    <td>a</td>
+                                    <td class="has-text-right">Append</td>
+                                </tr>
+                                <tr>
+                                    <td>A</td>
+                                    <td class="has-text-right">Append from end of line</td>
+                                </tr>
+                                <tr>
+                                    <td>i</td>
+                                    <td class="has-text-right">Insert</td>
+                                </tr>
+                                <tr>
+                                    <td>o</td>
+                                    <td class="has-text-right">Next line</td>
+                                </tr>
+                                <tr>
+                                    <td>O</td>
+                                    <td class="has-text-right">Previous line</td>
+                                </tr>
+                                <tr>
+                                    <td>s</td>
+                                    <td class="has-text-right">Delete char and insert</td>
+                                </tr>
+                                <tr>
+                                    <td>S</td>
+                                    <td class="has-text-right">Delete line and insert</td>
+                                </tr>
+                                <tr>
+                                    <td>C</td>
+                                    <td class="has-text-right">Delete until end of line and insert</td>
+                                </tr>
+                                <tr>
+                                    <td>r</td>
+                                    <td class="has-text-right">Replace one character</td>
+                                </tr>
+                                <tr>
+                                    <td>R</td>
+                                    <td class="has-text-right">Enter Replace mode</td>
+                                </tr>
+                                <tr>
+                                    <td>u</td>
+                                    <td class="has-text-right">Undo changes</td>
+                                </tr>
+                                <tr>
+                                    <td>C-R</td>
+                                    <td class="has-text-right">Redo changes</td>
+                                </tr>
+                            </table>
+                        </div>
+                    </div>
+                    <div class="column">
+                        <div class="heading block">
+                            <h5 class="is-size-5 is-capitalized has-text-link">Navigating</h5>
+                        </div>
+                        <div class="box">
+                            <table class="table is-fullwidth is-striped is-hoverable">
+                                <tr>
+                                    <td>h &nbsp;&nbsp; j &nbsp;&nbsp; k &nbsp;&nbsp; l</td>
+                                    <td class="has-text-right">Arrow keys</td>
+                                </tr>
+                                <tr>
+                                    <td>C-U / C-D</td>
+                                    <td class="has-text-right">Half-page up/down</td>
+                                </tr>
+                                <tr>
+                                    <td>C-B / C-F</td>
+                                    <td class="has-text-right">Page up/down</td>
+                                </tr>
+                                <tr>
+                                    <td>b / w</td>
+                                    <td class="has-text-right">Previous/next word</td>
+                                </tr>
+                                <tr>
+                                    <td>ge / e</td>
+                                    <td class="has-text-right">Previous/next end of word</td>
+                                </tr>
+                                <tr>
+                                    <td>0 (zero)</td>
+                                    <td class="has-text-right">Start of line</td>
+                                </tr>
+                                <tr>
+                                    <td>^</td>
+                                    <td class="has-text-right">Start of line (after whitespace)</td>
+                                </tr>
+                                <tr>
+                                    <td>$</td>
+                                    <td class="has-text-right">End of line</td>
+                                </tr>
+                                <tr>
+                                    <td>fc</td>
+                                    <td class="has-text-right">Go forward to character c</td>
+                                </tr>
+                                <tr>
+                                    <td>FC</td>
+                                    <td class="has-text-right">Go backward to character c</td>
+                                </tr>
+                                <tr>
+                                    <td>gg</td>
+                                    <td class="has-text-right">First line</td>
+                                </tr>
+                                <tr>
+                                    <td>G</td>
+                                    <td class="has-text-right">Last line</td>
+                                </tr>
+                                <tr>
+                                    <td>:n</td>
+                                    <td class="has-text-right">Go to line n</td>
+                                </tr>
+                                <tr>
+                                    <td>nG</td>
+                                    <td class="has-text-right">Go to line n</td>
+                                </tr>
+                                <tr>
+                                    <td>zz</td>
+                                    <td class="has-text-right">Center this line</td>
+                                </tr>
+                                <tr>
+                                    <td>zt</td>
+                                    <td class="has-text-right">Top this line</td>
+                                </tr>
+                                <tr>
+                                    <td>zb</td>
+                                    <td class="has-text-right">Bottom this line</td>
+                                </tr>
+                                <tr>
+                                    <td>zt</td>
+                                    <td class="has-text-right">Top this line</td>
+                                </tr>
+                                <tr>
+                                    <td>zz</td>
+                                    <td class="has-text-right">Center this line</td>
+                                </tr>
+                                <tr>
+                                    <td>zt</td>
+                                    <td class="has-text-right">Top this line</td>
+                                </tr>
+                                <tr>
+                                    <td>zb</td>
+                                    <td class="has-text-right">Bottom this line</td>
+                                </tr>
+                                <tr>
+                                    <td>H</td>
+                                    <td class="has-text-right">Move to top of screen</td>
+                                </tr>
+                                <tr>
+                                    <td>M</td>
+                                    <td class="has-text-right">Move to middle of screen</td>
+                                </tr>
+                                <tr>
+                                    <td>L</td>
+                                    <td class="has-text-right">Move to bottom of screen
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>n</td>
+                                    <td class="has-text-right">Next matching search pattern
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>N</td>
+                                    <td class="has-text-right">Previous match
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>*</td>
+                                    <td class="has-text-right">Next whole word under cursor
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>#</td>
+                                    <td class="has-text-right">Previous whole word under cursor
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>:tabedit [file]</td>
+                                    <td class="has-text-right">Edit file in a new tab
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>:tabfind [file]</td>
+                                    <td class="has-text-right">Open file if exists in new tab
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>:tabclose</td>
+                                    <td class="has-text-right">Close current tab
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>:tabs </td>
+                                    <td class="has-text-right">List all tabs
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>:tabfirst </td>
+                                    <td class="has-text-right">Go to first tab
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>:tablast</td>
+                                    <td class="has-text-right">Go to last tab
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>:tabn</td>
+                                    <td class="has-text-right">Go to next tab
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>:tabp</td>
+                                    <td class="has-text-right">Go to previous tab
+                                    </td>
+                                </tr>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Vim Cheat Sheets Overviw Ends -->
+            <!--<div class="panel-block">
+              <p class="control has-icons-left">
+                <input class="input" type="text" placeholder="Search">
+                <span class="icon is-left">
+                  <i class="fas fa-search" aria-hidden="true"></i>
+                </span>
+              </p>
+            </div> 
+            <p class="panel-tabs">
+              <a class="is-active">All</a>
+              <a>Public</a>
+              <a>Private</a>
+              <a>Sources</a>
+              <a>Forks</a>
+            </p>
+            <a class="panel-block is-active">
+              <span class="panel-icon">
+                <i class="fas fa-book" aria-hidden="true"></i>
+              </span>
+              bulma
+            </a>
+            <a class="panel-block">
+              <span class="panel-icon">
+                <i class="fas fa-book" aria-hidden="true"></i>
+              </span>
+              marksheet
+            </a>
+            <a class="panel-block">
+              <span class="panel-icon">
+                <i class="fas fa-book" aria-hidden="true"></i>
+              </span>
+              minireset.css
+            </a>
+            <a class="panel-block">
+              <span class="panel-icon">
+                <i class="fas fa-book" aria-hidden="true"></i>
+              </span>
+              jgthms.github.io
+            </a>
+            <a class="panel-block">
+              <span class="panel-icon">
+                <i class="fas fa-code-branch" aria-hidden="true"></i>
+              </span>
+              daniellowtw/infboard
+            </a>
+            <a class="panel-block">
+              <span class="panel-icon">
+                <i class="fas fa-code-branch" aria-hidden="true"></i>
+              </span>
+              mojs
+            </a>
+            <label class="panel-block">
+              <input type="checkbox">
+              remember me
+            </label>
+            <div class="panel-block">
+              <button class="button is-link is-outlined is-fullwidth">
+                Reset all filters
+              </button>
+            </div>
+          </nav> -->
+    </div>
+</body>
+
+</html>

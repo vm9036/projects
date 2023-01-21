@@ -1,0 +1,362 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vim Cheetsheet</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.3/css/bulma.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" />
+</head>
+<body>
+    <div class="container-fluid has-background-light">
+        <!--Main heading section -->
+        <div class="section">
+            <h1 class="title has-text-left has-text-grey-dark">Vim Cheetsheet</h1>
+            <p class="content">Vim is a very efficient text editor.This reference was made for Vim 8.0.<br>
+                For shortcut notation, see :help key-notation.</p>
+        </div>
+        <!-- content section -->
+        <div class="section">
+            <div class="columns">
+                <div class="column">
+                    <!-- first-box -->
+                    <div class="first-box">
+                        <div class="heading block">
+                            <h5 class="is-size-5 is-capitalized has-text-link">exiting</h5>
+                        </div>
+                        <div class="box">
+                            <table class="table is-fullwidth is-striped is-hoverable">
+                                <tr>
+                                    <td>: qa</td>
+                                    <td class="has-text-right">close all files</td>
+                                </tr>
+                                <tr>
+                                    <td>: qa !</td>
+                                    <td class="has-text-right">Close all files, abandon changes</td>
+                                </tr>
+                                <tr>
+                                    <td>: w</td>
+                                    <td class="has-text-right">Save</td>
+                                </tr>
+                                <tr>
+                                    <td>: wq / : x</td>
+                                    <td class="has-text-right">Save and close file</td>
+                                </tr>
+                                <tr>
+                                    <td>: q</td>
+                                    <td class="has-text-right">Close file</td>
+                                </tr>
+                                <tr>
+                                    <td>: q !</td>
+                                    <td class="has-text-right">Close file, abandon changes</td>
+                                </tr>
+                                <tr>
+                                    <td>ZZ</td>
+                                    <td class="has-text-right">Save and quit</td>
+                                </tr>
+                                <tr>
+                                    <td>ZQ</td>
+                                    <td class="has-text-right">Quit without checking changes</td>
+                                </tr>
+                            </table>
+                        </div>
+                    </div>
+
+                    <!-- second-box -->
+                    <div class="second-box">
+                        <div class="heading block mt-4">
+                            <h5 class="is-size-5 is-capitalized has-text-link">Exiting insert mode</h5>
+                        </div>
+                        <div class="box">
+                            <table class="table is-fullwidth is-striped is-hoverable">
+                                <tbody>
+                                    <tr>
+                                        <td> Esc / C-[ </td>   
+                                        <td class="has-text-right">Exit insert mode</td>
+                                    </tr>
+                                    <tr>
+                                        <td> [C-C] </td>
+                                        <td class="has-text-right">Exit insert mode, and abort current command</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+
+                    <!-- third box -->
+                    <div class="second-box">
+                        <div class="heading block mt-4">
+                            <h5 class="is-size-5 is-capitalized has-text-link">Clipboard</h5>
+                        </div>
+                        <div class="box">
+                            <table class="table is-fullwidth is-striped is-hoverable">
+                                <tr>
+                                    <td>x</td>   
+                                    <td class="has-text-right">Delete character</td>
+                                </tr>
+                                <tr>
+                                    <td>dd    </td>
+                                    <td class="has-text-right">Delete line (Cut)</td>
+                                </tr>
+                                <tr>
+                                    <td>yy</td>
+                                    <td class="has-text-right">Yank line (Copy)</td>
+                                </tr>
+                                <tr>
+                                    <td>p</td>
+                                    <td class="has-text-right">paste</td>
+                                </tr>
+                                <tr>
+                                    <td>P</td>
+                                    <td class="has-text-right">paste before</td>
+                                </tr>
+                                <tr>
+                                    <td>"*p / "+p</td>
+                                    <td class="has-text-right">Paste from system clipboard</td>
+                                </tr>
+                                <tr>
+                                    <td>"*y / "+y</td>
+                                    <td class="has-text-right">Paste to system clipboard</td>
+                                </tr>
+                            </table>
+                        </div>
+                    </div>
+
+                </div>
+                <div class="column">
+                    <div class="heading block">
+                        <h5 class="is-size-5 is-capitalized has-text-link">exiting</h5>
+                    </div>
+                    <div class="box">
+                        <table class="table is-fullwidth is-striped is-hoverable">
+                            <tr>
+                                <td>: qa</td>
+                                <td class="has-text-right">close all files</td>
+                            </tr>
+                            <tr>
+                                <td>: qa !</td>
+                                <td class="has-text-right">Close all files, abandon changes</td>
+                            </tr>
+                            <tr>
+                                <td>: w</td>
+                                <td class="has-text-right">Save</td>
+                            </tr>
+                            <tr>
+                                <td>: wq / : x</td>
+                                <td class="has-text-right">Save and close file</td>
+                            </tr>
+                            <tr>
+                                <td>: q</td>
+                                <td class="has-text-right">Close file</td>
+                            </tr>
+                            <tr>
+                                <td>: q !</td>
+                                <td class="has-text-right">Close file, abandon changes</td>
+                            </tr>
+                            <tr>
+                                <td>ZZ</td>
+                                <td class="has-text-right">Save and quit</td>
+                            </tr>
+                            <tr>
+                                <td>ZQ</td>
+                                <td class="has-text-right">Quit without checking changes</td>
+                            </tr>
+                        </table>
+                    </div>
+                </div>
+                <div class="column"></div>
+            </div>
+        </div>
+
+        <!-- Footer section -->
+        <div class="section">
+            <section class="section has-background-light">
+
+                <hr class="has-background-grey-lighter">
+        
+                <div class="comment">
+                    <span class="icon-text">
+                        <span class="icon has-text-black">
+                            <i class="fas fa-hand-point-right"></i>
+                        </span>
+                        <span> 11 <strong> Comments </strong> for this cheatsheet. <u> Write yours! </u> </span>
+                    </span>
+                </div>
+                <hr class="has-background-grey-lighter">
+        
+                <div class="box">
+                    <div class="columns">
+                        <div class="column">
+                            <div class="field">
+                                <p class="control has-icons-left has-icons-right">
+                                    <input class="input is-hovered" type="text" placeholder="Search Cheetshets">
+                                    <span class="icon is-right">
+                                        <i class="fas fa-search fa-lg"></i>
+                                    </span>
+                                </p>
+                            </div>
+                        </div>
+                        <div class="column">
+                            <div class="tabs is-centered">
+                                <ul>
+                                    <li>
+                                        <a>
+                                            <span class="icon has-text-link-dark"><i class="fas fa-home fa-lg"
+                                                    aria-hidden="true"></i></span>
+                                            <span class="has-text-link-dark">Home</span>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a>
+                                            <span class="icon has-text-info-dark"><i class="far fa-file-alt fa-lg"
+                                                    aria-hidden="true"></i></span>
+                                            <span class="has-text-info-dark">Documents</span>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <hr class="has-background-grey-lighter">
+        
+                <div class="columns">
+                    <div class="column is-3 py-6">
+                        <div class="box py-6 has-background-grey-lighter has-text-centered">
+                            <span class="icon py-5 is-size-1">
+                                <i class="fas fa-chevron-circle-left"></i>
+                            </span>
+                            <br>
+                            <span class="block has-text-centered">Over 352 curated cheatsheets, by developers for
+                                developers.</span>
+                            <br>
+                            <br>
+                            <span class="notification py-3 is-small">Devhints.home</span>
+                        </div>
+                    </div>
+                    <div class="column is-5">
+                        <h3 class="title is-4 has-text-centered"> Other Vim cheatsheets</h3>
+                        <hr class="has-background-grey-lighter">
+                        <div class="columns">
+                            <div class="column">
+                                <div class="box has-background-primary-light">
+                                    <span class="subtitle is-6">Vimdiff</span>
+                                    <span>Cheetsheet
+                                        <div class="icon">
+                                            <i class="fas fa-circle is-size-7"></i>
+                                        </div>
+                                    </span>
+                                </div>
+                            </div>
+                            <div class="column">
+                                <div class="box has-background-warning-light">
+                                    <span class="subtitle is-size-6">Vim Scripting</span>
+                                    <span>Cheetsheet
+                                        <div class="icon">
+                                            <i class="fas fa-circle is-size-7"></i>
+                                        </div>
+                                    </span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="columns">
+                            <div class="column">
+                                <div class="box has-background-success-light">
+                                    <span class="subtitle is-6">PostgreSQL JSON</span>
+                                    <span>Cheetsheet
+                                        <div class="icon is-primary">
+                                            <i class="fas fa-circle is-size-7"></i>
+                                        </div>
+                                    </span>
+                                </div>
+                            </div>
+                            <div class="column">
+                                <div class="box has-background-grey-lighter">
+                                    <span class="subtitle is-6">PostgreSQL</span>
+                                    <span>Cheetsheet
+                                        <div class="icon">
+                                            <i class="fas fa-circle is-size-7"></i>
+                                        </div>
+                                    </span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="column is-5">
+                        <h3 class="title is-4 has-text-centered"> Top cheatsheets</h3>
+                        <hr class="has-background-grey-lighter">
+                        <div class="columns">
+                            <div class="column">
+                                <div class="box has-background-grey-lighter">
+                                    <span class="subtitle is-6">React Js</span>
+                                    <span>Cheetsheet
+                                        <div class="icon">
+                                            <i class="fas fa-circle is-size-7"></i>
+                                        </div>
+                                    </span>
+                                </div>
+                            </div>
+                            <div class="column">
+                                <div class="box has-background-warning-light">
+                                    <span class="subtitle is-6">Elixir</span>
+                                    <span>Cheetsheet
+                                        <div class="icon">
+                                            <i class="fas fa-circle is-size-7"></i>
+                                        </div>
+                                    </span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="columns">
+                            <div class="column">
+                                <div class="box has-background-grey-light">
+                                    <span class="subtitle is-6">ES2015+</span>
+                                    <span>Cheetsheet
+                                        <div class="icon">
+                                            <i class="fas fa-circle is-size-7"></i>
+                                        </div>
+                                    </span>
+                                </div>
+                            </div>
+                            <div class="column">
+                                <div class="box has-background-black-light">
+                                    <span class="subtitle is-6">Vimdiff</span>
+                                    <span>Cheetsheet
+                                        <div class="icon">
+                                            <i class="fas fa-circle is-size-7"></i>
+                                        </div>
+                                    </span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="columns">
+                            <div class="column">
+                                <div class="box has-background-link-light">
+                                    <span class="subtitle is-6">Vim</span>
+                                    <span>Cheetsheet
+                                        <div class="icon">
+                                            <i class="fas fa-circle is-size-7"></i>
+                                        </div>
+                                    </span>
+                                </div>
+                            </div>
+                            <div class="column">
+                                <div class="box has-background-success-light">
+                                    <span class="subtitle is-6">Vim script</span>
+                                    <span>Cheetsheet
+                                        <div class="icon">
+                                            <i class="fas fa-circle is-size-7"></i>
+                                        </div>
+                                    </span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+        
+    </div>
+</body>
+</html>

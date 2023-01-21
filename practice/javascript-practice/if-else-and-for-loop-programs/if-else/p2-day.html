@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Day Program</title>
+</head>
+<body>
+    <h1>Day Program </h1>
+    <script>
+        // Day Program
+        // If day 1 is Sunday, then 
+        // if day 2 is Monday, then
+        // if day 3 is Tuesday, then
+        // if day 4 is Wednesday, then
+        // if day 5 is Thursday, then
+        // if day 6 is Friday, then
+        // if day 7 is Saturday, then
+        // otherwise: Sorry Better Luck Next Day!
+
+        const d = new Date();
+        let day = d.getDay();
+
+        
+        if (day == 1) {
+            console.log("Today Is Monday");
+        }
+        else if (day == 2) {
+            console.log("Today Is Tuesday");
+        }
+        else if (day == 3) {
+            console.log("Today Is Wednesday");
+        }
+        else if (day == 4) {
+            console.log("Today Is Thursday");
+        }
+        else if (day == 5) {
+            console.log("Today Is Friday");
+        }
+        else if (day == 6) {
+            console.log("Today Is Saturday");
+        }
+        else if (day == 7) {
+            console.log("Today Is Sunday");
+        }
+        else {
+            console.log("Sorry Better Luck Next Day!!!!");
+        }
+        
+    </script>
+</body>
+
+</html>

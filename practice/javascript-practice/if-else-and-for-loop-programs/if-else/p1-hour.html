@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hour Program</title>
+</head>
+
+<body>
+    <h1>Hour Program</h1>
+    <script>
+        // Hour Program
+        // If hour between 6am and 12pm: Good Morning!
+        // If it is between 12pm and 6pm: Good afternoon!
+        // otherwise: Good evening!
+        const date = new Date();
+        let hour = date.getHours();
+        // let hour = 16;
+        if (hour >= 6 && hour <= 12) {
+            console.log("Good Morning" + " " + hour);
+        }
+        else if (hour >= 12 && hour <= 18) {
+            console.log("Good Afternoon" + " " + hour);
+        }
+        else {
+            console.log("Good Evening" + " " + hour);
+        }
+    </script>
+</body>
+
+</html>

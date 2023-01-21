@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Pattern A</title>
+</head>
+<body>
+	<!-- Pattern A Starts-->
+	<h1>Pattern A</h1>
+	<script type="text/javascript">
+		for(let i=1; i<=5; i++)
+		{
+			for(let j=1; j<=i; j++)
+			{
+				if(i==3 && j==2)
+				{
+					document.write("A");
+					// console.log("A");
+				}
+				else
+				{
+					document.write("*");
+					// console.log("*");
+				}
+				document.write("\t");
+				// console.log("\t");
+			}
+			document.write("<br>");
+			// console.log("\n");
+		}
+	</script>
+	<!-- Patterbn A Ends -->
+
+	<!-- Pattern B Starts-->
+	<h1>Pattern B</h1>
+	<script type="text/javascript">
+		for(let i=5; i>=1; i++)
+		{
+			for(let j=5; j>=i; j++)
+			{
+				if(i==3 && j==2)
+				{
+					document.write("B");
+					// console.log("A");
+				}
+				else
+				{
+					document.write("*");
+					// console.log("*");
+				}
+				document.write("\t");
+				// console.log("\t");
+			}
+			document.write("<br>");
+			// console.log("\n");
+		}
+	</script>		
+	<!-- Patterbn B Ends -->
+</body>
+</html>
