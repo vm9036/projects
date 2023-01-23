@@ -3,17 +3,17 @@
 
 <head>
 
-  <title> Test Case </title>
-  <!-- bulma css -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.9.4/css/bulma.min.css" />
-  <style>
-    /* *,
+    <title> Test Case </title>
+    <!-- bulma css -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.9.4/css/bulma.min.css" />
+    <style>
+        /* *,
     *:before,
     *:after {
       box-sizing: border-box;
     } */
 
-    /* * {
+        /* * {
       position: relative;
       margin: 0;
       padding: 0;
@@ -22,7 +22,7 @@
       transition: all ease .4s;
     } */
 
-    /* html,
+        /* html,
     body {
       width: 100%;
       height: 100%;
@@ -33,7 +33,7 @@
       font-size: 18px;
     } */
 
-    /* h1 {
+        /* h1 {
       padding-top: 40px;
 
       color: #ccc;
@@ -43,89 +43,89 @@
       text-shadow: rgba(0, 0, 0, 0.6) 1px 0, rgba(0, 0, 0, 0.6) 1px 0, rgba(0, 0, 0, 0.6) 0 1px, rgba(0, 0, 0, 0.6) 0 1px;
     } */
 
-    .nav {
-      margin: 0 auto;
-      width: 100%;
-      min-height: auto;
-    }
+        .nav {
+            margin: 20px auto;
+            width: 100%;
+            min-height: auto;
+        }
 
-    .nav ul {
-      position: relative;
-      /* padding-top: 20px; */
-    }
+        .nav ul {
+            position: relative;
+            padding-top: 20px;
+        }
 
-    .nav li {
-      position: relative;
-      padding: 10px 3px 0 3px;
-      float: left;
-      text-align: center;
-      list-style-type: none;
-    }
+        .nav li {
+            position: relative;
+            padding: 10px 3px 0 3px;
+            float: left;
+            text-align: center;
+            list-style-type: none;
+        }
 
-    .nav li::before,
-    .nav li::after {
-      content: '';
-      position: absolute;
-      top: 0;
-      right: 50%;
-      width: 50%;
-      height: 10px;
-      border-top: 1px solid #ccc;
-    }
+        .nav li::before,
+        .nav li::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            right: 50%;
+            width: 50%;
+            height: 10px;
+            border-top: 1px solid #ccc;
+        }
 
-    .nav li::after {
-      left: 50%;
-      right: auto;
-      border-left: 1px solid #ccc;
-    }
+        .nav li::after {
+            left: 50%;
+            right: auto;
+            border-left: 1px solid #ccc;
+        }
 
-    .nav li:only-child::after,
-    .nav li:only-child::before {
-      content: '';
-      display: none;
-    }
+        .nav li:only-child::after,
+        .nav li:only-child::before {
+            content: '';
+            display: none;
+        }
 
-    .nav li:only-child {
-      padding-top: 0;
-    }
+        .nav li:only-child {
+            padding-top: 0;
+        }
 
-    .nav li:first-child::before,
-    .nav li:last-child::after {
-      border: 0 none;
-    }
+        .nav li:first-child::before,
+        .nav li:last-child::after {
+            border: 0 none;
+        }
 
-    .nav li:last-child::before {
-      border-right: 1px solid #ccc;
-      border-radius: 0 5px 0 0;
-    }
+        .nav li:last-child::before {
+            border-right: 1px solid #ccc;
+            border-radius: 0 5px 0 0;
+        }
 
-    .nav li:first-child::after {
-      border-radius: 5px 0 0 0;
-    }
+        .nav li:first-child::after {
+            border-radius: 5px 0 0 0;
+        }
 
-    .nav ul ul::before {
-      content: '';
-      position: absolute;
-      top: 0;
-      left: 50%;
-      border-left: 1px solid #ccc;
-      width: 0;
-      height: 20px;
-    }
+        .nav ul ul::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 50%;
+            border-left: 1px solid #ccc;
+            width: 0;
+            height: 20px;
+        }
 
-    .nav li a {
-      display: inline-block;
-      padding: 5px 10px;
-      border-radius: 5px;
-      border: 1px solid #ccc;
-      text-decoration: none;
-      /* text-transform: uppercase; */
-      color: #ccc;
-      font-family: arial, verdana, tahoma;
-      font-size: 11px;
-    }
+        .nav li a {
+            display: inline-block;
+            padding: 5px 10px;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+            text-decoration: none;
+            /* text-transform: uppercase; */
+            color: #ccc;
+            font-family: arial, verdana, tahoma;
+            font-size: 11px;
+        }
 
-    /* .nav li a:hover,
+        /* .nav li a:hover,
     .nav li a:hover+ul li a {
       color: #000;
       background: #c8e4f8;
@@ -140,1318 +140,1920 @@
       border-color: #94a0b4;
     } */
 
-    .extrabox {
-      width: 100%;
-      float: left;
-      height: auto;
-    }
-  </style>
+        .extrabox {
+            width: 100%;
+            float: left;
+            height: auto;
+        }
+    </style>
 
 </head>
 
 <body>
 
-  <div class="container is-fluid has-background-lighter">
-    <!--====== Main heading section ======-->
-    <div class="container is-fluid">
-      <h1 class="title mb-1">Css Selector Cheet sheet</h1>
-      <div class="content">
-        <p class="is-size-5 ml-1">CSS selector cheat sheet is a document that provides help in understanding and
-          using CSS selectors. It usually includes a brief introduction to selectors, followed by a comprehensive
-          list of all selectors available in a given version of CSS, with examples and brief explanations.</p>
-      </div>
-    </div>
-    <!--====== content section ======-->
-    <div class="container is-fluid mt-2">
-      <hr class="has-background-dark">
-      <h1 class="title 
+    <div class="container is-fluid has-background-lighter">
+        <!--====== Main heading section ======-->
+        <div class="container is-fluid">
+            <h1 class="title mb-1">Css Selector Cheet sheet</h1>
+            <div class="content">
+                <p class="is-size-5 ml-1">CSS selector cheat sheet is a document that provides help in understanding and
+                    using CSS selectors. It usually includes a brief introduction to selectors, followed by a
+                    comprehensive
+                    list of all selectors available in a given version of CSS, with examples and brief explanations.</p>
+            </div>
+        </div>
+        <!--====== content section ======-->
+        <div class="container is-fluid mt-2">
+            <hr class="has-background-dark">
+            <h1 class="title 
       has-text-centered">Mix Content Section</h1>
-      <hr class="has-background-dark">
-      <div class="columns">
-        <div class="column is-6">
-          <!--====== Clipboard Starts ======-->
-          <div class="panel is-primary">
-            <div class="panel-heading">
-              <h5 class="is-size-5 is-capitalized">Types Of Selectors</h5>
-            </div>
-            <div class="box">
-              <div class="columns">
+            <hr class="has-background-dark">
+            <div class="columns">
                 <div class="column is-6">
-                  <div class="message is-success">
-                    <!-- <div class="message-header">
-                      Structure :
-                    </div> -->
-                    <div class="message-body box extrabox has-background-light">
-                      <nav class="nav">
-                        <ul>
-                          <li>
-                            <a href="#" class="button">a</a>
-                            <ul>
-                              <li>
-                                <a href="#" class="button">B</a>
-                                <ul>
-                                  <li>
-                                    <a href="#" class="button">a</a>
-                                  </li>
-                                  <li>
-                                    <a href="#" class="button">B</a>
-                                  </li>
-                                </ul>
-                              </li>
-                              <li>
-                                <a href="#" class="button">C</a>
-                                <ul>
-                                  <li>
-                                    <a href="#" class="button">a</a>
-                                  </li>
-                                  <li>
-                                    <a href="#" class="button">b</a>
-                                  </li>
-                                </ul>
-                              </li>
-                            </ul>
-                          </li>
-                        </ul>
-                      </nav>
-                    </div>
-                  </div>
-                </div>
-                <div class="column is-6">
-                  <div class="message is-info">
-                    <!-- <div class="message-header">
+                    <!--====== Clipboard Starts ======-->
+                    <div class="panel is-primary">
+                        <div class="panel-heading">
+                            <h5 class="is-size-5 is-capitalized">Types Of Selectors</h5>
+                        </div>
+                        <div class="box">
+                            <div class="columns">
+                                <div class="column is-6">
+                                    <div class="message is-info">
+                                        <!-- <div class="message-header">
                       Content :
                     </div> -->
-                    <div class="message-body">
-                      <p class="content">Child Selector: a &gt; b { }</p>
-                    </div>
-                  </div>
-                  <div class="message is-link">
-                    <!-- <div class="message-header">
+                                        <div class="message-body">
+                                            <p class="content">Child Selector: a &gt; b { }</p>
+                                        </div>
+                                    </div>
+                                    <div class="message is-link">
+                                        <!-- <div class="message-header">
                       Code :
                     </div> -->
-                    <div class="message-body">
-                      <p class="content"></p>
-                      a > b {
-                      child selector <mark>b</mark> selects all elements that are the children of <mark>a</mark>
-                      specified element
-                      }
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <div class="panel is-primary">
-            <div class="panel-heading">
-              <h5 class="is-size-5 is-capitalized">Basic Selectors</h5>
-            </div>
-            <div class="box">
-              <div class="columns">
-                <div class="column is-4">
-                  <div class="message is-success ">
-                    <!-- <div class="message-header">
-                      Class Selector :
-                    </div> -->
-                    <div class="message-body box mt-6 extrabox has-background-light">
-                      <h1 class="subtitle">Class Selector :</h1>
-                      <nav class="nav">
-                        <ul>
-                          <li>
-                            <a href="#" class="button is-primary">a</a>
-                            <!-- <ul>
-                              <li>
-                                <a href="#">B</a>
-                                <ul>
-                                  <li>
-                                    <a href="#">a</a>
-                                  </li>
-                                  <li>
-                                    <a href="#">B</a>
-                                  </li>
-                                </ul>
-                              </li>
-                              <li>
-                                <a href="#">C</a>
-                                <ul>
-                                  <li>
-                                    <a href="#">a</a>
-                                  </li>
-                                  <li>
-                                    <a href="#">b</a>
-                                  </li>
-                                </ul>
-                              </li>
-                            </ul> -->
-                            <a href="#" class="button">b</a>
-                            <a href="#" class="button">c</a>
-                          </li>
-                        </ul>
-                      </nav>
-                    </div>
-
-                    <div class="message-body box mt-6 extrabox has-background-light">
-                      <h1 class="subtitle">#id Selector :</h1>
-                      <nav class="nav">
-                        <ul>
-                          <li>
-                            <a href="#" class="button is-primary">a</a>
-                            <!-- <ul>
-                              <li>
-                                <a href="#">B</a>
-                                <ul>
-                                  <li>
-                                    <a href="#">a</a>
-                                  </li>
-                                  <li>
-                                    <a href="#">B</a>
-                                  </li>
-                                </ul>
-                              </li>
-                              <li>
-                                <a href="#">C</a>
-                                <ul>
-                                  <li>
-                                    <a href="#">a</a>
-                                  </li>
-                                  <li>
-                                    <a href="#">b</a>
-                                  </li>
-                                </ul>
-                              </li>
-                            </ul> -->
-                            <a href="#" class="button">b</a>
-                            <a href="#" class="button">c</a>
-                          </li>
-                        </ul>
-                      </nav>
-                    </div>
-                  </div>
-                </div>
-                <div class="column is-8">
-                  <div class="box">
-                    <ul>
-                      <li>
-                        <div class="tags">
-                          <div class="tag is-dark is-medium">
-                            <span>.class</span>
-                          </div>
-                          <div class="tag is-light is-medium">
-                            <span>Selects all elements with class="a"</span>
-                          </div>
-                        </div>
-                      </li>
-                    </ul>
-                  </div>
-                  <div class="message is-link">
-                    <div class="message-body">
-                      <p>
-                        .a {<br>
-                        background-color: yellow;<br>
-                        }
-                      </p>
-                    </div>
-                  </div>
-                  <!-- *************************** -->
-                  <div class="box">
-                    <ul>
-                      <li>
-                        <div class="tags">
-                          <div class="tag is-dark is-medium">
-                            <span>#id</span>
-                          </div>
-                          <div class="tag is-light is-medium">
-                            <span>Selects the element with id="a"</span>
-                          </div>
-                        </div>
-                      </li>
-                    </ul>
-                  </div>
-                  <div class="message is-link">
-                    <div class="message-body">
-                      <p>
-                        #a {<br>
-                        background-color: yellow;<br>
-                        }
-                      </p>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <!-- **********//************ -->
-
-          <div class="panel is-primary">
-            <div class="panel-heading">
-              <h5 class="is-size-5 is-capitalized">Basic Selectors</h5>
-            </div>
-            <div class="box">
-              <!-- Universal Selector -->
-              <div class="columns">
-                <div class="column">
-                  <div class="box">
-                    <ul>
-                      <li>
-                        <div class="tags">
-                          <div class="tag is-dark is-medium">
-                            <span> * </span>
-                          </div>
-                          <div class="tag is-light is-medium">
-                            <span>Select all elements</span>
-                          </div>
-                        </div>
-                      </li>
-                    </ul>
-                  </div>
-                </div>
-              </div>
-              <div class="columns">
-                <div class="column is-6">
-                  <div class="message is-success ">
-                    <!-- <div class="message-header">
-                      Class Selector :
-                    </div> -->
-
-                    <div class="message-body box extrabox has-background-light">
-                      <h1 class="subtitle">Universal Selector [ * ] :</h1>
-                      <nav class="nav">
-                        <ul>
-                          <li>
-                            <a href="#" class="button is-primary">a</a>
-                            <!-- <ul>
-                              <li>
-                                <a href="#">B</a>
-                                <ul>
-                                  <li>
-                                    <a href="#">a</a>
-                                  </li>
-                                  <li>
-                                    <a href="#">B</a>
-                                  </li>
-                                </ul>
-                              </li>
-                              <li>
-                                <a href="#">C</a>
-                                <ul>
-                                  <li>
-                                    <a href="#">a</a>
-                                  </li>
-                                  <li>
-                                    <a href="#">b</a>
-                                  </li>
-                                </ul>
-                              </li>
-                            </ul> -->
-                            <a href="#" class="button is-primary">b</a>
-                            <a href="#" class="button is-primary">c</a>
-                          </li>
-                        </ul>
-                      </nav>
-                    </div>
-                  </div>
-                </div>
-                <div class="column is-6">
-                  <div class="message is-link">
-                    <div class="message-body">
-                      <p>
-                        * {<br>
-                        color: yellow;<br>
-                        }
-                      </p>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <!-- ***********\\************//********** -->
-
-              <!-- Type Selector -->
-              <div class="columns">
-                <div class="column">
-                  <div class="box">
-                    <ul>
-                      <li>
-                        <div class="tags">
-                          <div class="tag is-dark is-medium">
-                            <span> div </span>
-                          </div>
-                          <div class="tag is-light is-medium">
-                            <span>Select elements of that type [Select div elements]</span>
-                          </div>
-                        </div>
-                      </li>
-                    </ul>
-                  </div>
-                </div>
-              </div>
-              <div class="columns">
-                <div class="column is-6">
-                  <div class="message is-success ">
-                    <!-- <div class="message-header">
-                      Class Selector :
-                    </div> -->
-
-                    <div class="message-body box extrabox has-background-light">
-                      <h1 class="subtitle">Type Selector :</h1>
-                      <nav class="nav">
-                        <ul>
-                          <li>
-                            <a href="#" class="button">a</a>
-                            <!-- <ul>
-                              <li>
-                                <a href="#">B</a>
-                                <ul>
-                                  <li>
-                                    <a href="#">a</a>
-                                  </li>
-                                  <li>
-                                    <a href="#">B</a>
-                                  </li>
-                                </ul>
-                              </li>
-                              <li>
-                                <a href="#">C</a>
-                                <ul>
-                                  <li>
-                                    <a href="#">a</a>
-                                  </li>
-                                  <li>
-                                    <a href="#">b</a>
-                                  </li>
-                                </ul>
-                              </li>
-                            </ul> -->
-                            <a href="#" class="button is-primary">div</a>
-                            <a href="#" class="button">c</a>
-                            <a href="#" class="button is-primary">div</a>
-                          </li>
-                        </ul>
-                      </nav>
-                    </div>
-                  </div>
-                </div>
-                <div class="column is-6">
-                  <div class="message is-link">
-                    <div class="message-body">
-                      <p>
-                        div {<br>
-                        color: yellow;<br>
-                        }
-                      </p>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <!-- ***********\\************//********** -->
-
-              <!-- Class Selector -->
-              <div class="columns">
-                <div class="column">
-                  <div class="box">
-                    <ul>
-                      <li>
-                        <div class="tags">
-                          <div class="tag is-dark is-medium">
-                            <span>.class</span>
-                          </div>
-                          <div class="tag is-light is-medium">
-                            <span>Selects the element with class="a"</span>
-                          </div>
-                        </div>
-                      </li>
-                    </ul>
-                  </div>
-                </div>
-              </div>
-              <div class="columns">
-                <div class="column is-6">
-                  <div class="message is-success ">
-                    <!-- <div class="message-header">
-                      Class Selector :
-                    </div> -->
-                    <div class="message-body box extrabox has-background-light">
-                      <h1 class="subtitle">Class Selector :</h1>
-                      <nav class="nav">
-                        <ul>
-                          <li>
-                            <a href="#" class="button is-primary">a</a>
-                            <!-- <ul>
-                              <li>
-                                <a href="#">B</a>
-                                <ul>
-                                  <li>
-                                    <a href="#">a</a>
-                                  </li>
-                                  <li>
-                                    <a href="#">B</a>
-                                  </li>
-                                </ul>
-                              </li>
-                              <li>
-                                <a href="#">C</a>
-                                <ul>
-                                  <li>
-                                    <a href="#">a</a>
-                                  </li>
-                                  <li>
-                                    <a href="#">b</a>
-                                  </li>
-                                </ul>
-                              </li>
-                            </ul> -->
-                            <a href="#" class="button">b</a>
-                            <a href="#" class="button">c</a>
-                          </li>
-                        </ul>
-                      </nav>
-                    </div>
-                  </div>
-
-                </div>
-                <div class="column is-6">
-                  <div class="message is-link">
-                    <div class="message-body">
-                      <p>
-                        #a {<br>
-                        color: yellow;<br>
-                        }
-                      </p>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <!-- **********\\**************//********** -->
-
-              <!-- Id Selector -->
-              <div class="columns">
-                <div class="column">
-                  <div class="box">
-                    <ul>
-                      <li>
-                        <div class="tags">
-                          <div class="tag is-dark is-medium">
-                            <span>#id</span>
-                          </div>
-                          <div class="tag is-light is-medium">
-                            <span>Selects the element with id="a"</span>
-                          </div>
-                        </div>
-                      </li>
-                    </ul>
-                  </div>
-                </div>
-              </div>
-              <div class="columns">
-                <div class="column is-6">
-                  <div class="message is-success ">
-                    <!-- <div class="message-header">
-                      Class Selector :
-                    </div> -->
-
-                    <div class="message-body box extrabox has-background-light">
-                      <h1 class="subtitle">#id Selector :</h1>
-                      <nav class="nav">
-                        <ul>
-                          <li>
-                            <a href="#" class="button is-primary">a</a>
-                            <!-- <ul>
-                              <li>
-                                <a href="#">B</a>
-                                <ul>
-                                  <li>
-                                    <a href="#">a</a>
-                                  </li>
-                                  <li>
-                                    <a href="#">B</a>
-                                  </li>
-                                </ul>
-                              </li>
-                              <li>
-                                <a href="#">C</a>
-                                <ul>
-                                  <li>
-                                    <a href="#">a</a>
-                                  </li>
-                                  <li>
-                                    <a href="#">b</a>
-                                  </li>
-                                </ul>
-                              </li>
-                            </ul> -->
-                            <a href="#" class="button">b</a>
-                            <a href="#" class="button">c</a>
-                          </li>
-                        </ul>
-                      </nav>
-                    </div>
-                  </div>
-
-                </div>
-                <div class="column is-6">
-                  <div class="message is-link">
-                    <div class="message-body">
-                      <p>
-                        #a {<br>
-                        color: yellow;<br>
-                        }
-                      </p>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <!-- **********\\**************//********** -->
-            </div>
-          </div>
-        </div>
-
-        <div class="column is-6">
-          <div class="panel is-primary">
-            <div class="panel-heading">
-              <!-- <div class="heading block "> -->
-              <h5 class="is-size-5 is-capitalized">Types Of Selectors</h5>
-              <!-- </div> -->
-            </div>
-            <div class="box">
-              <div class="columns">
-                <div class="column is-6">
-                  <div class="message">
-                    <div class="message-header">
+                                        <div class="message-body">
+                                            <p class="content"></p>
+                                            a > b {
+                                            child selector <mark>b</mark> selects all elements that are the children of
+                                            <mark>a</mark>
+                                            specified element
+                                            }
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="column is-6">
+                                    <div class="message is-success">
+                                        <!-- <div class="message-header">
                       Structure :
+                    </div> -->
+                                        <div class="message-body box extrabox has-background-light">
+                                            <nav class="nav">
+                                                <ul>
+                                                    <li>
+                                                        <a href="#" class="button">a</a>
+                                                        <ul>
+                                                            <li>
+                                                                <a href="#" class="button">B</a>
+                                                                <ul>
+                                                                    <li>
+                                                                        <a href="#" class="button">a</a>
+                                                                    </li>
+                                                                    <li>
+                                                                        <a href="#" class="button">B</a>
+                                                                    </li>
+                                                                </ul>
+                                                            </li>
+                                                            <li>
+                                                                <a href="#" class="button">C</a>
+                                                                <ul>
+                                                                    <li>
+                                                                        <a href="#" class="button">a</a>
+                                                                    </li>
+                                                                    <li>
+                                                                        <a href="#" class="button">b</a>
+                                                                    </li>
+                                                                </ul>
+                                                            </li>
+                                                        </ul>
+                                                    </li>
+                                                </ul>
+                                            </nav>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
                     </div>
-                    <div class="message-body box extrabox has-background-light">
-                      <nav class="nav">
-                        <ul>
-                          <li>
-                            <a href="#" class="button">a</a>
+
+                    <div class="panel is-primary">
+                        <div class="panel-heading">
+                            <h5 class="is-size-5 is-capitalized">Basic Selectors</h5>
+                        </div>
+                        <div class="box">
+                            <div class="columns">
+
+                                <div class="column is-8">
+                                    <div class="box">
+                                        <ul>
+                                            <li>
+                                                <div class="tags">
+                                                    <div class="tag is-dark is-medium">
+                                                        <span>.class</span>
+                                                    </div>
+                                                    <div class="tag is-light is-medium">
+                                                        <span>Selects all elements with class="a"</span>
+                                                    </div>
+                                                </div>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                    <div class="message is-link">
+                                        <div class="message-body">
+                                            <p>
+                                                .a {<br>
+                                                background-color: yellow;<br>
+                                                }
+                                            </p>
+                                        </div>
+                                    </div>
+                                    <!-- *************************** -->
+                                    <div class="box">
+                                        <ul>
+                                            <li>
+                                                <div class="tags">
+                                                    <div class="tag is-dark is-medium">
+                                                        <span>#id</span>
+                                                    </div>
+                                                    <div class="tag is-light is-medium">
+                                                        <span>Selects the element with id="a"</span>
+                                                    </div>
+                                                </div>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                    <div class="message is-link">
+                                        <div class="message-body">
+                                            <p>
+                                                #a {<br>
+                                                background-color: yellow;<br>
+                                                }
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="column is-4">
+                                    <div class="message is-success ">
+                                        <!-- <div class="message-header">
+                      Class Selector :
+                    </div> -->
+                                        <div class="message-body box mt-6 extrabox has-background-light">
+                                            <h1 class="subtitle">Class Selector :</h1>
+                                            <nav class="nav">
+                                                <ul>
+                                                    <li>
+                                                        <a href="#" class="button is-primary">a</a>
+                                                        <!-- <ul>
+                              <li>
+                                <a href="#">B</a>
+                                <ul>
+                                  <li>
+                                    <a href="#">a</a>
+                                  </li>
+                                  <li>
+                                    <a href="#">B</a>
+                                  </li>
+                                </ul>
+                              </li>
+                              <li>
+                                <a href="#">C</a>
+                                <ul>
+                                  <li>
+                                    <a href="#">a</a>
+                                  </li>
+                                  <li>
+                                    <a href="#">b</a>
+                                  </li>
+                                </ul>
+                              </li>
+                            </ul> -->
+                                                        <a href="#" class="button">b</a>
+                                                        <a href="#" class="button">c</a>
+                                                    </li>
+                                                </ul>
+                                            </nav>
+                                        </div>
+
+                                        <div class="message-body box mt-6 extrabox has-background-light">
+                                            <h1 class="subtitle">#id Selector :</h1>
+                                            <nav class="nav">
+                                                <ul>
+                                                    <li>
+                                                        <a href="#" class="button is-primary">a</a>
+                                                        <!-- <ul>
+                              <li>
+                                <a href="#">B</a>
+                                <ul>
+                                  <li>
+                                    <a href="#">a</a>
+                                  </li>
+                                  <li>
+                                    <a href="#">B</a>
+                                  </li>
+                                </ul>
+                              </li>
+                              <li>
+                                <a href="#">C</a>
+                                <ul>
+                                  <li>
+                                    <a href="#">a</a>
+                                  </li>
+                                  <li>
+                                    <a href="#">b</a>
+                                  </li>
+                                </ul>
+                              </li>
+                            </ul> -->
+                                                        <a href="#" class="button">b</a>
+                                                        <a href="#" class="button">c</a>
+                                                    </li>
+                                                </ul>
+                                            </nav>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- **********//************ -->
+
+                    <div class="panel is-primary">
+                        <div class="panel-heading">
+                            <h5 class="is-size-5 is-capitalized">Basic Selectors</h5>
+                        </div>
+                        <div class="box">
+                            <!-- Universal Selector -->
+                            <div class="columns">
+                                <div class="column">
+                                    <div class="box">
+                                        <ul>
+                                            <li>
+                                                <div class="tags">
+                                                    <div class="tag is-dark is-medium">
+                                                        <span> * </span>
+                                                    </div>
+                                                    <div class="tag is-light is-medium">
+                                                        <span>Select all elements</span>
+                                                    </div>
+                                                </div>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="columns">
+                                <div class="column is-6">
+                                    <div class="message is-link">
+                                        <div class="message-body">
+                                            <p>
+                                                * {<br>
+                                                color: yellow;<br>
+                                                }
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="column is-6">
+                                    <div class="message is-success ">
+                                        <!-- <div class="message-header">
+                      Class Selector :
+                    </div> -->
+
+                                        <div class="message-body box extrabox has-background-light">
+                                            <h1 class="subtitle">Universal Selector [ * ] :</h1>
+                                            <nav class="nav">
+                                                <ul>
+                                                    <li>
+                                                        <a href="#" class="button is-primary">a</a>
+                                                        <!-- <ul>
+                              <li>
+                                <a href="#">B</a>
+                                <ul>
+                                  <li>
+                                    <a href="#">a</a>
+                                  </li>
+                                  <li>
+                                    <a href="#">B</a>
+                                  </li>
+                                </ul>
+                              </li>
+                              <li>
+                                <a href="#">C</a>
+                                <ul>
+                                  <li>
+                                    <a href="#">a</a>
+                                  </li>
+                                  <li>
+                                    <a href="#">b</a>
+                                  </li>
+                                </ul>
+                              </li>
+                            </ul> -->
+                                                        <a href="#" class="button is-primary">b</a>
+                                                        <a href="#" class="button is-primary">c</a>
+                                                    </li>
+                                                </ul>
+                                            </nav>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- ***********\\************//********** -->
+
+                            <!-- Type Selector -->
+                            <div class="columns">
+                                <div class="column">
+                                    <div class="box">
+                                        <ul>
+                                            <li>
+                                                <div class="tags">
+                                                    <div class="tag is-dark is-medium">
+                                                        <span> div </span>
+                                                    </div>
+                                                    <div class="tag is-light is-medium">
+                                                        <span>Select elements of that type [Select div elements]</span>
+                                                    </div>
+                                                </div>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="columns">
+
+                                <div class="column is-6">
+                                    <div class="message is-link">
+                                        <div class="message-body">
+                                            <p>
+                                                div {<br>
+                                                color: yellow;<br>
+                                                }
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="column is-6">
+                                    <div class="message is-success ">
+                                        <!-- <div class="message-header">
+                      Class Selector :
+                    </div> -->
+
+                                        <div class="message-body box extrabox has-background-light">
+                                            <h1 class="subtitle">Type Selector :</h1>
+                                            <nav class="nav">
+                                                <ul>
+                                                    <li>
+                                                        <a href="#" class="button">a</a>
+                                                        <!-- <ul>
+                              <li>
+                                <a href="#">B</a>
+                                <ul>
+                                  <li>
+                                    <a href="#">a</a>
+                                  </li>
+                                  <li>
+                                    <a href="#">B</a>
+                                  </li>
+                                </ul>
+                              </li>
+                              <li>
+                                <a href="#">C</a>
+                                <ul>
+                                  <li>
+                                    <a href="#">a</a>
+                                  </li>
+                                  <li>
+                                    <a href="#">b</a>
+                                  </li>
+                                </ul>
+                              </li>
+                            </ul> -->
+                                                        <a href="#" class="button is-primary">div</a>
+                                                        <a href="#" class="button">c</a>
+                                                        <a href="#" class="button is-primary">div</a>
+                                                    </li>
+                                                </ul>
+                                            </nav>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- ***********\\************//********** -->
+
+                            <!-- Class Selector -->
+                            <div class="columns">
+                                <div class="column">
+                                    <div class="box">
+                                        <ul>
+                                            <li>
+                                                <div class="tags">
+                                                    <div class="tag is-dark is-medium">
+                                                        <span>.class</span>
+                                                    </div>
+                                                    <div class="tag is-light is-medium">
+                                                        <span>Selects the element with class="a"</span>
+                                                    </div>
+                                                </div>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="columns">
+
+                                <div class="column is-6">
+                                    <div class="message is-link">
+                                        <div class="message-body">
+                                            <p>
+                                                #a {<br>
+                                                color: yellow;<br>
+                                                }
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="column is-6">
+                                    <div class="message is-success ">
+                                        <!-- <div class="message-header">
+                      Class Selector :
+                    </div> -->
+                                        <div class="message-body box extrabox has-background-light">
+                                            <h1 class="subtitle">Class Selector :</h1>
+                                            <nav class="nav">
+                                                <ul>
+                                                    <li>
+                                                        <a href="#" class="button is-primary">a</a>
+                                                        <!-- <ul>
+                              <li>
+                                <a href="#">B</a>
+                                <ul>
+                                  <li>
+                                    <a href="#">a</a>
+                                  </li>
+                                  <li>
+                                    <a href="#">B</a>
+                                  </li>
+                                </ul>
+                              </li>
+                              <li>
+                                <a href="#">C</a>
+                                <ul>
+                                  <li>
+                                    <a href="#">a</a>
+                                  </li>
+                                  <li>
+                                    <a href="#">b</a>
+                                  </li>
+                                </ul>
+                              </li>
+                            </ul> -->
+                                                        <a href="#" class="button">b</a>
+                                                        <a href="#" class="button">c</a>
+                                                    </li>
+                                                </ul>
+                                            </nav>
+                                        </div>
+                                    </div>
+
+                                </div>
+                            </div>
+                            <!-- **********\\**************//********** -->
+
+                            <!-- Id Selector -->
+                            <div class="columns">
+                                <div class="column">
+                                    <div class="box">
+                                        <ul>
+                                            <li>
+                                                <div class="tags">
+                                                    <div class="tag is-dark is-medium">
+                                                        <span>#id</span>
+                                                    </div>
+                                                    <div class="tag is-light is-medium">
+                                                        <span>Selects the element with id="a"</span>
+                                                    </div>
+                                                </div>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="columns">
+
+                                <div class="column is-6">
+                                    <div class="message is-link">
+                                        <div class="message-body">
+                                            <p>
+                                                #a {<br>
+                                                color: yellow;<br>
+                                                }
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="column is-6">
+                                    <div class="message is-success ">
+                                        <!-- <div class="message-header">
+                      Class Selector :
+                    </div> -->
+
+                                        <div class="message-body box extrabox has-background-light">
+                                            <h1 class="subtitle">#id Selector :</h1>
+                                            <nav class="nav">
+                                                <ul>
+                                                    <li>
+                                                        <a href="#" class="button is-primary">a</a>
+                                                        <!-- <ul>
+                              <li>
+                                <a href="#">B</a>
+                                <ul>
+                                  <li>
+                                    <a href="#">a</a>
+                                  </li>
+                                  <li>
+                                    <a href="#">B</a>
+                                  </li>
+                                </ul>
+                              </li>
+                              <li>
+                                <a href="#">C</a>
+                                <ul>
+                                  <li>
+                                    <a href="#">a</a>
+                                  </li>
+                                  <li>
+                                    <a href="#">b</a>
+                                  </li>
+                                </ul>
+                              </li>
+                            </ul> -->
+                                                        <a href="#" class="button">b</a>
+                                                        <a href="#" class="button">c</a>
+                                                    </li>
+                                                </ul>
+                                            </nav>
+                                        </div>
+                                    </div>
+
+                                </div>
+                            </div>
+                            <!-- **********\\**************//********** -->
+                        </div>
+                    </div>
+                </div>
+
+                <div class="column is-6">
+                    <div class="panel is-primary">
+                        <div class="panel-heading">
+                            <!-- <div class="heading block "> -->
+                            <h5 class="is-size-5 is-capitalized">Types Of Selectors</h5>
+                            <!-- </div> -->
+                        </div>
+                        <div class="box">
+                            <div class="columns">
+                                <div class="column is-6">
+                                    <!-- Content Starts -->
+                                    <div class="message">
+                                        <div class="message-header">
+                                            Content :
+                                        </div>
+                                        <div class="notification">
+                                            <p class="content">Child Selector: a &gt; b { }</p>
+                                        </div>
+                                    </div>
+                                    <!-- Content Ends -->
+
+                                    <!-- Code Starts -->
+                                    <div class="message">
+                                        <div class="message-header">
+                                            Code :
+                                        </div>
+                                        <div class="message-body">
+                                            <p class="content">a > b {
+                                                child selector <mark>b</mark> selects all elements that are the children
+                                                of <mark>a</mark>
+                                                specified element
+                                                }</p>
+                                        </div>
+                                    </div>
+                                    <!-- Code Ends -->
+                                </div>
+                                <div class="column is-6">
+                                    <div class="message">
+                                        <div class="message-header">
+                                            Structure :
+                                        </div>
+                                        <div class="message-body box extrabox has-background-light">
+                                            <nav class="nav">
+                                                <ul>
+                                                    <li>
+                                                        <a href="#" class="button">a</a>
+                                                        <ul>
+                                                            <li>
+                                                                <a href="#" class="button">B</a>
+                                                                <ul>
+                                                                    <li>
+                                                                        <a href="#" class="button">a</a>
+                                                                    </li>
+                                                                    <li>
+                                                                        <a href="#" class="button">B</a>
+                                                                    </li>
+                                                                </ul>
+                                                            </li>
+                                                            <li>
+                                                                <a href="#" class="button">C</a>
+                                                                <ul>
+                                                                    <li>
+                                                                        <a href="#" class="button">a</a>
+                                                                    </li>
+                                                                    <li>
+                                                                        <a href="#" class="button">b</a>
+                                                                    </li>
+                                                                </ul>
+                                                            </li>
+                                                        </ul>
+                                                    </li>
+                                                </ul>
+                                            </nav>
+                                        </div>
+                                    </div>
+                                    <!-- <h4 class="is-size-6 label has-text-left">Structure :</h4> -->
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="panel is-primary">
+                        <div class="panel-heading">
+                            <!-- <div class="heading block "> -->
+                            <h5 class="is-size-5 is-capitalized">Basic Selectors</h5>
+                            <!-- </div> -->
+                        </div>
+                        <div class="box">
                             <ul>
-                              <li>
-                                <a href="#" class="button">B</a>
-                                <ul>
-                                  <li>
-                                    <a href="#" class="button">a</a>
-                                  </li>
-                                  <li>
-                                    <a href="#" class="button">B</a>
-                                  </li>
-                                </ul>
-                              </li>
-                              <li>
-                                <a href="#" class="button">C</a>
-                                <ul>
-                                  <li>
-                                    <a href="#" class="button">a</a>
-                                  </li>
-                                  <li>
-                                    <a href="#" class="button">b</a>
-                                  </li>
-                                </ul>
-                              </li>
+                                <li>
+                                    <div class="tags">
+                                        <div class="tag is-dark is-medium">
+                                            <span>.class
+                                            </span>
+                                        </div>
+                                        <div class="tag is-light is-medium">
+                                            <span>Selects all elements with class="a"</span>
+                                        </div>
+                                    </div>
+                                </li>
                             </ul>
-                          </li>
-                        </ul>
-                      </nav>
+                        </div>
                     </div>
-                  </div>
-                  <!-- <h4 class="is-size-6 label has-text-left">Structure :</h4> -->
-                </div>
-                <div class="column is-6">
-                  <!-- Content Starts -->
-                  <div class="message">
-                    <div class="message-header">
-                      Content :
-                    </div>
-                    <div class="notification">
-                      <p class="content">Child Selector: a &gt; b { }</p>
-                    </div>
-                  </div>
-                  <!-- Content Ends -->
+                    <!-- *********************** -->
 
-                  <!-- Code Starts -->
-                  <div class="message">
-                    <div class="message-header">
-                      Code :
-                    </div>
-                    <div class="message-body">
-                      <p class="content">a > b {
-                        child selector <mark>b</mark> selects all elements that are the children of <mark>a</mark>
-                        specified element
-                        }</p>
-                    </div>
-                  </div>
-                  <!-- Code Ends -->
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <div class="panel is-primary">
-            <div class="panel-heading">
-              <!-- <div class="heading block "> -->
-              <h5 class="is-size-5 is-capitalized">Basic Selectors</h5>
-              <!-- </div> -->
-            </div>
-            <div class="box">
-              <ul>
-                <li>
-                  <div class="tags">
-                    <div class="tag is-dark is-medium">
-                      <span>.class
-                      </span>
-                    </div>
-                    <div class="tag is-light is-medium">
-                      <span>Selects all elements with class="a"</span>
-                    </div>
-                  </div>
-                </li>
-              </ul>
-            </div>
-          </div>
-          <!-- *********************** -->
-
-          <div class="panel is-primary">
-            <div class="panel-heading">
-              <!-- <div class="heading block "> -->
-              <h5 class="is-size-5 is-capitalized">Types Of Selectors</h5>
-              <!-- </div> -->
-            </div>
-            <div class="box">
-              <div class="columns">
-                <div class="column is-6">
-                  <div class="message">
-                    <div class="message-header">
-                      Structure :
-                    </div>
-                    <div class="message-body box extrabox has-background-light">
-                      <nav class="nav">
-                        <ul>
-                          <li>
-                            <a href="#" class="button">a</a>
-                            <ul>
-                              <li>
-                                <a href="#" class="button">B</a>
-                                <ul>
-                                  <li>
-                                    <a href="#" class="button">a</a>
-                                  </li>
-                                  <li>
-                                    <a href="#" class="button">B</a>
-                                  </li>
-                                </ul>
-                              </li>
-                              <li>
-                                <a href="#" class="button">C</a>
-                                <ul>
-                                  <li>
-                                    <a href="#" class="button">a</a>
-                                  </li>
-                                  <li>
-                                    <a href="#" class="button">b</a>
-                                  </li>
-                                </ul>
-                              </li>
-                            </ul>
-                          </li>
-                        </ul>
-                      </nav>
-                    </div>
-                  </div>
-                  <!-- <h4 class="is-size-6 label has-text-left">Structure :</h4> -->
-                </div>
-                <div class="column is-6">
-                  <!-- Content Starts -->
-                  <!-- <div class="message">
+                    <div class="panel is-primary">
+                        <div class="panel-heading">
+                            <!-- <div class="heading block "> -->
+                            <h5 class="is-size-5 is-capitalized">Types Of Selectors</h5>
+                            <!-- </div> -->
+                        </div>
+                        <div class="box">
+                            <div class="columns">
+                                <div class="column is-6">
+                                    <!-- Content Starts -->
+                                    <!-- <div class="message">
                     <div class="message-header">
                       Content :
                     </div> -->
-                  <div class="notification">
-                    <p class="content">Child Selector: a &gt; b { }</p>
-                  </div>
-                  <!-- </div> -->
-                  <!-- Content Ends -->
+                                    <div class="notification">
+                                        <p class="content">Child Selector: a &gt; b { }</p>
+                                    </div>
+                                    <!-- </div> -->
+                                    <!-- Content Ends -->
 
-                  <!-- Code Starts -->
-                  <div class="message">
-                    <div class="message-header">
-                      Code :
-                    </div>
-                    <div class="message-body">
-                      <p class="content">a > b {
-                        child selector <mark>b</mark> selects all elements that are the children of <mark>a</mark>
-                        specified element
-                        }</p>
-                    </div>
-                  </div>
-                  <!-- Code Ends -->
-                </div>
-              </div>
-            </div>
-          </div>
-          <!-- ***********###*********** -->
-
-          <div class="panel is-info">
-            <div class="panel-heading">
-              <h5 class="is-size-5 is-capitalized">Element Selectors</h5>
-            </div>
-            <div class="box">
-              <!-- Element Selector -->
-              <div class="columns">
-                <div class="column">
-                  <div class="box">
-                    <ul>
-                      <li>
-                        <div class="tags">
-                          <div class="tag is-dark is-medium">
-                            <span> element [a] </span>
-                          </div>
-                          <div class="tag is-light is-medium">
-                            <span>Selects all &lt;a&gt; elements</span>
-                          </div>
+                                    <!-- Code Starts -->
+                                    <div class="message">
+                                        <div class="message-header">
+                                            Code :
+                                        </div>
+                                        <div class="message-body">
+                                            <p class="content">a > b {
+                                                child selector <mark>b</mark> selects all elements that are the children
+                                                of <mark>a</mark>
+                                                specified element
+                                                }</p>
+                                        </div>
+                                    </div>
+                                    <!-- Code Ends -->
+                                </div>
+                                <div class="column is-6">
+                                    <div class="message">
+                                        <div class="message-header">
+                                            Structure :
+                                        </div>
+                                        <div class="message-body box extrabox has-background-light">
+                                            <nav class="nav">
+                                                <ul>
+                                                    <li>
+                                                        <a href="#" class="button">a</a>
+                                                        <ul>
+                                                            <li>
+                                                                <a href="#" class="button">B</a>
+                                                                <ul>
+                                                                    <li>
+                                                                        <a href="#" class="button">a</a>
+                                                                    </li>
+                                                                    <li>
+                                                                        <a href="#" class="button">B</a>
+                                                                    </li>
+                                                                </ul>
+                                                            </li>
+                                                            <li>
+                                                                <a href="#" class="button">C</a>
+                                                                <ul>
+                                                                    <li>
+                                                                        <a href="#" class="button">a</a>
+                                                                    </li>
+                                                                    <li>
+                                                                        <a href="#" class="button">b</a>
+                                                                    </li>
+                                                                </ul>
+                                                            </li>
+                                                        </ul>
+                                                    </li>
+                                                </ul>
+                                            </nav>
+                                        </div>
+                                    </div>
+                                    <!-- <h4 class="is-size-6 label has-text-left">Structure :</h4> -->
+                                </div>
+                            </div>
                         </div>
-                      </li>
-                    </ul>
-                  </div>
-                </div>
-              </div>
-              <div class="columns">
-                <div class="column is-6">
-                  <div class="message is-success ">
-                    <!-- <div class="message-header">
+                    </div>
+                    <!-- ***********###*********** -->
+
+                    <div class="panel is-info">
+                        <div class="panel-heading">
+                            <h5 class="is-size-5 is-capitalized">Element Selectors</h5>
+                        </div>
+                        <div class="box">
+                            <!-- Element Selector -->
+                            <div class="columns">
+                                <div class="column">
+                                    <div class="box">
+                                        <ul>
+                                            <li>
+                                                <div class="tags">
+                                                    <div class="tag is-dark is-medium">
+                                                        <span> element [a] </span>
+                                                    </div>
+                                                    <div class="tag is-light is-medium">
+                                                        <span>Selects all &lt;a&gt; elements</span>
+                                                    </div>
+                                                </div>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="columns">
+                                <div class="column is-6">
+                                    <div class="message is-link">
+                                        <div class="message-body">
+                                            <p>
+                                                a {<br>
+                                                color: yellow;<br>
+                                                }
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="column is-6">
+                                    <div class="message is-success ">
+                                        <!-- <div class="message-header">
                       Class Selector :
                     </div> -->
 
-                    <div class="message-body box extrabox has-background-light">
-                      <h1 class="subtitle">Element Selector :</h1>
-                      <nav class="nav">
-                        <ul>
-                          <li>
-                            <a href="#" class="button is-primary">a</a>
-                            <ul>
-                              <ul>
-                                <li>
-                                  <a href="#" class="button">b</a>
-                                </li>
-                                <li>
-                                  <a href="#" class="button">c</a>
-                                </li>
-                              </ul>
-                            </ul>
-                          </li>
-                        </ul>
-                      </nav>
-                    </div>
-                  </div>
-                </div>
-                <div class="column is-6">
-                  <div class="message is-link">
-                    <div class="message-body">
-                      <p>
-                        a {<br>
-                        color: yellow;<br>
-                        }
-                      </p>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <!-- ***********\\************//********** -->
+                                        <div class="message-body box extrabox has-background-light">
+                                            <h1 class="subtitle">Element Selector :</h1>
+                                            <nav class="nav">
+                                                <ul>
+                                                    <li>
+                                                        <a href="#" class="button is-primary">a</a>
+                                                        <ul>
 
-              <!-- Element Selector -->
-              <div class="columns">
-                <div class="column">
-                  <div class="box">
-                    <ul>
-                      <li>
-                        <div class="tags">
-                          <div class="tag is-dark is-medium">
-                            <span> element [a] </span>
-                          </div>
-                          <div class="tag is-light is-medium">
-                            <span>Selects all &lt;a&gt; elements</span>
-                          </div>
-                        </div>
-                      </li>
-                    </ul>
-                  </div>
-                </div>
-              </div>
-              <div class="columns">
-                <div class="column is-6">
-                  <div class="message is-success ">
-                    <!-- <div class="message-header">
+                                                            <li>
+                                                                <a href="#" class="button">b</a>
+                                                            </li>
+                                                            <li>
+                                                                <a href="#" class="button">c</a>
+                                                            </li>
+
+                                                        </ul>
+                                                    </li>
+                                                </ul>
+                                            </nav>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- ***********\\************//********** -->
+
+                            <!-- Element Selector -->
+                            <div class="columns">
+                                <div class="column">
+                                    <div class="box">
+                                        <ul>
+                                            <li>
+                                                <div class="tags">
+                                                    <div class="tag is-dark is-medium">
+                                                        <span> element [a] </span>
+                                                    </div>
+                                                    <div class="tag is-light is-medium">
+                                                        <span>Selects all &lt;a&gt; elements</span>
+                                                    </div>
+                                                </div>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="columns">
+
+                                <div class="column is-6">
+                                    <div class="message is-link">
+                                        <div class="message-body">
+                                            <p>
+                                                a {<br>
+                                                color: yellow;<br>
+                                                }
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="column is-6">
+                                    <div class="message is-success ">
+                                        <!-- <div class="message-header">
                       Class Selector :
                     </div> -->
 
-                    <div class="message-body box extrabox has-background-light">
-                      <h1 class="subtitle">Element Selector :</h1>
-                      <nav class="nav">
-                        <ul>
-                          <li>
-                            <a href="#" class="button is-primary">a</a>
-                            <ul>
-                              <ul>
-                                <li>
-                                  <a href="#" class="button">b</a>
-                                </li>
-                                <li>
-                                  <a href="#" class="button">c</a>
-                                </li>
-                              </ul>
-                            </ul>
-                          </li>
-                        </ul>
-                      </nav>
-                    </div>
-                  </div>
-                </div>
-                <div class="column is-6">
-                  <div class="message is-link">
-                    <div class="message-body">
-                      <p>
-                        a {<br>
-                        color: yellow;<br>
-                        }
-                      </p>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <!-- ***********\\************//********** -->
+                                        <div class="message-body box extrabox has-background-light">
+                                            <h1 class="subtitle">Element Selector :</h1>
+                                            <nav class="nav">
+                                                <ul>
+                                                    <li>
+                                                        <a href="#" class="button is-primary">a</a>
+                                                        <ul>
 
-              <!-- Element Selector -->
-              <div class="columns">
-                <div class="column">
-                  <div class="box">
-                    <ul>
-                      <li>
-                        <div class="tags">
-                          <div class="tag is-dark is-medium">
-                            <span> element [a] </span>
-                          </div>
-                          <div class="tag is-light is-medium">
-                            <span>Selects all &lt;a&gt; elements</span>
-                          </div>
-                        </div>
-                      </li>
-                    </ul>
-                  </div>
-                </div>
-              </div>
-              <div class="columns">
-                <div class="column is-6">
-                  <div class="message is-success ">
-                    <!-- <div class="message-header">
+                                                            <li>
+                                                                <a href="#" class="button">b</a>
+                                                            </li>
+                                                            <li>
+                                                                <a href="#" class="button">c</a>
+                                                            </li>
+
+                                                        </ul>
+                                                    </li>
+                                                </ul>
+                                            </nav>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- ***********\\************//********** -->
+
+                            <!-- Element Selector -->
+                            <div class="columns">
+                                <div class="column">
+                                    <div class="box">
+                                        <ul>
+                                            <li>
+                                                <div class="tags">
+                                                    <div class="tag is-dark is-medium">
+                                                        <span> element [a] </span>
+                                                    </div>
+                                                    <div class="tag is-light is-medium">
+                                                        <span>Selects all &lt;a&gt; elements</span>
+                                                    </div>
+                                                </div>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="columns">
+
+                                <div class="column is-6">
+                                    <div class="message is-link">
+                                        <div class="message-body">
+                                            <p>
+                                                a {<br>
+                                                color: yellow;<br>
+                                                }
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="column is-6">
+                                    <div class="message is-success ">
+                                        <!-- <div class="message-header">
                       Class Selector :
                     </div> -->
 
-                    <div class="message-body box extrabox has-background-light">
-                      <h1 class="subtitle">Element Selector :</h1>
-                      <nav class="nav">
-                        <ul>
-                          <li>
-                            <a href="#" class="button is-primary">a</a>
-                            <ul>
-                              <ul>
-                                <li>
-                                  <a href="#" class="button">b</a>
-                                </li>
-                                <li>
-                                  <a href="#" class="button">c</a>
-                                </li>
-                              </ul>
-                            </ul>
-                          </li>
-                        </ul>
-                      </nav>
-                    </div>
-                  </div>
-                </div>
-                <div class="column is-6">
-                  <div class="message is-link">
-                    <div class="message-body">
-                      <p>
-                        a {<br>
-                        color: yellow;<br>
-                        }
-                      </p>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <!-- ***********\\************//********** -->
+                                        <div class="message-body box extrabox has-background-light">
+                                            <h1 class="subtitle">Element Selector :</h1>
+                                            <nav class="nav">
+                                                <ul>
+                                                    <li>
+                                                        <a href="#" class="button is-primary">a</a>
+                                                        <ul>
 
-              <!-- Element Selector -->
-              <div class="columns">
-                <div class="column">
-                  <div class="box">
-                    <ul>
-                      <li>
-                        <div class="tags">
-                          <div class="tag is-dark is-medium">
-                            <span> element [a] </span>
-                          </div>
-                          <div class="tag is-light is-medium">
-                            <span>Selects all &lt;a&gt; elements</span>
-                          </div>
-                        </div>
-                      </li>
-                    </ul>
-                  </div>
-                </div>
-              </div>
-              <div class="columns">
-                <div class="column is-6">
-                  <div class="message is-success ">
-                    <!-- <div class="message-header">
+                                                            <li>
+                                                                <a href="#" class="button">b</a>
+                                                            </li>
+                                                            <li>
+                                                                <a href="#" class="button">c</a>
+                                                            </li>
+
+                                                        </ul>
+                                                    </li>
+                                                </ul>
+                                            </nav>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- ***********\\************//********** -->
+
+                            <!-- Element Selector -->
+                            <div class="columns">
+                                <div class="column">
+                                    <div class="box">
+                                        <ul>
+                                            <li>
+                                                <div class="tags">
+                                                    <div class="tag is-dark is-medium">
+                                                        <span> element [a] </span>
+                                                    </div>
+                                                    <div class="tag is-light is-medium">
+                                                        <span>Selects all &lt;a&gt; elements</span>
+                                                    </div>
+                                                </div>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="columns">
+
+                                <div class="column is-6">
+                                    <div class="message is-link">
+                                        <div class="message-body">
+                                            <p>
+                                                a {<br>
+                                                color: yellow;<br>
+                                                }
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="column is-6">
+                                    <div class="message is-success ">
+                                        <!-- <div class="message-header">
                       Class Selector :
                     </div> -->
 
-                    <div class="message-body box extrabox has-background-light">
-                      <h1 class="subtitle">Element Selector :</h1>
-                      <nav class="nav">
-                        <ul>
-                          <li>
-                            <a href="#" class="button is-primary">a</a>
-                            <ul>
-                              <ul>
-                                <li>
-                                  <a href="#" class="button">b</a>
-                                </li>
-                                <li>
-                                  <a href="#" class="button">c</a>
-                                </li>
-                              </ul>
-                            </ul>
-                          </li>
-                        </ul>
-                      </nav>
+                                        <div class="message-body box extrabox has-background-light">
+                                            <h1 class="subtitle">Element Selector :</h1>
+                                            <nav class="nav">
+                                                <ul>
+                                                    <li>
+                                                        <a href="#" class="button is-primary">a</a>
+                                                        <ul>
+
+                                                            <li>
+                                                                <a href="#" class="button">b</a>
+                                                            </li>
+                                                            <li>
+                                                                <a href="#" class="button">c</a>
+                                                            </li>
+
+                                                        </ul>
+                                                    </li>
+                                                </ul>
+                                            </nav>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- ***********\\************//********** -->
+                        </div>
                     </div>
-                  </div>
                 </div>
-                <div class="column is-6">
-                  <div class="message is-link">
-                    <div class="message-body">
-                      <p>
-                        a {<br>
-                        color: yellow;<br>
-                        }
-                      </p>
+            </div>
+
+            <!-- Table Format section-->
+            <hr class="has-background-dark">
+            <h1 class="title has-text-centered">Table Format Section</h1>
+            <hr class="has-background-dark">
+            <div class="columns">
+                <div class="column is-12">
+                    <div class="panel is-info">
+                        <div class="panel-heading">
+                            <h5 class="is-size-5 is-capitalized has-text-centered">Pseudo Element</h5>
+                        </div>
+                        <div class="box">
+                            <table class="table is-fullwidth">
+                                <thead>
+                                    <tr>
+                                        <th>No:</th>
+                                        <th>Name :</th>
+                                        <th>CSS :</th>
+                                        <th>Description :</th>
+                                        <th>Results :</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr class="has-text-weight-medium">
+                                        <th>1</th>
+                                        <td>Before Selector</td>
+                                        <td>div::before
+                                        </td>
+                                        <td>Creates an empty element
+                                            directly before the children of
+                                            selected element</td>
+                                        <td>
+                                            <nav class="nav extrabox">
+                                                <ul>
+                                                    <li>
+                                                        <a href="#" class="button">div</a>
+                                                        <ul>
+                                                            <li>
+                                                                <a href="#" class="button is-info">Before</a>
+                                                            </li>
+                                                            <li>
+                                                                <a href="#" class="button">C</a>
+                                                            </li>
+                                                            <li>
+                                                                <a href="#" class="button">After</a>
+                                                            </li>
+                                                        </ul>
+                                                    </li>
+                                                </ul>
+                                            </nav>
+                                        </td>
+                                    </tr>
+                                    <tr class="has-text-weight-medium">
+                                        <th>2</th>
+                                        <td>After Selector</td>
+                                        <td>div::after</td>
+                                        <td>Creates an empty element
+                                            directly after the children of
+                                            selected element</td>
+                                        <td>
+                                            <nav class="nav extrabox">
+                                                <ul>
+                                                    <li>
+                                                        <a href="#" class="button">div</a>
+                                                        <ul>
+                                                            <li>
+                                                                <a href="#" class="button">Before</a>
+                                                            </li>
+                                                            <li>
+                                                                <a href="#" class="button">C</a>
+                                                            </li>
+                                                            <li>
+                                                                <a href="#" class="button is-info">After</a>
+                                                            </li>
+                                                        </ul>
+                                                    </li>
+                                                </ul>
+                                            </nav>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
                     </div>
-                  </div>
                 </div>
-              </div>
-              <!-- ***********\\************//********** -->
             </div>
-          </div>
-        </div>
-      </div>
 
-      <!-- Table Format section-->
-      <hr class="has-background-dark">
-      <h1 class="title has-text-centered">Table Format Section</h1>
-      <hr class="has-background-dark">
-      <div class="columns">
-        <div class="column is-12">
-          <div class="panel is-info">
-            <div class="panel-heading">
-              <h5 class="is-size-5 is-capitalized has-text-centered">Pseudo Element</h5>
-            </div>
-            <div class="box">
-              <table class="table is-fullwidth">
-                <thead>
-                  <tr>
-                    <th>No:</th>
-                    <th>Name :</th>
-                    <th>CSS :</th>
-                    <th>Description :</th>
-                    <th>Results :</th>
-                  </tr>
-                </thead>
-                <tbody>
-                  <tr class="has-text-weight-medium">
-                    <th>1</th>
-                    <td>Before Selector</td>
-                    <td>div::before
-                    </td>
-                    <td>Creates an empty element
-                      directly before the children of
-                      selected element</td>
-                    <td>
-                      <nav class="nav extrabox">
-                        <ul>
-                          <li>
-                            <a href="#" class="button">div</a>
-                            <ul>
-                              <li>
-                                <a href="#" class="button is-info">Before</a>
-                              </li>
-                              <li>
-                                <a href="#" class="button">C</a>
-                              </li>
-                              <li>
-                                <a href="#" class="button">After</a>
-                              </li>
-                            </ul>
-                          </li>
-                        </ul>
-                      </nav>
-                    </td>
-                  </tr>
-                  <tr class="has-text-weight-medium">
-                    <th>2</th>
-                    <td>After Selector</td>
-                    <td>div::after</td>
-                    <td>Creates an empty element
-                      directly after the children of
-                      selected element</td>
-                    <td>
-                      <nav class="nav extrabox">
-                        <ul>
-                          <li>
-                            <a href="#" class="button">div</a>
-                            <ul>
-                              <li>
-                                <a href="#" class="button">Before</a>
-                              </li>
-                              <li>
-                                <a href="#" class="button">C</a>
-                              </li>
-                              <li>
-                                <a href="#" class="button is-info">After</a>
-                              </li>
-                            </ul>
-                          </li>
-                        </ul>
-                      </nav>
-                    </td>
-                  </tr>
-                </tbody>
-              </table>
-            </div>
-          </div>
-        </div>
-      </div>
+            <hr class="has-background-dark">
+            <h1 class="title has-text-centered">Diffrent Table Format Section</h1>
+            <hr class="has-background-dark">
+            <!-- Diffrent Table Format -->
+            <div class="columns">
+                <div class="column is-12">
+                    <div class="panel is-info">
+                        <div class="panel-heading">
+                            <h5 class="is-size-5 is-capitalized has-text-centered">Css Selectors</h5>
+                        </div>
+                        <div class="box">
+                            <table class="table is-bordered is-striped is-narrow is-hoverable is-fullwidth">
+                                <thead>
+                                    <tr>
+                                        <th>No:</th>
+                                        <th>Name :</th>
+                                        <th>CSS :</th>
+                                        <th>Description :</th>
+                                        <th>Results :</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr class="has-text-weight-medium">
+                                        <th>1</th>
+                                        <td>
+                                            <div class="box has-text-weight-bold"><span>Before Selector</span></div>
+                                        </td>
+                                        <td>
+                                            <div class="box has-text-weight-bold">div::before</div>
+                                        </td>
+                                        <td>
+                                            <div class="box">
+                                                Creates an empty element
+                                                directly before the children of
+                                                selected element
+                                            </div>
+                                        </td>
+                                        <td>
+                                            <div class="box extrabox">
+                                                <nav class="nav">
+                                                    <ul>
+                                                        <li>
+                                                            <a href="#" class="button">div</a>
+                                                            <ul>
+                                                                <li>
+                                                                    <a href="#" class="button is-info">Before</a>
+                                                                </li>
+                                                                <li>
+                                                                    <a href="#" class="button">C</a>
+                                                                </li>
+                                                                <li>
+                                                                    <a href="#" class="button">After</a>
+                                                                </li>
+                                                            </ul>
+                                                        </li>
+                                                    </ul>
+                                                </nav>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                    <tr class="has-text-weight-medium">
+                                        <th>2</th>
+                                        <td>
+                                            <div class="box has-text-weight-bold"><span>After Selector</span></div>
+                                        </td>
+                                        <td>
+                                            <div class="box has-text-weight-bold"><span>div::after</span>
+                                        </td>
+                                        <td>
+                                            <div class="box"> Creates an empty element
+                                                directly after the children of
+                                                selected element</div>
+                                        </td>
+                                        <td>
+                                            <div class="box extrabox">
+                                                <nav class="nav ">
+                                                    <ul>
+                                                        <li>
+                                                            <a href="#" class="button">div</a>
+                                                            <ul>
+                                                                <li>
+                                                                    <a href="#" class="button">Before</a>
+                                                                </li>
+                                                                <li>
+                                                                    <a href="#" class="button">C</a>
+                                                                </li>
+                                                                <li>
+                                                                    <a href="#" class="button is-info">After</a>
+                                                                </li>
+                                                            </ul>
+                                                        </li>
+                                                    </ul>
+                                                </nav>
+                                            </div>
 
-      <hr class="has-background-dark">
-      <h1 class="title has-text-centered">Diffrent Table Format Section</h1>
-      <hr class="has-background-dark">
-      <!-- Diffrent Table Format -->
-      <div class="columns">
-        <div class="column is-12">
-          <div class="panel is-info">
-            <div class="panel-heading">
-              <h5 class="is-size-5 is-capitalized has-text-centered">Css Selectors</h5>
-            </div>
-            <div class="box">
-              <table class="table is-bordered is-striped is-narrow is-hoverable is-fullwidth">
-                <thead>
-                  <tr>
-                    <th>No:</th>
-                    <th>Name :</th>
-                    <th>CSS :</th>
-                    <th>Description :</th>
-                    <th>Results :</th>
-                  </tr>
-                </thead>
-                <tbody>
-                  <tr class="has-text-weight-medium">
-                    <th>1</th>
-                    <td>
-                      <div class="box has-text-weight-bold"><span>Before Selector</span></div>
-                    </td>
-                    <td>
-                      <div class="box has-text-weight-bold">div::before</div>
-                    </td>
-                    <td>
-                      <div class="box">
-                        Creates an empty element
-                        directly before the children of
-                        selected element
-                      </div>
-                    </td>
-                    <td>
-                      <div class="box extrabox">
-                        <nav class="nav">
-                          <ul>
-                            <li>
-                              <a href="#" class="button">div</a>
-                              <ul>
-                                <li>
-                                  <a href="#" class="button is-info">Before</a>
-                                </li>
-                                <li>
-                                  <a href="#" class="button">C</a>
-                                </li>
-                                <li>
-                                  <a href="#" class="button">After</a>
-                                </li>
-                              </ul>
-                            </li>
-                          </ul>
-                        </nav>
-                      </div>
-                    </td>
-                  </tr>
-                  <tr class="has-text-weight-medium">
-                    <th>2</th>
-                    <td>
-                      <div class="box has-text-weight-bold"><span>After Selector</span></div>
-                    </td>
-                    <td>
-                      <div class="box has-text-weight-bold"><span>div::after</span>
-                    </td>
-                    <td>
-                      <div class="box"> Creates an empty element
-                        directly after the children of
-                        selected element</div>
-                    </td>
-                    <td>
-                      <div class="box extrabox">
-                        <nav class="nav ">
-                          <ul>
-                            <li>
-                              <a href="#" class="button">div</a>
-                              <ul>
-                                <li>
-                                  <a href="#" class="button">Before</a>
-                                </li>
-                                <li>
-                                  <a href="#" class="button">C</a>
-                                </li>
-                                <li>
-                                  <a href="#" class="button is-info">After</a>
-                                </li>
-                              </ul>
-                            </li>
-                          </ul>
-                        </nav>
-                      </div>
-
-                    </td>
-                  </tr>
-                </tbody>
-              </table>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <!-- Normal Format Section-->
-      <hr class="has-background-dark">
-      <h1 class="title has-text-centered">Normal Format Section</h1>
-      <hr class="has-background-dark">
-
-      <div class="tags">
-        <div class="tag is-dark is-large">
-          Selectors :
-        </div>
-      </div>
-      <div class="columns">
-        <div class="column is-4">
-          <div class="panel is-info">
-            <div class="panel-heading">
-              <h5 class="is-size-5 is-capitalized has-text-centered">tags</h5>
-            </div>
-            <div class="box">
-              <div class="tags">
-                <div class="tag is-dark is-large">
-                  Tag
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
                 </div>
-              </div>
-
-              <div class="content">
-                <p>Select all the tags of the same type.</p>
-              </div>
-
-              <div class="message">
-                <div class="message-body">
-                  <div class="content">
-                    <p>html &#10100; &#10101;</p> <!--this code is use to curly bracket -->
-                    <p>h1 &#10100; &#10101;</p>
-                    <p>p &#10100; &#10101;</p>
-                  </div>
-                </div>
-              </div>
             </div>
-          </div>
-        </div>
-        <div class="column is-4">
-          <div class="box">
+
+            <!-- Normal Format Section-->
+            <hr class="has-background-dark">
+            <h1 class="title has-text-centered">Normal Format Section</h1>
+            <hr class="has-background-dark">
+
             <div class="tags">
-              <div class="tag is-dark is-large">
-                <span class="is-size-2">&#8901;</span>
-              </div>
-              <div class="tag is-light is-large">
-                <span>&#9866; Class</span>
-              </div>
-            </div>
-            <div class="content">
-              Select an element that has a class.
-            </div>
-            <div class="message is-info">
-              <div class="message-body">
-                <div class="content">
-                  <p>.masthead &#10100; &#10101;</p>
-                  <p>.nav &#10100; &#10101;</p>
-                  <p>.contact &#10100; &#10101;</p>
+                <div class="tag is-dark is-large">
+                    Selectors :
                 </div>
-              </div>
             </div>
-            <div class="content">
-              <p>There needs to be a matching class in the HTML:</p>
-            </div>
-            <div class="message is-success">
-              <div class="message-body">
-                <div class="content">
-                <pre>
+            <div class="columns">
+                <div class="column is-4">
+                    <div class="panel is-info">
+                        <div class="panel-heading">
+                            <h5 class="is-size-5 is-capitalized has-text-centered">tags</h5>
+                        </div>
+                        <div class="box">
+                            <div class="tags">
+                                <div class="tag is-dark is-large">
+                                    Tag
+                                </div>
+                            </div>
+
+                            <div class="content">
+                                <p>Select all the tags of the same type.</p>
+                            </div>
+
+                            <div class="message">
+                                <div class="message-body">
+                                    <div class="content">
+                                        <p>html &#10100; &#10101;</p> <!--this code is use to curly bracket -->
+                                        <p>h1 &#10100; &#10101;</p>
+                                        <p>p &#10100; &#10101;</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="column is-4">
+                    <div class="box">
+                        <div class="tags">
+                            <div class="tag is-dark is-large">
+                                <span class="is-size-2">&#8901;</span>
+                            </div>
+                            <div class="tag is-light is-large">
+                                <span>&#9866; Class</span>
+                            </div>
+                        </div>
+                        <div class="content">
+                            Select an element that has a class.
+                        </div>
+                        <div class="message is-info">
+                            <div class="message-body">
+                                <div class="content">
+                                    <p>.masthead &#10100; &#10101;</p>
+                                    <p>.nav &#10100; &#10101;</p>
+                                    <p>.contact &#10100; &#10101;</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="content">
+                            <p>There needs to be a matching class in the HTML:</p>
+                        </div>
+                        <div class="message is-success">
+                            <div class="message-body">
+                                <div class="content">
+                                    <pre>
 &#10094;header class="masthead"&#10095;
   &#10094;nav class="nav"&#10095;
     ⋮
   &#10094;&#x2f;nav&#10095;
 &#10094;&#x2f;header&#10095; 
 </pre>
-</div>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="column is-4">
-          <div class="box">
-            <div class="tags">
-              <div class="tag is-dark is-large">
-                <span class="is-size-2">&#35;</span>
-              </div>
-              <div class="tag is-light is-large">
-                <span>&#9866; ID</span>
-              </div>
-            </div>
-            <div class="content">
-              Select an element that has the ID.
-            </div>
-            <div class="message is-info">
-              <div class="message-body">
-                <div class="content">
-                  <p>&#35;heading-1 &#10100; &#10101;</p>
-                  <p>&#35;github &#10100; &#10101;</p>
-                  <p>&#35;top &#10100; &#10101;</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
-              </div>
-            </div>
-            <div class="content">
-              <p>There needs to be a matching class in the HTML:</p>
-            </div>
-            <div class="message is-link">
-              <div class="message-body">
-                <div class="content">
-                  &lt;a id="top" href="#top"&gt; Top &lt;/a&gt;
+                <div class="column is-4">
+                    <div class="box">
+                        <div class="tags">
+                            <div class="tag is-dark is-large">
+                                <span class="is-size-2">&#35;</span>
+                            </div>
+                            <div class="tag is-light is-large">
+                                <span>&#9866; ID</span>
+                            </div>
+                        </div>
+                        <div class="content">
+                            Select an element that has the ID.
+                        </div>
+                        <div class="message is-info">
+                            <div class="message-body">
+                                <div class="content">
+                                    <p>&#35;heading-1 &#10100; &#10101;</p>
+                                    <p>&#35;github &#10100; &#10101;</p>
+                                    <p>&#35;top &#10100; &#10101;</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="content">
+                            <p>There needs to be a matching class in the HTML:</p>
+                        </div>
+                        <div class="message is-link">
+                            <div class="message-body">
+                                <div class="content">
+                                    &lt;a id="top" href="#top"&gt; Top &lt;/a&gt;
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
-              </div>
             </div>
-          </div>
+
+            <!-- Final Selection Section -->
+            <hr class="has-background-dark">
+            <h1 class="title has-text-centered">Final Selection Section</h1>
+            <hr class="has-background-dark">
+
+            <!-- See a Complete Css selector List -->
+            <div class="columns">
+                <div class="column">
+                    <div class="panel">
+                        <div class="panel-heading ">
+                            <h1 class="title">Complete Css selector List :</h1>
+                            <!-- <div class="panel-block is-inline">
+                                <span class="content ">The elements are selected by the element names or universal selector.</span>
+                            </div>  -->
+                        </div>
+                        <div class="box">
+                            <div class="columns">
+                                <div class="column is-4">
+                                    <!-- Element Selectors -->
+                                    <div class="box">
+                                        <div class="tags">
+                                            <div class="tag is-dark is-large">
+                                                <span class="is-size-4">&#49;.</span>
+                                            </div>
+                                            <div class="tag is-light is-large">
+                                                <span>&#9866; Element Selectors</span>
+                                            </div>
+                                        </div>
+                                        <div class="content">
+                                            <ol type="1">
+                                                <li>Type selector</li>
+                                                <li>Universal selector (*)</li>
+                                            </ol>
+                                        </div>
+                                        <!-- <div class="message is-info">
+                                            <div class="message-body">
+                                                <div class="content">
+                                                    <ol type="1">
+                                                        <li>Type selector</li>
+                                                        <li>Universal selector (*)</li>
+                                                    </ol>
+                                                </div> 
+                                            </div>
+                                        </div> -->
+                                    </div>
+
+                                    <!-- Combinators -->
+                                    <div class="box">
+                                        <div class="tags">
+                                            <div class="tag is-dark is-large">
+                                                <span class="is-size-4">&#52;.</span>
+                                            </div>
+                                            <div class="tag is-light is-large">
+                                                <span>&#9866; Combinators</span>
+                                            </div>
+                                        </div>
+                                        <!-- <div class="content">
+                                            <ol type="1">
+                                                <li>[att]</li>
+                                                <li>[att=val]</li>    
+                                                <li>[att~=val]</li> 
+                                                <li>[att|=val]</li>    
+                                                <li>[att^=val]</li>    
+                                                <li>[att$=val]</li>    
+                                                <li>[att*=val]</li>
+                                            </ol>
+                                        </div> -->
+                                        <div class="message is-info">
+                                            <div class="message-body">
+                                                <div class="content">
+                                                    <ol type="1">
+                                                        <li>Descendent combinator</li>
+                                                        <li>Child combinator ('>')</li>
+                                                        <li>Next-sibling combinator ('+')</li>
+                                                        <li>Following combinator ('~')</li>
+                                                    </ol>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <!-- Structural Pseudo-classes -->
+                                    <div class="box">
+                                        <div class="tags">
+                                            <div class="tag is-dark is-large">
+                                                <span class="is-size-4">&#55;.</span>
+                                            </div>
+                                            <div class="tag is-light is-large">
+                                                <span>&#9866; Structural Pseudo-classes</span>
+                                            </div>
+                                        </div>
+                                        <!-- <div class="content">
+                                            <ol type="1">
+                                                <li>[att]</li>
+                                                <li>[att=val]</li>    
+                                                <li>[att~=val]</li> 
+                                                <li>[att|=val]</li>    
+                                                <li>[att^=val]</li>    
+                                                <li>[att$=val]</li>    
+                                                <li>[att*=val]</li>
+                                            </ol>
+                                        </div> -->
+                                        <div class="message is-info">
+                                            <div class="message-body">
+                                                <div class="content">
+                                                    <ol type="1">
+                                                        <li>:first-child</li>
+                                                        <li>:nth-child(E)</li>
+                                                        <li>:last-child</li>
+                                                        <li>:nth-last-child(E)</li>
+                                                        <li>:only-child</li>
+                                                        <li>:first-of-type</li>
+                                                        <li>:nth-of-type(E)</li>
+                                                        <li>:last-of-type</li>
+                                                        <li>:nth-last-of-type(n)</li>
+                                                    </ol>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                </div>
+                                <div class="column is-4">
+                                    <!-- Attribute Selectors -->
+                                    <div class="box">
+                                        <div class="tags">
+                                            <div class="tag is-dark is-large">
+                                                <span class="is-size-4">&#50;.</span>
+                                            </div>
+                                            <div class="tag is-light is-large">
+                                                <span>&#9866; Attribute Selectors</span>
+                                            </div>
+                                        </div>
+                                        <!-- <div class="content">
+                                            <ol type="1">
+                                                <li>[att]</li>
+                                                <li>[att=val]</li>    
+                                                <li>[att~=val]</li> 
+                                                <li>[att|=val]</li>    
+                                                <li>[att^=val]</li>    
+                                                <li>[att$=val]</li>    
+                                                <li>[att*=val]</li>
+                                            </ol>
+                                        </div> -->
+                                        <div class="message is-info">
+                                            <div class="message-body">
+                                                <div class="content">
+                                                    <ol type="1">
+                                                        <li>[att]</li>
+                                                        <li>[att=val]</li>
+                                                        <li>[att~=val]</li>
+                                                        <li>[att|=val]</li>
+                                                        <li>[att^=val]</li>
+                                                        <li>[att$=val]</li>
+                                                        <li>[att*=val]</li>
+                                                    </ol>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <!-- User Action Pseudo-classes -->
+                                    <div class="box">
+                                        <div class="tags">
+                                            <div class="tag is-dark is-large">
+                                                <span class="is-size-4">&#53;.</span>
+                                            </div>
+                                            <div class="tag is-light is-large">
+                                                <span>&#9866; User action Pseudo-classes</span>
+                                            </div>
+                                        </div>
+                                        <div class="content">
+                                            <ol type="1">
+                                                <li>:link</li>
+                                                <li>:hover</li>
+                                                <li>:visited</li>
+                                                <li>:active</li>
+                                            </ol>
+                                        </div>
+                                        <!-- <div class="message is-info">
+                                            <div class="message-body">
+                                                <div class="content">
+                                                    <ol type="1">
+                                                        <li>:link</li>
+                                                        <li>:hover</li>
+                                                        <li>:visited</li>
+                                                        <li>:active</li>
+                                                    </ol>
+                                                </div>
+                                            </div>
+                                        </div> -->
+                                    </div>
+                                </div>
+                                <div class="column is-4">
+                                    <!-- Pseudo Elements -->
+                                    <div class="box">
+                                        <div class="tags">
+                                            <div class="tag is-dark is-large">
+                                                <span class="is-size-4">&#51;.</span>
+                                            </div>
+                                            <div class="tag is-light is-large">
+                                                <span>&#9866; Pseudo Elements</span>
+                                            </div>
+                                        </div>
+                                        <div class="content">
+                                            <ol type="1">
+                                                <li>::firs-line</li>
+                                                <li>::first-letter</li>
+                                                <li>::selection</li>
+                                                <li>::after</li>
+                                                <li>::before</li>
+                                                <li>:placeholder</li>
+                                            </ol>
+                                        </div>
+                                        <!-- <div class="message is-info">
+                                            <div class="message-body">
+                                                <div class="content">
+                                                    <ol type="1">
+                                                        <li>Type selector</li>
+                                                        <li>Universal selector (*)</li>
+                                                    </ol>
+                                                </div> 
+                                            </div>
+                                        </div> -->
+                                    </div>
+
+                                    <!-- Input Pseudo-classes -->
+                                    <div class="box">
+                                        <div class="tags">
+                                            <div class="tag is-dark is-large">
+                                                <span class="is-size-4">&#54;.</span>
+                                            </div>
+                                            <div class="tag is-light is-large">
+                                                <span>&#9866; Input Pseudo-classes</span>
+                                            </div>
+                                        </div>
+                                        <!-- <div class="content">
+                                            <ol type="1">
+                                                <li>[att]</li>
+                                                <li>[att=val]</li>    
+                                                <li>[att~=val]</li> 
+                                                <li>[att|=val]</li>    
+                                                <li>[att^=val]</li>    
+                                                <li>[att$=val]</li>    
+                                                <li>[att*=val]</li>
+                                            </ol>
+                                        </div> -->
+                                        <div class="message is-info">
+                                            <div class="message-body">
+                                                <div class="content">
+                                                    <ol type="1">
+                                                        <li>:disabled</li>
+                                                        <li>:enabled</li>
+                                                        <li>:checked</li>
+                                                        <li>:read-only</li>
+                                                        <li>:placeholder-shown</li>
+                                                        <li>:out-of-range</li>
+                                                        <li>:required</li>
+                                                    </ol>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Element Selectors -->
+            <div class="columns">
+                <div class="column">
+                    <div class="panel">
+                        <div class="panel-heading ">
+                            <h1 class="title">Element Selectors :</h1>
+                            <div class="panel-block is-inline">
+                                <span class="content ">The elements are selected by the element names or universal
+                                    selector.</span>
+                            </div>
+                        </div>
+                        <div class="box">
+                            <div class="columns">
+                                <div class="column is-6">
+                                    <!-- <div class="box"> -->
+                                    <div class="tags">
+                                        <div class="tag is-dark is-large">
+                                            <span class="is-size-3">&#42;</span>
+                                        </div>
+                                        <div class="tag is-light is-large">
+                                            <span>&#9866; Universal Selector</span>
+                                        </div>
+                                    </div>
+                                    <div class="content">
+                                        <p>
+                                            '*' is a universal selector. It selects all of the elements and applies CSS
+                                            properties.
+                                        </p>
+                                    </div>
+                                    <div class="content">
+                                        <p class="has-text-weight-medium">There needs to be a matching class in the
+                                            HTML:</p>
+                                    </div>
+                                    <div class="message is-info">
+                                        <div class="message-body">
+                                            <p> * &#10100; <br>
+                                                color: red; <br>
+                                                &#10101;</p>
+
+                                        </div>
+                                    </div>
+                                    <div class="message-body box extrabox has-background-light">
+                                        <h1 class="subtitle">Universal Selector [ * ] :</h1>
+                                        <nav class="nav">
+                                            <ul>
+                                                <li>
+                                                    <a href="#" class="button is-primary">a</a>
+                                                    <a href="#" class="button is-primary">div</a>
+                                                    <a href="#" class="button is-primary">c</a>
+                                                    <a href="#" class="button is-primary">div</a>
+                                                </li>
+                                            </ul>
+                                        </nav>
+                                    </div>
+                                    <!-- <div class="message is-success">
+                                            <div class="message-body">
+                                                <div class="content">
+                                                    <pre>
+                      &#10094;header class="masthead"&#10095;
+                        &#10094;nav class="nav"&#10095;
+                          ⋮
+                        &#10094;&#x2f;nav&#10095;
+                      &#10094;&#x2f;header&#10095; 
+                      </pre>
+                                                </div>
+                                            </div>
+                                        </div> -->
+                                    <!-- </div> -->
+                                </div>
+                                <div class="column is-6">
+                                    <!-- <div class="box"> -->
+                                    <div class="tags">
+                                        <div class="tag is-dark is-large">
+                                            <span class="is-size-3">&#42;</span>
+                                        </div>
+                                        <div class="tag is-light is-large">
+                                            <span>&#9866; Type Selector</span>
+                                        </div>
+                                    </div>
+                                    <div class="content">
+                                        <p>The element selectors select the elements by the element name or a list of
+                                            element names and then applies CSS properties to the selected elements.</p>
+                                    </div>
+
+                                    <div class="content">
+                                        <p class="has-text-weight-medium">There needs to be a matching class in the
+                                            HTML:</p>
+                                    </div>
+                                    <div class="message is-info">
+                                        <div class="message-body">
+                                            <p> p, span, code &#10100;<br>
+                                                color: red; <br>
+                                                &#10101;</p>
+
+                                        </div>
+                                    </div>
+                                    <div class="notification">
+                                        <h1 class="subtitle">Universal Selector [ * ] :</h1>
+                                        <nav class="nav">
+                                            <ul>
+                                                <li>
+                                                    <a href="#" class="button is-primary">p</a>
+                                                    <a href="#" class="button is-primary">span</a>
+                                                    <a href="#" class="button is-primary">code</a>
+                                                    <a href="#" class="button is-primary">div</a>
+                                                </li>
+                                            </ul>
+                                        </nav>
+                                    </div>
+                                    <!-- <div class="message-body box extrabox has-background-light">
+                                            <h1 class="subtitle">Universal Selector [ * ] :</h1>
+                                            <nav class="nav">
+                                                <ul>
+                                                    <li>
+                                                        <a href="#" class="button is-primary">p</a>
+                                                        <a href="#" class="button is-primary">span</a>
+                                                        <a href="#" class="button is-primary">code</a>
+                                                        <a href="#" class="button is-primary">div</a>
+                                                    </li>
+                                                </ul>
+                                            </nav>
+                                        </div> -->
+                                    <!-- <div class="message is-success">
+                                            <div class="message-body">
+                                                <div class="content">
+                                                    <pre>
+                      &#10094;header class="masthead"&#10095;
+                        &#10094;nav class="nav"&#10095;
+                          ⋮
+                        &#10094;&#x2f;nav&#10095;
+                      &#10094;&#x2f;header&#10095; 
+                      </pre>
+                                                </div>
+                                            </div>
+                                        </div> -->
+                                    <!-- </div> -->
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="columns">
+                <div class="column">
+                    <div class="panel">
+                        <div class="panel-heading ">
+                            <h1 class="title">Element Selectors [purpose only example structure]:</h1>
+                            <div class="panel-block is-inline">
+                                <span class="content ">The elements are selected by the element names or universal
+                                    selector.</span>
+                            </div>
+                        </div>
+                        <div class="box">
+                            <div class="columns">
+                                <div class="column is-6">
+                                    <!-- <div class="box"> -->
+                                    <div class="tags">
+                                        <div class="tag is-dark is-large">
+                                            <span class="is-size-3">&#42;</span>
+                                        </div>
+                                        <div class="tag is-light is-large">
+                                            <span>&#9866; Universal Selector</span>
+                                        </div>
+                                    </div>
+                                    <div class="content">
+                                        <p>
+                                            '*' is a universal selector. It selects all of the elements and applies CSS
+                                            properties.
+                                        </p>
+                                    </div>
+                                    <div class="content">
+                                        <p class="has-text-weight-medium">There needs to be a matching class in the
+                                            HTML:</p>
+                                    </div>
+                                    <div class="message is-info">
+                                        <div class="message-body">
+                                            <p> * &#10100; <br>
+                                                color: red; <br>
+                                                &#10101;</p>
+                                        </div>
+                                    </div>
+                                    <div class="message-body box extrabox has-background-light">
+                                        <h1 class="subtitle">Universal Selector [ * ] :</h1>
+                                        <nav class="nav">
+                                            <ul>
+                                                <li>
+                                                    <a href="#" class="button is-primary">a</a>
+                                                    <a href="#" class="button is-primary">div</a>
+                                                    <a href="#" class="button is-primary">c</a>
+                                                    <a href="#" class="button is-primary">div</a>
+                                                </li>
+                                            </ul>
+                                        </nav>
+                                    </div>
+
+                                    <div class="message is-link">
+                                        <div class="message-body box extrabox has-background-light">
+                                            <nav class="nav">
+                                                <ul>
+                                                    <li>
+                                                        <a href="#" class="button">a</a>
+                                                        <ul>
+                                                            <li>
+                                                                <a href="#" class="button">B</a>
+                                                                <ul>
+                                                                    <li>
+                                                                        <a href="#" class="button">a</a>
+                                                                    </li>
+                                                                    <li>
+                                                                        <a href="#" class="button">B</a>
+                                                                    </li>
+                                                                </ul>
+                                                            </li>
+                                                            <li>
+                                                                <a href="#" class="button">C</a>
+                                                                <ul>
+                                                                    <li>
+                                                                        <a href="#" class="button">a</a>
+                                                                    </li>
+                                                                    <li>
+                                                                        <a href="#" class="button">b</a>
+                                                                    </li>
+                                                                </ul>
+                                                            </li>
+                                                        </ul>
+                                                    </li>
+                                                </ul>
+                                            </nav>
+                                        </div>
+                                    </div>
+                                    <!-- <div class="message is-success">
+                                            <div class="message-body">
+                                                <div class="content">
+                                                    <pre>
+                      &#10094;header class="masthead"&#10095;
+                        &#10094;nav class="nav"&#10095;
+                          ⋮
+                        &#10094;&#x2f;nav&#10095;
+                      &#10094;&#x2f;header&#10095; 
+                      </pre>
+                                                </div>
+                                            </div>
+                                        </div> -->
+                                    <!-- </div> -->
+                                </div>
+                                <div class="column is-6">
+                                    <!-- <div class="box"> -->
+                                    <div class="tags">
+                                        <div class="tag is-dark is-large">
+                                            <span class="is-size-3">&#42;</span>
+                                        </div>
+                                        <div class="tag is-light is-large">
+                                            <span>&#9866; Type Selector</span>
+                                        </div>
+                                    </div>
+                                    <div class="content">
+                                        <p>The element selectors select the elements by the element name or a list of
+                                            element names and then applies CSS properties to the selected elements.</p>
+                                    </div>
+
+                                    <div class="content">
+                                        <p class="has-text-weight-medium">There needs to be a matching class in the
+                                            HTML:</p>
+                                    </div>
+                                    <div class="message is-info">
+                                        <div class="message-body">
+                                            <p> p, span, code &#10100;<br>
+                                                color: red; <br>
+                                                &#10101;</p>
+
+                                        </div>
+                                    </div>
+                                    <div class="notification">
+                                        <h1 class="subtitle">Universal Selector [ * ] :</h1>
+                                        <nav class="nav">
+                                            <ul>
+                                                <li>
+                                                    <a href="#" class="button is-primary">p</a>
+                                                    <a href="#" class="button is-primary">span</a>
+                                                    <a href="#" class="button is-primary">code</a>
+                                                    <a href="#" class="button is-primary">div</a>
+                                                </li>
+                                            </ul>
+                                        </nav>
+                                    </div>
+                                    <!-- <div class="message-body box extrabox has-background-light">
+                                            <h1 class="subtitle">Universal Selector [ * ] :</h1>
+                                            <nav class="nav">
+                                                <ul>
+                                                    <li>
+                                                        <a href="#" class="button is-primary">p</a>
+                                                        <a href="#" class="button is-primary">span</a>
+                                                        <a href="#" class="button is-primary">code</a>
+                                                        <a href="#" class="button is-primary">div</a>
+                                                    </li>
+                                                </ul>
+                                            </nav>
+                                        </div> -->
+                                    <div class="message is-success">
+                                            <div class="message-body">
+                                                <div class="content">
+                                                    <pre>
+                      &#10094;header class="masthead"&#10095;
+                        &#10094;nav class="nav"&#10095;
+                          ⋮
+                        &#10094;&#x2f;nav&#10095;
+                      &#10094;&#x2f;header&#10095; 
+                      </pre>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    <!-- </div> -->
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
-      </div>
     </div>
-  </div>
 </body>
 
 </html>
