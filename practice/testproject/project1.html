@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.9.4/css/bulma.min.css">
+    <title>project</title>
+</head>
+<body>
+    <div class="container">
+        <section class="section">
+            <div class="box has-text-centered has-background-warning">
+                <div class="heading">
+                    <h1 class="title has-text-centered">project build</h1>
+                </div>
+                <div class="columns">
+                    <div class="column">
+                        <div class="field">
+                            <label class="label">Enter A</label>
+                            <div class="control">
+                                <input type="number" id="number1" class="input">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="column">
+                        <div class="field">
+                            <label class="label">Enter B</label>
+                            <div class="control">
+                                <input type="number" id="number2" class="input">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="columns">
+                    <div class="column">
+                        <center><button class="button" onclick="add()">Addition</button></center>
+                    </div>
+                    <div class="column">
+                        <center><button class="button" onclick="sub()">sub</button></center>
+                    </div>
+                    <div class="column">
+                        <center><button class="button" onclick="mul()">multi</button></center>
+                    </div>
+                    <div class="column">
+                        <center><button class="button" onclick="div()">div</button></center>
+                    </div>
+                </div>
+
+                <div class="column">
+                    <div class="field">
+                        <label class="label">Output : </label>
+                        <div class="control">
+                            <input type="number" id="output" class="input">
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+    </div>
+
+    <script> 
+        function add()
+        {
+            let a = document.getElementById("number1").value;
+            let b = document.getElementById("number2").value;
+            let c = parseInt(a) + parseInt(b);
+            document.getElementById("output").value = c ;
+        }
+        function sub()
+        {
+            let a = document.getElementById("number1").value;
+            let b = document.getElementById("number2").value;
+            let d = parseInt(a) - parseInt(b);
+            document.getElementById("output").value = d;
+        }
+        function mul()
+        {
+            let a = document.getElementById("number1").value;
+            let b = document.getElementById("number2").value;
+            let e = parseInt(a) * parseInt(b);
+            document.getElementById("output").value = e;
+        }
+        function div()
+        {
+            let a = document.getElementById("number1").value;
+            let b = document.getElementById("number2").value;
+            let f = parseFloat(a) / parseFloat(b);
+            document.getElementById("output").value = f; 
+        }
+    </script>
+</body>
+</html>

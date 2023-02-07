@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.9.4/css/bulma.min.css" />
+    <title>Dynamic Table With Pattern</title>
+</head>
+<body>
+    <div class="container">
+        <div class="box mt-5">
+            <h1 class="title has-text-centered">Dynamic Table With Pattern</h1>
+            <div class="field">
+                <div class="control">
+                    <input type="text" id="inputValue" class="input is-primary is-large">
+                </div>
+            </div>
+            <div class="field has-text-centered">
+                <div class="control">
+                    <button class="button is-primary is-large" onclick="tableWithPattern()">Click Me</button>
+                </div>
+            </div>
+            <div class="box">
+                <p id="displayPattern"></p>
+            </div>
+            
+            <!-- <div class="field">
+                <div class="control">
+                    <textarea class="mt-5 textarea is-primary is-large" id="displayTableWithPatternCode" size="10"></textarea>
+                </div>
+            </div> -->
+            <!-- <div class="field">
+                <table class="table is-bordered has-text-weight-bold">
+                    <tbody>
+                        <tr>
+                            <td>*</td>
+                        </tr>
+                        <tr>
+                            <td>*</td>
+                            <td>*</td> 
+                        </tr>
+                        <tr>
+                            <td>*</td>
+                            <td>*</td>
+                            <td>*</td>
+                        </tr>
+                        <tr>
+                            <td>*</td>
+                            <td>*</td>
+                            <td>*</td>
+                            <td>*</td>
+                        </tr>
+                        <tr>
+                            <td>*</td>
+                            <td>*</td>
+                            <td>*</td>
+                            <td>*</td>
+                            <td>*</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div> -->
+        </div>
+    </div>
+
+    <script>
+        function tableWithPattern() {
+            let i,j;
+            let inputN = parseInt(document.getElementById("inputValue").value);
+
+            let strTable = '<table class="table table is-bordered"> \n<tr class= "has-font-weight-bold">\n';
+            for (i = 1; i <= inputN; i++) {
+                for (j = 1; j <= i; j++)
+                {
+                    strTable = strTable +"\n<td>" + "*" + "</td>\n";
+                }
+                strTable = strTable + "</tr>";
+            }
+            strTable = strTable  + "\n</table>";
+            document.getElementById("displayPattern").innerHTML = strTable;
+
+            // var fullHTMLCode = "<html>\n <head>\n<title></title>\n</head>\n  <body>" + strTable + "\n </ body>\n</ html>";
+
+            // document.getElementById("displayTableWithPatternCode").value = fullHTMLCode;
+
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.9.4/css/bulma.min.css" />
+    <title>Swap Number</title>
+</head>
+
+<body>
+    <div class="container is-fluid">
+        <div class="box mt-5 mb-5">
+            <div class="heading">
+                <h1 class="title is-capitalized	 has-text-centered">1. Swap Number</h1>
+            </div>
+
+            <div class="card mt-5">
+                <div class="box">
+                    <div class="columns">
+                        <div class="column">
+                            <div class="field">
+                                <label class="label">Enter Number1 :</label>
+                                <div class="control">
+                                    <input class="input is-medium is-info has-text-centered has-text-weight-bold"
+                                        type="text" placeholder="Enter Number1" id="inputNumber1">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="column">
+                            <div class="field">
+                                <label class="label">Enter Number2 :</label>
+                                <div class="control">
+                                    <input class="input is-medium is-info has-text-centered has-text-weight-bold"
+                                        type="text" placeholder="Enter Number2" id="inputNumber2">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="field has-text-centered mt-5 mb-5">
+                        <div class="control">
+                            <button class="button is-large is-success" onclick="swapNumber()">Swap Number</button>
+                        </div>
+                    </div>
+
+                    <!-- <div class="columns">
+                        <div class="column">
+                            <div class="field">
+                                <label class="label">Number1 :</label>
+                                <div class="control">
+                                  <input class="input is-medium is-primary has-text-centered has-text-weight-bold" type="text" placeholder="Number1" id="displayNumber1">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="column">
+                            <div class="field">
+                                <label class="label">Number2 :</label>
+                                <div class="control">
+                                  <input class="input is-medium is-primary has-text-centered has-text-weight-bold" type="text" placeholder="Number2" id="displayNumber2">
+                                </div>
+                            </div>
+                        </div>
+                    </div> -->
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function swapNumber() {
+
+            let number1 = parseInt(document.getElementById("inputNumber1").value);
+            console.log("1. number1 :-> "+number1);
+            let number2 = parseInt(document.getElementById("inputNumber2").value);
+            console.log("2. number1 :-> "+number1 + " " + "number2 :-> "+number2);
+
+            // number1 = number2;
+            // console.log("3. number1 :-> "+number1 + " " + "number2 :-> "+number2);
+            // number2 = number1;
+            // console.log("4. number1 :-> "+number1 + " " + "number2 :-> "+number2);
+
+            document.getElementById("inputNumber2").value = number1;
+            console.log("5. number1 :-> "+number1 + " " + "number2 :-> "+number2);
+            document.getElementById("inputNumber1").value = number2;
+            console.log("6. number1 :-> "+number1 + " " + "number2 :-> "+number2);
+        }
+    </script>
+</body>
+
+</html>

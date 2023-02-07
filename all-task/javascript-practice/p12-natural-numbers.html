@@ -1,0 +1,64 @@
+<!-- print all 1 to n natural numbers -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
+    <title>Natural Numbers</title>
+</head>
+<body>
+    <!-- <h1 class="title">Natural Numbers</h1> -->
+
+    <div class="box">
+        <h3 class="subtitle is-3 has-text-centered is-capitalized">-: Only Check Natural Numbers :-</h3>
+        <div class="columns">
+            <div class="column">
+                <div class="control">
+                    <label for="" class="label">Enter Starting Number:</label>
+                    <div class="field">    
+                        <input type="text" class="input is-narrow" id="inputNumber" placeholder="Please enter the number1...">
+                    </div>
+                </div>
+            </div>
+            <div class="column">
+                <div class="control">
+                    <label for="" class="label">Enter Ending Number:</label>
+                    <div class="field">
+                        <input type="text" class="input" id="inputNumber1" placeholder="Please enter the number2...">
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="field has-text-centered">
+            <button class="button is-size-4 is-primary is-capitalized" onclick="getOnlyNaturalNumber()">click output</button>
+        </div>
+        <div class="field">
+            <textarea class="textarea" cols="20" rows="10" id="printNumber"></textarea>
+        </div>
+        <div class="block has-text-centered">
+            <p class="tag is-large is-success" id="printNumber1">Sum : </p>
+        </div>
+    </div>
+    <script>
+        function getOnlyNaturalNumber()
+        {
+            let number1 = Number(document.getElementById("inputNumber").value);
+            let number2 = Number(document.getElementById("inputNumber1").value);
+            let sum = 0;
+            for(let i=number1; i<=number2; i++)
+            {
+                    // console.log(i);
+                    document.getElementById("printNumber").innerHTML +=  i + " " +"Number is natural" + "\n";
+                    sum = sum + i; 
+                
+            }
+            // console.log("\n");
+            // document.write("\n sum is"+sum);
+            document.getElementById("printNumber1").innerHTML = "Sum : " + sum;
+            // console.log("sum : "+ sum);
+        }
+    </script>
+</body>
+</html>

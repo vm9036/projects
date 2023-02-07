@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Even numbers</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
+</head>
+
+<body>
+    <div class="box">
+        <h3 class="subtitle is-3 has-text-centered is-capitalized">-: only check Prime numbers :-</h3>
+        <div class="columns">
+            <div class="column">
+                <div class="control">
+                    <label for="" class="label">Enter Starting Number:</label>
+                    <div class="field">
+                        <input type="text" class="input is-narrow" id="inputNumber"
+                            placeholder="Please enter the number1...">
+                    </div>
+                </div>
+            </div>
+            <div class="column">
+                <div class="control">
+                    <label for="" class="label">Enter Ending Number:</label>
+                    <div class="field">
+                        <input type="text" class="input" id="inputNumber1" placeholder="Please enter the number2...">
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="field has-text-centered">
+            <button class="button is-size-4 is-primary is-capitalized" onclick="getOnlyPrimeNumber()">click
+                output</button>
+        </div>
+        <div class="field">
+            <div class="control block">
+                <label for="" class="label is-size-5">Prime number between number1 and number2 :</label>
+            </div>
+            <textarea class="textarea has-text-weight-medium" cols="20" rows="10" id="printNumber"></textarea>
+        </div>
+        <div class="block has-text-centered">
+            <p class="tag is-large is-success" id="printNumber1">Sum : </p>
+        </div>
+
+    </div>
+    <script>
+        function getOnlyPrimeNumber() {
+            let number1 = Number(document.getElementById("inputNumber").value); //number1 = Starting Value
+            let number2 = Number(document.getElementById("inputNumber1").value); //number2 = Ending Value
+            // let flag = 0;
+            let sum = 0;
+            // let i, j;
+            // starting number and ending number
+
+            // looping from number1 to number2
+            for (let i = number1; i <= number2; i++) {
+                let flag = 0;
+
+                // looping through 2 to user input number
+                for (let j = 2; j < i; j++) {
+
+                    if (i % j == 0) {
+                        flag = 1;
+                        break;
+                    }
+                }
+
+                // if number greater than 1 and not divisible by other numbers
+                if (i > 1 && flag == 0) {
+                    // console.log(i);
+                    document.getElementById("printNumber").value = i +" " + "Number is Prime." + "\n";
+
+                    sum = sum + i;
+                }
+                document.getElementById("printNumber1").innerHTML = "Sum : " + sum;
+            }
+        }
+
+            // Prime number check logic
+            // for (i = 2; i < number / 2; i++) {
+            //     if (number % i == 0) {
+            //         flag = 1;
+            //         break;
+            //         // console.log(i);
+            //         // document.getElementById("printNumber").innerHTML += "Number is even"+ " " + i + "\n";
+            //         // document.write(i+"<br>");
+            //         // sum = sum + i; 
+            //     }
+            //     // document.getElementById("printNumber1").innerHTML = sum;
+            // }
+
+            // check prime number logic
+            // if (flag == 0) {
+            //     console.log("prime number :" + "" + number);
+            //     document.getElementById("printNumber").innerHTML += "Number Is Prime" + " " + i + "\n";
+            // }
+            // else {
+            //     console.log("not prime number :" + "" + number);
+            //     document.getElementById("printNumber").innerHTML += "Number Is Not Prime" + " " + i + "\n";
+            // }
+            // sum = sum + i;
+            // document.write("\n sum is"+sum);
+            // document.getElementById("printNumber1").innerHTML = "Sum : " + sum;
+            // console.log("sum : "+ sum);
+    </script>
+</body>
+
+</html>

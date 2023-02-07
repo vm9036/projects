@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.9.4/css/bulma.min.css"
+    />
+    <title>Static Between Value All In One Basic Sum</title>
+  </head>
+
+  <body>
+    <div class="container is-fluid">
+      <div class="box">
+        <div class="heading">
+          <h1 class="title is-capitalized has-text-centered mt-5 mb-5">
+            -: 3. Static Between Value All In One Basic Sum :-
+          </h1>
+        </div>
+
+        <div class="card">
+          <div class="box">
+            <div class="columns">
+              <div class="column">
+                <div class="field">
+                  <label class="label is-medium">Starting Value :</label>
+                  <div class="control">
+                    <input
+                      class="input is-medium is-info has-text-centered has-text-weight-bold"
+                      type="text"
+                      placeholder="Starting Value"
+                      id="inputStartingValue"
+                    />
+                  </div>
+                </div>
+              </div>
+              <div class="column">
+                <div class="field">
+                  <label class="label is-medium">Ending Value :</label>
+                  <div class="control">
+                    <input
+                      class="input is-medium is-info has-text-centered has-text-weight-bold"
+                      type="text"
+                      placeholder="Ending Value"
+                      id="inputEndingValue"
+                    />
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="field has-text-centered mt-5 mb-5">
+              <div class="control">
+                <button
+                  class="button is-large is-success has-text-weight-semibold"
+                  onclick="betweenValueAllInOneBasicSum()"
+                >
+                  Between Value All In One Basic Sum
+                </button>
+              </div>
+            </div>
+
+            <div class="field">
+              <label for="" class="label is-medium">Number1 to Number2 Between Value Is Print In This Textarea :-></label>
+              <div class="control">
+                <textarea
+                  name=""
+                  class="textarea is-success"
+                  id="displayBetweenValue"
+                  cols="30"
+                  rows="10"
+                ></textarea>
+              </div>
+            </div>
+
+            <div class="block mt-5 mb-5 has-text-centered">
+              <p class="tag is-large is-warning has-text-weight-bold" id="displayTotalSum">All In One Total Sum : </p>
+            </div>
+
+            <!-- <div class="columns">
+              <div class="column">
+                <div class="field">
+                  <label class="label">Addition :</label>
+                  <div class="control">
+                    <input
+                      class="input is-medium is-primary has-text-centered has-    text-weight-bold"
+                      type="text"
+                      placeholder="Addition"
+                      id="displayAddition"
+                    />
+                  </div>
+                </div>
+              </div>
+
+              <div class="column">
+                <div class="field">
+                  <label class="label">Subtraction :</label>
+                  <div class="control">
+                    <input
+                      class="input is-medium is-primary has-text-centered has-text-weight-bold"
+                      type="text"
+                      placeholder="Subtraction"
+                      id="displaySubtraction"
+                    />
+                  </div>
+                </div>
+              </div>
+
+              <div class="column">
+                <div class="field">
+                  <label class="label">Multiplication :</label>
+                  <div class="control">
+                    <input
+                      class="input is-medium is-primary has-text-centered has-text-weight-bold"
+                      type="text"
+                      placeholder="Multiplication"
+                      id="displayMultiplication"
+                    />
+                  </div>
+                </div>
+              </div>
+
+              <div class="column">
+                <div class="field">
+                  <label class="label">Division :</label>
+                  <div class="control">
+                    <input
+                      class="input is-medium is-primary has-text-centered has-text-weight-bold"
+                      type="text"
+                      placeholder="Division"
+                      id="displayDivision"
+                    />
+                  </div>
+                </div>
+              </div>
+            </div> -->
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
+    <title>learning</title>
+</head>
+<body>
+    <div class="container p-5">
+        <h1 class="title is-2 has-text-centered">Dynamic Table</h1>
+        <input id="inputN" type="text" class="input is-large" placeholder="inputN (draw table)"><br><br><br>
+        <input id="inputM" type="text" class="input is-large" placeholder="inputM (Use For Color)">
+        <div class="field">
+            <div class="control mt-5 has-text-centered">
+                <button onclick="drawTable()" class="button is-info">Draw Table</button>
+                <button onclick="addnewline()" class="button is-info">Add More Lines</button>
+                <button onclick="toggle()" class="button is-info">Toggle</button>
+            </div>
+        </div>
+        <p id="drawtablel"></p>
+    </div>
+    <script>
+        function drawTable() {
+            var n = parseInt(document.getElementById("inputN").value);
+            var strDiv = '<table class="table is-bordered is-fullwidth" id = "mytable" ><tr><th>Number</th></tr>';
+            for (i = 1; i <= n; i++) {
+                strDiv = strDiv + "<tr><td>" + i + "</td></tr>";
+            }
+            strDiv = strDiv + "</table>";
+            document.getElementById("drawtablel").innerHTML = strDiv;
+        }
+        function addnewline() {
+            var n = i;
+            var strDiv = '<table class="table is-bordered is-fullwidth"><tr><th>Number</th></tr>';
+                if (n==null || n==""){
+alert("Ples")
+                }
+            for (i = 1; i <= n; i++) {
+                strDiv = strDiv + "<tr><td>" + i + "</td></tr>";
+            }
+            strDiv = strDiv + "</table>";
+            document.getElementById("drawtablel").innerHTML = strDiv;
+        }
+        function toggle() {
+            var m = parseInt(document.getElementById("inputM").value);
+            // console.log(m)
+            var n = parseInt(document.getElementById("inputN").value);
+            if(m>n){
+                    alert("PLease Enter Correct Value")
+                    return;//If we don't use return than print input m value(Automatically drawig table)
+            }
+            var strDiv = '<table class="table is-bordered is-fullwidth" id><tr><th>Number</th></tr>';
+            for (i = 1; i <= n; i++) {
+                if(i==m){
+                    strDiv = strDiv + "<tr class='is-selected'><td>" + i +   "</td></tr>";
+                }
+                else{
+                    strDiv = strDiv + "<tr><td>" + i + "</td></tr>";
+                }
+            }
+            strDiv = strDiv + "</table>";
+            document.getElementById("drawtablel").innerHTML = strDiv;
+        }
+    </script>
+</body>
+</html> 

@@ -1,13 +1,35 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
     <title>Day Program</title>
 </head>
+
 <body>
-    <h1>Day Program </h1>
+    <div class="box">
+        <h3 class="subtitle is-3 has-text-centered is-capitalized">-: Only Check Day :-</h3>
+        <div class="columns">
+            <div class="column">
+                <div class="control">
+                    <label for="" class="label">Please Enter Day :</label>
+                    <div class="field">
+                        <input type="text" class="input is-narrow" id="inputDay" placeholder="Please Enter Day...">
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="field has-text-centered">
+            <button class="button is-size-4 is-primary is-capitalized" onclick="getOnlyDay()">click output</button>
+        </div>
+        <div class="field">
+            <textarea class="textarea" cols="20" rows="10" id="printDay"></textarea>
+        </div>
+    </div>
+
     <script>
         // Day Program
         // If day 1 is Sunday, then 
@@ -19,35 +41,49 @@
         // if day 7 is Saturday, then
         // otherwise: Sorry Better Luck Next Day!
 
-        const d = new Date();
-        let day = d.getDay();
+        function getOnlyDay() {
+            const d = new Date();
+            let day = document.getElementById("inputDay").value;
+            // d.getDay();
 
-        
-        if (day == 1) {
-            console.log("Today Is Monday");
+            let message=" ";
+
+
+            if (day == 1) {
+                message = "Today Is Monday" + d.getDay() + ".";
+                // console.log("Today Is Monday");
+            }
+            else if (day == 2) {
+                message = "Today Is Tuesday" + " " + d.getDay() + ".";
+                // console.log("Today Is Tuesday");
+            }
+            else if (day == 3) {
+                message = "Today Is Wednesday" + " " + d.getDay() + ".";
+                // console.log("Today Is Wednesday");
+            }
+            else if (day == 4) {
+                message = "Today Is Thursday" + " " + d.getDay() + ".";
+                // console.log("Today Is Thursday");
+            }
+            else if (day == 5) {
+                message = "Today Is Friday" + " " + d.getDay() + ".";
+                // console.log("Today Is Friday");
+            }
+            else if (day == 6) {
+                message = "Today Is Saturday" + " " + d.getDay() + ".";
+                // console.log("Today Is Saturday");
+            }
+            else if (day == 7) {
+                message = "Today Is Sunday" + " " + d.getDay() + ".";
+                // console.log("Today Is Sunday");
+            }
+            else {
+                message = "Sorry Better Luck Next Day!!!!" + " " + d.getDay() +".";
+                // console.log("Sorry Better Luck Next Day!!!!");
+            }
+
+            document.getElementById("printDay").value = message;
         }
-        else if (day == 2) {
-            console.log("Today Is Tuesday");
-        }
-        else if (day == 3) {
-            console.log("Today Is Wednesday");
-        }
-        else if (day == 4) {
-            console.log("Today Is Thursday");
-        }
-        else if (day == 5) {
-            console.log("Today Is Friday");
-        }
-        else if (day == 6) {
-            console.log("Today Is Saturday");
-        }
-        else if (day == 7) {
-            console.log("Today Is Sunday");
-        }
-        else {
-            console.log("Sorry Better Luck Next Day!!!!");
-        }
-        
     </script>
 </body>
 
