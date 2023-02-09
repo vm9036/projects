@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.9.4/css/bulma.min.css">
+    <title>Dynamic Table</title>
+</head>
+
+<body>
+    <div class="container mt-5">
+        <div class="box">
+            <div class="block has-text-centered">
+                <h1 class="title is-size-2">=: Dynamic Table := </h1>
+            </div>
+            <div class="block">
+                <div class="field">
+                    <label class="label is-size-4">Enter Table Value :</label>
+                    <div class="control has-text-centered mt-5">
+                        <input type="text" class="input is-large is-primary" id="inputTableValue">
+                    </div>
+                </div>
+            </div>
+            <div class="block">
+                <div class="field">
+                    <div class="control has-text-centered mt-5">
+                        <button class="button is-medium has-text-weight-semibold is-success" onclick="drawTable()">
+                            Draw Table
+                        </button>
+                        <!-- <button class="button is-medium has-text-weight-semibold is-success" onclick="addNewLine()">
+                            Add New Line
+                        </button> -->
+                    </div>
+                </div>
+            </div>
+            <div class="block">
+                <p id="displayTable"></p>
+            </div>
+        </div>
+    </div>
+
+    <script>
+
+        function drawTable() {
+
+            let TableValue = parseInt(document.getElementById("inputTableValue").value);
+
+            let strTable = "<div class='box'><table class='table is-bordered'> <tr><th>Number:</th></tr>";
+
+            for (let i = 1; i <= TableValue; i++) {
+                strTable = strTable + "<tr><td>" + i + "</td></tr>";
+            }
+            strTable = strTable + "</table>" + "</div>";
+            document.getElementById("displayTable").innerHTML = strTable;
+
+        }
+
+        // function addNewLine() {
+        //     let i, n;
+        //     n = i;
+        //     let strTable = "<div class='box'><table class='table is-bordered'> <tr><th>Number:</th></tr>";
+            
+        //     console.log("1.n :=> "+n , "i :=> "+i)
+        //     if (n == null || n == "") {
+        //         alert("Please Enter Correct Value");
+        //     }
+        //     console.log("2.n :=> "+n , "i :=> "+i)
+        //     for (i = 1; i <= n; i++) {
+        //         strTable = strTable + "<tr><td>" + i + "</td></tr>";
+        //         console.log("3.n :=> "+n , "i :=> "+i, "strTable :=> "+strTable);
+        //     }
+        //     strTable = strTable + "</table>" + "</div>";
+        //     document.getElementById("displayTable").innerHTML = strTable;
+        //     console.log("4.n :=> "+n , "i :=> "+i, "strTable :=> "+strTable);
+        // }
+
+    </script>
+</body>
+
+</html>

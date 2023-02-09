@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.9.4/css/bulma.min.css" />
+    <title>Dynamic Basic Sum Page</title>
+</head>
+
+<body>
+    <div class="container mt-5 is-fluid">
+        <div class="card">
+            <div class="card-header">
+                <div class="card-header-title">
+                    <h1 class="title has-text-centered">Dynamic Basic Sum Page :-> </h1>
+                </div>
+
+            </div>
+            <div class="card-content">
+                <div class="box">
+                    <div class="columns">
+                        <div class="column is-6">
+                            <div class="field">
+                                <label class="label">Enter Number1</label>
+                                <div class="control">
+                                    <input type="number" class="input is-info has-text-weight-medium" id="inputNumber1">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="column is-6">
+                            <div class="field">
+                                <label class="label">Enter Number2</label>
+                                <div class="control">
+                                    <input type="number" class="input is-info has-text-weight-medium" id="inputNumber2">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="field mt-5 mb-5">
+                        <div class="control has-text-centered">
+                            <button class="button is-primary is-medium has-text-weight-medium" onclick="allBasicSum()">Show
+                                Sum</button>
+                        </div>
+                    </div>
+
+                    <div class="columns">
+                        <div class="column is-3">
+                            <div class="field">
+                                <label class="label">Addition :</label>
+                                <div class="control">
+                                    <input type="number" class="input is-success has-text-weight-semibold"
+                                        id="additionSum">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="column is-3">
+                            <div class="field">
+                                <label class="label">Subtraction :</label>
+                                <div class="control">
+                                    <input type="number" class="input is-success has-text-weight-semibold"
+                                        id="subtractionSum">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="column is-3">
+                            <div class="field">
+                                <label class="label">Multiplication :</label>
+                                <div class="control">
+                                    <input type="number" class="input is-success has-text-weight-semibold"
+                                        id="multiplicationSum">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="column is-3">
+                            <div class="field">
+                                <label class="label">Division :</label>
+                                <div class="control">
+                                    <input type="number" class="input is-success has-text-weight-semibold"
+                                        id="divisionSum">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <script>
+            function allBasicSum(){
+                let number1 = parseInt(document.getElementById("inputNumber1").value);
+                let number2 = parseInt(document.getElementById("inputNumber2").value);
+                let sumAddition = 0, 
+                sumSubtraction = 0, 
+                sumMultiplication = 0, 
+                sumDivision = 0;
+
+                sumAddition = number1 + number2 ;
+                document.getElementById("additionSum").value = sumAddition;
+
+                sumSubtraction = number1 - number2 ;
+                document.getElementById("subtractionSum").value = sumSubtraction;
+
+                sumMultiplication = number1 * number2 ;
+                document.getElementById("multiplicationSum").value = sumMultiplication;
+
+                sumDivision = number1 / number2 ;
+                document.getElementById("divisionSum").value = sumDivision;
+            }
+        </script>
+</body>
+
+</html>

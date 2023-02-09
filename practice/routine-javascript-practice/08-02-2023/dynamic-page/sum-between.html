@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.9.4/css/bulma.min.css" />
+    <title>Sum Between Value</title>
+</head>
+<body>
+    <div class="container mt-5">
+        <div class="card">
+            <div class="card-header">
+                <div class="card-header-title">
+                    <h1 class="title">Sum Between Value :-></h1>
+                </div>
+            </div>
+            <div class="card-content">
+                <div class="columns">
+                    <div class="column is-6">
+                        <div class="field">
+                            <label class="label is-size-4">Starting Value :</label>
+                            <div class="control">
+                                <input type="text" value="1" class="input is-info has-text-weight-medium" id="inputStartValue">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="column is-6">
+                        <div class="field">
+                            <label class="label is-size-4">Ending Value :</label>
+                            <div class="control">
+                                <input type="text" value="10" class="input is-info has-text-weight-medium" id="inputEndValue">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="block">
+                    <div class="field mt-5 mb-5">
+                        <div class="control has-text-centered">
+                            <button class="button is-medium is-primary has-text-weight-bold is-size-4" onclick="betweenValue()">Sum Between Value</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="block">
+                    <div class="field">
+                        <label class="label is-size-4">Between Starting and Ending Value :-> </label>
+                        <div class="control">
+                            <textarea name="" id="DisplayNumber" cols="30" rows="10" class="textarea is-success"></textarea>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="block">
+                    <div class="field">
+                        <div class="control has-text-centered">
+                            <button class="button is-danger " id="sumPrint"></button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function betweenValue() {
+            let startValue = parseInt(document.getElementById("inputStartValue").value);
+            let endValue = parseInt(document.getElementById("inputEndValue").value);
+            sum = 0;
+
+            for(let i=startValue; i<=endValue; i++)
+            {
+                document.getElementById("DisplayNumber").value = document.getElementById("DisplayNumber").value + i +"\n";
+                console.log(i);
+
+                sum = sum + i;
+            }
+            document.getElementById("sumPrint").innerHTML =  document.getElementById("sumPrint").innerHTML + "Sum :- "+ sum;
+        }
+    </script>
+</body>
+</html>
