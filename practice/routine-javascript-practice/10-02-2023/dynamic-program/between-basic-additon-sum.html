@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.9.4/css/bulma.min.css">
+    <title>Between Basic Addition Sum</title>
+</head>
+<body>
+    <div class="container mt-6">
+        <h1 class="title has-text-centered">Between Basic Addition Sum</h1>
+        <div class="box">
+            <div class="columns">
+                <div class="column is-6">
+                    <div class="field">
+                        <labe class="label">Enter First Number :-</labe>
+                        <div class="control">
+                            <input type="text" class="input is-success" id="firstNumber">
+                        </div>
+                    </div>
+                </div>
+                <div class="column is-6">
+                    <div class="field">
+                        <labe class="label">Enter Second Number :-</labe>
+                        <div class="control">
+                            <input type="text" class="input is-success" id="secondNumber">
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="block">
+                <div class="field has-text-centered mt-5 mb-5">
+                    <button class="button is-success is-large" onclick="betweenBasicAdditonSum()">All Basic Sum</button>
+                </div>
+            </div>
+            <div class="block">
+                <div class="field">
+                    <label class="label">Between Value Firstnumber And Secondnumber :-</label>
+                    <div class="control">
+                        <textarea id="displayBetweenNumber" cols="30" rows="10" class="textarea is-success"></textarea>
+                    </div>
+                </div>
+            </div>
+            <div class="block has-text-centered">
+                <p id="betweenbasicSum" class="button is-success"></p>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function betweenBasicAdditonSum(){
+            let firstNumber = parseInt(document.getElementById("firstNumber").value);
+            let secondNumber = parseInt(document.getElementById("secondNumber").value);
+            let betweenSum = 0;
+
+            for(let i =firstNumber; i<=secondNumber; i++)
+            {
+                document.getElementById("displayBetweenNumber").value = document.getElementById("displayBetweenNumber").value + i +"\n";
+
+                betweenSum = betweenSum + i;
+            }
+            document.getElementById("betweenbasicSum").innerHTML = "Between Basic Addition Sum : " +betweenSum;
+
+        }
+    </script>
+</body>
+</html>

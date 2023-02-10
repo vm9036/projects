@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.9.4/css/bulma.min.css">
+    <title>Dynamic Multiplication Table 1 To 10</title>
+</head>
+<body>
+    <script>
+        function displayMultiplicationTable() {
+            let inputTableStartValue = parseInt(document.getElementById("inputStartingValue").value);
+            console.log("inputTableStartValue :-> " + inputTableStartValue);
+
+            let inputTableEndValue = parseInt(document.getElementById("inputEndingValue").value);
+            console.log("inputTableEndValue :-> " + inputTableEndValue);
+
+            let strTable = "<div class='columns'><div class='column is-5'></div><div class='column is-3'><table class='table is-bordered mt-3'><tr><th>Table Number:</th><th>Ans:</th></tr><tbody class='has-text-centered has-text-weight-bold'>"
+
+            for (let i = 1; i <= inputTableEndValue; i++) {
+
+                // multiply i with number
+                let result = i * inputTableStartValue;
+                strTable = strTable + "<tr>" + "<td>"+ inputTableStartValue + " " + "*" +" "+ i +"</td>" +"<td>" + result +"</td></tr>";
+
+                // display the result
+                // console.log(`${inputTableValue} * ${i} = ${result}`);
+            }
+            strTable = strTable + "</tbody>" + "</table>" + "</div>"+"<div class='column is-4'></div>"+"</div>" ;
+            document.getElementById("multiplicationTableWithLimit").innerHTML = strTable;
+        }
+    </script>
+</body>
+</html>

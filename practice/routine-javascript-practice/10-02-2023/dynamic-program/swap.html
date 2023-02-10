@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.9.4/css/bulma.min.css">
+    <title>Swap Program</title>
+</head>
+<body>
+    <div class="container mt-6">
+        <h1 class="title has-text-centered">Swap Program</h1>
+        <div class="box">
+            <div class="columns">
+                <div class="column is-6">
+                    <div class="field">
+                        <labe class="label">Enter First Number :-</labe>
+                        <div class="control">
+                            <input type="text" class="input is-success" id="firstNumber">
+                        </div>
+                    </div>
+                </div>
+                <div class="column is-6">
+                    <div class="field">
+                        <labe class="label">Enter Second Number :-</labe>
+                        <div class="control">
+                            <input type="text" class="input is-success" id="secondNumber">
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="block">
+                <div class="field has-text-centered mt-5 mb-5">
+                    <button class="button is-success is-large" onclick="swapNumber()">Swap The Number</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function swapNumber(){
+            let swapNumber = document.getElementById("firstNumber").value;
+
+            document.getElementById("firstNumber").value = document.getElementById("secondNumber").value;
+
+            document.getElementById("secondNumber").value = swapNumber;
+        }
+    </script>
+</body>
+</html>

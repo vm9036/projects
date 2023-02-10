@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.9.4/css/bulma.min.css">
+    <title>Dynamic Rows and Column Create</title>
+</head>
+<body>
+    <div class="container mt-5">
+        <h1 class="title has-text-centered">-: Dynamic Rows and Column Create :-</h1>
+        <div class="box">
+            <div class="columns">
+                <div class="column is-6">
+                    <div class="field">
+                        <label class="label is-size-4">Enter Row :</label>
+                        <div class="control">
+                            <input type="text" class="input is-medium is-primary" id="inputRow">
+                        </div>
+                    </div>
+                </div>
+                <div class="column is-6">
+                    <div class="field">
+                        <label class="label is-size-4">Enter Column :</label>
+                        <div class="control">
+                            <input type="text" class="input is-medium is-primary" id="inputColumn">
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="block">
+                <div class="field has-text-centered">
+                    <div class="control">
+                        <button class="button is-success is-large" onclick="displayTableRowAndColumn()">Table</button>
+                    </div>
+                </div>
+            </div>
+            <div class="block mt-5">
+                <p id="displayTable"></p>
+            </div>
+        </div>
+    </div>
+
+
+    <script>
+        function displayTableRowAndColumn(){
+            let row = parseInt(document.getElementById("inputRow").value);
+            let column = parseInt(document.getElementById("inputColumn").value);
+
+            let strTable = "<div class='table-container'><table class='table is-bordered has-text-weight-semibold'><tr>";
+            var counter = 0;
+
+            for(let i = 1 ; i <= row; i++)
+            {
+                for(let j = 1; j <= column; j++)
+                {
+                    counter = counter + 1;
+                    strTable = strTable + "<td>" + counter +"</td>";                  
+                }
+                strTable = strTable +"</tr>";
+            }
+            strTable = strTable + "</table>" + "</div>";
+            document.getElementById("displayTable").innerHTML = strTable;
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.9.4/css/bulma.min.css">
+    <title>Basic Sum</title>
+</head>
+<body>
+    <div class="container mt-6">
+        <div class="box">
+            <div class="columns">
+                <div class="column is-6">
+                    <div class="field">
+                        <labe class="label">Enter First Number :-</labe>
+                        <div class="control">
+                            <input type="text" class="input is-success" id="firstNumber">
+                        </div>
+                    </div>
+                </div>
+                <div class="column is-6">
+                    <div class="field">
+                        <labe class="label">Enter Second Number :-</labe>
+                        <div class="control">
+                            <input type="text" class="input is-success" id="secondNumber">
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="block">
+                <div class="field has-text-centered mt-5 mb-5">
+                    <button class="button is-success is-large" onclick="allBasicSum()">All Basic Sum</button>
+                </div>
+            </div>
+            <div class="columns">
+                <div class="column is-3">
+                    <div class="field">
+                        <labe class="label">Addition :-</labe>
+                        <div class="control">
+                            <input type="text" class="input is-success" id="additionSum">
+                        </div>
+                    </div>
+                </div>
+                <div class="column is-3">
+                    <div class="field">
+                        <labe class="label">Subtraction :-</labe>
+                        <div class="control">
+                            <input type="text" class="input is-success" id="subtractionSum">
+                        </div>
+                    </div>
+                </div>
+                <div class="column is-3">
+                    <div class="field">
+                        <labe class="label">Multiplication :-</labe>
+                        <div class="control">
+                            <input type="text" class="input is-success" id="multiplicationSum">
+                        </div>
+                    </div>
+                </div>
+                <div class="column is-3">
+                    <div class="field">
+                        <labe class="label">Division :-</labe>
+                        <div class="control">
+                            <input type="text" class="input is-success" id="divisionSum">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function allBasicSum(){
+            let firstNumber = parseInt(document.getElementById("firstNumber").value);
+            let secondNumber = parseInt(document.getElementById("secondNumber").value);
+
+            let sumAdd = 0,
+                sumSub = 0,
+                sumMul = 0;
+                sumDiv = 0;
+
+            sumAdd = firstNumber + secondNumber;
+            document.getElementById("additionSum").value = sumAdd;
+            
+            sumSub = firstNumber - secondNumber;
+            document.getElementById("subtractionSum").value = sumSub;
+
+            sumMul = firstNumber * secondNumber;
+            document.getElementById("multiplicationSum").value = sumMul;
+
+            sumDiv = firstNumber / secondNumber;
+            document.getElementById("divisionSum").value = sumDiv;
+
+        }
+    </script>
+</body>
+</html>

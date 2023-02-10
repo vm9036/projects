@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.9.4/css/bulma.min.css">
+    <title>Draw Table</title>
+</head>
+
+<body>
+    <div class="container mt-5 mb-5">
+        <h1 class="title has-text-centered">Dynamic Table</h1>
+        <div class="block">
+            <div class="field">
+                <labe class="label">Enter Table Row Number :-</labe>
+                <div class="control">
+                    <input type="text" class="input is-success" id="inputTableRow">
+                </div>
+            </div>
+        </div>
+        <div class="block">
+            <div class="field has-text-centered mt-5 mb-5">
+                <button class="button is-success is-large" onclick="drawTheTable()">Draw The Table</button>
+                <button class="button is-success is-large" onclick="addNewLineTable()">Add New Line Table</button>
+            </div>
+        </div>
+        <div class="block has-text-centered">
+            <p id="displayDrawTable"></p>
+            <p id="displayAddNewLineTable"></p>
+        </div>
+    </div>
+
+    <script>
+
+        // This function used draw table starts
+        function drawTheTable() {
+            var inputValueTable = parseInt(document.getElementById("inputTableRow").value);
+
+            var strTable = "<div class='box has-text-centered'><div class='table-container'><table class='table is-bordered'><tr><th>Table :</th></tr>";
+
+            for (i = 1; i <= inputValueTable; i++) {
+                strTable = strTable + '<tr class="has-text-weight-semibold">' + '<td>' + i + '</td>' + '</tr>';
+
+            }
+            strTable = strTable + "</table>" + "</div>" + "</div>";
+            document.getElementById("displayDrawTable").innerHTML = strTable;
+        }
+        // This function used draw table ends
+        // **********************************
+
+        // This function used add new line table starts
+        function addNewLineTable() {
+            var inputValueTable = i;
+            var strTable = "<div class='box has-text-centered'><div class='table-container'><table class='table is-bordered'><tr><th>Table :</th></tr>";
+
+            if (inputValueTable==null || inputValueTable=="") {
+                alert("Please Enter Correct Value");
+            }
+
+            for (i = 1; i <= inputValueTable; i++) {
+                strTable = strTable + "<tr class='has-text-weight-semibold'><td>" + i + "</td></tr>";
+
+            }
+            strTable = strTable + "</table>" + "</div>" + "</div>";
+            document.getElementById("displayDrawTable").innerHTML = strTable;
+        }
+        // This function used add new line table ends
+        // ******************************************
+    </script>
+</body>
+
+</html>
