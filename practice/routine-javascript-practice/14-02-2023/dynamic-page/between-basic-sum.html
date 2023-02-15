@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.9.4/css/bulma.min.css">
+    <title>Between Value Basic Sum Program</title>
+</head>
+<body>
+    <div class="container mt-6">
+        <div class="box">
+            <div class="card">
+                <div class="card-header has-text-centered">
+                    <div class="card-header-title">
+                        <h1 class="title">Between Value Basic Sum Program :-</h1>
+                    </div>
+                </div>
+                <div class="card-content">
+                    <div class="columns">
+                        <div class="column is-6">
+                            <div class="field">
+                                <label class="label is-size-4">Enter Starting Number :-</label>
+                                <div class="control">
+                                    <input type="text" class="input is-large is-info" id="inputNumber1">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="column is-6">
+                            <div class="field">
+                                <label class="label is-size-4">Enter Ending Number :-</label>
+                                <div class="control">
+                                    <input type="text" class="input is-large is-info" id="inputNumber2">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="block mt-6 mb-6">
+                        <div class="field">
+                            <div class="control has-text-centered">
+                                <button class="button is-success is-size-3" onclick="betweenValueBasicSum()">Between Value Basic Sum</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="block">
+                        <div class="field">
+                            <label class="label is-size-4">Between Value Display In The Box :-</label>
+                            <div class="control">
+                                <textarea name="" id="displayBetweenValue" cols="10" rows="3" class="textarea is-success has-text-weight-semibold"></textarea>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="block has-text-centered">
+                        <p id="displayBetweenValueSum" class="button is-link is-outlined is-size-3 has-text-weight-semibold">Between Value Sum : 0</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function betweenValueBasicSum(){
+            let getNumber1 = parseInt(document.getElementById("inputNumber1").value);
+            let getNumber2 = parseInt(document.getElementById("inputNumber2").value);
+            
+            let betweenSum = 0;
+
+            for(let i = getNumber1; i <= getNumber2; i++)
+            {
+                document.getElementById("displayBetweenValue").value = document.getElementById("displayBetweenValue").value + "" + " + " + i;
+
+                betweenSum = betweenSum + i;
+            }
+            document.getElementById("displayBetweenValueSum").innerHTML = "Between Value Sum : "+betweenSum;
+        }
+    </script>
+</body>
+</html>

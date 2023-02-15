@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.9.4/css/bulma.min.css">
+    <title>Exam Acsending And Descending Program</title>
+</head>
+
+<body>
+    <div class="container mt-6">
+        <div class="box">
+            <h1 class="title is-size-2 has-text-centered mb-6">-: 2 number Acsending And Descending Program :-</h1>
+
+            <div class="columns">
+                <div class="column is-6">
+                    <div class="field">
+                        <label class="label is-size-4">Enter Number 1 :-</label>
+                        <div class="control">
+                            <input type="text" value="5" class="input is-info is-large" id="inputNumber1">
+                        </div>
+                    </div>
+                </div>
+                <div class="column is-6">
+                    <div class="field">
+                        <label class="label is-size-4">Enter Number 2 :-</label>
+                        <div class="control">
+                            <input type="text" value="3" class="input is-info is-large" id="inputNumber2">
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="block">
+                <div class="field mt-6 mb-6">
+                    <div class="control has-text-centered">
+                        <button class="button is-primary is-large is-size-3" onclick="acsendingValueDisplay()">Acsending
+                            Value</button>
+                        <!-- <button class="button is-primary is-large is-size-3"
+                            onclick="descendingValueDisplay()">Decsending Value</button> -->
+                    </div>
+                </div>
+            </div>
+
+            <div class="columns">
+                <div class="column is-6">
+                    <div class="field">
+                        <label class="label is-size-4">Display Number 1 :-</label>
+                        <div class="control">
+                            <input type="text" class="input is-success is-large" id="displayNumber1">
+                        </div>
+                    </div>
+                </div>
+                <div class="column is-6">
+                    <div class="field">
+                        <label class="label is-size-4">Display Number 2 :- </label>
+                        <div class="control">
+                            <input type="text" class="input is-success is-large" id="displayNumber2">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+
+        function acsendingValueDisplay() {
+            let a = parseInt(document.getElementById("inputNumber1").value);
+            let b = parseInt(document.getElementById("inputNumber2").value);
+           
+           if (a > b  && a!=0) {
+            document.getElementById("displayNumber1").value = a;  
+           }
+           else{
+            document.getElementById("displayNumber2").value = b;  
+           }
+           
+            // else{
+            //     console.log("n2 :-> " + n2);
+            //     document.getElementById("displayNumber1").value = n2;  
+                 
+            // }
+            
+        }
+
+        // function descendingValueDisplay() {
+
+        // }
+    </script>
+</body>
+
+</html>

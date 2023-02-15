@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.9.4/css/bulma.min.css">
+    <title>Basic Sum Program</title>
+</head>
+<body>
+    <div class="container mt-6">
+        <div class="box">
+            <div class="title has-text-centered">-2. Basic Sum :-</div>
+            <div class="columns">
+                <div class="column is-6">
+                    <div class="field">
+                        <label class="label is-size-4">Enter Number1</label>
+                        <div class="control">
+                            <input type="text" class="input is-large is-info" id="inputNumber1">
+                        </div>
+                    </div>
+                </div>
+                <div class="column is-6">
+                    <div class="field">
+                        <label class="label is-size-4">Enter Number2</label>
+                        <div class="control">
+                            <input type="text" class="input is-large is-info" id="inputNumber2">
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="block">
+                <div class="field">
+                    <div class="control has-text-centered mt-5">
+                        <button class="button is-primary is-size-3" onclick="basicSum()">
+                            Basic Sum
+                        </button>
+                    </div>
+                </div>
+            </div>
+            <div class="columns">
+                <div class="column is-3">
+                    <div class="field">
+                        <label class="label is-size-4">Addition Sum :</label>
+                        <div class="control">
+                            <input type="text" class="input is-large is-success" id="additionSum">
+                        </div>
+                    </div>
+                </div>
+                <div class="column is-3">
+                    <div class="field">
+                        <label class="label is-size-4">Subtraction Sum :</label>
+                        <div class="control">
+                            <input type="text" class="input is-large is-success" id="subtractionSum">
+                        </div>
+                    </div>
+                </div>
+                <div class="column is-3">
+                    <div class="field">
+                        <label class="label is-size-4">Multiplication Sum :</label>
+                        <div class="control">
+                            <input type="text" class="input is-large is-success" id="multiplicationSum">
+                        </div>
+                    </div>
+                </div>
+                <div class="column is-3">
+                    <div class="field">
+                        <label class="label is-size-4">Division Sum :</label>
+                        <div class="control">
+                            <input type="text" class="input is-large is-success" id="divisionSum">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function basicSum(){
+            let number1 = parseInt(document.getElementById("inputNumber1").value);
+            let number2 = parseInt(document.getElementById("inputNumber2").value);
+
+            let addition = 0,
+            subtraction = 0,
+            multiplication = 0,
+            division = 0 ;
+
+            addition = number1 + number2;
+            document.getElementById("additionSum").value = addition;
+
+            subtraction = number1 - number2;
+            document.getElementById("subtractionSum").value = subtraction;
+
+            multiplication = number1 * number2;
+            document.getElementById("multiplicationSum").value = multiplication;
+
+            division = number1 / number2;
+            document.getElementById("divisionSum").value = division; 
+        }
+    </script>
+</body>
+</html>

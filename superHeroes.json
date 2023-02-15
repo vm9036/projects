@@ -1,0 +1,571 @@
+[
+    //Vishalbhai doing Work Start
+    {
+        // "name": "Superman",
+        // "image": "superman.png"
+    },
+    {
+        // "name": "Batman",
+        // "image": "batman.png"
+    },
+    {
+        // "name": "Spider-Man",
+        // "image": "spider-man.png"
+    },
+    {
+        // "name": "Wonder Woman",
+        // "image": "wonder-woman.png"
+    },
+    {
+        // "name": "The Flash",
+        // "image": "the-flash.png"
+    },
+    {
+        // "name": "Aquaman",
+        // "image": "aquaman.png"
+    },
+    {
+        // "name": "Iron Man",
+        // "image": "iron-man.png"
+    },
+    {
+        // "name": "Captain America",
+        // "image": "captain-america.png"
+    },
+    {
+        // "name": "Black Widow",
+        // "image": "black-widow.png"
+    },
+    {
+        // "name": "Hawkeye",
+        // "image": "hawkeye.png"
+    },
+    {
+        // "name": "Martian Manhunter",
+        // "image": "martian-manhunter.png"
+    },
+    {
+        // "name": "Green Lantern",
+        // "image": "green-lantern.png"
+    },
+    {
+        // "name": "Wolverine",
+        // "image": "wolverine.png"
+    },
+    {
+        // "name": "Cyclops",
+        // "image": "cyclops.png"
+    },
+    {
+        // "name": "Storm",
+        // "image": "storm.png"
+    },
+    {
+        // "name": "Thor",
+        // "image": "thor.png"
+    },
+    {
+        // "name": "Hulk",
+        // "image": "hulk.png"
+    },
+    {
+        // "name": "Black Panther",
+        // "image": "black-panther.png"
+    },
+    {
+        // "name": "Ant-Man",
+        // "image": "ant-man.png"
+    },
+    {
+        // "name": "Mr. Fantastic",
+        // "image": "mr.-fantastic.png"
+    },
+    {
+        // "name": "Invisible Woman",
+        // "image": "invisible-woman.png"
+    },
+    {
+        // "name": "The Thing",
+        // "image": "the-thing.png"
+    },
+    {
+        // "name": "Human Torch",
+        // "image": "human-torch.png"
+    },
+    {
+        // "name": "Robin",
+        // "image": "robin.png"
+    },
+    {
+        // "name": "Nightwing",
+        // "image": "nightwing.png"
+    },
+    {
+        "name": "Batgirl",
+        "image": "batgirl.png"
+    },
+    {
+        "name": "Green Arrow",
+        "image": "green-arrow.png"
+    },
+    {
+        "name": "Aqualad",
+        "image": "aqualad.png"
+    },
+    {
+        "name": "Plastic Man",
+        "image": "plastic-man.png"
+    },
+    {
+        "name": "The Atom",
+        "image": "the-atom.png"
+    },
+    {
+        "name": "Captain Marvel",
+        "image": "captain-marvel.png"
+    },
+    {
+        "name": "Shazam",
+        "image": "shazam.png"
+    },
+    {
+        "name": "Blade",
+        "image": "blade.png"
+    },
+    {
+        "name": "Hellboy",
+        "image": "hellboy.png"
+    },
+    {
+        "name": "The Punisher",
+        "image": "the-punisher.png"
+    },
+    {
+        "name": "Cyborg",
+        "image": "cyborg.png"
+    },
+    {
+        "name": "Starfire",
+        "image": "starfire.png"
+    },
+    {
+        "name": "Raven",
+        "image": "raven.png"
+    },
+    {
+        "name": "Beast Boy",
+        "image": "beast-boy.png"
+    },
+    {
+        "name": "Huntress",
+        "image": "huntress.png"
+    },
+    {
+        "name": "Catwoman",
+        "image": "catwoman.png"
+    },
+    {
+        "name": "Poison Ivy",
+        "image": "poison-ivy.png"
+    },
+    {
+        "name": "Harley Quinn",
+        "image": "harley-quinn.png"
+    },
+    {
+        "name": "Deadshot",
+        "image": "deadshot.png"
+    },
+    {
+        "name": "The Joker",
+        "image": "the-joker.png"
+    },
+    {
+        "name": "The Riddler",
+        "image": "the-riddler.png"
+    },
+    {
+        "name": "Two-Face",
+        "image": "two-face.png"
+    },
+    //Satishbhai Doing
+    {
+        "name": "The Penguin",
+        "image": "the-penguin.png"
+    },
+    {
+        "name": "Commissioner Gordon",
+        "image": "commissioner-gordon.png"
+    },
+    {
+        "name": "Oracle",
+        "image": "oracle.png"
+    },
+    {
+        "name": "Batwoman",
+        "image": "batwoman.png"
+    },
+    {
+        "name": "Man-Bat",
+        "image": "man-bat.png"
+    },
+    {
+        "name": "Red Hood",
+        "image": "red-hood.png"
+    },
+    {
+        "name": "Azrael",
+        "image": "azrael.png"
+    },
+    {
+        "name": "Damian Wayne",
+        "image": "damian-wayne.png"
+    },
+    {
+        "name": "Barbara Gordon",
+        "image": "barbara-gordon.png"
+    },
+    {
+        "name": "Supergirl",
+        "image": "supergirl.png"
+    },
+    {
+        "name": "Legion of Superheroes",
+        "image": "legion-of-superheroes.png"
+    },
+    {
+        "name": "Zatanna",
+        "image": "zatanna.png"
+    },
+    {
+        "name": "The Spectre",
+        "image": "the-spectre.png"
+    },
+    {
+        "name": "Doctor Fate",
+        "image": "doctor-fate.png"
+    },
+    {
+        "name": "The Sandman",
+        "image": "the-sandman.png"
+    },
+    {
+        "name": "Constantine",
+        "image": "constantine.png"
+    },
+    {
+        "name": "Swamp Thing",
+        "image": "swamp-thing.png"
+    },
+    {
+        "name": "Firestorm",
+        "image": "firestorm.png"
+    },
+    {
+        "name": "The Shadow",
+        "image": "the-shadow.png"
+    },
+    {
+        "name": "The Spirit",
+        "image": "the-spirit.png"
+    },
+    {
+        "name": "Hellblazer",
+        "image": "hellblazer.png"
+    },
+    {
+        "name": "Spawn",
+        "image": "spawn.png"
+    },
+    // Vishalbhai doing Work Finish
+    // ******************************
+    // satishbhai doing Work Starts
+    {
+        "name": "The Savage Dragon",
+        "image": "the-savage-dragon.png"
+    }, 
+    {
+        "name": "The Tick",
+        "image": "the-tick.png"
+    },
+    {
+        "name": "Heroclix",
+        "image": "heroclix.png"
+    },
+    {
+        "name": "The Shadowpact",
+        "image": "the-shadowpact.png"
+    },
+    {
+        "name": "Power Girl",
+        "image": "power-girl.png"
+    },
+    {
+        "name": "Superboy",
+        "image": "superboy.png"
+    },
+    {
+        "name": "Tim Drake",
+        "image": "tim-drake.png"
+    },
+    {
+        "name": "Kate Kane",
+        "image": "kate-kane.png"
+    },
+    {
+        "name": "Ryan Choi",
+        "image": "ryan-choi.png"
+    },
+    {
+        "name": "Jackson Hyde",
+        "image": "jackson-hyde.png"
+    },
+    {
+        "name": "Oliver Queen",
+        "image": "oliver-queen.png"
+    },
+    {
+        "name": "Helena Bertinelli",
+        "image": "helena-bertinelli.png"
+    },
+    {
+        "name": "Selina Kyle",
+        "image": "selina-kyle.png"
+    },
+    {
+        "name": "Pamela Isley",
+        "image": "pamela-isley.png"
+    },
+    {
+        "name": "Harleen Quinzel",
+        "image": "harleen-quinzel.png"
+    },
+    {
+        "name": "Floyd Lawton",
+        "image": "floyd-lawton.png"
+    },
+    {
+        "name": "Edward Nigma",
+        "image": "edward-nigma.png"
+    },
+    {
+        "name": "Harvey Dent",
+        "image": "harvey-dent.png"
+    },
+    {
+        "name": "Oswald Cobblepot",
+        "image": "oswald-cobblepot.png"
+    },
+    {
+        "name": "Kirk Langstrom",
+        "image": "kirk-langstrom.png"
+    },
+    {
+        "name": "Jason Todd",
+        "image": "jason-todd.png"
+    },
+    {
+        "name": "Jean-Paul Valley",
+        "image": "jean-paul-valley.png"
+    },
+    {
+        "name": "Denny Colt",
+        "image": "denny-colt.png"
+    },
+    {
+        "name": "Alec Holland",
+        "image": "alec-holland.png"
+    },
+    // satishbhai doing Work Finsh
+    // ***************************
+    // Rahulbhai doing Start Working
+    {
+        "name": "Ronnie Raymond",
+        "image": "ronnie-raymond.png"
+    },
+    {
+        "name": "Lamont Cranston",
+        "image": "lamont-cranston.png"
+    },
+    {
+        "name": "Wesley Dodds",
+        "image": "wesley-dodds.png"
+    },
+    {
+        "name": "Kent Nelson",
+        "image": "kent-nelson.png"
+    },
+    {
+        "name": "Jim Corrigan",
+        "image": "jim-corrigan.png"
+    },
+    {
+        "name": "John Constantine",
+        "image": "john-constantine.png"
+    },
+    {
+        "name": "Al Simmons",
+        "image": "al-simmons.png"
+    },
+    {
+        "name": "Black Canary",
+        "image": "black-canary.png"
+    },
+    {
+        "name": "Aquagirl",
+        "image": "aquagirl.png"
+    },
+    {
+        "name": "Atom Smasher",
+        "image": "atom-smasher.png"
+    },
+    {
+        "name": "Bumblebee",
+        "image": "bumblebee.png"
+    },
+    {
+        "name": "Captain Atom",
+        "image": "captain-atom.png"
+    },
+    {
+        "name": "Captain Britain",
+        "image": "captain-britain.png"
+    },
+    {
+        "name": "Captain Marvel Jr.",
+        "image": "captain-marvel-jr..png"
+    },
+    {
+        "name": "Robin (Carrie Kelley)",
+        "image": "robin-(carrie-kelley).png"
+    },
+    {
+        "name": "Cheshire",
+        "image": "cheshire.png"
+    },
+    {
+        "name": "Cheetah",
+        "image": "cheetah.png"
+    },
+    {
+        "name": "Clayface",
+        "image": "clayface.png"
+    },
+    {
+        "name": "Copperhead",
+        "image": "copperhead.png"
+    },
+    {
+        "name": "Doctor Doom",
+        "image": "doctor-doom.png"
+    },
+    {
+        "name": "Doctor Octopus",
+        "image": "doctor-octopus.png"
+    },
+    {
+        "name": "Doomsday",
+        "image": "doomsday.png"
+    },
+    {
+        "name": "Egghead",
+        "image": "egghead.png"
+    },
+    {
+        "name": "Electro",
+        "image": "electro.png"
+    },
+    {
+        "name": "Firelord",
+        "image": "firelord.png"
+    },
+    {
+        "name": "The Flash (Wally West)",
+        "image": "the-flash-(wally-west).png"
+    },
+    {
+        "name": "Galactus",
+        "image": "galactus.png"
+    },
+    {
+        "name": "Gambit",
+        "image": "gambit.png"
+    },
+    {
+        "name": "Gamora",
+        "image": "gamora.png"
+    },
+    {
+        "name": "Ghost Rider",
+        "image": "ghost-rider.png"
+    },
+    {
+        "name": "Giganta",
+        "image": "giganta.png"
+    },
+    {
+        "name": "Goldfinger",
+        "image": "goldfinger.png"
+    },
+    {
+        "name": "Gorilla Grodd",
+        "image": "gorilla-grodd.png"
+    },
+    {
+        "name": "Green Goblin",
+        "image": "green-goblin.png"
+    },
+    {
+        "name": "Harley Quinn",
+        "image": "harley-quinn.png"
+    },
+    {
+        "name": "Harpy",
+        "image": "harpy.png"
+    },
+    {
+        "name": "Havok",
+        "image": "havok.png"
+    },
+    {
+        "name": "Hawkeye (Kate Bishop)",
+        "image": "hawkeye-(kate-bishop).png"
+    },
+    {
+        "name": "Heat Wave",
+        "image": "heat-wave.png"
+    },
+    {
+        "name": "Hellcat",
+        "image": "hellcat.png"
+    },
+    {
+        "name": "The Hive",
+        "image": "the-hive.png"
+    },
+    {
+        "name": "The Hood",
+        "image": "the-hood.png"
+    },
+    {
+        "name": "The Huntress (Helena Wayne)",
+        "image": "the-huntress-(helena-wayne).png"
+    },
+    {
+        "name": "Iceman",
+        "image": "iceman.png"
+    },
+    {
+        "name": "The Joker's Daughter",
+        "image": "the-joker's-daughter.png"
+    },
+    {
+        "name": "Juggernaut",
+        "image": "juggernaut.png"
+    },
+    {
+        "name": "The Kingpin",
+        "image": "the-kingpin.png"
+    }
+    // Rahulbhai doing Finish Working
+]

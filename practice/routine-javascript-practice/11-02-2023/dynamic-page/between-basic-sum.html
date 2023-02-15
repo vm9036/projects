@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.9.4/css/bulma.min.css">
+    <title>Between Basic Sum Program</title>
+</head>
+<body>
+    
+    <div class="container mt-6">
+        <div class="box">
+            <h1 class="title has-text-centered">Between Basic Sum Program</h1>
+            <div class="columns">
+                <div class="column is-6">
+                    <div class="field">
+                        <label class="label">Enter Start Number1 :</label>
+                        <div class="control">
+                            <input type="text" class="input is-primary is-medium" id="inputStartNumber">
+                        </div>
+                    </div>
+                </div>
+                <div class="column is-6">
+                    <div class="field">
+                        <label class="label">Enter End Number2 :</label>
+                        <div class="control">
+                            <input type="text" class="input is-primary is-medium" id="inputEndNumber">
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="block">
+                <div class="field">
+                    <div class="control has-text-centered">
+                        <button class="button is-large is-success" onclick="betweenBasicSum()">Basic Sum</button>
+                    </div>
+                </div>
+            </div>
+            <div class="block">
+                <div class="field">
+                    <div class="control">
+                        <textarea id="dispalyBetweenNumber" cols="30" rows="10" class="textarea is-success"></textarea>
+                    </div>
+                </div>
+            </div>
+            <div class="block has-text-centered">
+                <p id="dispalyBetweenSum" class="button is-danger has-text-weight-semibold"></p>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function betweenBasicSum() {
+            let startNumber = parseInt(document.getElementById("inputStartNumber").value);
+            let endNumber = parseInt(document.getElementById("inputEndNumber").value);
+            let displaySum = 0;
+
+            for(let i = startNumber; i<= endNumber; i++)
+            {
+                document.getElementById("dispalyBetweenNumber").innerHTML = document.getElementById("dispalyBetweenNumber").innerHTML + i + "\n";
+                displaySum = displaySum + i; 
+            }
+            document.getElementById("dispalyBetweenSum").innerHTML = "Between Basic Sum :-> "+displaySum;
+        }
+    </script>
+</body>
+</html>
