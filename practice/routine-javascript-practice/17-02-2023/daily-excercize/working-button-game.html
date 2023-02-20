@@ -59,6 +59,7 @@
     </div>
 
     <script>
+        var tracker =1;
         function drawTable() {
             
             var tableRow = parseInt(document.getElementById("inputRow").value);
@@ -67,7 +68,14 @@
 
                 for(i = 1; i <= tableRow; i++)
                 {
-                    strTable = strTable + "<tr><td>" + i + "</td></tr>"; 
+                    if(i==tracker)
+                    {
+                        strTable = strTable + "<tr><td class='is-selected'>" + i + "</td></tr>"; 
+                    }
+                    else
+                    {
+                        strTable = strTable + "<tr><td>" + i + "</td></tr>"; 
+                    }
                 }
                 strTable = strTable + "</table>";
                 document.getElementById("displayTable").innerHTML = strTable;
@@ -92,36 +100,28 @@
                 document.getElementById("displayTable").innerHTML = strTable;
         }
 
+        
+
         function down(){
-            let tableRow = parseInt(document.getElementById("inputToggle").value);
-            tableRow = tableRow+1;
-            document.getElementById("inputToggle").value = tableRow;
+           
+            tracker = tracker+1;
             toggle();
         }
 
         function up(){
-            let tableRow = parseInt(document.getElementById("inputToggle").value);
-         tableRow = tableRow-1;
-            document.getElementById("inputToggle").value = tableRow;
+            
+            tracker = tracker-1;
             toggle();
         }
 
         function toggle() {
             
             var tableRow = parseInt(document.getElementById("inputRow").value);
-            var toggleValue = parseInt(document.getElementById("inputToggle").value);
-
-            if(toggleValue>tableRow)
-            {
-                alert("Please Enter The Correct Value : ");
-                return;
-            }
-
-            var strTable = "<table class='table is-bordered'><tr><th>Table :</th></tr>";
+             var strTable = "<table class='table is-bordered'><tr><th>Table :</th></tr>";
 
                 for(i = 1; i <= tableRow; i++)
                 {
-                    if(i==toggleValue)
+                    if(i==tracker)
                     {
                         strTable = strTable + "<tr><td class='is-selected'>" + i + "</td></tr>"; 
                     }

@@ -101,92 +101,92 @@
         // "image": "nightwing.png"
     },
     {
-        "name": "Batgirl",
-        "image": "batgirl.png"
+        //"name": "Batgirl",
+        //"image": "batgirl.png"
     },
     {
-        "name": "Green Arrow",
-        "image": "green-arrow.png"
+        //"name": "Green Arrow",
+        //"image": "green-arrow.png"
     },
     {
-        "name": "Aqualad",
-        "image": "aqualad.png"
+        // "name": "Aqualad",
+        // "image": "aqualad.png"
     },
     {
-        "name": "Plastic Man",
-        "image": "plastic-man.png"
+        // "name": "Plastic Man",
+        // "image": "plastic-man.png"
     },
     {
-        "name": "The Atom",
-        "image": "the-atom.png"
+        // "name": "The Atom",
+        // "image": "the-atom.png"
     },
     {
-        "name": "Captain Marvel",
-        "image": "captain-marvel.png"
+        // "name": "Captain Marvel",
+        // "image": "captain-marvel.png"
     },
     {
-        "name": "Shazam",
-        "image": "shazam.png"
+        // "name": "Shazam",
+        // "image": "shazam.png"
     },
     {
-        "name": "Blade",
-        "image": "blade.png"
+        // "name": "Blade",
+        // "image": "blade.png"
     },
     {
-        "name": "Hellboy",
-        "image": "hellboy.png"
+        // "name": "Hellboy",
+        // "image": "hellboy.png"
     },
     {
-        "name": "The Punisher",
-        "image": "the-punisher.png"
+        // "name": "The Punisher",
+        // "image": "the-punisher.png"
     },
     {
-        "name": "Cyborg",
-        "image": "cyborg.png"
+        // "name": "Cyborg",
+        // "image": "cyborg.png"
     },
     {
-        "name": "Starfire",
-        "image": "starfire.png"
+        // "name": "Starfire",
+        // "image": "starfire.png"
     },
     {
-        "name": "Raven",
-        "image": "raven.png"
+        // "name": "Raven",
+        // "image": "raven.png"
     },
     {
-        "name": "Beast Boy",
-        "image": "beast-boy.png"
+        // "name": "Beast Boy",
+        // "image": "beast-boy.png"
     },
     {
-        "name": "Huntress",
-        "image": "huntress.png"
+        // "name": "Huntress",
+        // "image": "huntress.png"
     },
     {
-        "name": "Catwoman",
-        "image": "catwoman.png"
+        // "name": "Catwoman",
+        // "image": "catwoman.png"
     },
     {
-        "name": "Poison Ivy",
-        "image": "poison-ivy.png"
+        // "name": "Poison Ivy",
+        // "image": "poison-ivy.png"
     },
     {
-        "name": "Harley Quinn",
-        "image": "harley-quinn.png"
+        // "name": "Harley Quinn",
+        // "image": "harley-quinn.png"
     },
     {
-        "name": "Deadshot",
-        "image": "deadshot.png"
+        // "name": "Deadshot",
+        // "image": "deadshot.png"
     },
     {
-        "name": "The Joker",
-        "image": "the-joker.png"
+        // "name": "The Joker",
+        // "image": "the-joker.png"
     },
     {
-        "name": "The Riddler",
-        "image": "the-riddler.png"
+        // "name": "The Riddler",
+        // "image": "the-riddler.png"
     },
     {
-        "name": "Two-Face",
-        "image": "two-face.png"
+        // "name": "Two-Face",
+        // "image": "two-face.png"
     },
     //Satishbhai Doing
     {

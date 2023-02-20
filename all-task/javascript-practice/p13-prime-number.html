@@ -39,7 +39,7 @@
             <div class="control block">
                 <label for="" class="label is-size-5">Prime number between number1 and number2 :</label>
             </div>
-            <textarea class="textarea has-text-weight-medium" cols="20" rows="10" id="printNumber"></textarea>
+            <textarea class="textarea has-text-weight-medium" cols="20" rows="6" id="printNumber"></textarea>
         </div>
         <div class="block has-text-centered">
             <p class="tag is-large is-success" id="printNumber1">Sum : </p>
@@ -71,7 +71,7 @@
                 // if number greater than 1 and not divisible by other numbers
                 if (i > 1 && flag == 0) {
                     // console.log(i);
-                    document.getElementById("printNumber").value = i +" " + "Number is Prime." + "\n";
+                    document.getElementById("printNumber").value = document.getElementById("printNumber").value + "+" + i +" ";
 
                     sum = sum + i;
                 }

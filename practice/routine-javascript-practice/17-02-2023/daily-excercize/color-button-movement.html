@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.9.4/css/bulma.min.css">
+    <title>Button Color Change Laft And Right Program</title>
+</head>
+
+<body>
+    <div class="container mt-3">
+        <div class="box">
+            <h1 class="title has-text-centered"> -: Button Color Change Laft And Right Program :-</h1>
+            <div class="block mt-6">
+                <div class="field has-text-centered">
+                    <label class="label is-size-3">Enter Generate Buttton :-</label>
+                    <div class="control">
+                        <input type="number" class="input is-info is-large" id="inputGenetateButton" value="10">
+                    </div>
+                </div>
+            </div>
+            <div class="block">
+                <div class="field">
+                    <div class="control has-text-centered">
+                        <button class="button is-large is-primary" onclick="generateButtons()">Generate Button</button>
+                    </div>
+                </div>
+            </div>
+            <div class="block">
+                <div class="field">
+                    <label class="label is-size-4">Display Generate Buttton :-</label>
+                    <div class="control">
+                        <!-- <textarea class="textarea is-success" name="" id="displaygenerateButton" cols="30" rows="10"></textarea> -->
+                        <p id="displayGenerateButton"></p>
+                    </div>
+                </div>
+            </div>
+            <div class="block">
+                <div class="field">
+                    <div class="control has-text-centered">
+                        <button class="button is-large is-warning" onclick="leftChangeColorToggle()">Less Than[&lt;] Left</button>
+                        <button class="button is-large is-danger" onclick="rightChangeColorToggle()">Greater Than[&gt;] Right</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function generateButtons() {
+
+            let inputButtonGenerateNumber = parseInt(document.getElementById("inputGenetateButton").value);
+
+            console.log("inputButtonGenerateNumber :-> " + inputButtonGenerateNumber);
+
+            // strTable = "<div class='box'><div class='table-container'><table class='table is-bordered'>";
+
+            strTable = "";
+            var toggle = false;
+
+            // if (toggle == true) {
+
+                for (i = 1; i <= inputButtonGenerateNumber; i++) {
+
+                    if(i == 1){
+                        toggle==true;
+                        strTable = strTable + "<button class='button is-primary'>" + i + "</button>";
+                    }
+                    else
+                    {
+                        toggle==false;
+                        strTable = strTable + "<button class='button'>" + i + "</button>";
+                    }
+                }
+            // }
+            // else {
+            //     toggle == false;
+            //     for (i = 1; i <= inputButtonGenerateNumber; i++) {
+
+            //         strTable = strTable + "<button class='button'>" + i + "</button>";
+
+
+            //     }
+
+            // }
+            // document.getElementById("displayGenerateButton").value = strTable;
+            document.getElementById("displayGenerateButton").innerHTML = strTable;
+
+            leftChangeColorToggle();
+            rightChangeColorToggle();
+
+        }
+
+        function leftChangeColorToggle(){
+
+            let inputButtonGenerateNumber = parseInt(document.getElementById("inputGenetateButton").value);
+
+            strTable = "";
+            var toggle = false;
+
+            if (inputButtonGenerateNumber>strTable) {
+                toggle == true;
+                for (i = 1; i <= inputButtonGenerateNumber; i++) {
+
+                    strTable = strTable + "<button class='button is-primary'>" + i + "</button>";
+
+
+                }
+            }
+            else {
+                toggle == false;
+                for (i = 1; i <= inputButtonGenerateNumber; i++) {
+
+                    strTable = strTable + "<button class='button'>" + i + "</button>";
+
+
+                }
+
+            }
+            // document.getElementById("displayGenerateButton").value = strTable;
+            document.getElementById("displayGenerateButton").innerHTML = strTable;
+
+
+        }
+
+        function rightChangeColorToggle(){
+            let inputButtonGenerateNumber = parseInt(document.getElementById("inputGenetateButton").value);
+
+            strTable = "";
+            var toggle = false;
+
+            if (inputButtonGenerateNumber<strTable) {
+                toggle == true;
+                for (i = 1; i <= inputButtonGenerateNumber; i++) {
+
+                    strTable = strTable + "<button class='button is-primary'>" +  i + "</button>"+ " " ;
+
+
+                }
+            }
+            else {
+                toggle == false;
+                for (i = 1; i <= inputButtonGenerateNumber; i++) {
+
+                    strTable = strTable + "<button class='button'>" + i + "</button>";
+
+
+                }
+
+            }
+            // document.getElementById("displayGenerateButton").value = strTable;
+            document.getElementById("displayGenerateButton").innerHTML = strTable;
+
+        }
+
+        // function toggleChangeColor() {
+        //   var element = document.getElementById("changeColor");
+        //     if (element.className == "button is-info" ) {
+        //         element.className = "button is-danger";
+        //     }
+        //     else { 
+        //        element.className = "button is-info";
+        //     }
+        // }
+    </script>
+</body>
+
+</html>
