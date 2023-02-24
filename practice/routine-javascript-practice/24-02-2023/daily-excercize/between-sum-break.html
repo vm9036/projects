@@ -37,9 +37,9 @@
                     </div>
                     <div class="column is-4">
                         <div class="field">
-                            <label class="label is-size-4">Condition Number :</label>
+                            <label class="label is-size-4">Sum Number :</label>
                             <div class="control">
-                                <input type="number" id="inputConditionNumber" value="17" 
+                                <input type="number" id="inputsumNumber" value="17"  
                                     class="input is-info is-large has-text-weight-semibold">
                             </div>
                         </div>
@@ -65,7 +65,7 @@
                     </div>
                 </div>
                 <div class="block has-text-centered">
-                    <p class="button is-warning is-large has-text-weight-semibold" id="displayBetweenNumberAndSum">Display Between Number And Sum : 0</p>
+                    <p class="button is-warning is-large has-text-weight-bold" id="displayBetweenNumberAndSum">Display Between Number And Sum : 0</p>
                 </div>
             </div>
         </div>
@@ -76,7 +76,7 @@
 
             let startNumber = parseInt(document.getElementById("inputStartNumber").value);
             let endNumber = parseInt(document.getElementById("inputEndNumber").value);
-            let conditionNumber = parseInt(document.getElementById("inputConditionNumber").value);
+            let sumNumber = parseInt(document.getElementById("inputsumNumber").value);
 
             let betweenSum = 0, i;
             console.log("1. i :-> " + i);
@@ -87,23 +87,23 @@
                 if (i <= endNumber) {
                     console.log("3. i :-> " + i, "startNumber :-> " + startNumber, "endNumber :-> " + endNumber);
 
-                    if (i >= conditionNumber) {
+                    if (i >= sumNumber || betweenSum > sumNumber) {
 
-                        console.log("4. i :-> " + i, "startNumber :-> " + startNumber, "endNumber :-> " + endNumber, "conditionNumber :-> " + conditionNumber);
+                        console.log("4. i :-> " + i, "startNumber :-> " + startNumber, "endNumber :-> " + endNumber, "sumNumber :-> " + sumNumber);
 
-                        break;
-                    }
-                    if (betweenSum > conditionNumber) {
                         break;
                     }
                     document.getElementById("displayBetweenNumber").value = document.getElementById("displayBetweenNumber").value + " " + " + " + " " + i;
                 }
-
+                else
+                {
+                    break;
+                }
 
                 betweenSum = betweenSum + i;
 
             }
-            console.log("5. i :-> " + i, "startNumber :-> " + startNumber, "endNumber :-> " + endNumber, "conditionNumber :-> " + conditionNumber, "betweenSum :-> "+betweenSum);
+            console.log("5. i :-> " + i, "startNumber :-> " + startNumber, "endNumber :-> " + endNumber, "sumNumber :-> " + sumNumber, "betweenSum :-> "+betweenSum);
 
             document.getElementById("displayBetweenNumberAndSum").innerHTML = "Display Between Number And Sum : " + betweenSum;
 
