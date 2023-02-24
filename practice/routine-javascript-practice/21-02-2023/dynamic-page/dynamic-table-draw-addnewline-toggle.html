@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.9.4/css/bulma.min.css">
+    <title>Draw Table and Add New Line And Add Toggle</title>
+</head>
+
+<body>
+    <div class="container mt-6">
+        <div class="box">
+            <div class="card">
+                <div class="card-header">
+                    <div class="card-header-title">
+                        <h1 class="title has-text-centered">Draw Table and Add New Line And Add Toggle :-</h1>
+                    </div>
+                </div>
+                <div class="card-content">
+                    <div class="columns">
+                        <div class="column is-6">
+                            <div class="block">
+                                <div class="field">
+                                    <label class="label is-size-4">Enter Value Of Row :-</label>
+                                    <div class="control">
+                                        <input type="text" class="input is-info is-large has-text-weight-semibold"
+                                            id="valueOfRow">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="column is-6">
+                            <div class="block">
+                                <div class="field">
+                                    <label class="label is-size-4">Enter Value Of Toggle :-</label>
+                                    <div class="control">
+                                        <input type="text" class="input is-info is-large has-text-weight-semibold"
+                                            id="valueOfToggle">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="block">
+                        <div class="field">
+                            <div class="control has-text-centered">
+                                <button class="button is-dark is-large" onclick="drawTable()">
+                                    Draw Table
+                                </button>
+                                <button class="button is-info is-large" onclick="addNewLine()">
+                                    Add New Line
+                                </button>
+                                <button class="button is-danger is-large" onclick="toggle()">
+                                    Toggle
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="block">
+                        <p id="displayDrawTable"></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function drawTable() {
+            var inputRow = parseInt(document.getElementById("valueOfRow").value);
+
+            var strTable = "<div class='box mt-5'><h1 class='title has-text-centered'>-: Display  Table :-</h1><div class='columns'><div class='column is-4'></div><div class='column is-4'><table class='table is-bordered is-fullwidth is-hoverable is-striped has-text-centered'><tr><th class='has-text-centered is-size-4'>Table :</th></tr>";
+
+            for (i = 1; i <= inputRow; i++) {
+                strTable = strTable + "<tr class='has-text-weight-semibold'>" + "<td>" + i + "</td>" + "</tr>";
+            }
+            strTable = strTable + "</table>" + "</div>" + "<div class='column is-4'></div>" + "</div>" + "</div>";
+
+            document.getElementById("displayDrawTable").innerHTML = strTable;
+
+        }
+
+        function addNewLine() {
+            var inputRow = i;
+
+            var strTable = "<div class='box mt-5'><h1 class='title has-text-centered'>-: Display  Table :-</h1><div class='columns'><div class='column is-4'></div><div class='column is-4'><table class='table is-bordered is-fullwidth is-hoverable is-striped has-text-centered'><tr><th class='has-text-centered is-size-4'>Table :</th></tr>";
+
+
+            if (inputRow==null || inputRow=="") {
+                alert("Please Enter Correct Value");
+            }
+
+
+            for (i = 1; i <= inputRow; i++) {
+                strTable = strTable + "<tr class='has-text-weight-semibold'>" + "<td>" + i + "</td>" + "</tr>";
+            }
+            strTable = strTable + "</table>" + "</div>" + "<div class='column is-4'></div>" + "</div>" + "</div>";
+
+            document.getElementById("displayDrawTable").innerHTML = strTable;
+
+        }
+
+        function toggle(){
+            var inputToggle = parseInt(document.getElementById("valueOfToggle").value);
+            // console.log(m)
+            var inputRow = parseInt(document.getElementById("valueOfRow").value);
+            // var n = parseInt(document.getElementById("inputN").value);
+            if(inputToggle>inputRow){
+                    alert("PLease Enter Correct Value")
+                    return;//If we don't use return than print input inputToggle value(Automatically drawig table)
+            }
+            var strTable = "<div class='box mt-5'><h1 class='title has-text-centered'>-: Display  Table :-</h1><div class='columns'><div class='column is-4'></div><div class='column is-4'><table class='table is-bordered is-fullwidth is-hoverable is-striped has-text-centered'><tr><th class='has-text-centered is-size-4'>Table :</th></tr>";
+            for (i = 1; i <= inputRow; i++) {
+                if(i==inputToggle){
+                    strTable = strTable + "<tr class='is-selected'><td>" + i +   "</td></tr>";
+                }
+                else{
+                    strTable = strTable + "<tr><td>" + i + "</td></tr>";
+                }
+            }
+            strTable = strTable + "</table>" + "</div>" + "<div class='column is-4'></div>" + "</div>" + "</div>";
+
+            document.getElementById("displayDrawTable").innerHTML = strTable;
+        }
+    </script>
+</body>
+
+</html>

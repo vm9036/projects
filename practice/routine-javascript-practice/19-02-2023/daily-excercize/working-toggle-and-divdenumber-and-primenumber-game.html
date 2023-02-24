@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.9.4/css/bulma.min.css">
+    <title>SelectToggle And DivideNumber And PrimeNumber Game</title>
+</head>
+<body>
+    <div class="container mt-5">
+        <div class="card">
+            <div class="box">
+                <div class="block mt-5 mb-5">
+                    <h1 class="title is-size-2 has-text-centered">SelectToggle And DivideNumber And PrimeNumber Game :-</h1>
+                </div>
+                <hr>
+                <div class="card-content">
+                    <div class="columns">
+                        <div class="column is-6">
+                            <div class="field">
+                                <label class="label is-size-4">Enter Row :-</label>
+                                <div class="control">
+                                    <input type="number" class="input is-info is-large" placeholder="Enter Print Row Number....." value="10" id="inputRow">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="column is-6">
+                            <div class="field">
+                                <label class="label is-size-4">Enter Divide Number :-</label>
+                                <div class="control">
+                                    <input type="number" class="input is-info is-large" placeholder="Enter Divide Number(ex. 3)" value="3" id="inputDivideNumber">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="block mt-5 mb-5 p-5">
+                        <div class="field">
+                            <div class="control has-text-centered">
+                                <button class="button is-dark is-large is-size-3  is-outlined" onclick="drawTable()">DrawTable</button>
+                                <button class="button is-danger is-large is-size-3 is-outlined" onclick="divideNumberSelected()">DivideNumber</button>
+                                <button class="button is-success is-large is-size-3 is-outlined" onclick="primerNumberSelected()">PrimeNumber</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="block mt-5">
+                        <div class="field">
+                            <label class="label is-size-4">Display Table :-</label>
+                            <div class="control">
+                                <p id="displayTable"></p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function drawTable(){
+            var getInputRow = parseInt(document.getElementById("inputRow").value);
+            var strTable = "<div class='table-container'><table class='table is-bordered is-striped is-hoverable'><tr>";
+
+                
+            for(i = 1; i<= getInputRow; i++){
+                strTable = strTable + "<td>" + i + "</td>";
+            }
+            strTable = strTable + "</tr>" + "</table>" + "</div>";
+            document.getElementById("displayTable").innerHTML = strTable;
+        }
+
+        function divideNumberSelected(){
+        var getInputRow = parseInt(document.getElementById("inputRow").value);
+        temp = getInputRow;
+        var getInputDivideNumber = parseInt(document.getElementById("inputDivideNumber").value);
+        temp1 = getInputDivideNumber;
+        var strTable = "<div class='table-container'><table class='table is-bordered is-striped is-hoverable'><tr>";
+            
+            for(i = 1; i<= temp; i++){
+                if(i % temp1 == 0){
+                    strTable = strTable + "<td class='is-selected'>" + i + "</td>";
+                }
+                else{
+                    strTable = strTable + "<td>" + i + "</td>";
+                }
+                strTable = strTable + "</tr>" + "</table>" + "</div>";
+                document.getElementById("displayTable").innerHTML = strTable;
+            }
+        }
+
+    </script>
+</body>
+</html>

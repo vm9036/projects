@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.9.4/css/bulma.min.css">
+    <title>Basic Sum Program</title>
+</head>
+<body>
+    <div class="container mt-6">
+        <div class="box">
+            <div class="card">
+                <div class="card-header has-text-centered">
+                    <div class="card-header-title">
+                        <h1 class="title">Basic Sum Program :-</h1>
+                    </div>
+                </div>
+                <div class="card-content">
+                    <div class="columns">
+                        <div class="column is-6">
+                            <div class="field">
+                                <label class="label is-size-4">Enter Number1 :-</label>
+                                <div class="control">
+                                    <input type="text" class="input is-large is-info" id="inputNumber1">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="column is-6">
+                            <div class="field">
+                                <label class="label is-size-4">Enter Number2 :-</label>
+                                <div class="control">
+                                    <input type="text" class="input is-large is-info" id="inputNumber2">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="block mt-6 mb-6">
+                        <div class="field">
+                            <div class="control has-text-centered">
+                                <button class="button is-success is-large is-size-3" onclick="basicSum()">Basic Sum</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="columns">
+                        <div class="column is-3">
+                            <div class="field">
+                                <label class="label is-size-4">Addition :-</label>
+                                <div class="control">
+                                    <input type="text" class="input is-large is-success" id="displayAddition">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="column is-3">
+                            <div class="field">
+                                <label class="label is-size-4">Subtraction :-</label>
+                                <div class="control">
+                                    <input type="text" class="input is-large is-success" id="displaySubtraction">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="column is-3">
+                            <div class="field">
+                                <label class="label is-size-4">Multiplication :-</label>
+                                <div class="control">
+                                    <input type="text" class="input is-large is-success" id="displayMultiplication">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="column is-3">
+                            <div class="field">
+                                <label class="label is-size-4">Division :-</label>
+                                <div class="control">
+                                    <input type="text" class="input is-large is-success" id="displayDivision">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function basicSum(){
+            let getNumber1 = parseInt(document.getElementById("inputNumber1").value);
+            let getNumber2 = parseInt(document.getElementById("inputNumber2").value);
+            
+            let additionSum = 0,
+            subtractionSum = 0,
+            multiplicationSum = 0,
+            divisionSum = 0;
+
+            additionSum = getNumber1 + getNumber2;
+            document.getElementById("displayAddition").value = additionSum;
+
+            subtractionSum = getNumber1 - getNumber2;
+            document.getElementById("displaySubtraction").value = subtractionSum;
+
+            multiplicationSum = getNumber1 * getNumber2;
+            document.getElementById("displayMultiplication").value = multiplicationSum;
+
+            divisionSum = getNumber1 / getNumber2;
+            document.getElementById("displayDivision").value = divisionSum;
+        }
+    </script>
+</body>
+</html>
