@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.9.4/css/bulma.min.css">
+    <title>between sum break</title>
+</head>
+
+<body>
+    <div class="container mt-6">
+        <div class="panel">
+            <div class="panel-heading">
+                <h1 class="title has-text-centered">1 to 50 Between Sum And Condition Break Program :-</h1>
+            </div>
+            <div class="box">
+                <div class="columns">
+                    <div class="column is-4">
+                        <div class="field">
+                            <label class="label is-size-4">Start Number :</label>
+                            <div class="control">
+                                <input type="number" id="inputStartNumber" value="1"
+                                    class="input is-info is-large has-text-weight-semibold">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="column is-4">
+                        <div class="field">
+                            <label class="label is-size-4">End Number :</label>
+                            <div class="control">
+                                <input type="number" id="inputEndNumber" value="50"
+                                    class="input is-info is-large has-text-weight-semibold">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="column is-4">
+                        <div class="field">
+                            <label class="label is-size-4">Condition Number :</label>
+                            <div class="control">
+                                <input type="number" id="inputConditionNumber" 
+                                    class="input is-info is-large has-text-weight-semibold">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="block">
+                    <div class="field mt-6 mb-6">
+                        <div class="control has-text-centered">
+                            <button class="button is-success is-large has-text-weight-bold"
+                                onclick="betweenSum()">Sum</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="block">
+                    <div class="field">
+                        <label class="label is-size-4">Between StartValue And EndValue Sum :-</label>
+                        <div class="control">
+                            <textarea name="" id="displayBetweenNumber" cols="30" rows="5"
+                                class="textarea is-success has-text-weight-semibold"></textarea>
+                        </div>
+                    </div>
+                </div>
+                <div class="block has-text-centered">
+                    <p class="button is-warning is-large has-text-weight-semibold" id="displayBetweenNumberAndSum">Display Between Number And Sum : 0</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function betweenSum() {
+
+            let startNumber = parseInt(document.getElementById("inputStartNumber").value);
+            let endNumber = parseInt(document.getElementById("inputEndNumber").value);
+            let conditionNumber = parseInt(document.getElementById("inputConditionNumber").value);
+
+            let betweenSum = 0, i;
+            console.log("1. i :-> " + i);
+
+            for (i = startNumber; ; i++) {
+                console.log("2. i :-> " + i, "startNumber :-> " + startNumber,);
+
+                if (i <= endNumber) {
+                    console.log("3. i :-> " + i, "startNumber :-> " + startNumber, "endNumber :-> " + endNumber);
+
+                    if (i >= conditionNumber) {
+
+                        console.log("4. i :-> " + i, "startNumber :-> " + startNumber, "endNumber :-> " + endNumber, "conditionNumber :-> " + conditionNumber);
+
+                        break;
+                    }
+                    if (betweenSum > conditionNumber) {
+                        break;
+                    }
+                    document.getElementById("displayBetweenNumber").value = document.getElementById("displayBetweenNumber").value + " " + " + " + " " + i;
+                }
+
+
+                betweenSum = betweenSum + i;
+
+            }
+            console.log("5. i :-> " + i, "startNumber :-> " + startNumber, "endNumber :-> " + endNumber, "conditionNumber :-> " + conditionNumber, "betweenSum :-> "+betweenSum);
+
+            document.getElementById("displayBetweenNumberAndSum").innerHTML = "Display Between Number And Sum : " + betweenSum;
+
+        }
+    </script>
+</body>
+
+</html>
