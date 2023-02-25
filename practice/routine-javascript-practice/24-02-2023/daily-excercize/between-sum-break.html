@@ -74,9 +74,9 @@
     <script>
         function betweenSum() {
 
-            let startNumber = parseInt(document.getElementById("inputStartNumber").value);
-            let endNumber = parseInt(document.getElementById("inputEndNumber").value);
-            let sumNumber = parseInt(document.getElementById("inputsumNumber").value);
+            let startNumber = Number(document.getElementById("inputStartNumber").value);
+            let endNumber = Number(document.getElementById("inputEndNumber").value);
+            let sumNumber = Number(document.getElementById("inputsumNumber").value);
 
             let betweenSum = 0, i;
             console.log("1. i :-> " + i);
@@ -93,14 +93,9 @@
 
                         break;
                     }
-                    document.getElementById("displayBetweenNumber").value = document.getElementById("displayBetweenNumber").value + " " + " + " + " " + i;
+                    document.getElementById("displayBetweenNumber").value = document.getElementById("displayBetweenNumber").value + " " + i + " " + "+";
+                    betweenSum = betweenSum + i;
                 }
-                else
-                {
-                    break;
-                }
-
-                betweenSum = betweenSum + i;
 
             }
             console.log("5. i :-> " + i, "startNumber :-> " + startNumber, "endNumber :-> " + endNumber, "sumNumber :-> " + sumNumber, "betweenSum :-> "+betweenSum);

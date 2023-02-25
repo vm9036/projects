@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
+</head>
+
+<body>
+    <div class="container p-5">
+        
+        <p id="print"></p>
+        <p id="print1"></p>
+    </div>
+    <script>
+
+        let nums1 = [2,7,11,15]; 
+        let target1 = 26;
+
+        let nums2 = [3,2,4]; 
+        let target2 = 6;
+
+        let nums3 = [3,3]; 
+        let target3 = 6;
+
+         // numArry is array of interger   
+        function twoSum(numArray, target) {
+
+            for(i=0;i<numArray.length;i++){
+
+            let index = i
+            let secondIndex = i + 1  ;
+
+            sum = numArray[index] + numArray[secondIndex];
+
+            if(sum==target){
+                console.log("["+index+","+secondIndex+"]");
+
+                return  [index,secondIndex];
+            }       
+
+            }
+        
+            
+        }
+
+
+        twoSum(nums1, target1);
+        twoSum(nums2, target2);
+        twoSum(nums3, target3);
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
+</head>
+
+<body>
+    <div class="container p-5">
+        
+        <p id="print"></p>
+        <p id="print1"></p>
+    </div>
+    <script>
+        function printArray() {
+            var rank = [1, 2, 3, 4,234,3434,343,3,23,43,43,434,34,34,34,343,"hello"];
+            var sum = 0
+
+            for(let i=0;i<rank.length;i++){
+                if(rank[i]=="hello"){
+                    console.log("Error");
+                }
+                //console.log(i+" ranknumber:->"+rank[i]);
+                if(rank[i]%2==0){
+
+              
+                console.log("rank["+i+"] = "+rank[i]);
+       
+                
+
+                sum = sum + rank[i];
+             }
+            }
+            console.log("sum:->"+sum);
+        }
+        printArray()
+    </script>
+</body>
+
+</html>
