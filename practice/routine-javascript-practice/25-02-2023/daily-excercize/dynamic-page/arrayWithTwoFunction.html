@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -7,6 +8,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.9.4/css/bulma.min.css">
     <title>Step 2 Array</title>
 </head>
+
 <body>
     <div class="container mt-6">
         <div class="panel">
@@ -25,7 +27,8 @@
                 <div class="block">
                     <div class="field">
                         <div class="control has-text-centered">
-                            <button class="button is-primary has-text-weight-bold is-size-3" onclick="displayDynamicRandomValueArray()">Generate Random Array</button>
+                            <button class="button is-primary has-text-weight-bold is-size-3"
+                                onclick="displayDynamicRandomValueArray()">Generate Random Array</button>
                         </div>
                     </div>
                 </div>
@@ -37,35 +40,48 @@
     </div>
 
     <script>
-        function displayDynamicRandomValueArray()
-        {
-            let inputArraySize = Number(document.getElementById("inputArrayValue").value);
-            let inputStaticArrayValue = [], i;
-            console.log("1. inputStaticArrayValue :-> "+inputStaticArrayValue);
-             // document.write("inputStaticArrayValue :-> "+inputStaticArrayValue);
+        var inputArraySize = Number(document.getElementById("inputArrayValue").value);
+        var inputStaticArrayValue = [], i;
 
+        function displayDynamicArray() {
             let strTable = "<div class='box'><h1 class='title has-text-centered'>Step2 Array Dynamic Random Value Program :- </h1><div class='columns'><div class='column is-4'></div><div class='column is-4'><table class='table is-bordered is-striped is-hoverable has-text-weight-semibold'><thead><tr><th>index No.</th><th>Value</th></tr></thead><tbody>"
+
             
-            console.log("2. inputStaticArrayValue :-> "+inputStaticArrayValue, "strTable :-> "+ strTable);
-            for(i=0; i<inputArraySize; i++)
-            {
-                
-                console.log("3. inputStaticArrayValue :-> "+inputStaticArrayValue, "i :-> "+i);
+            for (i = 0; i < inputArraySize; i++) {
 
                 inputStaticArrayValue[i] = Math.floor(Math.random() * 100);
 
-                strTable = strTable + "<tr>"+"<td>"+ i + "</td>"+ "<td>" + inputStaticArrayValue[i] + "</td>" + "</tr>";
-                
-                console.log("4. inputStaticArrayValue :-> "+inputStaticArrayValue, "i :-> "+i);
+                strTable = strTable + "<tr>" + "<td>" + i + "</td>" + "<td>" + inputStaticArrayValue[i] + "</td>" + "</tr>";
+            }
+            
+            strTable = strTable + "</tbody>" + "</table>" + "</div>" + "<div class='column is-5'></div>" + "</div>";
+            document.getElementById("diaplayArrayTable").innerHTML = strTable;
+
+           
+        }
+
+        function displayDynamicTableUsingArray() {
+           
+
+            let strTable = "<div class='box'><h1 class='title has-text-centered'>Step2 Array Dynamic Random Value Program :- </h1><div class='columns'><div class='column is-4'></div><div class='column is-4'><table class='table is-bordered is-striped is-hoverable has-text-weight-semibold'><thead><tr><th>index No.</th><th>Value</th></tr></thead><tbody>"
+
+            for (i = 0; i < inputArraySize; i++) {
+
+                inputStaticArrayValue[i] = Math.floor(Math.random() * 100);
+
+                strTable = strTable + "<tr>" + "<td>" + i + "</td>" + "<td>" + inputStaticArrayValue[i] + "</td>" + "</tr>";
+
+                console.log("4. inputStaticArrayValue :-> " + inputStaticArrayValue, "i :-> " + i);
 
             }
-            console.log("5. inputStaticArrayValue :-> "+inputStaticArrayValue, "i :-> "+i);
+            console.log("5. inputStaticArrayValue :-> " + inputStaticArrayValue, "i :-> " + i);
 
-            strTable = strTable + "</tbody>"+ "</table>" + "</div>"+ "<div class='column is-5'></div>" + "</div>";
+            strTable = strTable + "</tbody>" + "</table>" + "</div>" + "<div class='column is-5'></div>" + "</div>";
             document.getElementById("diaplayArrayTable").innerHTML = strTable;
-            
-            console.log("6. inputStaticArrayValue :-> "+inputStaticArrayValue,  "i :-> "+i);
+
+            console.log("6. inputStaticArrayValue :-> " + inputStaticArrayValue, "i :-> " + i);
         }
     </script>
 </body>
+
 </html>
