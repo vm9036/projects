@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.9.4/css/bulma.min.css">
+    <title>Table Generate HightLight Star</title>
+</head>
+<body>
+    <div class="container mt-6">
+        <div class="box">
+            <h1 class="title has-text-centered"> Dynamic Table Generate HightLight Star Program :-</h1>
+
+            <div class="columns">
+                <div class="column is-4">
+                    <div class="field">
+                        <label class="label">Enter Row :-</label>
+                        <div class="control">
+                            <input type="text" class="input is-info is-large" value="5" id="inputRow">
+                        </div>
+                    </div>
+                </div>
+                <div class="column is-4">
+                    <div class="field">
+                        <label class="label">Enter Column :-</label>
+                        <div class="control">
+                            <input type="text" class="input is-info is-large" value="5" id="inputColumn">
+                        </div>
+                    </div>
+                </div>
+                <div class="column is-4">
+                    <div class="field">
+                        <label class="label">Enter Highlight[Column,Row] :-</label>
+                        <div class="control">
+                            <input type="text" class="input is-info is-large" value="3" id="displayStar">
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="block">
+                <div class="field">
+                    <div class="control has-text-centered">
+                        <button class="button is-large is-primary" onclick="tableGenerateHighlight()">Table Generate</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="block">
+                <p id="displayTable"></p>
+            </div>
+            <!-- <div class="block">
+                <table class="table is-bordered">
+                    <tbody>
+                        <tr>
+                            <td>1</td>
+                            <td>2</td>
+                            <td>3</td>
+                            <td>4</td>
+                            <td>5</td>
+                        </tr>
+                        <tr>
+                            <td>1</td>
+                            <td>2</td>
+                            <td>3</td>
+                            <td>4</td>
+                            <td>5</td>
+                        </tr>
+                        <tr>
+                            <td>1</td>
+                            <td>2</td>
+                            <td>3</td>
+                            <td>4</td>
+                            <td>5</td>
+                        </tr>
+                        <tr>
+                            <td>1</td>
+                            <td>2</td>
+                            <td class="is-primary">*</td>
+                            <td>4</td>
+                            <td>5</td>
+                        </tr>
+                        <tr>
+                            <td>1</td>
+                            <td>2</td>
+                            <td>3</td>
+                            <td>4</td>
+                            <td>5</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div> -->
+        </div>
+    </div>
+
+    <script>
+        function tableGenerateHighlight(){
+            let row = parseInt(document.getElementById("inputRow").value);
+            let column = parseInt(document.getElementById("inputColumn").value);
+            let highlightStar = parseInt(document.getElementById("displayStar").value);
+
+            let strTable = "<table class='table is-bordered'><tbody><tr>";
+
+                for(i=1; i<row; i++)
+                {
+                    for(j= 1; j<column; j++)
+                    {
+
+                        if(highlightStar == i && highlightStar == j)
+                        {
+                            strTable = strTable +"<td class='is-primary'>" + i + "</td>";
+                        console.log("1.strTable :-> "+strTable);
+                        }
+                        else
+                        {
+                            strTable = strTable +"<td>" + i + "</td>";
+                            console.log("1.strTable :-> "+strTable);
+                        }
+
+                    }
+                    strTable = strTable + "</tr>";
+                }
+                strTable = strTable + "</tbody>" + "</table>";
+                console.log("2.strTable :-> "+strTable);
+                document.getElementById("displayTable").innerHTML = strTable;
+        }
+    </script>
+</body>
+</html>

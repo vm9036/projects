@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.9.4/css/bulma.min.css">
+    <title>Table Generate HightLight Star</title>
+</head>
+<body>
+    <div class="container mt-6">
+        <div class="box">
+            <h1 class="title has-text-centered">Table Generate HightLight Star Program :-</h1>
+
+            <div class="columns">
+                <div class="column is-4">
+                    <div class="field">
+                        <label class="label">Enter Column :-</label>
+                        <div class="control">
+                            <input type="text" class="input is-info is-large" value="5">
+                        </div>
+                    </div>
+                </div>
+                <div class="column is-4">
+                    <div class="field">
+                        <label class="label">Enter Row :-</label>
+                        <div class="control">
+                            <input type="text" class="input is-info is-large" value="5">
+                        </div>
+                    </div>
+                </div>
+                <div class="column is-4">
+                    <div class="field">
+                        <label class="label">Enter Highlight[Column,Row] :-</label>
+                        <div class="control">
+                            <input type="text" class="input is-info is-large" value="3">
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="block">
+                <div class="field">
+                    <div class="control has-text-centered">
+                        <button class="button is-large is-primary">Table Generate</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="block">
+                <table class="table is-bordered">
+                    <tbody>
+                        <tr>
+                            <td>1</td>
+                            <td>2</td>
+                            <td>3</td>
+                            <td>4</td>
+                            <td>5</td>
+                        </tr>
+                        <tr>
+                            <td>1</td>
+                            <td>2</td>
+                            <td>3</td>
+                            <td>4</td>
+                            <td>5</td>
+                        </tr>
+                        <tr>
+                            <td>1</td>
+                            <td>2</td>
+                            <td>3</td>
+                            <td>4</td>
+                            <td>5</td>
+                        </tr>
+                        <tr>
+                            <td>1</td>
+                            <td>2</td>
+                            <td class="is-primary">*</td>
+                            <td>4</td>
+                            <td>5</td>
+                        </tr>
+                        <tr>
+                            <td>1</td>
+                            <td>2</td>
+                            <td>3</td>
+                            <td>4</td>
+                            <td>5</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
