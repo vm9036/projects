@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.9.4/css/bulma.min.css">
+    <title>Dynamic Array Smallest Value</title>
+</head>
+
+<body>
+    <div class="container mt-6">
+        <div class="panel is-dark">
+            <div class="panel-heading ">
+                <h1 class="title has-text-white has-text-centered">Generate Dynamic Array Smallest Value Program :-</h1>
+            </div>
+            <div class="box">
+                <div class="columns">
+                    <div class="column is-4">
+                        <div class="block">
+                            <div class="field">
+                                <label class="label is-size-4">Enter Array Value 1 :-</label>
+                                <div class="control">
+                                    <input type="number" class="input is-info is-large has-text-weight-bold" id="inputAddingArrayValue1" value="10">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="column is-4">
+                        <div class="block">
+                            <div class="field">
+                                <label class="label is-size-4">Enter Array Value 2 :-</label>
+                                <div class="control">
+                                    <input type="number" class="input is-info is-large has-text-weight-bold" id="inputAddingArrayValue2" value="20">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="column is-4">
+                        <div class="block">
+                            <div class="field">
+                                <label class="label is-size-4">Enter Array Value 3 :-</label>
+                                <div class="control">
+                                    <input type="number" class="input is-info is-large has-text-weight-bold" id="inputAddingArrayValue3" value="30">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="block">
+                    <div class="field">
+                        <div class="control has-text-centered">
+                            <button class="button is-dark has-text-weight-bold is-size-3" onclick="displayDynamicAddingArrayTableSmallestValue()">Adding Array In Table</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="block">
+                    <p id="diaplayArrayTable"></p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        var inputDynamicArrayValue = [], i = 0;
+    
+        function displayDynamicAddingArrayTableSmallestValue() {
+            let addingArrayValue1 = Number(document.getElementById("inputAddingArrayValue1").value);
+            let addingArrayValue2 = Number(document.getElementById("inputAddingArrayValue2").value);
+            let addingArrayValue3 = Number(document.getElementById("inputAddingArrayValue3").value);
+
+            let strTable = "<div class='box'><h1 class='title has-text-centered'>Dynamic Array Table Smallest Value :- </h1><div class='columns'><div class='column is-5'></div><div class='column is-3'><table class='table is-bordered is-striped is-hoverable has-text-weight-semibold has-text-centered'><thead><tr><th>index No.</th><th>Value</th></tr></thead><tbody>"
+
+            //inputDynamicArrayValue[i] = addingArrayValue;
+
+            if(addingArrayValue1 <= addingArrayValue2 && addingArrayValue1 <= addingArrayValue3)
+            {
+                inputDynamicArrayValue[i] = addingArrayValue1;
+                console.log("addingArrayValue1 :-> "+addingArrayValue1);
+            }
+            else if(addingArrayValue2 <= addingArrayValue3 && addingArrayValue2 <= addingArrayValue1)
+            {
+                inputDynamicArrayValue[i] = addingArrayValue2;
+                console.log("addingArrayValue2 :-> "+addingArrayValue2);
+            }
+            else{
+                inputDynamicArrayValue[i] = addingArrayValue3;
+                console.log("addingArrayValue3 :-> "+addingArrayValue3);
+            }
+
+            for(i =0; i<=inputDynamicArrayValue[i]; i++)
+            {
+                strTable = strTable + "<tr>" + "<td>" + i + "</td>" + "<td>" + inputDynamicArrayValue[i] + "</td>" + "</tr>";
+            }
+
+            console.log("strTable :-> " + strTable);
+
+            strTable = strTable + "</tbody>" + "</table>" + "</div>" + "<div class='column is-5'></div>" + "</div>";
+            document.getElementById("diaplayArrayTable").innerHTML = strTable;
+
+
+            // i = i + 1;
+            // console.log("addingArrayValue :-> " + addingArrayValue, "i :-> " + i, "");
+            // strTable = addingArrayValue;
+        }
+        
+
+    </script>
+</body>
+
+</html>
