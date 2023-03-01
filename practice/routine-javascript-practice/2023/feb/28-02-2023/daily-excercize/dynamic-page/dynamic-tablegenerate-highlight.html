@@ -17,7 +17,7 @@
                     <div class="field">
                         <label class="label">Enter Row :-</label>
                         <div class="control">
-                            <input type="text" class="input is-info is-large" value="5" id="inputRow">
+                            <input type="text" class="input is-info is-large has-text-weight-semibold" value="5" id="inputRow">
                         </div>
                     </div>
                 </div>
@@ -25,7 +25,7 @@
                     <div class="field">
                         <label class="label">Enter Column :-</label>
                         <div class="control">
-                            <input type="text" class="input is-info is-large" value="5" id="inputColumn">
+                            <input type="text" class="input is-info is-large has-text-weight-semibold" value="5" id="inputColumn">
                         </div>
                     </div>
                 </div>
@@ -33,7 +33,7 @@
                     <div class="field">
                         <label class="label">Enter Highlight[Column,Row] :-</label>
                         <div class="control">
-                            <input type="text" class="input is-info is-large" value="3" id="displayStar">
+                            <input type="text" class="input is-info is-large has-text-weight-semibold" value="3" id="displayStar">
                         </div>
                     </div>
                 </div>
@@ -48,7 +48,7 @@
             </div>
 
             <div class="block">
-                <p id="displayTable"></p>
+                <p id="displayTable" class="has-text-weight-semibold"></p>
             </div>
             <!-- <div class="block">
                 <table class="table is-bordered">
@@ -99,29 +99,32 @@
             let row = parseInt(document.getElementById("inputRow").value);
             let column = parseInt(document.getElementById("inputColumn").value);
             let highlightStar = parseInt(document.getElementById("displayStar").value);
+            var counter = 0;    
 
-            let strTable = "<table class='table is-bordered'><tbody><tr>";
+            let strTable = "<div class='box mt-5'><h1 class='title'>Display Row And Column Table :-</h1><div class='table-container'><table class='table is-bordered'><tbody><tr>";
+
 
                 for(i=1; i<=row; i++)
                 {
-                    for(j= 1; j<=column; j++)
+                    for(j=1; j<=column; j++)
                     {
-
+                        counter =  counter + 1;
+                        console.log("counter :-> "+counter);
                         if(highlightStar == i && highlightStar == j)
                         {
-                            strTable = strTable +"<td class='is-primary'>" + i + "</td>";
+                            strTable = strTable +"<td class='is-danger has-text-weight-bold p-5'>" + "*" + "</td>";
                         console.log("1.strTable :-> "+strTable);
                         }
                         else
                         {
-                            strTable = strTable +"<td>" + i + "</td>";
+                            strTable = strTable +"<td class='p-5'>" + counter + "</td>";
                             console.log("1.strTable :-> "+strTable);
                         }
-
                     }
                     strTable = strTable + "</tr>";
                 }
-                strTable = strTable + "</tbody>" + "</table>";
+                // counter = counter + 1;
+                strTable = strTable + "</tbody>" + "</table>"+ "</div>" + "</div>";
                 console.log("2.strTable :-> "+strTable);
                 document.getElementById("displayTable").innerHTML = strTable;
         }
