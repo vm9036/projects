@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.9.4/css/bulma.min.css">
+    <title>Table Generate HightLight Arrow Game With Disabled Button</title>
+</head>
+
+<body>
+    <div class="container mt-6">
+        <div class="box">
+            <h1 class="title has-text-centered"> DynamicTable Generate HightLight Arrow Game Limitation With Disabled Button Program :-</h1>
+
+            <div class="columns">
+                <div class="column is-6">
+                    <div class="field">
+                        <label class="label">Enter Row :-</label>
+                        <div class="control">
+                            <input type="text" class="input is-info is-large has-text-weight-semibold" value="5"
+                                id="inputRow">
+                        </div>
+                    </div>
+                </div>
+                <div class="column is-6">
+                    <div class="field">
+                        <label class="label">Enter Column :-</label>
+                        <div class="control">
+                            <input type="text" class="input is-info is-large has-text-weight-semibold" value="5"
+                                id="inputColumn">
+                        </div>
+                    </div>
+                </div>
+                <!-- <div class="column is-4">
+                    <div class="field">
+                        <label class="label">Enter Highlight[Column,Row] :-</label>
+                        <div class="control">
+                            <input type="text" class="input is-info is-large has-text-weight-semibold" value="5"
+                                id="displayStar">
+                        </div>
+                    </div>
+                </div> -->
+            </div>
+
+            <div class="block">
+                <div class="field">
+                    <div class="control has-text-centered">
+                        <button class="button is-large is-primary" onclick="tableGenerateHighlight()">Table
+                            Generate</button>
+                        <button class="button is-large is-success is-outlined" onclick="highlightUp()">Up</button>
+                        <button class="button is-large is-warning is-outlined" onclick="highlightDown()">Down</button>
+                        <button class="button is-large is-dark is-outlined" onclick="highlightLeft()">Left</button>
+                        <button class="button is-large is-danger is-outlined" onclick="highlightRight()">Right</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="block">
+                <p id="displayTable" class="has-text-weight-semibold"></p>
+            </div>
+        </div>
+    </div>
+
+    <script>
+
+        var tempI = 1;
+        var tempJ = 1;
+        
+        function tableGenerateHighlight() {
+            // let highlightStar = parseInt(document.getElementById("displayStar").value);
+            let row = Number(document.getElementById("inputRow").value);
+            let column = Number(document.getElementById("inputColumn").value);
+            // let counter = 0;
+            let strTable = "<div class='box mt-5'><h1 class='title'>Display Row And Column Table :-</h1><div class='table-container'><table class='table is-bordered'><tbody><tr>";
+            for (let i = 1; i <= row; i++) {
+                for (let j = 1; j <= column; j++) {
+                    // console.log("counter :-> " + counter);
+
+                    if (i == tempI && j == tempJ) {
+                        strTable = strTable + "<td class='is-danger has-text-weight-bold p-5'>" + "*" + "</td>";
+                    }
+                    else {
+                        // counter = counter + 1;
+                        strTable = strTable + "<td class='p-5'>" + i + "." + j + "</td>";
+                    }
+                }
+                strTable = strTable + "</tr>";
+            }
+            
+            strTable = strTable + "</tbody>" + "</table>" + "</div>" + "</div>";
+            
+            document.getElementById("displayTable").innerHTML = strTable;
+        }
+        
+
+        function highlightUp() {
+            if( tempI == 1)
+            { 
+                
+                // alert("Out OF Limit");
+                // console.log("tempI :-> "+tempI)
+            }
+            else
+            {
+                tempI = tempI - 1;
+                // console.log("highlightDown tempI :-> " + tempI);
+            }
+            tableGenerateHighlight();
+        }
+
+        function highlightDown() {
+            let row = Number(document.getElementById("inputRow").value);
+            if( tempI == row)
+            { 
+                alert("Out OF Limit");
+                console.log("tempI :-> "+tempI)
+            }
+            else
+            {
+                tempI = tempI + 1;
+                // console.log("highlightDown tempI :-> " + tempI);
+            }
+            tableGenerateHighlight();
+        }
+
+        function highlightLeft() {
+
+            if(tempJ == 1)
+            {
+                alert("Out OF Limit");
+                console.log("tempJ :-> "+tempJ) 
+            }
+            else
+            {
+                tempJ = tempJ - 1;
+                console.log("highlightLeft tempJ :-> " + tempJ);
+            }
+            tableGenerateHighlight();
+        }
+
+        function highlightRight() {
+            let column = Number(document.getElementById("inputColumn").value);
+            if(tempJ == column)
+            {
+                alert("Out OF Limit");
+                console.log("tempJ :-> "+tempJ, "Column :-> "+column); 
+            }
+            else
+            {
+                tempJ = tempJ + 1;
+                console.log("highlightLeft tempJ :-> " + tempJ);
+            }
+            tableGenerateHighlight();
+            
+        }
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.9.4/css/bulma.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css">
+    <title>Static Table </title>
+</head>
+<body>
+    <div class="container">
+        <div class="box">
+            <h1 class="title has-text-centered">8 Buttons Cereate </h1>
+            <div class="columns">
+                <div class="column is-6">
+                    <div class="field">
+                        <label class="label is-size-4">Enter Row :</label>
+                        <div class="control">
+                            <input type="text" class="input is-large is-info">
+                        </div>
+                    </div>
+                </div>
+                <div class="column is-6">
+                    <div class="field">
+                        <label class="label is-size-4">Enter Column :</label>
+                        <div class="control">
+                            <input type="text" class="input is-large is-info">
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="block">
+                <div class="field mt-5 mb-5">
+                    <div class="control has-text-centered">
+                        <button class="button is-medium is-primary has-text-weight-bold">Generate Table</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="columns">
+                <div class="column is-3"></div>
+                <div class="column is-6">
+                    <div class="field">
+                        <div class="control has-text-centered">
+                            <button class="button is-medium is-primary has-text-weight-bold"><span class="is-size-3">&#8598;</span></button>
+                            <button class="button is-medium is-primary has-text-weight-bold"><i class="fa-solid fa-chevron-up is-size-3"></i></button>
+                            <button class="button is-medium is-primary has-text-weight-bold"><span class="is-size-3">&#8599;</span></button>
+                        </div>
+                    </div>
+                    <div class="field">
+                        <div class="control has-text-centered">
+                            <button class="button is-medium is-primary has-text-weight-bold"><i class="fa-solid fa-chevron-left is-size-3"></i></button>
+                            <button class="button is-medium is-white has-text-weight-bold has-text-white"><i class="fa-solid fa-chevron-right is-size-3"></i></button>
+                            <button class="button is-medium is-primary has-text-weight-bold"><i class="fa-solid fa-chevron-right is-size-3"></i></button>
+                        </div>
+                    </div>
+                    <div class="field">
+                        <div class="control has-text-centered">
+                            <button class="button is-medium is-primary has-text-weight-bold"><span class="is-size-3">&#8601;</span></button>
+                            <button class="button is-medium is-primary has-text-weight-bold"><i class="fa-solid fa-chevron-down is-size-3"></i></button>
+                            <button class="button is-medium is-primary has-text-weight-bold"><span class="is-size-3">&#8600;</span></button>
+                        </div>
+                    </div> 
+                </div>
+                <div class="column is-3"></div>
+            </div>
+
+            <div class="block">
+                <p id="displayTable" class="has-text-weight-semibold"></p>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
