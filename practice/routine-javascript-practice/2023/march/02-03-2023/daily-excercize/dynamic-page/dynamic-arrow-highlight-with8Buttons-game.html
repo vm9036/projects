@@ -187,28 +187,7 @@
                 tempJ = tempJ + 1;
                 console.log("highlightLeft tempJ :-> " + tempJ);
             }
-            tableGenerateHighlight();
-            
-        }
-        function highlightSouthEast() {
-            // let column = Number(document.getElementById("inputColumn").value);
-            if(tempI== 1 && tempJ == 1)
-            {
-                tempI = tempI + 1;
-                console.log("highlightSouthEast tempI :-> " + tempI);
-                tempJ = tempJ + 1;
-                console.log("highlightSouthEast tempJ :-> " + tempJ);
-                // alert("Out OF Limit");
-                // console.log("tempJ :-> "+tempJ, "Column :-> "+column); 
-            }
-            else
-            {
-                tempI = tempI + 1;
-                console.log("highlightSouthEast tempI :-> " + tempI);
-                tempJ = tempJ + 1;
-                console.log("highlightSouthEast tempJ :-> " + tempJ);
-            }
-            tableGenerateHighlight();
+            tableGenerateHighlight();     
         }
         function highlightNorthWest() {
             // let column = Number(document.getElementById("inputColumn").value);
@@ -232,21 +211,61 @@
         }
         function highlightNorthEast() {
             // let column = Number(document.getElementById("inputColumn").value);
-            if(tempI== 1 && tempJ == 5)
+            if(tempI== 1 && tempJ == 1)
             {
                 tempI = tempI - 1;
                 console.log("highlightNorthEast tempI :-> " + tempI);
-                tempJ = tempJ - 1;
+                tempJ = tempJ + 1;
                 console.log("highlightNorthEast tempJ :-> " + tempJ);
                 // alert("Out OF Limit");
                 // console.log("tempJ :-> "+tempJ, "Column :-> "+column); 
             }
             else
             {
-                tempI = (tempI - 1) -1;
+                tempI = tempI - 1;
                 console.log("highlightNorthEast tempI :-> " + tempI);
-                tempJ = (tempJ - 1) - 1;
+                tempJ = tempJ + 1;
                 console.log("highlightNorthEast tempJ :-> " + tempJ);
+            }
+            tableGenerateHighlight();
+        }
+        function highlightSouthWest() {
+            // let column = Number(document.getElementById("inputColumn").value);
+            if(tempI== 1 && tempJ == 1)
+            {
+                // tempI = tempI + 1;
+                // console.log("highlightSouthWest tempI :-> " + tempI);
+                // tempJ = tempJ - 1;
+                // console.log("highlightSouthWest tempJ :-> " + tempJ);
+                alert("Out OF Limit");
+                // console.log("tempJ :-> "+tempJ, "Column :-> "+column); 
+            }
+            else
+            {
+                tempI = tempI + 1;
+                console.log("highlightSouthWest tempI :-> " + tempI);
+                tempJ = tempJ - 1;
+                console.log("highlightSouthWest tempJ :-> " + tempJ);
+            }
+            tableGenerateHighlight();
+        }
+        function highlightSouthEast() {
+            // let column = Number(document.getElementById("inputColumn").value);
+            if(tempI== 1 && tempJ == 1)
+            {
+                tempI = tempI + 1;
+                console.log("highlightSouthEast tempI :-> " + tempI);
+                tempJ = tempJ + 1;
+                console.log("highlightSouthEast tempJ :-> " + tempJ);
+                // alert("Out OF Limit");
+                // console.log("tempJ :-> "+tempJ, "Column :-> "+column); 
+            }
+            else
+            {
+                tempI = tempI + 1;
+                console.log("highlightSouthEast tempI :-> " + tempI);
+                tempJ = tempJ + 1;
+                console.log("highlightSouthEast tempJ :-> " + tempJ);
             }
             tableGenerateHighlight();
         }
