@@ -6,6 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.9.4/css/bulma.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css">
     <title>Table Generate HightLight Arrow Game With Disabled Button</title>
 </head>
 
@@ -49,10 +50,10 @@
                     <div class="control has-text-centered">
                         <button class="button is-large is-primary" onclick="tableGenerateHighlight()">Table
                             Generate</button>
-                        <button class="button is-large is-success is-outlined" onclick="highlightUp()">Up</button>
-                        <button class="button is-large is-warning is-outlined" onclick="highlightDown()">Down</button>
-                        <button class="button is-large is-dark is-outlined" onclick="highlightLeft()">Left</button>
-                        <button class="button is-large is-danger is-outlined" onclick="highlightRight()">Right</button>
+                        <button class="button is-large is-success is-outlined" onclick="highlightUp()" id="up"><i class="fa-solid fa-chevron-up is-size-3"></i></button>
+                        <button class="button is-large is-warning is-outlined" onclick="highlightDown()" id="down"><i class="fa-solid fa-chevron-down is-size-3"></i></button>
+                        <button class="button is-large is-dark is-outlined" onclick="highlightLeft()" id="left"><i class="fa-solid fa-chevron-left is-size-3"></i></button>
+                        <button class="button is-large is-danger is-outlined" onclick="highlightRight()" id="right"><i class="fa-solid fa-chevron-right is-size-3"></i></button>
                     </div>
                 </div>
             </div>
@@ -98,9 +99,9 @@
         function highlightUp() {
             if( tempI == 1)
             { 
-                
-                // alert("Out OF Limit");
-                // console.log("tempI :-> "+tempI)
+                document.getElementById("up").disabled = true;
+                //alert("Out OF Limit");
+                console.log("tempI :-> "+tempI)
             }
             else
             {
@@ -114,8 +115,9 @@
             let row = Number(document.getElementById("inputRow").value);
             if( tempI == row)
             { 
-                alert("Out OF Limit");
-                console.log("tempI :-> "+tempI)
+                document.getElementById("down").disabled = true;
+                // alert("Out OF Limit");
+                // console.log("tempI :-> "+tempI)
             }
             else
             {
@@ -129,8 +131,9 @@
 
             if(tempJ == 1)
             {
-                alert("Out OF Limit");
-                console.log("tempJ :-> "+tempJ) 
+                document.getElementById("left").disabled = true;
+                // alert("Out OF Limit");
+                // console.log("tempJ :-> "+tempJ) 
             }
             else
             {
@@ -144,8 +147,9 @@
             let column = Number(document.getElementById("inputColumn").value);
             if(tempJ == column)
             {
-                alert("Out OF Limit");
-                console.log("tempJ :-> "+tempJ, "Column :-> "+column); 
+                document.getElementById("right").disabled = true;
+                // alert("Out OF Limit");
+                // console.log("tempJ :-> "+tempJ, "Column :-> "+column); 
             }
             else
             {
@@ -159,3 +163,226 @@
 </body>
 
 </html>
+
+<!-- </html>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Table-Genrator</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
+</head>
+<body>
+    <div class="container p-5">
+        Rows <input type="text" id="userEnteredFirstValue" value="4"> <br>
+        Columns <input type="text" id="userEnteredSecondValue" value="4"> <br>
+        Minus <input type="text" id="userEnteredThirdValue" >
+        <div class="column has-text-centered">
+            <button onclick="drawTable()" class="button is-danger is-small">AddTable1</button><br><br>
+            <button onclick="leftButton()" class="button is-info is-small">left</button>
+            <button onclick="rightButton()" class="button is-info is-small">right</button>
+            <button onclick="upButton()" class="button is-info is-small">up</button>
+            <button onclick="downButton()" class="button is-info is-small">down</button>
+        </div>
+        <!-- <div class="container table-container">
+            <table class="table is-bordered">
+                <thead>
+                <tbody id="printTable">
+                </tbody>
+            </table> -->
+        <p id="printTable"></p>
+    </div>
+    <script>
+        tempi =1;
+        tempj =1;
+        flag = false;
+        //var userEnteredThirdValue ;
+        function drawTable() {
+            let userEnteredFirstValue = Number(document.getElementById("userEnteredFirstValue").value);
+            let userEnteredSecondValue = Number(document.getElementById("userEnteredSecondValue").value);
+            if(flag==false){
+                userEnteredThirdValue = Number(document.getElementById("userEnteredThirdValue").value);
+                tempi = userEnteredThirdValue;
+                tempj = userEnteredThirdValue;
+                flag=true;
+            }
+            let stringTable = ' <table class="table is-bordered"><tr>';
+            for (let i = 1; i <= userEnteredFirstValue; i++) {
+                for (let j = 1; j <= userEnteredSecondValue; j++) {
+                    if (i == tempi && j == tempj) {
+                        stringTable = stringTable + "<td>" + "*" + "</td>";
+                    }
+                    else {
+                        stringTable = stringTable + "<td>" + "</td>";
+                    }
+                }
+                stringTable = stringTable + "</tr>";
+            }
+            document.getElementById("printTable").innerHTML = stringTable;
+        }
+        function leftButton() {
+            let userEnteredSecondValue = Number(document.getElementById("userEnteredSecondValue").value);
+            if (tempj == 1) {
+                alert("jhjh")
+            }
+            else {
+                tempj = tempj - 1;
+            }
+            drawTable()
+        }
+        function rightButton() {
+            let userEnteredSecondValue = Number(document.getElementById("userEnteredSecondValue").value);
+            if (tempj == userEnteredSecondValue) {
+                alert("fdhjbjh")
+            }
+            else {
+                tempj = tempj + 1;
+            }
+            drawTable()
+        }
+        function upButton() {
+            let userEnteredFirstValue = Number(document.getElementById("userEnteredFirstValue").value);
+            if(tempi==1){
+alert("dfjhgbjhf")
+            }
+            else{
+                tempi = tempi -  1;
+            }
+            drawTable()
+        }
+        function downButton() {
+            let userEnteredFirstValue = Number(document.getElementById("userEnteredFirstValue").value);
+            if(tempi ==userEnteredFirstValue ){
+alert("jhdgjh")
+            }
+            else{
+                tempi = tempi + 1;
+            }
+            drawTable()
+        }
+    </script>
+</body>
+</html> -->
+
+
+
+<!-- Satish Patel
+  5:26 PM
+</html>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Table-Genrator</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
+</head>
+<body>
+    <div class="container p-5">
+        Rows <input type="text" id="userEnteredFirstValue" value="4"> <br>
+        Columns <input type="text" id="userEnteredSecondValue" value="4"> <br>
+        Minus <input type="text" id="userEnteredThirdValue" value="3" >
+        <div class="column has-text-centered">
+            <button onclick="firstTimeDraw()" class="button is-danger is-small">AddTable1</button><br><br>
+            <button onclick="leftButton()" class="button is-info is-small">left</button>
+            <button onclick="rightButton()" class="button is-info is-small">right</button>
+            <button onclick="upButton()" class="button is-info is-small">up</button>
+            <button onclick="downButton()" class="button is-info is-small">down</button>
+        </div>
+        <!-- <div class="container table-container">
+            <table class="table is-bordered">
+                <thead>
+                <tbody id="printTable">
+                </tbody>
+            </table> -->
+        <p id="printTable"></p>
+    </div>
+    <script>
+        tempi =1;
+        tempj =1;
+        flag = false;
+        //var userEnteredThirdValue ;
+        function firstTimeDraw(){
+flag =false;
+drawTable()
+        }
+        function drawTable() {
+            let userEnteredFirstValue = Number(document.getElementById("userEnteredFirstValue").value);
+            let userEnteredSecondValue = Number(document.getElementById("userEnteredSecondValue").value);
+            if(flag==false){
+                userEnteredThirdValue = Number(document.getElementById("userEnteredThirdValue").value);
+                tempi = userEnteredThirdValue;
+                tempj = userEnteredThirdValue;
+                flag=true;
+            }
+            let stringTable = ' <table class="table is-bordered"><tr>';
+            for (let i = 1; i <= userEnteredFirstValue; i++) {
+                for (let j = 1; j <= userEnteredSecondValue; j++) {
+                    if (i == tempi && j == tempj) {
+                        stringTable = stringTable + "<td>" + "*" + "</td>";
+                    }
+                    else {
+                        stringTable = stringTable + "<td>" + "</td>";
+                    }
+                }
+                stringTable = stringTable + "</tr>";
+            }
+            document.getElementById("printTable").innerHTML = stringTable;
+        }
+        function leftButton() {
+            let userEnteredSecondValue = Number(document.getElementById("userEnteredSecondValue").value);
+            if (tempj == 1) {
+                alert("jhjh")
+            }
+            else {
+                tempj = tempj - 1;
+            }
+            drawTable()
+        }
+        function rightButton() {
+            let userEnteredSecondValue = Number(document.getElementById("userEnteredSecondValue").value);
+            if (tempj == userEnteredSecondValue) {
+                alert("fdhjbjh")
+            }
+            else {
+                tempj = tempj + 1;
+            }
+            drawTable()
+        }
+        function upButton() {
+            let userEnteredFirstValue = Number(document.getElementById("userEnteredFirstValue").value);
+            if(tempi==1){
+alert("dfjhgbjhf")
+            }
+            else{
+                tempi = tempi -  1;
+            }
+            drawTable()
+        }
+        function downButton() {
+            let userEnteredFirstValue = Number(document.getElementById("userEnteredFirstValue").value);
+            if(tempi ==userEnteredFirstValue ){
+alert("jhdgjh")
+            }
+            else{
+                tempi = tempi + 1;
+            }
+            drawTable()
+        }
+    </script>
+</body>
+</html> -->
+<!-- function satish1() {
+    tracker =  tracker - Number(document.getElementById("second").value);;
+satish();
+}
+function satish2() {
+    tracker =  tracker  + Number(document.getElementById("second").value);;
+    satish();
+} -->
+
+
+

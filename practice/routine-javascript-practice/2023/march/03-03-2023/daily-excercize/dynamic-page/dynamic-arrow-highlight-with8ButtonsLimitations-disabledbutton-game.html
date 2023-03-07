@@ -13,7 +13,7 @@
 <body>
     <div class="container mt-6">
         <div class="box">
-            <h1 class="title has-text-centered"> Dynamic Arrow Game Highlight With 8 Buttons Program :-</h1>
+            <h1 class="title has-text-centered"> Dynamic Arrow Game Highlight With 8 Buttons With Limitations With Disabled Program :-</h1>
 
             <div class="columns">
                 <div class="column is-6">
@@ -71,23 +71,23 @@
                 <div class="column is-6">
                     <div class="field">
                         <div class="control has-text-centered">
-                            <button class="button is-medium is-success has-text-weight-bold" onclick="highlightNorthWest()"><span class="is-size-3">&#8598;</span></button>
-                            <button class="button is-medium is-dark has-text-weight-bold" onclick="highlightUp()"><i class="fa-solid fa-chevron-up is-size-3"></i></button>
-                            <button class="button is-medium is-success has-text-weight-bold" onclick="highlightNorthEast()"><span class="is-size-3">&#8599;</span></button>
+                            <button class="button is-medium is-success has-text-weight-bold" onclick="highlightNorthWest()" id="disabledNorthWest"><span class="is-size-3">&#8598;</span></button>
+                            <button class="button is-medium is-dark has-text-weight-bold" onclick="highlightUp()" id="disabledUp"><i class="fa-solid fa-chevron-up is-size-3"></i></button>
+                            <button class="button is-medium is-success has-text-weight-bold" onclick="highlightNorthEast()" id="disabledNorthEast"><span class="is-size-3">&#8599;</span></button>
                         </div>
                     </div>
                     <div class="field">
                         <div class="control has-text-centered">
-                            <button class="button is-medium is-dark has-text-weight-bold" onclick="highlightLeft()"><i class="fa-solid fa-chevron-left is-size-3"></i></button>
+                            <button class="button is-medium is-dark has-text-weight-bold" onclick="highlightLeft()" id="disabledLeft"><i class="fa-solid fa-chevron-left is-size-3"></i></button>
                             <button class="button is-medium is-white has-text-weight-bold has-text-white"><i class="fa-solid fa-chevron-right is-size-3"></i></button>
-                            <button class="button is-medium is-dark has-text-weight-bold" onclick="highlightRight()"><i class="fa-solid fa-chevron-right is-size-3"></i></button>
+                            <button class="button is-medium is-dark has-text-weight-bold" onclick="highlightRight()" id="disabledRight"><i class="fa-solid fa-chevron-right is-size-3"></i></button>
                         </div>
                     </div>
                     <div class="field">
                         <div class="control has-text-centered">
-                            <button class="button is-medium is-success has-text-weight-bold" onclick="highlightSouthWest()"><span class="is-size-3">&#8601;</span></button>
-                            <button class="button is-medium is-dark has-text-weight-bold" onclick="highlightDown()"><i class="fa-solid fa-chevron-down is-size-3"></i></button>
-                            <button class="button is-medium is-success has-text-weight-bold" onclick="highlightSouthEast()"><span class="is-size-3">&#8600;</span></button>
+                            <button class="button is-medium is-success has-text-weight-bold" onclick="highlightSouthWest()" id="disabledSouthWest"><span class="is-size-3">&#8601;</span></button>
+                            <button class="button is-medium is-dark has-text-weight-bold" onclick="highlightDown()" id="disabledDown"><i class="fa-solid fa-chevron-down is-size-3"></i></button>
+                            <button class="button is-medium is-success has-text-weight-bold" onclick="highlightSouthEast()" id="disabledSouthEast"><span class="is-size-3">&#8600;</span></button>
                         </div>
                     </div> 
                 </div>
@@ -103,7 +103,7 @@
 
         var tempI = 1;
         var tempJ = 1;
-        var row, column;
+        var row,column;
         
         function tableGenerateHighlight() {
             // let highlightStar = parseInt(document.getElementById("displayStar").value);
@@ -135,8 +135,9 @@
         function highlightUp() {
             if( tempI == 1)
             { 
-                alert("Out OF Limit");
-                console.log("tempI :-> "+tempI)
+                document.getElementById("disabledUp").disabled = true;
+                // alert("Out OF Limit");
+                // console.log("tempI :-> "+tempI)
             }
             else
             {
@@ -150,8 +151,9 @@
             // let row = Number(document.getElementById("inputRow").value);
             if( tempI == row)
             { 
-                alert("Out OF Limit");
-                console.log("tempI :-> "+tempI)
+                document.getElementById("disabledDown").disabled = true;
+                // alert("Out OF Limit");
+                // console.log("tempI :-> "+tempI)
             }
             else
             {
@@ -165,8 +167,9 @@
 
             if(tempJ == 1)
             {
-                alert("Out OF Limit");
-                console.log("tempJ :-> "+tempJ) 
+                document.getElementById("disabledLeft").disabled = true;
+                // alert("Out OF Limit");
+                // console.log("tempJ :-> "+tempJ) 
             }
             else
             {
@@ -180,8 +183,9 @@
             // let column = Number(document.getElementById("inputColumn").value);
             if(tempJ == column)
             {
-                alert("Out OF Limit");
-                console.log("tempJ :-> "+tempJ, "Column :-> "+column); 
+                document.getElementById("disabledRight ").disabled = true;
+                // alert("Out OF Limit");
+                // console.log("tempJ :-> "+tempJ, "Column :-> "+column); 
             }
             else
             {
@@ -192,14 +196,15 @@
         }
         function highlightNorthWest() {
             // let column = Number(document.getElementById("inputColumn").value);
-            if(tempI== 1 && tempJ == 1)
+            if(tempI== 1 || tempJ== 1 )
             {
-                tempI = tempI - 1;
-                console.log("highlightNorthWest tempI :-> " + tempI);
-                tempJ = tempJ - 1;
-                console.log("highlightNorthWest tempJ :-> " + tempJ);
+                document.getElementById("disabledNorthWest").disabled = true;
+                // tempI = tempI - 1;
+                // console.log("highlightNorthWest tempI :-> " + tempI);
+                // tempJ = tempJ - 1;
+                // console.log("highlightNorthWest tempJ :-> " + tempJ);
                 // alert("Out OF Limit");
-                // console.log("tempJ :-> "+tempJ, "Column :-> "+column); 
+                // // console.log("tempJ :-> "+tempJ, "Column :-> "+column); 
             }
             else
             {
@@ -211,13 +216,14 @@
             tableGenerateHighlight();
         }
         function highlightNorthEast() {
-            // let column = Number(document.getElementById("inputColumn").value);
-            if(tempI== 1 && tempJ == 1)
+            //  let column = Number(document.getElementById("inputColumn").value);
+            if(tempI== 1 || tempJ == column)
             {
-                tempI = tempI - 1;
-                console.log("highlightNorthEast tempI :-> " + tempI);
-                tempJ = tempJ + 1;
-                console.log("highlightNorthEast tempJ :-> " + tempJ);
+                document.getElementById("disabledNorthEast").disabled = true;
+                // tempI = tempI - 1;
+                // console.log("highlightNorthEast tempI :-> " + tempI);
+                // tempJ = tempJ + 1;
+                // console.log("highlightNorthEast tempJ :-> " + tempJ);
                 // alert("Out OF Limit");
                 // console.log("tempJ :-> "+tempJ, "Column :-> "+column); 
             }
@@ -232,12 +238,13 @@
         }
         function highlightSouthWest() {
             // let column = Number(document.getElementById("inputColumn").value);
-            if(tempI== 1 && tempJ == 1)
+            if(tempI== row || tempJ == 1)
             {
-                tempI = tempI + 1;
-                console.log("highlightSouthWest tempI :-> " + tempI);
-                tempJ = tempJ - 1;
-                console.log("highlightSouthWest tempJ :-> " + tempJ);
+                document.getElementById("disabledSouthWest").disabled = true;
+                // tempI = tempI + 1;
+                // console.log("highlightSouthWest tempI :-> " + tempI);
+                // tempJ = tempJ - 1;
+                // console.log("highlightSouthWest tempJ :-> " + tempJ);
                 // alert("Out OF Limit");
                 // console.log("tempJ :-> "+tempJ, "Column :-> "+column); 
             }
@@ -252,12 +259,13 @@
         }
         function highlightSouthEast() {
             // let column = Number(document.getElementById("inputColumn").value);
-            if(tempI== 1 && tempJ == 1)
+            if(tempI== row || tempJ == column)
             {
-                tempI = tempI + 1;
-                console.log("highlightSouthEast tempI :-> " + tempI);
-                tempJ = tempJ + 1;
-                console.log("highlightSouthEast tempJ :-> " + tempJ);
+                document.getElementById("disabledSouthEast").disabled = true;
+                // tempI = tempI + 1;
+                // console.log("highlightSouthEast tempI :-> " + tempI);
+                // tempJ = tempJ + 1;
+                // console.log("highlightSouthEast tempJ :-> " + tempJ);
                 // alert("Out OF Limit");
                 // console.log("tempJ :-> "+tempJ, "Column :-> "+column); 
             }

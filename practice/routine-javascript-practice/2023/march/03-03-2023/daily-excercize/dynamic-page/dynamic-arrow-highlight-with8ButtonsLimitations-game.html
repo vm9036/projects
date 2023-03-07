@@ -13,7 +13,7 @@
 <body>
     <div class="container mt-6">
         <div class="box">
-            <h1 class="title has-text-centered"> Dynamic Arrow Game Highlight With 8 Buttons Program :-</h1>
+            <h1 class="title has-text-centered"> Dynamic Arrow Game Highlight With 8 Buttons With Limitations Program :-</h1>
 
             <div class="columns">
                 <div class="column is-6">
@@ -103,7 +103,7 @@
 
         var tempI = 1;
         var tempJ = 1;
-        var row, column;
+        var row,column;
         
         function tableGenerateHighlight() {
             // let highlightStar = parseInt(document.getElementById("displayStar").value);
@@ -192,14 +192,14 @@
         }
         function highlightNorthWest() {
             // let column = Number(document.getElementById("inputColumn").value);
-            if(tempI== 1 && tempJ == 1)
+            if(tempI== 1 || tempJ== 1 )
             {
-                tempI = tempI - 1;
-                console.log("highlightNorthWest tempI :-> " + tempI);
-                tempJ = tempJ - 1;
-                console.log("highlightNorthWest tempJ :-> " + tempJ);
-                // alert("Out OF Limit");
-                // console.log("tempJ :-> "+tempJ, "Column :-> "+column); 
+                // tempI = tempI - 1;
+                // console.log("highlightNorthWest tempI :-> " + tempI);
+                // tempJ = tempJ - 1;
+                // console.log("highlightNorthWest tempJ :-> " + tempJ);
+                alert("Out OF Limit");
+                // // console.log("tempJ :-> "+tempJ, "Column :-> "+column); 
             }
             else
             {
@@ -211,14 +211,14 @@
             tableGenerateHighlight();
         }
         function highlightNorthEast() {
-            // let column = Number(document.getElementById("inputColumn").value);
-            if(tempI== 1 && tempJ == 1)
+            //  let column = Number(document.getElementById("inputColumn").value);
+            if(tempI== 1 || tempJ == column)
             {
-                tempI = tempI - 1;
-                console.log("highlightNorthEast tempI :-> " + tempI);
-                tempJ = tempJ + 1;
-                console.log("highlightNorthEast tempJ :-> " + tempJ);
-                // alert("Out OF Limit");
+                // tempI = tempI - 1;
+                // console.log("highlightNorthEast tempI :-> " + tempI);
+                // tempJ = tempJ + 1;
+                // console.log("highlightNorthEast tempJ :-> " + tempJ);
+                alert("Out OF Limit");
                 // console.log("tempJ :-> "+tempJ, "Column :-> "+column); 
             }
             else
@@ -232,13 +232,13 @@
         }
         function highlightSouthWest() {
             // let column = Number(document.getElementById("inputColumn").value);
-            if(tempI== 1 && tempJ == 1)
+            if(tempI== row || tempJ == 1)
             {
-                tempI = tempI + 1;
-                console.log("highlightSouthWest tempI :-> " + tempI);
-                tempJ = tempJ - 1;
-                console.log("highlightSouthWest tempJ :-> " + tempJ);
-                // alert("Out OF Limit");
+                // tempI = tempI + 1;
+                // console.log("highlightSouthWest tempI :-> " + tempI);
+                // tempJ = tempJ - 1;
+                // console.log("highlightSouthWest tempJ :-> " + tempJ);
+                alert("Out OF Limit");
                 // console.log("tempJ :-> "+tempJ, "Column :-> "+column); 
             }
             else
@@ -252,13 +252,13 @@
         }
         function highlightSouthEast() {
             // let column = Number(document.getElementById("inputColumn").value);
-            if(tempI== 1 && tempJ == 1)
+            if(tempI== row || tempJ == column)
             {
-                tempI = tempI + 1;
-                console.log("highlightSouthEast tempI :-> " + tempI);
-                tempJ = tempJ + 1;
-                console.log("highlightSouthEast tempJ :-> " + tempJ);
-                // alert("Out OF Limit");
+                // tempI = tempI + 1;
+                // console.log("highlightSouthEast tempI :-> " + tempI);
+                // tempJ = tempJ + 1;
+                // console.log("highlightSouthEast tempJ :-> " + tempJ);
+                alert("Out OF Limit");
                 // console.log("tempJ :-> "+tempJ, "Column :-> "+column); 
             }
             else
