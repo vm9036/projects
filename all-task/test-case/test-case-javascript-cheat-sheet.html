@@ -5,7 +5,9 @@
     <title> Test Case Javascript Cheat Sheet</title>
     <!-- bulma css -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.9.4/css/bulma.min.css" />
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/11.7.0/styles/default.min.css">
 </head>
+
 
 <style>
 
@@ -23,330 +25,436 @@
                 </div>
             </div>
         </div> -->
+        <div class="container is-fluid">
+            <h1 class="title mb-2">Javascript Cheat Sheet</h1>
+            <div class="content">
+                <p class="is-size-5 ml-1">JavaScript is a programming language that enables web developers to create
+                    interactive websites, applications and other dynamic content. It is a high-level programming
+                    language that runs in the browser as well as on the server side. JavaScript is commonly used to
+                    create dynamic webpages, where data gets updated automatically without having to reload the page.
+                </p>
+            </div>
+        </div>
+
         <!--====== content section ======-->
         <div class="container is-fluid mt-2">
+            <!-- Final Selection Section -->
             <hr class="has-background-dark">
-            <!-- <h1 class="title has-text-centered">Mix Content Section</h1> -->
-            <h1 class="title has-text-centered">Javascript Cheat Sheet</h1>
+            <h1 class="title has-text-centered">Final Selection Section</h1>
             <hr class="has-background-dark">
-            <div class="columns">
-                <div class="column is-4">
-                    <div class="panel is-primary">
-                        <div class="panel-block">
-                            <h1 class="is-size-4 is-capitalized has-text-link has-text-weight-bold">Operators</h1>
-                        </div>
+
+            <!-- <div class="box">
+                <div class="columns">
+                    <div class="column is-4">
+                        
                         <div class="box">
-                            <!-- <div class="columns">
-                                <div class="column is-12"> -->
-                                    <div class="notification">
-                                        <div class="tags">
-                                            <div class="tag is-dark is-medium">
-                                                <span>+</span>
-                                            </div>
-                                            <div class="tag is-light is-small">
-                                                <p>addition with numbers,Concatations With Strings</p>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="notification">
-                                        <div class="tags">
-                                            <div class="tag is-dark is-medium">
-                                                <span>-</span>
-                                            </div>
-                                            <div class="tag is-light is-medium">
-                                                <p>subtraction</p>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="notification">
-                                        <div class="tags">
-                                            <div class="tag is-dark is-large">
-                                                <span>*</span>
-                                            </div>
-                                            <div class="tag is-dark is-large">
-                                                <p>multiplication</p>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="notification">
-                                        <div class="tags">
-                                            <div class="tag is-dark is-medium">
-                                                <span>/</span>
-                                            </div>
-                                            <div class="tag is-light is-medium">
-                                                <p>division</p>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="notification">
-                                        <div class="tags">
-                                            <div class="tag is-link is-medium">
-                                                <span>/</span>
-                                            </div>
-                                            <div class="tag is-dark is-medium">
-                                                <p>division</p>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="notification">
-                                        <div class="tags">
-                                            <div class="tag is-dark is-medium">
-                                                <span>%</span>
-                                            </div>
-                                            <div class="tag is-light is-medium">
-                                                <p>modulus: get the remainder.</p>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="notification">
-                                        <div class="tags">
-                                            <div class="tag is-link is-medium">
-                                                <span>%</span>
-                                            </div>
-                                            <div class="tag is-dark is-medium">
-                                                <p>modulus: get the remainder.</p>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="notification">
-                                        <div class="tags">
-                                            <div class="tag is-dark is-medium">
-                                                <span>++</span>
-                                            </div>
-                                            <div class="tag is-light is-medium">
-                                                <p>add 1 onto the number.</p>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="notification">
-                                        <div class="tags">
-                                            <div class="tag is-link is-medium">
-                                                <span>--</span>
-                                            </div>
-                                            <div class="tag is-dark is-medium">
-                                                <p>subtract 1 from the number.</p>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="notification">
-                                        <div class="tags">
-                                            <div class="tag is-dark is-medium">
-                                                <span>+=</span>
-                                            </div>
-                                            <div class="tag is-light is-medium">
-                                                <p>shorthand add</p>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="notification">
-                                        <div class="tags">
-                                            <div class="tag is-link is-medium">
-                                                <span>-=</span>
-                                            </div>
-                                            <div class="tag is-dark is-medium">
-                                                <p>shorthand subtraction</p>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="notification">
-                                        <div class="tags">
-                                            <div class="tag is-dark is-medium">
-                                                <span>*=</span>
-                                            </div>
-                                            <div class="tag is-light is-medium">
-                                                <p>shorthand multiplication</p>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="notification">
-                                        <div class="tags">
-                                            <div class="tag is-link is-medium">
-                                                <span>/=</span>
-                                            </div>
-                                            <div class="tag is-dark is-medium">
-                                                <p>shorthand division</p>
-                                            </div>
-                                        </div>
-                                    </div>
-                                <!-- </div>
-                            </div> -->
+                            <div class="tags">
+                                <div class="tag is-dark is-large">
+                                    <span class="is-size-4">&#9312;</span>
+                                </div>
+                                <div class="tag is-light is-large">
+                                    <span><a href="#">&#9866; Getting Started</a></span>
+                                </div>
+                            </div>
+                            <div class="tags">
+                                <div class="tag is-dark is-large">
+                                    <span class="is-size-4">&#9315;</span>
+                                </div>
+                                <div class="tag is-light is-large">
+                                    <span><a href="#">&#9866; JavaScript Scope</a></span>
+                                </div>
+                            </div>
+                            <div class="tags">
+                                <div class="tag is-dark is-large">
+                                    <span class="is-size-4">&#9318;</span>
+                                </div>
+                                <div class="tag is-light is-large">
+                                    <span><a href="#">&#9866; JavaScript Iterators</a></span>
+                                </div>
+                            </div>
+                            <div class="tags">
+                                <div class="tag is-dark is-large">
+                                    <span class="is-size-4">&#9321;</span>
+                                </div>
+                                <div class="tag is-light is-large">
+                                    <span><a href="#">&#9866; JavaScript Modules</a></span>
+                                </div>
+                            </div>
+                            <div class="tags">
+                                <div class="tag is-dark is-large">
+                                    <span class="is-size-4">&#9324;</span>
+                                </div>
+                                <div class="tag is-light is-large">
+                                    <span><a href="#">&#9866; JavaScript Requests</a></span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="column is-4">
+                        
+                        <div class="box">
+                            <div class="tags">
+                                <div class="tag is-dark is-large">
+                                    <span class="is-size-4">&#9313;</span>
+                                </div>
+                                <div class="tag is-light is-large">
+                                    <span><a href="#">&#9866; JavaScript Conditionals</a></span>
+                                </div>
+                            </div>
+                            <div class="tags">
+                                <div class="tag is-dark is-large">
+                                    <span class="is-size-4">&#9316;</span>
+                                </div>
+                                <div class="tag is-light is-large">
+                                    <span><a href="#">&#9866; JavaScript Arrays</a></span>
+                                </div>
+                            </div>
+                            <div class="tags">
+                                <div class="tag is-dark is-large">
+                                    <span class="is-size-4">&#9319;</span>
+                                </div>
+                                <div class="tag is-light is-large">
+                                    <span><a href="#">&#9866; JavaScript Objects</a></span>
+                                </div>
+                            </div>
+                            <div class="tags">
+                                <div class="tag is-dark is-large">
+                                    <span class="is-size-4">&#9322;</span>
+                                </div>
+                                <div class="tag is-light is-large">
+                                    <span><a href="#">&#9866; JavaScript Promises</a></span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="column is-4">
+                        
+                        <div class="box">
+                            <div class="tags">
+                                <div class="tag is-dark is-large">
+                                    <span class="is-size-4">&#9314;</span>
+                                </div>
+                                <div class="tag is-light is-large">
+                                    <span><a href="#">&#9866; JavaScript Functions</a></span>
+                                </div>
+                            </div>
+                            <div class="tags">
+                                <div class="tag is-dark is-large">
+                                    <span class="is-size-4">&#9317;</span>
+                                </div>
+                                <div class="tag is-light is-large">
+                                    <span><a href="#">&#9866; JavaScript Loops</a></span>
+                                </div>
+                            </div>
+                            <div class="tags">
+                                <div class="tag is-dark is-large">
+                                    <span class="is-size-4">&#9320;</span>
+                                </div>
+                                <div class="tag is-light is-large">
+                                    <span><a href="#">&#9866; JavaScript Classes</a></span>
+                                </div>
+                            </div>
+                            <div class="tags">
+                                <div class="tag is-dark is-large">
+                                    <span class="is-size-4">&#9323;</span>
+                                </div>
+                                <div class="tag is-light is-large">
+                                    <span><a href="#">&#9866; JavaScript Async - Await</a></span>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
-                <div class="column is-4">
-                    <!--====== Clipboard Starts ======-->
-                    <div class="panel is-primary">
-                        <div class="panel-heading">
-                            <!-- <div class="heading block "> -->
-                            <h5 class="is-size-5 is-capitalized">Operators</h5>
-                            <!-- </div> -->
-                        </div>
-                        <div class="box">
-                            <ul>
-                                <li>
-                                    <div class="tags">
-                                        <div class="tag is-dark is-medium">
-                                            <span>+</span>
-                                        </div>
-                                        <div class="tag is-light is-medium">
-                                            <span>addition with numbers,Concatations With Strings</span>
-                                        </div>
-                                    </div>
+            </div> -->
 
-                                    <div class="tags">
-                                        <div class="tag is-dark is-medium">
-                                            <span>-</span>
-                                        </div>
-                                        <div class="tag is-light is-medium">
-                                            <span>subtraction</span>
-                                        </div>
-                                    </div>
-
-                                    <div class="tags">
-                                        <div class="tag is-dark is-medium">
-                                            <span>*</span>
-                                        </div>
-                                        <div class="tag is-light is-medium">
-                                            <span>multiplication</span>
-                                        </div>
-                                    </div>
-
-                                    <div class="tags">
-                                        <div class="tag is-dark is-medium">
-                                            <span>/</span>
-                                        </div>
-                                        <div class="tag is-light is-medium">
-                                            <span>division</span>
-                                        </div>
-                                    </div>
-
-                                    <div class="tags">
-                                        <div class="tag is-dark is-medium">
-                                            <span>%</span>
-                                        </div>
-                                        <div class="tag is-light is-medium">
-                                            <span>modulus: get the remainder.</span>
-                                        </div>
-                                    </div>
-
-                                    <div class="tags">
-                                        <div class="tag is-dark is-medium">
-                                            <span>++</span>
-                                        </div>
-                                        <div class="tag is-light is-medium">
-                                            <span>add 1 onto the number.</span>
-                                        </div>
-                                    </div>
-
-                                    <div class="tags">
-                                        <div class="tag is-dark is-medium">
-                                            <span>--</span>
-                                        </div>
-                                        <div class="tag is-light is-medium">
-                                            <span>subtract 1 from the number.</span>
-                                        </div>
-                                    </div>
-
-                                    <div class="tags">
-                                        <div class="tag is-dark is-medium">
-                                            <span>+=</span>
-                                        </div>
-                                        <div class="tag is-light is-medium">
-                                            <span>shorthand add</span>
-                                        </div>
-                                    </div>
-                                    <div class="tags">
-                                        <div class="tag is-dark is-medium">
-                                            <span>-=</span>
-                                        </div>
-                                        <div class="tag is-light is-medium">
-                                            <span>shorthand Subtract</span>
-                                        </div>
-                                    </div>
-                                    <div class="tags">
-                                        <div class="tag is-dark is-medium">
-                                            <span>*=</span>
-                                        </div>
-                                        <div class="tag is-light is-medium">
-                                            <span>shorthand multiply</span>
-                                        </div>
-                                    </div>
-                                    <div class="tags">
-                                        <div class="tag is-dark is-medium">
-                                            <span>/=</span>
-                                        </div>
-                                        <div class="tag is-light is-medium">
-                                            <span>shorthand divide</span>
-                                        </div>
-                                    </div>
-                                </li>
-                            </ul>
-
-                        </div>
-                    </div>
-                    <!--====== Clipboard Ends ======-->
-                </div>
-                <div class="column is-4">
-                    <div class="panel">
-                        <div class="panel-block">
-                            <h5 class="is-size-5 is-capitalized has-text-link">Operators</h5>
-                        </div>
-                        <!-- <div class="panel-block"> -->
-                        <div class="box">
-                            <table class="table  is-striped is-hoverable">
-                                <tr>
-                                    <td class="has-text-weight-bold">+</td>
-                                    <td class="has-text-right">addition with numbers,Concatations With Strings</td>
-                                </tr>
-                                <tr>
-                                    <td class="has-text-weight-bold">-</td>
-                                    <td class="has-text-right">subtraction</td>
-                                </tr>
-                                <tr>
-                                    <td class="has-text-weight-bold">*</td>
-                                    <td class="has-text-right">multiplication</td>
-                                </tr>
-                                <tr>
-                                    <td class="has-text-weight-bold">/</td>
-                                    <td class="has-text-right">division</td>
-                                </tr>
-                                <tr>
-                                    <td class="has-text-weight-bold">%</td>
-                                    <td class="has-text-right">modulus: get the remainder.</td>
-                                </tr>
-                                <tr>
-                                    <td>++</td>
-                                    <td class="has-text-right">add 1 onto the number.</td>
-                                </tr>
-                                <tr>
-                                    <td>--</td>
-                                    <td class="has-text-right">subtract 1 from the number.</td>
-                                </tr>
-                                <tr>
-                                    <td>+=</td>
-                                    <td class="has-text-right">shorthand add</td>
-                                </tr>
-                                <tr>
-                                    <td>-=</td>
-                                    <td class="has-text-right">shorthand subtract</td>
-                                </tr>
-                                <tr>
-                                    <td>*=</td>
-                                    <td class="has-text-right">shorthand multiply</td>
-                                </tr>
-                                <tr>
-                                    <td>/=</td>
-                                    <td class="has-text-right">shorthand divide</td>
-                                </tr>
-                            </table>
-                        </div>
-                        <!-- </div> -->
+            <div class="box">
+                <div class="columns">
+                    <div class="column is-12">
+                        <p class="buttons">
+                            <button class="button  is-rounded is-info"><a href="#" class="has-text-white">Getting
+                                    Started</a></button>
+                            <button class="button is-rounded is-info"><a href="#" class="has-text-white">JavaScript
+                                    Conditionals</a></button>
+                            <button class="button  is-rounded is-info"><a href="#" class="has-text-white">JavaScript
+                                    Functions</a></button>
+                            <button class="button  is-rounded is-info"><a href="#" class="has-text-white">JavaScript
+                                    Scope</a></button>
+                            <button class="button  is-rounded is-info"><a href="#" class="has-text-white">JavaScript
+                                    Arrays</a></button>
+                            <button class="button is-rounded is-info"><a href="#" class="has-text-white">JavaScript
+                                    Loops</a></button>
+                            <button class="button is-rounded is-info"><a href="#" class="has-text-white">JavaScript
+                                    Iterators</a></button>
+                            <button class="button is-rounded is-info"><a href="#" class="has-text-white">JavaScript
+                                    Objects</a></button>
+                            <button class="button is-rounded is-info"><a href="#" class="has-text-white">JavaScript
+                                    Classes</a></button>
+                            <button class="button is-rounded is-info"><a href="#" class="has-text-white">JavaScript
+                                    Modules</a></button>
+                            <button class="button is-rounded is-info"><a href="#" class="has-text-white">JavaScript
+                                    Promises</a></button>
+                            <button class="button is-rounded is-info"><a href="#" class="has-text-white">JavaScript
+                                    Async - Await</a></button>
+                            <button class="button is-rounded is-info"><a href="#" class="has-text-white">JavaScript
+                                    Requests</a></button>
+                        </p>
                     </div>
                 </div>
             </div>
 
+            <!-- <div class="box">
+                <div class="columns">
+                    <div class="column is-4">
+                        
+                        <div class="box">
+                            <div class="tags">
+                                <div class="tag is-dark is-large">
+                                    <span class="is-size-4">1.</span>
+                                </div>
+                                <div class="tag is-light is-large">
+                                    <span><a href="#">&#9866; Getting Started</a></span>
+                                </div>
+                            </div>
+                            <div class="tags">
+                                <div class="tag is-dark is-large">
+                                    <span class="is-size-4">&#9315;</span>
+                                </div>
+                                <div class="tag is-light is-large">
+                                    <span><a href="#">&#9866; JavaScript Scope</a></span>
+                                </div>
+                            </div>
+                            <div class="tags">
+                                <div class="tag is-dark is-large">
+                                    <span class="is-size-4">&#9318;</span>
+                                </div>
+                                <div class="tag is-light is-large">
+                                    <span><a href="#">&#9866; JavaScript Iterators</a></span>
+                                </div>
+                            </div>
+                            <div class="tags">
+                                <div class="tag is-dark is-large">
+                                    <span class="is-size-4">&#9321;</span>
+                                </div>
+                                <div class="tag is-light is-large">
+                                    <span><a href="#">&#9866; JavaScript Modules</a></span>
+                                </div>
+                            </div>
+                            <div class="tags">
+                                <div class="tag is-dark is-large">
+                                    <span class="is-size-4">&#9324;</span>
+                                </div>
+                                <div class="tag is-light is-large">
+                                    <span><a href="#">&#9866; JavaScript Requests</a></span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="column is-4">
+                       
+                        <div class="box">
+                            <div class="tags">
+                                <div class="tag is-dark is-large">
+                                    <span class="is-size-4">&#9313;</span>
+                                </div>
+                                <div class="tag is-light is-large">
+                                    <span><a href="#">&#9866; JavaScript Conditionals</a></span>
+                                </div>
+                            </div>
+                            <div class="tags">
+                                <div class="tag is-dark is-large">
+                                    <span class="is-size-4">&#9316;</span>
+                                </div>
+                                <div class="tag is-light is-large">
+                                    <span><a href="#">&#9866; JavaScript Arrays</a></span>
+                                </div>
+                            </div>
+                            <div class="tags">
+                                <div class="tag is-dark is-large">
+                                    <span class="is-size-4">&#9319;</span>
+                                </div>
+                                <div class="tag is-light is-large">
+                                    <span><a href="#">&#9866; JavaScript Objects</a></span>
+                                </div>
+                            </div>
+                            <div class="tags">
+                                <div class="tag is-dark is-large">
+                                    <span class="is-size-4">&#9322;</span>
+                                </div>
+                                <div class="tag is-light is-large">
+                                    <span><a href="#">&#9866; JavaScript Promises</a></span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="column is-4">
+                       
+                        <div class="box">
+                            <div class="tags">
+                                <div class="tag is-dark is-large">
+                                    <span class="is-size-4">&#9314;</span>
+                                </div>
+                                <div class="tag is-light is-large">
+                                    <span><a href="#">&#9866; JavaScript Functions</a></span>
+                                </div>
+                            </div>
+                            <div class="tags">
+                                <div class="tag is-dark is-large">
+                                    <span class="is-size-4">&#9317;</span>
+                                </div>
+                                <div class="tag is-light is-large">
+                                    <span><a href="#">&#9866; JavaScript Loops</a></span>
+                                </div>
+                            </div>
+                            <div class="tags">
+                                <div class="tag is-dark is-large">
+                                    <span class="is-size-4">&#9320;</span>
+                                </div>
+                                <div class="tag is-light is-large">
+                                    <span><a href="#">&#9866; JavaScript Classes</a></span>
+                                </div>
+                            </div>
+                            <div class="tags">
+                                <div class="tag is-dark is-large">
+                                    <span class="is-size-4">&#9323;</span>
+                                </div>
+                                <div class="tag is-light is-large">
+                                    <span><a href="#">&#9866; JavaScript Async - Await</a></span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div> -->
+            <div class="box">
+                <h1 class="title"># Getting Started :-</h1>
+
+                <div class="columns">
+                    <div class="column is-4">
+
+                        <div class="card">
+                            <!-- <div class="card-image">
+                              <figure class="image is-4by3">
+                                <img src="https://bulma.io/images/placeholders/1280x960.png" alt="Placeholder image">
+                              </figure>
+                            </div> -->
+                            <span class="tag is-large is-primary">Console</span>
+
+                                <div class="card-content">
+                                    <div class="media">
+                                        <!-- <div class="media-left">
+                                  <figure class="image is-48x48">
+                                    <img src="https://bulma.io/images/placeholders/96x96.png" alt="Placeholder image">
+                                  </figure>
+                                </div> -->
+                                        <div class="media-content">
+                                            <pre><code class="javascript">
+// =&gt; Hello world!
+console.log('Hello world!');
+
+// =&gt; Hello 
+console.warn('hello %s');
+
+// Prints error message to stderr
+console.error(new Error('Oops!'));
+                                    </code></pre>
+                                        </div>
+                                    </div>
+                                    <hr class="has-background-lighter">
+                                    <div class="content">
+                                        <p>Console in JavaScript is used for logging information as part of the debugging process.</p>
+                                    </div>
+                                </div>
+                        </div>
+                    </div>
+                    <div class="column is-4">
+                        
+                        <div class="card">
+                            <!-- <div class="card-image">
+                              <figure class="image is-4by3">
+                                <img src="https://bulma.io/images/placeholders/1280x960.png" alt="Placeholder image">
+                              </figure>
+                            </div> -->
+                            <span class="tag is-large is-primary">Console</span>
+
+                                <div class="card-content">
+                                    <div class="media">
+                                        <!-- <div class="media-left">
+                                  <figure class="image is-48x48">
+                                    <img src="https://bulma.io/images/placeholders/96x96.png" alt="Placeholder image">
+                                  </figure>
+                                </div> -->
+                                        <div class="media-content">
+                                            <pre><code class="javascript">
+// =&gt; Hello world!
+console.log('Hello world!');
+
+// =&gt; Hello 
+console.warn('hello %s');
+
+// Prints error message to stderr
+console.error(new Error('Oops!'));
+                                    </code></pre>
+                                        </div>
+                                    </div>
+                                    <hr class="has-background-lighter">
+                                    <div class="content">
+                                        <p>Console in JavaScript is used for logging information as part of the debugging process.</p>
+                                    </div>
+                                </div>
+                        </div>
+                    </div>
+                    <div class="column is-4">
+                        
+                        <div class="card">
+                            <!-- <div class="card-image">
+                              <figure class="image is-4by3">
+                                <img src="https://bulma.io/images/placeholders/1280x960.png" alt="Placeholder image">
+                              </figure>
+                            </div> -->
+                            <span class="tag is-large is-primary">Console</span>
+
+                                <div class="card-content">
+                                    <div class="media">
+                                        <!-- <div class="media-left">
+                                  <figure class="image is-48x48">
+                                    <img src="https://bulma.io/images/placeholders/96x96.png" alt="Placeholder image">
+                                  </figure>
+                                </div> -->
+                                        <div class="media-content">
+                                            <pre><code class="javascript">
+// =&gt; Hello world!
+console.log('Hello world!');
+
+// =&gt; Hello 
+console.warn('hello %s');
+
+// Prints error message to stderr
+console.error(new Error('Oops!'));
+                                    </code></pre>
+                                        </div>
+                                    </div>
+                                    <hr class="has-background-lighter">
+                                    <div class="content">
+                                        <p>Console in JavaScript is used for logging information as part of the debugging process.</p>
+                                    </div>
+                                </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+
         </div>
     </div>
+
+    <!-- Javascript Links -->
+    <!-- <script src="highlight/highlight.min.js"></script> -->
+    <!-- <script>hljs.highlightAll();</script> -->
+    <script>hljs.initHighlightingOnLoad();</script>
+
+
+    <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/11.7.0/highlight.min.js"></script>
 </body>
 
 </html>
