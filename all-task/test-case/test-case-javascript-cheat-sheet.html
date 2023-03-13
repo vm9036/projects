@@ -5,7 +5,11 @@
     <title> Test Case Javascript Cheat Sheet</title>
     <!-- bulma css -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.9.4/css/bulma.min.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css">
     <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/11.7.0/styles/default.min.css">
+    <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/11.7.0/highlight.min.js"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
+
 </head>
 
 
@@ -39,9 +43,9 @@
         <!--====== content section ======-->
         <div class="container is-fluid mt-2">
             <!-- Final Selection Section -->
-            <hr class="has-background-dark">
+            <!-- <hr class="has-background-dark">
             <h1 class="title has-text-centered">Final Selection Section</h1>
-            <hr class="has-background-dark">
+            <hr class="has-background-dark"> -->
 
             <!-- <div class="box">
                 <div class="columns">
@@ -171,31 +175,30 @@
                 <div class="columns">
                     <div class="column is-12">
                         <p class="buttons">
-                            <button class="button  is-rounded is-info"><a href="#" class="has-text-white">Getting
-                                    Started</a></button>
-                            <button class="button is-rounded is-info"><a href="#" class="has-text-white">JavaScript
+                            <button class="button  is-rounded is-info"><a href="#" class="has-text-white">Introduction</a></button>
+                            <button class="button is-rounded is-info"><a href="#" class="has-text-white">JS
                                     Conditionals</a></button>
-                            <button class="button  is-rounded is-info"><a href="#" class="has-text-white">JavaScript
+                                    <button class="button is-rounded is-info"><a href="#" class="has-text-white">JS
+                                            Loops</a></button>
+                                            <button class="button  is-rounded is-info"><a href="#" class="has-text-white">JS
+                                                    Arrays</a></button>
+                            <button class="button  is-rounded is-info"><a href="#" class="has-text-white">JS
                                     Functions</a></button>
-                            <button class="button  is-rounded is-info"><a href="#" class="has-text-white">JavaScript
+                                    <button class="button is-rounded is-info"><a href="#" class="has-text-white">JS
+                                            Objects</a></button>
+                                            <button class="button is-rounded is-info"><a href="#" class="has-text-white">JS
+                                                    Classes</a></button>
+                            <button class="button  is-rounded is-info"><a href="#" class="has-text-white">JS
                                     Scope</a></button>
-                            <button class="button  is-rounded is-info"><a href="#" class="has-text-white">JavaScript
-                                    Arrays</a></button>
-                            <button class="button is-rounded is-info"><a href="#" class="has-text-white">JavaScript
-                                    Loops</a></button>
-                            <button class="button is-rounded is-info"><a href="#" class="has-text-white">JavaScript
+                            <button class="button is-rounded is-info"><a href="#" class="has-text-white">JS
                                     Iterators</a></button>
-                            <button class="button is-rounded is-info"><a href="#" class="has-text-white">JavaScript
-                                    Objects</a></button>
-                            <button class="button is-rounded is-info"><a href="#" class="has-text-white">JavaScript
-                                    Classes</a></button>
-                            <button class="button is-rounded is-info"><a href="#" class="has-text-white">JavaScript
+                            <button class="button is-rounded is-info"><a href="#" class="has-text-white">JS
                                     Modules</a></button>
-                            <button class="button is-rounded is-info"><a href="#" class="has-text-white">JavaScript
+                            <button class="button is-rounded is-info"><a href="#" class="has-text-white">JS
                                     Promises</a></button>
-                            <button class="button is-rounded is-info"><a href="#" class="has-text-white">JavaScript
+                            <button class="button is-rounded is-info"><a href="#" class="has-text-white">JS
                                     Async - Await</a></button>
-                            <button class="button is-rounded is-info"><a href="#" class="has-text-white">JavaScript
+                            <button class="button is-rounded is-info"><a href="#" class="has-text-white">JS
                                     Requests</a></button>
                         </p>
                     </div>
@@ -326,7 +329,7 @@
                 </div>
             </div> -->
             <div class="box">
-                <h1 class="title"># Getting Started :-</h1>
+                <h1 class="title"># Introduction :-</h1>
 
                 <div class="columns">
                     <div class="column is-4">
@@ -361,6 +364,7 @@ console.error(new Error('Oops!'));
                                     </div>
                                     <hr class="has-background-lighter">
                                     <div class="content">
+                                        <span class="tag is-medium is-pulled-right is-primary"><i class="fa-regular fa-copy"></i></span>
                                         <p>Console in JavaScript is used for logging information as part of the debugging process.</p>
                                     </div>
                                 </div>
@@ -375,7 +379,7 @@ console.error(new Error('Oops!'));
                               </figure>
                             </div> -->
                             <span class="tag is-medium is-primary">Console</span>
-
+                            <span class="tag is-medium is-primary is-pulled-right"><i class="fa-regular fa-copy"></i></span>
                                 <div class="card-content">
                                     <div class="media">
                                         <!-- <div class="media-left">
@@ -398,6 +402,7 @@ console.error(new Error('Oops!'));
                                     </div>
                                     <hr class="has-background-lighter">
                                     <div class="content">
+                                        
                                         <p>Console in JavaScript is used for logging information as part of the debugging process.</p>
                                     </div>
                                 </div>
@@ -435,6 +440,7 @@ console.error(new Error('Oops!'));
                                     </div>
                                     <hr class="has-background-lighter">
                                     <div class="content">
+                                        <span class="tag is-medium is-pulled-right ml-2 is-primary"><i class="fa-regular fa-copy"></i></span>
                                         <p>Console in JavaScript is used for logging information as part of the debugging process.</p>
                                     </div>
                                 </div>
@@ -451,10 +457,7 @@ console.error(new Error('Oops!'));
     <!-- Javascript Links -->
     <!-- <script src="highlight/highlight.min.js"></script> -->
     <!-- <script>hljs.highlightAll();</script> -->
-    <script>hljs.initHighlightingOnLoad();</script>
-
-
-    <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/11.7.0/highlight.min.js"></script>
+    
 </body>
 
 </html>
