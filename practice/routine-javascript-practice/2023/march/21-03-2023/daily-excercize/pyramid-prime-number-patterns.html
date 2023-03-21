@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Even numbers</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
+</head>
+
+<body>
+    <div class="box">
+        <h3 class="subtitle is-3 has-text-centered is-capitalized">-: Pyramid PRime Number Patterns :-</h3>
+        <div class="columns">
+            <div class="column">
+                <div class="control">
+                    <label for="" class="label">Enter Number:</label>
+                    <div class="field">
+                        <input type="text" class="input is-large" id="inputNumber"
+                            placeholder="Please enter the number1..." value="10">
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="field has-text-centered">
+            <button class="button is-size-4 is-primary is-capitalized" onclick="getOnlyPrimeNumber()">click
+                output</button>
+        </div>
+        <div class="field">
+            <label class="label">Display Prime Number In Pattern :-</label>
+            <div class="control">
+                <textarea id="displayPrimeNumber" cols="30" rows="10" class="textarea"></textarea>
+            </div>
+        </div>
+
+    </div>
+    <script>
+        function getOnlyPrimeNumber() {
+
+            let number = document.getElementById("inputNumber").value;
+            // let flag = 0;
+            let sum = 0;
+            // let i, j;
+            // looping from number1 to number2
+            for (let i = 2; i <= number; i++) {
+                let flag = 0;
+
+                // looping through 2 to user input number
+                for (let j = 2; j < i; j++) {
+
+                    if (i % j == 0) {
+                        flag = 1;
+                        break;
+                    }
+                    if (i > 1 && flag == 0) {
+                        document.getElementById("displayPrimeNumber").value = document.getElementById("displayPrimeNumber").value + i  + '\n';
+                    }
+
+                    // if number greater than 1 and not divisible by other numbers
+                }
+            }
+        }
+
+            // Prime number check logic
+            // for (i = 2; i < number / 2; i++) {
+            //     if (number % i == 0) {
+            //         flag = 1;
+            //         break;
+            //         // console.log(i);
+            //         // document.getElementById("printNumber").innerHTML += "Number is even"+ " " + i + "\n";
+            //         // document.write(i+"<br>");
+            //         // sum = sum + i;
+            //     }
+            //     // document.getElementById("printNumber1").innerHTML = sum;
+            // }
+
+            // check prime number logic
+            // if (flag == 0) {
+            //     console.log("prime number :" + "" + number);
+            //     document.getElementById("printNumber").innerHTML += "Number Is Prime" + " " + i + "\n";
+            // }
+            // else {
+            //     console.log("not prime number :" + "" + number);
+            //     document.getElementById("printNumber").innerHTML += "Number Is Not Prime" + " " + i + "\n";
+            // }
+            // sum = sum + i;
+            // document.write("\n sum is"+sum);
+            // document.getElementById("printNumber1").innerHTML = "Sum : " + sum;
+            // console.log("sum : "+ sum);
+    </script>
+</body>
+
+</html>
