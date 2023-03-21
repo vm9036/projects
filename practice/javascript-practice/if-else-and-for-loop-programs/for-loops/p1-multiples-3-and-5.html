@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sum Of The Multiples Of 3 And 5 Under 1000</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.9.4/css/bulma.min.css">
+</head>
+
+<body>
+    <!-- Write a JavaScript program to sum the multiples of 3 and 5 under 1000.-->
+
+    <div class="container">
+        <div class="panel">
+            <div class="panel-heading has-text-centered is-size-3">
+                <p>Sum Of The Multiples Of 3 And 5 Under 1000</p>
+            </div>
+            <div class="box">
+                <div class="field">
+                    <div class="label">Enter Number : </div>
+                    <div class="control">
+                        <input type="text" class="input is-info" id="InputNumber" value="1000">
+                    </div>
+                </div>
+
+                <div class="field">
+                    <div class="control has-text-centered">
+                        <button class="button is-primary is-large" onclick="multiplesSum()">
+                         Sum Of Multiples 3 And 5
+                                Under 1000
+                        </button>
+                    </div>
+                </div>
+
+                <div class="field">
+                    <label class="label">Display all 1 to Under 1000 Number :-</label>
+                    <textarea id="displayNumber" cols="30" rows="10" class="textarea"></textarea>
+                </div>
+
+                <div class="field">
+                    <div class="control has-text-centered">
+
+                        <p class="button is-warning is-large" id="allSum"> Sum Under 1000 : 0</p>
+                        <p class="button is-danger is-large" id="multiplesSum"> Sum Of Multiples 3 And 5 Under 1000 : 0
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function multiplesSum() {
+            let number = document.getElementById("InputNumber").value;
+
+            let i, sum = 0, multipleSum = 0;
+
+            for (i = 1; i < number; i++) {
+                document.getElementById("displayNumber").value = document.getElementById("displayNumber").value + i + " + ";
+                
+                
+
+                if(number > 1000){
+                    alert("wrong Number")
+                    break;
+                }
+                sum = sum + i; 
+                if  (i % 3 == 0 || i % 5 == 0) {
+                    multipleSum = multipleSum + i;
+                }
+                // if(i==1000){
+                //     alert("wrong Number")
+                //     break;
+                // }
+                // if (i==1000){
+                //     alert("jhghj")
+                // }
+            }
+            document.getElementById("allSum").innerHTML = "Sum Under 1000 : " + sum;
+            document.getElementById("multiplesSum").innerHTML = "Sum Of Multiples 3 And 5 Under 1000 : " + multipleSum;
+        }
+    </script>
+</body>
+
+</html>
