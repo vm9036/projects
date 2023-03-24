@@ -18,8 +18,15 @@ function tipCalculator() {
 //     document.getElementById('tipOutput').innerHTML = `${tip}%`;
 //     var tipValue = bill * (tip/100);
 //     var finalBill = bill + tipValue;
-// console.log(finalBill)
-    
+// console.log(finalBill)   
 }
 
-tipCalculator();
+function checkAutomaticPrintValues() {
+    let checkEl = document.getElementById("autoPrint");
+    console.log("test:->" + checkEl.checked)
+    if (checkEl.checked == true) {
+        tipCalculator();
+    }
+}
+
+// tipCalculator();

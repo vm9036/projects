@@ -28,7 +28,7 @@
               </a>
             </p>
             <div class="control is-expanded has-icons-left">
-              <input id="billAmount" class="input" type="text" value="100" oninput="tipCalculator()">
+              <input id="billAmount" class="input" type="number" value="1000" oninput="checkAutomaticPrintValues()">
               <span class="icon is-left">
                 <i class="fa-solid fa-indian-rupee-sign"></i>
               </span>
@@ -41,7 +41,7 @@
               </a>
             </p>
             <p class="control is-expanded has-icons-right">
-              <input type="number" class="input" value="5" id="tipPercentage" oninput="tipCalculator()">
+              <input type="number" class="input" value="5" id="tipPercentage" oninput="checkAutomaticPrintValues()">
               <span class="icon is-right">
                 <i class="fa-solid fa-percent"></i>
               </span>
@@ -54,7 +54,7 @@
               </a>
             </p>
             <p class="control is-expanded has-icons-right">
-              <input type="number" class="input" value="28" id="gstAmount" oninput="tipCalculator()">
+              <input type="number" class="input" value="28" id="gstAmount" oninput="checkAutomaticPrintValues()">
               <span class="icon is-right">
                 <i class="fa-solid fa-percent"></i>
               </span>
@@ -62,9 +62,15 @@
           </div>
          
 
-          <!-- <div class="heading2 has-text-centered">
-            <button class="button is-success is-capitalized" onclick="tipCalculator()">Results</button>
-          </div> -->
+          <div class="heading2 has-text-centered">
+            <div class="control">
+              <label class="checkbox is-inline">
+                <span class="is-size-4"><input type="checkbox" id="autoPrint"  oninput="checkAutomaticPrintValues()"></span>
+                <span class="mr-2">Auto</span>
+            </label>
+              <button class="button is-inline is-success is-capitalized" onclick="tipCalculator()">Results</button>
+            </div>
+          </div>
 
           <div class="field is-grouped mt-4">
             <p class="control">
