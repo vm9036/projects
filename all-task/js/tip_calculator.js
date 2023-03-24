@@ -21,3 +21,5 @@ function tipCalculator() {
 // console.log(finalBill)
     
 }
+
+tipCalculator();
