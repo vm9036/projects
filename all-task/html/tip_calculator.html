@@ -24,11 +24,11 @@
           <div class="field has-addons  mt-4">
             <p class="control">
               <a class="button is-primary">
-                Enter tip amount
+                Enter Amount
               </a>
             </p>
             <div class="control is-expanded has-icons-left">
-              <input id="amount" class="input" type="text" value="100">
+              <input id="billAmount" class="input" type="text" value="100">
               <span class="icon is-left">
                 <i class="fa-solid fa-indian-rupee-sign"></i>
               </span>
@@ -47,10 +47,23 @@
               </span>
             </p>
           </div>
-          <hr>
+          <div class="field has-addons">
+            <p class="control">
+              <a class="button is-primary">
+                Gst
+              </a>
+            </p>
+            <p class="control is-expanded has-icons-right">
+              <input type="number" class="input" value="28" id="gstAmount">
+              <span class="icon is-right">
+                <i class="fa-solid fa-percent"></i>
+              </span>
+            </p>
+          </div>
+         
 
           <div class="heading2 has-text-centered">
-            <button class="button is-success is-capitalized" onclick="tip_calculator()">Results</button>
+            <button class="button is-success is-capitalized" onclick="tipCalculator()">Results</button>
           </div>
 
           <div class="field is-grouped mt-4">
@@ -60,17 +73,27 @@
               </a>
             </p>
             <p class="control is-expanded">
-              <input class="input" id="tip_amount" type="text" placeholder="Tip amount">
+              <input class="input" id="amount" type="text" placeholder="Tip amount">
+            </p>
+          </div>
+          <div class="field is-grouped mt-4">
+            <p class="control">
+              <a class="button is-primary">
+                GST amount
+              </a>
+            </p>
+            <p class="control is-expanded">
+              <input class="input" id="finalGst" type="text" placeholder="GST amount">
             </p>
           </div>
           <div class="field has-addons mt-4">
             <p class="control">
               <a class="button is-primary">
-                Total Bill With Tip
+                Total Bill With Amount
               </a>
             </p>
             <p class="control is-expanded">
-              <input class="input" type="text" placeholder="Total Bill With Tip" id="totalBill">
+              <input class="input" type="text" placeholder="Total Bill With Tip" id="totalBillAmount">
             </p>
           </div>
         </div>
