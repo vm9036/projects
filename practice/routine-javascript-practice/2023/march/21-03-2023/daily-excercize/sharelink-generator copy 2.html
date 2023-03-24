@@ -1,0 +1,449 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sharelink Generator</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.9.4/css/bulma.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css" />
+</head>
+
+<body>
+    <div class="container is-fluid mt-6">
+        <div class="columns">
+            <!-- All List Side Menu-->
+            <div class="column is-2">
+                <aside class="menu is-hidden-mobile">
+                    <ul class="menu-list">
+                        <li><a class="is-active">
+                                <div class="icon-text">
+                                    <div class="icon">
+                                        <i class="fa-brands fa-facebook-f"></i>
+                                    </div>
+                                    <span>Facebook</span>
+                                </div>
+                            </a></li>
+
+                        <li><a>
+                                <div class="icon-text">
+                                    <div class="icon">
+                                        <i class="fa-regular fa-comment-dots"></i>
+                                    </div>
+                                    <span>Facebook Dialog</span>
+                                </div>
+                            </a></li>
+                        <li><a>
+                                <div class="icon-text">
+                                    <div class="icon">
+                                        <i class="fa-brands fa-twitter"></i>
+                                    </div>
+                                    <span>Twitter</span>
+                                </div>
+                            </a></li>
+                        <li><a>
+                                <div class="icon-text">
+                                    <div class="icon">
+                                        <i class="fa-brands fa-pinterest-p"></i>
+                                    </div>
+                                    <span>Pinterest</span>
+                                </div>
+                            </a></li>
+                        <li><a>
+                                <div class="icon-text">
+                                    <div class="icon">
+                                        <i class="fa-brands fa-linkedin-in"></i>
+                                    </div>
+                                    <span>Linked In</span>
+                                </div>
+                            </a></li>
+                        <li><a>
+                                <div class="icon-text">
+                                    <div class="icon">
+                                        <i class="fa-brands fa-buffer"></i>
+                                    </div>
+                                    <span>Buffer</span>
+                                </div>
+                            </a></li>
+                        <li><a>
+                                <div class="icon-text">
+                                    <div class="icon">
+                                        <i class="fa-brands fa-digg"></i>
+                                    </div>
+                                    <span>Digg</span>
+                                </div>
+                            </a></li>
+                        <li><a>
+                                <div class="icon-text">
+                                    <div class="icon">
+                                        <i class="fa-brands fa-tumblr"></i>
+                                    </div>
+                                    <span>Tumblr</span>
+                                </div>
+                            </a></li>
+                        <li><a>
+                                <div class="icon-text">
+                                    <div class="icon">
+                                        <i class="fa-brands fa-reddit-alien"></i>
+                                    </div>
+                                    <span>Reddit</span>
+                                </div>
+                            </a></li>
+                        <li><a>
+                                <div class="icon-text">
+                                    <div class="icon">
+                                        <i class="fa-brands fa-stumbleupon"></i>
+                                    </div>
+                                    <span>Stumbleupon</span>
+                                </div>
+                            </a></li>
+                        <li><a>
+                                <div class="icon-text">
+                                    <div class="icon">
+                                        <i class="fa-brands fa-delicious"></i>
+                                    </div>
+                                    <span>Delicious</span>
+                                </div>
+                            </a></li>
+                        <li><a>
+                                <div class="icon-text">
+                                    <div class="icon">
+                                        <i class="fa-solid fa-envelope"></i>
+                                    </div>
+                                    <span>Email</span>
+                                </div>
+                            </a></li>
+                    </ul>
+                </aside>
+            </div>
+            <div class="column is-5">
+
+                <div class="content has-text-centered is-capitalized">
+                    <h1 class="title is-size-3">Sharelink Generator</h1>
+                    <!-- icon is pending -->
+                </div>
+                <div class="block">
+                    <div class="field">
+                        <label class="label is-inline">
+                           <span>Url/Content</span> 
+                           <span class="is-pulled-right"><a class="has-text-black" href="#">Sample</a></span>
+                        </label>
+                        <div class="control mt-3">
+                            <input type="text" class="input is-info" id="inputUrl">
+                        </div>
+                    </div>
+                </div>
+                <div class="block has-text-centered">
+                    <div class="field">
+                        <label class="checkbox is-inline">
+                            <span class="is-size-4"><input type="checkbox"></span>
+                            <span class="mr-2">Auto</span>
+                        </label>
+                        <div class="control is-inline">
+                            <button class="button mr-2 is-primary is-size-6 is-medium is-rounded" onclick="generateLink()">Generate</button>
+                            <button class="button mr-2 is-danger is-size-6 is-medium is-rounded">Clear</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="block">
+                    <div class="field">
+                        <label class="label">
+                            <div class="icon-text is-inline">
+                                <div class="icon is-inline">
+                                    <i class="fa-brands fa-facebook-f"></i>
+                                </div>
+                                <span>Facebook</span>
+                            </div>
+
+                            <span class="is-pulled-right"><a href="#"><i
+                                        class="fa-solid fa-arrow-up-right-from-square has-text-black"></i></a></span>
+                            <span class="is-pulled-right mr-5"><a href="#"><i
+                                        class="fa-solid fa-copy has-text-black"></i></a></span>
+                            <span class="is-pulled-right mr-5"><a href="#"><i
+                                        class="fa-solid fa-code has-text-black"></i></a></span>
+                        </label>
+                        <div class="control has-icons-right">
+                            <input type="text" class="input is-success" id="displayFaceBookLink">
+                        </div>
+                    </div>
+                </div>
+
+                <!-- <div class="block">
+                    <div class="field">
+                        <label class="label">
+                            <div class="icon-text is-inline">
+                                <div class="icon">
+                                    <i class="fa-regular fa-comment-dots"></i>
+                                </div>
+                                <span>Facebook Dialog</span>
+                            </div>
+                            <span class="is-pulled-right"><a href="#"><i
+                                        class="fa-solid fa-arrow-up-right-from-square has-text-black"></i></a></span>
+                            <span class="is-pulled-right mr-5"><a href="#"><i
+                                        class="fa-solid fa-copy has-text-black"></i></a></span>
+                            <span class="is-pulled-right mr-5"><a href="#"><i
+                                        class="fa-solid fa-code has-text-black"></i></a></span>
+                        </label>
+                        <div class="control has-icons-right">
+                            <input type="text" class="input is-success">
+                        </div>
+                    </div>
+                </div> -->
+
+                <div class="block">
+                    <div class="field">
+                        <label class="label">
+                            <div class="icon-text is-inline">
+                                <div class="icon">
+                                    <i class="fa-brands fa-twitter"></i>
+                                </div>
+                                <span>Twitter</span>
+                            </div>
+                            <span class="is-pulled-right"><a href="#"><i
+                                        class="fa-solid fa-arrow-up-right-from-square has-text-black"></i></a></span>
+                            <span class="is-pulled-right mr-5"><a href="#"><i
+                                        class="fa-solid fa-copy has-text-black"></i></a></span>
+                            <span class="is-pulled-right mr-5"><a href="#"><i
+                                        class="fa-solid fa-code has-text-black"></i></a></span>
+                        </label>
+                        <div class="control has-icons-right">
+                            <input type="text" class="input is-success" id="displayTwitterLink">
+                        </div>
+                    </div>
+                </div>
+
+                <div class="block">
+                    <div class="field">
+                        <label class="label">
+                            <div class="icon-text is-inline">
+                                <div class="icon">
+                                    <i class="fa-brands fa-pinterest-p"></i>
+                                </div>
+                                <span>Pinterest</span>
+                            </div>
+                            <span class="is-pulled-right"><a href="#"><i
+                                        class="fa-solid fa-arrow-up-right-from-square has-text-black"></i></a></span>
+                            <span class="is-pulled-right mr-5"><a href="#"><i
+                                        class="fa-solid fa-copy has-text-black"></i></a></span>
+                            <span class="is-pulled-right mr-5"><a href="#"><i
+                                        class="fa-solid fa-code has-text-black"></i></a></span>
+                        </label>
+                        <div class="control has-icons-right">
+                            <input type="text" class="input is-success" id="displayPinterestLink">
+                        </div>
+                    </div>
+                </div>
+
+                <div class="block">
+                    <div class="field">
+                        <label class="label">
+                            <div class="icon-text is-inline">
+                                <div class="icon">
+                                    <i class="fa-brands fa-linkedin-in"></i>
+                                </div>
+                                <span>LinkedIn</span>
+                            </div>
+                            <span class="is-pulled-right"><a href="#"><i
+                                        class="fa-solid fa-arrow-up-right-from-square has-text-black"></i></a></span>
+                            <span class="is-pulled-right mr-5"><a href="#"><i
+                                        class="fa-solid fa-copy has-text-black"></i></a></span>
+                            <span class="is-pulled-right mr-5"><a href="#"><i
+                                        class="fa-solid fa-code has-text-black"></i></a></span>
+                        </label>
+                        <div class="control has-icons-right">
+                            <input type="text" class="input is-success" id="displayLinkedInLink">
+                        </div>
+                    </div>
+                </div>
+
+                <!-- <div class="block">
+                    <div class="field">
+                        <label class="label">
+                            <div class="icon-text is-inline">
+                                <div class="icon">
+                                    <i class="fa-brands fa-buffer"></i>
+                                </div>
+                                <span>Buffer</span>
+                            </div>
+                            <span class="is-pulled-right"><a href="#"><i
+                                        class="fa-solid fa-arrow-up-right-from-square has-text-black"></i></a></span>
+                            <span class="is-pulled-right mr-5"><a href="#"><i
+                                        class="fa-solid fa-copy has-text-black"></i></a></span>
+                            <span class="is-pulled-right mr-5"><a href="#"><i
+                                        class="fa-solid fa-code has-text-black"></i></a></span>
+                        </label>
+                        <div class="control has-icons-right">
+                            <input type="text" class="input is-success">
+                        </div>
+                    </div>
+                </div> -->
+
+                <!-- <div class="block">
+                    <div class="field">
+                        <label class="label">
+                            <div class="icon-text is-inline">
+                                <div class="icon">
+                                    <i class="fa-brands fa-digg"></i>
+                                </div>
+                                <span>Digg</span>
+                            </div>
+                            <span class="is-pulled-right"><a href="#"><i
+                                        class="fa-solid fa-arrow-up-right-from-square has-text-black"></i></a></span>
+                            <span class="is-pulled-right mr-5"><a href="#"><i
+                                        class="fa-solid fa-copy has-text-black"></i></a></span>
+                            <span class="is-pulled-right mr-5"><a href="#"><i
+                                        class="fa-solid fa-code has-text-black"></i></a></span>
+                        </label>
+                        <div class="control has-icons-right">
+                            <input type="text" class="input is-success">
+                        </div>
+                    </div>
+                </div> -->
+
+                <div class="block">
+                    <div class="field">
+                        <label class="label">
+                            <div class="icon-text is-inline">
+                                <div class="icon">
+                                    <i class="fa-brands fa-tumblr"></i>
+                                </div>
+                                <span>Tumblr</span>
+                            </div>
+                            <span class="is-pulled-right"><a href="#"><i
+                                        class="fa-solid fa-arrow-up-right-from-square has-text-black"></i></a></span>
+                            <span class="is-pulled-right mr-5"><a href="#"><i
+                                        class="fa-solid fa-copy has-text-black"></i></a></span>
+                            <span class="is-pulled-right mr-5"><a href="#"><i
+                                        class="fa-solid fa-code has-text-black"></i></a></span>
+                        </label>
+                        <div class="control has-icons-right">
+                            <input type="text" class="input is-success" id="displayTumblrLink">
+                        </div>
+                    </div>
+                </div>
+
+                <!-- <div class="block">
+                    <div class="field">
+                        <label class="label">
+                            <div class="icon-text is-inline">
+                                <div class="icon">
+                                    <i class="fa-brands fa-reddit-alien"></i>
+                                </div>
+                                <span>Reddit</span>
+                            </div>
+                            <span class="is-pulled-right"><a href="#"><i
+                                        class="fa-solid fa-arrow-up-right-from-square has-text-black"></i></a></span>
+                            <span class="is-pulled-right mr-5"><a href="#"><i
+                                        class="fa-solid fa-copy has-text-black"></i></a></span>
+                            <span class="is-pulled-right mr-5"><a href="#"><i
+                                        class="fa-solid fa-code has-text-black"></i></a></span>
+                        </label>
+                        <div class="control has-icons-right">
+                            <input type="text" class="input is-success">
+                        </div>
+                    </div>
+                </div> -->
+
+                <!-- <div class="block">
+                    <div class="field">
+                        <label class="label">
+                            <div class="icon-text is-inline">
+                                <div class="icon">
+                                    <i class="fa-brands fa-stumbleupon"></i>
+                                </div>
+                                <span>Stumbleupon</span>
+                            </div>
+                            <span class="is-pulled-right"><a href="#"><i
+                                        class="fa-solid fa-arrow-up-right-from-square has-text-black"></i></a></span>
+                            <span class="is-pulled-right mr-5"><a href="#"><i
+                                        class="fa-solid fa-copy has-text-black"></i></a></span>
+                            <span class="is-pulled-right mr-5"><a href="#"><i
+                                        class="fa-solid fa-code has-text-black"></i></a></span>
+                        </label>
+                        <div class="control has-icons-right">
+                            <input type="text" class="input is-success">
+                        </div>
+                    </div>
+                </div> -->
+
+                <!-- <div class="block">
+                    <div class="field">
+                        <label class="label">
+                            <div class="icon-text is-inline">
+                                <div class="icon">
+                                    <i class="fa-brands fa-stumbleupon"></i>
+                                </div>
+                                <span>Delicious</span>
+                            </div>
+                            <span class="is-pulled-right"><a href="#"><i
+                                        class="fa-solid fa-arrow-up-right-from-square has-text-black"></i></a></span>
+                            <span class="is-pulled-right mr-5"><a href="#"><i
+                                        class="fa-solid fa-copy has-text-black"></i></a></span>
+                            <span class="is-pulled-right mr-5"><a href="#"><i
+                                        class="fa-solid fa-code has-text-black"></i></a></span>
+                        </label>
+                        <div class="control has-icons-right">
+                            <input type="text" class="input is-success">
+                        </div>
+                    </div>
+                </div> -->
+
+                <!-- <div class="block">
+                    <div class="field">
+                        <label class="label">
+                            <div class="icon-text is-inline">
+                                <div class="icon">
+                                    <i class="fa-solid fa-envelope"></i>
+                                </div>
+                                <span>Email</span>
+                            </div>
+                            <span class="is-pulled-right"><a href="#"><i
+                                        class="fa-solid fa-arrow-up-right-from-square has-text-black"></i></a></span>
+                            <span class="is-pulled-right mr-5"><a href="#"><i
+                                        class="fa-solid fa-copy has-text-black"></i></a></span>
+                            <span class="is-pulled-right mr-5"><a href="#"><i
+                                        class="fa-solid fa-code has-text-black"></i></a></span>
+                        </label>
+                        <div class="control has-icons-right">
+                            <input type="text" class="input is-success">
+                        </div>
+                    </div>
+                </div> -->
+            </div>
+            <div class="column is-5">
+
+            </div>
+        </div>
+    </div>
+<!-- https://www.facebook.com/sharer/sharer.php?u=google.com -->
+<!-- https://www.facebook.com/sharer/sharer.php?u=google.com -->
+<!-- <a href="https://www.facebook.com/sharer/sharer.php?u=google.com">Share on Facebook</a> -->
+    <script>
+
+        function generateLink(){
+            let inputLink = document.getElementById("inputUrl").value;
+
+            let faceBookLink = "https://www.facebook.com/sharer/sharer.php?u=" + inputLink;
+
+            let twitterLink = "https://twitter.com/intent/tweet?url=&text=" + inputLink;
+
+            let pinterestLink = "http://pinterest.com/pin/create/button/?url=&media=&description=" + inputLink;
+
+            let linkedInLink = "http://www.linkedin.com/shareArticle?mini=true&url=&title=" + inputLink;
+
+            let tumblrLink = "http://www.tumblr.com/share?v=3&u=&t=" + inputLink;
+
+
+            document.getElementById("displayFaceBookLink").value = faceBookLink;
+            document.getElementById("displayTwitterLink").value = twitterLink;
+            document.getElementById("displayPinterestLink").value = pinterestLink;
+            document.getElementById("displayLinkedInLink").value = linkedInLink;
+            document.getElementById("displayTumblrLink").value = tumblrLink;
+
+        }
+    </script>
+</body>
+
+</html>

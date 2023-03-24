@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.9.4/css/bulma.min.css">
+    <title>Between Sum Program</title>
+</head>
+
+<body>
+    <div class="container mt-5">
+        <div class="card">
+            <div class="card-header">
+                <div class="card-header-title">
+                    <h1 class="title">Between Sum Program :</h1>
+                </div>
+            </div>
+            <div class="card-content">
+                <div class="box">
+                    <div class="columns">
+                        <div class="column">
+                            <div class="field">
+                                <label class="label">Enter Starting Number :</label>
+                                <div class="control">
+                                    <input type="text" class="input is-success" id="inputStartNumber">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="column">
+                            <div class="field">
+                                <label class="label">Enter Ending Number :</label>
+                                <div class="control">
+                                    <input type="text" class="input is-success" id="inputEndNumber">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="block">
+                        <div class="field">
+                            <div class="control has-text-centered mt-5">
+                                <button class="button is-large has-text-weight-semibold is-success"
+                                    onclick="additonBetween()">
+                                    Addition Sum
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="block">
+                        <div class="field">
+                            <label class="label is-size-4">Between Starting And Ending Number :=> </label>
+                            <div class="control has-text-centered mt-5">
+                                <textarea name="" id="displayBetweenNumber" cols="5" rows="5"
+                                    class="textarea is-success"></textarea>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="block has-text-centered mt-5">
+                        <p id="displayBetweenNumberSum" class="button is-warning">Addition Sum : 0</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+
+        function additonBetween() {
+            let startNumber = parseInt(document.getElementById("inputStartNumber").value);
+            let endNumber = parseInt(document.getElementById("inputEndNumber").value);
+
+            let sum1 = additionSum(startNumber, endNumber);
+
+            document.getElementById("displayBetweenNumberSum").innerHTML = "Addition Sum : " + sum1;
+        }
+
+        function additionSum(startNumber, endNumber) {
+            let sum = 0;
+
+            for (let i = startNumber; i <= endNumber; i++) {
+               document.getElementById("displayBetweenNumber").innerHTML = document.getElementById("displayBetweenNumber").innerHTML + i + " + " ;
+                sum = sum + i;
+            }
+           return sum;
+        }
+    </script>
+</body>
+
+</html>

@@ -1,87 +1,84 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <!-- bulma link -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.9.4/css/bulma.min.css" />
-    <!-- font awesome link -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" />
-    <title>Tip Calculator</title>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- bulma link -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.9.4/css/bulma.min.css" />
+  <!-- font awesome link -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css" />
+  <title>Tip Calculator</title>
 </head>
+
 <body>
-    <div class="container has-background-grey-lighter">
-        <div class="section">
-            <div class="card has-background-white-bis">
-                <div class="card-content">
-                    <div class="heading1">
-                        <h1 class="title has-text-centered is-capitalized">Tip Calculator</h1>
-                    </div>
-                    
-                    <div class="field has-addons  mt-4">
-                        <p class="control">
-                            <a class="button is-primary">
-                              Enter tip amount
-                            </a>
-                        </p>
-                        <div class="control is-expanded has-icons-left">
-                            <input id="amount" class="input" type="text" placeholder="100">
-                            <span class="icon is-left">
-                                <i class="fa-solid fa-dollar-sign"></i>
-                            </span>
-                        </div>
-                    </div>
-                    <div class="field has-addons">
-                      <p class="control">
-                        <a class="button is-primary">
-                          tip percentage
-                        </a>
-                      </p>
-                      <p class="control is-expanded">
-                        <span class="select is-fullwidth">
-                          <select name="tip percentage">
-                            <option value="5%">5%</option>
-                            <option value="10%">10%</option>
-                            <option value="15%">15%</option>
-                            <option value="20%">20%</option>
-                            <option value="25%">25%</option>
-                            <option value="30%">30%</option>
-                          </select>
-                        </span>
-                      </p>
-                    </div>
-                    <hr>
+  <div class="container has-background-grey-lighter">
+    <div class="section">
+      <div class="card has-background-white-bis">
+        <div class="card-content">
+          <div class="heading1">
+            <h1 class="title has-text-centered is-capitalized">Tip Calculator</h1>
+          </div>
 
-                    <div class="heading2 has-text-centered">
-                        <button class="button is-success is-capitalized" onclick="tip_calculator()">Results</button>
-                    </div>
-
-                    <div class="field is-grouped mt-4">
-                        <p class="control">
-                            <a class="button is-primary">
-                              Tip amount
-                            </a>
-                        </p>
-                        <p class="control is-expanded">
-                          <input class="input" id="tip_amount" type="text" placeholder="1900">
-                        </p>
-                    </div>
-                    <div class="field has-addons mt-4">
-                        <p class="control">
-                            <a class="button is-primary">
-                              Total Bill With Tip
-                            </a>
-                        </p>
-                        <p class="control is-expanded">
-                            <input class="input" type="text" placeholder="19000">   
-                        </p>
-                    </div>
-                </div>
+          <div class="field has-addons  mt-4">
+            <p class="control">
+              <a class="button is-primary">
+                Enter tip amount
+              </a>
+            </p>
+            <div class="control is-expanded has-icons-left">
+              <input id="amount" class="input" type="text" value="100">
+              <span class="icon is-left">
+                <i class="fa-solid fa-indian-rupee-sign"></i>
+              </span>
             </div>
-        </div>
-    </div>
+          </div>
+          <div class="field has-addons">
+            <p class="control">
+              <a class="button is-primary">
+                tip percentage
+              </a>
+            </p>
+            <p class="control is-expanded has-icons-right">
+              <input type="text" class="input" value="5" id="tipPercentage">
+              <span class="icon is-right">
+                <i class="fa-solid fa-percent"></i>
+              </span>
+            </p>
+          </div>
+          <hr>
 
-    <script src="../js/tip_calculator.js"></script>
+          <div class="heading2 has-text-centered">
+            <button class="button is-success is-capitalized" onclick="tip_calculator()">Results</button>
+          </div>
+
+          <div class="field is-grouped mt-4">
+            <p class="control">
+              <a class="button is-primary">
+                Tip amount
+              </a>
+            </p>
+            <p class="control is-expanded">
+              <input class="input" id="tip_amount" type="text" placeholder="Tip amount">
+            </p>
+          </div>
+          <div class="field has-addons mt-4">
+            <p class="control">
+              <a class="button is-primary">
+                Total Bill With Tip
+              </a>
+            </p>
+            <p class="control is-expanded">
+              <input class="input" type="text" placeholder="Total Bill With Tip" id="totalBill">
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="../js/tip_calculator.js"></script>
 </body>
+
 </html>
