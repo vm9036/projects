@@ -28,7 +28,7 @@
               </a>
             </p>
             <div class="control is-expanded has-icons-left">
-              <input id="billAmount" class="input" type="text" value="100">
+              <input id="billAmount" class="input" type="text" value="100" oninput="tipCalculator()">
               <span class="icon is-left">
                 <i class="fa-solid fa-indian-rupee-sign"></i>
               </span>
@@ -41,7 +41,7 @@
               </a>
             </p>
             <p class="control is-expanded has-icons-right">
-              <input type="text" class="input" value="5" id="tipPercentage">
+              <input type="number" class="input" value="5" id="tipPercentage" oninput="tipCalculator()">
               <span class="icon is-right">
                 <i class="fa-solid fa-percent"></i>
               </span>
@@ -54,7 +54,7 @@
               </a>
             </p>
             <p class="control is-expanded has-icons-right">
-              <input type="number" class="input" value="28" id="gstAmount">
+              <input type="number" class="input" value="28" id="gstAmount" oninput="tipCalculator()">
               <span class="icon is-right">
                 <i class="fa-solid fa-percent"></i>
               </span>

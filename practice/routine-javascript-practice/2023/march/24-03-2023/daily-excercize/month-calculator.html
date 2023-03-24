@@ -12,7 +12,7 @@
 <body>
     <div class="conatainer mt-3">
         <div class="box">
-            <h1 class="title has-text-centered is-size-2">-: CD Year Calculator  :-</h1>
+            <h1 class="title has-text-centered is-size-2">-: CD Month Calculator  :-</h1>
             <div class="card">
                 <div class="card-header">
                     <div class="card-header-title">
@@ -43,11 +43,11 @@
                         </div>
                         <div class="column is-4">
                             <div class="field">
-                                <label class="label is-size-3 has-text-centered">Year :</label>
+                                <label class="label is-size-3 has-text-centered">Month :</label>
                                 <div class="control">
                                     <input type="number"
                                         class="input is-info is-large has-text-weight-semibold has-text-centered"
-                                        id="valueOfYear" value="5">
+                                        id="valueOfMonth" value="12">
                                 </div>
                             </div>
                         </div>
@@ -86,12 +86,12 @@
                         </div>
                         <div class="column is-5">
                             <div class="field">
-                                <label class="label is-size-4 has-text-centered"> Final Ans Of [Interest + Amount] Year:
+                                <label class="label is-size-4 has-text-centered"> Final Ans Of [Interest + Amount] Month:
                                 </label>
                                 <div class="control">
                                     <input type="text"
                                         class="input is-large is-success has-text-weight-bold has-text-centered"
-                                        id="interestAmountYearAdd">
+                                        id="interestAmountMonthAdd">
                                 </div>
                             </div>
                         </div>
@@ -109,22 +109,20 @@
 
             var amount = parseInt(document.getElementById("valueOfAmount").value);
             var interest = parseInt(document.getElementById("valueOfInterest").value);
-            var year = parseInt(document.getElementById("valueOfYear").value);
+            var month = parseInt(document.getElementById("valueOfMonth").value);
 
             var interestSum = 1, interestAmountAdd = 0;
 
-            for (i = 1; i <= year; i++) {
+            for (i = 1; i <= month; i++) {
                 const tax = 0;
-                interestSum = ((amount * interest) / 100);
+                interestSum = ((amount * interest) / 1003);
                 interestAmountAdd = interestSum + amount;
                 amount = amount + interestSum;
                 console.log("Amount :-> " + amount);
-
-
             }
             document.getElementById("interestAmount").value = interestSum;
             document.getElementById("interestAmountAdd").value = interestAmountAdd;
-            document.getElementById("interestAmountYearAdd").value = amount;
+            document.getElementById("interestAmountMonthAdd").value = amount;
 
             drawTable();
         }
@@ -133,16 +131,16 @@
 
             var amount = parseInt(document.getElementById("valueOfAmount").value);
             var interest = parseInt(document.getElementById("valueOfInterest").value);
-            var year = parseInt(document.getElementById("valueOfYear").value);
+            var month = parseInt(document.getElementById("valueOfMonth").value);
 
             var displayPrincipal = amount;
             var startPrincipal = amount;
             var startBalance = 0;
 
             var interestSum = 1, interestAmountAdd = 0;
-            let strTable = "<div class='box'><h1 class='title has-text-centered mt-5 mb-5'>-: Annual Schedule :-</h1><div class='table-container'><table class='table is-bordered is-striped is-hoverable is-fullwidth has-text-weight-semibold has-text-right'><tr class='is-size-4 has-text-right'><th>Number :</th><th>Start Principal</th><th>Start Balance</th><th>Interest</th><th>Tax</th><th>End Balance</th><th>End Principal</th></tr>";
+            let strTable = "<div class='box'><h1 class='title has-text-centered mt-5 mb-5'>-: Month Schedule :-</h1><div class='table-container'><table class='table is-bordered is-striped is-hoverable is-fullwidth has-text-weight-semibold has-text-right'><tr class='is-size-4 has-text-right'><th>Number :</th><th>Start Principal</th><th>Start Balance</th><th>Interest</th><th>Tax</th><th>End Balance</th><th>End Principal</th></tr>";
 
-            for (i = 1; i <= year; i++) 
+            for (i = 1; i <= month; i++) 
             {
                 startBalance = amount;
                 const tax = 0;
@@ -155,7 +153,7 @@
 
                 document.getElementById("interestAmount").value = interestSum;
                 document.getElementById("interestAmountAdd").value = interestAmountAdd;
-                document.getElementById("interestAmountYearAdd").value = amount;
+                document.getElementById("interestAmountMonthAdd").value = amount;
 
                 if(i % 2 == 0)
                 {
