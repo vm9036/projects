@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Odd Number Generator</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.9.4/css/bulma.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css" />
+
+    <script src="bignumber.min.js"></script>
+    <script src="counter.js"></script>
+    <script src="js-id.js"></script>
+</head>
+
+<body>
+    <textarea id="oddNumber" cols="30" rows="10"></textarea>
+    <button onclick="oddNumberGenerator()">genrate</button>
+
+
+    <div data-autosave="" class="converter-options">
+
+        <div class="option-group">
+            <span class="option-group-legend">Options for Odd Numbers</span>
+            <div class="option-row" title="Option code: start">
+
+                <input id="start" required="" name="option-group-c6f36a6d-0" data-index="start"
+                    class="input-option" type="text" placeholder="First Value" value="1">
+                <label for="option-start-c6f36a6d">First Value</label>
+                <span class="option-details">First number in odd values list.</span>
+
+            </div>
+
+
+
+            <div class="option-row" title="Option code: count">
+                <input id="count" required="" name="option-group-c6f36a6d-0" data-index="count"
+                    class="input-option" type="text" placeholder="Amount" value="10">
+                <label for="option-count-c6f36a6d">Amount</label>
+                <span class="option-details">Length of output odd values list.</span>
+            </div>
+
+
+
+            <div class="option-row" title="Option code: separator">
+                <input id="separator" required="" name="option-group-c6f36a6d-0" data-index="separator"
+                    class="input-option" type="text" placeholder="Separator" value="\n">
+                <label for="option-separator-c6f36a6d">Separator</label>
+                <span class="option-details">Character between list elements.
+                    (By default newline.)</span>
+
+            </div>
+
+        </div>
+        <div class="option-group">
+            <span class="option-group-legend">Growth of Odd Numbers</span>
+            <div class="option-row" title="Option code: increasing-sequence">
+                <input id="increasing-sequence" required="" name="option-group-c6f36a6d-1"
+                    data-index="increasing-sequence" class="input-option" checked="" type="radio">
+                <label for="option-increasing-sequence-c6f36a6d">Increasing Odd Numbers</label>
+                <span class="option-details">Generate odd numbers from a
+                    smaller value to a larger one.
+                    (1, 3, 5, 7, ...)</span>
+
+            </div>
+
+
+
+            <div class="option-row" title="Option code: decreasing-sequence">
+
+
+
+                <input id="decreasing-sequence" required="" name="option-group-c6f36a6d-1"
+                    data-index="decreasing-sequence" class="input-option" type="radio">
+                <label for="option-decreasing-sequence-c6f36a6d">Decreasing Odd Numbers</label>
+                <span class="option-details">Generate odd numbers from a
+                    larger value to a smaller one.
+                    (-1, -3, -5, -7, ...)</span>
+
+            </div>
+
+        </div>
+
+
+    </div>
+
+    <script>
+        function oddNumberGenerator() {
+            var t = this;
+            BigNumber.config({
+                EXPONENTIAL_AT: 1e9
+            });
+            var e = d(t);
+            // if (!e) {
+            //     t.output.setValue("");
+            //     return
+            // }
+            if (e.increasSeq) var n = o(e.start, e.count);
+            else var n = i(e.start, e.count);
+            return n.join(e.sep)
+        };
+
+        function o(t, e) {
+            for (var n = [], r = new BigNumber(t); n.length < e; r = r.plus(1))(r.mod(2).eq(1) || r.mod(2).eq(-1)) && n.push(r);
+            return n
+        }
+
+        function i(t, e) {
+            for (var n = [], r = new BigNumber(t); n.length < e; r = r.minus(1))(r.mod(2).eq(1) || r.mod(2).eq(-1)) && n.push(r);
+            return n
+        }
+
+        function d(t) {
+            var 
+                n = function (c, m) {
+                    t.output.showNegativeBadge(c, m, -1)
+                },
+                r = document.getElementById("separator").value || "\n";
+            r == "\\n" && (r = "\n");
+            var u = document.getElementById("start").value.trim();
+            if (!/^[+-]?\d+$/.test(u)) return n("Invalid Starting Element", "Starting element is not a number."), !1;
+            var u = new BigNumber(u),
+                a = document.getElementById("count").value.trim();
+            if (!/^\d+$/.test(a)) return n("Invalid Count", "Count is an invalid number."), !1;
+            var a = parseInt(a);
+            return a < 1 ? (n("Invalid Count", "You can't generate less than one odd number."), !1) : {
+                start: u,
+                count: a,
+                sep: r,
+                increasSeq: document.getElementById("increasing-sequence").value;
+            }
+        }
+	// return {
+	// 	converter: s,
+	// 	config: {}
+	// }
+   
+
+    </script>
+
+   
+</body>
+
+</html>

@@ -1,0 +1,832 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<meta http-equiv="content-type" content="text/html;charset=UTF-8" />
+
+<head>
+	<title>Random json data generator</title>
+	<meta http-equiv="content-language" content="en-US">
+	<meta http-equiv="X-UA-Compatible" content="IE=9,chrome=1" />
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<meta charset="utf-8" />
+	<meta name="description" content="Online random json data generator" />
+	<meta name="author" content="Jimmy" />
+	<meta name="keywords" content="random json data generator" />
+	<meta property="og:image" content="img/cb/json-generator.html" />
+	<meta property="og:url" content="/json-generator" />
+	<meta name="twitter:card" content="summary" />
+	<meta name="twitter:title" content="Random json data generator" />
+	<meta name="twitter:description" content="Online random json data generator" />
+	<meta name="twitter:image" content="img/cb/json-generator.html" />
+	<meta name="twitter:url" content="/json-generator">
+	<meta name="twitter:creator" content="@codebeautify">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+	<meta http-equiv="X-UA-Compatible" content="IE=10">
+	<!-- <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet"> -->
+
+	<link rel="canonical" href="json-generator.html" />
+	<link href="img/cb.png" rel="icon" />
+	<!-- for json viewer and validator -->
+
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.9.4/css/bulma.min.css">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css" />
+
+	<!-- <link href="dist/7.2/css/formatter-min.css" rel="stylesheet" />  -->
+
+	<script src="../ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+
+	<!-- hidden ids -->
+	<input type="hidden" id="viewName" value="json-generator">
+	<input type="hidden" id="isLogin" value="">
+	<input type="hidden" id="isFavTool" value="not-fav" />
+
+
+</head>
+
+<body id="cbBody">
+	<script>
+
+		$(document).ready(function () {
+			$("body").addClass("intro");
+		});
+
+	</script>
+	<!-- Global site tag (gtag.js) - Google Analytics -->
+	<script async src="https://www.googletagmanager.com/gtag/js?id=UA-51765955-1"></script>
+	<script>
+		window.dataLayer = window.dataLayer || [];
+		function gtag() { dataLayer.push(arguments); }
+		gtag('js', new Date());
+
+		gtag('config', 'UA-51765955-1');
+	</script>
+
+	<!-- <div class="navbar navbar-inverse navbar-fixed-top">
+		<div class="navbar-inner">
+			<div class="container-fluid">
+			<div class='mainheader'>
+			<div class='logo'>
+				<a href="index.html" class="brand">
+					<div class="cblogoimage" title="Code Beautify"></div>
+				</a>
+			</div>
+          
+             <div class='headerMenu'>
+				<div class="nav-collapse collapse">
+					<ul class="nav">
+						<li class="dropdown pull-right margin-last-li">
+							<a href="https://jsonformatter.org/" target="_blank" title="JSON Formatter">&nbsp;JSON Formatter</a>
+						</li>
+
+						<li class="dropdown pull-right margin-last-li">
+							<a href="https://hexcolorcodes.org/" target="_blank" title="Hex Color Codes">&nbsp;Hex Color Codes</a>
+						</li>  
+
+						<li class="dropdown pull-right margin-last-li">
+							<a href="hmac-generator.html" title="HMAC Generator">&nbsp;HMAC Generator</a>
+						</li> 
+
+						<li class="dropdown pull-right">
+							<a href="ipcheck-weatherinfo-latestnews.html">&nbsp;My Ip</a>
+						</li>
+
+						<li class="dropdown pull-right">
+					    	<a href="index.html" >Search</a>
+					    </li>
+						<li class="dropdown pull-right"	>
+					    	<a href="recentLinksPage.html" >Recent Links</a>
+					    </li>
+
+						<li class="dropdown pull-right" id="moreMenu">
+							<a href='#' id='more'>More <b	class="caret"></b></a>
+						</li>
+					
+						<li>
+							<li id="loggedin" class="dropdown" onclick="toggleOpenClass()" style="display:none">
+								<a id="username" class="dropbtn" data-toggle="dropdown" > 
+									<b id="usernamelable" class="dropbtn"></b>
+									<b class="caret"></b>
+								</a>
+								<div id="myDropdown" class="dropdown-content">
+									<a class="leftText" style="float: none" href="userSaveLinkPage.html">Links</a>
+									<a class="leftText" href="userSaveOldLinkPage.html">Archived</a>
+									<a class="leftText" href="profile.html">Profile</a>
+									<a class="leftText" href="myFavouriteTools.html">Favourites</a>
+									<a class="leftText" href="logout.html" >Logout</a>
+								</div>
+							</li>
+						</li>					
+							
+						<li id="notloggedin">
+						  <a href="login.html" rel="nofollow">Sign in</a> 
+						</li>
+					</ul>
+					<div id="copy-note-msg" class="hide">
+    					Copied to Clipboard.
+					</div>
+				</div>
+</div>
+             
+	</div>
+	</div>
+		</div>
+	</div> -->
+
+	<div class="some_other_box"></div>
+
+	<!-- <div class="containe-fluid headerEditorContainer">
+
+		<div class="row-fluid">
+               
+			<div class="span12 subTitleDiv">
+				<div class="span6">
+					<h1 id="subTitle" title="Random json data generator">Random json data generator</h1>
+				</div>
+				<div class="span6" id="permalinkDiv">
+
+					<div class='permalinkButtonDiv'>
+						<input type="button" value="Save & Share"
+							class="btn permalinkButton btn-inverse "
+							onclick="openSavedialog(true);" id='plinkBtn' />
+					</div>
+					<div class='permalinkDiv'>
+						<label id="permalink" class='permaLinkLabel'> </label>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div> -->
+	<div id="fbpost" class='hide'>
+		<div id="shareDiv">
+		</div>
+	</div>
+	<!-- <script src="../cheef.github.io/jquery-ace/javascripts/ace/ace.js"></script> -->
+
+	<!-- <div class="row">
+    <div class="container page-content twocolumnlayout">
+        <div class="content">
+            <div class="all-tools-container">
+                <div class="section sides tool tool-primary" data-accepts="" data-returns="text" data-tool-url="generate-random-json">
+                    <div class="chain-link"></div>
+                    <div class="tool-inline">
+                        <div title="Swap tools" class="tool-swap" data-swap-to=""></div>
+                        <div title="Mark as favorite" class="tool-favorite"></div>
+                    </div>
+
+                    <div class="body firstcolmn-1">
+                        <div class="sides-wrapper clearfix">
+                            <div class="side output" data-theme="">
+                                <div class="side-box">
+
+                                    <div class="data-wrapper">
+                                        <textarea class="data randomjson" ></textarea>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div align="center" class="marginleft0"> 
+                            <div class="sides-primary-button">
+
+                                <button type="button"  class="btn1 btn-large generatejson">Generate a new random JSON</button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="sides-options-wrapper firstcolmn-2">
+                        <div data-autosave="" class="converter-options row">
+                            <div class="option-group span3">
+                                <span class="option-group-legend">Generator Options</span>
+                                <div class="option-row" title="Option code: depth">
+                                    <label for="option-depth-6c7407e8">Max JSON structure's depth</label>
+                                    <input id="option-depth-6c7407e8" required="" name="option-group-6c7407e8-0" data-index="depth" class="input-option" type="text" placeholder="JSON&#39;s depth" value="3">
+                                </div>
+                                <div class="option-row" title="Option code: max-elements">
+                                    <label for="option-max-elements-6c7407e8">Elements per branch</label>
+                                    <input id="option-max-elements-6c7407e8" required="" name="option-group-6c7407e8-0" data-index="max-elements" class="input-option" type="text" placeholder="Elements per branch" value="6">
+                                </div>
+                                <div class="option-row" title="Option code: max-string-length">
+                                    <label for="option-max-string-length-6c7407e8">Maximum string length</label>
+                                    <input id="option-max-string-length-6c7407e8" required="" name="option-group-6c7407e8-2" data-index="max-string-length" class="input-option" type="text" placeholder="Maximum string length" value="10">
+                                </div>
+                                <div class="option-row" title="Option code: always-max-elements">
+                                    <input id="option-always-max-elements-6c7407e8" required="" name="option-group-6c7407e8-0" data-index="always-max-elements" class="input-option" checked="" type="checkbox">
+                                    <label for="option-always-max-elements-6c7407e8">Always max elements</label>
+
+                                </div>
+
+
+                                <span class="option-group-legend">Indentation</span>
+                                <div class="option-row" title="Option code: formatting-spaces">
+                                    <input id="option-formatting-spaces-6c7407e8" required="" name="option-group-6c7407e8-3" data-index="formatting-spaces" class="input-option" checked="" type="radio">
+                                    <label for="option-formatting-spaces-6c7407e8">Use spaces</label>
+                                </div>
+                                <div class="option-row" title="Option code: formatting-tabs">
+                                    <input id="option-formatting-tabs-6c7407e8" required="" name="option-group-6c7407e8-3" data-index="formatting-tabs" class="input-option" type="radio">
+                                    <label for="option-formatting-tabs-6c7407e8">Use tabs</label>
+                                </div>
+                                <div class="option-row" title="Option code: formatting-none">
+                                    <input id="option-formatting-none-6c7407e8" required="" name="option-group-6c7407e8-3" data-index="formatting-none" class="input-option" type="radio">
+                                    <label for="option-formatting-none-6c7407e8">Keep unformatted</label>
+                                </div>
+
+                            </div>
+                            <div class="option-group span3">
+                                <span class="option-group-legend">Allowed data types</span>
+                                <div class="option-row" title="Option code: booleans">
+                                    <input id="option-booleans-6c7407e8" required="" name="option-group-6c7407e8-1" data-index="booleans" class="input-option" checked="" type="checkbox">
+                                    <label for="option-booleans-6c7407e8">Generate Booleans</label>
+                                </div>
+                                <div class="option-row" title="Option code: numbers">
+                                    <input id="option-numbers-6c7407e8" required="" name="option-group-6c7407e8-1" data-index="numbers" class="input-option" checked="" type="checkbox">
+                                    <label for="option-numbers-6c7407e8">Generate Numbers</label>
+                                </div>
+                                <div class="option-row" title="Option code: strings">
+                                    <input id="option-strings-6c7407e8" required="" name="option-group-6c7407e8-1" data-index="strings" class="input-option" checked="" type="checkbox">
+                                    <label for="option-strings-6c7407e8">Generate Strings</label>
+                                </div>
+                                <div class="option-row" title="Option code: arrays">
+                                    <input id="option-arrays-6c7407e8" required="" name="option-group-6c7407e8-1" data-index="arrays" class="input-option" checked="" type="checkbox">
+                                    <label for="option-arrays-6c7407e8">Generate Arrays</label>
+                                </div>
+                                <div class="option-row" title="Option code: objects">
+                                    <input id="option-objects-6c7407e8" required="" name="option-group-6c7407e8-1" data-index="objects" class="input-option" checked="" type="checkbox">
+                                    <label for="option-objects-6c7407e8">Generate Objects</label>
+                                </div>
+                            </div>
+                            <div class="option-group span3">
+                                <span class="option-group-legend">String Options</span>
+                                <div class="option-row" title="Option code: english-strings">
+                                    <input id="option-english-strings-6c7407e8" required="" name="option-group-6c7407e8-2" data-index="english-strings" class="input-option" checked="" type="radio">
+                                    <label for="option-english-strings-6c7407e8">Use random English words</label>
+
+                                </div>
+                                <div class="option-row" title="Option code: random-strings">
+                                    <input id="option-random-strings-6c7407e8" required="" name="option-group-6c7407e8-2" data-index="random-strings" class="input-option" type="radio">
+                                    <label for="option-random-strings-6c7407e8">Use completely random strings</label>
+                                </div>
+
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div> -->
+
+	<div class="container is-fluid mt-2">
+		<!-- heading-part Starts -->
+		<div class="heading-part">
+			<h1 class="title is-size-2 is-inline">Random Json Data Generator</h1>
+			<button class="button is-pulled-right" title="Add this tool to Favorites">
+				<span class="icon has-icons-left is-size-4">
+
+					<i class="fa-regular fa-heart has-text-black has-icon-left"></i>
+				</span>
+				<span class="is-size-5">Add to Fav</span>
+			</button>
+		</div>
+		<!-- heading-part Ends -->
+		<hr>
+
+		<div class="columns">
+			<div class="column is-6">
+				<div class="field">
+					<label class="label is-inline">
+						<span><a class="has-text-black is-size-5" href="#" id="sampleurlindialog">Sample</a></span>
+					</label>
+					<div class="control mb-2 is-pulled-right">
+						<button class="button ">
+							<span><a href="#"><i class="fa-solid fa-copy has-text-black"></i></a></span>
+						</button>
+						<button class="button">
+							<span><a href="#"><i class="fa-solid fa-cloud-arrow-down has-text-black"></i></a></span>
+						</button>
+					</div>
+				</div>
+				<div class="field">
+					<div class="control">
+						<textarea class="textarea data randomjson" name="" id="" cols="60" rows="15"></textarea>
+					</div>
+				</div>
+				<div class="field">
+					<div class="control has-text-centered">
+						<button class="button is-primary generatejson">
+							Generate a New Random JSON
+						</button>
+
+					</div>
+				</div>
+			</div>
+			<div class="column is-3">
+				<div class="heading">
+					<h5 class="title is-capitalized is-size-4 is-underlined	">Generator Options : </h5>
+				</div>
+				<div class="field mt-3">
+					<label class="label is-size-6">Max JSON structure's depth
+					</label>
+					<div class="control">
+						<input type="number" class="input" id="option-depth-6c7407e8" value="3">
+					</div>
+				</div>
+				<div class="field">
+					<label class="label is-size-6">Elements per branch
+					</label>
+					<div class="control">
+						<input type="number" class="input" id="option-max-elements-6c7407e8" value="6">
+					</div>
+				</div>
+				<div class="field">
+					<label class="label is-size-6">Maximum string length
+					</label>
+					<div class="control">
+						<input type="number" class="input" id="option-max-string-length-6c7407e8" value="10">
+					</div>
+				</div>
+				<div class="field">
+					<div class="control">
+						<label class="checkbox">
+							<span class="is-size-4"><input type="checkbox"
+									id="option-always-max-elements-6c7407e8" checked></span>
+							<span class="has-text-black">Always max elements
+							</span>
+						</label>
+					</div>
+				</div>
+				<div class="heading2">
+					<h5 class="title is-capitalized is-size-4 is-underlined	">Indentation : </h5>
+				</div>
+				<div class="field mt-3">
+					<div class="control">
+						<label class="radio">
+							<span class="is-size-4"><input type="radio" name="use"
+									id="option-formatting-spaces-6c7407e8" checked></span>
+							<span class="has-text-black">Use spaces
+							</span>
+						</label>
+					</div>
+					<div class="control">
+						<label class="radio">
+							<span class="is-size-4"><input type="radio" name="use"
+									id="option-formatting-tabs-6c7407e8"></span>
+							<span class="has-text-black">Use tabs
+							</span>
+						</label>
+					</div>
+					<div class="control">
+						<label class="radio">
+							<span class="is-size-4"><input type="radio" name="use"
+									id="option-formatting-none-6c7407e8"></span>
+							<span class="has-text-black">Keep unformatted
+							</span>
+						</label>
+					</div>
+				</div>
+			</div>
+			<div class="column is-3">
+				<div class="heading">
+					<h5 class="title is-capitalized is-size-4 is-underlined	">Allowed data types : </h5>
+				</div>
+				<div class="field mt-3">
+					<div class="control">
+						<label class="checkbox">
+							<span class="is-size-4"><input type="checkbox" id="option-booleans-6c7407e8" checked></span>
+							<span class="has-text-black">Generate Booleans
+							</span>
+						</label>
+					</div>
+					<div class="control">
+						<label class="checkbox">
+							<span class="is-size-4"><input type="checkbox" id="option-numbers-6c7407e8" checked></span>
+							<span class="has-text-black">Generate Numbers
+							</span>
+						</label>
+					</div>
+					<div class="control">
+						<label class="checkbox">
+							<span class="is-size-4"><input type="checkbox" id="option-strings-6c7407e8" checked></span>
+							<span class="has-text-black">Generate Strings
+							</span>
+						</label>
+					</div>
+					<div class="control">
+						<label class="checkbox">
+							<span class="is-size-4"><input type="checkbox" id="option-arrays-6c7407e8" checked></span>
+							<span class="has-text-black">Generate Arrays
+							</span>
+						</label>
+					</div>
+					<div class="control">
+						<label class="checkbox">
+							<span class="is-size-4"><input type="checkbox" id="option-objects-6c7407e8" checked></span>
+							<span class="has-text-black">Generate Objects
+							</span>
+						</label>
+					</div>
+				</div>
+
+				<div class="heading2">
+					<h5 class="title is-capitalized is-size-4 is-underlined	">String Options : </h5>
+				</div>
+				<div class="field mt-3">
+					<div class="control">
+						<label class="radio">
+							<span class="is-size-4"><input type="radio" name="Use"
+									id="option-english-strings-6c7407e8" checked></span>
+							<span class="has-text-black">Use random English words
+							</span>
+						</label>
+					</div>
+					<div class="control">
+						<label class="radio">
+							<span class="is-size-4"><input type="radio" name="Use"
+									id="option-random-strings-6c7407e8"></span>
+							<span class="has-text-black">Use completely random strings
+							</span>
+						</label>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	</div>
+
+
+
+	<script src="../js/common_load_with_home.js"></script>
+	<script src="../js/mode-json.js"></script>
+	<script src="../js/jquery-ace.min.js"></script>
+	<script src="../js/site.js"></script>
+	<script src="../js/converter.js"></script>
+	<script src="../js/generate-random-json.js"></script>
+	<script src="../js/word-dictionary.js"></script>
+	<script src="../js/random-json.js"></script>
+
+	<script>
+
+		$(document).ready(function () {
+			//called after everything loaded
+			setDefaultData();
+			conditionalCode();
+			$("#me").click();
+		});
+
+	</script>
+
+
+
+
+
+	<!-- <div class="container-fluid">
+ 	<div class="row-fluid footerpart">
+ 		<div class='footer_container'>
+	<div class='footer_map' id='footer_map'>
+		<div class='footerhead'>
+			<div class='footerheadimg'>
+				<div class='logo'>
+					<a href="index.html" class="cblogoimage"></a>
+				</div>
+			</div>
+		</div>
+		<div class='footersub1'>
+			<h4>Unit Converter</h4>
+			<ul>
+				<li><a href="length-converter.html">Length Converter</a></li>
+				<li><a href="weight-converter.html">Weight Converter</a></li>
+				<li><a href="volume-converter.html">Volume Converter</a></li>
+				<li><a href="area-converter.html">Area Converter</a></li>
+				<li><a href="temperature-converter.html">Temperature Converter</a></li>
+				<li><a href="density-converter.html">Density Converter</a></li>
+				<li><a href="electric-current-converter.html">Electric Current Converter</a></li>
+				<li><a href="speed-converter.html">Speed Converter</a></li>
+				<li><a href="angle-converter.html">Angle Converter</a></li>
+				<li><a href="bytes-converter.html">Bytes/Bits Converter</a></li>
+				<li><a href="energy-converter.html">Energy Converter</a></li>
+				<li><a href="force-converter.html">Force Converter</a></li>
+				<li><a href="fuel-converter.html">Fuel Converter</a></li>
+				<li><a href="mass-converter.html">Mass Converter</a></li>
+				<li><a href="power-converter.html">Power Converter</a></li>
+				<li><a href="pressure-converter.html">Pressure Converter</a></li>
+				<li><a href="time-converter.html">Time Converter</a></li>
+				<li><a href="astronomical-converter.html">Astronomical Converter</a></li>
+				<li><a href="frequency-converter.html">Frequency Converter</a></li>
+				<li><a href="unix-time-stamp-converter.html">Unix Timestamp Converter</a></li>
+			</ul>
+		</div>
+		<div class='footersub1'>
+			<h4>Converters</h4>
+			<ul>
+				<li><a href="word-to-html-converter.html">Word to HTML Converter</a></li>
+				<li><a href="json-to-java-converter.html">JSON to JAVA Converter</a></li>
+				<li><a href="xml-to-java-converter.html">XML to JAVA Converter</a></li>
+				<li><a href="tableizer.html">Online Tableizer</a></li>
+				<li><a href="html-to-csv-converter.html">HTML to CSV Converter</a></li>
+				<li><a href="html-to-tsv-converter.html">HTML to TSV Converter</a></li>
+				<li><a href="html-to-php-converter.html">HTML to PHP Converter</a></li>
+				<li><a href="xml-xsl-transformation.html">XML-XSL Transform</a></li>
+				<li><a href="xmltojson.html">XML to JSON</a></li>
+				<li><a href="jsontoxml.html">JSON to XML</a></li>
+				<li><a href="csv-to-xml-json.html">CSV to XML/JSON</a></li>
+				<li><a href="yaml-to-json-xml-csv.html">YAML Converter</a></li>
+				<li><a href="image-to-base64-converter.html">Image to Base64</a></li>
+				<li><a href="base64-to-image-converter.html">Base64 to Image</a></li>
+				<li><a href="date-time-calculater.html">Date Calculater</a></li>
+				<li><a href="excel-to-html.html">EXCEL to HTML</a></li>
+				<li><a href="excel-to-xml.html">EXCEL to XML</a></li>
+				<li><a href="excel-to-json.html">EXCEL to JSON</a></li>
+				<li><a href="json-to-yaml.html">JSON to YAML</a></li>
+				<li><a href="xml-to-yaml.html">XML to YAML</a></li>
+				<li><a href="csv-to-xml-converter.html">CSV to XML</a></li>
+				<li><a href="csv-to-json-converter.html">CSV to JSON</a></li>
+				<li><a href="csv-to-html-converter.html">CSV to HTML</a></li>
+				<li><a href="csv-to-tsv-converter.html">CSV to TSV</a></li>
+				<li><a href="json-to-csv.html">JSON to CSV</a><li>
+				<li><a href="json-to-tsv-converter.html">JSON to TSV</a></li>
+				<li><a href="xml-to-csv-converter.html">XML to CSV</a></li>
+				<li><a href="xml-to-tsv-converter.html">XML to TSV</a></li>
+				<li><a href="html-to-csv-converter.html">HTML to CSV</a></li>
+				<li><a href="csv-to-multi-line-converter.html">CSV to MULTILINE DATA</a></li>
+				<li><a href="csv-to-sql-converter.html">CSV to SQL</a></li>
+				<li><a href="sql-to-csv-converter.html">SQL to CSV Converter</a></li>
+				<li><a href="sql-to-json-converter.html">SQL to JSON Converter</a></li>
+				<li><a href="sql-to-xml-converter.html">SQL to XML Converter</a></li>
+				<li><a href="sql-to-yaml-converter.html">SQL to YAML Converter</a></li>
+				<li><a href="sql-to-html-converter.html">SQL to HTML	Converter</a></li>
+				<li><a href="opml-to-json-converter.html">OPML to JSON</a></li>
+				<li><a href="hex-to-pantone-converter.html">HEX to Pantone Converter</a></li>
+				<li><a href="rgb-to-pantone-converter.html">RGB to Pantone Converter</a></li>
+				<li><a href="hsv-to-pantone-converter.html">HSV to Pantone Converter</a></li>
+				<li><a href="cmyk-to-pantone-converter.html">CMYK to Pantone Converter</a></li>
+				<li><a href="cmyk-to-hex-converter.html">CMYK to HEX Converter</a></li>
+				<li><a href="cmyk-to-rgb-converter.html">CMYK to RGB Converter</a></li>
+				<li><a href="cmyk-to-hsv-converter.html">CMYK to HSV Converter</a></li>
+				<li><a href="hsv-to-hex-converter.html">HSV to HEX Converter</a></li>
+				<li><a href="hsv-to-rgb-converter.html">HSV to RGB Converter</a></li>
+				<li><a href="hsv-to-cmyk-converter.html">HSV to CMYK Converter</a></li>
+				<li><a href="hex-to-hsv-converter.html">HEX to HSV Converter</a></li>
+				<li><a href="rgb-to-hex-converter.html">RGB to HEX Converter</a></li>
+				<li><a href="rgb-to-hsv-converter.html">RGB to HSV Converter</a></li>
+				<li><a href="rgb-to-cmyk-converter.html">RGB to CMYK	Converter</a></li>
+				<li><a href="hex-to-rgb-converter.html">HEX to RGB Converter</a></li>
+				<li><a href="hex-to-cmyk-converter.html">HEX to CMYK	Converter</a></li>
+				<li><a href="json-to-html-converter.html">JSON to HTML</a></li>
+				<li><a href="xml-to-html-converter.html">XML to HTML</a></li>
+				<li><a href="json-to-excel-converter.html">JSON to Excel</a></li>
+				<li><a href="xml-to-excel-converter.html">XML to Excel</a></li>
+				<li><a href="csv-to-excel-converter.html">CSV to Excel</a></li>
+				<li><a href="yaml-to-excel-converter.html">YAML to Excel</a></li>
+			</ul>
+		</div>
+		<div class='footersub1'>
+			<h4>Web Viewer / Editor</h4>
+			<ul>
+				<li><a href="jsonviewer.html" class="firstchild">JSON Viewer</a>
+				</li>
+				<li><a href="xmlviewer.html">XML Viewer</a></li>
+				<li><a href="mxmlviewer.html">MXML Viewer</a></li>
+				<li><a href="htmlviewer.html">HTML Viewer </a></li>
+				<li><a href="css-beautify-minify.html">CSS BEAUTIFY AND MINIFY</a></li>
+				<li><a href="jsviewer.html">JAVASCRIPT Viewer</a></li>
+				<li><a href="rssviewer.html">RSS Viewer</a></li>
+				<li><a href="source-code-viewer.html">SOURCE CODE Viewer</a></li>
+				<li><a href="opmlviewer.html">OPML Viewer</a> </li>
+				<li><a href="csv-viewer.html">CSV Viewer</a> </li>
+			</ul>
+			<h4>Programming Editors</h4>
+			<ul>
+				<li><a href="online-xml-editor.html">XML EDITOR</a></li>
+				<li><a href="online-json-editor.html">JSON EDITOR</a></li>
+				<li><a href="alleditor.html">ONLINE EDITOR</a></li>
+				<li><a href="javaviewer.html">JAVA EDITOR</a></li>
+				<li><a href="csharpviewer.html">C# EDITOR</a></li>
+				<li><a href="actionscript.html">Action Script EDITOR</a></li>
+				<li><a href="sqlformatter.html">SQL Formatter</a></li>
+			</ul>
+			<h4>Escape Unescape Tools</h4>
+			<ul>
+				<li><a  href="html-escape-unescape.html" title="HTML Escape Unescape">HTML Escape Unescape</a></li>
+				<li><a  href="xml-escape-unescape.html" title="XML Escape Unescape">XML Escape Unescape</a></li>
+				<li><a  href="java-escape-unescape.html" title="Java Escape Unescape">Java Escape Unescape</a></li>
+				<li><a  href="csharp-escape-unescape.html" title="C# Escape Unescape">C# Escape Unescape</a></li>
+				<li><a  href="javascript-escape-unescape.html" title="Javascript Escape Unescape">Javascript Escape Unescape</a></li>
+				<li><a  href="csv-escape-unescape.html" title="CSV Escape Unescape">CSV Escape Unescape</a></li>
+				<li><a  href="sql-escape-unescape.html" title="SQL Escape Unescape">SQL Escape Unescape</a></li>
+				<li><a  href="json-escape-unescape.html" title="JSON Escape Unescape" >JSON Escape Unescape</a></li>
+				<li><a  href="un-google-link.html" title="Un-Google Link">Un-Google Link</a></li>
+			</ul>
+			
+			<h4>CryptoGraphy Tools</h4>
+			<ul>
+				<li><a href="encrypt-decrypt.html">Encryption-Decryption</a></li>
+			</ul>
+			<h4>Other Tools</h4>
+			<ul>
+				 <li><a href="/serp-checker">Serp Checker</a></li>	
+				<li><a href="lorem-ipsum.html">Lorem-Ipsum</a></li>
+				<li><a href="share-link-generator.html">Sharelink Generator</a></li>
+				<li><a  href="hostname-to-ip.html" title="Hostname to IP" >Hostname to IP</a></li>
+				<li><a  href="ip-to-hostname.html" title="IP to Hostname" >IP to Hostname</a></li>
+				<li><a  href="dns-lookup.html" title="DNS Lookup" >DNS Lookup</a></li>
+				<li><a  href="mx-lookup.html" title="MX Lookup" >MX Lookup</a></li>
+				<li><a  href="name-server-lookup.html" title="name-server-lookup" >Nameserver Lookup</a></li>
+				<li><a  href="website-to-ip-address.html" title="Website to IP Address" >Website to IP Address</a><li>
+				<li><a  href="open-port-checker.html" title="Open Port Checker" >Open Port Checker</a><li>
+			</ul>
+		</div>
+		<div class='footersub1'>
+			<h4>Utility</h4>
+			<ul>
+				<li><a href="send-snap-message.html">Send Snap Message</a></li>
+				<li><a href="responsive-website-tester.html">Responsive Website Tester</a></li>
+				<li><a href="credit-card-validate.html">Credit Card Validator</a></li>
+				<li><a href="credit-card-fake-number-generator.html">Credit Card Fake Number Generator</a></li>
+				<li><a href="Xpath-Tester.html">XPath Tester</a></li>
+				<li><a href="jsonpath-tester.html" title="Json Path Tester">Json Path Tester</a><li>
+				<a href="jsonminifier.html" title="JSON Minifier">Json Minifier</a></li>
+				<li><a href="file-diff.html">File Difference</a></li>
+				<li><a href="json-diff.html">JSON Diff</a><li>
+				<a href="xml-diff.html">XML Diff</a><span class='blink'>New</span></li>
+				<li><a href="broken-link-checker.html">Broken Link Checker</a></li>
+			</ul>
+			<h4>String Utilities</h4>
+			<ul>
+				<li><a href="random-word-generator.html">Random Word Generator</a></li>
+				<li><a href="ntlm-hash-generator.html">NTLM Hash Generator</a></li>
+				<li><a href="password-generator.html">Password Generator</a></li>
+				<li><a href="string-builder.html">String Builder</a></li>
+				<li><a href="number-to-word-converter.html">NUMBER to WORD Converter</a></li>
+				<li><a href="wordcounter.html">WORD COUNTER</a></li>
+				<li><a href="reverse-string.html">Reverse String</a></li>
+				<li><a href="html-encode-string.html">HTML Encode</a></li>
+				<li><a href="html-decode-string.html">HTML Decode</a></li>
+				<li><a href="base64-encode.html">Base64-Encode</a></li>
+				<li><a href="base64-decode.html">Base64-Decode</a></li>
+				<li><a href="url-encode-string.html">URL-Encode A String</a></li>
+				<li><a href="url-decode-string.html">URL-Decode A String</a></li>
+				<li><a href="string-hex-converter.html">String to Hex Converter</a></li>
+				<li><a href="hex-string-converter.html">Hex to String Converter</a></li>
+				<li><a href="string-binary-converter.html">String to	Binary Converter</a></li>
+				<li><a href="binary-string-converter.html">Binary to String Converter</a> </li>
+				<li><a  href="case-converter.html">Case Converter </a></li>
+				<li><a  href="delimited-text-extractor.html">Delimited Text Extractor </a></li>
+				<li><a  href="remove-accents.html">Remove Accents </a></li>
+				<li><a  href="remove-duplicate-lines.html">Remove Duplicate Lines</a></li>
+				<li><a  href="remove-empty-lines.html">Remove Empty Lines</a></li>
+				<li><a  href="remove-extra-spaces.html">Remove Extra Spaces </a></li>
+				<li><a  href="remove-line-breaks.html">Remove Line Breaks</a></li>
+				<li><a  href="remove-lines-containing.html">Remove Lines Containing</a></li>
+				<li><a  href="sort-text-lines.html">Sort Text Lines</a></li>
+			</ul>
+		</div>
+
+		<div class='footersub1'>
+			<h4>Validators</h4>
+			<ul>
+				<li><a href="cssvalidate.html">CSS Validator</a></li>
+				<li><a href="jsvalidate.html">JAVASCRIPT Validator</a></li>
+				<li><a href="jsonvalidator.html">JSON Validator</a></li>
+				<li><a href="xmlvalidator.html">XML Validator</a></li>
+				<li><a href="credit-card-validate.html">CREDIT CARD Validator</a></li>
+				<li><a href="api-test.html">API Test</a></li>
+				<li><a href="yaml-validator.html">YAML Validator</a></li>
+			</ul>
+			<h4>Number Utilities</h4>
+			<ul>
+				<li><a href="all-number-converter.html">All NumbersConverter</a></li>
+				<li><a href="decimal-binary-converter.html">Decimal toBinary Converter</a></li>
+				<li><a href="decimal-octal-converter.html">Decimal to Octal Converter</a></li>
+				<li><a href="binary-decimal-converter.html">Binary to Decimal Converter</a></li>
+				<li><a href="binary-hex-converter.html">Binary to Hex Converter</a></li>
+				<li><a href="binary-octal-converter.html">Binary to OctalConverter</a></li>
+				<li><a href="hex-decimal-converter.html">Hex to Decimal Converter</a></li>
+				<li><a href="hex-binary-converter.html">Hex to Binary Converter</a></li>
+				<li><a href="hex-octal-converter.html">Hex to OctalConverter</a></li>
+				<li><a href="octal-decimal-converter.html">Octal toDecimal Converter</a></li>
+				<li><a href="octal-binary-converter.html">Octal to BinaryConverter</a></li>
+				<li><a href="octal-hex-converter.html"> Octal to HexConverter </a></li>
+			</ul>
+			<h4>Image Tools</h4>
+			<ul>
+				<li><a href="jpg-to-png-converter.html">JPG to PNG Converter</a></li>
+				<li><a href="jpg-to-bmp-converter.html">JPG to BMP Converter</a></li>
+				<li><a href="jpg-to-gif-converter.html">JPG to GIF Converter</a></li>
+				<li><a href="bmp-to-png-converter.html">BMP to PNG Converter</a></li>
+				<li><a href="bmp-to-jpg-converter.html">BMP to JPG Converter</a></li>
+				<li><a href="bmp-to-gif-converter.html">BMP to GIF Converter</a></li>
+				<li><a href="gif-to-png-converter.html">GIF to PNG Converter</a></li>
+				<li><a href="gif-to-jpg-converter.html">GIF to JPG Converter</a></li>
+				<li><a href="gif-to-bmp-converter.html">GIF to BMP Converter</a></li>
+				<li><a href="png-to-jpg-converter.html">PNG to JPG Converter</a></li>
+				<li><a href="png-to-bmp-converter.html">PNG to BMP Converter</a></li>
+				<li><a href="png-to-gif-converter.html">PNG to GIF Converter</a></li>
+				
+			</ul>
+		</div>
+	</div>
+</div>
+
+
+ 
+ 		<div class="span12 footerLinkDiv">
+			<div class='center'>
+                <a class="footermenu1" href="https://goo.gl/1oWmPe" target="_blank" title="Buy us a Coffee">Buy us a Coffee</a>
+				<a class="footermenu1" href="https://jsonformatter.org/" target="_blank" title="JSON Formatter">JSON Formatter</a>
+				<a class="footermenu1" href="faq.html">FAQ</a>
+				<a class="footermenu1" href="policy.html">Privacy Policy</a>
+				<a class="footermenu1" href="aboutus.html">About</a> 
+				<a class="footermenu1" href="contactus.html">Contact</a>
+				<a class="footermenu1" href="history.html">History</a>
+				<a class="footermenu1" href="sitemap.html">Sitemap</a>
+				<a class="footermenu1" href="where-am-i-right-now.html">Where am I right now?</a>
+				<a class="footermenu1" href="https://codeblogmoney.com/" rel="noopener">Blog</a>
+			</div>
+		</div>
+		<div class="span12 footerLinkDiv">
+			<div class='center'>
+			    <br>
+					<span class="class="footermenu1"><b> Copyright &copy; CodeBeautify 2021 | v7.2 </b> </span>
+				<br>
+			</div>
+		</div>
+ 	</div>
+	
+
+ 	<p id="back-top">
+		<a href="#top" title='Scroll to Top'><i class="icon-arrow-up2"></i></a>
+	</p>
+</div> -->
+
+
+	<!-- fContent stores the dataurl i.e: cb94c6df -->
+	<input id="fContent" type="hidden" value="" />
+	<input id="fTitle" type="hidden" value="Random json data generator" />
+
+
+
+	<!-- <input id="loginWith" type="hidden" value=""/>
+
+<div id="openError" class='hide'> </div>
+<div id="loadUrlPathDiv" class='hide'>
+	<input type="text" id="path" class='urlPath' placeholder="Paste your url">
+	<a href="#" id="sampleurlindialog">Sample URL</a>
+</div>
+//save dialog
+<div id="savedialog" class="hide">
+		<input type="hidden" id="edit_link_id" value="" />
+		<table>
+			<tr>
+				<td>Title</td>
+				<td><input type="text" maxlength="60" id="save_link_title"
+					 value=""/></td>
+			</tr>
+			<tr>
+				<td>Description</td>
+				<td><textarea id="save_link_description" placeholder="optional"></textarea></td>
+			</tr>
+			<tr>
+				<td>Tags</td>
+				<td><textarea id="save_link_tags" placeholder="optional"></textarea></td>
+			</tr>
+		</table>
+		<p>By clicking the "Save Online" button you agree to our <a href="javascript:void(0);" style="color: #0088cc" onclick="document.getElementById('saveDisclaimer').style.display='block';">terms and conditions</a>.</p>
+		<div id="saveDisclaimer" style="display: none;">
+          <p>All code in shared files are supplied by users, and belongs to the poster.</p>
+          <p>All shared files are made public. No license is enforced.</p>
+          <p>Any code can be removed without warning (if it is deemed offensive, damaging or for any other reason).</p>        
+          <p>codebeautify.org are not responsible or liable for any loss or damage of any kind during the usage of provided code.</p>
+        </div>
+ </div>
+<div id="gdriveDialog" class='hide'>
+<div id="savetodrive-div"></div>
+</div>
+<div style="display: none" id="exportToExcelDiv">
+</div>
+
+here -->
+	<script>
+		$('.randomjson').ace({ lang: 'json' })
+	</script>
+
+	<!-- Start Ads Blocking Manager Code -->
+	<script src="adex.html" type="text/javascript"></script>
+
+	<script type="text/javascript">
+
+		if (document.getElementById('google7ads')) {
+			console.log("Yay no ad blocker available! Yay");
+		} else {
+			google7ads = 'Yes';//ad blocker available
+			console.log("hmm blocker available! Oh no");
+			gtag('event', google7ads, {
+				'app_name': 'codebeautify',
+				'event_category': document.getElementById("viewName").value
+			});
+		}
+
+	</script>
+	<!-- End Ads Blocking Manager Code -->
+</body>
+
+</html>

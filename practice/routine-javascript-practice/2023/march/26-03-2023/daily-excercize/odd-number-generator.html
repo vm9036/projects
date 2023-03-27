@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Odd Number Generator</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.9.4/css/bulma.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css" />
+</head>
+
+<body>
+    <div class="container is-fluid">
+        <div class="heading has-text-centered">
+            <h1 class="title">Odd Number Generator</h1>
+        </div>
+        <div class="columns mt-5">
+            <div class="column is-6">
+                <div class="field">
+                    <label class="label">Odd Numbers :</label>
+                    <div class="control">
+                        <textarea id="displayOddNumber" cols="30" rows="10" class="textarea is-success"></textarea>
+                    </div>
+                </div>
+                <div class="field">
+                    <div class="control has-text-centered">
+                        <button class="button is-primary" type="button" onclick="oddNumberGenerator()">Generate Odd
+                            Numbers</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="column is-6">
+                <div class="headingOne has-text-centered is-inline">
+                    <h3 class="title is-size-4">Odd Number Generator Options</h3>
+                </div>
+                <div class="columns mt-3">
+                    <div class="column is-6">
+                        <div class="headingOne is-inline">
+                            <h3 class="title is-size-4">Options For Odd Numbers</h3>
+                        </div>
+                        <div class="field mt-3">
+                            <label class="label">First Number In The Odd Value List :-</label>
+                            <div class="control">
+                                <input type="number" class="input" value="1" id="oddNumberStartList">
+                            </div>
+                        </div>
+                        <div class="field">
+                            <label class="label">Length Of Output Odd Value List :-</label>
+                            <div class="control">
+                                <input type="number" class="input" value="10" id="oddLengthList">
+                            </div>
+                        </div>
+                        <div class="field">
+                            <label class="label">Character Between List Elements :-</label>
+                            <span class="label">(By Default New Line)</span>
+                            <div class="control">
+                                <input type="number" class="input">
+                            </div>
+                        </div>
+                    </div>
+                    <!-- <div class="column is-6">
+                        <div class="headingOne is-inline">
+                            <h3 class="title is-size-4">Growth Of Odd Numbers</h3>
+                        </div> 
+                        <div class="field mt-3">
+                            <div class="control">
+                                <input type="radio" name="oddNumber">
+                                <span class="title is-size-6">Incresing Odd Numbers</span>
+                            </div>
+                            <span>Generate odd numbers from a
+                                smaller value to a larger one.
+                                (1, 3, 5, 7, ...)</span>
+                        </div>
+                        <div class="field">
+                            <div class="control">
+                                <input type="radio" name="oddNumber">
+                                <span class="title is-size-6">Decresing Odd Numbers</span>
+                            </div>
+                            <span>Generate odd numbers from a
+                                larger value to a smaller one.
+                                (-1, -3, -5, -7, ...)</span>
+                        </div>
+                    </div> -->
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <script>
+
+        function oddNumberGenerator() {
+
+            let oddValueList = Number(document.getElementById("oddNumberStartList").value);
+
+            let n = Number(document.getElementById("oddNumberStartList").value);
+
+            let oddValueLengthList = Number(document.getElementById("oddLengthList").value);
+
+            for (let i = oddValueList; i <= n; i++) {
+                for (let j = oddValueLengthList; j <= i; j++) {
+
+o
+                    if (i % 2 != 0) {
+                        document.getElementById("displayOddNumber").value = document.getElementById("displayOddNumber").value + i + "\n";
+                    }
+                }
+            }
+        }
+    </script>
+</body>
+
+</html>

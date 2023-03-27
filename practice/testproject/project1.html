@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -7,6 +8,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.9.4/css/bulma.min.css">
     <title>project</title>
 </head>
+
 <body>
     <div class="container">
         <section class="section">
@@ -51,7 +53,7 @@
                     <div class="field">
                         <label class="label">Output : </label>
                         <div class="control">
-                            <input type="number" id="output" class="input">
+                            <input type="text" id="output" class="input">
                         </div>
                     </div>
                 </div>
@@ -60,35 +62,26 @@
         </section>
     </div>
 
-    <script> 
-        function add()
-        {
-            let a = document.getElementById("number1").value;
-            let b = document.getElementById("number2").value;
-            let c = parseInt(a) + parseInt(b);
-            document.getElementById("output").value = c ;
+    <script>
+        var a = document.getElementById("number1").value;
+        var b =document.getElementById("number2").value;
+        function add() {
+            let  c = a + b;
+            document.getElementById("output").value = c;
         }
-        function sub()
-        {
-            let a = document.getElementById("number1").value;
-            let b = document.getElementById("number2").value;
-            let d = parseInt(a) - parseInt(b);
+        function sub() {
+            let d = a - b;
             document.getElementById("output").value = d;
         }
-        function mul()
-        {
-            let a = document.getElementById("number1").value;
-            let b = document.getElementById("number2").value;
-            let e = parseInt(a) * parseInt(b);
+        function mul() {
+            let e = a * b;
             document.getElementById("output").value = e;
         }
-        function div()
-        {
-            let a = document.getElementById("number1").value;
-            let b = document.getElementById("number2").value;
-            let f = parseFloat(a) / parseFloat(b);
-            document.getElementById("output").value = f; 
+        function div() {
+            let f = a / b;
+            document.getElementById("output").value = f;
         }
     </script>
 </body>
+
 </html>
