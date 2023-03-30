@@ -41,7 +41,7 @@
                 </div>
             </div>
         </div>
-        <!-- Swap Program Starts -->
+        <!-- Swap Program Ends -->
         <!-- ******************* -->
         <hr class="has-background-grey-lighter">
 
@@ -55,7 +55,7 @@
                     <div class="field">
                         <div class="label">Number 1:-</div>
                         <div class="control">
-                            <input type="number" class="input is-success" id="inputNumber1" value="9"
+                            <input type="number" class="input is-success" id="number1" value="9"
                                 oninput="basicCalculator()">
                         </div>
                     </div>
@@ -64,7 +64,7 @@
                     <div class="field">
                         <div class="label">Number 2:-</div>
                         <div class="control">
-                            <input type="number" class="input is-success" id="inputNumber2" value="3"
+                            <input type="number" class="input is-success" id="number2" value="3"
                                 oninput="basicCalculator()">
                         </div>
                     </div>
@@ -112,7 +112,7 @@
                 </div>
             </div>
         </div>
-        <!-- Basic Calculator Program Starts -->
+        <!-- Basic Calculator Program Ends -->
         <!-- ******************************* -->
 
         <hr class="has-background-grey-lighter">
@@ -157,11 +157,39 @@
                 <p id="displaySumAddition" class="button is-info is-light" oninput="betweenAdditonSum()">Additon Sum : 0</p>
             </div>
         </div>
-        <!-- One To N Number Program Starts -->
+        <!-- One To N Number Program Ends -->
         <!-- ******************************* -->
 
         <hr class="has-background-grey-lighter">
 
+        <!-- Draw Table Program Starts -->
+        <div class="box mt-5">
+            <div class="heading has-text-centered">
+                <h1 class="title">Draw Table Program</h1>
+            </div>
+            <div class="columns mt-3">
+                <div class="column is-6">
+                    <div class="field">
+                        <div class="label">Enter Table Row:-</div>
+                        <div class="control">
+                            <input type="number" class="input is-info" id="inputTableRow" value="3"
+                                oninput="drawTable()">
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="field">
+                <div class="control has-text-centered">
+                    <button class="button is-warning" onclick="drawTable()">Draw Table</button>
+                </div>
+            </div>
+
+            <div class="block">
+                <p id="displaySumAddition" class="button is-info is-light" oninput="drawTable()"></p>
+            </div>
+        </div>
+        <!-- Draw Table Program Ends -->
+        <!-- ******************************* -->
 
     </div>
 
@@ -177,8 +205,8 @@
         }
 
         function basicCalculator() {
-            let number1 = Number(document.getElementById("inputNumber1").value);
-            let number2 = Number(document.getElementById("inputNumber2").value);
+            let number1 = Number(document.getElementById("number1").value);
+            let number2 = Number(document.getElementById("number2").value);
 
             let sumAddition, sumSubtraction, sumMultiplication, sumDivision;
 
@@ -195,11 +223,13 @@
             document.getElementById("division").value = sumDivision;
         }
         basicCalculator();
-        var stringOfNum = "";
+
+
         function betweenAdditonSum(){
+            let stringOfNum = " ";
             let addnum1 = Number(document.getElementById("addNumber1").value);
             let addnum2 = Number(document.getElementById("addNumber2").value);
-
+            
            
             let additionSum = 0;
             for(let i = addnum1; i<=addnum2; i++)
@@ -211,9 +241,13 @@
             document.getElementById("displayAddition").value =stringOfNum;
             document.getElementById("displaySumAddition").innerHTML = "Additon Sum : " + additionSum;
         }
-        // betweenAdditonSum();
+        betweenAdditonSum();
 
+        function drawTable(){
+            let row = document.getElementById("inputTableRow").value;
 
+            strTable = "";
+        }
     </script>
 </body>
 
