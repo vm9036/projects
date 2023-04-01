@@ -13,7 +13,7 @@
     <div class="container is-fluid">
         <h1 class="title has-text-centered">Mix Program</h1>
         <!-- Swap Program Starts -->
-        <div class="box mt-5">
+        <!-- <div class="box mt-5">
             <div class="heading has-text-centered">
                 <h1 class="title">Swap Program</h1>
             </div>
@@ -37,10 +37,11 @@
             </div>
             <div class="field">
                 <div class="control has-text-centered">
+                    <input type="checkbox">auto
                     <button class="button is-danger" onclick="swapNumber()">Swap Number</button>
                 </div>
             </div>
-        </div>
+        </div> -->
         <!-- Swap Program Ends -->
         <!-- ******************* -->
         <hr class="has-background-grey-lighter">
@@ -72,6 +73,7 @@
             </div>
             <div class="field">
                 <div class="control has-text-centered">
+                    <input type="checkbox" id="autoPrint" oninput="checkAutomaticPrintValues()" checked>auto
                     <button class="button is-warning" onclick="basicCalculator()">BasciCalculator</button>
                 </div>
             </div>
@@ -117,7 +119,7 @@
 
         <hr class="has-background-grey-lighter">
         <!-- One To N Number Program Starts -->
-        <div class="box mt-5">
+        <!-- <div class="box mt-5">
             <div class="heading has-text-centered">
                 <h1 class="title">One to N Number Basic Addition Sum Program</h1>
             </div>
@@ -143,6 +145,7 @@
             </div>
             <div class="field">
                 <div class="control has-text-centered">
+                    <input type="checkbox" >auto
                     <button class="button is-warning" onclick="betweenAdditonSum()">BasicAdditionSum</button>
                 </div>
             </div>
@@ -150,20 +153,22 @@
             <div class="field">
                 <label class="label">Addition Betweeen One To N :</label>
                 <div class="control">
-                    <textarea name="" id="displayAddition" cols="30" rows="10" class="textarea" onchange="betweenAdditonSum()"></textarea>
+                    <textarea name="" id="displayAddition" cols="30" rows="10" class="textarea"
+                        onchange="betweenAdditonSum()"></textarea>
                 </div>
             </div>
             <div class="block">
-                <p id="displaySumAddition" class="button is-info is-light" oninput="betweenAdditonSum()">Additon Sum : 0</p>
+                <p id="displaySumAddition" class="button is-info is-light" oninput="betweenAdditonSum()">Additon Sum : 0
+                </p>
             </div>
-        </div>
+        </div> -->
         <!-- One To N Number Program Ends -->
         <!-- ******************************* -->
 
         <hr class="has-background-grey-lighter">
 
         <!-- Draw Table Program Starts -->
-        <div class="box mt-5">
+        <!-- <div class="box mt-5">
             <div class="heading has-text-centered">
                 <h1 class="title">Draw Table Program</h1>
             </div>
@@ -172,7 +177,7 @@
                     <div class="field">
                         <div class="label">Enter Table Row:-</div>
                         <div class="control">
-                            <input type="number" class="input is-info" id="inputTableRow" value="3"
+                            <input type="number" class="input is-info" id="inputTableRow" value="5"
                                 oninput="drawTable()">
                         </div>
                     </div>
@@ -180,14 +185,15 @@
             </div>
             <div class="field">
                 <div class="control has-text-centered">
+                    <input type="checkbox">auto
                     <button class="button is-warning" onclick="drawTable()">Draw Table</button>
                 </div>
             </div>
 
             <div class="block">
-                <p id="displaySumAddition" class="button is-info is-light" oninput="drawTable()"></p>
+                <p id="displayTable" oninput="drawTable()"></p>
             </div>
-        </div>
+        </div> -->
         <!-- Draw Table Program Ends -->
         <!-- ******************************* -->
 
@@ -195,14 +201,13 @@
 
 
     <script>
-        function swapNumber() 
-        {
-            let swap = document.getElementById("inputNumber1").value;
+        // function swapNumber() {
+        //     let swap = document.getElementById("inputNumber1").value;
 
-            document.getElementById("inputNumber1").value = document.getElementById("inputNumber2").value;
+        //     document.getElementById("inputNumber1").value = document.getElementById("inputNumber2").value;
 
-            document.getElementById("inputNumber2").value = swap;
-        }
+        //     document.getElementById("inputNumber2").value = swap;
+        // }
 
         function basicCalculator() {
             let number1 = Number(document.getElementById("number1").value);
@@ -222,32 +227,45 @@
             sumDivision = number1 / number2;
             document.getElementById("division").value = sumDivision;
         }
-        basicCalculator();
-
-
-        function betweenAdditonSum(){
-            let stringOfNum = " ";
-            let addnum1 = Number(document.getElementById("addNumber1").value);
-            let addnum2 = Number(document.getElementById("addNumber2").value);
-            
-           
-            let additionSum = 0;
-            for(let i = addnum1; i<=addnum2; i++)
-            {
-                stringOfNum = stringOfNum + "+" + i;
-
-                additionSum = additionSum + i;
+        function checkAutomaticPrintValues() {
+            let checkEl = document.getElementById("autoPrint");
+            // console.log("test:->" + checkEl.checked)
+            if (checkEl.checked == true) {
+                basicCalculator();
             }
-            document.getElementById("displayAddition").value =stringOfNum;
-            document.getElementById("displaySumAddition").innerHTML = "Additon Sum : " + additionSum;
         }
-        betweenAdditonSum();
+        // basicCalculator();
 
-        function drawTable(){
-            let row = document.getElementById("inputTableRow").value;
 
-            strTable = "";
-        }
+        // function betweenAdditonSum() {
+        //     let stringOfNum = " ";
+        //     let addnum1 = Number(document.getElementById("addNumber1").value);
+        //     let addnum2 = Number(document.getElementById("addNumber2").value);
+
+
+        //     let additionSum = 0;
+        //     for (let i = addnum1; i <= addnum2; i++) {
+        //         stringOfNum = stringOfNum + "+" + i;
+
+        //         additionSum = additionSum + i;
+        //     }
+        //     document.getElementById("displayAddition").value = stringOfNum;
+        //     document.getElementById("displaySumAddition").innerHTML = "Additon Sum : " + additionSum;
+        // }
+        // betweenAdditonSum();
+
+        // function drawTable() {
+        //     let row = document.getElementById("inputTableRow").value;
+
+        //     let strTable = "<div class='box'><h1 class='title'>Draw Table</h1><table class='table is-bordered is-striped'>";
+
+        //     for (let i = 0; i <= row; i++) {
+        //         strTable = strTable + "<tr><td>" + i + "Number" + "</td></tr>";
+        //     }
+        //     strTable = strTable + "</table>" + "</div>";
+        //     document.getElementById("displayTable").innerHTML = strTable;
+        // }
+        // drawTable();
     </script>
 </body>
 

@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Upi Transaction</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.9.4/css/bulma.min.css">
+</head>
+
+<body>
+    <div class="container">
+        <div class="box">
+            <h1 class="title">Upi Transaction Program</h1>
+            <div class="columns">
+                <div class="column is-3">
+                    <div class="field">
+                        <lable class="label">Upi Pin</lable>
+                        <div class="control">
+                            <input type="text" id="inputUpiPin" class="input is-info" value="4569">
+                        </div>
+                    </div>
+                </div>
+                <div class="column is-3">
+                    <div class="field">
+                        <lable class="label">Balance</lable>
+                        <div class="control">
+                            <input type="text" id="inputBalance" class="input is-info" value="5000">
+                        </div>
+                    </div>
+                </div>
+                <div class="column is-3">
+                    <div class="field">
+                        <lable class="label">Entered Pin</lable>
+                        <div class="control">
+                            <input type="text" id="inputEnteredPin" class="input is-info" required>
+                        </div>
+                    </div>
+                </div>
+                <div class="column is-3">
+                    <div class="field">
+                        <lable class="label">Transaction Amount</lable>
+                        <div class="control">
+                            <input type="text" id="inputTranAmt" class="input is-info" required>
+                        </div>
+                    </div>
+                </div>
+            </div>
+ 
+            <div class="field">
+                <div class="control has-text-centered">
+                    <button class="button is-primary" onclick="upiTransaction()">Click</button>
+                </div>
+            </div>
+
+            <div class="field">
+                <div class="control">
+                    <input type="text" id="displayMsg" class="input">
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <script>
+        function upiTransaction(){
+
+            let upiPin = document.getElementById("inputUpiPin").value;
+            let balance = document.getElementById("inputBalance").value;
+            let enteredPin = document.getElementById("inputEnteredPin").value;
+            let transactionAmount = document.getElementById("inputTranAmt").value;
+
+            if(enteredPin == upiPin)
+            {
+                if(transactionAmount <= balance)
+                {
+                    document.getElementById("displayMsg").value = "Transaction Successful."
+                }
+                else
+                {
+                    document.getElementById("displayMsg").value = "Transaction Failed. Insufficient Balance."
+                }
+            }
+            else
+            {
+                document.getElementById("displayMsg").value = "Transaction Failed. Invalid PIN."
+            }
+        }
+    </script>
+</body>
+
+</html>
