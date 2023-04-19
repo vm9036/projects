@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
+    <title>fibonacci Series</title>
+</head>
+
+<body>
+    <div class="container">
+        <div class="box">
+            <div class="block">
+                <h1 class="title">Fibonacci Series Program</h1>
+            </div>
+            <div class="field">
+                <label class="label">Enter Number:</label>
+                <div class="control">
+                    <input class="input" type="text" id="inputNumber">
+                </div>
+            </div>
+            <div class="field">
+                <div class="control has-text-centered">
+                    <button onclick="fiboSeries()" class="button is-info">Click</button>
+                </div>
+            </div>
+            <div class="block">
+                <p id="displayFiboSeries"></p>
+            </div>
+        </div>
+    </div>
+    <script>
+        function fiboSeries() {
+            let inputN = document.getElementById("inputNumber").value;
+            let a = 0, b = 1, c = 0, d = " ";
+            for (let i = 1; i <= inputN; i++) {
+                a = b;
+                b = c;
+                c = a + b;
+                // c = d;
+                console.log(d);
+                d = d + c + "\t";
+                document.getElementById("displayFiboSeries").innerHTML = d;
+            }
+        }
+    </script>
+</body>
+
+</html>

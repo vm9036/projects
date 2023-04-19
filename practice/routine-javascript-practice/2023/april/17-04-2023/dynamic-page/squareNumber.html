@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Square Number Print </title>
+    <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.9.4/css/bulma.min.css"> -->
+</head>
+<body>
+    <h1>Square Number Print</h1>
+    <input type="text" id="inputN" value="10">
+    <button onclick="square()">Cilck</button>
+    <p id="displaySquare"></p>
+
+    <script>
+        function square()
+        {
+            let n = document.getElementById("inputN").value;
+            let strSquare = "<table border='1'><tr><th>i</th><th>Square</th></tr>";
+
+            for(let i = 0; i<=n; i++)
+            {
+                Square = i * i;
+                strSquare = strSquare + "<tr>"+"<td>" + i +"</td>"+"<td align='center'>"+ +Square +"</td>"+"</tr>";
+            }
+            strSquare = strSquare + "</table>" +"\n";
+            document.getElementById("displaySquare").innerHTML =strSquare;
+            console.log(strSquare);
+        }
+    </script>
+
+</body>
+</html>

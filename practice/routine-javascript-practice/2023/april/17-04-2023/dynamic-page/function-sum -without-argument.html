@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Function With Sum</title>
+</head>
+
+<body>
+    <input type="text" id="inputStart" value="10">
+    <input type="text" id="inputEnd" value="5">
+    <button onclick="sum()">Sum</button>
+    <p id="displaySum"></p>
+
+    <script>
+        function sum() {
+
+
+            let displaySum = logicSum();
+            document.getElementById("displaySum").innerHTML = displaySum;
+        }
+
+        function logicSum() {
+            let start = Number(document.getElementById("inputStart").value);
+            let end = Number(document.getElementById("inputEnd").value);
+            let sum = 0;
+            sum = start + end;
+            return sum;
+        }
+    </script>
+</body>
+
+</html>

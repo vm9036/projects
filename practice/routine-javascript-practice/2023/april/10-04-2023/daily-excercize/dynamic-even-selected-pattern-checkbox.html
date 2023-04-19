@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dynamic Even Selected Pattern</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
+</head>
+<body>
+    <div class="container">
+        <div class="box">
+            <div class="block">
+                <h1 class="title ">Dynamic Even Selected Pattern With checkBox</h1>
+            </div>
+            <div class="field">
+                 <label class="label">Enter Number :-</label>
+                 <div class="control">
+                    <input type="number" id="inputNumber" class="input" placeholder="Enter Number" value="5" oninput="patternEvenNum()">
+                 </div>
+            </div>
+            <div class="field">
+                <div class="control">
+                    <input type="checkbox" id="checkBox" oninput="patternEvenNum()" checked> "Check Even Number"
+                </div>
+            </div>
+            <div class="field">
+                <div class="control">
+                    <button class="button is-primary" onclick="patternEvenNum()">Submit</button>
+                </div>
+            </div>
+            <div class="block">
+                <p id="displayPattern" onchange="patternEvenNum()"></p>
+            </div>
+        </div>
+    </div>
+
+
+    <script>
+        function patternEvenNum() {
+            let row = document.getElementById("inputNumber").value;
+
+            let strPattern = "<table class='table is-bordered'><tbody><tr>";
+                counter = 1;
+
+            for(let i = 0; i<=row; i++)
+            {
+                for(let j = 0; j<=row; j++)
+                {
+                    if(counter%2 == 0 && checkBox.checked == true)
+                    {
+                        strPattern = strPattern +"<td class='is-selected'>"+ counter + "</td>";
+                        counter =counter + 1;
+                    } 
+                    else{
+                        strPattern = strPattern +"<td>"+ counter + "</td>";
+                        counter =counter + 1;
+                    }
+                }
+                strPattern = strPattern + "</tr>";
+            }
+            strPattern = strPattern +"</tbody></table>";
+            document.getElementById("displayPattern").innerHTML = strPattern;
+        }
+        patternEvenNum();
+    </script>
+</body>
+</html>

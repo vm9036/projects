@@ -54,11 +54,22 @@
 
             let naturalNumber = parseInt(document.getElementById("inputNaturalNumber").value);
 
-            let allNaturalNumbersSum = 0, naturalNumbersMutiplesSum = 0;
+            let allNaturalNumbersSum = 0, naturalNumbersMutiplesSum = 0,displayNaturalNumber=" ";
 
-            for(let i = 1; i<naturalNumber; i++)
+            for(let i = 1; i<=naturalNumber; i++)
             {
-                document.getElementById("displayAllNaturalNumber").value = document.getElementById("displayAllNaturalNumber").value + " " + " + " + " "+ i;
+                
+                if(i < naturalNumber)
+                {
+                    displayNaturalNumber = displayNaturalNumber + i +" "+ "+" + " ";
+                    document.getElementById("displayAllNaturalNumber").value = displayNaturalNumber;
+                }
+                else
+                {
+                    displayNaturalNumber = displayNaturalNumber + i + " ";
+                    document.getElementById("displayAllNaturalNumber").value = displayNaturalNumber;
+                }
+
 
                 allNaturalNumbersSum = allNaturalNumbersSum + i;
 

@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pattern 16</title>
+</head>
+
+<body>
+    <h1> Pattern 16</h1>
+
+    <input type="text" id="inputNumber" value="5">
+    <button onclick="pattern16()">Click</button>
+    <p id="displayPattern"></p>
+
+
+    <script>
+        function pattern16() {
+            let n = Number(document.getElementById("inputNumber").value);
+            let i, j;
+            strPattern = "";
+            debugger;
+            for (i = 1; i <= n; i++) {
+                for (j = 1; j <= n - i; j++) {
+                    strPattern = strPattern + "&nbsp;&nbsp;" + "\t";
+                }
+
+                for (k = 1; k <= i; k++) {
+                    if (i == n || k == 1) {
+
+                        strPattern = strPattern + "*" + "\t";
+                    }
+                    else {
+                        if (k == i) {
+                            strPattern = strPattern + "*" + "\t";
+                        }
+                        else {
+                            strPattern = strPattern + "&nbsp;&nbsp;" + "\t";
+                        }
+                    }
+                }
+                strPattern = strPattern + "<br>";
+            }
+            document.getElementById("displayPattern").innerHTML = strPattern;
+        }
+    </script>
+</body>
+
+</html>

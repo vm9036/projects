@@ -52,11 +52,12 @@
             let number2 = Number(document.getElementById("inputNumber1").value); //number2 = Ending Value
             // let flag = 0;
             let sum = 0;
+            let displayPrime = "";
             // let i, j;
             // starting number and ending number
 
             // looping from number1 to number2
-            for (let i = number1; i <= number2; i++) {
+            for (let i = number1; i < number2; i++) {
                 let flag = 0;
 
                 // looping through 2 to user input number
@@ -71,7 +72,9 @@
                 // if number greater than 1 and not divisible by other numbers
                 if (i > 1 && flag == 0) {
                     // console.log(i);
-                    document.getElementById("printNumber").value = document.getElementById("printNumber").value + "+" + i +" ";
+                    displayPrime = displayPrime + " +" + i + " ";
+                    document.getElementById("printNumber").value = displayPrime;
+                    // document.getElementById("printNumber").value = document.getElementById("printNumber").value + "+" + i +" ";
 
                     sum = sum + i;
                 }

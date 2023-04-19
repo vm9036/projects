@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Number Pattern</title>
+</head>
+<body>
+    <input type="text" id="inputN" value="5">
+    <button onclick="numberPattern()">Click</button>
+    <p id="displayNumberPattern"></p>
+
+    <script>
+        function numberPattern() {
+            let n = Number(document.getElementById("inputN").value);
+            let strNumPattern = "";
+            
+            for(let i= 1; i<=n; i++)
+            {
+                for(let j = 1; j<=i;j++)
+                {
+                    strNumPattern = strNumPattern + i + "\t";
+                }
+                strNumPattern = strNumPattern + "<br>";
+            }
+            document.getElementById("displayNumberPattern").innerHTML = strNumPattern;
+        }
+    </script>
+</body>
+</html>

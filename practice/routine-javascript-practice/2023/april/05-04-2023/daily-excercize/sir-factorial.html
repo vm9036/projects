@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
+    <title>Factorial Number</title>
+</head>
+
+<body>
+    <div class="container p-5">
+        <input id="firstValue" type="text" class="input is-small">
+        <div class="column has-text-centered">
+            <button onclick="createFactorialNumber()" class="button is-info">Click</button>
+        </div>
+        <p id="printFactorialNumber"></p>
+    </div>
+    <!-- <script>
+        function createFactorialNumber() {
+            let firstValue = Number(document.getElementById("firstValue").value);
+            // document.getElementById("printFactorialNumber").innerHTML = getFactorial(firstValue);
+
+            let factStr = "";
+
+            for(let i = 1; i<=firstValue; i++)
+            {
+                factStr = factStr + getFactorial(i) + "\t";
+            }
+            document.getElementById("printFactorialNumber").innerHTML = factStr;
+        }
+        function getFactorial(number) {
+            let factorial = 1;
+            for (i = 1; i <= number; i++) {
+                factorial = factorial * i;
+            }
+            console.log(factorial);
+            return factorial;
+        }
+    </script> -->
+<!-- Created satishbhai Logic -->
+<script>
+    function createFactorialNumber() {
+        let firstValue = Number(document.getElementById("firstValue").value);
+        document.getElementById("printFactorialNumber").innerHTML = getFactorial(firstValue);
+        // document.getElementById("printFactorialNumber").innerHTML = factorial;
+    }
+    function getFactorial(number) {
+        let factorial = 1;
+        let storeFactorial = "";
+        for (i = 1; i <= number; i++) {
+            factorial = factorial * i;
+            storeFactorial = storeFactorial + factorial + " "; 
+        }
+        // console.log(factorial);
+        return storeFactorial;
+    }
+</script>
+</body>
+</html>

@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simple Prime Number Print</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
+</head>
+<body>
+    <div class="container">
+        <div class="box">
+            <div class="block">
+                <h1 class="title">Simple Prime Number Print Program</h1>
+            </div>
+            <div class="field">
+                <label class="label">Enter Number :-</label>
+                <div class="control">
+                    <input type="text" class="input" id="firstValue">
+                </div>
+            </div>
+            <div class="field">
+                <div class="control has-text-centered">
+                    <button onclick="primeNumber()" class="button is-danger">
+                        Click
+                    </button>
+                </div>
+            </div>
+            <div class="block">
+                <p id="printPrimeNumber"></p>
+            </div>
+        </div>
+    </div>
+    <script>
+        function primeNumber() {
+            // debugger;
+            let firstValue = Number(document.getElementById("firstValue").value);
+            let pNumber = 0;
+            let storePrimeNumber = "";
+            for (let i = 1; i <= firstValue; i++) {
+                for (let j = 1; j <= i; j++) {
+                    if (i % j == 0) {
+                        pNumber = pNumber + 1;
+                    }
+                }
+                if(pNumber == 2){
+                    storePrimeNumber = storePrimeNumber + i +"  ";
+                }
+                pNumber = 0;
+            }
+            document.getElementById("printPrimeNumber").innerHTML = storePrimeNumber;
+        }
+    </script>
+</body>
+</html>

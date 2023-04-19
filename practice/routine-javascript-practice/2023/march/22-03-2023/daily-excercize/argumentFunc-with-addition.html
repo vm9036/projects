@@ -45,40 +45,6 @@
                         </div>
                     </div>
 
-                    <!-- <div class="columns">
-                        <div class="column is-12">
-                            <div class="field">
-                                <label class="label">Addition :</label>
-                                <div class="control">
-                                    <textarea name="" id="displayAdditionNumber" cols="5" rows="5" class="textarea"></textarea>
-                                </div>
-                            </div>
-                        </div>
-                         <div class="column">
-                            <div class="field">
-                                <label class="label">Subtraction :</label>
-                                <div class="control">
-                                    <input type="text" class="input is-success" id="subtractionSum">
-                                </div>
-                            </div>
-                        </div> 
-                        <div class="column">
-                            <div class="field">
-                                <label class="label">Multiplication :</label>
-                                <div class="control">
-                                    <input type="text" class="input is-success" id="multiplicationSum">
-                                </div>
-                            </div>
-                        </div>
-                        <div class="column">
-                            <div class="field">
-                                <label class="label">Division :</label>
-                                <div class="control">
-                                    <input type="text" class="input is-success" id="divisionSum">
-                                </div>
-                            </div>
-                        </div>
-                    </div> -->
                     <div class="block has-text-centered">
                         <p id="additionSum" class="button is-warning is-large">Addition Sum : 0</p>
                     </div>
@@ -93,14 +59,15 @@
             let firstNumber = parseInt(document.getElementById("inputFirstNumber").value);
             let secondNumber = parseInt(document.getElementById("inputSecondNumber").value);
 
-            additionSum(firstNumber, secondNumber);
+           let finalSum = additionSum(firstNumber, secondNumber);
+           document.getElementById("additionSum").innerHTML = "Addition Sum : "+finalSum;
         }
 
         function additionSum(firstNumber, secondNumber){
             var displayAdditionSum = 0,
             
             displayAdditionSum = firstNumber + secondNumber;
-            document.getElementById("additionSum").innerHTML = "Addition Sum : "+displayAdditionSum;
+            
 
             return displayAdditionSum;
         }

@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
+    <title>Problem 7 In Projectelur</title>
+</head>
+<body>
+    <div class="container p-5">
+        <input id="userEnteredFirstValue" type="text" class="input is-small" value="5">
+        <div class="column has-text-centered">
+            <button onclick="starPatternFormat()" class="button is-info">
+                Click
+            </button>
+        </div>
+        <p id="printPrimeNumber"></p>
+    </div>
+    <script>
+        //     var counting = 1;
+        // function starPatternFormat() {
+        //     debugger;
+        //     let userEnteredFirstValue = Number(document.getElementById("userEnteredFirstValue").value);
+        //     let counter = 0;
+        //     let storePrimeNumber = "";
+        //     for (let i =1 ; counting <= userEnteredFirstValue; i++) {
+        //         for (let j = 1; j <= i; j++) {
+        //             if (i % j == 0) {
+        //                 counter = counter + 1;
+        //             }
+        //         }
+        //         if (counter == 2) {
+        //             storePrimeNumber = storePrimeNumber + i + " ";
+        //             counting = counting+1;
+        //         }
+        //         counter = 0;
+        //     }
+        //     document.getElementById("printPrimeNumber").innerHTML = storePrimeNumber;
+        // }
+        function starPatternFormat() {
+            var counting = 0;
+            let userEnteredFirstValue = Number(document.getElementById("userEnteredFirstValue").value);
+            let counter = 0;
+            let storePrimeNumber = "";
+            for (let i = 1 ; ; i++) {
+                if(counting == userEnteredFirstValue){
+                    break;
+                }
+                for (let j = 1; j <= i; j++) {
+                    if (i % j == 0) {
+                        counter = counter + 1;
+                    }
+                }
+                if (counter == 2) {
+                    storePrimeNumber = storePrimeNumber + i + " ";
+                    counting = counting + 1;
+                }
+                counter = 0;
+            }
+            document.getElementById("printPrimeNumber").innerHTML = storePrimeNumber;
+        }
+    </script>
+</body>
+</html>

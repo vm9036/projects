@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Strong Number</title>
+</head>
+
+<body>
+    <input type="text" value="145" id="strongNumber">
+    <button onclick="strongNum()">click</button>
+    <p id="displayStrongNumber"></p>
+
+    <script>
+        function strongNum() {
+            let num = document.getElementById("strongNumber").value;
+            // let factorial = getMeNextFactorial(factNum);
+            // document.getElementById("displayStrongNumber").innerHTML = factorial;
+
+            let fact, last_digit, sum = 0, temp,i;
+
+            /* Copy the value of num to a temporary variable */
+            temp = num;
+
+            /* Find sum of factorial of digits */
+            while (num > 0) {
+
+                /* Get last digit of num */
+                lastDigit = num % 10;
+                console.log("lastDigit :-> "+lastDigit);
+                
+                /* Find factorial of last digit */
+                fact = 1;
+                for (i = 1; i <= lastDigit; i++) {
+                    fact = fact * i;
+                    console.log(fact);
+                }
+
+                /* Add factorial to sum */
+                sum = sum + fact;
+                console.log("Sum :->"+sum)
+                num = parseInt(num / 10);
+                console.log("num :-> "+num);
+            }
+            if (sum == temp) {
+                console.log(temp + " is a Strong number");
+                document.getElementById("displayStrongNumber").innerHTML = temp + "is a Strong number";
+            }
+            else {
+                console.log(temp + " is not a Strong number");
+                document.getElementById("displayStrongNumber").innerHTML = temp + "is not a Strong number";
+            }
+        }
+
+        // function getMeNextFactorial(factNum) {
+        //     let fact = 1;
+        //     let num;
+        //     for (i = 1; i <= factNum; i++) {
+        //         fact = fact * i;
+        //     }
+        //     console.log(fact);
+        //     return fact;
+        // }
+    </script>
+</body>
+
+</html>

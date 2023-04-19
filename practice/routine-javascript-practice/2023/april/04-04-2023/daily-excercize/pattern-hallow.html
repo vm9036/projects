@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hollow square star pattern - javascript</title>
+</head>
+
+<body>
+    <h1>Hollow square star pattern in javascript</h1>
+
+    <script>
+        let n = 5; // row or column count
+        // defining an empty string
+        let string = "";
+
+        for (let i = 0; i < n; i++) {
+            // external loop
+            for (let j = 0; j < n; j++) {
+                // internal loop
+                if (i === 0 || i === n - 1) {
+                    string += "*";
+                } else {
+                    if (j === 0 || j === n - 1) {
+                        string += "*";
+                    } else {
+                        string += " ";
+                    }
+                }
+            }
+            // newline after each row
+            string += "\n";
+        }
+        // printing the string
+        document.write(`<pre>${string}</pre>`);
+    </script>
+</body>
+
+</html>

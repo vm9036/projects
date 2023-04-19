@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Patteren 19</title>
+</head>
+
+<body>
+    <h1> Pattern 19</h1>
+
+    <input type="text" id="inputNumber" value="5">
+    <button onclick="patternTriangle()">Click</button>
+    <p id="displayPattern"></p>
+
+
+    <script>
+        function patternTriangle() {
+            // let inputN = document.getElementById("inputNumber").value;
+
+            let i, j;
+            strPattern = "";
+
+            for (i = 1; i <= 5; i++) {
+                for (j = 1; j <= 9; j++) {
+                    if(i==5 )
+                    {
+                        strPattern = strPattern +"&nbsp;&nbsp;" + "*" + 
+                        "&nbsp;&nbsp;";
+                       
+                    }
+                    // else if()
+                    // {
+                    //     strPattern = strPattern +"&nbsp;&nbsp;" + "*" + 
+                    //     "&nbsp;&nbsp;";
+                    //     document.getElementById("displayPattern").innerHTML = strPattern;
+                    // }
+                    else
+                    {
+                        strPattern = strPattern +"&nbsp;&nbsp;"+ "1" +"&nbsp;&nbsp;";
+                        document.getElementById("displayPattern").innerHTML = strPattern;
+                    }
+                }
+                strPattern = strPattern + "<br>";
+            }
+            document.getElementById("displayPattern").innerHTML = strPattern;
+        }
+    </script>
+</body>
+
+</html>

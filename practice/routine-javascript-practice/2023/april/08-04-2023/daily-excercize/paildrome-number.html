@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Palidrome Number</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
+</head>
+
+<body>
+    <div class="container">
+        <div class="box">
+            <div class="block">
+                <h1 class="title">Palidrome Number</h1>
+            </div>
+            <div class="field">
+                <label class="label">Enter Number : </label>
+                <div class="control">
+                    <input type="number" id="inputPaliNum" class="input" value="369" />
+                </div>
+            </div>
+            <div class="field">
+                <div class="control">
+                    <button class="button is-info" onclick="palidromeNum()">Click</button>
+                </div>
+            </div>
+            <div class="block">
+                <p id="displayPalidromeNumber"></p>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function palidromeNum() {
+            let orgNum = Number(document.getElementById("inputPaliNum").value);
+            let cOrgNum = orgNum;
+            let disPaliStr = " ";
+            // let counter = 0;
+            for (let i = 0; cOrgNum !=0; i++) {
+                for (let j = 0; j <= i; j++) {
+                    disPaliStr = disPaliStr + getMeNextPaliNum(cOrgNum) + "\t";
+                    cOrgNum = parseInt(cOrgNum / 10);
+                    console.log("cOrgNumber:->" + cOrgNum);
+                    // counter++;
+                    if(cOrgNum == 0)
+                    {
+                        break;
+                    }
+                }
+                disPaliStr = disPaliStr + "<br>";
+            }
+            document.getElementById("displayPalidromeNumber").innerHTML = disPaliStr;
+        }
+
+        function getMeNextPaliNum(cOrgNum) {
+
+            let storePaliNumber = cOrgNum % 10;
+            return storePaliNumber;
+        }
+    </script>
+</body>
+
+</html>

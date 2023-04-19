@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Patter4</title>
+</head>
+<body>
+    <h1>Pattern 4 Number With counter</h1>
+
+    <input type="number" value="4" id="inputN" oninput="patternNumber()">
+    <button onclick="patternNumber()">Click</button>
+    <p id="displayNumberPtn"></p>
+
+    <script>
+        function patternNumber() {
+            let n = Number(document.getElementById("inputN").value);
+            let strNumPtn = "";
+            let counter = 10;
+
+            // for(let i = 1; i<=n ; i++)
+            // {
+            //     for(let j = 1; j<=i; j++)
+            //     {
+            //         strNumPtn = strNumPtn + counter + "&nbsp;&nbsp;";
+            //         counter = counter + 1;
+            //     }
+            //     strNumPtn = strNumPtn + "<br>";
+            // }
+
+
+            for(let i = n; i>=1; i--)
+            {
+                for(let j = 1; j<=n-i; j++)
+                {
+                    strNumPtn = strNumPtn + "-" + "\t";
+                }
+                for(let k = 1; k<=i; k++)
+                {
+                    strNumPtn = strNumPtn + counter + "&nbsp;&nbsp;";
+                    counter = counter - 1;
+                }
+                strNumPtn = strNumPtn + "<br>";
+            }
+            document.getElementById("displayNumberPtn").innerHTML = strNumPtn;
+
+        }
+        patternNumber();
+    </script>
+</body>
+</html>

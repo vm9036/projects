@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Factorial Sum Pattern</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.9.4/css/bulma.min.css">
+</head>
+
+<body>
+    <div class="container">
+        <div class="box">
+            <h1 class="title">Factorial Sum Pattern</h1>
+
+            <div class="field">
+                <label class="label">Enter No.</label>
+                <div class="control">
+                    <input type="text" class="input" id="inputN" value="5">
+                </div>
+            </div>
+            <div class="field">
+                <div class="control">
+                    <button class="button" onclick="factorialSum()">Factorial Pattern</button>
+                </div>
+            </div>
+            <div class="block">
+                <p id="displayFactSumPtn"></p>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function factorialSum() {
+
+            let inputNumber = document.getElementById("inputN").value;
+            let strTable = "<div class='table-container'><table class='table is-bordered'><h1 class='title'>Factorial Sum Pattern</h1><tr>"
+                
+            let counter = 1;
+            for (let i = 1; i <= inputNumber; i++) 
+            {
+                for (let j = 1; j <= i; j++) 
+                {
+                    let fact = 1;
+                    for (let f = 1; f <= counter; f++) 
+                    {
+                        fact = fact * f
+                        strTable = strTable + "<td>" + fact + "</td>";
+                    }
+                    counter++;
+                }
+                strTable = strTable + "</tr>";
+            }
+            strTable = strTable + "</table></div>";
+            document.getElementById("displayFactSumPtn").innerHTML = strTable;
+        }
+    </script>
+</body>
+
+</html>

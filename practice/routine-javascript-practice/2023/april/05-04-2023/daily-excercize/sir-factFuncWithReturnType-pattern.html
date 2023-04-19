@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
+    <title>Factorial Number</title>
+</head>
+
+<body>
+    <!-- Factorial With Function Argument And Return Type With Pattern -->
+    <div class="container p-5">
+        <div class="box">
+            <div class="block">
+                <h1 class="title">Factorial With Function Argument And Return Type With Pattern</h1>
+            </div>
+
+            <div class="field">
+                <label class="label">Enter Number:</label>
+                <div class="control">
+                    <input id="firstValue" type="text" class="input is-small">
+                </div>
+            </div>
+            <div class="field">
+                <div class="control has-text-centered">
+                    <button onclick="createFactorialNumber()" class="button is-info">Click</button>
+                </div>
+            </div>
+            <div class="block">
+                <p id="printFactorialNumber"></p>
+            </div>
+        </div>
+    </div>
+    <script>
+        function createFactorialNumber() {
+            let firstValue = Number(document.getElementById("firstValue").value);
+            let counter = 1;
+            let strFact = "";
+            for (let i = 1; i <= firstValue; i++) {
+                for (let j = 1; j <= i; j++) {
+                    strFact = strFact + " " + getFactorial(counter) + " (" + counter + ") ";
+                    counter++;
+                }
+                strFact = strFact + "<br>";
+            }
+            document.getElementById("printFactorialNumber").innerHTML = strFact;
+        }
+        function getFactorial(number) {
+            let factorial = 1;
+            for (let i = 1; i <= number; i++) {
+                factorial = factorial * i;
+            }
+            console.log(factorial);
+            return factorial;
+        }
+    </script>
+</body>
+
+</html>

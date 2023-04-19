@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prime Number Pattern</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.9.4/css/bulma.min.css">
+</head>
+
+<body>
+    <div class="container">
+        <div class="box">
+            <h1 class="title">Prime Number Pattern</h1>
+            <div class="field">
+                <label for="input">Enter a number:</label>
+                <div class="control">
+                    <input type="number" class="input" id="inputN" value="5">
+                </div>
+            </div>
+            <div class="field">
+                <div class="control">
+                    <button class="button is-primary" onclick="primeNumPattern()">Prime Number Pattern</button>
+                </div>
+            </div>
+            <div class="block">
+                <p id="displayPrimeNumPattern"></p>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function primeNumPattern() {
+            debugger;
+            let inputNumber = document.getElementById("inputN").value;
+            let strPrime = "";
+            for (let i = 1; i <= inputNumber; i++) {
+                let flag = 0;
+
+                // looping through 2 to user input number
+                for (let j = 2; j < i; j++) {
+                    if (i % j == 0) {
+                        flag = 1;
+                        break;
+                    }
+                }
+
+                // if number greater than 1 and not divisible by other numbers
+                if (i > 1 && flag == 0) {
+                    // console.log(i);
+                    // document.getElementById("displayPrimeNumPattern").innerHTML = document.getElementById("displayPrimeNumPattern").innerHTML+ " "+i;
+                    strPrime = strPrime + i + "\t";
+                    document.getElementById("displayPrimeNumPattern").innerHTML = strPrime;
+                    console.log(strPrime);
+                }
+            }
+        }
+    </script>
+</body>
+
+</html>

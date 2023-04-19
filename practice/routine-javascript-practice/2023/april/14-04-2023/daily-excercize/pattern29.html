@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pattern 29</title>
+</head>
+
+<body>
+    <h1> Pattern 29</h1>
+
+    <input type="text" id="inputNumber" value="5">
+    <button onclick="pattern29()">Click</button>
+    <p id="displayPattern"></p>
+
+
+    <script>
+        function pattern29() {
+            let n = Number(document.getElementById("inputNumber").value);
+            let i, j;
+            strPattern = "";
+
+            for (i = n; i>=1; i--) {
+                for (j = 1; j <= n - i; j++) {
+                    strPattern = strPattern + "&nbsp;&nbsp;" + "\t";
+                }
+                for (k = 1; k <= i; k++) {
+                        if(k == 1 || j == 1){
+                            strPattern = strPattern + "*" + "\t";
+                        }
+
+                        else{
+                            strPattern = strPattern + "&nbsp;&nbsp;" + "\t";
+                        }
+                }
+                for (l = 1; l <= n - j; l++) {
+                        if(l == n-j || j==1)
+                        {
+                            strPattern = strPattern + "*" + "\t";
+                        }
+                        else
+                        {
+                            strPattern = strPattern + "&nbsp;&nbsp;" + "\t";
+                        }
+                }
+                strPattern = strPattern + "<br>";
+            }
+
+            for (i = 2; i <= n; i++) {
+                for (j = 1; j <= n - i; j++) {
+                    strPattern = strPattern + "&nbsp;&nbsp;" + "\t";
+                }
+                for (k = 1; k <= i; k++) {
+                        if(k==1 || i==n){
+                            strPattern = strPattern + "*" + "\t";
+                        }
+                        else{
+                            strPattern = strPattern + "&nbsp;&nbsp;" + "\t";
+                        }
+                }
+                for (l = 2; l <= i; l++) {
+                        if(i==l || i==n){
+                            strPattern = strPattern + "*" + "\t";
+                        }
+                        else{
+                            strPattern = strPattern + "&nbsp;&nbsp;" + "\t";
+                        }
+                }
+                strPattern = strPattern + "<br>";
+            }
+           
+            document.getElementById("displayPattern").innerHTML = strPattern;
+        }
+    </script>
+</body>
+
+</html>

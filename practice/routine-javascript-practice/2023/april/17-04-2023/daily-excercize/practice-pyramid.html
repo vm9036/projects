@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Practice Pyramid Pattern</title>
+</head>
+<body>
+    <input type="text" id="inputN" value="5">
+    <button onclick="pyramidPattern()">Click</button>
+    <p id="displayPyramid"></p>
+
+
+    <script>
+        function pyramidPattern() {
+            let m=1;
+            let n = Number(document.getElementById("inputN").value);
+            let strPattern = " ";
+            
+            for(let i = 1; i<=n; i++)
+            {
+                for(let j =1; j<=n-i; j++)
+                {
+                    strPattern = strPattern + "&nbsp;&nbsp;" + "\t";
+                }
+                for(let k=1; k<=i; k++)
+                {
+                    strPattern = strPattern + "*" +"\t";
+                }
+                for(let l=2;l<=i;l++)
+                {
+                    strPattern = strPattern + "*" +"\t"; 
+                }
+                strPattern = strPattern + "<br>";
+        
+            }
+
+
+            // second logic
+            // for(let i = 1; i<=n; i++)
+            // {
+            //     for(let j =1; j<=n-i; j++)
+            //     {
+            //         strPattern = strPattern + "&nbsp;&nbsp;" + "\t";
+            //     }
+            //     for(let k=1; k<=m; k++)
+            //     {
+            //         strPattern = strPattern + "*" +"\t";
+            //     }
+            //     strPattern = strPattern + "<br>";
+            //     m = m +2;
+            // }
+            document.getElementById("displayPyramid").innerHTML = strPattern;
+
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ascii Value Star Pattern Print</title>
+</head>
+
+<body>
+    <input type="text" value="5" id="inputN">
+    <button onclick="ascii()">Click</button>
+    <p id="abc"></p>
+    <!-- string using -->
+    <script>
+        function ascii() {
+            let n = document.getElementById("inputN").value;
+            let ascillPattern = "";
+            let m = 65;
+            for (let i = 1; i <= n; i++) {
+                for(let j = 1; j<=i; j++)
+                {
+                    if(m >= 65 && m<= 90 || m >= 97 && m<= 122)
+                    {
+                        ascillPattern = ascillPattern + m + "\t";
+                    }
+                }
+                ascillPattern = ascillPattern + "<br>";
+            }
+            document.getElementById("abc").innerHTML = ascillPattern;
+        }
+    </script>
+</body>
+
+</html>

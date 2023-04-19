@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Perfact Number</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
+</head>
+
+<body>
+    <div class="container">
+        <div class="box">
+            <div class="field">
+                <label class="label">Enter Number :-</label>
+                <div class="control">
+                    <input type="number" class="input is-info" id="inputNum" value="6">
+                </div>
+            </div>
+            <div class="field">
+                <div class="control">
+                    <button class="button is-primary" onclick="perfactNumber()">Click</button>
+                </div>
+            </div>
+            <div class="block">
+                <p id="displayPerfactNumber"></p>
+            </div>
+        </div>
+    </div>
+   
+    <script>
+        function perfactNumber() {
+            let rem, sum = 0;
+            num = Number(document.getElementById("inputNum").value);
+
+            for (let i = 1; i <= num; i++) {
+                rem = num % i;
+                if (rem == 0) {
+                    sum = sum + i;
+                }
+                console.log(sum)
+            }
+            if (sum/2 == num)
+            {
+                // console.log(num+"is a Perfect Number");
+                document.getElementById("displayPerfactNumber").innerHTML = num +" is a Perfect Number";
+            }
+            else
+            {
+                // console.log(num+"is not a Perfect Number");
+                document.getElementById("displayPerfactNumber").innerHTML = num +" is Not a Perfect Number";
+            }
+        }  
+    </script>
+</body>
+
+</html>

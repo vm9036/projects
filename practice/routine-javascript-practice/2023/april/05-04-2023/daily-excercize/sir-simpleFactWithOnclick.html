@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
+    <title>Factorial Number</title>
+</head>
+
+<body>
+    <!-- Simple Factorial With Onclick Event -->
+    <div class="container p-5">
+        <input id="firstValue" type="text" class="input is-small">
+        <div class="column has-text-centered">
+            <button onclick="createFactorialNumber()" class="button is-info">Click</button>
+        </div>
+        <p id="printFactorialNumber"></p>
+    </div>
+    <script>
+        function createFactorialNumber() {
+            let firstValue = Number(document.getElementById("firstValue").value);
+            let counter = 1
+            let strFact = "";
+            for (i = 1; i <= firstValue; i++) {
+                for (j = 1; j <= i; j++) {
+                    let factorial = 1;
+                    for (f = 1; f <= counter; f++) {
+                        factorial = factorial * f;
+                    }
+                    strFact = strFact + " " + factorial;
+                    counter++;
+                }
+                strFact = strFact + "<br>";
+            }
+            document.getElementById("printFactorialNumber").innerHTML = strFact;
+        }
+    </script>
+</body>
+
+</html>

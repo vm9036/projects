@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sum of Consecutive Cubes Calculator</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
+</head>
+<body>
+    <div class="container">
+        <div class="box">
+            <h1 class="title">Sum of Consecutive Cubes Calculator Program</h1>
+            <div class="field">
+                <label class="label">Enter an Consecutive Cubes number:</label>
+                <div class="control">
+                    <input type="number" class="input" id="inputConCubeNumber">
+                </div>
+            </div>
+            <div class="field">
+                <div class="control has-text-centered">
+                    <button class="button is-warning" onclick="printConsecutiveCubes()">Consecutive Cubes</button>
+                </div>
+            </div>
+            <div class="field">
+                <label class="label">Consecutive Cubes:</label>
+                <div class="control">
+                    <input type="number" class="input" id="displayConsecutiveCubes">
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function printConsecutiveCubes() {
+
+            let n = document.getElementById("inputConCubeNumber").value;
+            let ConCubeFormula;
+
+            for(let i = 0 ; i<= n; i++){
+                ConCubeFormula = ( (n * n) * (n+1)  * 2 ) / 4 ;
+            }
+            document.getElementById("displayConsecutiveCubes").innerHTML = ConCubeFormula;
+        }
+    </script>
+</body>
+</html>

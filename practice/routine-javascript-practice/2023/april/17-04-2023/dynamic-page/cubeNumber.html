@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cube Number Print</title>
+</head>
+<body>
+    <input type="text" id="inputN" value="10">
+    <button onclick="cubeNumber()">Click</button>
+    <p id="displayCube"></p>
+
+    <script>
+        function cubeNumber() {
+            n = document.getElementById("inputN").value;
+            strCube = "<table border='1'><tr><th>Number</th><th>Cube</th></tr>";
+
+            for(let i = 0; i<=n;i++)
+            {
+                cube = i * i * i;
+                strCube = strCube + "<tr>" + "<td>" + i + "</td>"+"<td>"+ cube +"</td>" + "</tr>";
+            }
+            strCube = strCube + "</table>";
+            document.getElementById("displayCube").innerHTML = strCube;
+        }
+    </script>
+</body>
+</html>

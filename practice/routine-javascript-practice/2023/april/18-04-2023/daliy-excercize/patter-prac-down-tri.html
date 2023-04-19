@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pattern Practical Down Triangle</title>
+</head>
+<body>
+    <input type="text" id="inputN" value="5">
+    <button onclick="patternDown()">Click</button>
+    <p id="displayPatttern"></p>
+
+    <script>
+        function patternDown() {
+            let n = document.getElementById("inputN").value;
+            let strPattern = "";
+
+            for(let i = n; i>=1; i--)
+            {
+                for(let k = 1; k<=n-i; k++)
+                {
+                    strPattern = strPattern + "&nbsp;&nbsp;" +"\t";
+
+                    document.getElementById("displayPatttern").innerHTML = strPattern;
+                }
+                
+                for(let j = 1; j<=i; j++)
+                {
+                    strPattern = strPattern + "*" +"\t";
+                    document.getElementById("displayPatttern").innerHTML = strPattern;
+                }
+                
+                strPattern = strPattern + "<br>" +"\n";
+            }
+            // document.getElementById("displayPatttern").innerHTML = strPattern;
+        }
+    </script>
+</body>
+</html>

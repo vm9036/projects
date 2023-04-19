@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Arithmetic Sequence Adding 5 Numbers</title>
+</head>
+<body>
+    <h1>Arithmetic Sequence Adding 5 Numbers</h1>
+    <input type="text" id="inputNum" value="10">
+    <button onclick="arithmeticSeq()">Click</button>
+    <p id="displayArithmetic"></p>
+
+    <script>
+        function arithmeticSeq()
+        {
+            // alert("hello");
+            let num = Number(document.getElementById("inputNum").value);
+            let strNum ="";
+            for(let i = 3; i<=num;)
+            {
+                console.log(i);
+                strNum = strNum + i + " ";
+                document.getElementById("displayArithmetic").innerHTML = strNum;
+                i= i+5;
+            }
+        }
+    </script>
+</body>
+</html>

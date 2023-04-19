@@ -1,0 +1,185 @@
+<!-- <!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dynamic Even Selected Pattern</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
+</head>
+
+<body>
+    <div class="container">
+        <div class="box">
+            <div class="block">
+                <h1 class="title ">Dynamic Prime Number Selected Pattern With checkBox</h1>
+            </div>
+            <div class="field">
+                <label class="label">Enter Row :-</label>
+                <div class="control">
+                    <input type="number" id="inputRow" class="input" placeholder="Enter Number" value="5"
+                        oninput="patternPrimeNum()">
+                </div>
+            </div>
+            <div class="field">
+                <div class="control">
+                    <input type="checkbox" id="checkBox" oninput="patternPrimeNum()" checked> "Check Prime Number"
+                </div>
+            </div>
+            <div class="field">
+                <div class="control">
+                    <button class="button is-primary" onclick="patternPrimeNum()">Submit</button>
+                </div>
+            </div>
+            <div class="block">
+                <p id="displayPattern" onchange="patternEvenNum()"></p>
+            </div>
+        </div>
+    </div>
+
+
+    <script>
+        function patternPrimeNum() {
+            let row = document.getElementById("inputRow").value;
+
+            let strPrimePattern = "<table class='table is-bordered'><tbody><tr>";
+            let counter = 1;
+
+            for (let i = 0; i <= row; i++) {
+               
+                for (let j = 0; j <= i; j++) {
+                    if(checkBox.checked == true){
+                        strPrimePattern = strPrimePattern + "<td class='is-selected'>" + primeNumber(counter) + "</td>";  
+                        counter = counter + 1;
+                    }
+                    else {
+                        strPrimePattern = strPrimePattern + "<td>" + primeNumber(i) + "</td>";
+                        counter = counter + 1;
+
+                    }
+                }
+                strPrimePattern = strPrimePattern + "</tr>";
+            }
+            strPrimePattern = strPrimePattern + "</tbody></table>";
+            document.getElementById("displayPattern").innerHTML = strPrimePattern;
+        }
+        patternEvenNum();
+
+        function primeNumber() {
+            let strPrime = "";
+            for (let i = 1; i <= 5; i++) {
+                let flag = 0;
+                for (let j = 2; j < i; j++) {
+                    if (i % j == 0 && checkBox.checked == true) {
+                        flag = 1;
+                        break;
+                    }
+                }
+
+                if (i > 1 && flag == 0) {
+                    strPrime = strPrime + i + "\t";
+                }
+            }
+            console.log(strPrime);
+            return strPrime;
+        }
+    </script>
+</body>
+
+</html> -->
+
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
+
+    <title> drawtable_selected </title>
+</head>
+
+<body>
+    <div class="box container column is-half is-offset-one-quarter mt-5">
+        <h1 class="title has-text-centered">Dynamic Table</h1>
+        <div class="field has-addons has-addons-centered">
+            <input type="text" class="input" id="number" value="10" placeholder="entervalue drawtable">
+            <input type="text" class="input" id="selectedvalue" value="2" placeholder="selectrow with toggle value">
+        </div>
+        <div class="buttons">
+            <button class="button" onclick="draw()">draw</button>
+            <button class="button" onclick="selectedrow()">selectrow</button>
+            <button class="button" onclick="prime()">primenumber</button>
+        </div>
+        <div>
+            <p id="shownumber"></p>
+        </div>
+
+    </div>
+
+    <script>
+
+        function draw() {
+            let number = parseInt(document.getElementById("number").value);
+            let showvalue = "<div class='columns is-multiline'>";
+            let counter = 0;
+            for (i = 1; i <= number; i++) {
+                // console.log(i)
+                showvalue = showvalue + "<div class='column'><table class='table is-bordered'><tr><td>" + i + "</td></tr></table></div>";
+
+            }
+
+            showvalue = showvalue + "</div>";
+            document.getElementById("shownumber").innerHTML = showvalue;
+        }
+
+
+        function selectedrow() {
+            let number = parseInt(document.getElementById("number").value);
+            let selectedenumber = parseInt(document.getElementById("selectedvalue").value);
+            let showvalue = "<div class='columns is-multiline'>";
+            for (i = 1; i <= number; i++) {
+                if (i % selectedenumber == 0) {
+
+                    showvalue = showvalue + "<div class='column'><table class='table is-bordered'><tr><td class='is-selected'>" + i + "</td></tr></table></div>";
+                } else {
+                    showvalue = showvalue + "<div class='column'><table class='table is-bordered'><tr><td>" + i + "</td></tr></table></div>";
+                    console.log(showvalue)
+                }
+            }
+            showvalue = showvalue + "</div>";
+            document.getElementById("shownumber").innerHTML = showvalue;
+        }
+
+        function prime() {
+            let number = parseInt(document.getElementById("number").value);
+            let showvalue = "<div class='columns is-multiline'>";
+            let count = 0;
+
+            for (j = 1; j <= number; j++) {
+                for (i = 1; i <= j; i++) {
+                    if (j % i == 0)
+                        count++;
+                    console.log(i);
+                }
+
+                if (count == 2) {
+                    // console.log(j)
+
+                    showvalue = showvalue + "<div class='column'><table class='table is-bordered'><tr><td class='is-selected'>" + j + "</td></tr></table></div>";
+                } else {
+                    showvalue = showvalue + "<div class='column'><table class='table is-bordered'><tr><td>" + j + "</td></tr></table></div>";
+                }
+
+                count = 0;
+            }
+            showvalue = showvalue + " </tr>" + "</table>" + "</div>";
+            document.getElementById("shownumber").innerHTML = showvalue;
+        }
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Armstrong Number</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
+</head>
+
+<body>
+    <div class="container">
+        <div class="box">
+            <h1 class="title">Armstrong Number Program</h1>
+            <div class="field">
+                <label class="label">Enter an Armstrong number:</label>
+                <div class="control">
+                    <input type="number" class="input" id="inputANumber">
+                </div>
+            </div>
+            <div class="field">
+                <div class="control has-text-centered">
+                    <button class="button is-warning" onclick="printArmStrongNum()">Armstrong Number</button>
+                </div>
+            </div>
+            <div class="block">
+                <p id="displayArmstrongNumber"></p>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function printArmStrongNum() {
+            // let armNumber = document.getElementById("inputANumber").value;
+            // let n, n1, sum = 0;
+            // for (let i = 1; armNumber != 0; i++) {
+            //     n = armNumber % 10;
+            //     n1 = n / 10;
+            //     sum = sum + (n1 * n1 * n1);
+            // }
+            // document.getElementById("displayArmstrongNumber").innerHTML = sum;
+
+
+            // program to check an Armstrong number of n digits
+
+            // take an input
+            let armNumber = document.getElementById("inputANumber").value;
+            // const number = prompt("Enter a positive integer");
+            const numberOfDigits = armNumber.length;
+            let sum = 0;
+
+            // create a temporary variable
+            let temp = armNumber;
+
+            while (temp > 0) {
+
+                let remainder = temp % 10;
+                console.log("Remainder :-> "+remainder);
+
+                sum = sum + remainder ** numberOfDigits;
+                //   += remainder ** numberOfDigits;
+                console.log("Sum :-> "+sum);
+
+                // removing last digit from the number
+                temp = parseInt(temp / 10); // convert float into integer
+                console.log("Temp :-> "+temp);
+            }
+
+            if (sum == armNumber) {
+
+                console.log(armNumber +"is an Armstrong number");
+                document.getElementById("displayArmstrongNumber").innerHTML = armNumber+ "\t" + "is an Armstrong number.";
+            }
+            else {
+                console.log(armNumber +"is not an Armstrong number");
+                document.getElementById("displayArmstrongNumber").innerHTML = armNumber+ "\t" + "is not an Armstrong number.";
+            }
+        }
+    </script>
+</body>
+</html>

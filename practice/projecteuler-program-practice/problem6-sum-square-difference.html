@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sum square difference</title>
+</head>
+<body>
+    <input type="text" id="inputNumberStart" value="1">
+    <input type="text" id="inputNumberEnd" value="10">
+    <button onclick="sumSquareDiff()">Sum Square Differnce</button>
+    <p id="displaySumSquareDiff"></p>
+    <p id="displaySumSquareDiffSum"></p>
+    <p id="displayNaturalNumber"></p>
+    <p id="displayNaturalNumberSquare"></p>
+    <p id="displayNaturalNumberSquare1"></p>
+    <p id="sub"></p>
+    <script>
+        function sumSquareDiff() {
+            let numStart = Number(document.getElementById("inputNumberStart").value);
+            let numEnd = Number(document.getElementById("inputNumberEnd").value);
+            let sum = 0,sum1 = 0,sum2 = 0, sqareDisplay = " ",sqareDisplay1 = " ",square1;
+            for(i = numStart; i<= numEnd; i++)
+            {
+                // sum = num * num;
+                square = i * i;
+                sqareDisplay = sqareDisplay + square + "\t";
+                document.getElementById("displaySumSquareDiff").innerHTML = sqareDisplay;
+                sum = sum + square;
+                // console.log("num :->"+num);
+                // console.log("square :->"+square);
+                // sum1 = 0;
+                sum1 = sum1 + i + "\t";
+                sum2 = sum2 + i;
+                square1 = sum2 * sum2;
+
+                sub = square1 - sum;
+                document.getElementById("sub").innerHTML = sub;
+                // sqareDisplay1 =  sqareDisplay1 + ;                
+            }
+            document.getElementById("displayNaturalNumber").innerHTML = sum1;
+            document.getElementById("displaySumSquareDiffSum").innerHTML = sum;
+            document.getElementById("displayNaturalNumberSquare").innerHTML = sum2;
+            document.getElementById("displayNaturalNumberSquare1").innerHTML = square1;
+
+
+        }
+    </script>
+</body>
+</html>
