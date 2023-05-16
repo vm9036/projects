@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Factorial Simple</title>
+</head>
+<body>
+    <input type="text" id="inputFact">
+    <button onclick="fact()">Click</button>
+    <p id="displayFact"></p>
+
+
+    <script>
+        function fact(){
+            let inputF = document.getElementById("inputFact").value;
+
+            let fact = 1;
+            let storeF = " ";
+            let counter = 1;
+            for(let i=1; i<=inputF; i++)
+            {
+                for(j =1; j<=i; j++)
+                {
+                    fact = fact * counter;
+                    storeF = storeF + fact + "\t";
+                    counter = counter + 1;
+                }
+                storeF = storeF + "<br>";
+            }
+            document.getElementById("displayFact").innerHTML = storeF;
+        }
+    </script>
+</body>
+</html>

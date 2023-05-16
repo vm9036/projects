@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fibonacci Pattern</title>
+</head>
+<body>
+    <input type="text" id="inputFibo">
+    <button onclick="fiboPattern()">Click</button>
+    <p id="displayFiboPtn"></p>
+    <p id="displayFiboSum"></p>
+
+    <script>
+        function fiboPattern(){
+            let n = document.getElementById("inputFibo").value;
+
+            let i, j, n1=0, n2=1, n3=0, storeF = " ",sum =0;
+
+            for(i = 1; i<=n; i++)
+            {
+                for(j = 1; j<=i; j++) 
+                {
+                    n1 = n2;
+                    n2 = n3;
+                    n3 = getMeNextFibo(n1,n2);
+                    storeF = storeF + n3 + "&nbsp;" + "\t";
+                    sum = sum + n3;
+                }
+                storeF = storeF + "<br>";
+            }
+            document.getElementById("displayFiboPtn").innerHTML = storeF;
+            document.getElementById("displayFiboSum").innerHTML = "Fibo Sum :=> "+sum;
+        }
+
+        function getMeNextFibo(n1,n2) {
+            let fibo = 0;
+            fibo = n1 + n2;
+            return fibo;
+        }
+    </script>
+</body>
+</html>

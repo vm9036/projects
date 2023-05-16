@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Counter Pyramid Pattern</title>
+</head>
+<body>
+    <input type="text" id="inputPtn">
+    <button onclick="pyramidPtn()">Click</button>
+    <p id="displayPtn"></p>
+
+    <script>
+       function pyramidPtn(){
+            let n = document.getElementById("inputPtn").value;
+            let store = " ";
+            let counter = 0;
+            for(let i = 1; i<=n; i++)
+            {
+                for(let s = 1; s<=n-i; s++)
+                {
+                    store = store + "-";
+                }
+                for(j =1; j<=i; j++)
+                {
+                    store = store + "*" + "\t";
+                    // counter++;
+                }
+                
+                store = store + "<br>";
+            }
+            document.getElementById("displayPtn").innerHTML = store;
+       }
+    </script>
+</body>
+</html>

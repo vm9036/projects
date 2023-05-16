@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pattern 51 Triangle</title>
+</head>
+<body>
+    <h1>Pattern 51 Triangle</h1>
+    <input type="text" id="inputN">
+    <button onclick="ptn51()">Click</button>
+    <p id="displayPtn"></p>
+
+    <script>
+        function ptn51(){
+            let n = document.getElementById("inputN").value;
+
+            let store = " ";
+            let counter = 1;
+            for(let i = 1; i<=n; i++)
+            {
+                let s = counter + i - 1; 
+                for(let j = 1; j<=i; j++)
+                {
+                    if(i % 2 != 0)
+                    {
+                        store = store + counter + "\t";
+                    }
+                    else
+                    {
+                        store = store + s + "\t";
+                        s = s - 1;
+                    }
+                    counter = counter + 1;
+                }
+                store = store + "<br>";
+            }
+            document.getElementById("displayPtn").innerHTML = store;
+        }
+    </script>
+</body>
+</html>

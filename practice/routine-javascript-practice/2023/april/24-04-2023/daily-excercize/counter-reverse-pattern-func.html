@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Counter reverse With Func Pattern</title>
+</head>
+<body>
+    <input type="text" id="inputPtn">
+    <button onclick="counterRevPtn()">Click</button>
+    <p id="displayPtn"></p>
+
+    <script>
+        function counterRevPtn()
+        {
+            let n = document.getElementById("inputPtn").value;
+           let  counter = 1
+           let strPtn = "";
+
+            for(let i = 1; i<=n; i++)
+            {
+                for(let  j =1; j<=i; j++)
+                {
+                    strPtn = strPtn + counter +" \t";
+                    counter = counter  + 1;
+                }
+                strPtn = strPtn +"<br>";
+            }
+            let temp = counter-1;
+           
+            let satish = "";
+
+            for(let i=1 ; i<=n; i++){
+               
+                for (let j=1; j<=i; j++){
+                    satish = satish + temp;
+                    temp = temp -1;
+                }
+                satish =satish + "<br>";
+            }
+
+            document.getElementById("displayPtn").innerHTML = satish;
+
+
+        }
+
+        function getMeNextNum(){
+            
+        }
+    </script>
+</body>
+</html>

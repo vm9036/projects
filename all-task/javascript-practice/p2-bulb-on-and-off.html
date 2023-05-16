@@ -1,107 +1,139 @@
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
 <script>
-​
-   document.addEventListener('DOMContentLoaded', printPrime());
-​
-​
-​
+
+    document.addEventListener('DOMContentLoaded', printPrime());
+
+
+
     function printPrime() {
         let i;
-        let prime =2;
+        let prime = 2;
         let stringC = ""
-            for(i=1;i<=10;i++){
-                for(j=1;j<=i;j++)
-                {
-                    stringC = stringC+ "\t" + prime;
-                    prime = getMeTheNextPrimeNumber(prime);
-                    // even =even + 2
-                }
-                console.log(stringC);
-                stringC="";
-               
+        for (i = 1; i <= 10; i++) {
+            for (j = 1; j <= i; j++) {
+                stringC = stringC + "\t" + prime;
+                prime = getMeTheNextPrimeNumber(prime);
+                // even =even + 2
             }
+            console.log(stringC);
+            stringC = "";
+
         }
-​
-        function getMeTheNextPrimeNumber(currentPrime){
-            let i = currentPrime + 1;
-​
-            for(;;i++){
-                
-                let isPrime = isNumberPrime(i);
-​
-                if(isPrime){
-                    return i;
-                }
-​
+    }
+
+    function getMeTheNextPrimeNumber(currentPrime) {
+        let i = currentPrime + 1;
+
+        for (; ; i++) {
+
+            let isPrime = isNumberPrime(i);
+
+            if (isPrime) {
+                return i;
             }
-            
+
         }
-​
-        function isNumberPrime(number){
-            let i  = 2;
-            for(i=2;i<=number;i++){
-                if(number%i==0){
-                    if(i==number){
-                     return true;
-                    }else{
-                        break;
-                    }
-                }
-               
-            }
-​
-            return false;
-        }
-​
-        function btnCheckPrime(){
-            let value = document.getElementById("txtPrime").value;
-            alert(isNumberPrime (value));
-​
-        }
-​
-        function printTenPrimeNumber(){
-            let counter = 0;
-            let primeString = "";
-​
-            let primeStringTable = "<table class='table is-bordered is-striped is-narrow is-hoverable is-fullwidth'>";
-​
-                let counterLimit = parseInt(document.getElementById("counter").value);
-​
-            for (let i = 2; ; i++){
-               
-​
-                if(isNumberPrime(i)){
-                    console.log(i);
-                    primeString = primeString + i + ",";
-                    primeStringTable = primeStringTable +"<tr><td>"+ i+ "</td></tr>";
-                    counter++
-                }
-​
-​
-                if(counter==counterLimit){
+
+    }
+
+    function isNumberPrime(number) {
+        let i = 2;
+        for (i = 2; i <= number; i++) {
+            if (number % i == 0) {
+                if (i == number) {
+                    return true;
+                } else {
                     break;
                 }
             }
-            primeStringTable = primeStringTable + "</table>";
-​
-            document.getElementById("txtPrime").value = primeString;
-            document.getElementById("txtPrimeArea").value = primeString;
-​
-            document.getElementById("primeTable").innerHTML = primeStringTable;
-​
-​
-        
+
         }
+
+        return false;
+    }
+
+    function btnCheckPrime() {
+        let value = document.getElementById("txtPrime").value;
+        alert(isNumberPrime(value));
+
+    }
+
+    function printTenPrimeNumber() {
+        let counter = 0;
+        let primeString = "";
+
+        let primeStringTable = "<table class='table is-bordered is-striped is-narrow is-hoverable is-fullwidth'>";
+
+        let counterLimit = parseInt(document.getElementById("counter").value);
+
+        for (let i = 2; ; i++) {
+
+
+            if (isNumberPrime(i)) {
+                console.log(i);
+                primeString = primeString + i + ",";
+                primeStringTable = primeStringTable + "<tr><td>" + i + "</td></tr>";
+                counter++
+            }
+
+
+            if (counter == counterLimit) {
+                break;
+            }
+        }
+        primeStringTable = primeStringTable + "</table>";
+
+        document.getElementById("txtPrime").value = primeString;
+        document.getElementById("txtPrimeArea").value = primeString;
+
+        document.getElementById("primeTable").innerHTML = primeStringTable;
+
+
+
+    }
 </script>
 ​
 <input type="text" id="txtPrime">
 ​
 <textarea id="txtPrimeArea" name="w3review" rows="4" cols="50">
-  
+
 </textarea>
 ​
 <div class="table-container" id="primeTable">
-    <table class="table is-bordered is-striped is-narrow is-hoverable is-fullwidth"><tbody><tr><td>2</td></tr><tr><td>3</td></tr><tr><td>5</td></tr><tr><td>7</td></tr><tr><td>11</td></tr><tr><td>13</td></tr><tr><td>17</td></tr><tr><td>19</td></tr><tr><td>23</td></tr><tr><td>29</td></tr></tbody></table>
+    <table class="table is-bordered is-striped is-narrow is-hoverable is-fullwidth">
+        <tbody>
+            <tr>
+                <td>2</td>
+            </tr>
+            <tr>
+                <td>3</td>
+            </tr>
+            <tr>
+                <td>5</td>
+            </tr>
+            <tr>
+                <td>7</td>
+            </tr>
+            <tr>
+                <td>11</td>
+            </tr>
+            <tr>
+                <td>13</td>
+            </tr>
+            <tr>
+                <td>17</td>
+            </tr>
+            <tr>
+                <td>19</td>
+            </tr>
+            <tr>
+                <td>23</td>
+            </tr>
+            <tr>
+                <td>29</td>
+            </tr>
+        </tbody>
+    </table>
 </div>
 <input type="text" id="counter" value="10">
 <button value="CheckPrime" onclick="btnCheckPrime();">CheckPrime</button>

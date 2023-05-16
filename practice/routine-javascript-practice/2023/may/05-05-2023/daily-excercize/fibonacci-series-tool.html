@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fibonacci Series Generate Tool</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.9.4/css/bulma.min.css">
+</head>
+<body>
+    <div class="box">
+        <div class="block has-text-centered">
+            <h1 class="title">Fibonacci Series Generate Tool</h1>
+        </div>
+
+        <div class="columns">
+            <div class="column is-6">
+                <div class="field">
+                    <label class="label">Start Number :- </label>
+                    <div class="control">
+                        <input type="text" class="input" id="inputStartNum" value="5">
+                    </div>
+                </div>
+            </div>
+            <div class="column is-6">
+                <div class="field">
+                    <label class="label">Print N  Number :- </label>
+                    <div class="control">    
+                        <input type="text" id="printNnumber" class="input" value="10">
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="field">
+            <div class="control">
+                <button class="button is-primary" onclick="fibonacci()" >Click</button>
+            </div>
+        </div>
+
+        <div class="field">
+            <label class="label">Display Fibonacci Series</label>
+            <div class="control">
+                <textarea class="textarea" name="" id="displayFibo" cols="30" rows="10"></textarea>
+            </div>
+        </div>
+    </div>
+    <script>
+        function fibonacci(){
+
+            let n = Number(document.getElementById("inputStartNum").value);
+            let nFibo = Number(document.getElementById("printNnumber").value);
+
+            let n1 = 0;
+            let n2 = 1;
+            let n3 = 0;
+            let counter = 0;
+            let store = " ";
+            
+            for(let i = 1 ; ; i++)
+            {
+                n1 = n2;
+                n2 = n3;
+                n3 = n1 + n2;
+                
+                if(n3 >= n)
+                {
+                    store = store + n3 + "\t";
+                    counter = counter + 1;
+                    console.log(n3);
+                }
+
+                if(counter == nFibo)
+                {
+                    break;
+                }
+
+            }
+            document.getElementById("displayFibo").value = store;
+
+        }
+    </script>
+</body>
+</html>

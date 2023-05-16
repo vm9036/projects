@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reverse Fibonacci Pattern</title>
+</head>
+<body>
+    <input type="text" id="inputFibo" value="5">
+    <button onclick="revFiboPattern()">Click</button>
+    <p id="displayFiboPtn"></p>
+    <p id="displayFiboSum"></p>
+
+    <script>
+        function revFiboPattern(){
+            let n = document.getElementById("inputFibo").value;
+
+            let i, j, n1=0, n2=1, n3=0, storeF = " ";
+
+            for(i = 1; i<=n; i++)
+            {
+                for(j = 1; j<=i; j++)
+                {
+                    n1 = n2;
+                    n2 = n3;
+                    n3 = getMeNextFibo(n1,n2);
+                    storeF = storeF + n3 + "&nbsp;" + "\t";
+            
+                }
+                storeF = storeF + "<br>";
+            }
+
+            let l1 = n3;
+            let l2 = n2;
+            let l3;
+            // console.log("temp:-> "+temp); 
+
+
+
+            for(i =1 ;i<=n; i++)
+            {
+                for(j =1; j<=i;j++)
+                {
+                    n1 = n2;
+                    n2 = n3;
+                    n3 = getMePreFibo(n1,n2);
+                    storeF = storeF + n3 + "&nbsp;" + "\t";
+                }
+                storeF = storeF + "<br>";
+            }
+
+            document.getElementById("displayFiboPtn").innerHTML = storeF;
+            // document.getElementById("displayFiboSum").innerHTML = "Fibo Sum :=> "+sum;
+        }
+
+        function getMeNextFibo(n1,n2) {
+            let fibo = 0;
+            fibo = n1 + n2;
+            return fibo;
+        }
+
+        function getMePreFibo(n1,n2)
+        {
+            let fibo = 0,n3;
+            fibo = n1 - n2;
+            n3 = fibo;
+            return n3;
+        }
+    </script>
+</body>
+</html>

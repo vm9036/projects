@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fibonacci Simple</title>
+</head>
+<body>
+    <input type="text" id="inputF">
+    <button onclick="simpleFibo()">Click</button>
+    <p id="displayFibo"></p>
+
+    <script>
+        function simpleFibo()
+        {
+            let n =Number(document.getElementById("inputF").value);
+
+            let n1 = 0, n2 = 1, n3 = 0,storeF="";
+
+            for(let i=1; i<=n;i++)
+            {
+                n1 = n2;
+                n2 = n3;
+                n3 = n1 + n2;
+                // storeF = storeF + n3 + "\t";
+            }
+            console.log("storF :-> "+n3);      
+            
+            let l1 = n3;
+            let l2 = n2;
+            let l3;
+            
+            for(let i = 1; i<=n; i++)
+            {
+                l3 = l1;
+                l1 = l2;
+                l2 = l3 - l1;
+                storeF = storeF + l3 + "\t";
+            }
+            document.getElementById("displayFibo").innerHTML = storeF;
+        }
+    </script>
+</body>
+</html>

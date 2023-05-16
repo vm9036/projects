@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
+    <title>gradeCalculator</title>
+</head>
+
+<body>
+    <div class="container is-mobile-fullwidth mt-5">
+        <div class="columns ">
+            <div class="column is-6 ">
+                <div class="box has-background-warning-light">
+                    <div class="field">
+                        <label class="label">Select grade type</label>
+                        <div class="control">
+                            <button class="button is-small is-dark has-text-white-bis">Percentage</button>
+                            <button class="button is-small is-dark has-text-white-bis">Letteres</button>
+                            <button class="button  is-small is-dark has-text-white-bis">Points </button>
+                        </div>
+                    </div>
+                    <div class="columns is-mobile">
+                        <div class="column is-6">
+                            <div class="field">
+                                <label class="label">Assignment <span class="is-hidden-mobile">(optional)</span></label>
+                                <div class="control">
+                                    <input type="text" placeholder="e.g Assignment" class="input is-small">
+                                </div>
+                            </div>
+                            <div class="field">
+                                <div class="control">
+                                    <input type="text" placeholder="e.g Homework" class="input is-small">
+                                </div>
+                            </div>
+                            <div class="field">
+                                <div class="control">
+                                    <input type="text" placeholder="e.g Exam" class="input is-small">
+                                </div>
+                            </div>
+                            <div class="field">
+                                <div class="control">
+                                    <input type="text" class="input is-small">
+                                </div>
+                            </div>
+                            <div class="field">
+                                <div class="control">
+                                    <input type="text" class="input is-small">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="column is-3">
+                            <div class="field">
+                                <label class="label">Grade (%)</label>
+                                <div class="control">
+                                    <input type="text" class="input is-small">
+                                </div>
+                            </div>
+                            <div class="field">
+                                <div class="control">
+                                    <input type="text" class="input is-small">
+                                </div>
+                            </div>
+                            <div class="field">
+                                <div class="control">
+                                    <input type="text" class="input is-small">
+                                </div>
+                            </div>
+                            <div class="field">
+                                <div class="control">
+                                    <input type="text" class="input is-small">
+                                </div>
+                            </div>
+                            <div class="field">
+                                <div class="control">
+                                    <input type="text" class="input is-small">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="column is-3">
+                            <div class="field">
+                                <label class="label">Weight</label>
+                                <div class="control">
+                                    <input type="text" class="input is-small">
+                                </div>
+                            </div>
+                            <div class="field">
+                                <div class="control">
+                                    <input type="text" class="input is-small">
+                                </div>
+                            </div>
+                            <div class="field">
+                                <div class="control">
+                                    <input type="text" class="input is-small">
+                                </div>
+                            </div>
+                            <div class="field">
+                                <div class="control">
+                                    <input type="text" class="input is-small">
+                                </div>
+                            </div>
+                            <div class="field">
+                                <div class="control">
+                                    <input type="text" class="input is-small">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="column is-1">
+                        </div>
+                    </div>
+                    <div class="field">
+                        <div class="control">
+                            <button class="button is-small is-fullwidth">Add row</button>
+                        </div>
+                    </div>
+                    <div class="field">
+                        <p>Find additional grade needed to get average grade of</p>
+                        <div class="field has-addons mt-2">
+                            <div class="control">
+                                <input class="input is-small" type="number" placeholder="80">
+                            </div>
+                            <div class="control">
+                                <button class="button is-static is-small"> % </button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="field">
+                        <label class="label">Select decimal places of result</label>
+                        <div class="control">
+                            <button class="button is-small is-dark">0</button>
+                            <button class="button is-small is-dark">1</button>
+                            <button class="button is-small is-dark">2</button>
+                        </div>
+                    </div>
+
+                    <div class="field">
+                        <div class="control">
+                            <button class="button is-success is-small">= Calculate </button>
+                            <button class="button is-dark is-small"> Reset </button>
+                        </div>
+                    </div>
+
+                    <div class="field">
+                        <div class="columns">
+                            <div class="column is-6">
+                                <div class="field">
+                                    <p>Average grade</p>
+                                    <div class="control">
+                                        <input type="text" class="input is-small mb-3">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="column is-6">
+                                <div class="field mt-5">
+                                    <div class="control">
+                                        <input type="text" class="input is-small">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="field">
+                        <p>Grade calculation</p>
+                        <div class="control">
+                            <textarea class="textarea" rows="1" cols="10" placeholder="Small textarea"></textarea>
+                        </div>
+                    </div>
+                    <div class="field">
+                        <div class="columns">
+                            <div class="column is-6">
+                                <p>Additional grade needed</p>
+                                <div class="field">
+                                    <div class="control">
+
+                                        <input type="text" class="input is-small">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="column is-6">
+                                <div class="field">
+                                    <div class="control">
+                                        <input type="text" class="input is-small mt-5">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</body>
+
+</html>

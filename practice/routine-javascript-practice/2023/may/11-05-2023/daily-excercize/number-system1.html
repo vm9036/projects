@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Number System</title>
+</head>
+
+<button onclick="firstQue()">1 question</button>
+<button onclick="secondQue()">2 question</button>
+<button onclick="thirdQue()">3 question</button>
+<button onclick="forthQue()">4 question</button>
+<button onclick="fifthQue()">5 question</button>
+<button onclick="sixthQue()">6 question</button>
+<button onclick="seventhQue()">7 question</button>
+<button onclick="eighthQue()">8 question</button>
+<button onclick="ninthQue()">9 question</button>
+<button onclick="tenthQue()">10 question</button>
+<button onclick="eleventhQue()">11 question</button>
+<button onclick="twelthQue()">12 question</button>
+<button onclick="thirteenQue()">13 question</button>
+<button onclick="fourteenQue()">14 question</button>
+
+<body>
+    <script>
+        // Q.14: If the nine-digit number ‘8475639AB’ is divisible by 99, then what is the value of A and B ?
+        function fourteenQue(){
+            for(let i = 90; i<=99; i++)
+            {
+                for(j=0; j<=9;j++)
+                {
+                    number = "847563" + i + j;
+                    
+                    if(number % 99 == 0)
+                    {
+                        console.log(number);
+
+                        a = i % 10;
+                        console.log("a :-> "+a);
+
+                        b = j % 10;
+                        console.log("b :->"+b);
+
+                        ans = a + "," + b;
+                        console.log("Final Answer :-> "+ans);
+                    }
+                }
+            }
+        }
+
+        // Q.13: If the nine-digit number 259876p05 is completely divisible by 11, then what is the value of (p2 + 5) ?
+        function thirteenQue(){
+            for(let i = 60; i<=69; i++)
+            {
+                number = "25987" + i + "05";
+
+                if(number % 11 == 0){
+                    console.log("Number :-> "+number);
+
+                    p = i % 10;
+                    console.log("p :->"+p);
+
+                    fAns = p  * p + 5;
+                    console.log("Fina Ans :->"+fAns);
+                }
+            }
+        }
+
+        //Q.12: The largest six-digit number exactly divisible by 243 is:
+        function twelthQue() {
+            // let n = 999947 nd
+            let n = 999945 
+            // let n = 999949 nd
+            // let n = 999943 nd
+
+            if(n % 243 == 0)
+            {
+                console.log(n+"is divided");
+            }
+            else
+            {
+                console.log(n+"is not divided");
+            }
+            
+        }
+
+        //Q.11: When a number is divided by 3, the remainder is 2. Again, when the quotient is divided by 7, the remainder is 5. What will be the remainder when the original number is divided by 21 ?
+        // function eleventhQue() {
+        //     let counter = 0, n1, n2, n3;
+        //     for (i = 1; ; i++) {
+        //         if (i % 3 == 2) {
+        //             console.log("1.i1 :->" + i)
+                    
+        //             // counter++;
+        //             // break;
+        //             if(i % 7 == 5)
+        //             {
+        //                 console.log("2.i2 :->"+i);
+        //                 counter = counter + 1;
+                    
+        //                 break;
+        //             }
+        //         }
+        //     }
+        // }
+
+        //Q.10: If the 11 digit number 4y6884805x6 is divisible by 72, and x \neq y , then the value of \sqrt{xy} is:
+
+        function tenthQue() {
+            for (let i = 40; i <= 49; i++) {
+                for (let j = 50; j <= 59; j++) {
+                    number = i + "688480" + j + "6";
+
+                    if (number % 72 == 0) {
+                        console.log(number);
+
+                        let y = i % 10;
+                        let x = j % 10;
+                        console.log("y :-> " + y);
+                        console.log("x :-> " + x);
+
+                        fAns = x * y;
+                        console.log("Final Answer :->" + fAns);
+                    }
+                }
+            }
+        }
+
+        // Q.9: If the number 4A306768B2 is divisible by both 8 and 11, then the smallest possible values of A and B will be:
+        function ninthQue() {
+
+            for (let i = 40; i <= 49; i++) {
+                for (let j = 3067680; j <= 3067689; j++) {
+                    number = i + "" + j + 2;
+
+                    if (number % 8 == 0 && number % 11 == 0) {
+                        console.log("Number :->" + number);
+
+                        a = i % 10;
+                        b = j % 10;
+                        console.log(a);
+                        console.log(b);
+                    }
+                }
+            }
+        }
+
+        // Q.8: If 31  + 43 is divided by 37, the remainder is:
+        function eighthQue() {
+            let n1 = 31;
+            let n2 = 43;
+
+            let n3 = n1 + n2;
+            console.log("n3 :-> " + n3);
+
+            let fAns = n3 % 37;
+            console.log("fAns :-> " + fAns);
+        }
+
+        // Q.7: If 7183 +7383 is divided by 36, the remainder is:
+        function seventhQue() {
+            let n1 = 71;
+            let n2 = 73;
+
+            let n3 = n1 + n2;
+            console.log("n3 :-> " + n3);
+
+            let fAns = n3 % 36;
+            console.log("fAns :-> " + fAns);
+        }
+
+        // 6. When a positive integer ‘n’ is divided by 12, the remainder is 5. What will be the remainder if 8n2 + 7 is divided by 12 ?
+        function sixthQue() {
+            let counter = 0;
+
+            for (let i = 1; ; i++) {
+                if (i % 12 == 5) {
+                    console.log("i :->" + i);
+                    counter = counter + 1;
+                    console.log("counter :->" + counter);
+
+                    n = i;
+                    fAns = (8 * n * n) + 7;
+                    fAns1 = fAns % 12;
+                    console.log("fAns :-> " + fAns);
+                    console.log("final Ans :-> " + fAns1);
+                    break;
+                }
+
+            }
+        }
+
+        // 5. If the nine-digit number 87605x31y is divisible by 72, then the value of 2x-3y is:
+        function fifthQue() {
+
+            for (let i = 876050; i <= 876059; i++) {
+                for (let j = 310; j <= 319; j++) {
+                    let number = i + "" + j;
+                    // console.log(number);
+
+                    if (number % 72 == 0) {
+                        console.log("Final Number :-> " + number);
+
+                        x = i % 10;
+                        y = j % 10;
+
+                        console.log("x :->" + x);
+                        console.log("y :->" + y);
+
+                        fAns = (2 * x) - (3 * y);
+                        console.log("Final Answer :-> " + fAns);
+                    }
+                }
+            }
+        }
+
+        // 4.  If a nine-digit number 489 x 6378 y is divisible by 72, then the value of \sqrt{8x + 6y} will be:
+        function forthQue() {
+            let ans, fAns;
+            for (let i = 4890; i <= 4899; i++) {
+                for (j = 63780; j <= 63789; j++) {
+
+                    let number = i + "" + j;
+
+                    if (number % 72 == 0) {
+                        console.log(number);
+
+                        // ans = number;
+                        x = i % 10;
+                        y = j % 10;
+
+                        console.log("x :->" + x);
+                        console.log("y :->" + y);
+
+                        ans = 8 * x + 6 * y;
+                        console.log("ans :->" + ans);
+
+                        fAns = Math.sqrt(ans);
+                        console.log("Final answer :->" + fAns);
+                    }
+                }
+            }
+        }
+
+        // 3.If the five-digit number 672 xy is divisible by 3, 7 and 11, then what is the value of (6x + 5y) ?
+        function thirdQue() {
+            let ans, ans1;
+            for (let i = 67200; i <= 67299; i++) {
+                if (i % 3 == 0 && i % 7 == 0 && i % 11 == 0) {
+                    console.log("i " + i);
+                    ans = i;
+                }
+            }
+            ans = ans % 100;
+            let ans2 = ans % 10;
+            ans1 = parseInt(ans / 10);
+            console.log("ans :-> " + ans);
+            console.log("ans1 :-> " + ans1);
+            console.log("ans2 :-> " + ans2);
+
+            let main = (6 * ans1) + (5 * ans2);
+            console.log("main Answer :=> " + main);
+        }
+
+
+        // 2. When (224 – 1) is divided by 7 , the remainder is:
+        function secondQue() {
+            n = 16777215;
+
+            if (n % 7 == 0) {
+                console.log(n + "yes is divided");
+            }
+            else {
+                console.log(n + "no is not divided");
+            }
+        }
+
+
+        // 1. What is the greatest five-digit number that is completely divisible by 8, 15, 16, 21 and 5 ?
+        function firstQue() {
+            n = 99120;
+
+            if (n % 8 == 0 && n % 15 == 0 && n % 16 == 0 && n % 21 == 0 && n % 5 == 0) {
+                console.log(n + "yes is divided");
+            }
+            else {
+                console.log(n + "no is not divided");
+            }
+        }
+    </script>
+</body>
+
+</html>

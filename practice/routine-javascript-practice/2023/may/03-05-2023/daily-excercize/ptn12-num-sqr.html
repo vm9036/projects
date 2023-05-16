@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>pattern 12 square</title>
+</head>
+<body>
+    <input type="text" id="inputPtn" value="5">
+    <button onclick="sqrPtn()">Click</button>
+    <p id="displayPtn"></p>
+
+    <script>
+        function sqrPtn() {
+            let n= document.getElementById("inputPtn").value;
+            let store = " ";
+            counter = 0;
+            for(let i = 1; i<=n; i++)
+            {
+                counter = i;
+                for(let j = 1; j<=n; j++)
+                {
+                    store = store + counter + "\t";
+                    counter = counter + 1;
+                }
+                store = store + "<br>";
+            }
+            document.getElementById("displayPtn").innerHTML = store;
+        }
+    </script>
+</body>
+</html>

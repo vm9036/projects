@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pattern 47 Triangle</title>
+</head>
+<body>
+    <h1>Pattern 47 Triangle</h1>
+    <input type="text" id="inputN">
+    <button onclick="ptn47()">Click</button>
+    <p id="displayPtn"></p>
+
+    <script>
+        function ptn47(){
+            let n = document.getElementById("inputN").value;
+
+            let s = 1;
+            let store = " ";
+            let counter = 1;
+            for(let i = 1; i<=n; i++)
+            {
+                for(let j = 1; j<=s; j++)
+                {
+                    if(counter == 10)
+                    {
+                        counter = 1;
+                    }
+                    store = store + counter + "\t";
+                    
+                    counter = counter + 1;
+                }
+                store = store + "<br>";
+                s = s * 2;
+            }
+            document.getElementById("displayPtn").innerHTML = store;
+        }
+    </script>
+</body>
+</html>

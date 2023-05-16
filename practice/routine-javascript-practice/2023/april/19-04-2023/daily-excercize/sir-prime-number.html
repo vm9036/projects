@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
+
+    <title>Document</title>
+</head>
+
+<body>
+    <div class="container p-5">
+        <input type="text" id="limitOfPattern" value="5">
+        <button onclick="printPrimePatterns()" class="button is-info is-small">
+            Forward
+        </button>
+        <button onclick="printReversePrimePatterns()" class="button is-info is-small">
+            Reverse
+        </button>
+        <p id="printPrimeNumber"></p>
+
+        <input type="text" id="checkPrimeInput" value="100">
+        <button onclick="checkPrimeNumber()" class="button is-info is-small">
+            Click
+        </button>
+
+    </div>
+    <script>
+        printReversePrimePatterns();
+        function printPrimePatterns() {
+
+            let limitOfPattern = Number(document.getElementById("limitOfPattern").value);
+            console.log("limitOfPattern:->" + limitOfPattern);
+
+            let strPatter = "";
+            let currentPrimeNmber = 0;
+            for (let i = 1; i <= limitOfPattern; i++) {
+                for (let j = 1; j <= i; j++) {
+
+                    let temp = getNextPrimeNumber(currentPrimeNmber);
+                    strPatter = strPatter + "\t " + temp;
+                    currentPrimeNmber = temp;
+                }
+                strPatter = strPatter + "<br>";
+            }
+
+            document.getElementById("printPrimeNumber").innerHTML = strPatter;
+            printNPrimeNumber(15);
+            let lastPrimeNumber = getMeTheLastPrimeNumber();
+            console.log("lastPrimeNumber:->" + lastPrimeNumber);
+        }
+
+        function getNextPrimeNumber(currentNumber) {
+
+            currentNumber = currentNumber + 1;
+
+            for (let i = currentNumber; ; i++) {
+
+                let isThisPrime = isThisNumberPrime(i);
+
+                if (isThisPrime == true) {
+                    return i;
+                }
+            }
+
+        }
+
+        function isThisNumberPrime(number) {
+
+            if (number == 1) {
+                return true;
+            }
+
+            for (let i = 2; i <= number; i++) {
+                if (number % i == 0) {
+                    if (i == number) {
+                        return true;
+                    } else {
+                        return false;
+                    }
+                }
+            }
+            return false;
+        }
+
+        function checkPrimeNumber() {
+            let checkPrimeInput = Number(document.getElementById("checkPrimeInput").value);
+
+            // console.log(checkPrimeInput+" : is Prime?:->>"+isThisNumberPrime(checkPrimeInput));
+        }
+
+        function printNPrimeNumber(n) {
+
+            //    console.log("n:->"+n);
+
+            if (n == null) {
+                n = 10;
+            }
+
+
+            let currentPrimeNmber = 0;
+            for (let i = 0; i <= n; i++) {
+
+                let temp = getNextPrimeNumber(currentPrimeNmber);
+                // console.log("i:->"+i+": "+temp);
+                currentPrimeNmber = temp;
+            }
+        }
+
+        function getMeTheLastPrimeNumber(limitOfPattern) {
+
+            let sum = limitOfPattern * (limitOfPattern + 1) / 2;
+
+            console.log("sum with formla:->" + sum);
+            // for(i=1;i<=limitOfPattern;i++){
+            //     sum =sum +i;    
+            // }
+            let currentPrimeNmber = 0;
+
+            for (let i = 1; i <= sum; i++) {
+                let temp = getNextPrimeNumber(currentPrimeNmber);
+                // console.log("LastPrim i:->"+i+": "+temp);
+                currentPrimeNmber = temp;
+
+            }
+
+            return currentPrimeNmber;
+
+        }
+
+        function getPreviousPrimeNumber(currentNumber) {
+
+            currentNumber = currentNumber - 1;
+
+            for (let i = currentNumber; ; i--) {
+
+                let isThisPrime = isThisNumberPrime(i);
+
+                if (isThisPrime) {
+                    return i;
+                }
+            }
+
+        }
+
+        function printReversePrimePatterns() {
+
+            let limitOfPattern = Number(document.getElementById("limitOfPattern").value);
+            console.log("limitOfPattern:->" + limitOfPattern);
+
+            let strPatter = "";
+            let currentPrimeNmber = getMeTheLastPrimeNumber(limitOfPattern) + 1;
+            for (let ii = 1; ii <= limitOfPattern; ii++) {
+                for (let jj = 1; jj <= ii; jj++) {
+
+                    let temp = getPreviousPrimeNumber(currentPrimeNmber);
+                    strPatter = strPatter + "\t " + temp;
+                    currentPrimeNmber = temp;
+
+                    if (currentPrimeNmber == 1) {
+                        break;
+                    }
+                }
+                strPatter = strPatter + "<br>";
+            }
+
+            document.getElementById("printPrimeNumber").innerHTML = strPatter;
+
+        }
+    </script>
+
+</body>
+
+</html>

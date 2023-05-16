@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Even Number Tool Generate</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.9.4/css/bulma.min.css">
+</head>
+<body>
+    <div class="box">
+        <div class="block has-text-centered">
+            <h1 class="title">Even Number Tool Generate</h1>
+        </div>
+
+        <div class="columns mt-5">
+            <div class="column is-3">
+                <div class="field">
+                    <label class="label">Enter Start Number</label>
+                    <div class="control">
+                        <input type="text" class="input" id="inputStartNumber" oninput="evenNumber()">
+                    </div>
+                </div>
+            </div>
+            <div class="column is-3">
+                <div class="field">
+                    <label class="label">Enter No. Of Print Even Number</label>
+                    <div class="control">
+                        <input type="text" class="input" id="inputNEvenNum" oninput="evenNumber()">
+                    </div>
+                </div>
+            </div>
+            <!-- <div class="column is-3">
+                <div class="field">
+                    <label class="label">Enter Start Number</label>
+                    <div class="control">
+                        <input type="text" class="input">
+                    </div>
+                </div>
+            </div> -->
+        </div>
+
+        <div class="block">
+            <div class="field">
+                <div class="control has-text-centered">
+                    <button class="button is-primary" onclick="evenNumber()">Click</button>
+                </div>
+            </div>
+        </div>
+
+        <div class="block">
+            <div class="field">
+                <label class="label">Display Even Number :</label>
+                <div class="control">
+                    <textarea id="displayEvenNum" cols="30" rows="6" class="textarea"></textarea>
+                </div>
+            </div>
+        </div>
+        <div class="block has-text-centered">
+            <p class="button is-primary" id="displaySum">Sum : 0</p>
+        </div>
+    </div>
+
+
+    <script>
+        function evenNumber()
+        {
+            let n = Number(document.getElementById("inputStartNumber").value);
+
+            let noEven = document.getElementById("inputNEvenNum").value;
+            let store = " ";
+            let counter = 0;
+            let sum = 0;
+            for(let i = n; ; i++)
+            {
+                if(i % 2 == 0)
+                {
+                    store = store + i + "\t";
+                    sum = sum + i;
+                    counter = counter + 1;
+                }
+                if(counter == noEven)
+                {
+                    break;
+                }
+            }
+            document.getElementById("displayEvenNum").value = store;
+            document.getElementById("displaySum").innerHTML = "Sum :"+sum;
+        }
+    </script>
+</body>
+</html>

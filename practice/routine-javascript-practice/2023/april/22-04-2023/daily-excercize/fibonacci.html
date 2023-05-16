@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fibonacci Series</title>
+</head>
+<body>
+    <input type="text" id="inputFibo" value="10">
+    <button onclick="fiboSeries()">Click</button>
+    <p id="displayFibo"></p>
+
+    <script>
+        
+        function fiboSeries() {
+            let n = document.getElementById("inputFibo").value;
+            let n1 = 0, n2 = 1, fiboSeries = 0, d = " ";
+            for (let i = 1; i <= n; i++) {
+                n1 = n2;
+                n2 = fiboSeries;
+                fiboSeries = n1 + n2;
+                // c = d;
+                console.log(d);
+                d = d + fiboSeries + "\t";
+                document.getElementById("displayFibo").innerHTML = d;
+            }  
+        }
+    </script>
+</body>
+</html>

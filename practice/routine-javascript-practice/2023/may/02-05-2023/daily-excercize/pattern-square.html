@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pattern Square</title>
+</head>
+<body>
+    <input type="text" id="inputPtn">
+    <button onclick="squarePtn()">Click</button>
+    <p id="displayPtn"></p>
+
+
+    <script>
+        function squarePtn() {
+            let n = document.getElementById("inputPtn").value;
+            let store = "";
+            for(let i = 1; i<=n; i++)
+            {
+                for(let j = 1; j<=n; j++)
+                {
+                    if(i==1 || j == 1 || i == n || j == n)
+                    {
+                        store = store + "1" + "\t";
+                    }
+                    else
+                    {
+                        store = store + "0" + "\t";
+                    }
+                }
+                store = store + "<br>";
+            }
+            document.getElementById("displayPtn").innerHTML = store;
+        }
+    </script>
+</body>
+</html>

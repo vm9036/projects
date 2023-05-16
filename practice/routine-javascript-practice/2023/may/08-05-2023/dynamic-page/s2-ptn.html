@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>s2 pattern</title>
+</head>
+
+<body>
+    <input type="text" id="inputPtn" value="5">
+    <button onclick="ptnS2()">Click</button>
+    <p id="outputPtn"></p>
+
+    <script>
+        function ptnS2() {
+            let n = document.getElementById("inputPtn").value;
+            let strPtn = " ";
+
+            for (let i = 1; i <= n; i++) {
+
+                for (let s = 1; s < i; s++) {
+                    strPtn = strPtn + "&nbsp&nbsp" + "\t";
+                    // console.log("-");
+                }
+                for (let j = n; j >= i; j--) {
+                    strPtn = strPtn + i + "\t";
+                    // console.log(i);
+                }                
+                strPtn = strPtn + "<br>";
+                // console.log("\n");
+            }
+            document.getElementById("outputPtn").innerHTML = strPtn;
+        }
+    </script>
+</body>
+
+</html>

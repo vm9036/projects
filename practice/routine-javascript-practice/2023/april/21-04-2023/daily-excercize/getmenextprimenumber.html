@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Get Me Next Prime Number</title>
+</head>
+
+<body>
+    <h1>Get Me Next Prime Number</h1>
+    <input type="number" id="inputP" value="3">
+    <button onclick="nextPrime()">Click</button>
+    <p id="displayNextPrime"></p>
+
+    <script>
+        function nextPrime() {
+            let n = Number(document.getElementById("inputP").value);
+
+            let nextPrime = " ";
+            nextPrime = nextPrime + getMeNextPrimeNum(n);
+            console.log("nextPrime :-> " + nextPrime);
+            document.getElementById("displayNextPrime").innerHTML = nextPrime;
+        }
+
+        function getMeNextPrimeNum(currentNum) {
+            currentNum = currentNum + 1;
+
+            let i, j, pNumber = 0, storePrimeNumber = " ", counter = 0;
+
+            for (i = currentNum; ; i++) {
+                for (j = 1; j <= i; j++) {
+                    if (i % j == 0) {
+                        pNumber = pNumber + 1;
+                    }
+                }
+                if (pNumber == 2) {
+                    storePrimeNumber = storePrimeNumber + i;
+                    console.log("storePrimeNumber :->" + storePrimeNumber);
+                    counter = counter + 1;
+                }
+                if (counter == 1) {
+                    // return  i;
+                    break;
+                }
+                pNumber = 0;
+            }
+            return storePrimeNumber;
+        }
+    </script>
+
+</body>
+
+</html>

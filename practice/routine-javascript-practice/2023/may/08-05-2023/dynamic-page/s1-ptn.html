@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>s1 pattern</title>
+</head>
+
+<body>
+    <input type="text" id="inputPtn" value="5">
+    <button onclick="ptnS1()">Click</button>
+    <p id="outputPtn"></p>
+
+    <script>
+        function ptnS1() {
+            let n = document.getElementById("inputPtn").value;
+            let strPtn = " ";
+            for (let i = 1; i <= n; i++) {
+                for (let j = 1; j <= n - i; j++) {
+                    strPtn = strPtn + "&nbsp&nbsp" + "\t";
+                    // console.log(" ");
+                }
+                let s = 1;
+
+                for (let k = 1; k <= (i * 2) - 1; k++) {
+                    strPtn = strPtn + s + "\t";
+                    // console.log(s);
+                    if (k >= i) {
+                        s--;
+                    }
+                    else {
+                        s++;
+                    }
+                }
+                strPtn = strPtn + "<br>";
+                // console.log("\n");
+            }
+            document.getElementById("outputPtn").innerHTML = strPtn;
+        }
+    </script>
+</body>
+
+</html>

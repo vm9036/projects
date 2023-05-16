@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Odd Number Tool Generate</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.9.4/css/bulma.min.css">
+</head>
+<body>
+    <div class="box">
+        <div class="block has-text-centered">
+            <h1 class="title">Odd Number Tool Generate</h1>
+        </div>
+
+        <div class="columns mt-5">
+            <div class="column is-3">
+                <div class="field">
+                    <label class="label">Enter Start Number</label>
+                    <div class="control">
+                        <input type="text" class="input" value="20" id="inputStartNumber">
+                    </div>
+                </div>
+            </div>
+            <div class="column is-3">
+                <div class="field">
+                    <label class="label">Enter No. Of Print Odd Number</label>
+                    <div class="control">
+                        <input type="text" class="input" value="10" id="inputNOddNum">
+                    </div>
+                </div>
+            </div>
+            <!-- <div class="column is-3">
+                <div class="field">
+                    <label class="label">Enter Start Number</label>
+                    <div class="control">
+                        <input type="text" class="input">
+                    </div>
+                </div>
+            </div> -->
+        </div>
+
+        <div class="block">
+            <div class="field">
+                <div class="control has-text-centered">
+                    <button class="button is-primary" onclick="oddNumber()">Click</button>
+                    <button class="button is-primary" onclick="oddNumber(5)">5Values</button>
+                    <button class="button is-primary" onclick="oddNumber(10)">10 Values</button>
+                    <button class="button is-primary" onclick="oddNumber(15)">15 Values</button>
+                </div>
+            </div>
+        </div>
+
+        <div class="block">
+            <div class="field">
+                <label class="label">Display Odd Number :</label>
+                <div class="control">
+                    <textarea id="displayOddNum" cols="30" rows="6" class="textarea"></textarea>
+                </div>
+            </div>
+        </div>
+        <div class="block has-text-centered">
+            <p class="button is-primary" id="displaySum">Sum : 0</p>
+        </div>
+    </div>
+
+
+    <script>
+        
+        function oddNumber(n)
+        {
+            let value = n;
+            if(n == "" || n == null)
+            {
+            value = Number(document.getElementById("inputStartNumber").value);
+            }else{
+                document.getElementById("inputStartNumber").value = n;
+            }
+
+            console.log(n)
+            let noOdd = document.getElementById("inputNOddNum").value;
+            let store = " ";
+            let counter = 0;
+            let sum = 0;
+            for(let i = 1; ; i++)
+            {
+                if(i % 2 != 0)
+                {
+                    store = store + i + "\t";
+                    counter = counter + 1;
+                    sum = sum + i;
+                }
+                if(counter == value)
+                {
+                    break;
+                }
+            }
+            document.getElementById("displayOddNum").value = store;
+            document.getElementById("displaySum").innerHTML = "Sum : "+sum;
+        }
+    </script>
+</body>
+</html>

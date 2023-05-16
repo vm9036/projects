@@ -7,6 +7,40 @@
     <title>Prime Number</title>
 </head>
 <body>
-    
+    <input type="text" id="inputN" value="5">
+    <button onclick="primeNextNum()">Click</button>
+    <p id="displayPrimeNext"></p>
+
+    <script>
+        function primeNextNum() {
+            let n = Number(document.getElementById("inputN").value);
+
+            let primeNumber;
+            primeNumber = primeNumber + getMeNextPrime();
+            document.getElementById("displayPrimeNext").innerHTML = primeNumber;
+            console.log("primeNumber :-> "+primeNumber);
+        }
+
+        function getMeNextPrime(n)
+        {
+            let pNumber = 0;
+            let storePrimeNumber = " ";
+            // let counter = 1;
+            for (let i = 1; i <= n; i++) {
+                for (let j = 1; j <= i; j++) {
+                    if (i % j == 0) {
+                        pNumber = pNumber + 1;
+                        // n = parseInt(n / 10);
+                    }
+                }
+                if(pNumber == 2){
+                    storePrimeNumber = storePrimeNumber + n +"  ";
+                }
+                pNumber = 0;
+            }
+            return storePrimeNumber;
+        }
+    </script>
+
 </body>
 </html>

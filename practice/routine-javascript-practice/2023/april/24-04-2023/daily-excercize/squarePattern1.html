@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Square Pattern 1</title>
+</head>
+<body>
+    <input type="text" value="5" id="inputPtn">
+    <button onclick="squarePtn1()">Click</button>
+    <p id="displaySquarePtn"></p>
+
+    <script>
+        function squarePtn1() {
+           let n = document.getElementById("inputPtn").value;
+           let i,j,strPtn = "";
+            for(i =0; i<=n; i++)
+            {
+                for(j =0; j<=n; j++)
+                {
+                    strPtn = strPtn + "1" +"\t";
+                }
+                strPtn = strPtn + "<br>";
+            }
+            document.getElementById("displaySquarePtn").innerHTML = strPtn;
+        }
+    </script>
+</body>
+</html>

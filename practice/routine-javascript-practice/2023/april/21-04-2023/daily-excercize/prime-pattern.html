@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prime Pattern</title>
+</head>
+
+<body>
+    <h1>Prime Pattern :-</h1>
+    <input type="text" id="inputPrime">
+    <button onclick="primePattern()">Click</button>
+    <p id="displayPrime"></p>
+
+    <script>
+        function primePattern() {
+            let n = document.getElementById("inputPrime").value;
+            let storePrime = " ";
+            let prime = 1;
+
+            for (let i = 1; i <= n; i++) {
+                for (let j = 1; j <= i; j++) {
+                    storePrime = storePrime + getMeNextPrimeNum(i) + "\t";
+                    console.log("2.storePrime :-> " + storePrime);
+                }
+                storePrime = storePrime + "<br>";
+            }
+            document.getElementById("displayPrime").innerHTML = storePrime;
+        }
+
+        function getMeNextPrimeNum(prime) {
+            let i, j, counter = 0, pNumber = 0, storePrimeNumber = " ";
+            // prime = num + 1;
+            for (i = prime; ; i++) {
+                for (j = 1; j <= i; j++) {
+                    if (i % j == 0) {
+                        pNumber = pNumber + 1;
+                    }
+                }
+                if (pNumber == 2) {
+
+                    // storePrimeNumber = storePrimeNumber + i;
+                    console.log("1.storePrimeNumber :-> "+storePrimeNumber);
+                    counter = counter + 1;
+                }
+                if (counter == 1) {
+                    // return i;
+                    return i;
+                    // break;
+                }
+                pNumber = 0;
+            }
+        }
+    
+    </script>
+</body>
+
+</html>

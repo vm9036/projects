@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>pyramid pattern</title>
+</head>
+
+<body>
+    <input type="text" id="inputN" value="3">
+    <button onclick="patternPyramid()">Click</button>
+    <p id="displayPyramid"></p>
+
+    <script>
+        function patternPyramid() {
+            let n = Number(document.getElementById("inputN").value);
+            let strPtn = "";
+
+            for (let i = 1; i <= n; i++) {
+                for (let j = 1; j <= i; j++) {
+                    strPtn = strPtn + "*";
+                }
+                for(let k = 1; k<=n-i;k++)
+                {
+                    strPtn = strPtn + "-";
+                }
+                strPtn = strPtn + "<br>";
+            }
+            document.getElementById("displayPyramid").innerHTML = strPtn;
+        }
+    </script>
+</body>
+
+</html>

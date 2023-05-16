@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Check Prime Number</title>
+</head>
+
+<body>
+
+    <h1>Check Prime Number</h1>
+    <input type="number" id="pNumber" value="5">
+    <button onclick="prime()">Check</button>
+    <p id="displayPrime"></p>
+
+    <script>
+        function prime() {
+            let k = Number(document.getElementById("pNumber").value);
+            isPrime(k);
+        }
+        function isPrime(n) {
+
+            let pNum = 1;
+
+            for(i = 2; i<=n ; i++)
+            {
+                if(n%i == 0)
+                {
+                    pNum = pNum + 1;
+                }
+            }
+            if(pNum == 2)
+            {
+                document.getElementById("displayPrime").innerHTML = "Prime Number";
+                // console.log("is Prime");
+            }
+            else
+            {
+                document.getElementById("displayPrime").innerHTML = "Not Prime";
+                // console.log("not Prime");
+            }
+        }
+    </script>
+</body>
+
+</html>

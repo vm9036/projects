@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pattern 25 Triangle</title>
+</head>
+<body>
+    <h1>Pattern 25 Triangle</h1>
+    <input type="text" id="inputN">
+    <button onclick="ptn25()">Click</button>
+    <p id="displayPtn"></p>
+
+    <script>
+        function ptn25(){
+            let n = document.getElementById("inputN").value;
+
+            let counter = 1;
+            let store = "";
+            for(let i = n; i>=1; i--)
+            {
+                for(let j = 1; j<=i; j++)
+                {
+                    store = store + j+ "\t";
+                }
+                store = store + "<br>";
+            }
+            document.getElementById("displayPtn").innerHTML = store;
+        }
+    </script>
+</body>
+</html>

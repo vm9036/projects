@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Factorial Number</title>
+</head>
+<body>
+    <h1>Factorial With Pattern</h1>
+    <input type="text" id="inputN" value="5">
+    <button onclick="factorialPattern()">Click</button>
+    <p id="displayFactPtn"></p>
+
+    <script>
+        function factorialPattern() {
+            let n = Number(document.getElementById("inputN").value);
+            let counter = 1;
+            let factorial = 1;
+            let strFactPtn = " ";
+            for(let i = 1 ; i<=n ; i++)
+            {
+               for(let j = 1 ;j<=i; j++)
+               {
+                factorial = "\t" + factorial  *  counter + "\t";
+                strFactPtn = strFactPtn + factorial;
+                counter = counter + 1;
+               }
+               strFactPtn = strFactPtn +"<br>";
+               document.getElementById("displayFactPtn").innerHTML = strFactPtn;
+            }
+        }
+    </script>
+</body>
+</html>

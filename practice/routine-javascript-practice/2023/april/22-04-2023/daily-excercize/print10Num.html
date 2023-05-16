@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>print 10 Number</title>
+</head>
+
+<body>
+    <h1>Print 10 Number</h1>
+    <input type="text" id="inputP" value="5">
+    <button onclick="print10NumPrime()">Click</button>
+    <p id="displayNumber"></p>
+    <p id="displaySum"></p>
+
+    <script>
+       
+        function print10NumPrime() {
+            let i,j, storePrime = "", nextPrime=1;
+            let n = Number(document.getElementById("inputP").value);
+            let sum = 0;
+            // console.log(getMeNextPrimeNum(50));
+            //  Function Checking with console.log
+            for (i = 1; i <= n; i++) {
+                for(j = 1;j<=i;j++)
+                {
+                    nextPrime = getMeNextPrimeNum(nextPrime);
+                    storePrime = storePrime + nextPrime + "\t";   
+                    sum = sum + nextPrime; 
+                }
+                storePrime = storePrime + "<br>";
+                
+            }
+            document.getElementById("displayNumber").innerHTML = storePrime;
+            document.getElementById("displaySum").innerHTML = "Sum :=> "+sum;
+            
+        }
+
+        function getMeNextPrimeNum(currentNum) {
+            currentNum  = currentNum + 1;
+            let i, j, pNumber = 0, counter = 0;
+
+
+
+            for (i = currentNum; ; i++) {
+                for (j = 1; j <= i; j++) {
+                    if (i % j == 0) {
+                        pNumber = pNumber + 1;
+                    }
+                }
+                if (pNumber == 2) {
+                    counter = counter + 1;
+                }
+                if (counter == 1) {
+                        break;
+                    }
+                pNumber = 0;
+            }
+            return i;
+        }
+    </script>
+
+</body>
+
+</html>

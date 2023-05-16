@@ -47,18 +47,22 @@
             let number1 = Number(document.getElementById("inputNumber").value);
             let number2 = Number(document.getElementById("inputNumber1").value);
             let sum = 0;
+            let store = "";
             for(let i=number1; i<=number2; i++)
             {
                     // console.log(i);
-                    document.getElementById("printNumber").innerHTML +=  i + " " +"Number is natural" + "\n";
+                    store = store + i;
+                    // document.getElementById("printNumber").innerHTML +=  i + " " +"Number is natural" + "\n";
                     sum = sum + i; 
                 
             }
             // console.log("\n");
             // document.write("\n sum is"+sum);
+            document.getElementById("printNumber").innerHTML = store + "&nbsp;&nbsp;" + "\t";
             document.getElementById("printNumber1").innerHTML = "Sum : " + sum;
             // console.log("sum : "+ sum);
         }
     </script>
 </body>
 </html>
+

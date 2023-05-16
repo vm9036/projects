@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prime Number Pattern</title>
+</head>
+
+<body>
+    <input type="number" id="inputPrime" value="5">
+    <button onclick="primePattern()">Click</button>
+    <p id="displayPrime"></p>
+    <p id="displayPrimeSum"></p>
+
+
+    <script>
+        function primePattern() {
+            let n = document.getElementById("inputPrime").value;
+            let i, j, storePrimeNumber = " ", nextPrimeNumber = 1,sum = 0;
+
+            for (i = 1; i <= n; i++) {
+                for (j = 1; j <= i; j++) {
+                    nextPrimeNumber = getMeNextPrimeNum(nextPrimeNumber);
+                    storePrimeNumber = storePrimeNumber + nextPrimeNumber + "\t";
+                    // sum = sum + nextPrimeNumber;
+                }
+                storePrimeNumber = storePrimeNumber + "<br>";
+            }
+            document.getElementById("displayPrime").innerHTML = storePrimeNumber;
+            // document.getElementById("displayPrimeSum").innerHTML = "Prime Number Sum :=>"+sum;
+        }
+
+        function getMeNextPrimeNum(currentNumber) {
+            currentNumber = currentNumber + 1;
+
+            let i, j, counter = 0, pNumber = 0;
+
+            for (i = currentNumber; ; i++) {
+                for (j = 1; j <= i; j++) {
+                    if (i % j == 0) {
+                        pNumber = pNumber + 1;
+                    }
+                }
+                if (pNumber == 2) {
+                    counter = counter + 1;
+                }
+                if (counter == 1) {
+                    break;
+                }
+                pNumber = 0;
+            }
+            return i;
+        }
+    </script>
+</body>
+
+</html>

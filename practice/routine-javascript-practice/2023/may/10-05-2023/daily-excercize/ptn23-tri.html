@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pattern 23 Triangle</title>
+</head>
+<body>
+    <h1>Pattern 23 Triangle</h1>
+    <input type="text" id="inputN">
+    <button onclick="ptn23()">Click</button>
+    <p id="displayPtn"></p>
+
+    <script>
+        function ptn23(){
+            let n = document.getElementById("inputN").value;
+
+            let counter = n;
+            let store = "";
+            for(let i = 1; i<=n; i++)
+            {
+                for(let j = 1; j<=i; j++)
+                {
+                    store = store + counter+ "\t";
+                }
+                store = store + "<br>";
+                counter--;
+            }
+            document.getElementById("displayPtn").innerHTML = store;
+        }
+    </script>
+</body>
+</html>

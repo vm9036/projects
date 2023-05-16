@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prime Number Tool Generate</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.9.4/css/bulma.min.css">
+</head>
+
+<body>
+
+    <div class="box">
+        <div class="block has-text-centered">
+            <h1 class="title">Prime Number Tool Generate</h1>
+        </div>
+
+        <div class="columns mt-5">
+            <div class="column is-3">
+                <div class="field">
+                    <label class="label">Enter Start Number</label>
+                    <div class="control">
+                        <input type="text" class="input" value="1" id="inputStartPrimeNumber">
+                    </div>
+                </div>
+            </div>
+            <div class="column is-3">
+                <div class="field">
+                    <label class="label">Enter No. Of Print Prime Number</label>
+                    <div class="control">
+                        <input type="text" class="input" value="10" id="inputNPrimeNum">
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="block">
+            <div class="field">
+                <div class="control has-text-centered">
+                    <button class="button is-primary" onclick="primeNumber()">Click</button>
+                    <!-- <button class="button is-primary" onclick="primeNumber(5)">5Values</button>
+                        <button class="button is-primary" onclick="primeNumber(10)">10 Values</button>
+                        <button class="button is-primary" onclick="primeNumber(15)">15 Values</button> -->
+                </div>
+            </div>
+        </div>
+
+        <div class="block">
+            <div class="field">
+                <label class="label">Display Prime Number :</label>
+                <div class="control">
+                    <textarea id="displayPrimeNum" cols="30" rows="6" class="textarea"></textarea>
+                </div>
+            </div>
+        </div>
+            <!-- <div class="block has-text-centered">
+                <p class="button is-primary" id="displaySum">Sum : 0</p>
+            </div> -->
+    </div>
+
+
+    <script>
+        
+        function primeNumber() {
+
+
+            let n = Number(document.getElementById("inputStartPrimeNumber").value);
+
+            let noPrime = Number(document.getElementById("inputNPrimeNum").value);
+            let storeP = " ";
+            let pNumber = 0;
+            let counter = 0;
+
+            for (let i = n; ; i++) {
+                for (let j = 1; j <= i; j++) {
+                    if (i % j == 0) {
+                        pNumber = pNumber + 1;
+                    }
+                }
+                if (pNumber == 2) {
+                    storeP = storeP + i + "\t";
+                    counter = counter + 1;
+                }
+                if (counter == noPrime) {
+                    break;
+                }
+                pNumber = 0;
+            }
+            document.getElementById("displayPrimeNum").value = storeP;
+        }
+    </script>
+</body>
+
+</html>

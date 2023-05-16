@@ -16,14 +16,17 @@
     <script>
         function primePattern() {
             let n = Number(document.getElementById("inputN").value);
-            let strPrimePtn = " ",np;
-            // let counter = 0;
-            for(let i =1; i<=n ; i++)
+            let strPrimePtn = " ";
+            let counter = 2;
+            for(let i=1; i<=n ; i++)
             {
                 for(let j = 1; j<=i ;j++)
                 {
-                    strPrimePtn = strPrimePtn + primeNum() +"\t";
-                    // counter = counter + 1;
+                    while(!isPrimeNumber(counter)){
+         counter++;
+}
+counter++;
+                    strPrimePtn = strPrimePtn + primeNum(n) +"\t";
                 }
                 strPrimePtn = strPrimePtn + "<br>";
             }
@@ -32,17 +35,18 @@
 
         function primeNum()
         {
-            let pNumber = 0;
-            let storePrimeNumber = " ",n =15;
-            // let counter = 1;
-            for (let i = 1; i <= n; i++) {
-                for (let j = 1; j <= i; j++) {
-                    if (i % j == 0) {
-                        pNumber = pNumber + 1;
+            let pNumber = 1;
+            let storePrimeNumber = " ",n=10;
+            for (let i = 1; i <= (n/2); i++) {
+                // for (let j = 1; j <= i; j++) {
+                    if (n % i == 0) {
+                        // pNumber = pNumber + 1;
+                        isPrime = 0;
+                        break;
                     }
-                }
+                // }
                 if(pNumber == 2){
-                    storePrimeNumber = storePrimeNumber + i +"  ";
+                    storePrimeNumber = pNumber % 10;
                 }
                 pNumber = 0;
             }

@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prime And Star Mix Pattern</title>
+</head>
+<body>
+    <input type="text" id="inputP">
+    <button onclick="primeStar()">Click</button>
+    <p id="displayPrime"></p>
+
+    <script>
+        function primeStar() {
+
+            let inputN = Number(document.getElementById("inputP").value);
+            let nPrime = 1;
+            let storeP = "";
+
+            for(let i = 1; i<= inputN; i++)
+            {
+                for(let j = 1 ;j<=i; j++)
+                {
+                    if(i % 2 == 0)
+                    {
+                        nPrime = getMeNextPrimeNum(nPrime)
+                        storeP = storeP + nPrime + "\t";
+                    }
+                    else
+                    {
+                        storeP = storeP + "*" + "\t";
+                    }
+                }
+                storeP = storeP + "<br>";
+            }
+            document.getElementById("displayPrime").innerHTML = storeP;
+        }
+
+        function getMeNextPrimeNum(currentNumber) {
+            currentNumber = currentNumber + 1;
+
+            let i, j, counter = 0, pNumber = 0;
+
+            for (i = currentNumber; ; i++) {
+                for (j = 1; j <= i; j++) {
+                    if (i % j == 0) {
+                        pNumber = pNumber + 1;
+                    }
+                }
+                if (pNumber == 2) {
+                    counter = counter + 1;
+                }
+                if (counter == 1) {
+                    break;
+                }
+                pNumber = 0;
+            }
+            return i;
+        }
+    </script>
+</body>
+</html>

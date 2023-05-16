@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Grocery Bud</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.9.4/css/bulma.min.css">
+</head>
+
+<body>
+    <div class="container">
+        <div class="box mt-6">
+            <div class="block">
+                <h1 class="title has-text-centered">Grocery Bud</h1>
+            </div>
+            <div class="field is-grouped">
+                <div class="control">
+                    <label class="label">Enter Number :-</label>
+                </div>
+                <p class="control is-expanded">
+                    <input class="input" type="text" id="inputGrocery">
+                </p>
+                <p class="control">
+                    <a class="button is-success" onclick="groceryBud()">
+                        Submit
+                    </a>
+                </p>
+            </div>
+
+            <div class="block">
+                <p id="displayAllItems"></p>
+            </div>
+
+            <!-- <div class="columns">
+                <div class="column is-4">
+                </div>
+                <div class="column is-4">
+                    <table class="table ">
+                        <tr>
+                            <td>1.</td>
+                            <td>Bacon</td>
+                            <td>
+                                <a class="button is-info">
+                                    Edit
+                                </a>
+                            </td>
+                            <td>
+                                <a class="button is-danger">
+                                    Delete
+                                </a>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>2.</td>
+                            <td>Milk</td>
+                            <td>
+                                <a class="button is-info">
+                                    Edit
+                                </a>
+                            </td>
+                            <td>
+                                <a class="button is-danger">
+                                    Delete
+                                </a>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>3.</td>
+                            <td>Biscuit</td>
+                            <td>
+                                <a class="button is-info">
+                                    Edit
+                                </a>
+                            </td>
+                            <td>
+                                <a class="button is-danger">
+                                    Delete
+                                </a>
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+                <div class="column is-4">
+                </div>
+            </div> -->
+
+            <div class="block has-text-centered">
+                <button class="button is-danger" onclick="deleteClearAll()">Clear All Items</button>
+            </div>
+        </div>
+    </div>
+
+    <script>
+
+        var inputItem;
+        var store = "<div class='columns'><div class='column is-4'></div><div class='column is-4'><table class='table' id='myTable'>";
+        var n = 1;
+        function groceryBud() {
+            inputItem = document.getElementById("inputGrocery").value;
+
+            store = store + "<tr><td>"+ n +"</td><td>" + inputItem + "</td><td><a class='button is-info'>Edit</a></td><td><a class='button is-danger'>Delete</a></td></tr>";
+            n =n + 1;
+            document.getElementById("displayAllItems").innerHTML = store;
+        }
+
+        function deleteClearAll(){
+            document.getElementById("myTable").remove();
+        }
+
+        function del()
+        {
+            document.getElementById("myTable").deleteRow(0);
+        }
+        // store = store + "</table></div>" + "<div class='column is-4'></div>";
+    </script>
+</body>
+
+</html>

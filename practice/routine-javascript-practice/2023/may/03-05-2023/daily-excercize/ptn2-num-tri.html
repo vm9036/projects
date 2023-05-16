@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Triangle Pattern 2</title>
+</head>
+<body>
+    <input type="text" id="inputPtn" value="5">
+    <button >Click</button>
+    <p id="displayPtn"></p>
+
+    <script>
+        let n = document.getElementById("inputPtn").value;
+        let store = " ";
+        for(let i = 1; i<=n; i++)
+        {
+            for(let j = i; j<=n; j++)
+            {
+                store = store + j+ "\n";
+            }
+            store = store + "<br>";
+        }
+        document.getElementById("displayPtn").innerHTML = store;
+    </script>
+</body>
+</html>
