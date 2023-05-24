@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Round The Image Corner</title>
+    <!-- html2Canvas library -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+
+    <!-- fontawesome library -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css" />
+
+    <!-- css bulma -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.9.4/css/bulma.min.css" />
+
+    <link rel="stylesheet"
+        href="	https://cdnjs.cloudflare.com/ajax/libs/imgareaselect/1.0.0-rc.1/css/imgareaselect-default.css">
+
+    <!-- jquery -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.4/jquery.min.js"
+        integrity="sha512-pumBsjNRGGqkPzKHndZMaAG+bir374sORyzM3uulLV14lN5LyykqNk8eEeUlUkB3U0M4FApyaHraT65ihJhDpQ=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/imgareaselect/0.9.10/js/jquery.imgareaselect.min.js"
+        integrity="sha512-59swnhUs+9AinrKlTPqsoO5ukNPPFbPXFyaf41MAgiTG/fv3LBZwWQWiZNYeksneLhiUo4xjh/leTZ53sZzQ4Q=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <!-- stackblur library -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/stackblur-canvas/2.5.0/stackblur.min.js"
+        integrity="sha512-W5pl1mdnRnOONc8pHMFi5xyBNNNHo6N7Q2psPRHWMPR47VyO6F/sL1G5PpRLBcsd9QL+WfDa0J9mEsGoxQH+RQ=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <!-- <link rel="stylesheet" href="style.css">     -->
+</head>
+
+<body>
+    <div class="container mt-5">
+        <div class="box">
+            <div class="block has-text-centered">
+                <h1 class="title">Rounding Image Corners</h1>
+            </div>
+
+            <div class="columns">
+                <div class="column is-4 has-text-centered">
+                    <div class="field">
+                        <label class="label has-text-left" for="file-input">Upload Image :</label>
+                        <div class="file has-name is-fullwidth" id="file-js-example">
+                            <label class="file-label">
+                                <input class="file-input is-centered" id="file-input" type="file" name="resume">
+                                <span class="file-cta">
+                                    <span class="file-icon">
+                                        <i class="fas fa-upload"></i>
+                                    </span>
+                                    <span class="file-label">
+                                        Choose a file…
+                                    </span>
+                                </span>
+                                <span class="file-name">
+                                    No file uploaded......
+                                </span>
+                            </label>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="column is-4 has-text-centered">
+                    <div class="field">
+                        <label class="label has-text-left" for="radius-slider">Image Radius :</label>
+                        <div class="control mt-2">
+                            <table class="table is-bordered is-fullwidth has-text-centered">
+                                <td>
+                                    <input type="range" name="" id="radius-slider" class="">
+                                </td>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+                <div class="column is-2 has-text-centered">
+                    <div class="field">
+                        <div class="control" style="margin-top: 9px;">
+                            <button class="button mt-5 is-info" id="download-button">Download</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="block has-text-centered" id="image-container">
+                <canvas id="my-canvas"></canvas>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+
+</body>
+
+</html>
