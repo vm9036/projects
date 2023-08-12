@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
+        <title>Pip Logic Static Page</title>
+    </head>
+    <body>
+        <div class="container">
+            <div class="box">
+                <div class="columns">
+                    <div class="column is-6">
+                        <div class="field">
+                            <label for="" class="label">Enter Apip Value:</label>
+                            <div class="control">
+                                <input
+                                    type="text"
+                                    class="input is-info"
+                                    value="6"
+                                    id="pipA"
+                                >
+                            </div>
+                        </div>
+                    </div>
+                    <div class="column is-6">
+                        <div class="field">
+                            <label for="" class="label">Enter Bowl Value :</label>
+                            <div class="control">
+                                <input
+                                    type="text"
+                                    class="input is-info"
+                                    value="1.5"
+                                    id="bowl"
+                                >
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="field">
+                    <div class="control">
+                        <button class="button" onclick="pipLogic()">Click</button>
+                    </div>
+                </div>
+                <p id="displayBothPipValue"></p>
+                <!-- <div class="block">
+                <table class="table is-bordered">
+                    <tr>
+                        <th>Apip</th>
+                        <th>Bpip</th>
+                    </tr>
+                    <tr>
+                        <td>6</td>
+                        <td>1.5</td>
+                    </tr>
+                    <tr>
+                        <td>4.5</td>
+                        <td>3</td>
+                    </tr>
+                    <tr>
+                        <td>3</td>
+                        <td>4.5</td>
+                    </tr>
+                    <tr>
+                        <td>1.5</td>
+                        <td>6</td>
+                    </tr>
+                    <tr>
+                        <td>0</td>
+                        <td>6</td>
+                    </tr>
+                </table>
+            </div> -->
+            </div>
+        </div>
+        <script>
+        function pipLogic()
+        {
+            let pipA = Number(document.getElementById("pipA").value);
+            let bowl = Number(document.getElementById("bowl").value);
+
+            let strTable = "<table class='table is-bordered'><tr><th>Loop No.</th><th>Apip</th><th>Bpip</th></tr>";
+            
+                let ValuePipA = pipA;
+                let ValuePipB = bowl;
+
+            for(let i=1; i<=5; i++)
+            {
+                strTable = strTable + "<tr>" + "<td>" + i + "</td>" + "<td>" +ValuePipA  + "</td>" + "<td>" + ValuePipB +"</td>" + "</tr>";
+                document.getElementById("displayBothPipValue").innerHTML = strTable;
+                ValuePipA = ValuePipA - bowl;
+                ValuePipB = ValuePipB + bowl;
+                if(i==4)
+                {
+                    ValuePipB = pipA;
+                } 
+            }
+            strTable = strTable +"</table>";
+        }
+        </script>
+    </body>
+</html>
