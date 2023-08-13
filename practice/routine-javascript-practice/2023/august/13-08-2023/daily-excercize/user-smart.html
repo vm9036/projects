@@ -77,29 +77,27 @@
         <script>
         function pipLogic()
         {
-            let pipA = Number(document.getElementById("pipA").value);
-            let bowl = Number(document.getElementById("bowl").value);
+            let pipA = parseFloat(document.getElementById("pipA").value);
+            let bowl = parseFloat(document.getElementById("bowl").value);
             let pipB = 0;
 
             let strTable = "<table class='table is-bordered'><tr><th>Loop No.</th><th>Apip</th><th>Bpip</th></tr>";
                 
-           
             console.log("1. pipA :->"+pipA, "pipB :-> "+pipB, "bowl :->"+bowl);
             for(let i= 1; ;i++)
             {    
-                
                 console.log("2. pipA :->"+pipA, "pipB :-> "+pipB, "bowl :->"+bowl, "i :-> "+i);
+                pipB = Math.round( (pipB + bowl)  * 100)  /100;
+                pipA = Math.round( (pipA - bowl) * 100)  /100;
+                
                 if(pipA < 0)
                 {
                     break;
                 }
                 strTable = strTable + "<tr>" + "<td>" + i + "</td>" + "<td>" +pipA  + "</td>" + "<td>" + pipB +"</td>" + "</tr>";
-                pipB = pipB + bowl;
-                pipA = pipA - bowl;
-                
                 console.log("3. pipA :->"+pipA, "pipB :-> "+pipB, "bowl :->"+bowl, "i :-> "+i, "strTable :-> "+strTable);
-                document.getElementById("displayBothPipValue").innerHTML = strTable; 
             }
+            document.getElementById("displayBothPipValue").innerHTML = strTable; 
         }
         </script>
     </body>
