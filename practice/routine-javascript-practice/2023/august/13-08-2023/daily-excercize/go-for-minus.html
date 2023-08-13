@@ -4,12 +4,12 @@
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
-        <title>User Smart Page</title>
+        <title>Go For Minus Page</title>
     </head>
     <body>
         <div class="container">
             <div class="box">
-                <h1 class="title has-text-centered">User Smart Value :-</h1>
+                <h1 class="title has-text-centered">Go For Minus End :-</h1>
                 <div class="columns">
                     <div class="column is-6">
                         <div class="field">
@@ -77,28 +77,32 @@
         <script>
         function pipLogic()
         {
-            let pipA = parseFloat(document.getElementById("pipA").value);
-            let bowl = parseFloat(document.getElementById("bowl").value);
+            let pipA = Number(document.getElementById("pipA").value);
+            let bowl = Number(document.getElementById("bowl").value);
             let pipB = 0;
 
-            let strTable = "<table class='table is-bordered'><tr><th>Loop No.</th><th>Apip</th><th>Bpip</th></tr>";
+            let strTable = "<table class='table is-bordered'><tr><th>Loop No.</th><th>Apip</th><th>Bpip</th><th>Bowl</th></tr>";
                 
+            
             console.log("1. pipA :->"+pipA, "pipB :-> "+pipB, "bowl :->"+bowl);
             for(let i= 1; ;i++)
             {    
                 console.log("2. pipA :->"+pipA, "pipB :-> "+pipB, "bowl :->"+bowl, "i :-> "+i);
-                strTable = strTable + "<tr>" + "<td>" + i + "</td>" + "<td>" +pipA  + "</td>" + "<td>" + pipB +"</td>" + "</tr>";
                 
-                pipB = Math.round( (pipB + bowl)  * 100)  /100;
-
-                pipA = Math.round( (pipA - bowl) * 100)  /100;
-                if(pipA < 0)
-                {
+                strTable = strTable + "<tr>" + "<td>" + i + "</td>" + "<td>" +pipA  + "</td>" + "<td>" + pipB +"</td>" + "<td>"+bowl+"</td>" + "</tr>";
+                
+                if(pipA < -1 )
+                {   
+                    console.log("Break :2. pipA :->"+pipA, "pipB :-> "+pipB, "bowl :->"+bowl, "i :-> "+i);
                     break;
                 }
-                console.log("3. pipA :->"+pipA, "pipB :-> "+pipB, "bowl :->"+bowl, "i :-> "+i, "strTable :-> "+strTable);
+                
+                pipB = Math.round( (pipB + bowl)  * 100)  /100;
+                pipA = Math.round( (pipA - bowl) * 100)  /100;
+              // console.log("3. pipA :->"+pipA, "pipB :-> "+pipB, "bowl :->"+bowl, "i :-> "+i, "strTable :-> "+strTable,);
+                
+                document.getElementById("displayBothPipValue").innerHTML = strTable; 
             }
-            document.getElementById("displayBothPipValue").innerHTML = strTable; 
         }
         </script>
     </body>
