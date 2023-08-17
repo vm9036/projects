@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css" />
+    <title>Random integers Program</title>
+</head>
+
+<body>
+    <div class="container">
+        <div class="block">
+            <h1 class="title">Random integers</h1>
+        </div>
+        <div class="columns">
+            <div class="column is-6">
+                <div class="field">
+                    <div class="control">
+                        <textarea id="displayIntegers" cols="30" rows="10" class="textarea">
+                        </textarea>
+                    </div>
+                </div>
+                <div class="field">
+                    <div class="control">
+                        <button class="button is-primary" onclick="randomIntegers()">Click</button>
+                    </div>
+                </div>
+            </div>
+            <div class="column is-6">
+                <div class="field">
+                    <label class="label">Start at this integer :- </label>
+                    <div class="control">
+                        <input type="text" class="input" value="1" id="range-start">
+                    </div>
+                </div>
+                <div class="field">
+                    <label class="label">End at this integer :- </label>
+                    <div class="control">
+                        <input type="text" class="input" value="100" id="range-end">
+                    </div>
+                </div>
+                <div class="field">
+                    <label class="label">How many integers to generate :- </label>
+                    <div class="control">
+                        <input type="text" class="input" value="10" id="count">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <script src="random-integers.js"></script>
+</body>
+
+</html>
+
