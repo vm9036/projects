@@ -25,7 +25,6 @@
         </div>
         <div class="field">
             <div class="control">
-                <button class="button is-primary" onclick="tableN()">Click</button>
                 <button class="button is-info" onclick="tableN()">All</button>
                 <button class="button is-dark" onclick="oddTable()">Odd</button>
                 <button class="button is-light" onclick="evenTable()">Even</button>
@@ -36,11 +35,8 @@
         <p id="displayTable"></p>
     </div>
     <script>
-
-        var endValue = Number(document.getElementById("table-range-end").value);
-
         function tableN() {
-
+            let endValue = Number(document.getElementById("table-range-end").value);
             let sumTable = 0;
 
             let strTable = "<div class='columns is-multiline'>";
@@ -58,6 +54,7 @@
         }
 
         function oddTable() {
+            let endValue = Number(document.getElementById("table-range-end").value);
             let sumTable = 0;
 
             let strTable = "<div class='columns is-multiline'>";
@@ -77,6 +74,7 @@
         }
 
         function evenTable() {
+            let endValue = Number(document.getElementById("table-range-end").value);
             let sumTable = 0;
 
             let strTable = "<div class='columns is-multiline'>";
@@ -96,6 +94,7 @@
         }
 
         function fiboTable() {
+            let endValue = Number(document.getElementById("table-range-end").value);
             let sumTable = 0;
             let strTable = "<div class='columns is-multiline'>";
             let a = 0, b = 1,c =0;
