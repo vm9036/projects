@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prime Number Calculator</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.9.4/css/bulma.min.css">
+    <script src="bigNumber.js"></script>
+</head>
+
+<body>
+    <div class="container">
+        <div class="box mt-5">
+            <h1 class="title">Random Integer Generator</h1>
+            <div class="field">
+                <div class="control">
+                    <textarea class="textarea" id="answer" cols="30" rows="10"></textarea>
+                </div>
+            </div>
+            <div class="field">
+                <div class="control has-text-centered">
+                    <button class="button is-primary" onclick="primeNumberCalculator()">Click</button>
+                </div>
+            </div>
+            <div class="columns">
+                <div class="column is-4">
+                    <div class="field">
+                        <label for="" class="label">Start :</label>
+                        <div class="control">
+                            <input type="text" id="start" class="input is-info" value="3" oninput="primeNumberCalculator()">
+                        </div>
+                    </div>
+                </div>
+                <div class="column is-4">
+                    <div class="field">
+                        <label class="label">Count:</label>
+                        <div class="control">
+                            <input type="text" id="count" class="input is-info" value="10" oninput="primeNumberCalculator()">
+                        </div>
+                    </div>
+                </div>
+                <div class="column is-4">
+                    <div class="field">
+                        <label for="" class="label">seperator :</label>
+                        <div class="control">
+                            <input type="text" id="sep" class="input is-info" value="\n">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <script>
+        function primeNumberCalculator() {
+            BigNumber.config({
+            EXPONENTIAL_AT: 1e+9
+        });
+
+        let start = Number(document.getElementById("start").value);
+        console.log("start :-> "+start);
+
+        let count = Number(document.getElementById("count").value);
+        console.log("count :-> "+count);
+
+        let sep = document.getElementById("sep").value;
+        console.log("sep :-> "+sep);
+
+        var primes = [];
+        for (var i = new BigNumber(start); ; i = i.plus(1)) {
+            isPrime = true;
+            upTo = i.sqrt().floor();
+            var j = new BigNumber(2);
+            for (j; j.lte(upTo); j = j.plus(1)) {
+                if (i.mod(j).eq(0)) {
+                    isPrime = false;
+                    break;
+                }
+            }
+            if (isPrime) {
+                primes.push(i);
+                if (primes.length >= count) {
+                    break;
+                }
+            }
+        }
+        if (!primes[0].eq(start)) {
+            tool.output.showWarningBadge("Starting number is not a prime.", "You start the sequence from {0}, but the nearest following prime number is {1}.".format(options.start, primes[0]));
+        }
+        if (sep == "\\n")
+            sep = "\n";
+       
+            let answer = primes.join(sep);
+            document.getElementById("answer").value = answer;
+
+        }
+    </script>
+</body>
+
+</html>
