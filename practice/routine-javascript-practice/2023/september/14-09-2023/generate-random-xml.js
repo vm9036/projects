@@ -190,3 +190,16 @@ function generaterRandomXML() {
 
   document.getElementById("generatedXMLTextArea").value = answer;
 }
+
+
+// Copy and download Code
+function copyGeneratedXML(){
+  copyToClipboard(document.getElementById("generatedXMLTextArea").value);
+  document.getElementById("generatedXMLTextArea").select();
+}
+function downloadGeneratedData(){
+  var blob = new Blob([ "" + document.getElementById("generatedXMLTextArea").value + "" ], {
+  type : "text/plain;charset=utf-8"
+});
+fileDownloadCB(blob,gViewName+".txt");
+}
