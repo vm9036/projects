@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.3/css/bulma.min.css">
+    <title>Random integer range generator</title>
+</head>
+
+<body>
+    <div class="container is-fluid mt-2">
+        <!-- heading-part Starts -->
+        <div class="heading-part">
+            <h1 class="title is-size-2 is-inline">Random integer range generator</h1>
+        </div>
+        <!-- heading-part Ends -->
+        <hr>
+
+        <div class="columns">
+            <div class="column is-6">
+                <div class="field">
+                    <div class="control">
+                        <textarea class="textarea" name="" id="answer" cols="60" rows="15">
+                        </textarea>
+                    </div>
+                </div>
+                <div class="field">
+                    <div class="control has-text-centered">
+                        <button class="button is-primary generatejson" onclick="randomIntegerRange()">
+                            Generate new random Fraction
+                        </button>
+                    </div>
+                </div>
+            </div>
+            <div class="column is-3">
+                <div class="heading">
+                    <h5 class="title is-capitalized is-size-4 is-underlined	">Random Range Options </h5>
+                </div>
+                <div class="field mt-3">
+                    <label class="label is-size-6">Start range at this integer
+                    </label>
+                    <div class="control">
+                        <input type="text" class="input" id="range-start" value="1" onchange="randomIntegerRange()">
+                    </div>
+                </div>
+                <div class="field">
+                    <label class="label is-size-6">Ending range at this integer
+                    </label>
+                    <div class="control">
+                        <input type="text" class="input" id="range-end" value="100" onchange="randomIntegerRange()">
+                    </div>
+                </div>
+                <div class="field ">
+                    <label class="label is-size-6">Count
+                    </label>
+                    <div class="control">
+                        <input type="text" class="input" id="count" value="10" onchange="randomIntegerRange()">
+                    </div>
+                </div>
+
+
+                <div class="heading2">
+                    <h5 class="title is-capitalized is-size-4 is-underlined	">Range Order Options </h5>
+                </div>
+                <div class="field mt-3">
+                    <div class="control">
+                        <label class="radio">
+                            <span class="is-size-4"><input type="radio" name="integer" value="increasing"
+                                    onchange="randomIntegerRange()" checked></span>
+                            <span class="has-text-black">Pick random integers in increasing order
+                            </span>
+                        </label>
+                    </div>
+                    <div class="control">
+                        <label class="radio">
+                            <span class="is-size-4"><input type="radio" name="integer" value="decreasing"
+                                    onchange="randomIntegerRange()"></span>
+                            <span class="has-text-black">Pick random integers in decreasing order
+                            </span>
+                        </label>
+                    </div>
+                </div>
+            </div>
+            <div class="column is-3">
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function randomIntegerRange() {
+
+            let howMany = Number(document.getElementById("count").value);
+            console.log("howMany :-> " + howMany);
+
+            let increasing = false;
+            let decreasing = false;
+            var radios = document.getElementsByName('integer');
+            for (var radio of radios) {
+                if (radio.checked) {
+
+                    if (radio.value == "increasing") {
+                        increasing = true;
+                    }
+
+                    if (radio.value == "decreasing") {
+                        decreasing = true
+                    }
+                }
+
+            }
+            console.log("increasing :->" + increasing);
+            console.log("decreasing :->" + decreasing);
+
+            let rangeEnd = Number(document.getElementById("range-end").value);
+            console.log("rangeEnd :-> " + rangeEnd);
+
+            let rangeStart = Number(document.getElementById("range-start").value);
+            console.log("rangeStart :-> " + rangeStart);
+
+            if (rangeEnd < rangeStart) {
+                this.output.showWarningBadge("Invalid ending range.", "Ending range is smaller than starting range.");
+                return "";
+            }
+            if (rangeEnd == rangeStart) {
+                this.output.showWarningBadge("Only one result available.", "Starting range is equal to ending range.");
+                return rangeStart;
+            }
+            var interval = rangeEnd - rangeStart + 1;
+            if (interval == howMany) {
+                this.output.showWarningBadge("Randomization is not possible.", "There are exactly {0} numbers between {1} and {2} so the range is all these numbers.".format(interval, rangeStart, rangeEnd));
+                var ret = [];
+                for (var i = rangeStart; i <= rangeEnd; i++) {
+                    ret.push(i);
+                }
+                return ret.join(", ");
+            }
+            if (interval < howMany) {
+                this.output.showWarningBadge("Can't generate a range.", "There are only {0} numbers in range {1} to {2} but you wanted {3}.".format(interval, rangeStart, rangeEnd, howMany));
+                return "";
+            }
+            var integers = [];
+            var seen = {};
+            while (integers.length != howMany) {
+                var x = generateRandomNumber(rangeStart, rangeEnd);
+                if (seen[x] === undefined) {
+                    seen[x] = 1;
+                    integers.push(x);
+                }
+            }
+            var sortOrder = 1;
+            if (decreasing) {
+                sortOrder = -1;
+            }
+            let answer = integers.sort(function (a, b) {
+                return sortOrder * (a - b)
+            }).join(", ")
+
+            document.getElementById("answer").value = answer;
+            console.log("answer :-> "+answer);
+
+        }
+
+        function generateRandomNumber(rangeStart, rangeEnd) {
+            return Math.floor(Math.random() * (rangeEnd - rangeStart + 1)) + rangeStart;
+        }
+    </script>
+</body>
+
+</html>
