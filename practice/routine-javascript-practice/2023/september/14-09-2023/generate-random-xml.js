@@ -188,5 +188,5 @@ function generaterRandomXML() {
 
   //console.log("answer:->" +answer);
 
-  document.getElementById("answer").value = answer;
+  document.getElementById("generatedXMLTextArea").value = answer;
 }
