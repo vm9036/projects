@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.3/css/bulma.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css" />
+    <title>Document</title>
+</head>
+
+<body>
+    <div class="container is-fluid mt-2">
+        <!-- heading-part Starts -->
+        <div class="heading-part">
+            <h1 class="title is-size-2 is-inline">Random XML Generator</h1>
+            <button class="button is-pulled-right" title="Add this tool to Favorites">
+                <span class="icon has-icons-left is-size-4">
+
+                    <i class="fa-regular fa-heart has-text-black has-icon-left"></i>
+                </span>
+                <!-- <span class="is-size-5">Add to Fav</span> -->
+            </button>
+        </div>
+        <!-- heading-part Ends -->
+        <hr>
+
+        <div class="columns">
+            <div class="column is-6">
+                <div class="field">
+                    <label class="label is-inline">
+                        <span><a class="has-text-black is-size-5" href="#" id="sampleurlindialog">Sample</a></span>
+                    </label>
+                    <div class="control mb-2 is-pulled-right">
+                        <button class="button ">
+                            <span><a href="#"><i class="fa-solid fa-copy has-text-black"></i></a></span>
+                        </button>
+                        <button class="button">
+                            <span><a href="#"><i class="fa-solid fa-cloud-arrow-down has-text-black"></i></a></span>
+                        </button>
+                    </div>
+                </div>
+                <div class="field">
+                    <div class="control">
+                        <textarea class="textarea" name="" id="answer" cols="60" rows="15">
+                        </textarea>
+                    </div>
+                </div>
+                <div class="field">
+                    <div class="control has-text-centered">
+                        <button class="button is-primary generatejson" onclick="generaterRandomXML()">
+                            Generate a new Random XML Document
+                        </button>
+                    </div>
+                </div>
+            </div>
+            <div class="column is-3">
+                <div class="heading">
+                    <h5 class="title is-capitalized is-size-4 is-underlined	">Generator Options : </h5>
+                </div>
+                <div class="field mt-3">
+                    <label class="label is-size-6">Maximum XML depth
+                    </label>
+                    <div class="control">
+                        <input type="number" class="input" id="depth" value="3" oninput="generaterRandomXML()">
+                    </div>
+                </div>
+                <div class="field">
+                    <label class="label is-size-6">Max elements per each level
+                    </label>
+                    <div class="control">
+                        <input type="number" class="input" id="max-elements" value="6" oninput="generaterRandomXML()">
+                    </div>
+                </div>
+                <div class="field">
+                    <label class="label is-size-6">Maximum string length
+                    </label>
+                    <div class="control">
+                        <input type="number" class="input" id="max-string-length" value="10" oninput="generaterRandomXML()">
+                    </div>
+                </div>
+                <div class="field">
+                    <label class="label is-size-6">Wrapper tag
+                    </label>
+                    <div class="control">
+                        <input type="text" class="input" id="xml-root" value="root" oninput="generaterRandomXML()">
+                    </div>
+                </div>
+
+                <div class="field">
+                    <div class="control">
+                        <label class="checkbox">
+                            <span class="is-size-4"><input type="checkbox" id="always-max-elements" checked onchange="generaterRandomXML()"></span>
+                            <span class="has-text-black">Always max elements
+                            </span>
+                        </label>
+                    </div>
+                </div>
+                <div class="heading2">
+                    <h5 class="title is-capitalized is-size-4 is-underlined	">Indentation : </h5>
+                </div>
+                <div class="field mt-3">
+                    <div class="control">
+                        <label class="radio">
+                            <span class="is-size-4"><input type="radio" name="use" value="formatting-spaces" onchange="generaterRandomXML()"
+                                    checked></span>
+                            <span class="has-text-black">Use spaces
+                            </span>
+                        </label>
+                    </div>
+                    <div class="control">
+                        <label class="radio">
+                            <span class="is-size-4"><input type="radio" name="use" value="formatting-tabs" onchange="generaterRandomXML()"></span>
+                            <span class="has-text-black">Use tabs
+                            </span>
+                        </label>
+                    </div>
+                    <div class="control">
+                        <label class="radio">
+                            <span class="is-size-4"><input type="radio" name="use" value="formatting-none" onchange="generaterRandomXML()"></span>
+                            <span class="has-text-black">Keep unformatted
+                            </span>
+                        </label>
+                    </div>
+                </div>
+            </div>
+            <div class="column is-3">
+                <div class="heading2">
+                    <h5 class="title is-capitalized is-size-4 is-underlined	">String Options : </h5>
+                </div>
+                <div class="field mt-3">
+                    <div class="control">
+                        <label class="radio">
+                            <span class="is-size-4"><input type="radio" name="string" value="randomEnglish" onchange="generaterRandomXML()"
+                                    checked></span>
+                            <span class="has-text-black">Use random English words
+                            </span>
+                        </label>
+                    </div>
+                    <div class="control">
+                        <label class="radio">
+                            <span class="is-size-4"><input type="radio" name="string" value="randomStrings" onchange="generaterRandomXML()"></span>
+                            <span class="has-text-black">Use completely random strings
+                            </span>
+                        </label>
+                    </div>
+                </div>
+
+                <div class="heading">
+                    <h5 class="title is-capitalized is-size-4 is-underlined	">XML Options : </h5>
+                </div>
+                <div class="field mt-3">
+                    <div class="control">
+                        <label class="checkbox">
+                            <span class="is-size-4"><input type="checkbox" id="xml-meta" onchange="generaterRandomXML()"></span>
+                            <span class="has-text-black">Use XML meta tags
+                            </span>
+                        </label>
+                    </div>
+                    <div class="control">
+                        <label class="checkbox">
+                            <span class="is-size-4"><input type="checkbox" id="xml-attributes" checked onchange="generaterRandomXML()"></span>
+                            <span class="has-text-black">Generate attributes
+                            </span>
+                        </label>
+                    </div>
+                    <div class="control">
+                        <label class="checkbox">
+                            <span class="is-size-4"><input type="checkbox" id="xml-cdata" checked onchange="generaterRandomXML()"></span>
+                            <span class="has-text-black">Generate CDATA
+                            </span>
+                        </label>
+                    </div>
+                    <div class="control">
+                        <label class="checkbox">
+                            <span class="is-size-4"><input type="checkbox" id="xml-comments" checked onchange="generaterRandomXML()"></span>
+                            <span class="has-text-black">Generate comments
+                            </span>
+                        </label>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="generate-random-xml-methods.js"></script>
+    <script src="generate-random-xml.js"></script>
+
+    
+</body>
+
+</html>
