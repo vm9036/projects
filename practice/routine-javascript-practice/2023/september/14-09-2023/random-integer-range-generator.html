@@ -33,67 +33,61 @@
                 </button>
             </div>
             <div class="column is-4">
-                <div class="columns">
-                    <div class="column is-6">
-                        <div class="heading">
-                            <h5 class="title is-capitalized is-size-4 is-underlined	">Random Range Options </h5>
-                        </div>
-                        <div class="field mt-3">
-                            <label class="label is-size-6">Start range at this integer
-                            </label>
-                            <div class="control">
-                                <input type="text" class="input" id="range-start" value="1"
-                                    onchange="generateRandomIntegerRange()">
-                            </div>
-                        </div>
-                        <div class="field">
-                            <label class="label is-size-6">Ending range at this integer
-                            </label>
-                            <div class="control">
-                                <input type="text" class="input" id="range-end" value="100"
-                                    onchange="generateRandomIntegerRange()">
-                            </div>
-                        </div>
-                        <div class="field ">
-                            <label class="label is-size-6">Count
-                            </label>
-                            <div class="control">
-                                <input type="text" class="input" id="count" value="10"
-                                    onchange="generateRandomIntegerRange()">
-                            </div>
-                        </div>
+                <div class="heading">
+                    <h5 class="title is-capitalized is-size-4 is-underlined	">Random Range Options </h5>
+                </div>
+                <div class="field mt-3">
+                    <label class="label is-size-6">Start range at this integer
+                    </label>
+                    <div class="control">
+                        <input type="text" class="input" id="range-start" value="1"
+                            onchange="generateRandomIntegerRange()">
+                    </div>
+                </div>
+                <div class="field">
+                    <label class="label is-size-6">Ending range at this integer
+                    </label>
+                    <div class="control">
+                        <input type="text" class="input" id="range-end" value="100"
+                            onchange="generateRandomIntegerRange()">
+                    </div>
+                </div>
+                <div class="field ">
+                    <label class="label is-size-6">Count
+                    </label>
+                    <div class="control">
+                        <input type="text" class="input" id="count" value="10" onchange="generateRandomIntegerRange()">
+                    </div>
+                </div>
 
-                        <div class="heading">
-                            <h5 class="title is-capitalized is-size-4 is-underlined	">Range Order Options </h5>
-                        </div>
-                        <div class="field mt-3">
-                            <div class="control">
-                                <label class="radio">
-                                    <span class="is-size-4"><input type="radio" name="integer" value="increasing"
-                                            onchange="generateRandomIntegerRange()" checked></span>
-                                    <span class="has-text-black">Pick random integers in increasing order
-                                    </span>
-                                </label>
-                            </div>
-                            <div class="control">
-                                <label class="radio">
-                                    <span class="is-size-4"><input type="radio" name="integer" value="decreasing"
-                                            onchange="generateRandomIntegerRange()"></span>
-                                    <span class="has-text-black">Pick random integers in decreasing order
-                                    </span>
-                                </label>
-                            </div>
-                        </div>
+                <div class="heading">
+                    <h5 class="title is-capitalized is-size-4 is-underlined	">Range Order Options </h5>
+                </div>
+                <div class="field mt-3">
+                    <div class="control">
+                        <label class="radio">
+                            <span class="is-size-4"><input type="radio" name="integer" value="increasing"
+                                    onchange="generateRandomIntegerRange()" checked></span>
+                            <span class="has-text-black">Pick random integers in increasing order
+                            </span>
+                        </label>
                     </div>
-                    <div class="column is-6">
+                    <div class="control">
+                        <label class="radio">
+                            <span class="is-size-4"><input type="radio" name="integer" value="decreasing"
+                                    onchange="generateRandomIntegerRange()"></span>
+                            <span class="has-text-black">Pick random integers in decreasing order
+                            </span>
+                        </label>
                     </div>
                 </div>
             </div>
-            <div class="column is-3">
-                <div class="has-text-centered">
-                    <?php include ($_SERVER['DOCUMENT_ROOT']."/application/views/bulma/ads/adsense-responsive.php"); ?>
-                </div>
+        </div>
+        <div class="column is-3">
+            <div class="has-text-centered">
+                <?php include ($_SERVER['DOCUMENT_ROOT']."/application/views/bulma/ads/adsense-responsive.php"); ?>
             </div>
+        </div>
         </div>
     </section>
 </body>
