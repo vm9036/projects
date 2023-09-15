@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.3/css/bulma.min.css">
+    <script src="randomNumber-bigNumber.js"></script>
+    <script src="random-number.js"></script>
+    <title>Random integer range generator</title>
+</head>
+
+<body>
+
+    <!-- Heading starts-->
+    <h1 class="title">Random Number generator</h1>
+    <!-- Heading ends -->
+    <div id="errorMessage" class="notification" style="display: none;"></div>
+    <section class="container is-fluid">
+        <hr class="mt-0">
+        <div class="columns">
+            <div class="column is-5 has-text-centered">
+                <textarea id="generatedRandomNumberTextArea" class="textarea is-primary is-medium"
+                    placeholder="Generated Random Number" rows="12"></textarea>
+
+                <button class="button is-primary is-large mt-4" onclick="generaterRandomNumber()" autofocus>
+                    <span>Generate Random Number</span>
+                </button>
+                <button class="button is-large mt-4" onclick="copyGeneratedRandomNumber();">
+                    <span class="icon"><svg class="svgicon">
+                            <use href="#copy"></use>
+                        </svg></span>
+                </button>
+                <button class="button is-large mt-4" onclick="downloadGeneratedData();" title="Download File">
+                    <span class="icon"><svg class="svgicon">
+                            <use href="#downloadfile"></use>
+                        </svg></span>
+                </button>
+            </div>
+            <div class="column is-4">
+                <div class="columns">
+                    <div class="column is-6">
+                        <div class="heading">
+                            <h5 class="title is-capitalized is-size-4 is-underlined	">Range Options </h5>
+                        </div>
+                        <div class="field mt-3">
+                            <label class="label is-size-6">Range Start
+                            </label>
+                            <div class="control">
+                                <input type="text" class="input" id="range-start" value="1"
+                                    onchange="generaterRandomNumber()">
+                            </div>
+                        </div>
+                        <div class="field">
+                            <label class="label is-size-6">Range End
+                            </label>
+                            <div class="control">
+                                <input type="text" class="input" id="range-end" value="100"
+                                    onchange="generaterRandomNumber()">
+                            </div>
+                        </div>
+
+                        <div class="heading">
+                            <h5 class="title is-capitalized is-size-4 is-underlined	">Quantity and Separator </h5>
+                        </div>
+                        <div class="field mt-3">
+                            <label class="label is-size-6">How many numbers to generate?
+                            </label>
+                            <div class="control">
+                                <input type="text" class="input" id="count" value="10"
+                                    onchange="generaterRandomNumber()">
+                            </div>
+                        </div>
+                        <div class="field">
+                            <label class="label is-size-6">Which character to separate numbers with? (Newline by
+                                default.)
+                            </label>
+                            <div class="control">
+                                <input type="text" class="input" id="sep" value="\n" onchange="generaterRandomNumber()">
+                            </div>
+                        </div>
+                        <div class="field">
+                            <label class="label is-size-6">Fraction precision
+                            </label>
+                            <div class="control">
+                                <input type="text" class="input" id="precision" value="5"
+                                    onchange="generaterRandomNumber()">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="column is-6">
+                        <div class="heading">
+                            <h5 class="title is-capitalized is-size-4 is-underlined">Number Options </h5>
+                        </div>
+                        <div class="field mt-3">
+                            <div class="control">
+                                <label class="radio">
+                                    <span class="is-size-4"><input type="radio" name="randomNum" value="wholeNums"
+                                            onchange="generaterRandomNumber()" checked></span>
+                                    <span class="has-text-black">Generate Random Whole Numbers
+                                    </span>
+                                </label>
+                            </div>
+                            <div class="control">
+                                <label class="radio">
+                                    <span class="is-size-4"><input type="radio" name="randomNum" value="fractNums"
+                                            onchange="generaterRandomNumber()"></span>
+                                    <span class="has-text-black">Generate Random Fractional Numbers
+                                    </span>
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="column is-3">
+                <div class="has-text-centered">
+                    <?php include ($_SERVER['DOCUMENT_ROOT']."/application/views/bulma/ads/adsense-responsive.php"); ?>
+                </div>
+            </div>
+        </div>
+    </section>
+</body>
+
+</html>
