@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+    
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.3/css/bulma.min.css">
+        <script src="random-papa-parse.js"></script>
+        <script src="random-csv-generator.js"></script>
+        <title>Random CSV Generator</title>
+</head>
+
+<body>
+    <h1 class="title">Random CSV Generator</h1>
+    <section class="container is-fluid">
+        <hr class="mt-0">
+        <div class="columns"><!-- dont change -->
+            <div class="column is-5 has-text-centered"><!-- dont change -->
+                <textarea id="generatedRandomCSVTextArea" class="textarea is-primary is-medium"
+                    placeholder="Generated Random CSV" rows="12"></textarea>
+
+                <button class="button is-primary is-large mt-4" onclick="generateRandomCSV()" autofocus>
+                    <span>Generate Random CSV</span>
+                </button>
+                <button class="button is-large mt-4" onclick="copyGeneratedRandomCSV();">
+                    <span class="icon"><svg class="svgicon">
+                            <use href="#copy"></use>
+                        </svg></span>
+                </button>
+                <button class="button is-large mt-4" onclick="downloadGeneratedData();" title="Download File">
+                    <span class="icon"><svg class="svgicon">
+                            <use href="#downloadfile"></use>
+                        </svg></span>
+                </button>
+            </div>
+            <div class="column is-4"><!-- dont change -->
+                <div class="columns">
+                    <div class="column is-6">
+                        <div class="heading">
+                            <h5 class="title is-capitalized is-size-4 is-underlined	">CSV Options</h5>
+                        </div>
+                        <div class="field mt-3">
+                            <label class="label is-size-6">How many rows to generate ?
+                            </label>
+                            <div class="control">
+                                <input type="text" class="input" id="rows" value="6" oninput="generateRandomCSV()">
+                            </div>
+                        </div>
+                        <div class="field">
+                            <label class="label is-size-6">How many columns to generate?
+                            </label>
+                            <div class="control">
+                                <input type="text" class="input" id="cols" value="6" oninput="generateRandomCSV()">
+                            </div>
+                        </div>
+        
+                        <div class="field mt-3">
+                            <label class="label is-size-6">CSV Delimiter
+                            </label>
+                            <div class="control">
+                                <input type="text" class="input" id="delimiter" value="" oninput="generateRandomCSV()">
+                            </div>
+                        </div>
+                        <div class="field">
+                            <label class="label is-size-6">Maximum string length
+                            </label>
+                            <div class="control">
+                                <input type="text" class="input" id="max-string-length" value="10" oninput="generateRandomCSV()">
+                            </div>
+                        </div>
+                        
+                    </div>
+
+                    <div class="column is-6">
+                        <div class="heading">
+                            <h5 class="title is-capitalized is-size-4 is-underlined	">Generator Options</h5>
+                        </div>
+                        <div class="field mt-3">
+                            <div class="control">
+                                <label class="checkbox">
+                                    <span class="is-size-4"><input type="checkbox" id="quote" checked
+                                            onchange="generateRandomCSV();"></span>
+                                    <span class="has-text-black">Field Quotes
+                                    </span>
+                                </label>
+                            </div>
+                            <div class="control">
+                                <label class="radio">
+                                    <span class="is-size-4"><input type="radio" name="random" value="english-strings" checked onchange="generateRandomCSV();"></span>
+                                    <span class="has-text-black">Use random English words
+                                    </span>
+                                </label>
+                            </div>
+                            <div class="control">
+                                <label class="radio">
+                                    <span class="is-size-4"><input type="radio" name="random" value="random-strings" onchange="generateRandomCSV();"></span>
+                                    <span class="has-text-black">Use completely random strings
+                                    </span>
+                                </label>
+                            </div>
+                        </div>
+                        
+                        <div class="field">
+                            <label class="label is-size-6">String alphabet
+                            </label>
+                            <div class="control">
+                                <textarea  cols="4" rows="8" id="string-alphabet" class="textarea" oninput="generateRandomCSV()">
+!"#$%&'()*+,-./0123456789:;<=>?@ABCDEFGHIJKLMNOPQRSTUVWXYZ[\]^_`abcdefghijklmnopqrstuvwxyz{|}~
+                                </textarea>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+            </div>
+            <div class="column is-3"><!-- dont change -->
+                <div class="has-text-centered">
+                    <?php include ($_SERVER['DOCUMENT_ROOT']."/application/views/bulma/ads/adsense-responsive.php"); ?>
+                </div>
+            </div>
+        </div>
+    </section>
+</body>
+
+</html>
