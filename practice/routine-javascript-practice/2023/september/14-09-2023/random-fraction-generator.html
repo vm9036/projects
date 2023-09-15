@@ -5,35 +5,34 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.3/css/bulma.min.css">
+    <script src="random-fraction-generator.js"></script>
     <title>Random Fraction generator</title>
 </head>
 
 <body>
-    <div class="container is-fluid mt-2">
-        <!-- heading-part Starts -->
-        <div class="heading-part">
-            <h1 class="title is-size-2 is-inline">Random Fraction Generator</h1>
-        </div>
-        <!-- heading-part Ends -->
-        <hr>
+    <h1 class="title">Random Fraction Generator</h1>
+    <section class="container is-fluid">
+        <hr class="mt-0">
+        <div class="columns"><!-- dont change -->
+            <div class="column is-5 has-text-centered"><!-- dont change -->
+                <textarea id="generatedRandomFractionTextArea" class="textarea is-primary is-medium"
+                    placeholder="Generated Random Fraction" rows="12"></textarea>
 
-        <div class="columns">
-            <div class="column is-6">
-                <div class="field">
-                    <div class="control">
-                        <textarea class="textarea" name="" id="answer" cols="60" rows="15">
-                        </textarea>
-                    </div>
-                </div>
-                <div class="field">
-                    <div class="control has-text-centered">
-                        <button class="button is-primary generatejson" onclick="randomFraction()">
-                            Generate new random Fraction
-                        </button>
-                    </div>
-                </div>
+                <button class="button is-primary is-large mt-4" onclick="randomFraction();" autofocus>
+                    <span>Generate Random Fraction</span>
+                </button>
+                <button class="button is-large mt-4" onclick="copyGeneratedRandomFraction();">
+                    <span class="icon"><svg class="svgicon">
+                            <use href="#copy"></use>
+                        </svg></span>
+                </button>
+                <button class="button is-large mt-4" onclick="downloadGeneratedData();" title="Download File">
+                    <span class="icon"><svg class="svgicon">
+                            <use href="#downloadfile"></use>
+                        </svg></span>
+                </button>
             </div>
-            <div class="column is-3">
+            <div class="column is-4"><!-- dont change -->
                 <div class="heading">
                     <h5 class="title is-capitalized is-size-4 is-underlined	">Fraction Options : </h5>
                 </div>
@@ -41,17 +40,16 @@
                     <label class="label is-size-6">Starting fraction
                     </label>
                     <div class="control">
-                        <input type="text" class="input" id="range-start" value="2.71" oninput="randomFraction()">
+                        <input type="text" class="input" id="range-start" value="2.71" onchange="randomFraction()">
                     </div>
                 </div>
                 <div class="field">
                     <label class="label is-size-6">Ending fraction
                     </label>
                     <div class="control">
-                        <input type="text" class="input" id="range-end" value="3.14" oninput="randomFraction()">
+                        <input type="text" class="input" id="range-end" value="3.14" onchange="randomFraction()">
                     </div>
                 </div>
-
 
                 <div class="heading2">
                     <h5 class="title is-capitalized is-size-4 is-underlined	">Generator Options : </h5>
@@ -60,52 +58,24 @@
                     <label class="label is-size-6">How many fractions to generate?
                     </label>
                     <div class="control">
-                        <input type="text" class="input" id="count" value="10" oninput="randomFraction()">
+                        <input type="text" class="input" id="count" value="10" onchange="randomFraction()">
                     </div>
                 </div>
                 <div class="field">
                     <label class="label is-size-6">Fraction precision
                     </label>
                     <div class="control">
-                        <input type="text" class="input" id="precision" value="2" oninput="randomFraction()">
+                        <input type="text" class="input" id="precision" value="2" onchange="randomFraction()">
                     </div>
                 </div>
             </div>
-            <div class="column is-3">
+            <div class="column is-3"><!-- dont change -->
+                <div class="has-text-centered">
+                    <?php include ($_SERVER['DOCUMENT_ROOT']."/application/views/bulma/ads/adsense-responsive.php"); ?>
+                </div>
             </div>
         </div>
-    </div>
-
-    <script>
-        function randomFraction() {
-            
-
-            let rangeStart = Number(document.getElementById("range-start").value);
-            console.log("rangeStart :-> "+rangeStart);
-
-            let rangeEnd = Number(document.getElementById("range-end").value);
-            console.log("rangeEnd :-> "+rangeEnd);
-
-            let howMany = Number(document.getElementById("count").value);
-            console.log("howMany :-> "+howMany);
-
-            let precision = Number(document.getElementById("precision").value);
-            console.log("precision :-> "+precision);
-
-            var outputStr = '';
-            for (var i = 0; i < howMany; i++) {
-                outputStr += generateRandomFraction(rangeStart, rangeEnd).toFixed(precision);
-                outputStr += "\n";
-            }
-            let answer = outputStr;
-            document.getElementById("answer").value = answer;
-            console.log("answer :-> "+answer);
-        }
-
-        function generateRandomFraction(rangeStart, rangeEnd) {
-            return Math.random() * (rangeEnd - rangeStart) + rangeStart;
-        }
-    </script>
+    </section>
 </body>
 
 </html>
