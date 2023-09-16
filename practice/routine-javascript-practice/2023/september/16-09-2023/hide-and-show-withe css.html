@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Hide Show and Toggle Button</title>
+</head>
+
+<style>
+    .buttons{
+        margin-top: 50px;
+    }
+    .buttons button{
+        padding: 10px;
+    }
+    .mainButton button{
+        padding: 10px;
+    }
+</style>
+
+<body>
+
+    <div class="mainButton">
+        <button style="background-color: cadetblue;" id="main-button">Button</button>
+    </div>
+
+
+    <div class="buttons">
+        <button style="background-color: rgb(75, 165, 42);" onclick="buttonToggle()">Toggle</button>
+        <button style="background-color: brown;" onclick="buttonHide()">Hide</button>
+        <button style="background-color: rgb(165, 157, 42);" onclick="buttonShow()">Show</button>
+    </div>
+
+
+    <script>
+        function buttonHide() {
+            let buttonHide = document.getElementById("main-button");
+            if (buttonHide.style.display === "block") {
+                buttonHide.style.display = "none";
+            }
+        }
+
+        function buttonShow() {
+            let buttonHide = document.getElementById("main-button");
+            if (buttonHide.style.display === "none") {
+                buttonHide.style.display = "block";
+            }
+
+        }
+
+        function buttonToggle() {
+            let buttonHide = document.getElementById("main-button");
+            if (buttonHide.style.display === "none") {
+                buttonHide.style.display = "block";
+            } else {
+                buttonHide.style.display = "none";
+            }
+        }
+    </script>
+</body>
+
+</html>
