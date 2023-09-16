@@ -1,0 +1,246 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blob Generator</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
+    <link rel="stylesheet" href="blob-generator.css">
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/dom-to-image/2.6.0/dom-to-image.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/FileSaver.js/2.0.0/FileSaver.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+
+    <script src="buttonColor.js"></script>
+    <script src="download.js"></script>
+    <script src="svgCodeCopy.js"></script>
+    <script src="svgSize.js"></script>
+</head>
+
+<body>
+    <div class="container is-fluid">
+        <div class="block">
+            <h1 class="title">Blob Generator</h1>
+        </div>
+
+        <!-- <div class="columns">
+            <div class="column is-6"></div>
+            <div class="column is-6">
+                <p class="title is-size-4">Display Shapes :</p>
+            </div>
+        </div> -->
+        <!--start first columns-->
+        <div class="columns mt-5">
+            <div class="column is-6">
+                <!-- <div class="mr-6"> -->
+                    <div class="box" style="margin-left: 153px; ">
+                        <div class="columns" style="margin-top: 50px;">
+                            <div class="control has-icons-left has-icons-right column ml-5">
+                                <input class="" id="inputValue" type="text" value="#08BDBA"
+                                    style="padding: 16px 40px 10px 10px;" oninput="updateInput(value)" />
+                            </div>
+                            <div class="column">
+                                <button class=" icon is-right radiusButtonIcon" onclick="buttonColor()" id="buttonColor"
+                                    style="margin-top: 0px;">
+                                </button>
+                            </div>
+                            <div class="box" id="buttonDiv" style="display: none;">
+                                <div class="buttons">
+                                    <button class="button" style="background: #FF0066;" id="btn1"
+                                        onclick="btn1('#FF0066')"></button>
+                                    <button class="button" style="background: #8A3FFC;" id="btn2"
+                                        onclick="btn2('#8A3FFC')"></button>
+                                    <button class="button" style="background: #FA4D56;" id="btn3"
+                                        onclick="btn3('#FA4D56')"></button>
+                                    <button class="button" style="background: #F1C21B;" id="btn4"
+                                        onclick="btn4('#F1C21B')"></button>
+                                    <button class="button" style="background: #08BDBA;" id="btn5"
+                                        onclick="btn5('#08BDBA')"></button>
+                                    <button class="button" style="background: #0F62FE;" id="btn6"
+                                        onclick="btn6('#0F62FE')"></button>
+                                    <button class="button" style="background: #24A148;" id="btn7"
+                                        onclick="btn7('#24A148')"></button>
+                                </div>
+
+                                <div class="buttons">
+                                    <button class="button" style="background: #A7F0BA;" id="btn8"
+                                        onclick="btn8('#A7F0BA')"></button>
+                                    <button class="button" style="background: #9EF0F0;" id="btn9"
+                                        onclick="btn9('#9EF0F0')"></button>
+                                    <button class="button" style="background: #BAE6FF;" id="btn10"
+                                        onclick="btn10('#BAE6FF')"></button>
+                                    <button class="button" style="background: #D0E2FF;" id="btn11"
+                                        onclick="btn11('#D0E2FF')"></button>
+                                    <button class="button" style="background: #E8DAFF;" id="btn12"
+                                        onclick="btn12('#E8DAFF')"></button>
+                                    <button class="button" style="background: #FFD6E8;" id="btn13"
+                                        onclick="btn13('#FFD6E8')"></button>
+                                    <button class="button" style="background: #F2F4F8;" id="btn14"
+                                        onclick="btn14('#F2F4F8')"></button>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="columns" style="margin-top: 60px;">
+                            <div class=" column ml-5">
+                                <a class="" aria-label="reply">
+                                    <span class="icon is-medium">
+                                        <svg viewBox="0 0 40 40" focusable="false" role="presentation"
+                                            class="css-1of6a44">
+                                            <g stroke="#000000" stroke-width="2" fill="none">
+                                                <path d="M20 7L36 30L4 35L20 7Z" stroke="#08BDBA"></path>
+                                                <circle cx="20" cy="5" r="5" fill="#08BDBA" stroke="#FFF"></circle>
+                                                <circle cx="4" cy="35" r="5" fill="#08BDBA" stroke="#FFF"></circle>
+                                                <circle cx="36" cy="30" r="5" fill="#08BDBA" stroke="#FFF"></circle>
+                                            </g>
+                                        </svg>
+                                    </span>
+                                </a>
+                            </div>
+                            <div class=" column">
+                                <input type="range" class="styled-slider slider-progress" min="1" max="10" value="15"
+                                    style="width: 12em;" onclick="rangeElement1(this.value)" id="rangeElement1" />
+                            </div>
+                            <div class="column">
+                                <a class="" aria-label="reply">
+                                    <span class="icon is-small">
+                                        <a class="" aria-label="reply">
+                                            <span class="icon is-medium">
+                                                <svg viewBox="0 0 40 40" focusable="false" role="presentation"
+                                                    class="css-9i4l85">
+                                                    <g stroke="currentcolor" stroke-width="2" fill="none">
+                                                        <path d="M20 4L36 16.2229L29.8885 36H10.1115L4 16.2229L20 4Z"
+                                                            stroke="#08BDBA">
+                                                        </path>
+                                                        <circle cx="20" cy="4" r="5" fill="#08BDBA" stroke="#FFF">
+                                                        </circle>
+                                                        <circle cx="10" cy="36" r="5" fill="#08BDBA" stroke="#FFF">
+                                                        </circle>
+                                                        <circle cx="4" cy="17" r="5" fill="#08BDBA" stroke="#FFF">
+                                                        </circle>
+                                                        <circle cx="36" cy="17" r="5" fill="#08BDBA" stroke="#FFF">
+                                                        </circle>
+                                                        <circle cx="30" cy="36" r="5" fill="#08BDBA" stroke="#FFF">
+                                                        </circle>
+                                                    </g>
+                                                </svg>
+                                            </span>
+                                        </a>
+                                    </span>
+                                </a>
+                            </div>
+                        </div>
+                        <div class="columns" style="margin-top: 60px;">
+                            <div class="column ml-5">
+                                <a class="" aria-label="reply">
+                                    <span class="icon  is-medium">
+                                        <svg viewBox="0 0 40 40" focusable="false" role="presentation"
+                                            class="css-1of6a44">
+                                            <circle cx="20" cy="20" r="18" stroke="#08BDBA" fill="#08BDBA"
+                                                stroke-width="2">
+                                            </circle>
+                                        </svg>
+                                    </span>
+                                </a>
+                            </div>
+                            <div class=" column ml-5">
+                                <input type="range" class="styled-slider slider-progress" min="1" max="10" value="15"
+                                    style="width: 12em;" onclick="rangeElement2(this.value)" id="rangeElement2" />
+                            </div>
+                            <div class=" column ml-5">
+                                <a class="" aria-label="reply">
+                                    <span class="icon  is-medium">
+                                        <svg viewBox="0 0 40 40" focusable="false" role="presentation"
+                                            class="css-9i4l85">
+                                            <path stroke="#08BDBA" fill="none" stroke-width="2"
+                                                d="M21.5856 8.93747C24.1222 10.1824 28.7589 8.54461 32.6083 9.46898C36.4577 10.3934 39.5199 13.8799 37.1913 15.2185C34.8627 16.5571 27.1434 15.7478 23.9803 18.2435C20.8171 20.7391 22.2102 26.5396 20.617 31.0769C19.0239 35.6142 14.4445 38.8883 12.514 36.6969C10.5835 34.5054 11.3019 26.8485 9.45474 22.5957C7.60761 18.3429 3.19498 17.4943 2.21843 15.6908C1.24187 13.8872 3.7014 11.1287 6.38819 9.81508C9.07499 8.50151 11.9891 8.63289 13.9916 7.14413C15.9942 5.65536 17.0852 2.54645 17.8489 3.05575C18.6126 3.56505 19.0491 7.69258 21.5856 8.93747Z">
+                                            </path>
+                                        </svg>
+                                    </span>
+                                </a>
+                            </div>
+                        </div>
+                        <div class="columns" style="margin-top: 75px; margin-bottom: 75px;">
+                            <div class=" column ml-5">
+                                <button class="ButtonBorder" onclick="downloadImage()">
+                                    <a class="" aria-label="reply">
+                                        <span class="icon is-medium">
+                                            <svg viewBox="0 0 24 24" focusable="false" role="presentation"
+                                                aria-hidden="true" class="css-1im46kq">
+                                                <path stroke="#08BDBA" stroke-width="2" fill="none"
+                                                    d="M21.2 15c.7-1.2 1-2.5.7-3.9-.6-2-2.4-3.5-4.4-3.5h-1.2c-.7-3-3.2-5.2-6.2-5.6-3-.3-5.9 1.3-7.3 4-1.2 2.5-1 6.5.5 8.8m8.7 5V12m4 5l-4 4-4-4">
+                                                </path>
+                                            </svg>
+                                        </span>
+                                    </a>
+                                </button>
+                            </div>
+                            <div class="column ml-6">
+                                <button class="ButtonBorder js-modal-trigger" data-target="modal-js-example">
+                                    <a class="" aria-label="reply">
+                                        <span class="icon is-medium">
+                                            <svg viewBox="0 0 24 24" focusable="false" role="presentation"
+                                                aria-hidden="true" class="css-1im46kq">
+                                                <g stroke="#08BDBA" stroke-width="2" fill="none">
+                                                    <polyline points="16 18 22 12 16 6"></polyline>
+                                                    <polyline points="8 6 2 12 8 18"></polyline>
+                                                </g>
+                                            </svg>
+                                        </span>
+                                    </a>
+                                </button>
+                            </div>
+                            <div class="column ml-6">
+                                <button class="border" onclick="rangeElement3()">
+                                    <a class="" aria-label="reply">
+                                        <span class="icon is-medium">
+                                            <svg viewBox="0 0 32 32" focusable="false" role="presentation"
+                                                class="css-1oizbix">
+                                                <path stroke="none" fill="#f5f5f5"
+                                                    d="M7.38 5.555l15.592-1.367A3.419 3.419 0 0126.673 7.3L28.05 23.06a3.422 3.422 0 01-3.106 3.71L9.352 28.137a3.419 3.419 0 01-3.702-3.113L4.275 9.265a3.422 3.422 0 013.106-3.71zm.2 2.274a1.14 1.14 0 00-1.036 1.237l1.375 15.759a1.14 1.14 0 001.234 1.038l15.591-1.368a1.14 1.14 0 001.036-1.236l-1.376-15.76a1.14 1.14 0 00-1.234-1.037L7.58 7.829zm3.254 5.39a1.69 1.69 0 01-1.825-1.545 1.692 1.692 0 011.53-1.84 1.69 1.69 0 011.825 1.546 1.692 1.692 0 01-1.53 1.839zm10.065-.883a1.69 1.69 0 01-1.826-1.545 1.692 1.692 0 011.53-1.84 1.69 1.69 0 011.825 1.546 1.692 1.692 0 01-1.53 1.84zM11.72 23.373a1.69 1.69 0 01-1.825-1.545 1.692 1.692 0 011.53-1.84 1.69 1.69 0 011.825 1.545 1.692 1.692 0 01-1.53 1.84zm10.065-.883a1.69 1.69 0 01-1.825-1.545 1.692 1.692 0 011.53-1.84 1.69 1.69 0 011.825 1.546 1.692 1.692 0 01-1.53 1.84zm-5.476-4.635a1.69 1.69 0 01-1.825-1.546 1.692 1.692 0 011.53-1.839 1.69 1.69 0 011.825 1.545 1.692 1.692 0 01-1.53 1.84zM29.183 6.823l-.015.002A.915.915 0 0128.167 6c-.265-2.544-2.523-4.39-5.045-4.121h-.007a.916.916 0 01-1.002-.824.922.922 0 01.808-1.018h.002l.007-.001a6.387 6.387 0 014.718 1.408 6.498 6.498 0 012.347 4.363.922.922 0 01-.812 1.016zM8.547 32h-.008a6.395 6.395 0 01-4.578-1.818 6.51 6.51 0 01-1.96-4.553.92.92 0 01.895-.942h.016c.503-.008.917.4.926.91.044 2.559 2.134 4.595 4.67 4.55h.006a.918.918 0 01.927.91.92.92 0 01-.894.943z">
+                                                </path>
+                                            </svg>
+                                        </span>
+                                    </a>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                <!-- </div> -->
+            </div>
+            <!--start second columns-->
+            <div class="column is-6 secondDiv" id="svgDownloadImg" style="margin-right: 128px;">
+                <figure class="image is-150x150" style="margin: 20px 20px 20px 20px;" id="svgImg">
+                    <svg viewBox="0 0 200 200" class="css-lld9th" id="svgCodeCopy">
+                        <g transform="translate(100 100)">
+                            <path id="circle1"
+                                d="M60.6,-19.4C68.8,5.6,59.1,36.7,37.6,52.4C16.2,68.2,-16.9,68.5,-37.5,53.1C-58.2,37.8,-66.3,6.8,-58,-18.4C-49.7,-43.5,-24.8,-62.8,0.7,-63.1C26.2,-63.3,52.4,-44.4,60.6,-19.4Z"
+                                fill="#08BDBA"></path>
+                        </g>
+                    </svg>
+                </figure>
+            </div>
+            <!--end second column-->
+        </div>
+        <div id="modal-js-example" class="modal is-hidden">
+            <div class="modal-background"></div>
+            <div class="modal-card">
+                <header class="modal-card-head">
+                    <p class="modal-card-title">Copy SVG code</p>
+                    <button class="delete" aria-label="close"></button>
+                </header>
+                <section class="modal-card-body" id="CopySvgCode">
+                    <textarea disabled id="myInput" style="height: 116px; width: 603px;">
+                    </textarea>
+                </section>
+                <footer class="modal-card-foot">
+                    <button class="Copy SVG to clipboard" style="background: #08BDBA; color: white ;" onclick="copyText()">Copy SVG to clipboard</button>
+                </footer>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

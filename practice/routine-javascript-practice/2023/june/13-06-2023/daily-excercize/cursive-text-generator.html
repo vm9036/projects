@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.3/css/bulma.min.css">
+    <title>Cursive Text Generator</title>
+</head>
+
+<body>
+
+    <div class="container mt-5">
+        <div class="box">
+            <h1 class="title">Cursive Text Generator</h1>
+            <div class="columns is-centered">
+                <div class="column is-6">
+                    <div class="field">
+                        <label class="label is-inline">
+                            <span>Enter your text:</span>
+                            <span class="is-pulled-right"><a class="has-text-black" href="#">Sample</a></span>
+                        </label>
+                        <div class="control mt-2">
+                            <textarea id="input-text" class="textarea" placeholder="Type your text here"></textarea>
+                        </div>
+                    </div>
+                    <!-- <div class="field is-grouped is-grouped-multiline">
+                        <p class="control">
+                            <button id="cursive-button" class="button btn is-rounded">Cursive</button>
+                        </p>
+                        <p class="control">
+                            <button id="bold-button" class="button btn is-rounded">Bold</button>
+                        </p>
+                        <p class="control">
+                            <button id="strike-through-button" class="button btn is-rounded">Strike Through</button>
+                        </p>
+                        <p class="control">
+                            <button id="underline-button" class="button btn is-rounded">Underline</button>
+                        </p>
+                        <p class="control">
+                            <button id="italics-button" class="button btn is-rounded">Italics</button>
+                        </p>
+                        <p class="control">
+                            <button id="bold-italic-button" class="button btn is-rounded">Bold Italics</button>
+                        </p>
+                        <p class="control">
+                            <button id="bold-cursive-button" class="button btn is-rounded">Bold Cursive</button>
+                        </p>
+                        <p class="control">
+                            <button id="sans-bold-italic-button" class="button btn is-rounded">Sans Bold
+                                Italics</button>
+                        </p>
+                        <p class="control">
+                            <button id="serif-bold-italic-button" class="button btn is-rounded">Serif Bold
+                                Italics</button>
+                        </p>
+                    </div> -->
+                </div>
+                <div class="column is-6">
+                    <div class="field">
+                        <label class="label is-inline">
+                            <span>Formatted Text:</span>
+                            <span class="is-pulled-right"><a class="has-text-black" href="#" id="copy-button">Copy</a></span>
+                            <!-- <span class="is-pulled-right"><button id="copy-button" class="button "><a class="has-text-black" href="#">Copy</a></button></span> -->
+                        </label>
+                        <label class="label"></label>
+                        <div class="control">
+                            <textarea id="output-text" class="textarea" placeholder="Formatted text will appear here"
+                                readonly></textarea>
+                            <!-- <button id="copy-button" class="copy-button button is-rounded is-info">Copy</button> -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="columns">
+                <div class="column is-12  has-text-centered">
+                    <div class="field is-grouped is-grouped-multiline">
+                        <p class="control">
+                            <button id="cursive-button" class="button btn">Cursive</button>
+                        </p>
+                        <p class="control">
+                            <button id="bold-button" class="button btn">Bold</button>
+                        </p>
+                        <p class="control">
+                            <button id="strike-through-button" class="button btn">Strike Through</button>
+                        </p>
+                        <p class="control">
+                            <button id="underline-button" class="button btn">Underline</button>
+                        </p>
+                        <p class="control">
+                            <button id="italics-button" class="button btn">Italics</button>
+                        </p>
+                        <p class="control">
+                            <button id="bold-italic-button" class="button btn">Bold Italics</button>
+                        </p>
+                        <p class="control">
+                            <button id="bold-cursive-button" class="button btn">Bold Cursive</button>
+                        </p>
+                        <p class="control">
+                            <button id="sans-bold-italic-button" class="button btn">Sans Bold
+                                Italics</button>
+                        </p>
+                        <p class="control">
+                            <button id="serif-bold-italic-button" class="button btn">Serif Bold
+                                Italics</button>
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+
+</html>

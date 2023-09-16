@@ -8,6 +8,9 @@
     <title>Dynamic Multiplication Table 1 To 10</title>
 </head>
 <body>
+
+
+
     <script>
         function displayMultiplicationTable() {
             let inputTableStartValue = parseInt(document.getElementById("inputStartingValue").value);
@@ -30,6 +33,7 @@
             strTable = strTable + "</tbody>" + "</table>" + "</div>"+"<div class='column is-4'></div>"+"</div>" ;
             document.getElementById("multiplicationTableWithLimit").innerHTML = strTable;
         }
-    </script>
+        displayMultiplicationTable();
+    </script>  
 </body>
 </html>

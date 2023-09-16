@@ -129,14 +129,10 @@
             for (i = 1; i <= number; i++) {
                 // console.log(i)
                 showvalue = showvalue + "<div class='column'><table class='table is-bordered'><tr><td>" + i + "</td></tr></table></div>";
-
             }
-
             showvalue = showvalue + "</div>";
             document.getElementById("shownumber").innerHTML = showvalue;
         }
-
-
         function selectedrow() {
             let number = parseInt(document.getElementById("number").value);
             let selectedenumber = parseInt(document.getElementById("selectedvalue").value);

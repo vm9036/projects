@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>YouTube Looper</title>
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
+        <link rel="stylesheet" type="text/css" href="style.css">
+    </head>
+    <body>
+        <div class="container is-fluid">
+            <div class="columns">
+                <div class="column is-6 is-offset-1" id="main_body">
+                    <h1 class="title has-text-bold has-text-centered">YouTube Looper</h1>
+                    <div class="has-text-centered mb-3" id="video-container">
+                        <button id="sample" class="button is-small is-rounded is-light is-info mb-2 is-pulled-right" style="height: 25px;">sample</button>
+                        <input
+                            class="input is-medium mb-3 is-rounded"
+                            type="text"
+                            id="video-link"
+                            placeholder="Enter YouTube link"
+                        >
+                        <input
+                            id="auto"
+                            type="checkbox"
+                            class="checkbox mt-3"
+                            checked
+                        >
+                        <span class="mr-2">Auto</span>
+                        <button class="button is-primary" onclick="embedVideo()">Embed</button>
+                    </div>
+                    <div id="holder" style="height:315px; width: 560px; background-color: black; border-radius: 10px;">
+                        .
+                    </div>
+                    <div id="player-container"></div>
+                    <div class="values">
+                        <span>Looping from</span>
+                        <span id="range1">
+                            0
+                        </span>
+                        <span> to</span>
+                        <span id="range2">
+                            100
+                        </span>
+                    </div>
+                    <div class="container1">
+                        <div class="slider-track"></div>
+                        <input
+                            type="range"
+                            min="0"
+                            max="1000"
+                            value="0"
+                            id="slider-1"
+                            oninput="slideOne()"
+                        >
+                        <input
+                            type="range"
+                            min="0"
+                            max="1000"
+                            value="1000"
+                            id="slider-2"
+                            oninput="slideTwo()"
+                        >
+                    </div>
+                    <div style="display: flex; flex-direction: row;">
+                        <button id="pause" class="button is-small is-info ml-2 mr-2">▶</button>
+                        <button id="stop" class="button is-small is-danger ml-2 mr-2">⬜</button>
+                        <button id="restart" class="button is-small is-info ml-2 mr-2">↺</button>
+                    </div>
+                </div>
+                <!-- <div class="column is-3"></div> -->
+                <div class="column is-3" id="mySidebar">
+                    <h1 class="subtitle is-5 ml-4 mb-1 has-text-black">History</h1>
+                    <hr style="width:50%;text-align:left;margin-left:0; margin-top: 0;">
+                    <div id="link-list"></div>
+                    <h1 class="subtitle is-5 ml-4 mb-1 mt-3 has-text-black">Popular Videos</h1>
+                    <hr class="ml-0 mt-0 " style="width: 50%;">
+                    <div id="popular" style="display: flex; flex-direction: column; flex-wrap: wrap;">
+                        <div class="link-item">
+                            <img
+                                class="thumbnail-item"
+                                src="https://img.youtube.com/vi/ZMnNMBpqyvc/default.jpg"
+                                alt="Thumbnail"
+                                data-link="https://www.youtube.com/watch?v=ZMnNMBpqyvc"
+                            >
+                            <p data-link="https://www.youtube.com/watch?v=ZMnNMBpqyvc" class="head">
+                                Bollywood Romantic Love
+                                Mashup
+                            </p>
+                        </div>
+                        <div class="link-item">
+                            <img
+                                class="thumbnail-item"
+                                src="https://img.youtube.com/vi/c_rB6nE2gd4/default.jpg"
+                                alt="Thumbnail"
+                                data-link="https://www.youtube.com/watch?v=c_rB6nE2gd4"
+                            >
+                            <p data-link="https://www.youtube.com/watch?v=c_rB6nE2gd4" class="head">Top pop of the Year</p>
+                        </div>
+                        <div class="link-item">
+                            <img
+                                class="thumbnail-item"
+                                src="https://img.youtube.com/vi/1Oan0xWzTVo/default.jpg"
+                                alt="Thumbnail"
+                                data-link="https://www.youtube.com/watch?v=1Oan0xWzTVo"
+                            >
+                            <p data-link="https://www.youtube.com/watch?v=1Oan0xWzTVo" class="head">
+                                Summer Music Mix 2023
+                            </p>
+                        </div>
+                        <div class="link-item">
+                            <img
+                                class="thumbnail-item"
+                                src="https://img.youtube.com/vi/C480i6K8OHE/default.jpg"
+                                alt="Thumbnail"
+                                data-link="https://www.youtube.com/watch?v=C480i6K8OHE"
+                            >
+                            <p data-link="https://www.youtube.com/watch?v=C480i6K8OHE" class="head">Lofi Mashup(slow)</p>
+                        </div>
+                        <div class="link-item">
+                            <img
+                                class="thumbnail-item"
+                                src="https://img.youtube.com/vi/9bZkp7q19f0/default.jpg"
+                                alt="Thumbnail"
+                                data-link="https://www.youtube.com/watch?v=9bZkp7q19f0"
+                            >
+                            <p data-link="https://www.youtube.com/watch?v=9bZkp7q19f0" class="head">Gangnam Style</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <script src="script.js"></script>
+    </body>
+</html>

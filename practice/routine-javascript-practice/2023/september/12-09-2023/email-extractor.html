@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Email Extractor</title>
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.3/css/bulma.min.css">
+        <style>
+        .copy-button {
+            position: absolute;
+            top: 0.5rem;
+            right: 0.5rem;
+        }
+        </style>
+    </head>
+    <body>
+        <div class="container is-fluid mt-3">
+            <div class="box">
+                <h1 class="title has-text-centered">Email Extractor</h1>
+                <div class="columns">
+                    <div class="column is-5">
+                        <div class="field">
+                            <label class="label">Enter text:</label>
+                            <div class="control">
+                                <textarea id="inputText" class="textarea" placeholder="Paste text here..."></textarea>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="column is-2 mt-5">
+                        <div class="field is-grouped is-grouped-multiline">
+                            <div class="control">
+                                <button id="sampleButton1" class="button" data-sample-text="Please send any inquiries to info@example.com or contact us at contact@example.com.">
+                                    Sample1
+                                </button>
+                            </div>
+                            <div class="control">
+                                <button id="sampleButton2" class="button" data-sample-text="You can reach out to our sales team at sales@example.com or support team at support@example.com.">
+                                    Sample2
+                                </button>
+                            </div>
+                            <div class="control">
+                                <button id="sampleButton3" class="button" data-sample-text="For partnership opportunities, email us at partnerships@example.com or reach out to our CEO at ceo@example.com.">
+                                    Sample3
+                                </button>
+                            </div>
+                            <div class="control">
+                                <label class="checkbox mt-3">
+                                    <input id="autoCheckbox" type="checkbox" checked>
+                                    Auto
+                                </label>
+                            </div>
+                            <div class="control">
+                                <button id="extractButton" class="button is-primary">Extract Emails</button>
+                            </div>
+                            <div class="control">
+                                <button id="clearButton" class="button is-link">Reset</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="column is-5">
+                        <div class="field">
+                            <label class="label">Extracted Emails:</label>
+                            <div class="control">
+                                <textarea id="outputText" class="textarea" readonly></textarea>
+                                <button id="copyButton" class="button is-primary is-outlined copy-button" title="Copy to clipboard">
+                                    <span class="icon">
+                                        <i class="fas fa-copy"></i>
+                                    </span>
+                                    Copy
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+        <script>
+        var inputText = document.getElementById('inputText');
+        var outputText = document.getElementById('outputText');
+        var autoCheckbox = document.getElementById('autoCheckbox');
+        var extractButton = document.getElementById('extractButton');
+        var clearButton = document.getElementById('clearButton');
+        var sampleButtons = document.querySelectorAll('.button[id^="sampleButton"]');
+
+        extractButton.addEventListener('click', function () {
+            extractEmails();
+        });
+
+        clearButton.addEventListener('click', function () {
+            clearInputAndOutput();
+        });
+
+        sampleButtons.forEach(function (button) {
+            button.addEventListener('click', function () {
+                var sampleText = button.dataset.sampleText;
+                inputText.value = sampleText;
+                if (autoCheckbox.checked) {
+                    extractEmails();
+                }
+            });
+        });
+
+        autoCheckbox.addEventListener('change', function () {
+            if (this.checked) {
+                extractEmails();
+            }
+        });
+
+        copyButton.addEventListener('click', function () {
+            outputText.select();
+            document.execCommand('copy');
+        });
+
+        inputText.addEventListener('input', function () {
+            if (autoCheckbox.checked) {
+                extractEmails();
+            }
+        });
+
+        function extractEmails() {
+            var emailRegex = /\b[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Z|a-z]{2,}\b/g;
+            var extractedEmails = inputText.value.match(emailRegex);
+            var output = extractedEmails ? extractedEmails.join('\n') : '';
+            outputText.value = output;
+        }
+
+        function clearInputAndOutput() {
+            inputText.value = '';
+            outputText.value = '';
+        }
+        </script>
+    </body>
+</html>

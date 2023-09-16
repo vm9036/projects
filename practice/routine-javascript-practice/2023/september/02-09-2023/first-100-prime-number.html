@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.9.4/css/bulma.min.css">
+        <title>first 100 prime number static</title>
+    </head>
+    <body>
+        <div class="container">
+            <div class="field">
+                <div class="control">
+                    <label class="label">Enter Value :</label>
+                    <input
+                        type="text"
+                        class="input is-info"
+                        id="inputValue"
+                        value="10"
+                    >
+                </div>
+            </div>
+            <div class="field">
+                <div class="control">
+                    <button class="button is-primary" onclick="first100PrimeNumber()">Click</button>
+                </div>
+            </div>
+            <div id="displayPrimeTable"></div>
+        </div>
+        <script>
+        function first100PrimeNumber()
+        {
+            let lastValue= 0;
+            let valuePrime = Number(document.getElementById("inputValue").value);
+
+            let strTable = "<table class='table is-bordered has-text-centered has-text-weight-semibold'><tr><th>index</th><th>Table</th>";
+            let a, counter = 1;
+            for(let i=1; ;i++)
+            {
+                a = checkPrimeNumber(i);
+
+                if(a == true)
+                {
+
+                    strTable = strTable + "<tr>" + "<td>" + counter + "</td>" + "<td>" + i + "</td>" + "</tr>";
+                    counter = counter + 1;  
+
+                }
+
+                if(counter == valuePrime)
+                {
+                     lastValue = i;
+                    console.log(lastValue);
+                    break;
+                }
+
+                
+            }
+            let s =  revPrimeNumber(lastValue);
+            strTable = strTable + "</table>";
+            // document.getElementById("displayPrimeTable").innerHTML = strTable;
+        }
+
+        function revPrimeNumber(lastValue)
+        {
+            // let valuePrime = Number(document.getElementById("inputValue").value);
+
+            let strTable = "<table class='table is-bordered has-text-centered has-text-weight-semibold'><tr><th>index</th><th>Table</th>";
+            let a, counter = 1;
+            for(let i=lastValue; ;i--)
+            {
+                // let lastValue;
+                a = checkPrimeNumber(i);
+
+                if(a == true)
+                {
+
+                    strTable = strTable + "<tr>" + "<td>" + counter + "</td>" + "<td>" + i + "</td>" + "</tr>";
+                    counter = counter + 1;  
+
+                }
+
+                if(counter == valuePrime)
+                {
+                    // lastValue = i;
+                    console.log(lastValue);
+                    break;
+                }  
+            }
+            strTable = strTable + "</table>";
+            document.getElementById("displayPrimeTable").innerHTML = strTable;
+        }
+
+        function checkPrimeNumber(num){
+
+            for(let i = 2; i<=num; i++)
+            {
+                if(num % i == 0)
+                {
+                    if(i == num)
+                    {
+                        return true;
+                    }
+                    else
+                    {
+                        return false;
+                    }
+                }
+            }
+            return false;
+        }
+
+        // function reversePrimeNumber(currentNumber)
+        // {
+        //     // currentNumber = currentNumber - 1;
+        //     let counter = 0;
+        //     let storeRevPrime ;
+        //     for(let i = currentNumber; ;i--)
+        //     {
+        //         storeRevPrime = checkPrimeNumber(i);
+        //         counter = counter + 1;
+
+        //         if(counter == 1)
+        //         {
+        //             break;
+        //         }
+        //     }
+        //     return storeRevPrime;
+        // }
+        </script>
+    </body>
+</html>

@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css" />
+    <title>Random Prime Number Program</title>
+</head>
+
+<body>
+    <div class="container">
+        <div class="box">
+            <div class="block">
+                <h1 class="title">Random Prime Number Program</h1>
+            </div>
+            <div class="columns">
+                <div class="column is-6">
+                    <div class="field">
+                        <div class="control">
+                            <textarea id="displayRandomPrime" cols="30" rows="10" class="textarea">
+                            </textarea>
+                        </div>
+                    </div>
+                    <div class="field">
+                        <div class="control">
+                            <button class="button is-primary" onclick="randomPrimeNumber()">Click</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="column is-6">
+                    <div class="columns">
+                        <div class="column is-6">
+                            <p class="title is-size-4">Prime Number Bounds</p>
+                            <div class="field">
+                                <label class="label">Lower bound of prime numbers in the list :- </label>
+                                <div class="control">
+                                    <input type="text" class="input" value="2" id="range-start">
+                                </div>
+                            </div>
+                            <div class="field">
+                                <label class="label">Upper bound of prime numbers in the list :- </label>
+                                <div class="control">
+                                    <input type="text" class="input" value="50" id="range-end">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="column is-6">
+                            <p class="title is-size-4">Primes Count and Separator</p>
+                            <div class="field">
+                                <label class="label">Random generate Count prime:- </label>
+                                <div class="control">
+                                    <input type="text" class="input" value="10" id="count">
+                                </div>
+                            </div>
+                            <div class="field">
+                                <label class="label">Separate :- </label>
+                                <div class="control">
+                                    <input type="text" class="input" value="\n" id="separator">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <script src="random-prime-number.js"></script>
+</body>
+
+</html>
+

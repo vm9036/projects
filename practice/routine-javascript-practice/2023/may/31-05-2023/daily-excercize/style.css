@@ -1,0 +1,67 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  body {
+    margin: 0;
+    padding: 0;
+    width: 100vw;
+    min-height: 100vh;
+    /* background-color: blueviolet; */
+  }
+  
+  #imageContainer {
+    display: inline-block;
+    background-color: #ffffff;
+    justify-content: center;
+    align-content: center;
+  }
+  
+  .outer-div {
+    display: flex;
+    margin-left: auto;
+    margin-right: auto;
+    justify-content: center;
+  }
+  
+  /* download buttons */
+  #imagePNG {
+    cursor: pointer;
+  }
+  
+  #imageJPG {
+    cursor: pointer;
+  }
+  
+  .button {
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    /* padding: 0.5rem 1rem; */
+    font-weight: 600;
+    cursor: poiner;
+    background-color: blueviolet;
+    color: white;
+  }
+  
+  #myImage {
+    display: inline-block;
+  }
+  
+  .item {
+    margin: 0 10px;
+  }
+  
+  .file {
+    width: 1rem;
+    height: 1rem;
+  }
+  
+  /* effect container styling */
+  .effects-container {
+    align-items: center;
+    margin: 1rem;
+    padding-top: 0.5rem;
+    padding-bottom: 0.5rem;
+  }

@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Color Shade Generator</title>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.9.4/css/bulma.min.css" />
+
+    <style>
+        * {
+            font-family: sans-serif, "Courier New", Courier, monospace;
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+
+        /* styling of navbar section starts */
+        .navbar {
+            padding: 1rem;
+            text-align: center;
+            /* background: rgb(227, 231, 227); */
+        }
+
+        .navbar-container {
+            display: flex;
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        /* .navbar h1 {
+            padding: 1rem;
+            letter-spacing: 0.1rem;
+            font-size: 2rem;
+            font-weight: bold;
+        } */
+
+        .input-container {
+            display: flex;
+            margin-right: auto;
+            margin-left: auto;
+            gap: 10px;
+        }
+
+        .input-place {
+            display: grid;
+            padding: 0.5rem 0.5rem;
+            min-width: 200px;
+            grid-template-columns: 1fr;
+            align-content: center;
+            justify-content: center;
+            justify-items: center;
+            align-items: center;
+            border: 1px solid grey;
+            border-radius: 5px;
+        }
+
+        .box1 {
+            /* widows: 200px; */
+            height: 70px;
+            padding: 1rem;
+        }
+
+        /* styling of navbar section ends */
+
+        /* styling of hero section starts */
+        .hero {
+            padding: 1rem;
+        }
+
+        .hero-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            align-content: center;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        #colorGrid {
+            width: 800px;
+            border: 1px solid rgb(193, 192, 192);
+            border-radius: 4px;
+        }
+
+        .colorBox {
+            width: 100%;
+            min-width: 50px;
+            min-height: 100px;
+            padding: 0 0.5rem;
+            height: 100%;
+            text-align: center;
+            align-content: center;
+            color: white;
+            font-weight: bold;
+            font-size: 1.1rem;
+            line-height: 100px;
+            cursor: pointer;
+            letter-spacing: 1px;
+            font-weight: bold;
+        }
+
+        .colorBox:hover {
+            border: 1px solid rgb(100, 102, 224);
+        }
+
+        #colorInfo {
+            display: flex;
+            flex-direction: column;
+            margin-top: 2rem;
+            padding: 1rem;
+            background-color: white;
+            color: #222;
+            font-size: 14px;
+            min-width: 300px;
+            max-width: 500px;
+            line-height: 1.5;
+            z-index: 1;
+            border-radius: 8px;
+        }
+
+        #colorInfo h2 {
+            text-align: left;
+            font-weight: bold;
+            font-size: 1rem;
+            letter-spacing: 0.1rem;
+        }
+
+        #colorInfo table {
+            font-weight: bold;
+            margin-top: 10px;
+            width: 100%;
+            border-collapse: collapse;
+        }
+
+        #colorInfo td {
+            padding: 5px;
+            color: rgb(104, 98, 98);
+            text-align: center;
+        }
+
+        /* styling of hero section ends */
+
+        /* media queries of navbar section */
+
+        /* media query for .colorBox */
+        @media screen and (max-width: 768px) {
+            .colorBox {
+                height: 50px;
+            }
+
+            #colorGrid {
+                flex-wrap: wrap;
+                /* width: 360px; */
+                width: 100%;
+            }
+        }
+
+        /* media query for .input-container */
+        @media screen and (max-width: 300px) {
+            .input-container {
+                flex-wrap: wrap;
+            }
+
+            #colorGrid {
+                flex-wrap: wrap;
+                /* width: 300px; */
+                width: 100%;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="block mt-5 mb-5">
+            <!-- navbar section starts -->
+            <section class="navbar is-block">
+    
+                <div class="block">
+                    <h1 class="title has-text-centered">Code Shade Generator</h1>
+                </div>
+                <div class="navbar-container">
+                    <div class="input-container">
+                        <div class="columns">
+                            <div class="column is-4">
+                                <div class="box1 input-place">
+                                    <div class="field">
+                                        <label class="label" for="colorPicker">Select a color:</label>
+                                        <!-- <div class="control"> -->
+                                        <input type="color" id="colorPicker" value="#808080"
+                                            onchange="updateBackgroundColor()" />
+                                        <!-- </div> -->
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="column is-4">
+                                <div class="input input-place box1">
+                                    <div class="field">
+                                        <label for="darkenSlider" class="label">Darken factor:<span
+                                                id="darkness-value"></span></label>
+                                        <div class="control">
+                                            <input type="range" id="darkenSlider" min="0" max="100" value="50"
+                                                onchange="updateBackgroundColor()" />
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="column is-4">
+                                <div class="input input-place box1">
+                                    <div class="field">
+                                        <label for="stepSlider" class="label">Step count:<span
+                                                id="step-count"></span></label>
+                                        <div class="control">
+                                            <input type="range" id="stepSlider" min="0" max="4" value="1"
+                                                onchange="updateBackgroundColor()" />
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <!-- navbar section ends -->
+            <!-- hero section starts -->
+            <section class="hero">
+                <div class="hero-container">
+                    <div id="colorGrid" class="is-flex colorGrid-container"></div>
+                    <div id="colorInfo">
+                        <h2>Color Info</h2>
+                        <table class="table is-striped">
+                            <tr>
+                                <td id="rgbValue"></td>
+                            </tr>
+    
+                            <tr>
+                                <td id="hexValue"></td>
+                            </tr>
+                            <tr>
+                                <td id="hsiValue"></td>
+                            </tr>
+                        </table>
+                    </div>
+                </div>
+            </section>
+            <!-- hero section ends -->
+        </div>
+    </div>
+    <script src="color-shade-generator.js" type="text/javascript"></script>
+</body>
+
+</html>

@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- fontawesome library -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css"
+        integrity="sha512-SzlrxWUlpfuzQ+pcUCosxcglQRNAq/DZjVsC0lE40xsADsfeQoEypE+enwcOiGjk/bSuGGKHEyjSoQ1zVisanQ=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <!-- css bulma -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.9.4/css/bulma.min.css"
+        integrity="sha512-HqxHUkJM0SYcbvxUw5P60SzdOTy/QVwA1JJrvaXJv4q7lmbDZCmZaqz01UPOaQveoxfYRv1tHozWGPMcuTBuvQ=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <!-- jquery -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.4/jquery.min.js"
+        integrity="sha512-pumBsjNRGGqkPzKHndZMaAG+bir374sORyzM3uulLV14lN5LyykqNk8eEeUlUkB3U0M4FApyaHraT65ihJhDpQ=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/imgareaselect/0.9.10/js/jquery.imgareaselect.min.js"
+        integrity="sha512-59swnhUs+9AinrKlTPqsoO5ukNPPFbPXFyaf41MAgiTG/fv3LBZwWQWiZNYeksneLhiUo4xjh/leTZ53sZzQ4Q=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <link rel="stylesheet"
+        href="	https://cdnjs.cloudflare.com/ajax/libs/imgareaselect/1.0.0-rc.1/css/imgareaselect-default.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        @import url(//fonts.googleapis.com/css?family=Lato:300:400);
+
+        .flex {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            justify-items: center;
+            /* align-items: center; */
+        }
+
+       
+    </style>
+    <title>Flip Image Corners</title>
+</head>
+
+<body>
+    <section class="main-section pb-6">
+        <div class="container mt-5 card">
+            <h1 class="title is-3 has-text-centered">Flip Image Corners</h1>
+            <div class="columns mt-5">
+                <div class="column">
+                    <p class="has-text-centered title is-4">Original Image</p>
+                    <div class="is-flex">
+                        <img id="image-preview">
+                    </div>
+                </div>
+                <div class="column is-one-fifth mt-6">
+                    <div class="is-flex-direction-column is-flex is-align-items-center flex-wrap">
+                        <div class="file is-boxed mt-5 is-centered">
+                            <label class="file-label">
+                                <input class="file-input" id="file-input" type="file" name="resume">
+                                <span class="file-cta">
+                                    <span class="file-icon">
+                                        <i class="fas fa-upload"></i>
+                                    </span>
+                                    <span class="file-label">
+                                        Choose a file…
+                                    </span>
+                                </span>
+                            </label>
+                        </div>
+                        <div class="mt-3 flex">
+                            <button id="button1" class="button my-2 is-primary">Flip Horizontally</button>
+                            <button id="button2" class="button is-primary">Flip Vertically</button>
+                        </div>
+                        <div class="mt-5">
+                            <p class="has-text-grey has-text-centered">Download</p>
+                        </div>
+                        <div>
+                            <button class="mx-2 button download-btn" id="imageJPG">JPG</button>
+                            <button class="button download-btn" id="imagePNG">PNG</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="column">
+                    <p class="has-text-centered title is-5">Flipped Image</p>
+                    <div class="is-flex">
+                        <canvas id="image-canvas"></canvas>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <script src="flip-image-corners.js"></script>
+</body>
+
+</html>

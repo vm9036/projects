@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Print 1 To 100 Number</title>
+</head>
+<body>
+    <button onclick="numberPrint()">Click</button>
+    <p id="displayNumber"></p>
+    <p id="storeNumber"></p>
+    <script>
+        function numberPrint(){
+
+            let store = document.getElementById("displayNumber").innerHTML;
+            let i;
+            for( i = 1; i<= 100; i++)
+            {
+                console.log(i);
+                store = store + i + " ";
+            }
+            document.getElementById("storeNumber").innerHTML = store;
+        }
+    </script>
+</body>
+</html>

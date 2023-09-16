@@ -54,11 +54,11 @@ radiusSlider.addEventListener("input", function () {
   canvas.style.borderRadius = radius + "px";
 });
 
-// // change the background color of the container based on the value of the color picker
+// change the background color of the container based on the value of the color picker
 // bgColorPicker.addEventListener('input', function () {
 //   const bgColorValue = this.value;
-//   // document.querySelector('#image-container').style.backgroundColor ='transparent';
-//   // canvas.style.backgroundColor = 'rgba(0, 0, 0, 0)';
+// document.querySelector('#image-container').style.backgroundColor ='transparent';
+// canvas.style.backgroundColor = 'rgba(0, 0, 0, 0)';
 // });
 
 // download the modified canvas when the button is clicked

@@ -1,0 +1,253 @@
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
+    <title>Pyramid Pattern Table</title>
+</head>
+<body>
+    <div class="container">
+        <div class="field">
+            <label class="label">Enter Number :-</label>
+            <div class="control">
+                <input type="text" id="inputNum" class="input" value="5">
+            </div>
+        </div>
+
+        <div class="field">
+            <div class="control">
+                <button class="button is-primary" onclick="pyramidPattern()">Click</button>
+            </div>
+        </div>
+
+        <div id="displayPtn"></div>
+        <table class="table is-bordered mt-5">
+            <tr>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td class="is-danger">*</td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+            </tr>
+            <tr>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td class="is-danger">*</td>
+                <td></td>
+                <td class="is-danger">*</td>
+                <td></td>
+                <td></td>
+                <td></td>
+            </tr>
+            <tr>
+                <td></td>
+                <td></td>
+                <td class="is-danger">*</td>
+                <td></td>
+                <td class="is-danger">*</td>
+                <td></td>
+                <td class="is-danger">*</td>
+                <td></td>
+                <td></td>
+            </tr>
+            <tr>
+                <td></td>
+                <td class="is-danger">*</td>
+                <td></td>
+                <td class="is-danger">*</td>
+                <td></td>
+                <td class="is-danger">*</td>
+                <td></td>
+                <td class="is-danger">*</td>
+                <td></td>
+            </tr>
+            <tr>
+                <td class="is-danger">*</td>
+                <td></td>
+                <td class="is-danger">*</td>
+                <td></td>
+                <td class="is-danger">*</td>
+                <td></td>
+                <td class="is-danger">*</td>
+                <td></td>
+                <td class="is-danger">*</td>
+            </tr>
+        </table>
+    </div>
+
+    <script>
+        function pyramidPattern(){
+            let n = Number(document.getElementById("inputNum").value);
+
+            let strTable ="<table class='table is-bordered'>";
+
+            for(let i = 1; i<=n; i++)
+            {
+                strTable = strTable + "<tr>";
+                for(let j = 1 ; j <= n; j++)
+                {
+                    if(j <= n-i)
+                    {
+                        strTable = strTable + "<td>" + "+" + "</td>";
+                    }
+                    else
+                    {
+                        
+                        strTable = strTable + "<td class='is-danger'>" + "*" + "</td>";
+                    }
+                }
+                for(let k = 2 ; k <= n; k++)
+                {
+                    if(k <= i)
+                    {
+                        strTable = strTable + "<td class='is-danger'>" + "#" + "</td>";
+                    }
+                    else
+                    {
+                        strTable = strTable + "<td>" + "-" + "</td>";
+                    }
+                }
+                strTable = strTable+ "</br>";
+            }
+            document.getElementById("displayPtn").innerHTML = strTable;
+        }
+    </script>
+</body>
+</html> -->
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css"
+    />
+    <title>Pyramid Pattern Table</title>
+  </head>
+  <body>
+    <div class="container">
+      <div class="field">
+        <label class="label">Enter Number :-</label>
+        <div class="control">
+          <input type="text" id="inputNum" class="input" value="5" />
+        </div>
+      </div>
+      <div class="field">
+        <div class="control">
+          <button class="button is-primary" onclick="pyramidPattern()">
+            Click
+          </button>
+        </div>
+      </div>
+      <div id="displayPtn"></div>
+      <table class="table is-bordered">
+        <tr>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td class="is-danger">*</td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td class="is-danger">*</td>
+          <td></td>
+          <td class="is-danger">*</td>
+          <td></td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td></td>
+          <td></td>
+          <td class="is-danger">*</td>
+          <td></td>
+          <td class="is-danger">*</td>
+          <td></td>
+          <td class="is-danger">*</td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td></td>
+          <td class="is-danger">*</td>
+          <td></td>
+          <td class="is-danger">*</td>
+          <td></td>
+          <td class="is-danger">*</td>
+          <td></td>
+          <td class="is-danger">*</td>
+          <td></td>
+        </tr>
+        <tr>
+          <td class="is-danger">*</td>
+          <td></td>
+          <td class="is-danger">*</td>
+          <td></td>
+          <td class="is-danger">*</td>
+          <td></td>
+          <td class="is-danger">*</td>
+          <td></td>
+          <td class="is-danger">*</td>
+        </tr>
+      </table>
+    </div>
+    <script>
+      function pyramidPattern() {
+        let n = Number(document.getElementById("inputNum").value);
+        let strTable = "<table class='table is-bordered'>";
+        for (let i = 1; i <= n; i++) {
+          strTable = strTable + "<tr>";
+          let s = 1;
+          let p =1
+          for (let j = 1; j <= n; j++) {
+            if (j <= n - i) {
+              strTable = strTable + "<td>" + "+" + "</td>";
+            } else {
+              if (s % 2 == 0 && i % 2 == 0) {
+                strTable = strTable + "<td class='is-danger'>" + "*" + "</td>";
+              } else if (i % 2 != 0 && j % 2 != 0) {
+                strTable = strTable + "<td class='is-danger'>" + "*" + "</td>";
+              } else {
+                strTable = strTable + "<td>" + "" + "</td>";
+              }
+            }
+            s++;
+          }
+          for (let k = 1; k <= n - 1; k++) {
+            if (k < i) {
+              if (k % 2!= 0  && i%2==0) {
+                  strTable = strTable + "<td class='is-danger'>" + "*" + "</td>";
+                }
+                else if(p%2==0 && i%2!=0) {
+                    strTable = strTable + "<td class='is-danger'>" +  "*"  + "</td>";
+                }
+                else{
+                  strTable = strTable + "<td>"  + "" + "</td>";
+              }
+            } else {
+              strTable = strTable + "<td>" + "-" + "</td>";
+            }
+            p++;
+          }
+          strTable = strTable + "</br>";
+        }
+        document.getElementById("displayPtn").innerHTML = strTable;
+      }
+    </script>
+  </body>
+</html>

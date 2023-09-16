@@ -1,0 +1,622 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>cssButton</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css" />
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600;700;800&display=swap"
+        rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700;900&display=swap"
+        rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@100;300;400;700;900&display=swap" rel="stylesheet" />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;300;400;500;600;700;800;900&display=swap"
+        rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@100;200;300;400;500;600;700;800;900&display=swap"
+        rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap"
+        rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Lora:wght@400;700&display=swap" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@200;300;400;600;700;900&display=swap"
+        rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@200;300;400;600;700;800;900&display=swap"
+        rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700;800;900&display=swap"
+        rel="stylesheet" />
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/11.7.0/styles/an-old-hope.min.css">
+
+    <style>
+        .hljs {
+            white-space: pre-wrap;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- trial -->
+    <div class="container box is-fluid">
+        <h1 class="title">CSS Button Generator</h1>
+        <div class="columns mt-5">
+            <!-- <form id="myForm"> -->
+            <div class="column is-3">
+                <div class="message is-light">
+                    <div class="message-header">
+                        <p class="subtitle">Button Text</p>
+                    </div>
+                    <div class="message-body">
+                        <div class="block">
+                            <div class="field">
+                                <label class="label">Enter Text</label>
+                                <div class="control">
+                                    <input type="text" value="Button" class="input" id="btnText" />
+                                </div>
+                            </div>
+                            <div class="field">
+                                <label class="label">Transform</label>
+                                <div class="control">
+                                    <div class="select is-fullwidth">
+                                        <select id="trList">
+                                            <option value="uppercase">Uppercase</option>
+                                            <option value="lowercase">Lowercase</option>
+                                            <option value="capitalize" selected="selected">
+                                                Capitalize
+                                            </option>
+                                        </select>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="field">
+                                <label class="label">Font Style</label>
+                                <div class="control">
+                                    <div class="select is-fullwidth">
+                                        <select id="fStyle">
+                                            <option value="Open Sans" selected="selected">
+                                                Open Sans
+                                            </option>
+                                            <option value="Roboto">Roboto</option>
+                                            <option value="Lato">Lato</option>
+                                            <option value="Montserrat">Montserrat</option>
+                                            <option value="Raleway">Raleway</option>
+                                            <option value="Poppins">Poppins</option>
+                                            <option value="Lora">Lora</option>
+                                            <option value="Source Sans Pro">Source Sans Pro</option>
+                                            <option value="Nunito">Nunito</option>
+                                            <option value="Playfair Display">Playfair Display</option>
+                                        </select>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="field">
+                                <label for="" class="label">Font Weight</label>
+                                <div class="control">
+                                    <input type="range" min="0" max="900" class="mt-3" id="fWeight" value="400" />
+                                    <span class="mt-3" id="showfWeight">400</span>
+                                </div>
+                            </div>
+                            <div class="field">
+                                <label for="" class="label">Font Size</label>
+                                <div class="control">
+                                    <input id="fSize" type="number" min="0" max="50" class="input" value="16" />
+                                </div>
+                            </div>
+                            <div class="block">
+                                <label for="" class="label">Font Color</label>
+                                <div class="field is-horizontal">
+                                    <input type="color" class="input" id="fColor" value="#ffffff" />
+                                    <input type="text" value="#ffffff" id="colorInput" style="width: 60px" />
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="column is-3">
+                <div class="message is-light">
+                    <div class="message-header">
+                        <p class="subtitle">Button Border Radius</p>
+                    </div>
+                    <div class="message-body">
+                        <div class="block">
+                            <label for="" class="label">Color Border</label>
+                            <div class="field is-horizontal">
+                                <input type="color" class="input" id="brColor" value="#000000" />
+                                <input type="text" value="#000" id="txtbrcolor" style="width: 60px;" />
+                            </div>
+                        </div>
+
+
+                        <div class="block">
+                            <label class="label">Border top left</label>
+                            <div class="field is-horizontal">
+                                <input type="range" min="1" max="50" value="6" id="btLeft" />
+                                <span id="showbtLeft">6</span>
+                            </div>
+                        </div>
+
+                        <div class="block">
+                            <label class="label">Border top right</label>
+                            <div class="field is-horizontal">
+                                <input type="range" min="1" max="50" value="6" id="btRight" />
+                                <span id="showbtRight">6</span>
+                            </div>
+                        </div>
+                        <div class="block">
+                            <label class="label">Bottom right</label>
+                            <div class="field is-horizontal">
+                                <input type="range" min="1" max="50" value="6" id="bbRight" />
+                                <span id="showbbRight">6</span>
+                            </div>
+                        </div>
+                        <div class="field">
+                            <label class="label">Bottom left</label>
+                            <div class="control">
+                                <input type="range" min="1" max="50" value="6" id="bbLeft" />
+                                <span id="showbbLeft">6</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="column is-3">
+                <div class="message is-light">
+                    <div class="message-header">
+                        <h1 class="subtitle">Button Padding</h1>
+                    </div>
+                    <div class="message-body">
+                        <div class="field">
+                            <label for="" class="label">Horizontal Padding</label>
+                            <input type="number" min="2" max="70" value="2" class="input" id="hPadding" />
+                        </div>
+                        <div class="field">
+                            <label for="" class="label">Vertical Padding</label>
+                            <input type="number" min="1" max="70" value="1" class="input" id="vPadding" />
+                        </div>
+                    </div>
+                </div>
+
+                <div class="message is-light">
+                    <div class="message-header">
+                        <h1 class="subtitle">Button Background</h1>
+                    </div>
+                    <div class="message-body">
+
+                        <div class="block">
+                            <label class="label"> Color </label>
+                            <div class="field is-horizontal">
+                                <input type="color" value="#405cf5" class="input" id="btnbrColor" />
+                                <input type="text" value="#405cf5" id="btntxtbrcolor" style="width: 60px" />
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="column is-3">
+                <div class="message is-light">
+                    <div class="message-header">
+                        <h1 class="subtitle">Button: Hover Effects</h1>
+                    </div>
+                    <div class="message-body">
+                        <div class="block">
+                            <div class="field is-horizontal">
+                                <label for="" class="label">Width Hover :</label>
+                                <span class="ml-2" id="wHover">115</span>
+                            </div>
+                            <input type="range" min="0" id="widthHover" max="500" value="115" />
+                        </div>
+
+                        <div class="block">
+                            <div class="field is-horizontal">
+                                <label for="" class="label">Move UP on Hover :</label>
+                                <span class="ml-2" id="muHover">52</span>
+                            </div>
+
+                            <input type="range" id="upHover" min="0" max="200" value="52" />
+                        </div>
+
+                        <div class="block">
+                            <label class="label">Background Color</label>
+                            <div class="field is-horizontal">
+                                <input type="color" class="input" value="#ffa500" id="bgColor" />
+                                <input type="text" id="txtbgColor" value="#ffa500" class="input" style="width: 90px" />
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="message is-light">
+                    <div class="message-header">
+                        <h1 class="subtitle">Button Size</h1>
+                    </div>
+                    <div class="message-body">
+                        <div class="block">
+                            <div class="field is-horizontal">
+                                <label for="" class="label">Vertical :</label>
+                                <span class="ml-1" id="showvSize">44</span>
+                            </div>
+                            <input type="range" min="0" max="100" value="44" id="vSize" />
+                        </div>
+                        <div class="block">
+                            <div class="field is-horizontal">
+                                <label for="" class="label">Horizontal :</label>
+                                <span class="ml-1" id="showhSize">100</span>
+                            </div>
+                            <input type="range" min="0" value="110" max="200" id="hSize" />
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- </form> -->
+        </div>
+        <!-- </form> -->
+
+        <p class="title">Output:</p>
+        <div class="columns">
+            <div class="column is-6">
+
+                <div class="block">
+                    <div class="has-background-grey-light p-4" style="border: 1px solid #e5e5e5">
+                        <div class="box has-text-centered has-text-black p-6">
+                            <button id="btn">Button</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="block ml-4">
+                    <h4 class="subtitle is-4 mt-4 mb-0 is-pulled-left">HTML Code :</h4>
+                    <pre id="htmlCode" class="textarea has-background-black mt-1 columns" style="min-height: 100px">
+
+                    <code id="para-copy" class="p-0 column is-9 hljs language-xml" >
+                    </code>
+                <button class="button is-primary ml-4 is-small" id="btn-copy">Copy</button></pre>
+                </div>
+                <div class="block">
+                    <h4 class="subtitle is-4 mb-0">CSS Code :</h4>
+                    <pre id="csscode" class="textarea has-background-black " style="min-height: 90vh">
+                  <button class="button is-primary is-pulled-right" id="copy-button">
+                    Copy
+                  </button>
+                  <code id="content-to-copy" class="hljs language-css">
+                  </code>
+                </pre>
+                </div>
+            </div>
+            <div class="column is-6">
+                <div class="box has-background-grey-lighter has-border-right"> 
+                <!-- style="max-height: 680px; overflow-y: auto" -->
+                    <div class="has-padding-small">
+                        <div class="has-text-black">
+                            <div class="columns p-3">
+                                <div class="column p-3">
+                                    <div class="container p-3 has-text-centered has-background-white mb-4" id="btnParent">
+                                        <button id="btn1" class="designedBtn">button</button>
+                                    </div>
+                                    <div class="container p-3 has-text-centered has-background-white mb-4">
+                                        <button id="btn2" class="designedBtn">button</button>
+                                    </div>
+                                    <div class="container p-3 has-text-centered has-background-white mb-4">
+                                        <button id="btn3" class="designedBtn">button</button>
+                                    </div>
+                                    <div class="container p-3 has-text-centered has-background-white mb-4">
+                                        <button id="btn4" class="designedBtn">button</button>
+                                    </div>
+                                    <div class="container p-3 has-text-centered has-background-white mb-4">
+                                        <button id="btn5" class="designedBtn">button</button>
+                                    </div>
+                                    <div class="container p-3 has-text-centered has-background-white mb-4">
+                                        <button id="btn6" class="designedBtn">button</button>
+                                    </div>
+                                    <div class="container p-3 has-text-centered has-background-white mb-4">
+                                        <button id="btn7" class="designedBtn">button</button>
+                                    </div>
+                                    <div class="container p-3 has-text-centered has-background-white mb-4">
+                                        <button id="btn8" class="designedBtn">button</button>
+                                    </div>
+                                    <div class="container p-3 has-text-centered has-background-white mb-4">
+                                        <button id="btn9" class="designedBtn">button</button>
+                                    </div>
+                                    <div class="container p-3 has-text-centered has-background-white mb-4">
+                                        <button id="btn10" class="designedBtn">button</button>
+                                    </div>
+                                    <div class="container p-3 has-text-centered has-background-white mb-4">
+                                        <button id="btn11" class="designedBtn">button</button>
+                                    </div>
+                                    <div class="container p-3 has-text-centered has-background-white mb-4">
+                                        <button id="btn12" class="designedBtn">button</button>
+                                    </div>
+                                    <div class="container p-3 has-text-centered has-background-white mb-4" m>
+                                        <button id="btn13" class="designedBtn">button</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="column is-3" style="max-height: 680px; overflow-y: auto">
+    </div>
+    <div class="column is-2">
+        
+    </div>
+    <!-- trial -->
+    <!-- <div class="container is-fluid">
+        <div class="columns">
+            <div class="column is-3 is-fluid">
+                <form id="myForm">
+                    <h1 class="subtitle">Button Text</h1>
+                    <div class="columns card">
+                        <div class="column">
+                            <label class="label">Enter Text</label>
+                            <input type="text" value="Button" class="input" id="btnText" />
+                        </div>
+                        <div class="column">
+                            <label class="label">Transform</label>
+                            <div class="select">
+                                <select id="trList">
+                                    <option value="uppercase">Uppercase</option>
+                                    <option value="lowercase">Lowercase</option>
+                                    <option value="capitalize" selected="selected">
+                                        Capitalize
+                                    </option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="column">
+                            <label class="label">Font Style</label>
+                            <div class="select">
+                                <select id="fStyle">
+                                    <option value="Open Sans" selected="selected">
+                                        Open Sans
+                                    </option>
+                                    <option value="Roboto">Roboto</option>
+                                    <option value="Lato">Lato</option>
+                                    <option value="Montserrat">Montserrat</option>
+                                    <option value="Raleway">Raleway</option>
+                                    <option value="Poppins">Poppins</option>
+                                    <option value="Lora">Lora</option>
+                                    <option value="Source Sans Pro">Source Sans Pro</option>
+                                    <option value="Nunito">Nunito</option>
+                                    <option value="Playfair Display">Playfair Display</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="column">
+                            <label for="" class="label">Font Weight</label>
+                            <div class="field is-horizontal">
+                                <input type="range" min="0" max="900" class="mt-3" id="fWeight" value="400"
+                                    style="width: 100px" />
+                                <span class="mt-3" id="showfWeight">400</span>
+                            </div>
+                        </div>
+                        <div class="column">
+                            <label for="" class="label">Font Size</label>
+                            <input id="fSize" type="number" min="0" max="50" class="input" value="16" />
+                        </div>
+                        <div class="column">
+                            <label for="" class="label">Font Color</label>
+                            <div class="field is-horizontal">
+                                <input type="color" class="input" id="fColor" value="#ffffff" />
+                                <input type="text" value="#ffffff" id="colorInput" style="width: 50px" />
+                            </div>
+                        </div>
+                    </div>
+                    <h1 class="subtitle">Button Border Radius</h1>
+                    <div class="columns card">
+                        <div class="column">
+                            <label for="" class="label">Color Border</label>
+                            <div class="field is-horizontal">
+                                <input type="color" class="input" id="brColor" value="#000000" />
+                                <input type="text" value="#000" id="txtbrcolor" style="width: 60px" />
+                            </div>
+                        </div>
+                        <div class="column">
+                            <label for="" class="label">Border top left</label>
+                            <div class="field is-horizontal">
+                                <input type="range" min="1" max="50" value="6" id="btLeft" />
+                                <span id="showbtLeft">6</span>
+                            </div>
+                        </div>
+                        <div class="column">
+                            <label for="" class="label">Border top right</label>
+                            <div class="field is-horizontal">
+                                <input type="range" min="1" max="50" value="6" id="btRight" />
+                                <span id="showbtRight">6</span>
+                            </div>
+                        </div>
+                        <div class="column">
+                            <label for="" class="label">Bottom right</label>
+                            <div class="field is-horizontal">
+                                <input type="range" min="1" max="50" value="6" id="bbRight" />
+                                <span id="showbbRight">6</span>
+                            </div>
+                        </div>
+                        <div class="column">
+                            <label for="" class="label">Bottom left</label>
+                            <div class="field is-horizontal">
+                                <input type="range" min="1" max="50" value="6" id="bbLeft" />
+                                <span id="showbbLeft">6</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="columns">
+                        <div class="column is-4">
+                            <h1 class="subtitle">Button Padding</h1>
+                            <div class="columns card">
+                                <div class="column">
+                                    <label for="" class="label">Horizontal Padding</label>
+                                    <input type="number" min="2" max="70" value="2" class="input" id="hPadding" />
+                                </div>
+                                <div class="column">
+                                    <label for="" class="label">Vertical Padding</label>
+                                    <input type="number" min="1" max="70" value="1" class="input" id="vPadding" />
+                                </div>
+                            </div>
+                        </div>
+                        <div class="column is-3">
+                            <h1 class="subtitle">Button Background</h1>
+                            <div class="columns card p-4">
+                                <div class="column">
+                                    <label for="" class="label"> Color </label>
+                                    <div class="field is-horizontal">
+                                        <input type="color" value="#405cf5" class="input" id="btnbrColor" />
+                                        <input type="text" value="#405cf5" id="btntxtbrcolor" style="width: 90px" />
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="column">
+                            <h1 class="subtitle">Button Size</h1>
+                            <div class="columns card p-2">
+                                <div class="column">
+                                    <div class="field is-horizontal">
+                                        <label for="" class="label">Vertical :</label>
+                                        <span class="ml-1" id="showvSize">44</span>
+                                    </div>
+                                    <input type="range" min="0" max="100" value="44" id="vSize" />
+                                </div>
+                                <div class="column">
+                                    <div class="field is-horizontal">
+                                        <label for="" class="label">Horizontal :</label>
+                                        <span class="ml-1" id="showhSize">100</span>
+                                    </div>
+                                    <input type="range" min="0" value="110" max="200" id="hSize" />
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <h1 class="subtitle">Button: Hover Effects</h1>
+                    <div class="columns card">
+                        <div class="column is-3">
+                            <div class="field is-horizontal">
+                                <label for="" class="label">Width Hover :</label>
+                                <span class="ml-2" id="wHover">115</span>
+                            </div>
+
+                            <input type="range" min="0" id="widthHover" max="500" value="115" />
+                        </div>
+                        <div class="column is-3">
+                            <div class="field is-horizontal">
+                                <label for="" class="label">Move UP on Hover :</label>
+                                <span class="ml-2" id="muHover">52</span>
+                            </div>
+
+                            <input type="range" id="upHover" min="0" max="200" value="52" />
+                        </div>
+                        <div class="column">
+                            <label class="label">Background Color</label>
+                            <div class="field is-horizontal">
+                                <input type="color" class="input" value="#ffa500" id="bgColor" style="width: 50px" />
+                                <input type="text" id="txtbgColor" value="#ffa500" class="input" style="width: 90px" />
+                            </div>
+                        </div>
+                    </div>
+                </form>
+            </div>
+            <div class="column is-3" style="max-height: 680px; overflow-y: auto">
+                <div>
+                    <h1 class="title">Css Button Generator</h1>
+                    <div class="has-background-grey-light p-4" style="border: 1px solid #e5e5e5">
+                        <div class="has-text-black">
+                            <div class="box has-text-centered p-6">
+                                <button id="btn">Button</button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="">
+                        <h4 class="subtitle mt-4 mb-0">HTML Code :</h4>
+                        <pre id="htmlCode" class="textarea has-background-black mt-1 columns" style="min-height: 95px">
+
+                <code id="para-copy" class="p-0 column is-9 hljs language-xml" >
+                </code>
+                <button
+                class="button  is-primary ml-4 is-small"
+                id="btn-copy"
+              >
+                Copy
+              </button>
+
+            
+              </pre>
+                    </div>
+
+                    <div class="mt-5">
+                        <h4 class="subtitle is-4 mb-0">CSS Code :</h4>
+                        <pre id="csscode" class="textarea has-background-black " style="min-height: 90vh">
+                  <button
+                    class="button is-primary is-pulled-right"
+                    id="copy-button"
+                  >
+                    Copy
+                  </button>
+                  <code id="content-to-copy" class="hljs language-css">
+                  </code>
+                </pre>
+                    </div>
+                </div>
+            </div>
+            <div class="column is-2">
+                <div class="box has-background-grey-lighter has-border-right"
+                    style="max-height: 680px; overflow-y: auto">
+                    <div class="has-padding-small">
+                        <div class="has-text-black">
+                            <div class="columns p-3">
+                                <div class="column p-3">
+                                    <div class="container p-3 has-text-centered has-background-white mb-4"
+                                        id="btnParent">
+                                        <button id="btn1" class="designedBtn">button</button>
+                                    </div>
+                                    <div class="container p-3 has-text-centered has-background-white mb-4">
+                                        <button id="btn2" class="designedBtn">button</button>
+                                    </div>
+                                    <div class="container p-3 has-text-centered has-background-white mb-4">
+                                        <button id="btn3" class="designedBtn">button</button>
+                                    </div>
+                                    <div class="container p-3 has-text-centered has-background-white mb-4">
+                                        <button id="btn4" class="designedBtn">button</button>
+                                    </div>
+                                    <div class="container p-3 has-text-centered has-background-white mb-4">
+                                        <button id="btn5" class="designedBtn">button</button>
+                                    </div>
+                                    <div class="container p-3 has-text-centered has-background-white mb-4">
+                                        <button id="btn6" class="designedBtn">button</button>
+                                    </div>
+                                    <div class="container p-3 has-text-centered has-background-white mb-4">
+                                        <button id="btn7" class="designedBtn">button</button>
+                                    </div>
+                                    <div class="container p-3 has-text-centered has-background-white mb-4">
+                                        <button id="btn8" class="designedBtn">button</button>
+                                    </div>
+                                    <div class="container p-3 has-text-centered has-background-white mb-4">
+                                        <button id="btn9" class="designedBtn">button</button>
+                                    </div>
+                                    <div class="container p-3 has-text-centered has-background-white mb-4">
+                                        <button id="btn10" class="designedBtn">button</button>
+                                    </div>
+                                    <div class="container p-3 has-text-centered has-background-white mb-4">
+                                        <button id="btn11" class="designedBtn">button</button>
+                                    </div>
+                                    <div class="container p-3 has-text-centered has-background-white mb-4">
+                                        <button id="btn12" class="designedBtn">button</button>
+                                    </div>
+                                    <div class="container p-3 has-text-centered has-background-white mb-4" m>
+                                        <button id="btn13" class="designedBtn">button</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div> -->
+    <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/11.7.0/highlight.min.js"></script>
+    <script src="cssButton-generator.js"></script>
+</body>
+
+</html>

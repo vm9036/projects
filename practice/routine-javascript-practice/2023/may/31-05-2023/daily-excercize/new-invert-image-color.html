@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Invert Image Colors</title>
+    <!-- fontawesome library -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css" />
+    <!-- css bulma -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.9.4/css/bulma.min.css" />
+    <!-- jquery -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/imgareaselect/0.9.10/js/jquery.imgareaselect.min.js"></script>
+    <!-- stackblur library -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/stackblur-canvas/2.5.0/stackblur.min.js"></script>
+    <link rel="stylesheet"
+        href="	https://cdnjs.cloudflare.com/ajax/libs/imgareaselect/1.0.0-rc.1/css/imgareaselect-default.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <div class="container mt-5">
+        <div class="box">
+            <div class="block has-text-centered">
+                <h1 class="title">Invert Image Colors</h1>
+            </div>
+
+            <div class="columns mt-5 has-text-centered">
+                <div class="column is-12">
+                    <div class="field">
+                        <label for="file-input">
+                            <i class="fa fa-upload"></i>
+                        </label>
+                        <input type="file" id="file-input" style="display:none;">
+                        <div class="control is-inline">
+                            <button class="button mx-2 is-inline" id="invert-btn" title="Invert image color">Invert</button>
+                            <p class="download-text is-inline mx-2">Download:</p>
+                            <button class="button" id="imagePNG">PNG</button>
+                            <button class="button" id="imageJPG">JPG</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- canvas container starts -->
+            <div class="outer-div">
+                <div id="imageContainer" class="has-text-centered">
+                    <canvas id="my-image"></canvas>
+                </div>
+            </div>
+            <!-- canvas container ends -->
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+
+</html>

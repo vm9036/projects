@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.9.4/css/bulma.min.css">
+    <title>Biggest Number</title>
+</head>
+<body>
+    <div class="container">
+        <div class="columns">
+            <div class="column is-4">
+                <div class="field">
+                    <lable class="label">Enter Value First :</lable>
+                    <div class="control">
+                        <input type="text" class="input" id="firstInput" value="45">
+                    </div>
+                </div>
+            </div>
+            <div class="column is-4">
+                <div class="field">
+                    <lable class="label">Enter Value Second :</lable>
+                    <div class="control">
+                        <input type="text" class="input" id="secondInput" value="30">
+                    </div>
+                </div>
+            </div>
+            <div class="column is-4">
+                <div class="field">
+                    <lable class="label">Enter Value Third :</lable>
+                    <div class="control">
+                        <input type="text" class="input" id="thirdInput" value="60">
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="field">
+            <div class="control has-text-centered">
+                <button class="button is-primary" onclick="middleNumber()">Click</button>
+            </div>
+        </div>
+    </div>
+
+    <script>
+
+        function middleNumber(){
+
+            let firstValue = Number(document.getElementById("firstInput").value);
+            let secondValue = Number(document.getElementById("secondInput").value);
+            let thirdValue = Number(document.getElementById("thirdInput").value);
+
+            largestNumber(firstValue, secondValue, thirdValue);
+            
+            if(thirdValue>firstValue && firstValue>secondValue)
+            {
+                alert("Middle Value : "+firstValue);
+            }
+            else if(firstValue>secondValue && secondValue>thirdValue)
+            {
+                alert("Middle Value : "+secondValue);
+            }
+            else if(secondValue>thirdValue && thirdValue>firstValue)
+            {
+                alert("Middle Value : "+thirdValue);
+            }
+            else{
+                return 0;
+            }
+            
+            smallestNumber(firstValue,secondValue,thirdValue);
+        }
+
+
+        function largestNumber(firstValue,secondValue,thirdValue){
+            
+
+            if(firstValue > secondValue && firstValue > thirdValue)
+            {
+                alert(firstValue +" is Biggest value");
+            }
+            else if(secondValue > thirdValue && secondValue > firstValue)
+            {
+                alert(secondValue +" is Biggest value");
+            }
+            else
+            {
+                alert(thirdValue +" is Biggest value");
+            }
+        }
+
+        function smallestNumber(firstValue,secondValue,thirdValue){
+            
+            if(firstValue < secondValue && firstValue < thirdValue)
+            {
+                alert(firstValue + "is Smallest Number.");
+            }
+            else if(secondValue < thirdValue && secondValue < firstValue)
+            {
+                alert(secondValue + "is Smallest Number.");
+            }
+            else
+            {
+                alert(thirdValue + "is Smallest Number.");
+            }
+        }
+
+    </script>
+</body>

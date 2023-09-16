@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
+    <title>Factorial Program</title>
+</head>
+<body>
+    <div class="container">
+        
+            <div class="field">
+                <label class="label">Enter Number :</label>
+                <div class="control">
+                    <input type="text" class="input is-info" value="5" id="inputFactorial"> 
+                </div>
+            </div>
+            <div class="field">
+                <div class="control">
+                    <button class="button" onclick="fact()">Click</button>
+                </div>
+            </div>
+            <div class="block">
+                <p id="displayFactorial"></p>
+            </div>
+    </div>
+
+    <script>
+        function fact() {
+
+            let n = Number(document.getElementById("inputFactorial").value);
+
+            let fact = 1;
+           
+            for(let i=1; i<=n; i++)
+            {
+                fact = fact * i;
+            }
+            document.getElementById("displayFactorial").innerHTML = fact;
+        }
+    </script>
+</body>
+</html>

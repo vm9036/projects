@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pattern Pyramid</title>
+</head>
+<body>
+
+    <input type="text" id="patternInput" value="5">
+    <button onclick="pyramidPtn()">Click</button>
+    <p id="displayPtn"></p>
+
+    <script>
+        function pyramidPtn() {
+            let n = document.getElementById("patternInput").value;
+            let strPtn = "";
+            for(let i = 1; i<=n; i= i + 2)
+            {
+                for(j= 1; j<=n-i; j++)
+                {
+                    strPtn = strPtn + "&nbsp;";
+                }
+                for(let j = 1; j <= i; j++ )
+                {
+                    strPtn = strPtn + j;
+                }
+                strPtn = strPtn + "</br>";
+            }
+            document.getElementById("displayPtn").innerHTML = strPtn;
+        }
+
+    </script>
+</body>
+</html>

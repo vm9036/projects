@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css" />
+    <title>Reverse Factorial Program</title>
+</head>
+
+<body>
+    <div class="container">
+        <div class="field">
+            <label class="label">Enter Factorial :</label>
+            <div class="control">
+                <input type="text" class="input is-info" value="5" id="inputFactorial" />
+            </div>
+        </div>
+        <div class="field">
+            <div class="control">
+                <button class="button" onclick="reverseFact()">Click</button>
+            </div>
+        </div>
+        <div class="block">
+            <p id="displayFactorial"></p>
+        </div>
+    </div>
+    <script>
+        function reverseFact() {
+            let n = Number(document.getElementById("inputFactorial").value);
+            let m;
+            for(let i = 2; ; i++)
+            {
+                n = n / i;
+
+                if(n == 1)
+                {
+                    m = i
+                    break;
+                }
+            }
+            document.getElementById("displayFactorial").innerHTML = m;
+        }
+    </script>
+</body>
+
+</html>

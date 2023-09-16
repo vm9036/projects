@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>Slugify</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.9.3/css/bulma.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+</head>
+
+<body>
+
+    <div class="container">
+        <div class="box">
+            <h1 class="title">Slugify</h1>
+            <div class="columns">
+                <div class="column is-half is-offset-one-quarter">
+                    <div class="box">
+                        <div class="field">
+                            <label class="label">Input Text</label>
+                            <div class="control">
+                                <input class="input" type="text" id="inputText" placeholder="Enter text to slugify">
+                            </div>
+                        </div>
+                        <div class="field">
+                            <label class="label">Separator</label>
+                            <div class="control">
+                                <div class="buttons has-addons">
+                                    <button class="button is-selected is-primary " data-value="-"> Separate with dash
+                                        (<span class="icon ml-0 mr-0"><i class="fas fa-minus"></i></span>)</button>
+                                    <button class="button" data-value="_">Separate with underscore
+                                        (<span>_</span>)</button>
+                                </div>
+                                <input type="hidden" name="separator" value="-">
+                            </div>
+                        </div>
+                        <div class="field">
+                            <label class="checkbox ml-3">
+                                <input type="checkbox" id="removeStopWords">
+                                Remove Stop Words
+                            </label>
+                            <label class="checkbox ml-3">
+                                <input type="checkbox" id="removeNumbers">
+                                Remove Numbers
+                            </label>
+                        </div>
+
+                        <div class="field is-grouped mt-2">
+                            <div class="control mt-2">
+                                <label class="checkbox ml-3">
+                                    <input type="checkbox" id="autoSlugify">
+                                    Auto
+                                </label>
+                            </div>
+                            <div class="control">
+                                <button class="button is-primary is-fullwidth" id="slugifyButton">Slugify<span
+                                        class="icon ml-2"><i class="fas fa-exchange-alt"></i></span></button>
+                            </div>
+                            <div class="control">
+                                <button class="button is-fullwidth" id="clearButton">Clear<span class="icon ml-0"><i
+                                            class="fas fa-eraser"></i></span></button>
+                            </div>
+                            <div class="control">
+                                <button class="button is-danger is-fullwidth" id="resetButton"> Reset<span
+                                        class="icon ml-1"><i class="fas fa-undo-alt"></i></span></button>
+                            </div>
+                        </div>
+                        <div class="field">
+                            <label class="label">Output Slug</label>
+                            <div class="control">
+                                <textarea class="textarea" name="" id="outputSlug" cols="30" rows="5"
+                                    readonly></textarea>
+                            </div>
+                        </div>
+                        <div class="field">
+                            <label class="label">Copy to Clipboard</label>
+                            <div class="control ">
+                                <button class="button is-info is-fullwidth" id="copyButton">Copy</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="slugify.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,58 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Invert Image Colors</title>
+	<!-- fontawesome library -->
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css"/>
+	<!-- css bulma -->
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.9.4/css/bulma.min.css" />
+	<!-- jquery -->
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/imgareaselect/0.9.10/js/jquery.imgareaselect.min.js"></script>
+	<!-- stackblur library -->
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/stackblur-canvas/2.5.0/stackblur.min.js"></script>
+	<link rel="stylesheet"
+		href="	https://cdnjs.cloudflare.com/ajax/libs/imgareaselect/1.0.0-rc.1/css/imgareaselect-default.css">
+	<link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <div class="container is-fluid">
+        <!-- hero section starts -->
+        <section class="hero">
+            <div class="hero-container pb-6">
+                <p class="title">Invert Image Colors</p>
+                <!-- icons container starts-->
+                <div class="icon-container is-flex">
+                    <div class="image-upload item" title="Upload Image">
+                        <label for="file-input">
+                            <i class="fa fa-upload"></i>
+                        </label>
+                        <input type="file" id="file-input" style="display:none;">
+                    </div>
+                    <button class="button mx-4" id="invert-btn" title="Invert image color">Invert</button>
+                    <h3 class="download-text" class="ml-4">Download:</h3>
+                    <button class="button mx-4" id="imagePNG">PNG</button>
+                    <button class="button mx-4" id="imageJPG">JPG</button>
+                </div>
+                <!-- canvas container starts -->
+                <div class="outer-div">
+                    <div id="imageContainer" class="mx-6 is-flex">
+                        <canvas id="my-image"></canvas>
+                    </div>
+                </div>
+                <!-- canvas container ends -->
+            </div>
+        </section>
+        <!-- hero section ends -->
+    </div>
+	<script src="script.js"></script>
+</body>
+
+</html>

@@ -1,13 +1,11 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Random Digit Picker</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.9.4/css/bulma.min.css">
 </head>
-
 <body>
     <div class="container">
         <div class="box mt-5">
@@ -16,12 +14,11 @@
                 <div class="column is-6">
                     <div class="field">
                         <div class="control">
-                            <textarea class="textarea" id="input-separator" cols="30" rows="10">1 
+                            <textarea class="textarea" id="inputData" cols="30" rows="10">
+1
 2
-3
-4
-5
-6
+23
+34
                             </textarea>
                         </div>
                     </div>
@@ -29,14 +26,14 @@
                 <div class="column is-6">
                     <div class="field">
                         <div class="control">
-                            <textarea class="textarea" id="outputNumber" cols="30" rows="10"></textarea>
+                            <textarea class="textarea" id="answer" cols="30" rows="10"></textarea>
                         </div>
                     </div>
                 </div>
             </div>
             <div class="field">
                 <div class="control">
-                    <button class="button is-primary" onclick="randomDigit()">Click</button>
+                    <button class="button is-primary" onclick="pickNumber()">Click</button>
                 </div>
             </div>
             <div class="columns">
@@ -44,7 +41,7 @@
                     <div class="field">
                         <label for="" class="label">randomly interger :</label>
                         <div class="control">
-                            <input type="text" id="count" class="input is-info" value="1">
+                            <input type="text" id="count" class="input is-info" value="2">
                         </div>
                     </div>
                 </div>
@@ -52,7 +49,7 @@
                     <div class="field">
                         <label for="" class="label">input digit delimeter :</label>
                         <div class="control">
-                            <input type="text" id="string-separator" class="input is-info" value="\n">
+                            <input type="text" id="inputSep" class="input is-info" value="\n">
                         </div>
                     </div>
                 </div>
@@ -60,211 +57,79 @@
                     <div class="field">
                         <label for="" class="label">output digit delimeter :</label>
                         <div class="control">
-                            <input type="text" id="output-separator" class="input is-info" value=",">
+                            <input type="text" id="outputSep" class="input is-info" value=",">
                         </div>
                     </div>
                 </div>
                 <div class="column is-3">
                     <div class="field">
-                        <label for="" class="label">regex :</label>
+                        <label for="" class="label">Allow :</label>
                         <div class="control">
-                            <input type="text" id="regexp-separator" class="input is-info" value="\n">
+                            <input type="checkbox" id="repetitions" class="is-info">
                         </div>
                     </div>
                 </div>
             </div>
         </div>
     </div>
-
-
-    <script>
-        function randomDigit(){
-        var tool = this;
-        let text= 0;
-        var options = parseOptions(tool);
-        if (!options)
-            return "";
-        if (text == 0)
-            return "";
-        if (options.re) {
-            var lines = text.split(options.re);
-        } else {
-            var lines = text.split(options.inputSep);
-        }
-        // if (!options.repetitions) {
-        //     if (lines.length == options.count) {
-        //         tool.output.showWarningBadge("Only One Sample Is Possible", "The number of items is equal to the number you want to pick.");
-        //     }
-        //     if (lines.length < options.count) {
-        //         tool.output.showNegativeBadge("Too Large Count", "The number of items is less than the number you want to pick.");
-        //         return "";
-        //     }
-        // }
-        // if (options.skipEmptyItems) {
-        //     lines = removeEmptyItems(lines);
-        // }
-        var ret = [];
-        for (var i = 0; i < options.length; i++) {
-            var itemIndex = parseInt(Math.random() * lines.length, 10);
-            ret.push(lines[itemIndex]);
-            if (!options.repetitions) {
-                lines.splice(itemIndex, 1);
-            }
-        }
-        document.getElementById("outputNumber").value = ret.join(options.outputSep);
-    }
-    function removeEmptyItems(chars) {
-        var newList = [];
-        for (var i = 0; i < chars.length; i++) {
-            if (chars[i].trim().length > 0)
-                newList.push(chars[i]);
-        }
-        return newList;
-    }
-    function parseOptions(tool) {
-        // var options = tool.options.get();
-        var error = function(a, b) {
-            tool.output.showNegativeBadge(a, b, -1);
-        }
-        var stringSep = document.getElementById("string-separator").value;
-        var regexpSep = document.getElementById("regexp-separator").value;
-        var inputSep = document.getElementById("input-separator").value;
-        var outputSep = document.getElementById("output-separator").value;
-        var re = null;
-        if (regexpSep) {
-            var regexParts = inputSep.match(/^\/(.*?)\/([gimuy]*)$/);
-            if (regexParts) {
-                re = new RegExp(regexParts[1],regexParts[2]);
-            } else {
-                re = new RegExp(inputSep);
-            }
-        } else {
-            if (inputSep == "\\n")
-                inputSep = "\n";
-            if (inputSep == "\\t")
-                inputSep = "\t";
-        }
-        if (outputSep == "\\n")
-            outputSep = "\n";
-        if (outputSep == "\\t")
-            outputSep = "\t";
-        var count = document.getElementById("count").value;
-        if (!/^\d+$/.test(count)) {
-            tool.output.showNegativeBadge("Invalid Count", "Count contains non digits.");
-            return false;
-        }
-        count = parseInt(count);
-        if (count < 1) {
-            tool.output.showNegativeBadge("Invalid Count", "You can't pick less than one item.");
-            return false;
-        }
-        // var repetitions = document.getElementById("with-repetitions").value;
-        // var skipEmptyItems = document.getElementById("skip-empty-items").value;
-        return {
-            re: re,
-            count: count,
-            // repetitions: repetitions,
-            // skipEmptyItems: skipEmptyItems,
-            inputSep: inputSep,
-            outputSep: outputSep
-        }
-    }
-    </script>
 </body>
-
-</html>
-
-<!-- 
-
-    var bridge = function(text) {
-        var tool = this;
-        var options = parseOptions(tool);
-        if (!options)
+<script>
+function pickNumber(){
+    let text = document.getElementById("inputData").value;
+    console.log("text:->"+text);
+    let count = Number(document.getElementById("count").value);
+    console.log("count:->"+count);
+    let inputSep = document.getElementById("inputSep").value;
+    if (inputSep == "\\n")
+        inputSep = "\n";
+    if (inputSep == "\\t")
+        inputSep = "\t";
+    console.log("inputSep:->"+inputSep);
+    let outputSep = document.getElementById("outputSep").value;
+    console.log("outputSep:->"+outputSep);
+    if (outputSep == "\\n")
+     outputSep = "\n";
+    if (outputSep == "\\t")
+        outputSep = "\t";
+    let repetitions = document.getElementById("repetitions").checked;
+    console.log("repetitions:->"+repetitions);
+    let re = null;
+    let skipEmptyItems =false;
+    if (text.trim().length == 0)
             return "";
-        if (text.trim().length == 0)
-            return "";
-        if (options.re) {
-            var lines = text.split(options.re);
+        if (re) {
+            var lines = text.split(re);
         } else {
-            var lines = text.split(options.inputSep);
+            var lines = text.split(inputSep);
         }
-        if (!options.repetitions) {
-            if (lines.length == options.count) {
+        if (!repetitions) {
+            if (lines.length == count) {
                 tool.output.showWarningBadge("Only One Sample Is Possible", "The number of items is equal to the number you want to pick.");
             }
-            if (lines.length < options.count) {
+            if (lines.length < count) {
                 tool.output.showNegativeBadge("Too Large Count", "The number of items is less than the number you want to pick.");
                 return "";
             }
         }
-        if (options.skipEmptyItems) {
+        if (skipEmptyItems) {
             lines = removeEmptyItems(lines);
         }
         var ret = [];
-        for (var i = 0; i < options.count; i++) {
+        for (var i = 0; i < count; i++) {
             var itemIndex = parseInt(Math.random() * lines.length, 10);
             ret.push(lines[itemIndex]);
-            if (!options.repetitions) {
+            if (!repetitions) {
                 lines.splice(itemIndex, 1);
             }
         }
-        return ret.join(options.outputSep);
-    }
-    function removeEmptyItems(chars) {
-        var newList = [];
-        for (var i = 0; i < chars.length; i++) {
-            if (chars[i].trim().length > 0)
-                newList.push(chars[i]);
-        }
-        return newList;
-    }
-    function parseOptions(tool) {
-        var options = tool.options.get();
-        var error = function(a, b) {
-            tool.output.showNegativeBadge(a, b, -1);
-        }
-        var stringSep = options["string-separator"] || true;
-        var regexpSep = options["regexp-separator"] || false;
-        var inputSep = options["input-separator"] || '\n';
-        var outputSep = options["join-character"] || options["output-separator"] || '';
-        var re = null;
-        if (regexpSep) {
-            var regexParts = inputSep.match(/^\/(.*?)\/([gimuy]*)$/);
-            if (regexParts) {
-                re = new RegExp(regexParts[1],regexParts[2]);
-            } else {
-                re = new RegExp(inputSep);
-            }
-        } else {
-            if (inputSep == "\\n")
-                inputSep = "\n";
-            if (inputSep == "\\t")
-                inputSep = "\t";
-        }
-        if (outputSep == "\\n")
-            outputSep = "\n";
-        if (outputSep == "\\t")
-            outputSep = "\t";
-        var count = options["count"].trim();
-        if (!/^\d+$/.test(count)) {
-            tool.output.showNegativeBadge("Invalid Count", "Count contains non digits.");
-            return false;
-        }
-        count = parseInt(count);
-        if (count < 1) {
-            tool.output.showNegativeBadge("Invalid Count", "You can't pick less than one item.");
-            return false;
-        }
-        var repetitions = options["with-repetitions"];
-        var skipEmptyItems = options["skip-empty-items"] || false;
-        return {
-            re: re,
-            count: count,
-            repetitions: repetitions,
-            skipEmptyItems: skipEmptyItems,
-            inputSep: inputSep,
-            outputSep: outputSep
-        }
-    }
+        let answer = ret.join(outputSep);
+        console.log(answer);
+        document.getElementById("answer").value =answer;
+}
+</script>
+</html>
 
- -->
+
+
+
+

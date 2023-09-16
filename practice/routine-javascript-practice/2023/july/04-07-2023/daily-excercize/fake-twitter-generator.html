@@ -1,0 +1,1779 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/dom-to-image/2.6.0/dom-to-image.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/FileSaver.js/2.0.0/FileSaver.min.js"></script>
+    <title>Fake Twitter Profile Gererator</title>
+    <style>
+        @font-face {
+            font-family: system-ui;
+            font-style: normal;
+            font-weight: 300;
+            src: local(".SFNSText-Light"), local(".HelveticaNeueDeskInterface-Light"), local(".LucidaGrandeUI"), local("Ubuntu Light"), local("Segoe UI Light"), local("Roboto-Light"), local("DroidSans"), local("Tahoma");
+        }
+
+        .font {
+            font-family: TwitterChirpReg;
+        }
+
+        .fontReg {
+            font-family: TwitterChirpMedium;
+        }
+
+        .fontBold {
+            font-family: TwitterChirpBold;
+        }
+
+        .fontHeavy {
+            font-family: TwitterChirHeavy;
+        }
+
+        .fontNormal {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
+        }
+
+        .uifont {
+            font-family: system-ui;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: TwitterChirpReg !important;
+        }
+
+        .container {
+            margin-top: 88px;
+        }
+
+        .is-size-3 {
+            font-size: 2.25rem !important;
+            margin-left: 522px;
+        }
+
+        .is-rounded {
+            margin-left: 10px;
+            margin-top: -69px;
+        }
+
+        .ml-10 {
+            margin-left: 148px;
+        }
+
+        #ml-12 {
+            margin-left: 117px;
+        }
+
+        /*#ml-13{
+    margin-right: 89px!important;
+}*/
+        #about {
+            margin-left: 9rem !important;
+        }
+
+
+        .twitter-btn {
+            margin-left: 150px;
+        }
+
+
+
+        .image.is-4by3 {
+            padding-top: 43% !important;
+        }
+
+        .ml-2 {
+            margin-left: 8.5rem !important;
+        }
+
+
+        .columns.is-mobile>.column.is-three-fifths {
+            flex: none;
+            width: 44%;
+        }
+
+        .is-three-fifths {
+            display: flex;
+            margin-left: 1rem;
+        }
+
+
+        .margin_top {
+            margin-top: -2.75rem !important;
+        }
+
+        .m-20 {
+            margin-left: 268px;
+        }
+
+
+        #ml-13 {
+            margin-right: 79px;
+            margin-left: -144px;
+        }
+
+        .p-6 {
+            background-image: url('./bg-twitterfake.png');
+        }
+
+        /*dark*/
+        .main {
+            font-size: 35px;
+            margin-left: 34px;
+            cursor: pointer;
+            transform: translate(-50%, -50%);
+        }
+
+        /*end dark*/
+        .live {
+            margin-top: -37px;
+            margin-left: -39px;
+        }
+
+
+
+        #Tweet {
+            color: black;
+            margin-left: 20px;
+            background-color: white;
+            font-size: 20px;
+            /*font-family: inherit;*/
+        }
+
+        #totalTweet {
+            /* font-family: inherit;*/
+            color: rgb(83, 100, 113);
+            margin-left: 21px;
+            font-size: 15px;
+            background-color: white;
+
+        }
+
+        #Born {
+
+            color: rgb(83, 100, 113);
+            font-size: 15px;
+            font-size: 15px;
+        }
+
+        #following1 {
+
+            color: rgb(83, 100, 113);
+            font-size: 15px;
+
+        }
+
+        #followers1 {
+            color: rgb(83, 100, 113);
+            font-size: 15px;
+        }
+
+        #wifi {
+
+            color: rgb(83, 100, 113);
+            font-size: 15px;
+        }
+
+        #signal {
+
+            color: rgb(83, 100, 113);
+            font-size: 15px;
+        }
+
+        #signal2 {
+            color: rgb(83, 100, 113);
+            font-size: 15px;
+        }
+
+        #battery {
+            color: rgb(83, 100, 113);
+            font-size: 15px;
+        }
+
+        #battery1 {
+            color: rgb(83, 100, 113);
+            font-size: 15px;
+        }
+
+        #ellipsis {
+            color: rgb(83, 100, 113);
+            font-size: 15px;
+        }
+
+        #percent {
+            color: rgb(83, 100, 113);
+            font-size: 15px;
+        }
+
+        #time {
+            color: rgb(83, 100, 113);
+            font-size: 15px;
+        }
+
+        #time2 {
+            color: rgb(83, 100, 113);
+            font-size: 15px;
+        }
+
+        #changeImage3 {
+            background: #1da1f2;
+
+        }
+
+        #mobileTime {
+            font-family: inherit;
+            color: rgb(83, 100, 113);
+        }
+
+        #battery2 {
+            color: rgb(83, 100, 113);
+        }
+
+        /*#rounded{
+    width: 142px;
+        height: 142px;
+        border: 4px solid #fff;
+}*/
+
+
+
+
+        .is-rounded {
+            border-radius: 100%;
+        }
+
+        .twitter-profile-pic {
+            display: inline-block;
+            position: relative;
+            top: -29px;
+            margin-bottom: -77px;
+            margin-left: 9px;
+        }
+
+        .twitter-profile-pic img {
+            width: 115px;
+            height: 115px;
+            border: 3px solid #fff;
+            border-radius: 100%;
+            object-fit: cover;
+            object-position: center;
+        }
+
+        #Profile-button {
+            margin-top: -34px !important;
+            margin-bottom: -32px;
+        }
+
+        /*.twitter-header-icon {
+    position: absolute;
+    width: 100%;
+    padding: 12px;
+    display: block;
+}*/
+
+        /*.main-twitter-profile .twitter-header-icon .left-icon,
+.main-twitter-profile .twitter-header-icon .right-dots {
+    width: 28px;
+    height: 28px;
+    background: rgba(0, 0, 0, .5);
+    text-align: center;
+    border-radius: 50%;
+    display: inline-block;
+    position: relative;
+}
+ .main-twitter-profile .twitter-header-icon .right-dots {
+     width: 28px;
+     height: 28px;
+     background: rgba(0, 0, 0, .5);
+     text-align: center;
+     border-radius: 50%;
+     display: inline-block;
+     position: relative;
+ }*/
+
+        .twitter-icon {
+            width: 50px;
+            height: 50px;
+            border-radius: 100%;
+            background: #1da1f2;
+            justify-content: center;
+            align-items: center;
+            display: flex;
+            position: absolute;
+            bottom: 59px;
+            right: 15px;
+            box-shadow: 0px 2px 6px 0 rgb(0 0 0 / 30%);
+            z-index: 10;
+
+        }
+
+        #Note {
+            background-color: #f8d7da;
+            border: 2px solid #f5c6cb;
+            margin-left: 100px;
+            margin-right: 77px;
+        }
+
+        /*start twitter header icon start*/
+        .twitter-header-icon {
+            position: absolute;
+            width: 100%;
+            padding: 12px;
+            display: block;
+        }
+
+        .twitter-header-icon .right-dots a {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 5px;
+            height: 5px;
+            border: 1px solid #fff;
+            border-radius: 50%;
+            display: block;
+            position: absolute;
+            z-index: 2;
+        }
+
+        .left-icon {
+            width: 28px;
+            height: 28px;
+            background: rgba(0, 0, 0, .5);
+            text-align: center;
+            border-radius: 50%;
+            display: inline-block;
+            position: relative;
+
+            position: absolute;
+            z-index: 2;
+        }
+
+        .right-dots {
+            margin-left: 335px;
+            width: 28px;
+            height: 28px;
+            background: rgba(0, 0, 0, .5);
+            text-align: center;
+            border-radius: 50%;
+            display: inline-block;
+            position: relative;
+            position: absolute;
+            z-index: 2;
+
+            color: white;
+        }
+
+        .main-twitter-profile .twitter-header-icon .right-dots {
+            float: right;
+        }
+
+        .right-dots span:nth-child(1) {
+            top: 20%;
+            transform: translate(-50%, -20%);
+        }
+
+        .dots {
+            margin: 7px 0px 0px 8px;
+        }
+
+        /*end twitter header icon*/
+
+        #ellipsis-h {
+            margin-top: -31px !important;
+            margin-bottom: -32px;
+            width: 35px;
+            height: 35px;
+            border: 1px solid gray;
+            text-align: center;
+            /*margin-left: 0px;
+        width: 28px;
+        height: 28px;
+        text-align: center;
+        border-radius: 50% solid red;
+        display: inline-block;
+        position: relative;
+        position: absolute;*/
+
+        }
+
+        #ellipsis-h2 {
+            margin-left: 8px;
+            margin-top: -31px !important;
+            margin-bottom: -32px;
+            text-align: center;
+            width: 35px;
+            border: 1px solid gray;
+            height: 35px;
+
+            /* margin-left: 0px;
+    width: 28px;
+    height: 28px;
+    text-align: center;
+    border-radius: 50% solid red;
+    display: inline-block;
+    position: relative;
+    position: absolute;*/
+
+        }
+
+        /*#profileButtonIcon{
+    margin-left: 394px;
+}*/
+        #checkIcon {
+            background-color: #fff;
+        }
+
+        #threeIcon {
+            margin-top: 9px;
+        }
+
+        #wellIcon {
+            margin-top: 9px;
+        }
+
+        .Blue {
+            color: #0000ff;
+        }
+
+        .Blue :active {
+            color: #0000ff;
+        }
+
+        .gold {
+            color: #FFD700;
+        }
+
+        .grey {
+            color: #808080;
+        }
+
+        #born1 {
+            font-family: serif;
+            width: 20px;
+            height: 20px;
+            margin-left: 12px;
+        }
+
+        #accountName {
+            color: black;
+            font-size: 20px;
+        }
+
+        #changeImageFollowed {
+            height: 25px;
+
+            border-radius: 100%;
+            text-align: center;
+            margin-top: 6px;
+
+        }
+
+        #imgSpan {
+            width: 34px;
+        }
+
+        #LiveLocation {
+            color: rgb(83, 100, 113);
+            /* font-size: 15px;*/
+        }
+
+        #dob {
+            color: rgb(83, 100, 113);
+            /* font-size: 15px;*/
+        }
+
+        #url {
+            color: #485fc7;
+        }
+
+        #flag {
+            color: rgb(83, 100, 113);
+            /* font-size: 15px;*/
+        }
+
+        #governmenticon {
+            color: rgb(83, 100, 113);
+            /* font-size: 15px;*/
+        }
+
+        #subcribation {
+            margin-bottom: 1px;
+            color: black;
+        }
+
+        #Profile-button {
+            background-color: black;
+            color: #fff;
+        }
+
+        #followers {
+            color: black;
+        }
+
+        #following {
+            color: black;
+        }
+
+        #sarvamangal {
+            color: rgb(83, 100, 113);
+            font-size: 13px;
+        }
+
+        #totalTweetDiv {
+            color: rgb(83, 100, 113);
+            /*font-size: 15px;*/
+        }
+
+        #userNameDiv {
+            color: rgb(83, 100, 113);
+            /* font-size: 15px;*/
+        }
+
+        #Tweets {
+            color: black;
+        }
+
+        #subcribationid {
+            margin-top: -18px;
+        }
+
+        #idfollowing {
+            margin-top: -35px;
+            color: black;
+        }
+
+
+        #Bannerphoto {
+            margin-left: -15px;
+        }
+
+        #SelectImgage {
+            margin-left: -15px;
+        }
+
+        .btn:active,
+        .btn.active {
+            background-color: #48c78e;
+            outline: none;
+        }
+
+        #selectInput {
+            padding-right: 120px;
+            margin-top: 5px;
+        }
+    </style>
+</head>
+
+<body class="light">
+    <!--navbar start-->
+    <nav class="navbar box" role="navigation" aria-label="main navigation">
+        <div class="navbar-brand">
+            <label class="">
+                <i class="bi bi-brightness-high-fill dark main" id="toggleDark"></i>
+                <i class="bi bi-brightness-high-fill Blue main" id="toggleBlue"></i>
+                <i class="bi bi-brightness-high-fill gold main" id="togglegold"></i>
+                <i class="bi bi-brightness-high-fill grey main" id="togglegrey"></i>
+
+            </label>
+            <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false"
+                data-target="navbarBasicExample">
+                <span aria-hidden="true"></span>
+                <span aria-hidden="true"></span>
+                <span aria-hidden="true"></span>
+            </a>
+        </div>
+        <div class="navbar-end">
+            <div class="navbar-item">
+                <a class="navbar-item">
+                    Mail
+                </a>
+                <a class="navbar-item">
+                    IMEI
+                </a>
+                <div class="navbar-item has-dropdown is-hoverable">
+                    <a class="navbar-link">
+                        personal Detail
+                    </a>
+                    <div class="navbar-dropdown">
+                        <a class="navbar-item">
+                            About
+                        </a>
+                        <a class="navbar-item">
+                            Jobs
+                        </a>
+                        <a class="navbar-item">
+                            Contact
+                        </a>
+                        <hr class="navbar-divider">
+                        <a class="navbar-item">
+                            Report an issue
+                        </a>
+                    </div>
+                </div>
+                <div class="navbar-item has-dropdown is-hoverable">
+                    <a class="navbar-link">
+                        Social Media
+                    </a>
+                    <div class="navbar-dropdown">
+                        <a class="navbar-item">
+                            About
+                        </a>
+                        <a class="navbar-item">
+                            Jobs
+                        </a>
+                        <a class="navbar-item">
+                            Contact
+                        </a>
+                        <hr class="navbar-divider">
+                        <a class="navbar-item">
+                            Report an issue
+                        </a>
+                    </div>
+                </div>
+                <div class="navbar-item has-dropdown is-hoverable">
+                    <a class="navbar-link">
+                        Text massenger
+                    </a>
+                    <div class="navbar-dropdown">
+                        <a class="navbar-item">
+                            About
+                        </a>
+                        <a class="navbar-item">
+                            Jobs
+                        </a>
+                        <a class="navbar-item">
+                            Contact
+                        </a>
+                        <hr class="navbar-divider">
+                        <a class="navbar-item">
+                            Report an issue
+                        </a>
+                    </div>
+                </div>
+                <div class="navbar-item has-dropdown is-hoverable">
+                    <a class="navbar-link">
+                        Name Generator
+                    </a>
+                    <div class="navbar-dropdown">
+                        <a class="navbar-item">
+                            About
+                        </a>
+                        <a class="navbar-item">
+                            Jobs
+                        </a>
+                        <a class="navbar-item">
+                            Contact
+                        </a>
+                        <hr class="navbar-divider">
+                        <a class="navbar-item">
+                            Report an issue
+                        </a>
+                    </div>
+                </div>
+                <div class="navbar-item has-dropdown is-hoverable">
+                    <a class="navbar-link">
+                        More
+                    </a>
+                    <div class="navbar-dropdown">
+                        <a class="navbar-item">
+                            About
+                        </a>
+                        <a class="navbar-item">
+                            Jobs
+                        </a>
+                        <a class="navbar-item">
+                            Contact
+                        </a>
+                        <hr class="navbar-divider">
+                        <a class="navbar-item">
+                            Report an issue
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        </div>
+    </nav>
+    <!--navbar end-->
+    <div class="container mt-5" id="container">
+        <h1 class="is-size-3 has-text-centered uifont">Fake Twitter Profile Gererator</h1>
+        <div class="columns is-desktop ">
+
+            <div class="column">
+                <form id="FormID">
+                    <!--<div class="mt-2">
+                        <button class="button  is-rounded Blue" onClick="showBlueIcon(event)"><span
+                                class="icon is-small mr-2 has-text-info">
+                                <img src="./src/verified-icon.png">
+                            </span>blue</button>
+                        <button class="button is-rounded" onClick="showGreyIcon(event)"><span
+                                class="icon is-small mr-2 has-text-primary">
+                                <img src="./src/verified-grey4.png">
+                            </span>grey</button>
+                        <button class="button  is-rounded" onClick="showYellowIcon(event)"><span
+                                class="icon is-small mr-2">
+                                <img src="./src/verify-allow.png">
+                            </span>yellow</button>
+                        <button class="button is-primary is-rounded" onClick="clearIcon(event)">none</button>
+                    </div>-->
+                    <div class="column is-three-fifths box  ml-12 dark" id="ml-12">
+                        <!--div start-->
+                        <div class="buttons">
+                            <button class="button btn" onClick="showBlueIcon(event) " id="BlueIconbtn"><span
+                                    class="icon is-small mr-2 has-text-info">
+                                    <img src="./src/verified-icon.png">
+                                </span>Blue</button>
+                            <button class="button btn" onClick="showGreyIcon(event)" id="greyIconbtn"><span
+                                    class="icon is-small mr-2 has-text-primary">
+                                    <img src="./src/gray2.png.png">
+                                </span>grey</button>
+                            <button class="button btn" onClick="showYellowIcon(event)" id="yellowIconbtn"><span
+                                    class="icon is-small mr-2">
+                                    <img src="./src/verify-allow.png">
+                                </span>yellow</button>
+                            <button class="button btn" onClick="clearIcon(event)" id="noneIconbtn"
+                                style="background-color: #48c78e;color: white">none</button>
+                        </div>
+                        <div class="field" style="display: none;" id="governmentdiv">
+                            <label class="label fontReg">government official</label>
+                            <div class="control">
+                                <input class="input" type="text" placeholder="government"
+                                    value="india government official" id="inputgovernment" oninput="myFunction()">
+                                <div class="select ">
+                                    <select id="selectInput" oninput="updateInput(value)">
+                                        <option>india government official</option>
+                                        <option>United states government official</option>
+                                        <option>Canadian government official</option>
+                                        <option>United kingdom government official</option>
+                                        <option> government official</option>
+                                        <option>Custom</option>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+                        <div id="desktopView">
+                            <div class="column">
+
+                                <label class="label fontReg">Parts</label>
+                                <label class="checkbox uifont has-text-black">
+                                    <input type="checkbox" id="input2" onclick="verifyAccount(1)">
+                                    Verfied Account
+                                </label>
+                            </div>
+                            <div class="column">
+                                <label class="label fontReg">Tweet Count</label>
+                                <div class="control has-text-black">
+                                    <input class="input " type="number" placeholder="followers Count" value="10800"
+                                        id="input11" oninput="updateInput(value)">
+                                </div>
+                            </div>
+                        </div>
+                        <div id="mobileView" style="display: none;" class="mb-2">
+                            <div class="columns">
+                                <div class="column">
+                                    <label class="label fontReg">Layout :</label>
+
+                                    <label class="radio uifont  has-text-black">
+                                        <input type="radio" name="question" id="input1" onclick="switchAndroid()"
+                                            checked>
+                                        android
+                                    </label>
+                                </div>
+                                <div class="column">
+                                    <label class="label fontReg">Parts</label>
+                                    <label class="checkbox uifont  has-text-black">
+                                        <input type="checkbox" id="input21" onclick="verifyAccount(2)">
+                                        Verfied Account
+                                    </label>
+                                </div>
+                            </div>
+                            <label class="radio uifont  has-text-black">
+                                <input type="radio" name="question" id="iphoneInput" onclick="switchIphone()">
+                                iphone
+                            </label>
+                            <div class="columns">
+                                <div class="column">
+                                    <label class="label fontReg">clock</label>
+                                    <div class="control ">
+                                        <input class="input has-text-black" type="text" placeholder="clock"
+                                            value="10:04 AM" id="input3" oninput="updateInput(value)">
+                                    </div>
+                                </div>
+                                <div class="column">
+                                    <label class="label fontReg">Battery percent</label>
+                                    <div class="control">
+                                        <input class="input has-text-black" type="number" placeholder="percent input"
+                                            value="50" id="input4" oninput="updateInput(value)">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="box " id="Select1">
+                            <article class="media">
+                                <div class="media-left">
+                                    <figure class="image is-64x64">
+                                        <img src="https://bulma.io/images/placeholders/128x128.png" alt="Image"
+                                            id="changeImage1">
+                                    </figure>
+                                </div>
+                                <div class="media-content ml-10 ">
+                                    <div class="content ">
+                                        <label class="has-text-weight-bold fontReg">Banner photo</label>
+                                        <div class="file  is-primary" id="Bannerphoto">
+                                            <label class="file-label">
+                                                <input class="file-input" type="file" name="resume"
+                                                    onchange="preview_image(event, 'changeImage1')">
+                                                <span class="file-cta">
+                                                    <span class="file-label uifont">
+                                                        Select Imgage
+                                                    </span>
+                                                </span>
+                                            </label>
+                                        </div>
+                                    </div>
+                                    <nav class="level is-mobile imageIsLoaded()">
+                                        <div class="level-left">
+                                            <a class="level-item" aria-label="reply">
+                                                <!--<span class="icon is-small">
+                                                    <i class="fas fa-reply" aria-hidden="true"></i>
+                                                </span>-->
+                                            </a>
+                                            <a class="level-item" aria-label="retweet">
+                                                <!--<span class="icon is-small">
+                                                    <i class="fas fa-retweet" aria-hidden="true"></i>
+                                                </span>-->
+                                            </a>
+                                            <a class="level-item" aria-label="like">
+                                                <!--<span class="icon is-small">
+                                                    <i class="fas fa-heart" aria-hidden="true"></i>
+                                                </span>-->
+                                            </a>
+                                        </div>
+                                    </nav>
+                                </div>
+                            </article>
+                        </div>
+                        <div class="box " id="Select2">
+                            <article class="media">
+                                <div class="media-left">
+                                    <figure class="image is-64x64">
+                                        <img src="https://bulma.io/images/placeholders/128x128.png" alt="Image"
+                                            id="changeImage2">
+                                    </figure>
+                                </div>
+                                <div class="media-content ml-10">
+                                    <div class="content has-span-right imageIsLoaded() ">
+                                        <label class="has-text-weight-bold fontReg">Profile photo</label>
+                                        <div class="file  is-primary" id="SelectImgage">
+                                            <label class="file-label">
+                                                <input class="file-input" type="file" name="resume"
+                                                    onchange="preview_image(event, 'changeImage2')">
+                                                <span class="file-cta">
+                                                    <span class="file-label uifont">
+                                                        Select Imgage
+                                                    </span>
+                                                </span>
+                                            </label>
+                                        </div>
+                                    </div>
+                                    <nav class="level is-mobile">
+                                        <div class="level-left">
+                                            <a class="level-item" aria-label="reply">
+
+                                            </a>
+                                            <a class="level-item" aria-label="retweet">
+
+                                            </a>
+                                            <a class="level-item" aria-label="like">
+
+                                            </a>
+                                        </div>
+                                    </nav>
+                                </div>
+                            </article>
+                        </div>
+                        <div class="field" id="div1">
+                            <label class="label fontReg">Name</label>
+                            <div class="control ">
+                                <input class="input has-text-black" type="text" placeholder="Text input"
+                                    value="Tom Cruise" id="input5" oninput="updateInput(value)">
+                            </div>
+                        </div>
+                        <div class="field">
+                            <label class="label fontReg">User Name</label>
+                            <div class="control">
+                                <input class="input has-text-black" type="text" placeholder="user name"
+                                    value="TomCruise" id="input6" oninput="updateInput(value)">
+                            </div>
+                        </div>
+
+
+
+                        <div class="field">
+                            <label class="label fontReg">subcribation</label>
+                            <div class="control">
+                                <input class="input has-text-black" type="text" placeholder="user name"
+                                    value="Actor. producer. Running in movies since 1918." id="inputSubcribation"
+                                    oninput="updateInput(value)">
+                            </div>
+                        </div>
+                        <div class="field">
+                            <label class="label fontReg">Live in</label>
+                            <div class="control">
+                                <input class="input has-text-black " type="text" placeholder="user name"
+                                    value="Worldwide" id="inputLiveLocation" oninput="updateInput(value)">
+                            </div>
+                        </div>
+                        <div class="field">
+                            <label class="label fontReg">URL</label>
+                            <div class="control">
+                                <input class="input has-text-black" type="text" placeholder="user name" value=" 
+TomCruise.com
+" id="urlInput" oninput="updateInput(value)">
+                            </div>
+                        </div>
+                        <!-- <div class="field">
+                             <label class="label">Born Date</label>
+                            <div class="control">
+                                <input class="input" type="text" placeholder="born date" value="January 1, 1999"
+                                    id="input7" oninput="updateInput(value)">
+                            </div>
+                        </div>-->
+                        <div class="field">
+                            <label class="label fontReg">Join Date</label>
+                            <div class="control  ">
+                                <input class="input has-text-black" type="text" placeholder="date of birth"
+                                    value="Joined June 2009" id="input8" oninput="updateInput(value)">
+                            </div>
+                        </div>
+                        <div class="columns">
+                            <div class="column">
+                                <label class="label fontReg">Following Count</label>
+                                <div class="control">
+                                    <input class="input has-text-black" type="number" placeholder="following Count"
+                                        value="49600" id="input9" oninput="updateInput(value)">
+                                </div>
+                            </div>
+                            <div class="column">
+                                <label class="label fontReg">followers Count</label>
+                                <div class="control">
+                                    <input class="input has-text-black" type="number" placeholder="followers Count"
+                                        value="7000000" id="input10" oninput="updateInput(value)">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </form>
+            </div>
+
+            <!--start display div-->
+            <div class="column ml-13 dark" id="ml-13">
+
+                <div class="columns mt-2 mx-1 is-primary ">
+                    <button class="button is-medium is-fullwidth  " style="background-color: #00d1b2 !important; "
+                        id="activeButton" onclick="desktopStyle()">Desktop
+                        View</button>
+                    <button class="button is-medium is-fullwidth " id="activeButton2" onclick="mobileStyle()">Mobile
+                        View</button>
+                </div>
+
+                <div class="box p-6" id="img">
+                    <input class="button live" type="submit" value="Live preview">
+                    <div class="card mt-5" id="myElement">
+                        <div class="has-background-white">
+
+                            <div id="mobileViewBody" style="display: none;">
+
+                                <div id="iphoneView" style="display: none;">
+                                    <div class="columns">
+                                        <div class="column ml-2">
+                                            <a class="" aria-label="like" id="ellipsis">
+                                                <p> </p>
+                                                <span class="icon is-small">
+                                                    <i class="fa fa-ellipsis-h" aria-hidden="true"></i>
+                                                </span>
+                                                vadafone
+                                            </a>
+                                        </div>
+                                        <div class="column">
+                                            <div class="level-left navbar-end">
+                                                <a class="level-item" aria-label="like">
+                                                    <p id="mobileTime" class="fontReg">10:04 AM</p>
+                                                </a>
+                                            </div>
+                                        </div>
+                                        <div class="column">
+                                            <div class="level-left navbar-end ">
+                                                <a class="level-item" aria-label="like" id="percent">
+                                                    <p id="batteryPercentage1" class="fontReg"> 50 </p>
+                                                    <span class="icon is-small">
+                                                        <i class="fa fa-percent" aria-hidden="true"></i>
+                                                    </span>
+                                                </a>
+                                                <a class="level-item mr-2" aria-label="like" id="battery2">
+                                                    <span class="icon is-small">
+                                                        <i class="fa fa-battery-half" aria-hidden="true"></i>
+                                                    </span>
+                                                </a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div id="androidView" style="display: none;">
+                                    <div class="level-left navbar-end mr-1">
+                                        <a class="level-item" aria-label="reply" id="wifi">
+                                            <span class="icon is-small">
+                                                <i class="fa fa-wifi" aria-hidden="true"></i>
+                                            </span>
+                                        </a>
+                                        <a class="level-item" aria-label="retweet" id="signal">
+                                            <span class="icon is-small">
+                                                <i class="fa fa-signal" aria-hidden="true"></i>
+                                            </span>
+                                        </a>
+                                        <a class="level-item" aria-label="like" id="signal2">
+                                            <span class="icon is-small">
+                                                <i class="fa fa-signal" aria-hidden="true"></i>
+                                            </span>
+                                        </a>
+                                        <a class="level-item fontReg" aria-label="like" id="battery">
+                                            <p id="batteryPercentage"> 50 </p>
+                                            <span class="icon is-small">
+                                                <i class="fa fa-percent" aria-hidden="true"></i>
+                                            </span>
+                                        </a>
+                                        <a class="level-item" aria-label="like" id="battery1">
+                                            <span class="icon is-small">
+                                                <i class="fa fa-battery-half" aria-hidden="true"></i>
+                                            </span>
+                                        </a>
+                                        <a class="level-item fontReg" aria-label="like" id="time2">
+                                            <p id="androidViewTime">10:04 AM</p>
+                                        </a>
+                                    </div>
+                                </div>
+
+
+                            </div>
+
+                            <div class="" id="desktopViewBody">
+                                <div class="level-left ml-20">
+                                    <a class="level-item has-text-black" aria-label="reply">
+                                        <span class="icon is-small" id="born1">
+                                            <i class="fa fa-arrow-left ml-2" aria-hidden="true"></i>
+                                        </span>
+                                    </a>
+                                    <div class="columns">
+                                        <div class="column ">
+                                            <!--tweets div-->
+                                            <div class="level-left has-text-weight-bold fontReg">
+                                                <p class="fontReg" id="Tweet">Tom Cruise</p>
+                                                &nbsp;
+                                                <a class="level-item has-text-link is-small" aria-label="reply">
+                                                    <span class="icon is-small " id="checkIcon" style="display: none;">
+                                                        <img src="./src/verified-icon.png">
+                                                    </span>
+                                                    <span class="icon is-small " id="BlueIcon" style="display: none;">
+                                                        <img src="./src/verified-icon.png">
+                                                    </span>
+                                                    <span class="icon is-small" style="display: none;" id="greyIcon">
+                                                        <img src="./src/gray2.png.png">
+                                                    </span>
+                                                    <span class="icon is-small " style="display: none;" id="yellowIcon">
+                                                        <img src="./src/verify-allow.png">
+                                                    </span>
+                                                </a>
+                                            </div>
+                                            <div class=" level-left uifont" id="totalTweetDiv">
+                                                <p id="totalTweet">10.8k</p>&nbsp;Tweets
+                                            </div>
+
+
+
+                                            <!--<code class="pt-0" id="Tweet">john Doe</code>
+                                            <code class="has-text-link is-small" style="display: none;" id="checkIcon">
+                                                <span class="icon is-small">
+                                                <img src="./src/verified-icon.png">
+                                                </span>-->
+                                            <!--allow icon-->
+                                            <!-- <span class="icon is-small mr-2">
+                                                <img src="./src/verify-allow.png">
+                                            </span>
+                                            </code>
+
+                                            <br>
+                                            <code class="mt-2 " id="totalTweet">0</code>Tweets-->
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!--start twitter header icon-->
+                        <div class="twitter-header-icon" id="twitterHeaderIcon" style="display: none;">
+                            <div class="left-icon">
+                                <img alt="twitter-profile-left-arrow" src="src\twitter-profile-left-arrow.png">
+                            </div>
+                            <div class="right-dots">
+                                <span class="icon is-small dots">
+                                    <i class="fa fa-ellipsis-v dots" aria-hidden="true"></i>
+                                </span>
+                            </div>
+                        </div>
+                        <!--end twitter header icon-->
+                        <div class="card-image">
+                            <figure class="image is-4by3" id="btn-Preview-Image">
+                                <img src="./src/TomCruisebackprofile.jpeg" alt="Placeholder image" id="changeImage3">
+                            </figure>
+                        </div>
+                        <div class="twitter-profile-pic" id="rounded">
+                            <img class="twitter-profile-pic img" src="./src/TomCruiseprofile.jpg" id="changeImage4">
+                        </div>
+                        <div class="Columns" id="followingButton">
+                            <div class="Column navbar-end" id="profileButtonIcon">
+                                <div id="ellipsis-h" class="is-rounded">
+                                    <i class="fa fa-ellipsis-h " aria-hidden="true" id="threeIcon"></i>
+                                </div>
+                                <div id="ellipsis-h2" class="is-rounded" style="display: none;">
+                                    <i class="fa fa-bell" aria-hidden="true" id="wellIcon"></i>
+                                </div>
+                                <button class="button is-rounded  margin_top mr-3" id="Profile-button"
+                                    onClick="Followingbtn()">Follow</button>
+                                <button class="button is-rounded   mr-3" id="idfollowing" onClick="alertdiv()"
+                                    style="display: none;">Following</button>
+                            </div>
+                        </div>
+                        <!--<button class="button is-rounded navbar-end margin_top mr-3" id="Profile-button">Edit
+                            Profile</button>-->
+                        <div class="card-content">
+                            <div class="media">
+                                <div class="">
+                                </div>
+                                <div class="media-content">
+                                    <div class="level-left has-text-weight-bold">
+                                        <p id="accountName" class="fontReg">Tom Cruise</p>
+                                        &nbsp;
+                                        <a class="level-item" aria-label="reply" id="name">
+                                            <span class="icon is-small " id="verifyAccount" style="display: none;">
+                                                <img src="./src/verified-icon.png">
+                                            </span>
+                                            <span class="icon is-small " id="blue" style="display: none;">
+                                                <img src="./src/verified-icon.png">
+                                            </span>
+                                            <span class="icon is-small" id="gray" style="display: none;">
+                                                <img src="./src/gray2.png.png">
+                                            </span>
+                                            <span class="icon is-small mr-2" id="allow" style="display: none;">
+                                                <img src="./src/verify-allow.png">
+                                            </span>
+                                        </a>
+                                    </div>
+                                    <div class="level-left" id="userNameDiv">
+                                        @<p id="userName" class="uifont">TomCruise</p>
+                                    </div>
+                                    <div class="level-left" style="display: none;" id="flag">
+                                        <span class="icon is-small mt-2" id="flagicon"><i class="fa fa-flag"
+                                                aria-hidden="true"></i></span>
+                                        <a class="ml-1 uifont" href="" id="governmenticon">india government
+                                            official</a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="content" id="subcribationid">
+                                <p id="subcribation" class="fontNormal">Actor. producer. Running in movies since 1918.
+                                </p>
+                                <!--<div class="level-left ">
+                                    
+                                    <a class="level-item " aria-label="reply" id="Born">
+                                        <span class="icon is-small">
+                                            <i class="fa fa-table" aria-hidden="true"></i> &nbsp;&nbsp;
+                                        </span><span>Born</span>
+                                    </a>
+                                    <p id="dob"> January 1, 1999</p>
+                                </div>-->
+
+                                <!--end alert-->
+                                <div class="has-text-info mt-2">
+                                    <div class="level-left ">
+                                        <a class="level-item " aria-label="reply">
+                                            <span class="icon is-small " id="liveIcon">
+                                                <?xml version="1.0" standalone="no" ?>
+                                                <!DOCTYPE svg
+                                                    PUBLIC "-//W3C//DTD SVG 20010904//EN" "http://www.w3.org/TR/2001/REC-SVG-20010904/DTD/svg10.dtd">
+                                                <svg id="mapsIcongray" version="1.0" xmlns="http://www.w3.org/2000/svg"
+                                                    width="60.000000pt" height="10pt"
+                                                    viewBox="0 0 512.000000 512.000000"
+                                                    preserveAspectRatio="xMidYMid meet">
+                                                    <metadata>
+                                                        Created by potrace 1.16, written by Peter Selinger 2001-2019
+                                                    </metadata>
+                                                    <g transform="translate(0.000000,512.000000) scale(0.100000,-0.100000)"
+                                                        fill="rgb(83, 100, 113)" stroke="none">
+                                                        <path d="M2270 5100 c-411 -70 -738 -238 -1025 -525 -334 -333 -514 -746 -540
+                                                -1235 -20 -369 100 -801 374 -1344 235 -465 535 -925 942 -1446 214 -274 404
+                                                -498 448 -527 47 -32 135 -32 182 0 68 45 487 563 724 892 535 746 894 1452
+                                                999 1968 37 181 49 314 41 457 -26 489 -206 902 -540 1235 -292 293 -633 464
+                                                -1051 529 -140 22 -415 20 -554 -4z m585 -350 c434 -91 806 -361 1024 -745
+                                                126 -222 192 -473 192 -738 0 -499 -307 -1191 -904 -2042 -215 -305 -584 -780
+                                                -607 -780 -23 0 -392 475 -607 780 -244 348 -407 614 -563 920 -322 632 -408
+                                                1069 -294 1500 72 273 202 496 404 695 241 237 539 383 880 430 106 15 361 4
+                                                475 -20z" />
+                                                        <path d="M2390 4189 c-207 -37 -424 -166 -558 -333 -78 -97 -155 -252 -183
+                                                -371 -28 -115 -30 -314 -5 -420 86 -359 343 -621 696 -711 105 -27 335 -27
+                                                440 0 353 90 610 352 696 711 25 106 23 305 -5 420 -29 119 -105 274 -183 371
+                                                -114 142 -299 264 -478 314 -86 25 -327 36 -420 19z m276 -340 c184 -34 346
+                                                -159 428 -333 45 -94 60 -174 53 -289 -9 -156 -68 -282 -185 -394 -97 -92
+                                                -270 -163 -402 -163 -132 0 -305 71 -402 163 -117 112 -176 238 -185 394 -7
+                                                115 8 195 53 289 117 246 378 381 640 333z" />
+                                                    </g>
+                                                </svg>
+                                                <!--start white icon-->
+
+                                                <?xml version="1.0" standalone="no" ?>
+                                                <!DOCTYPE svg
+                                                    PUBLIC "-//W3C//DTD SVG 20010904//EN" "http://www.w3.org/TR/2001/REC-SVG-20010904/DTD/svg10.dtd">
+                                                <svg id="mapsIconWhite" version="1.0" xmlns="http://www.w3.org/2000/svg"
+                                                    width="60.000000pt" height="10pt"
+                                                    viewBox="0 0 512.000000 512.000000"
+                                                    preserveAspectRatio="xMidYMid meet" style="display: none;">
+                                                    <metadata>
+                                                        Created by potrace 1.16, written by Peter Selinger 2001-2019
+                                                    </metadata>
+                                                    <g transform="translate(0.000000,512.000000) scale(0.100000,-0.100000)"
+                                                        fill="white" stroke="none">
+                                                        <path d="M2270 5100 c-411 -70 -738 -238 -1025 -525 -334 -333 -514 -746 -540
+                                                                                                -1235 -20 -369 100 -801 374 -1344 235 -465 535 -925 942 -1446 214 -274 404
+                                                                                                -498 448 -527 47 -32 135 -32 182 0 68 45 487 563 724 892 535 746 894 1452
+                                                                                                999 1968 37 181 49 314 41 457 -26 489 -206 902 -540 1235 -292 293 -633 464
+                                                                                                -1051 529 -140 22 -415 20 -554 -4z m585 -350 c434 -91 806 -361 1024 -745
+                                                                                                126 -222 192 -473 192 -738 0 -499 -307 -1191 -904 -2042 -215 -305 -584 -780
+                                                                                                -607 -780 -23 0 -392 475 -607 780 -244 348 -407 614 -563 920 -322 632 -408
+                                                                                                1069 -294 1500 72 273 202 496 404 695 241 237 539 383 880 430 106 15 361 4
+                                                                                                475 -20z" />
+                                                        <path
+                                                            d="M2390 4189 c-207 -37 -424 -166 -558 -333 -78 -97 -155 -252 -183
+                                                                                                -371 -28 -115 -30 -314 -5 -420 86 -359 343 -621 696 -711 105 -27 335 -27
+                                                                                                440 0 353 90 610 352 696 711 25 106 23 305 -5 420 -29 119 -105 274 -183 371
+                                                                                                -114 142 -299 264 -478 314 -86 25 -327 36 -420 19z m276 -340 c184 -34 346
+                                                                                                -159 428 -333 45 -94 60 -174 53 -289 -9 -156 -68 -282 -185 -394 -97 -92
+                                                                                                -270 -163 -402 -163 -132 0 -305 71 -402 163 -117 112 -176 238 -185 394 -7
+                                                                                                115 8 195 53 289 117 246 378 381 640 333z" />
+                                                    </g>
+                                                </svg>
+
+                                                <!--end this is white icon-->
+
+                                                <!--start black icon-->
+                                                <?xml version="1.0" standalone="no" ?>
+                                                <!DOCTYPE svg
+                                                    PUBLIC "-//W3C//DTD SVG 20010904//EN" "http://www.w3.org/TR/2001/REC-SVG-20010904/DTD/svg10.dtd">
+                                                <svg id="mapsIconBlack" version="1.0" xmlns="http://www.w3.org/2000/svg"
+                                                    width="60.000000pt" height="10pt"
+                                                    viewBox="0 0 512.000000 512.000000"
+                                                    preserveAspectRatio="xMidYMid meet" style="display: none;">
+                                                    <metadata>
+                                                        Created by potrace 1.16, written by Peter Selinger 2001-2019
+                                                    </metadata>
+                                                    <g transform="translate(0.000000,512.000000) scale(0.100000,-0.100000)"
+                                                        fill="black" stroke="none">
+                                                        <path d="M2270 5100 c-411 -70 -738 -238 -1025 -525 -334 -333 -514 -746 -540
+                                                                                                -1235 -20 -369 100 -801 374 -1344 235 -465 535 -925 942 -1446 214 -274 404
+                                                                                                -498 448 -527 47 -32 135 -32 182 0 68 45 487 563 724 892 535 746 894 1452
+                                                                                                999 1968 37 181 49 314 41 457 -26 489 -206 902 -540 1235 -292 293 -633 464
+                                                                                                -1051 529 -140 22 -415 20 -554 -4z m585 -350 c434 -91 806 -361 1024 -745
+                                                                                                126 -222 192 -473 192 -738 0 -499 -307 -1191 -904 -2042 -215 -305 -584 -780
+                                                                                                -607 -780 -23 0 -392 475 -607 780 -244 348 -407 614 -563 920 -322 632 -408
+                                                                                                1069 -294 1500 72 273 202 496 404 695 241 237 539 383 880 430 106 15 361 4
+                                                                                                475 -20z" />
+                                                        <path
+                                                            d="M2390 4189 c-207 -37 -424 -166 -558 -333 -78 -97 -155 -252 -183
+                                                                                                -371 -28 -115 -30 -314 -5 -420 86 -359 343 -621 696 -711 105 -27 335 -27
+                                                                                                440 0 353 90 610 352 696 711 25 106 23 305 -5 420 -29 119 -105 274 -183 371
+                                                                                                -114 142 -299 264 -478 314 -86 25 -327 36 -420 19z m276 -340 c184 -34 346
+                                                                                                -159 428 -333 45 -94 60 -174 53 -289 -9 -156 -68 -282 -185 -394 -97 -92
+                                                                                                -270 -163 -402 -163 -132 0 -305 71 -402 163 -117 112 -176 238 -185 394 -7
+                                                                                                115 8 195 53 289 117 246 378 381 640 333z" />
+                                                    </g>
+                                                </svg>
+
+                                                <!--end black icon-->
+                                            </span>
+                                            &nbsp;
+                                            <p id="LiveLocation" class="uifont">Worldwide</p>
+                                        </a>
+                                        <a>
+                                            <span class="icon is-small" id="urlicon">
+                                                <?xml version="1.0" standalone="no" ?>
+                                                <!DOCTYPE svg
+                                                    PUBLIC "-//W3C//DTD SVG 20010904//EN" "http://www.w3.org/TR/2001/REC-SVG-20010904/DTD/svg10.dtd">
+                                                <svg id="linkgrayIcon" version="1.0" xmlns="http://www.w3.org/2000/svg"
+                                                    width="60.000000pt" height="10pt"
+                                                    viewBox="0 0 512.000000 512.000000"
+                                                    preserveAspectRatio="xMidYMid meet">
+                                                    <metadata>
+                                                        Created by potrace 1.16, written by Peter Selinger 2001-2019
+                                                    </metadata>
+                                                    <g transform="translate(0.000000,512.000000) scale(0.100000,-0.100000)"
+                                                        fill="rgb(83, 100, 113)" stroke="none">
+                                                        <path d="M3505 5105 c-225 -40 -431 -128 -610 -263 -88 -66 -952 -930 -978
+                                                -977 -31 -58 -31 -202 0 -260 50 -93 144 -148 253 -148 121 0 117 -3 610 487
+                                                442 439 500 491 616 542 117 52 200 68 339 68 104 0 145 -4 207 -22 204 -58
+                                                366 -173 476 -337 54 -81 75 -125 108 -225 25 -77 28 -99 28 -230 0 -129 -3
+                                                -154 -27 -233 -60 -196 -81 -222 -583 -727 -490 -493 -487 -489 -487 -610 0
+                                                -109 55 -203 148 -253 58 -31 202 -31 260 0 47 26 911 890 977 978 138 183
+                                                223 384 264 620 23 128 14 406 -15 525 -71 283 -181 481 -376 675 -198 198
+                                                -420 319 -695 380 -104 23 -407 29 -515 10z" />
+                                                        <path d="M3299 3619 c-25 -4 -65 -17 -90 -29 -31 -15 -281 -258 -851 -828
+                                                -897 -897 -859 -853 -859 -986 0 -160 117 -277 277 -277 133 0 89 -39 986 859
+                                                898 897 859 853 859 986 0 177 -146 301 -322 275z" />
+                                                        <path d="M1300 3221 c-62 -20 -111 -65 -545 -503 -492 -494 -523 -531 -618
+                                                -723 -47 -96 -83 -200 -113 -330 -27 -115 -27 -445 0 -560 68 -294 180 -500
+                                                381 -700 198 -198 421 -320 695 -380 114 -25 373 -31 495 -12 237 38 444 125
+                                                630 265 88 66 952 930 978 977 31 58 31 202 0 260 -50 93 -144 148 -253 148
+                                                -121 0 -117 3 -610 -487 -303 -301 -466 -456 -510 -484 -79 -51 -189 -95 -292
+                                                -116 -310 -64 -655 79 -832 344 -58 87 -78 129 -112 230 -25 77 -28 99 -28
+                                                230 0 129 3 154 27 233 60 196 81 222 583 727 490 493 487 489 487 610 0 110
+                                                -56 205 -148 253 -44 22 -170 33 -215 18z" />
+                                                    </g>
+                                                </svg>
+                                                <!--start white icon-->
+                                                <?xml version="1.0" standalone="no" ?>
+                                                <!DOCTYPE svg
+                                                    PUBLIC "-//W3C//DTD SVG 20010904//EN" "http://www.w3.org/TR/2001/REC-SVG-20010904/DTD/svg10.dtd">
+                                                <svg id="linkWhiteIcon" version="1.0" xmlns="http://www.w3.org/2000/svg"
+                                                    width="60.000000pt" height="10pt"
+                                                    viewBox="0 0 512.000000 512.000000"
+                                                    preserveAspectRatio="xMidYMid meet" style="display: none;">
+                                                    <metadata>
+                                                        Created by potrace 1.16, written by Peter Selinger 2001-2019
+                                                    </metadata>
+                                                    <g transform="translate(0.000000,512.000000) scale(0.100000,-0.100000)"
+                                                        fill="white" stroke="none">
+                                                        <path
+                                                            d="M3505 5105 c-225 -40 -431 -128 -610 -263 -88 -66 -952 -930 -978
+                                                                                            -977 -31 -58 -31 -202 0 -260 50 -93 144 -148 253 -148 121 0 117 -3 610 487
+                                                                                            442 439 500 491 616 542 117 52 200 68 339 68 104 0 145 -4 207 -22 204 -58
+                                                                                            366 -173 476 -337 54 -81 75 -125 108 -225 25 -77 28 -99 28 -230 0 -129 -3
+                                                                                            -154 -27 -233 -60 -196 -81 -222 -583 -727 -490 -493 -487 -489 -487 -610 0
+                                                                                            -109 55 -203 148 -253 58 -31 202 -31 260 0 47 26 911 890 977 978 138 183
+                                                                                            223 384 264 620 23 128 14 406 -15 525 -71 283 -181 481 -376 675 -198 198
+                                                                                            -420 319 -695 380 -104 23 -407 29 -515 10z" />
+                                                        <path
+                                                            d="M3299 3619 c-25 -4 -65 -17 -90 -29 -31 -15 -281 -258 -851 -828
+                                                                                            -897 -897 -859 -853 -859 -986 0 -160 117 -277 277 -277 133 0 89 -39 986 859
+                                                                                            898 897 859 853 859 986 0 177 -146 301 -322 275z" />
+                                                        <path
+                                                            d="M1300 3221 c-62 -20 -111 -65 -545 -503 -492 -494 -523 -531 -618
+                                                                                            -723 -47 -96 -83 -200 -113 -330 -27 -115 -27 -445 0 -560 68 -294 180 -500
+                                                                                            381 -700 198 -198 421 -320 695 -380 114 -25 373 -31 495 -12 237 38 444 125
+                                                                                            630 265 88 66 952 930 978 977 31 58 31 202 0 260 -50 93 -144 148 -253 148
+                                                                                            -121 0 -117 3 -610 -487 -303 -301 -466 -456 -510 -484 -79 -51 -189 -95 -292
+                                                                                            -116 -310 -64 -655 79 -832 344 -58 87 -78 129 -112 230 -25 77 -28 99 -28
+                                                                                            230 0 129 3 154 27 233 60 196 81 222 583 727 490 493 487 489 487 610 0 110
+                                                                                            -56 205 -148 253 -44 22 -170 33 -215 18z" />
+                                                    </g>
+                                                </svg>
+
+                                                <!--end white icon-->
+
+                                                <!--start black icon-->
+                                                <?xml version="1.0" standalone="no" ?>
+                                                <!DOCTYPE svg
+                                                    PUBLIC "-//W3C//DTD SVG 20010904//EN" "http://www.w3.org/TR/2001/REC-SVG-20010904/DTD/svg10.dtd">
+                                                <svg id="linkBlackIcon" version="1.0" xmlns="http://www.w3.org/2000/svg"
+                                                    width="60.000000pt" height="10pt"
+                                                    viewBox="0 0 512.000000 512.000000"
+                                                    preserveAspectRatio="xMidYMid meet" style="display: none;">
+                                                    <metadata>
+                                                        Created by potrace 1.16, written by Peter Selinger 2001-2019
+                                                    </metadata>
+                                                    <g transform="translate(0.000000,512.000000) scale(0.100000,-0.100000)"
+                                                        fill="black" stroke="none">
+                                                        <path
+                                                            d="M3505 5105 c-225 -40 -431 -128 -610 -263 -88 -66 -952 -930 -978
+                                                                                            -977 -31 -58 -31 -202 0 -260 50 -93 144 -148 253 -148 121 0 117 -3 610 487
+                                                                                            442 439 500 491 616 542 117 52 200 68 339 68 104 0 145 -4 207 -22 204 -58
+                                                                                            366 -173 476 -337 54 -81 75 -125 108 -225 25 -77 28 -99 28 -230 0 -129 -3
+                                                                                            -154 -27 -233 -60 -196 -81 -222 -583 -727 -490 -493 -487 -489 -487 -610 0
+                                                                                            -109 55 -203 148 -253 58 -31 202 -31 260 0 47 26 911 890 977 978 138 183
+                                                                                            223 384 264 620 23 128 14 406 -15 525 -71 283 -181 481 -376 675 -198 198
+                                                                                            -420 319 -695 380 -104 23 -407 29 -515 10z" />
+                                                        <path
+                                                            d="M3299 3619 c-25 -4 -65 -17 -90 -29 -31 -15 -281 -258 -851 -828
+                                                                                            -897 -897 -859 -853 -859 -986 0 -160 117 -277 277 -277 133 0 89 -39 986 859
+                                                                                            898 897 859 853 859 986 0 177 -146 301 -322 275z" />
+                                                        <path
+                                                            d="M1300 3221 c-62 -20 -111 -65 -545 -503 -492 -494 -523 -531 -618
+                                                                                            -723 -47 -96 -83 -200 -113 -330 -27 -115 -27 -445 0 -560 68 -294 180 -500
+                                                                                            381 -700 198 -198 421 -320 695 -380 114 -25 373 -31 495 -12 237 38 444 125
+                                                                                            630 265 88 66 952 930 978 977 31 58 31 202 0 260 -50 93 -144 148 -253 148
+                                                                                            -121 0 -117 3 -610 -487 -303 -301 -466 -456 -510 -484 -79 -51 -189 -95 -292
+                                                                                            -116 -310 -64 -655 79 -832 344 -58 87 -78 129 -112 230 -25 77 -28 99 -28
+                                                                                            230 0 129 3 154 27 233 60 196 81 222 583 727 490 493 487 489 487 610 0 110
+                                                                                            -56 205 -148 253 -44 22 -170 33 -215 18z" />
+                                                    </g>
+                                                </svg>
+
+                                                <!--end black icon-->
+                                            </span>&nbsp;
+                                            <a href="" target="_blank" id="url" class="uifont">TomCruise.com</a>
+                                        </a>
+                                        &nbsp;&nbsp;&nbsp;
+                                        <!--<a class="level-item" aria-label="reply" id="born">
+                                            <span class="icon is-small">
+                                                <i class="fa fa-map-pin " aria-hidden="true"></i> &nbsp;
+                                            </span>&nbsp;
+                                            <p id="dob">Born September 17</p>
+                                        </a>-->
+
+                                        <a class="level-item " aria-label="reply" id="time">
+                                            <span class="icon is-small" id="joinDateIcon">
+                                                <!-- <img src="./src/calendar-icon.svg" id="calendarSvg"> &nbsp; -->
+                                                <?xml version="1.0" standalone="no" ?>
+                                                <!DOCTYPE svg
+                                                    PUBLIC "-//W3C//DTD SVG 20010904//EN" "http://www.w3.org/TR/2001/REC-SVG-20010904/DTD/svg10.dtd">
+                                                <svg id="dategrayIcon" version="1.0" xmlns="http://www.w3.org/2000/svg"
+                                                    width="512.000000pt" height="512.000000pt"
+                                                    viewBox="0 0 512.000000 512.000000"
+                                                    preserveAspectRatio="xMidYMid meet">
+                                                    <metadata>
+                                                        Created by potrace 1.16, written by Peter Selinger 2001-2019
+                                                    </metadata>
+                                                    <g transform="translate(0.000000,512.000000) scale(0.100000,-0.100000)"
+                                                        fill="rgb(83, 100, 113)" stroke="none">
+                                                        <path d="M840 4920 l0 -200 -166 0 c-189 0 -246 -11 -358 -67 -96 -48 -201
+                                                -153 -249 -249 -72 -143 -67 12 -67 -2044 0 -2056 -5 -1901 67 -2044 48 -96
+                                                153 -201 249 -249 144 -72 -34 -67 2244 -67 2278 0 2100 -5 2244 67 96 48 201
+                                                153 249 249 72 143 67 -12 67 2044 0 2056 5 1901 -67 2044 -48 96 -153 201
+                                                -249 249 -112 56 -169 67 -358 67 l-166 0 0 200 0 200 -200 0 -200 0 0 -200 0
+                                                -200 -1320 0 -1320 0 0 200 0 200 -200 0 -200 0 0 -200z m0 -800 l0 -200 200
+                                                0 200 0 0 200 0 200 1320 0 1320 0 0 -200 0 -200 200 0 200 0 0 201 0 202 143
+                                                -5 c134 -4 147 -6 190 -31 30 -18 56 -44 74 -75 l28 -47 3 -262 4 -263 -2162
+                                                0 -2162 0 4 263 3 262 27 47 c30 51 82 88 137 99 20 4 89 7 154 8 l117 1 0
+                                                -200z m3878 -2222 l-3 -1343 -28 -47 c-18 -31 -44 -57 -75 -75 l-47 -28 -2005
+                                                0 -2005 0 -47 28 c-31 18 -57 44 -75 75 l-28 47 -3 1343 -2 1342 2160 0 2160
+                                                0 -2 -1342z" />
+                                                        <path
+                                                            d="M760 2620 l0 -200 200 0 200 0 0 200 0 200 -200 0 -200 0 0 -200z" />
+                                                        <path
+                                                            d="M1560 2620 l0 -200 200 0 200 0 0 200 0 200 -200 0 -200 0 0 -200z" />
+                                                        <path
+                                                            d="M2360 2620 l0 -200 200 0 200 0 0 200 0 200 -200 0 -200 0 0 -200z" />
+                                                        <path
+                                                            d="M3160 2620 l0 -200 200 0 200 0 0 200 0 200 -200 0 -200 0 0 -200z" />
+                                                        <path
+                                                            d="M3960 2620 l0 -200 200 0 200 0 0 200 0 200 -200 0 -200 0 0 -200z" />
+                                                        <path
+                                                            d="M760 1820 l0 -200 200 0 200 0 0 200 0 200 -200 0 -200 0 0 -200z" />
+                                                        <path
+                                                            d="M1560 1820 l0 -200 200 0 200 0 0 200 0 200 -200 0 -200 0 0 -200z" />
+                                                        <path
+                                                            d="M2360 1820 l0 -200 200 0 200 0 0 200 0 200 -200 0 -200 0 0 -200z" />
+                                                        <path
+                                                            d="M3160 1820 l0 -200 200 0 200 0 0 200 0 200 -200 0 -200 0 0 -200z" />
+                                                        <path
+                                                            d="M3960 1820 l0 -200 200 0 200 0 0 200 0 200 -200 0 -200 0 0 -200z" />
+                                                        <path
+                                                            d="M760 1020 l0 -200 200 0 200 0 0 200 0 200 -200 0 -200 0 0 -200z" />
+                                                        <path
+                                                            d="M1560 1020 l0 -200 200 0 200 0 0 200 0 200 -200 0 -200 0 0 -200z" />
+                                                        <path
+                                                            d="M2360 1020 l0 -200 200 0 200 0 0 200 0 200 -200 0 -200 0 0 -200z" />
+                                                        <path
+                                                            d="M3160 1020 l0 -200 200 0 200 0 0 200 0 200 -200 0 -200 0 0 -200z" />
+                                                    </g>
+                                                </svg>
+
+                                                <!--start white icon-->
+                                                <?xml version="1.0" standalone="no" ?>
+                                                <!DOCTYPE svg
+                                                    PUBLIC "-//W3C//DTD SVG 20010904//EN" "http://www.w3.org/TR/2001/REC-SVG-20010904/DTD/svg10.dtd">
+                                                <svg id="dateWhiteIcon" version="1.0" xmlns="http://www.w3.org/2000/svg"
+                                                    width="512.000000pt" height="512.000000pt"
+                                                    viewBox="0 0 512.000000 512.000000"
+                                                    preserveAspectRatio="xMidYMid meet" style="display: none;">
+                                                    <metadata>
+                                                        Created by potrace 1.16, written by Peter Selinger 2001-2019
+                                                    </metadata>
+                                                    <g transform="translate(0.000000,512.000000) scale(0.100000,-0.100000)"
+                                                        fill="white" stroke="none">
+                                                        <path d="M840 4920 l0 -200 -166 0 c-189 0 -246 -11 -358 -67 -96 -48 -201
+                                                                                                -153 -249 -249 -72 -143 -67 12 -67 -2044 0 -2056 -5 -1901 67 -2044 48 -96
+                                                                                                153 -201 249 -249 144 -72 -34 -67 2244 -67 2278 0 2100 -5 2244 67 96 48 201
+                                                                                                153 249 249 72 143 67 -12 67 2044 0 2056 5 1901 -67 2044 -48 96 -153 201
+                                                                                                -249 249 -112 56 -169 67 -358 67 l-166 0 0 200 0 200 -200 0 -200 0 0 -200 0
+                                                                                                -200 -1320 0 -1320 0 0 200 0 200 -200 0 -200 0 0 -200z m0 -800 l0 -200 200
+                                                                                                0 200 0 0 200 0 200 1320 0 1320 0 0 -200 0 -200 200 0 200 0 0 201 0 202 143
+                                                                                                -5 c134 -4 147 -6 190 -31 30 -18 56 -44 74 -75 l28 -47 3 -262 4 -263 -2162
+                                                                                                0 -2162 0 4 263 3 262 27 47 c30 51 82 88 137 99 20 4 89 7 154 8 l117 1 0
+                                                                                                -200z m3878 -2222 l-3 -1343 -28 -47 c-18 -31 -44 -57 -75 -75 l-47 -28 -2005
+                                                                                                0 -2005 0 -47 28 c-31 18 -57 44 -75 75 l-28 47 -3 1343 -2 1342 2160 0 2160
+                                                                                                0 -2 -1342z" />
+                                                        <path
+                                                            d="M760 2620 l0 -200 200 0 200 0 0 200 0 200 -200 0 -200 0 0 -200z" />
+                                                        <path
+                                                            d="M1560 2620 l0 -200 200 0 200 0 0 200 0 200 -200 0 -200 0 0 -200z" />
+                                                        <path
+                                                            d="M2360 2620 l0 -200 200 0 200 0 0 200 0 200 -200 0 -200 0 0 -200z" />
+                                                        <path
+                                                            d="M3160 2620 l0 -200 200 0 200 0 0 200 0 200 -200 0 -200 0 0 -200z" />
+                                                        <path
+                                                            d="M3960 2620 l0 -200 200 0 200 0 0 200 0 200 -200 0 -200 0 0 -200z" />
+                                                        <path
+                                                            d="M760 1820 l0 -200 200 0 200 0 0 200 0 200 -200 0 -200 0 0 -200z" />
+                                                        <path
+                                                            d="M1560 1820 l0 -200 200 0 200 0 0 200 0 200 -200 0 -200 0 0 -200z" />
+                                                        <path
+                                                            d="M2360 1820 l0 -200 200 0 200 0 0 200 0 200 -200 0 -200 0 0 -200z" />
+                                                        <path
+                                                            d="M3160 1820 l0 -200 200 0 200 0 0 200 0 200 -200 0 -200 0 0 -200z" />
+                                                        <path
+                                                            d="M3960 1820 l0 -200 200 0 200 0 0 200 0 200 -200 0 -200 0 0 -200z" />
+                                                        <path
+                                                            d="M760 1020 l0 -200 200 0 200 0 0 200 0 200 -200 0 -200 0 0 -200z" />
+                                                        <path
+                                                            d="M1560 1020 l0 -200 200 0 200 0 0 200 0 200 -200 0 -200 0 0 -200z" />
+                                                        <path
+                                                            d="M2360 1020 l0 -200 200 0 200 0 0 200 0 200 -200 0 -200 0 0 -200z" />
+                                                        <path
+                                                            d="M3160 1020 l0 -200 200 0 200 0 0 200 0 200 -200 0 -200 0 0 -200z" />
+                                                    </g>
+                                                </svg>
+
+                                                <!--end white icon-->
+                                                <!--start black icon-->
+                                                <?xml version="1.0" standalone="no" ?>
+                                                <!DOCTYPE svg
+                                                    PUBLIC "-//W3C//DTD SVG 20010904//EN" "http://www.w3.org/TR/2001/REC-SVG-20010904/DTD/svg10.dtd">
+                                                <svg id="dateBlackIcon" version="1.0" xmlns="http://www.w3.org/2000/svg"
+                                                    width="512.000000pt" height="512.000000pt"
+                                                    viewBox="0 0 512.000000 512.000000"
+                                                    preserveAspectRatio="xMidYMid meet" style="display: none;">
+                                                    <metadata>
+                                                        Created by potrace 1.16, written by Peter Selinger 2001-2019
+                                                    </metadata>
+                                                    <g transform="translate(0.000000,512.000000) scale(0.100000,-0.100000)"
+                                                        fill="black" stroke="none">
+                                                        <path d="M840 4920 l0 -200 -166 0 c-189 0 -246 -11 -358 -67 -96 -48 -201
+                                                                                                -153 -249 -249 -72 -143 -67 12 -67 -2044 0 -2056 -5 -1901 67 -2044 48 -96
+                                                                                                153 -201 249 -249 144 -72 -34 -67 2244 -67 2278 0 2100 -5 2244 67 96 48 201
+                                                                                                153 249 249 72 143 67 -12 67 2044 0 2056 5 1901 -67 2044 -48 96 -153 201
+                                                                                                -249 249 -112 56 -169 67 -358 67 l-166 0 0 200 0 200 -200 0 -200 0 0 -200 0
+                                                                                                -200 -1320 0 -1320 0 0 200 0 200 -200 0 -200 0 0 -200z m0 -800 l0 -200 200
+                                                                                                0 200 0 0 200 0 200 1320 0 1320 0 0 -200 0 -200 200 0 200 0 0 201 0 202 143
+                                                                                                -5 c134 -4 147 -6 190 -31 30 -18 56 -44 74 -75 l28 -47 3 -262 4 -263 -2162
+                                                                                                0 -2162 0 4 263 3 262 27 47 c30 51 82 88 137 99 20 4 89 7 154 8 l117 1 0
+                                                                                                -200z m3878 -2222 l-3 -1343 -28 -47 c-18 -31 -44 -57 -75 -75 l-47 -28 -2005
+                                                                                                0 -2005 0 -47 28 c-31 18 -57 44 -75 75 l-28 47 -3 1343 -2 1342 2160 0 2160
+                                                                                                0 -2 -1342z" />
+                                                        <path
+                                                            d="M760 2620 l0 -200 200 0 200 0 0 200 0 200 -200 0 -200 0 0 -200z" />
+                                                        <path
+                                                            d="M1560 2620 l0 -200 200 0 200 0 0 200 0 200 -200 0 -200 0 0 -200z" />
+                                                        <path
+                                                            d="M2360 2620 l0 -200 200 0 200 0 0 200 0 200 -200 0 -200 0 0 -200z" />
+                                                        <path
+                                                            d="M3160 2620 l0 -200 200 0 200 0 0 200 0 200 -200 0 -200 0 0 -200z" />
+                                                        <path
+                                                            d="M3960 2620 l0 -200 200 0 200 0 0 200 0 200 -200 0 -200 0 0 -200z" />
+                                                        <path
+                                                            d="M760 1820 l0 -200 200 0 200 0 0 200 0 200 -200 0 -200 0 0 -200z" />
+                                                        <path
+                                                            d="M1560 1820 l0 -200 200 0 200 0 0 200 0 200 -200 0 -200 0 0 -200z" />
+                                                        <path
+                                                            d="M2360 1820 l0 -200 200 0 200 0 0 200 0 200 -200 0 -200 0 0 -200z" />
+                                                        <path
+                                                            d="M3160 1820 l0 -200 200 0 200 0 0 200 0 200 -200 0 -200 0 0 -200z" />
+                                                        <path
+                                                            d="M3960 1820 l0 -200 200 0 200 0 0 200 0 200 -200 0 -200 0 0 -200z" />
+                                                        <path
+                                                            d="M760 1020 l0 -200 200 0 200 0 0 200 0 200 -200 0 -200 0 0 -200z" />
+                                                        <path
+                                                            d="M1560 1020 l0 -200 200 0 200 0 0 200 0 200 -200 0 -200 0 0 -200z" />
+                                                        <path
+                                                            d="M2360 1020 l0 -200 200 0 200 0 0 200 0 200 -200 0 -200 0 0 -200z" />
+                                                        <path
+                                                            d="M3160 1020 l0 -200 200 0 200 0 0 200 0 200 -200 0 -200 0 0 -200z" />
+                                                    </g>
+                                                </svg>
+
+                                                <!--end black icon-->
+                                            </span>&nbsp;
+
+                                            <p id="joinDate" class="uifont">Joined June 2009</p>
+                                        </a>
+
+
+
+                                        <div class="twitter-icon" id="twitterIcon" style="display: none;">
+                                            <img src="./src/twitter-add-post-icon.png" alt="Placeholder image">
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="has-text-info mt-2">
+                                    <div class="level-left " id="followersDiv">
+                                        <a class="level-item uifont" aria-label="reply" id="following1">
+                                            <p id="following" class="has-text-weight-bold"> 49.6K
+                                            </p>&nbsp;Following
+                                        </a>
+                                        <a class="level-item born uifont" aria-label="reply" id="followers1">
+                                            <p id="followers" class="has-text-weight-bold"> 7M
+                                            </p>&nbsp;
+                                            Followers
+                                        </a>
+
+                                        <div class="twitter-icon" id="twitterIcon" style="display: none;">
+                                            <img src="./src/twitter-add-post-icon.png" alt="Placeholder image">
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="mt-2 mb-6">
+                                    <!--<figure class="image ">
+                                        <img src="https://bulma.io/images/placeholders/128x128.png" alt="Image"
+                                            id="changeImage3">
+                                    </figure>-->
+                                    <div class="level-left ">
+                                        <!--<a class="level-item mr-1" aria-label="reply">
+                                            <span class="icon is-small" id="imgSpan">
+                                                <img src="./src/twitter-profile-pic.jpg" alt="Image"
+                                                    id="changeImageFollowed"> &nbsp;&nbsp;
+                                            </span>
+                                            &nbsp;
+                                        </a>-->
+                                        <p id="sarvamangal" class="uifont">Not followed by anyone you’re following
+                                        </p>
+                                        <!--<a class="level-item " aria-label="reply">
+                                            <figure class="image ">
+                                                <img src="./src/twitter-profile-pic.jpg" alt="Image"
+                                                    id="changeImageFollowed">
+                                            </figure>
+                                            <p id="sarvamangal">Followed by sarvamangal mavadia
+                                            </p>
+                                        </a>-->
+                                    </div>
+                                    <!-- <p>Followed by Breet @ Designjoy,minh-phuc Tran,and 35 others you follow</p>-->
+                                </div>
+                                <!--this is profile footer-->
+                                <div class="columns" id="footer" style="margin-left: 20px;
+    margin-right: -76px;">
+                                    <div class="column " id="Tweets">
+                                        <span class="fontBold">Tweets</span>
+                                    </div>
+                                    <div class="column" id="Replies">
+                                        <span class="fontBold">Replies</span>
+                                    </div>
+                                    <div class="column" id="Media">
+                                        <span class="fontBold">Media</span>
+                                    </div>
+                                    <div class="column" id="Likes">
+                                        <span class="fontBold">Likes</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <button class="button is-primary is-medium twitter-btn " onclick="downloadImage()">Download
+                    Twitter
+                    profile AS Image <i class="fas fa-download"></i></button>
+                <div class=" py-5  has-text-centered">
+                    <span class="icon ml-3">
+                        <img src="./src/f_logo_RGB-Blue_1024.png">
+                    </span>
+                    <span class="icon ml-3">
+                        <img src="./src/twitter.png">
+                    </span>
+                    <span class="icon ml-3">
+                        <img src="./src/linkedin2-icon-logo-png.png">
+                    </span>
+                    <span class="icon ml-3">
+                        <img src="./src/R.png">
+                    </span>
+                </div>
+
+                <div class="box dark" id="mt-5">
+                    <p class="uifont  has-text-black">Twitter Profile Generator generates your very own fake Twitter
+                        Profile and prank
+                        your
+                        friends.
+                        you can Generate Fake
+                        Twitter Profile, set banner images, profile photos, following count, tweet information
+                        number of
+                        followers, tweet date,
+                        tweet content, tweet hashtags and tweet post title like etc. You can change ANYTHING, use
+                        emoticons and even transfer
+                        your own profile photographs. This generator is not the slightest bit related with Twitter.
+                        All
+                        graphical material is
+                        ensured by the copyright proprietor. May just be utilized for individual use.</p>
+                </div>
+                <!--end note point-->
+            </div>
+        </div>
+        <!--paragraph start-->
+        <section>
+            <div class="box dark" id="Note">
+                <p class="uifont  has-text-black">Note : Email, Password, Address and Name generated from our website is
+                    100% valid for
+                    use but
+                    emails
+                    generated here does
+                    not work like an actual email address. Even Address streets are randomly generated it doesn't
+                    match
+                    with real addresses.
+                    All details are randomly generated. The email address, password, name and address details
+                    generated
+                    by our website are
+                    for data testing purposes only. This will help you to not expose your email address to avoid
+                    spam
+                    and to protect your
+                    personal informations.</p>
+            </div>
+        </section>
+        <!--paragraph end-->
+    </div>
+    <div class="Columns has-background-black py-5 mt-3 ">
+        <div class="Column uifont">
+            <a class="has-text-white-ter ml-6" id="about">About</a>
+            <a class="has-text-white-ter ml-2">Disclaimer</a>
+            <a class="has-text-white-ter ml-2">privacy</a>
+            <a class="has-text-white-ter ml-2">contact</a>
+            <a class="has-text-white-ter ml-2">Write for us</a>
+            <a class="has-text-white-ter ml-2">Advertise with us</a>
+        </div>
+
+        <!-- <div class="Column has-background-black navbar-end">
+            <span class="icon ml-3 has-background-black">
+                <img src="C:\Projects\InternProjects\Twitter\src\f_logo_RGB-Blue_1024.png">
+            </span>
+            <span class="icon ml-3 has-background-black">
+                <img src="C:\Projects\InternProjects\Twitter\src\twitter.png">
+            </span>
+            <span class="icon ml-3 has-background-black">
+                <img src="C:\Projects\InternProjects\Twitter\src\OIP (1).jpg">
+            </span>
+            <span class="icon ml-3">
+                <img src="C:\Projects\InternProjects\Twitter\src\R.png">
+            </span>
+        </div>-->
+    </div>
+    <!--===java script ===-->
+    <script src="./src/twitter.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+</body>
+
+</html>

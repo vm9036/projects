@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.9.4/css/bulma.min.css"
+        integrity="sha512-HqxHUkJM0SYcbvxUw5P60SzdOTy/QVwA1JJrvaXJv4q7lmbDZCmZaqz01UPOaQveoxfYRv1tHozWGPMcuTBuvQ=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/tinycolor/1.6.0/tinycolor.min.js"
+        integrity="sha512-AvCfbOQzCVi2ctVWF4m89jLwTn/zVPJuS7rhiKyY3zqyCdbPqtvNa0I628GJqPytbowfFjkAGOpq85E5kQc40Q=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            --primary-color: #278c8a;
+            --secondary-color: #3fa19f;
+            --backyard-color: #f2f3f2;
+        }
+
+        body {
+            min-height: 100vh;
+            /* background-color: var(--backyard-color); */
+        }
+
+
+        /* .section-heading {
+            color: var(--primary-color);
+            font-weight: bold;
+            letter-spacing: 0.1rem;
+            line-height: 2rem;
+            font-size: 2rem;
+            text-align: center;
+        } */
+
+        .button {
+            color: white;
+            background-color: #3fa19f;
+            font-weight: 600;
+            font-size: 0.7rem;
+        }
+
+        .sub-heading {
+            font-size: 1.2rem;
+            font-weight: 600;
+            color: var(--secondary-color);
+        }
+
+
+        input[type="color"] {
+            width: 100px;
+            height: 100px;
+            border: none;
+            margin: 2px;
+            cursor: pointer;
+        }
+
+        .slider {
+            -webkit-appearance: none;
+            /* Hides the default styling in WebKit browsers */
+            width: 100%;
+            /* Adjust the width as needed */
+            height: 5px;
+            /* Adjust the height as needed */
+            background-color: grey;
+            border-radius: 5px;
+            outline: none;
+        }
+
+        .slider::-webkit-slider-thumb {
+            -webkit-appearance: none;
+            /* Hides the default styling in WebKit browsers */
+            width: 20px;
+            /* Adjust the width as needed */
+            height: 20px;
+            /* Adjust the height as needed */
+            background-color: grey;
+            border-radius: 50%;
+            cursor: pointer;
+        }
+
+        .slider::-moz-range-thumb {
+            width: 20px;
+            /* Adjust the width as needed */
+            height: 20px;
+            /* Adjust the height as needed */
+            background-color: grey;
+            border-radius: 50%;
+            cursor: pointer;
+        }
+
+
+
+        .grid-1 {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 2rem 1rem;
+        }
+
+        .grid-2 {
+            display: grid;
+            grid-template-columns: 60% 20%;
+            align-content: center;
+        }
+
+        .grid-3 {
+            display: grid;
+            grid-template-columns: 1fr;
+        }
+
+        .flex-item {
+            margin-bottom: 10px;
+        }
+
+
+
+        #color-display {
+            width: 200px;
+            height: 200px;
+            border-radius: 12px;
+            cursor: pointer;
+        }
+
+
+        @media screen and (min-width: 720px) {
+            /* .section-heading {
+                font-size: 3rem;
+            } */
+
+
+            .grid-3 {
+                grid-template-columns: 1fr 1fr;
+            }
+
+            .grid-1 {
+                grid-template-columns: 70% 30%;
+            }
+
+            #color-display {
+                display: flex;
+                margin-left: auto;
+                margin-right: auto;
+            }
+
+            #text-output {
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container is-fluid">
+        <div class="panel mt-5">
+            <div class="header-container panel-heading">
+                <h1 class="title is-3 has-text-centered">Desaturate Color</h1>
+            </div>
+            <div class="columns mt-5">
+                <div class="column is-6">
+                    <div class="input-container p-5 box block">
+                        <div class="mb-4 sub-heading">Your Color</div>
+                        <div class="user-input grid-1">
+                            <div id="text-input" class="is-flex-column">
+                                <input id="colorValue" type="text" class="input mb-2" placeholder="hex value" value="#ABFF76"
+                                    onChange="desaturateColor()" />
+                                <button class="button is-small" id="randomColor">Random Color</button>
+                            </div>
+                            <div id="color-input">
+                                <input type="color" id="colorPicker" value="#ABFF76">
+                                <p class="ml-3 has-text-grey-light">color picker</p>
+                            </div>
+                        </div>
+                        <div class="mb-4 mt-4 sub-heading">Amount to De-saturate</div>
+                        <div class="user-input grid-2">
+                            <input id="desaturate-value" type="range" min="0" max="68" value="34" class="slider">
+                            <div id="slider-value" class="ml-4">50%</div>
+                        </div>
+                        <div class="has-text-grey">Adjust slider above to select the amount of de-saturation to apply to the
+                            color.</div>
+                    </div>
+                </div>
+                <div class="column is-6">
+                    <div class="output-container p-2 box block">
+                        <div class="mb-4 sub-heading">New Color</div>
+                        <div class="output py-5 px-2 grid-3">
+                            <div id="text-output"
+                                class="is-flex-column is-justify-items-center has-background-white-ter mb-5 mr-2 box">
+                                <div id="hexValue" class="flex-item">HEX<span class="button is-small ml-4">#499593</span></div>
+                                <div id="rgbValue" class="flex-item">RGB<span class="button is-small ml-4">#499593</span></div>
+                                <div id="hslValue" class="flex-item">HSI<span class="button is-small ml-4">#499593</span></div>
+                                <div id="hsvValue" class="flex-item">HSV<span class="button is-small ml-4">#499593</span></div>
+                            </div>
+                            <div id="color-output p-2">
+                                <div id="color-display" class="box"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="desaturate-color.js" defer></script>
+</body>
+
+</html>

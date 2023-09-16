@@ -1,0 +1,37 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma-rtl.min.css"/>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.19.2/axios.min.js"></script>
+</head>
+<body>
+
+    <div class="container mt-5">
+        <div class="box">
+            <h1 class="title">Image Flipper</h1>
+
+            <div class="p-5 columns">
+                <div class="column is-6" style="border:1px solid gray;">
+                    <label class="label" for="img">Upload Image:</label>
+                    <input class="input" type="file" onchange="handleFiles(this.files)" name="img" >
+
+                    <label class="label mt-5">Flip The Image</label>
+                    <button class="button" id="flipH">Flip Horizontally</button>
+                    <button class="button" id="flipV">Flip Vertically</button>
+                    <button class="button" id="button">Download the Image</button>
+                </div>
+                <div class="column is-6" id="flip" style="border:1px solid gray;">
+                    <canvas id="c" class="has-text-centered" style="width: 100%; height: 100%;"></canvas>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="image-flipper.js"></script>
+</body>
+</html>

@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>fibonacci series Of Even Number</title>
+  </head>
+  <body>
+    <script>
+      let n1 = 0,
+        n2 = 1,
+        n3 = 0;
+
+      for (let i = 0; i <= 30; i++) {
+        n1 = n2;
+        n2 = n3;
+        n3 = n1 + n2;
+
+        // console.log(n3+" ");
+
+        if (n3 % 2 == 0) {
+          document.write(n3 + " ");
+        //   console.log(n3 + " ");
+        }
+      }
+    </script>
+  </body>
+</html>

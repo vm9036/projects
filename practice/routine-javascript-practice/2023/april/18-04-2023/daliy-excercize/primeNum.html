@@ -16,17 +16,17 @@
             let n = Number(document.getElementById("inputN").value);
 
             let primeNumber;
-            primeNumber = primeNumber + getMeNextPrime();
+            primeNumber = primeNumber + getMeNextPrime(n);
             document.getElementById("displayPrimeNext").innerHTML = primeNumber;
             console.log("primeNumber :-> "+primeNumber);
         }
 
-        function getMeNextPrime(n)
+        function getMeNextPrime(np)
         {
             let pNumber = 0;
             let storePrimeNumber = " ";
             // let counter = 1;
-            for (let i = 1; i <= n; i++) {
+            for (let i = 1; i <= np; i++) {
                 for (let j = 1; j <= i; j++) {
                     if (i % j == 0) {
                         pNumber = pNumber + 1;
@@ -34,7 +34,7 @@
                     }
                 }
                 if(pNumber == 2){
-                    storePrimeNumber = storePrimeNumber + n +"  ";
+                    storePrimeNumber = storePrimeNumber + np +"  ";
                 }
                 pNumber = 0;
             }

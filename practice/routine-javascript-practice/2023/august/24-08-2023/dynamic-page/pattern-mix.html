@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PAttern Mix</title>
+</head>
+<body>
+    <input type="text" id="inputPattern" value="5">
+    <button onclick="simPattern()">Click</button>
+    <p id="displayPattern"></p>
+    <p id="displayPattern1"></p>
+    
+    <script>
+        function simPattern(){
+            let n = Number(document.getElementById("inputPattern").value);
+            let strPtn = " ";
+            for(let i = n; i>=1; i--)
+            {
+
+                for(let j=1; j<=i;j++)
+                {
+                    strPtn = strPtn + "*";
+                }
+
+                strPtn = strPtn + "<br>";
+            }
+
+            document.getElementById("displayPattern").innerHTML = strPtn;
+
+            revPattern();
+
+        }
+        function revPattern(){
+
+            let n1 = Number(document.getElementById("inputPattern").value);
+            let strPtn = " ";
+            for(let i = 1; i<=n1; i++)
+            {
+
+                for(let j=1; j<=i;j++)
+                {
+                    strPtn = strPtn + "*";
+                }
+
+                strPtn = strPtn + "<br>";
+            }
+
+            document.getElementById("displayPattern1").innerHTML = strPtn;
+
+        }
+        
+    </script>
+</body>
+</html>

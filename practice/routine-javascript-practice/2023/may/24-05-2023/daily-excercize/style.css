@@ -1,0 +1,114 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  /* body {
+    margin: 0;
+    padding: 0;
+    width: 100vw;
+    min-height: 100vh;
+    background-color: blueviolet;
+  } */
+  
+  /* .outer-div {
+    display: flex;
+    margin-left: auto;
+    margin-right: auto;
+    justify-content: center;
+  } */
+  
+  #image-container {
+    display: inline-block;
+    background-color: transparent;
+    justify-content: center;
+    align-content: center;
+  }
+  
+  
+  #my-canvas {
+    display: inline-block;
+    background-color: transparent;
+  }
+  
+  /* #download-button {
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    padding: 0.5rem;
+    font-weight: 600;
+    cursor: poiner;
+    background-color: blueviolet;
+    color: white;
+  } */
+  
+  .hero {
+    padding: 1rem 2rem;
+    z-index: 3;
+  }
+  
+  .hero-container {
+    width: 1200px;
+    background-color: #f2f2f2;
+    border-radius: 12px;
+    margin-left: auto;
+    margin-right: auto;
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
+  }
+  
+  .hero-text {
+    font-size: 2rem;
+    color: #222;
+    font-weight: bold;
+    margin: 1rem;
+  }
+  
+  /* label {
+    display: inline-block;
+    cursor: pointer;
+  } */
+  
+  /* i {
+    width: 2rem;
+    height: 2rem;
+    padding: 0.5rem;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    background-color: #fff;
+  } */
+  
+  
+  
+  /* .icon-container {
+    align-items: center;
+    margin: 1rem;
+    padding-top: 0.5rem;
+    padding-bottom: 0.5rem;
+    border-bottom: 1px solid grey;
+  } */
+  
+  /* .item {
+    margin: 0 10px;
+  }
+  
+  .file {
+    width: 1rem;
+    height: 1rem;
+  } */
+  
+  /* effect container styling */
+  /* .effects-container {
+    align-items: center;
+    margin: 1rem;
+    padding-top: 0.5rem;
+    padding-bottom: 0.5rem;
+  }
+   */
+  /* download buttons */
+  #imagePNG {
+    cursor: pointer;
+  }
+  
+  #imageJPG {
+    cursor: pointer;
+  }

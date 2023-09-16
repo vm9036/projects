@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.9.4/css/bulma.min.css">
+    <title>Button Color Change</title>
+</head>
+
+<body>
+    <button class="button is-dark" id="black">click</button>
+    <br>
+    <div class="buttons mt-5">
+        <button class="button is-info" onclick="blueColor()">blue</button>
+        <button class="button is-primary" onclick="greenColor()">green</button>
+        <button class="button is-danger" onclick="redColor()">Red</button>
+    </div>
+    <script>
+
+        function blueColor() {
+            const element = document.getElementById("black");
+            if (element.className == "button is-dark") {
+                element.className = "button is-info";
+            } else {
+                element.className = "button is-dark";
+            }
+        }
+
+        function greenColor() {
+            const element = document.getElementById("black");
+            if (element.className == "button is-dark") {
+                element.className = "button is-primary";
+            } else {
+                element.className = "button is-dark";
+            }
+        }
+
+        function redColor() {
+            const element = document.getElementById("black");
+            if (element.className == "button is-dark") {
+                element.className = "button is-danger";
+            } else {
+                element.className = "button is-dark";
+            }
+        }
+
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,447 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bionic Reading Converter</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
+    <script src="bionic-converter.js"></script>
+    <script src="reset.js"></script>
+    <script src="uploadfile.js"></script>
+    <script src="fullScreen.js"></script>
+    <script src="export.js"></script>
+    <script src="Highlighted.js"></script>
+    <!-- <script src="./BionicReadingConverter/share.js"></script> -->
+    <!-- <script src="./BionicReadingConverter/addToFavs.js"></script> -->
+    <!-- <script src="./BionicReadingConverter/reportBug.js"></script> -->
+
+    <script src="https://npmcdn.com/pdfjs-dist/build/pdf.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/dom-to-image/2.6.0/dom-to-image.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/FileSaver.js/2.0.0/FileSaver.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"
+        integrity="sha512-GsLlZN/3F2ErC5ifS5QtgpiJtWd43JWSuIgh7mbzZ8zBps+dvLusV+eNQATqgA/HdeKFVgA5v3S/cIrLF7QnIg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+    <style>
+        .chat-picture img {
+            max-width: 150px;
+        }
+
+        .Container {
+            margin-top: 10px;
+            margin-left: 60px;
+            margin-right: 60px;
+        }
+
+        #uploadFile {
+            height: 5em;
+            border: dotted #a8b4e9;
+            border-radius: 10px;
+        }
+
+        #inputDiv {
+            height: 25em;
+            overflow: scroll;
+        }
+
+        .outputDiv {
+            padding-left: 10px;
+            padding-right: 10px;
+            height: 25em;
+            border: solid #a8b4e9;
+            border-radius: 5px;
+            overflow: scroll;
+            /* scrollbar-color: red orange; */
+            /*scrollbar-width: thin;*/
+        }
+
+        #ConvertBtn {
+            margin-top: 8em;
+        }
+
+        #ExportBtnDiv {
+            margin-top: 12px;
+        }
+
+        #dropdownBtn {
+            margin-top: 12px;
+        }
+
+        #resetbtn {
+            margin-top: 189px;
+            margin-left: -80px;
+
+        }
+
+        .highlighted:active {
+            background-color: #485fc7;
+            color: aliceblue;
+        }
+
+        .highlighted:hover {
+            background-color: #485fc7;
+            color: aliceblue;
+        }
+    </style>
+
+</head>
+
+<body>
+    <!--start model  (this is for fullscreen)-->
+    <div class="modal" id="modal-js-example">
+        <div class="modal-background"></div>
+        <div class="modal-content">
+            <div class="box" style="overflow: scroll;">
+                <p id="outputModel"></p>
+
+            </div>
+        </div>
+        <button class="modal-close is-large" aria-label="close"></button>
+    </div>
+    <!--end model-->
+
+    <!--start model (this is for share button)-->
+    <!-- <div id="modal-js-Share" class="modal">
+        <div class="modal-background"></div>
+
+        <div class="modal-content">
+            <div class="box">
+                <div class="has-background-grey-lighter is-outlined pt-2">
+                    <p class="buttons " style="margin-left: 85px;">
+                        <button class="button is-large is-outlined">
+                            <span class="icon is-medium">
+                                <i class="fa fa-cog" aria-hidden="true"></i>
+                            </span>
+                            <span>Share Tool</span>
+                        </button>
+                        <button class="button is-large is-outlined">
+                            <span class="icon is-medium">
+                                <i class="fa fa-home" aria-hidden="true"></i>
+                            </span>
+                            <span>Share 10015</span>
+                        </button>
+
+                    </p>
+                </div>
+                <div>
+                    <div class="has-text-centered pt-3">
+                        <p>You are currently sharing;</p>
+                        <h1 style="font-family: Arial, Helvetica, sans-serif; font-size: 25px;">Bionic
+                            Reading Converter</h1>
+                    </div>
+                    <div class="has-text-centered">
+                        <span class="icon is-large">
+                            <span class="fa-stack fa-lg" style="font-size: 40px;">
+                                <i class="fa fa-share-alt" aria-hidden="true"></i>
+
+                            </span>
+                        </span>
+                    </div>
+                    <div class="has-text-centered">
+                        <span class="icon is-large" onclick="window.location.href = 'http:www.facebook.com'">
+                            <i class="fa fa-facebook"></i>
+                        </span>
+                        <span class="icon is-large" onclick="window.location.href = 'http:www.twitter.com'">
+                            <i class="fa fa-twitter"></i>
+                        </span>
+                        <span class="icon is-large" onclick="window.location.href = 'http:www.linkedin.com'">
+                            <i class="fa fa-linkedin" aria-hidden="true"></i>
+                        </span>
+                        <span class="icon is-large" onclick="window.location.href = 'http:www.gmail.com'">
+                            <i class="fa fa-comment" aria-hidden="true"></i>
+                        </span>
+                        <span class="icon is-large" onclick="window.location.href = 'http:www.google.com'">
+                            <i class="fa fa-clone" aria-hidden="true"></i>
+                        </span>
+                    </div>
+                </div>
+
+                Your content
+            </div>
+        </div>
+
+        <button class="modal-close is-large" aria-label="close"></button>
+    </div> -->
+    <!--end model-->
+
+    <!--start model (this is for add to favs)-->
+    <!-- <div id="modal-js-Favs" class="modal">
+        <div class="modal-background"></div>
+
+        <div class="modal-content">
+            <div class="box">
+                <div>
+                    <p class="is-size-3" style="font-family: Arial, Helvetica, sans-serif;">Sign In / Register</p>
+                    <p class="is-size-4">You need to sign in or register to use this feature.</p>
+                </div>
+                <div>
+                    <p class="buttons mt-3" style="margin-left: 243px;">
+                        <button class="button is-large is-rounded">
+                            <span class="icon is-medium">
+                                <i class="fa fa-pencil" aria-hidden="true"></i>
+                            </span>
+                            <span>Register</span>
+                        </button>
+                        <button class="button is-large is-rounded">
+                            <span class="icon is-medium">
+                                <i class="fa fa-power-off" aria-hidden="true"></i>
+                            </span>
+                            <span>Sign in</span>
+                        </button>
+
+                    </p>
+                </div>
+
+                Your content
+            </div>
+        </div>
+
+        <button class="modal-close is-large" aria-label="close"></button>
+    </div> -->
+    <!--end model-->
+
+    <!--start model (this is for report bug)-->
+    <!-- <div id="modal-js-report" class="modal">
+        <div class="modal-background"></div>
+
+        <div class="modal-content">
+            <div class="box">
+                <div>
+                    <p class="is-size-3" style="font-family: Arial, Helvetica, sans-serif;">Sign In / Register</p>
+                    <p class="is-size-4">You need to sign in or register to use this feature.</p>
+                </div>
+                <div>
+                    <p class="buttons mt-3" style="margin-left: 243px;">
+                        <button class="button is-large is-rounded">
+                            <span class="icon is-medium">
+                                <i class="fa fa-pencil" aria-hidden="true"></i>
+                            </span>
+                            <span>Register</span>
+                        </button>
+                        <button class="button is-large is-rounded">
+                            <span class="icon is-medium">
+                                <i class="fa fa-power-off" aria-hidden="true"></i>
+                            </span>
+                            <span>Sign in</span>
+                        </button>
+
+                    </p>
+                </div>
+                Your content
+            </div>
+        </div>
+
+        <button class="modal-close is-large" aria-label="close"></button>
+    </div> -->
+    <!--end model-->
+    <div class="Container">
+
+        <!--this is first columns-->
+        <div class="columns">
+            <div class="column">
+                <h1 class="title mt-3">Bionic Reading Converter</h1>
+            </div>
+            <!-- <div class="column">
+                <div class="navbar-end">
+                    <div class="buttons">
+                        <button class="button  is-rounded js-modal-Share" data-target="modal-js-Share">
+                            <span class="icon">
+                                <i class="fa fa-share-alt" aria-hidden="true"></i>
+                            </span>
+                            <span>Share</span>
+                        </button>
+                        <button class="button  is-rounded js-modal-Favs" data-target="modal-js-Favs">
+                            <span class="icon">
+                                <i class="fa fa-heart"></i>
+                            </span>
+                            <span>Add to Favs</span>
+                        </button>
+                        <button class="button  is-rounded js-modal-report" data-target="modal-js-report">
+                            <span class="icon">
+                                <i class="fa fa-bug" aria-hidden="true"></i>
+                            </span>
+                            <span>Report Bug</span>
+                        </button>
+                    </div>
+                </div>
+            </div> -->
+        </div>
+        <!--this is second columns-->
+        <div class="columns">
+            <div class="column has-text-centered" id="uploadFile">
+                <div class="is-centered">
+                    <label class="file-label">
+                        <input class="file-input" id="pdfFile" type="file" name="resume"
+                            oninput="convertPDFToText(this.value)">
+                        <span class="">
+                            <span class="file-icon" style="margin-left: 90px;">
+                                <i class="fas fa-upload"></i>
+                            </span>
+                            <span class="file-label">
+                                Import text from PDF(max 5MB)
+                            </span>
+                        </span>
+                    </label>
+                </div>
+            </div>
+        </div>
+
+        <!--this is third columns-->
+        <div class="columns">
+            <div class="column">
+                <div class="control">
+                    <textarea class="textarea is-focused" placeholder="input" id="inputDiv"
+                        oninput="updateInput(value)"></textarea>
+                </div>
+                <div id="dropdownBtn">
+                    <div class="dropdown is-active">
+                        <div class="dropdown-trigger">
+                            <button class="button" aria-haspopup="true" aria-controls="dropdown-menu"
+                                onclick="highlighted()">
+                                <span style="font-family: Arial, Helvetica, sans-serif;">fixation(% of
+                                    Highlighted)</span>
+                                <span class="icon is-small">
+                                    <i class="fas fa-angle-down" aria-hidden="true"></i>
+                                </span>
+                            </button>
+                        </div>
+                        <div class="dropdown-menu" role="menu" style="display: none;" id="fontId">
+                            <div class="dropdown-content">
+                                <button class="dropdown-item highlighted" onclick=" veryLow()">
+                                    very Low - 40%
+                                </button>
+                                <button class="dropdown-item highlighted" onclick="Low()">
+                                    Low - 45%
+                                </button>
+                                <button href="#" class="dropdown-item highlighted" onclick=" medium()">
+                                    Medium - 50%
+                                </button>
+                                <button href="#" class="dropdown-item highlighted" onclick="high()">
+                                    High - 55%
+                                </button>
+                                <!--<hr class="dropdown-divider">-->
+                                <button href="#" class="dropdown-item highlighted" onclick="veryHigh()">
+                                    very High - 60%
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <label class="checkbox mt-2" style="font-family: Arial, Helvetica, sans-serif;">
+                        <input type="checkbox">
+                        High contrast
+                    </label>
+
+                </div>
+
+            </div>
+
+            <div id="ConvertBtn">
+                <button class="button is-rounded" onclick="showtext()">
+                    <span style="font-family: Arial, Helvetica, sans-serif;">Convert</span>
+                    <span class="icon">
+                        <i class="fa fa-chevron-right" aria-hidden="true"></i>
+                    </span>
+                </button>
+            </div>
+            <br />
+            <div id="resetbtn">
+                <button class="button is-rounded" onclick="ClearFields()" style="margin-left: -32px;">
+                    <span class="icon">
+                        <i class="fa fa-chevron-" aria-hidden="true"></i>
+                    </span>
+                    <span style="margin-left: -1px; font-family: Arial, Helvetica, sans-serif;">reset</span>
+                    <span class="icon">
+                        <i class="fa fa-chevron-" aria-hidden="true"></i>
+                    </span>
+                </button>
+            </div>
+
+
+            <div class="column">
+                <div class="control outputDiv">
+
+                    <div class=" " id="outputDiv"></div>
+                </div>
+                <div class="navbar-end" id="ExportBtnDiv">
+                    <p class="buttons">
+                        <button class="button is-rounded " onclick="showbutton()">
+
+                            <span style="font-family: Arial, Helvetica, sans-serif;">Export</span>
+                            <span class="icon">
+                                <i class="fa fa-chevron-right" aria-hidden="true"></i>
+                            </span>
+                        </button>
+                        <button class="button  is-rounded  js-modal-trigger" data-target="modal-js-example">
+                            <span class="icon">
+                                <i class="fa fa-arrows-alt" aria-hidden="true"></i>
+                            </span>
+                            <span style="font-family: Arial, Helvetica, sans-serif;">Full Screen</span>
+                        </button>
+                    </p>
+                </div>
+                <div class="box" style="display: none;" id="showbutton">
+                    <p class="buttons">
+                        <button class="button is-medium" id="btnPrint" onclick="downloadCode();">
+                            <span class="icon">
+                                <i class="fa fa-file-pdf"></i>
+                            </span>
+                            <span style="font-family: Arial, Helvetica, sans-serif;">Download PDF(multi-page)</span>
+                        </button>
+
+                        <button class="button is-medium" onclick="generateEpub()">
+                            <span class="icon">
+                                <i class="fa fa-film" aria-hidden="true"></i>
+                            </span>
+                            <span style="font-family: Arial, Helvetica, sans-serif;">Download Epub</span>
+                        </button>
+
+
+                    </p>
+                    <p class="buttons">
+                        <button class="button is-medium" onclick="downloadImage()">
+                            <span class="icon">
+                                <i class="fa fa-file-image"></i>
+                            </span>
+                            <span style="font-family: Arial, Helvetica, sans-serif;">Download Image</span>
+                        </button>
+
+                        <button class="button is-medium" onclick="copyOutputValue()">
+                            <span class=" icon">
+                                <i class="fa fa-clone" aria-hidden="true"></i>
+                            </span>
+                            <span>Copy Image to Clipbord</span>
+                        </button>
+                    </p>
+
+                    <p class="buttons">
+                        <button class="button is-medium" onclick="copyHtml()">
+                            <span class="icon">
+                                <i class="fa fa-code" aria-hidden="true"></i>
+                            </span>
+                            <span>Copy Html</span>
+                        </button>
+                        <button class="button is-medium" onclick="markdown()">
+                            <span class="icon">
+                                <i class="fa fa-clone" aria-hidden="true"></i>
+                            </span>
+                            <span>Copy Markdown</span>
+                        </button>
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</body>
+
+</html>

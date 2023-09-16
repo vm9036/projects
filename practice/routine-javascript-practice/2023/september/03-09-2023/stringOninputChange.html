@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.9.4/css/bulma.min.css">
+    <title>Document</title>
+</head>
+<body>
+    <div class="control">
+        <input type="text" class="input" id="change" onchange="change()">
+    </div>
+    <div class="control">
+
+        <input type="text" class="input" id="displayText" >
+    </div>
+
+    <script>
+        function change(){
+            let stringInput = document.getElementById("change").value;
+
+            document.getElementById("displayText").value = stringInput;
+        }
+    </script>
+</body>
+</html>

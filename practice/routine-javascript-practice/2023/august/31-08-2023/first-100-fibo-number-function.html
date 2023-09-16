@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.9.4/css/bulma.min.css">
+        <title>First 100 Fibonacci Number</title>
+    </head>
+    <body>
+        <div class="container">
+            <div class="field">
+                <div class="control">
+                    <label class="label">Enter Value :</label>
+                    <input
+                        type="text"
+                        class="input is-info"
+                        id="inputValue"
+                        value="10"
+                    >
+                </div>
+            </div>
+            <div class="field">
+                <div class="control">
+                    <button class="button is-primary" onclick="first100FiboNumber()">Click</button>
+                </div>
+            </div>
+            <div class="block">
+                <div id="displayFiboTable"></div>
+            </div>
+        </div>
+        <script>
+        function first100FiboNumber(){
+            let n = Number(document.getElementById("inputValue").value);
+
+            let strTable = "<table class='table is-bordered has-text-centered has-text-weight-semibold'><tr><th>Index :</th><th>Fibo Value :</th></tr><tr><td>1</td><td>1</td></tr>";
+               
+            let counter=2;    
+            for(let i=1 ; ; i++)
+            {
+
+               let a = checkFiboNumber(i) ;
+        
+               if(a == true)
+               {
+                   strTable = strTable + "<tr>"+ "<td>"+ counter +"</td>" + "<td>" + i + "</td>" + "</tr>";
+                   counter++;
+               }
+
+               if(counter - 1  == n)
+               {
+                    break;
+               }
+
+            }
+            strTable = strTable + "</table>";
+            document.getElementById("displayFiboTable").innerHTML = strTable;
+        }
+
+
+        function checkFiboNumber(num)
+        {
+            for ( a = 0, b = 1, fibo = 0; b < num;) {
+                fibo = a + b;
+                a = b;
+                b = fibo;
+            }
+
+            if (b == num || a == num) {
+                return true;
+            }
+            else {
+                return false;
+            }
+        }
+        </script>
+    </body>
+</html>

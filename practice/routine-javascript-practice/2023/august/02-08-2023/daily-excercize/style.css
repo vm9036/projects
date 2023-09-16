@@ -1,0 +1,259 @@
+  
+  /* #slider-container {
+    display: flex;
+    align-items: center;
+  } */
+
+  body.noscroll
+{
+    overflow-y: scroll;
+    width: 100%;
+}
+  
+  #range-slider {
+    position: relative;
+    width: 200px;
+  }
+  
+  .thumb {
+    position: absolute;
+    width: 14px;
+    height: 14px;
+    border-radius: 50%;
+    background-color: #000;
+    cursor: pointer;
+  }
+  
+  #start-thumb {
+    top: 3px;
+    left: 0;
+  }
+  
+  #end-thumb {
+    top: 3px;
+    right: 0;
+  }
+  
+  #start-time, #end-time {
+    width: 50%;
+    text-align: center;
+    margin-left: 10px;
+  }
+  
+  #player-container {
+    max-width: 560px;
+    /* margin: 0 auto; */
+  }
+
+
+
+
+#main_body {
+    /* height: 90vh; */
+    display: grid;
+    place-items: center;
+}
+
+.container1{
+    position: relative;
+    width: 50%;
+    height: 100px;
+}
+input[type="range"]{
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    width: 100%;
+    outline: none;
+    position: absolute;
+    margin: auto;
+    top: 0;
+    bottom: 0;
+    background-color: transparent;
+    pointer-events: none;
+}
+.slider-track{
+    width: 100%;
+    height: 5px;
+    position: absolute;
+    margin: auto;
+    top: 0;
+    bottom: 0;
+    border-radius: 5px;
+}
+input[type="range"]::-webkit-slider-runnable-track{
+    -webkit-appearance: none;
+    height: 5px;
+}
+input[type="range"]::-moz-range-track{
+    -moz-appearance: none;
+    height: 5px;
+}
+input[type="range"]::-ms-track{
+    appearance: none;
+    height: 5px;
+}
+input[type="range"]::-webkit-slider-thumb{
+    -webkit-appearance: none;
+    height: 1.7em;
+    width: 1.7em;
+    background-color: #485fc7;
+    cursor: pointer;
+    margin-top: -9px;
+    pointer-events: auto;
+    border-radius: 50%;
+}
+input[type="range"]::-moz-range-thumb{
+    -webkit-appearance: none;
+    height: 1.7em;
+    width: 1.7em;
+    cursor: pointer;
+    border-radius: 50%;
+    background-color: #485fc7;
+    pointer-events: auto;
+}
+input[type="range"]::-ms-thumb{
+    appearance: none;
+    height: 1.7em;
+    width: 1.7em;
+    cursor: pointer;
+    border-radius: 50%;
+    background-color: #485fc7;
+    pointer-events: auto;
+}
+input[type="range"]:active::-webkit-slider-thumb{
+    background-color: #ffffff;
+    border: 3px solid #485fc7;
+}
+.values{
+    background-color: #485fc7;
+    width: 350px;
+    position: relative;
+    margin: auto;
+    padding: 10px 0;
+    border-radius: 5px;
+    text-align: center;
+    font-weight: 500;
+    font-size: 25px;
+    color: #ffffff;
+}
+.values:before{
+    content: "";
+    position: absolute;
+    height: 0;
+    width: 0;
+    border-top: 15px solid #485fc7;
+    border-left: 15px solid transparent;
+    border-right: 15px solid transparent;
+    margin: auto;
+    bottom: -14px;
+    left: 0;
+    right: 0;
+}
+
+.link-item{
+  width: 93%;
+  color: white;
+  margin: 15px;
+  padding: 5px;
+  display: flex;
+  flex-direction: row;
+  background-color: #35363a;
+  border-radius: 2px;
+  cursor: pointer;
+  align-items: center;
+}
+.link-item p{
+  padding: 6px;
+}
+
+.link-item:hover {
+  background-color: #4a4b50;
+}
+
+
+/* sidebar */
+.sidebar {
+  position:fixed;
+  right: 0;
+  height: 100%;
+  width: 100%;
+  z-index: 1;
+  background-color: #35363a;
+  overflow-x: hidden;
+  padding-top: 60px;
+}
+
+.sidebar::-webkit-scrollbar {
+  display: none;
+}
+
+.sidebar a {
+  padding: 8px 8px 8px 32px;
+  text-decoration: none;
+  font-size: 1.4rem;
+  color: #fff;
+  display: block;
+  transition: 0.3s;
+}
+
+.sidebar a:hover {
+  color: #f1f1f1;
+}
+
+.sidebar .closebtn {
+  position:absolute;
+  top: 0;
+  right: 25px;
+  font-size: 36px;
+  margin-left: 50px;
+}
+
+.openbtn {
+  font-size: 1.5rem;
+  cursor: pointer;
+  color: rgb(0, 0, 0);
+  background-color: transparent;
+  padding: 10px 15px;
+  margin-top: 20px;
+  margin-left: 20px;
+  border: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+}
+
+.openbtn:hover {
+  background-color: #35363a ;
+  color: white;
+}
+
+@media only screen and (max-width: 768px) {
+  #holder {
+    width: 340px !important;
+    height: 315px;
+  }
+
+  #player {
+    width: 340px !important;
+    height: 315px;
+  }
+
+  #player-container {
+    max-width: 340px !important;
+    margin: 0 auto;
+  }
+
+  .values{
+    background-color: #485fc7;
+    width: 90%;
+    position: relative;
+    margin: 5px auto;
+    padding: 10px 0;
+    border-radius: 5px;
+    text-align: center;
+    font-weight: 500;
+    font-size: 25px;
+    color: #ffffff;
+}
+}

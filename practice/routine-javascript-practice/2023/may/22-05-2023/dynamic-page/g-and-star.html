@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>G and Star Game</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.9.4/css/bulma.min.css">
+</head>
+
+<body>
+    <div class="container">
+        <div class="box">
+            <h1 class="title">G and Star Game</h1>
+
+
+            <div class="block">
+                <!-- <button class="button is-info" onclick="gStarGame()">Click</button> -->
+                <button class="button is-primary is-small" onclick="moveLeft()">Left</button>
+                <button class="button is-warning is-small" onclick="moveRight()">Right</button>
+                <button class="button is-success is-small" onclick="moveUp()">Up</button>
+                <button class="button is-danger is-small" onclick="moveDown()">Down</button>
+            </div>
+
+            <!-- <div class="block">
+                <table class="table is-bordered">
+                    <tbody>
+                        <tr>
+                            <td>G</td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td>*</td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div> -->
+
+            <div class="block">
+                <div class="field">
+                    <div class="control">
+                    </div>
+                </div>
+            </div>
+            <div class="block">
+                <p id="displayTable"></p>
+            </div>
+            <div class="block">
+                <p id="displayCounter">Counter : 0</p>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        var inputI = 1;
+        var inputJ = 1;
+        var inputRow;
+        var inputColumn;
+        let storeI = Math.floor(Math.random() * 10);
+        let storeJ = Math.floor(Math.random() * 10);
+        
+        function gStarGame() {
+            inputRow = 15;
+            inputColumn = 15;
+            let store = "<table class='table is-bordered'><tbody><tr>";
+            for (let i = 1; i <= inputRow; i++) {
+                for (let j = 1; j <= inputColumn; j++) {
+                    if (i == inputI && j == inputJ) {
+                        store = store + "<td>" + "G" + "</td>";
+                    }
+                    if((i == inputI && j == inputJ) && (i == storeI && j == storeJ))
+                    {
+                        // store = store + "<td>" + "*" + "</td>";
+                    }
+                    else if (i == storeI && j == storeJ ) {
+                        store = store + "<td>" + "*" + "</td>";
+                    }
+                    else {
+                    store = store + "<td>" + " " + "</td>";
+                    }
+                    console.log("i :-> "+ i + "j :-> "+ j + "storeI :->"+ storeI + "storeJ :->" + storeJ,"inputI :->"+ inputI + "inputJ :-> "+ inputJ);
+                }
+                store = store + "</tr>";
+            }
+            store = store + "</tbody></table>";
+            document.getElementById("displayTable").innerHTML = store;
+        }
+        gStarGame();
+
+        function moveLeft() {
+            if (inputJ == 1) {
+                alert("Out OF Limit");
+            }
+            else {
+                inputJ = inputJ - 1;
+                // console.log("Left inputJ :-> " + inputJ);
+            }
+            gStarGame();
+        }
+
+        function moveRight() {
+            if (inputJ == inputColumn) {
+                alert("Out OF Limit");
+            }
+            else {
+                inputJ = inputJ + 1;
+            }
+            gStarGame();
+        }
+
+        function moveUp() {
+            if (inputI == 1) {
+                alert("Out OF Limit");
+            }
+            else {
+                inputI = inputI - 1;
+            }
+            gStarGame();
+        }
+
+        function moveDown() {
+            if (inputI == inputRow) {
+                alert("Out OF Limit");
+            }
+            else {
+                inputI = inputI + 1;
+            }
+            gStarGame();
+        }
+
+        document.onkeydown = checkKey;
+
+        function checkKey(e) {
+
+            e = e || window.event;
+
+            if (e.keyCode == '38') {
+                // up arrow
+                moveUp();
+            }
+            else if (e.keyCode == '40') {
+                // down arrow
+                moveDown();
+            }
+            else if (e.keyCode == '37') {
+                // left arrow
+                moveLeft();
+            }
+            else if (e.keyCode == '39') {
+                // right arrow
+                moveRight();
+            }
+        }
+        checkKey();
+    </script>
+
+</body>
+
+</html>

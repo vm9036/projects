@@ -1,0 +1,329 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css" />
+    <style>
+        .color {
+            font-family: Inter, sans-serif;
+            width: 2rem;
+            height: 2rem;
+            overflow: hidden;
+            margin: 0 1rem 0 0;
+            border-radius: 10px;
+            cursor: pointer;
+        }
+
+        #glass-object {
+            width: 100%;
+            /* margin: 0 1rem 0 0; */
+            /* margin: 1rem; */
+            border-radius: 25px;
+            backdrop-filter: blur(18px);
+            padding: 2rem;
+            position: relative;
+            box-shadow: 0 2px 10px rgb(0 0 0 / 10%), 0 10px 15px rgb(0 0 0 / 20%);
+            box-sizing: border-box;
+            background-image: linear-gradient(45deg,
+                    rgba(66, 60, 90, 0.6),
+                    rgba(66, 60, 90, 0.9))
+        }
+
+        .color.active {
+            box-shadow: 0 0 0 3px #191f2b, 0 0 0 4px #1e84ff;
+        }
+
+        .code-section {
+            position: relative;
+        }
+
+        .copy-button {
+            position: absolute;
+            top: 0;
+            right: 0;
+            z-index: 1;
+            padding: 0.5rem;
+        }
+    </style>
+
+</head>
+
+<body>
+    
+        <div class="container">
+            <div class="box mt-5">
+                <h1 class="title">CSS GlassMorphism Generator</h1>
+                <div class="columns">
+                    <div class="column is-6 mt-6 has-text-centered">
+                        <div class="card is-flex"
+                            style="height: 150px; border-radius: 14px; background-image: url(bg.avif); padding: 1.5rem;">
+    
+                            <div id="glass-object" class="box is-flex  is-align-items-center is-justify-content-center">
+                                <center>
+                                    <div id="text-layer" class="has-text-white ml-6 mr-6">
+                                        <center>This is how your glass will look</center>
+                                    </div>
+                                </center>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="column is-6">
+                        <div class="columns">
+                            <div class="column is-6">
+                                <div class="panel">
+                                    <div class="card  p-5 has-background-grey-lighter">
+                                        <h3 class="title is-3 has-text-black">Select Color :</h3>
+                                        <div id="glass-colors-container" class="is-flex is-fullwidth">
+                                            <div class="color white active" data-color="white" style="    color: white;
+                                        box-shadow: 0 0 0 3px #191f2b, 0 0 0 4px #1e84ff;
+                                        background: linear-gradient(
+                                        45deg,
+                                        rgba(255, 255, 255, 0.6),
+                                        rgba(255, 255, 255, 0.9)
+                                      );
+                                    "></div>
+                                            <div class="ml-2 color black" data-color="black" style=" color: white;
+                                        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1), 0 2px 4px rgba(0, 0, 0, 0.1);
+                                        background: linear-gradient(
+                                        45deg,
+                                        rgba(66, 60, 90, 0.6),
+                                        rgba(66, 60, 90, 0.7)
+                                      );"></div>
+                                            <div class="ml-2 color really-black" data-color="reallyBlack" style="
+                                        color: white;
+                                        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1), 0 2px 4px rgba(0, 0, 0, 0.1);
+                                        background: linear-gradient(
+                                        45deg,
+                                        rgba(76, 52, 52, 0.6),
+                                        rgba(76, 52, 52, 0.7)
+                                      );"></div>
+                                            <div class="ml-2 color gradient-red-orange" data-color="redOrange" style="
+                                        color: white;
+                                        
+                                        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1), 0 2px 4px rgba(0, 0, 0, 0.1);
+                                       
+                                        background: linear-gradient(
+                                        45deg,
+                                        rgba(255, 102, 65, 0.6),
+                                        rgba(255, 102, 65, 0.9)
+                                      );
+                                    "></div>
+                                            <div class="ml-2 color gradient-green-blue" data-color="greenBlue" style="color: white;
+                                       
+                                        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1), 0 2px 4px rgba(0, 0, 0, 0.1);
+                                        
+                                        background: linear-gradient(
+                                        45deg,
+                                        rgba(32, 152, 255, 0.6),
+                                        rgba(50, 249, 176, 0.9)
+                                      );
+                                    "></div>
+                                            <div class="ml-2 color gradient-blue-purple" data-color="bluePurple" style="color: white;
+                                       
+                                        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1), 0 2px 4px rgba(0, 0, 0, 0.1);
+                                     
+                                        background: linear-gradient(
+                                        45deg,
+                                        rgba(32, 152, 255, 0.6),
+                                        rgba(172, 50, 249, 0.9)
+                                      );"></div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="panel">
+                                    <div class="card p-2 has-background-grey-lighter">
+                                        <div id="glass-opacity" class="p-2">
+                                            <h3 class="title is-4 has-text-black">Select Opacity :</h3>
+                                            <input type="range" id="glass-opacity" value="0.6" min="0" step="0.05" max="1">
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="column is-6">
+                                <div class="panel">
+                                    <div class="card p-5 has-background-grey-lighter">
+                                        <div id="glass-blur" class="p-2 ">
+                                            <h3 class="title is-4 has-text-black">Select Blur :</h3>
+                                            <input type="range" id="glass-opacity" value="18" min="1" step="0.2" max="40">
+                                        </div>
+                                    </div>
+                                </div>
+    
+                                <div class="panel">
+                                    <div class="card has-background-grey-lighter">
+                                        <div id="glass-filter-effect" class="p-2">
+                                            <h3 class="title is-4 has-text-black">Select Filter Effect :</h3>
+                                            <div class="select is-fullwidth">
+                                                <select>
+                                                    <option value="hard-light">Hard Light</option>
+                                                    <option value="color">Color</option>
+                                                    <option value="multiply">Multiply</option>
+                                                    <option value="overlay">Overlay</option>
+                                                    <option value="saturation">Saturation</option>
+                                                    <option value="difference">Difference</option>
+                                                </select>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+    
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="mt-2">
+                    <!-- <div class="columns">
+                        <div class="card column is-4 p-5 has-background-grey-lighter">
+                            <h3 class="title is-3 has-text-black">Select Color :</h3>
+                            <div id="glass-colors-container" class="is-flex is-fullwidth">
+                                <div class="color white active" data-color="white" style="    color: white;
+                            box-shadow: 0 0 0 3px #191f2b, 0 0 0 4px #1e84ff;
+                            background: linear-gradient(
+                            45deg,
+                            rgba(255, 255, 255, 0.6),
+                            rgba(255, 255, 255, 0.9)
+                          );
+                        "></div>
+                                <div class="ml-3 color black" data-color="black" style=" color: white;
+                            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1), 0 2px 4px rgba(0, 0, 0, 0.1);
+                            background: linear-gradient(
+                            45deg,
+                            rgba(66, 60, 90, 0.6),
+                            rgba(66, 60, 90, 0.7)
+                          );"></div>
+                                <div class="ml-3 color really-black" data-color="reallyBlack" style="
+                            color: white;
+                            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1), 0 2px 4px rgba(0, 0, 0, 0.1);
+                            background: linear-gradient(
+                            45deg,
+                            rgba(76, 52, 52, 0.6),
+                            rgba(76, 52, 52, 0.7)
+                          );"></div>
+                                <div class="ml-3 color gradient-red-orange" data-color="redOrange" style="
+                            color: white;
+                            
+                            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1), 0 2px 4px rgba(0, 0, 0, 0.1);
+                           
+                            background: linear-gradient(
+                            45deg,
+                            rgba(255, 102, 65, 0.6),
+                            rgba(255, 102, 65, 0.9)
+                          );
+                        "></div>
+                                <div class="ml-3 color gradient-green-blue" data-color="greenBlue" style="color: white;
+                           
+                            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1), 0 2px 4px rgba(0, 0, 0, 0.1);
+                            
+                            background: linear-gradient(
+                            45deg,
+                            rgba(32, 152, 255, 0.6),
+                            rgba(50, 249, 176, 0.9)
+                          );
+                        "></div>
+                                <div class="ml-3 color gradient-blue-purple" data-color="bluePurple" style="color: white;
+                           
+                            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1), 0 2px 4px rgba(0, 0, 0, 0.1);
+                         
+                            background: linear-gradient(
+                            45deg,
+                            rgba(32, 152, 255, 0.6),
+                            rgba(172, 50, 249, 0.9)
+                          );"></div>
+                            </div>
+                        </div>
+                        <div class="card column is-2 ml-6 has-background-grey-lighter">
+                            <div id="glass-opacity" class="p-2">
+                                <h3 class="title is-4 has-text-black">Select Opacity :</h3>
+                                <input type="range" id="glass-opacity" value="0.6" min="0" step="0.05" max="1">
+                            </div>
+                        </div>
+                        <div class="card column is-2 ml-6 has-background-grey-lighter">
+                            <div id="glass-blur" class="p-2 ">
+                                <h3 class="title is-4 has-text-black">Select Blur :</h3>
+                                <input type="range" id="glass-opacity" value="18" min="1" step="0.2" max="40">
+                            </div>
+                        </div>
+                        <div class="card column is-3 ml-6 has-background-grey-lighter">
+                            <div id="glass-filter-effect" class="p-2">
+                                <h3 class="title is-4 has-text-black">Select Filter Effect :</h3>
+                                <select class="select input" fdprocessedid="3ugzdf">
+                                    <option value="hard-light">Hard Light</option>
+                                    <option value="color">Color</option>
+                                    <option value="multiply">Multiply</option>
+                                    <option value="overlay">Overlay</option>
+                                    <option value="saturation">Saturation</option>
+                                    <option value="difference">Difference</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div> -->
+                </div>
+    
+                <div class="columns">
+                    <div class="column is-6">
+                        <h3 class="title is-3 mt-6">CSS for Glass Morphism Effect</h3>
+                        <div class="code-section">
+                            <button class="copy-button button  m-2 is-primary">Copy</button>
+                            <pre class="has-background-grey-light">
+                        <code id="generated-code" class="has-text-black">
+    #glass-object {
+        border-radius: 25px;
+        backdrop-filter: blur(18px);
+        padding: 2rem;
+        box-shadow: 0 2px 10px rgb(0 0 0 / 10%), 0 10px 15px rgb(0 0 0 / 20%);
+        box-sizing: border-box;
+        background-image: linear-gradient(45deg, rgba(66,60,90,0.6), rgba(66,60,90,0.6));
+        width: 100%;
+        height: 100%;
+        mix-blend-mode: hard-light;
+    }
+    #text-layer {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    #glass-container {
+        position: relative;
+        width: 100%;
+        height: 80px;
+    }
+                        </code>
+                      </pre>
+                        </div>
+                    </div>
+                    <div class="column is-6">
+                        <h3 class="title is-3 mt-6">HTML for CSS Glass Morphism Effect</h3>
+                        <div class="code-section">
+                            <button class="copy-button button is-primary m-2">Copy</button>
+                            <pre class="has-background-grey-light">
+                        <code class="html has-text-black">
+    &lt;div id="glass-container">
+        &lt;div id="text-layer">
+            This is your glass effect.
+        &lt;/div>
+        &lt;div id="glass-object">&lt;/div>
+    &lt;/div>
+                        </code>
+                      </pre>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+   
+
+    <script src="css-glassmorphism-generator.js">
+
+    </script>
+</body>
+
+</html>

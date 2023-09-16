@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
+    <title>Dynamic Table Twist program</title>
+</head>
+
+<body>
+    <div class="container">
+        <div class="field">
+            <label class="label">Enter Table Number :</label>
+            <div class="control">
+                <input type="text" id="inputTable" class="input is-info" value="10">
+            </div>
+        </div>
+        <div class="field">
+            <div class="control has-text-centered">
+                <button class="button is-primary" onclick="oddTable()">Odd</button>
+                <button class="button is-info" onclick="evenTable()">Even</button>
+                <button class="button is-danger" onclick="fiboTable()">Fibo</button>
+                <button class="button is-warning" onclick="primeTable()">Prime</button>
+            </div>
+        </div>
+        <div id="displayTable"></div>
+    </div>
+    <script>
+        function oddTable() {
+            let tableValue = Number(document.getElementById("inputTable").value);
+            let strTable = "<div class='columns is-multiline'>";
+
+            for (let i = 1; i <= tableValue; i++) {
+                strTable = strTable + "<div class='column'>";
+                if (i % 2 != 0) {
+                    strTable = strTable + "<table class='table is-bordered'><tr><th>Odd Table</th></tr>";
+                    for (let j = 1; j <= tableValue; j++) {
+                        if (j % 2 != 0) {
+                            sumTable = i * j;
+                            strTable = strTable + "<tr>" + "<td>" + i + "*" + j + "=" + sumTable + "</td>" + "</tr>";
+                        }
+                    }
+                    strTable = strTable + "</table>";
+                }
+                strTable = strTable + "</div>";
+            }
+            strTable = strTable + "</div>";
+            document.getElementById("displayTable").innerHTML = strTable;
+        }
+
+        function evenTable() {
+            let tableValue = Number(document.getElementById("inputTable").value);
+            let strTable = "<div class='columns is-multiline'>";
+
+            for (let i = 1; i <= tableValue; i++) {
+                strTable = strTable + "<div class='column'>";
+                if (i % 2 == 0) {
+                    strTable = strTable + "<table class='table is-bordered'><tr><th>Even Table</th></tr>";
+                    for (let j = 1; j <= tableValue; j++) {
+                        if (j % 2 == 0) {
+                            sumTable = i * j;
+                            strTable = strTable + "<tr>" + "<td>" + i + "*" + j + "=" + sumTable + "</td>" + "</tr>";
+                        }
+                    }
+                    strTable = strTable + "</table>";
+                }
+                strTable = strTable + "</div>";
+            }
+            document.getElementById("displayTable").innerHTML = strTable;
+        }
+
+        function fiboTable() {
+            let tableValue = Number(document.getElementById("inputTable").value);
+            let strTable = "<div class='columns is-multiline'>";
+            let a = 0; b = 1; fibo = 0, sumTable = 0;
+            for (let i = 1; i <= tableValue; i++) {
+                let at = 0, bt = 1, fibot = 0;
+                strTable = strTable + "<div class='column'><table class='table is-bordered'><tr><th>Fibo Table</th></tr>";
+                a = b;
+                b = fibo;
+                fibo = a + b;
+
+                for (let j = 1; j <= tableValue; j++) {
+                    at = bt;
+                    bt = fibot;
+                    fibot = at + bt;
+
+                    sumTable = fibo * fibot;
+                    console.log(sumTable);
+                    strTable = strTable + "<tr>" + "<td>" + fibo + "*" + fibot + "=" + sumTable + "</td>" + "</tr>";
+                }
+                strTable = strTable + "</table>" + "</div>";
+            }
+            strTable = strTable + "</div>";
+            document.getElementById("displayTable").innerHTML = strTable;
+        }
+
+        function primeTable() {
+            let tableValue = Number(document.getElementById("inputTable").value);
+            let pNumber = 0;
+            let storePrimeNumber = "<div class='columns is-multiline'>";
+
+            let i, j, c;
+            for (i = 1; i <= tableValue; i++) {
+                for (j = 1; j <= i; j++) {
+                    if (i % j == 0) {
+                        pNumber = pNumber + 1;
+                    }
+                }
+                storePrimeNumber = storePrimeNumber + "<div class='column'><table class='table is-bordered'><tr><th>table</th></tr>";
+                if (pNumber == 2) {
+                    for (k = 1; k <= tableValue; k++) {
+                        c = i * k;
+                        console.log(c);
+                        storePrimeNumber = storePrimeNumber + "<tr><td>" + i + " X " + k + "=" + c + "</td></tr>";
+                    }
+                    storePrimeNumber = storePrimeNumber + "</table>" + "</div>";
+                }
+                pNumber = 0;
+                storePrimeNumber = storePrimeNumber + "</div>";
+                document.getElementById("displayTable").innerHTML = storePrimeNumber;
+            }
+        }
+    </script>
+</body>
+
+</html>

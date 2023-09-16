@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SVG to PNG Converter</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.9.3/css/bulma.min.css">
+    <style>
+        .thumbnail {
+            max-width: 200px;
+            max-height: 200px;
+        }
+
+        .notification-container {
+            margin-top: 1rem;
+        }
+
+        .preview-image {
+            max-width: 100%;
+            max-height: 200px;
+            margin-top: 1rem;
+        }
+
+        .drop-area {
+            border: 2px dashed #ccc;
+            padding: 1rem;
+            text-align: center;
+        }
+
+        .drop-area.dragover {
+            background-color: #f1f1f1;
+        }
+
+        .drop-area p {
+            margin: 0;
+        }
+
+        /* .clear-button {
+            margin-top: 1rem;
+        } */
+    </style>
+</head>
+
+<body>
+
+    <div class="container">
+        <h1 class="title">SVG to PNG Converter</h1>
+
+        <div class="columns">
+            <div class="column is-6">
+                <form id="uploadForm" method="post" enctype="multipart/form-data">
+                    <div class="field">
+                        <label class="label">Upload SVG Files (Up to 20 files)</label>
+                        <div class="file">
+                            <label class="file-label">
+                                <input class="file-input" type="file" name="svgFiles[]" id="uploadInput" multiple
+                                    accept=".svg">
+                                <span class="file-cta">
+                                    <span class="file-icon">
+                                        <i class="fas fa-upload"></i>
+                                    </span>
+                                    <span class="file-label">
+                                        Choose SVG Files
+                                    </span>
+                                </span>
+                            </label>
+                        </div>
+                        <div id="dropArea" class="drop-area">
+                            <p>Drag and drop files here to upload</p>
+                        </div>
+
+                    </div>
+
+                    <div class="field is-grouped is-grouped-centered">
+                        <div class="control">
+                            <button class="button is-primary" type="submit">Convert</button>
+                        </div>
+                        <div class="control">
+                            <button id="clearButton" class="button is-danger" type="button">Clear
+                                Queue</button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+
+            <div class="column is-6">
+                <div id="output" class="notification-container">
+                    <!-- Conversion output will be displayed here -->
+                </div>
+            </div>
+        </div>
+
+        <div id="previewContainer" class="columns is-multiline"></div>
+    </div>
+
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const uploadInput = document.getElementById('uploadInput');
+            const uploadForm = document.getElementById('uploadForm');
+            const outputContainer = document.getElementById('output');
+            const previewContainer = document.getElementById('previewContainer');
+            const dropArea = document.getElementById('dropArea');
+            const clearButton = document.getElementById('clearButton');
+
+            // Handle file drop events
+            dropArea.addEventListener('dragenter', (e) => {
+                e.preventDefault();
+                dropArea.classList.add('dragover');
+            });
+
+            dropArea.addEventListener('dragover', (e) => {
+                e.preventDefault();
+                dropArea.classList.add('dragover');
+            });
+
+            dropArea.addEventListener('dragleave', (e) => {
+                e.preventDefault();
+                dropArea.classList.remove('dragover');
+            });
+
+            dropArea.addEventListener('drop', (e) => {
+                e.preventDefault();
+                dropArea.classList.remove('dragover');
+
+                const files = e.dataTransfer.files;
+                uploadInput.files = files;
+            });
+
+            // Clear file queue
+            clearButton.addEventListener('click', () => {
+                uploadInput.value = '';
+                previewContainer.innerHTML = '';
+                outputContainer.innerHTML = '';
+            });
+
+            // Handle file selection
+            uploadInput.addEventListener('change', () => {
+                const files = uploadInput.files;
+                previewContainer.innerHTML = '';
+
+                if (files.length > 0) {
+                    const fileCount = Math.min(files.length, 20);
+                    uploadForm.classList.remove('is-danger');
+                    outputContainer.innerHTML = `
+            <div class="notification is-info">
+              <p>Selected ${fileCount} file${fileCount > 1 ? 's' : ''}.</p>
+              <p>Click "Convert" to start the conversion process.</p>
+            </div>`;
+
+                    Array.from(files).slice(0, 20).forEach((file) => {
+                        const reader = new FileReader();
+
+                        reader.onload = (event) => {
+                            const svgData = event.target.result;
+
+                            const img = new Image();
+                            img.src = 'data:image/svg+xml;charset=utf-8,' + encodeURIComponent(svgData);
+                            img.classList.add('preview-image');
+
+                            const figure = document.createElement('figure');
+                            figure.classList.add('column', 'is-half');
+                            figure.appendChild(img);
+
+                            previewContainer.appendChild(figure);
+                        };
+
+                        reader.readAsText(file);
+                    });
+                } else {
+                    outputContainer.innerHTML = '';
+                }
+            });
+
+            uploadForm.addEventListener('submit', (event) => {
+                event.preventDefault();
+                const files = uploadInput.files;
+
+                if (files.length === 0) {
+                    uploadForm.classList.add('is-danger');
+                    return;
+                }
+
+                outputContainer.innerHTML = '';
+
+                Array.from(files).slice(0, 20).forEach((file) => {
+                    const reader = new FileReader();
+
+                    reader.onload = (event) => {
+                        const svgData = event.target.result;
+
+                        const img = new Image();
+                        img.src = 'data:image/svg+xml;charset=utf-8,' + encodeURIComponent(svgData);
+
+                        img.onload = () => {
+                            const canvas = document.createElement('canvas');
+                            const context = canvas.getContext('2d');
+                            canvas.width = img.width;
+                            canvas.height = img.height;
+
+                            context.drawImage(img, 0, 0);
+
+                            const pngData = canvas.toDataURL('image/png');
+
+                            const downloadLink = document.createElement('a');
+                            downloadLink.classList.add('button', 'is-link', 'mr-2');
+                            downloadLink.href = pngData;
+                            downloadLink.download = file.name.replace('.svg', '.png');
+                            downloadLink.textContent = 'Download ' + file.name.replace('.svg', '.png');
+
+                            outputContainer.appendChild(downloadLink);
+                        };
+                    };
+
+                    reader.readAsText(file);
+                });
+            });
+        });
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Image Metadata Viewer</title>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- exif-js library cdn -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/exif-js/2.3.0/exif.js"></script>
+    <!-- css bulma -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
+    <!-- fontawesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+        integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <style>
+        /* * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Times New Roman', Times, serif
+        } */
+
+
+        /* globla styling for container */
+        .container {
+            display: grid;
+            margin-left: auto;
+            margin-right: auto;
+            margin-top: 1rem;
+            margin-bottom: 1rem;
+            justify-content: center;
+            justify-items: center;
+        }
+
+        .container-heading {
+            text-align: center;
+            font-size: 2rem;
+
+        }
+
+        .table {
+            width: 80%;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .table tr:nth-child(odd) {
+            background-color: #d3cece;
+        }
+
+        header {
+            text-align: center;
+            padding: 2rem;
+        }
+
+        header h1 {
+            font-weight: bold;
+            font-size: 2.5rem;
+            letter-spacing: 0.1rem;
+            color: #222;
+        }
+
+        .main {
+            background-color: #fff;
+            padding: 0 2rem;
+        }
+
+
+        .upload-icon {
+            display: flex;
+            font-size: 1.6rem;
+            justify-content: center;
+            align-content: center;
+            align-items: center;
+            cursor: pointer;
+            border: 2px dashed gray;
+            background: lightgray;
+            border-radius: 5px;
+            /* padding: 20px 40px; */
+            width: 300px;
+            height: 100px;
+            transition: border-color 0.2s, background-color 0.2s;
+        }
+
+        .upload-icon:hover {
+            /* border-color: darkgray; */
+            background: white;
+        }
+
+        /* image-container styling */
+
+        #preview {
+            max-width: 100%;
+            max-height: 500px;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <h1>Image Metadata Viewer</h1>
+    </header>
+    <section class="main">
+        <div class="main-container flex">
+            <div class="image-container container">
+                <label for="file-input" class="upload-icon">
+                    <i class="fa-solid fa-file-arrow-up mx-2"></i>Upload Image
+                </label>
+                <input id="file-input" type="file" style="display: none;" onchange="previewImage(event)">
+                <img id="preview" src="">
+            </div>
+            <div class="filedata-container container" style="display: none;">
+                <h1 class="container-heading">
+                    <i class="fa-solid fa-file m-4"></i>Image metadata
+                </h1>
+                <table id="filedata" class="table"></table>
+            </div>
+            <div class="metadata-container container" style="display: none;">
+                <h1 class="container-heading">
+                    <i class="fa-solid fa-database m-4"></i>Full Metadata
+                </h1>
+                <table id="metadata" class="table"></table>
+            </div>
+        </div>
+    </section>
+    <script src="image-metadata-viewer.js">
+    </script>
+</body>
+
+</html>

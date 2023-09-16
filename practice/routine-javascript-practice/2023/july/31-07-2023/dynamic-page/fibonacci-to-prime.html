@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fibonacci to Prime</title>
+</head>
+
+<body>
+
+    <script>
+        function isPrime(num) {
+            if (num <= 1) return false;
+            if (num <= 3) return true;
+
+            if (num % 2 === 0 || num % 3 === 0) return false;
+
+            for (let i = 5; i * i <= num; i += 6) {
+                if (num % i === 0 || num % (i + 2) === 0) return false;
+            }
+
+            return true;
+        }
+
+        function findFibonacciNumbers(limit) {
+            let fibNumbers = [0, 1];
+            let nextFib = 1;
+
+            while (nextFib <= limit) {
+                fibNumbers.push(nextFib);
+                nextFib = fibNumbers[fibNumbers.length - 1] + fibNumbers[fibNumbers.length - 2];
+            }
+            return fibNumbers;
+        }
+
+        const limit = 100;
+        const fibonacciNumbers = findFibonacciNumbers(limit);
+
+        console.log("Fibonacci Numbers up to" + limit + ":" + fibonacciNumbers);
+
+        const primeNumbers = fibonacciNumbers.filter((num) => isPrime(num));
+
+        console.log("Prime Numbers within Fibonacci Numbers:" + primeNumbers);
+
+    </script>
+</body>
+
+</html>

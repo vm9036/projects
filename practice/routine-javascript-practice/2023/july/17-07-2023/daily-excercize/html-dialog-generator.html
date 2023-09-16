@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HTML Dialog Generator</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
+</head>
+
+<body>
+    <div class="container">
+        <div class="box">
+            <div class="block">
+                <h1 class="title has-text-left">HTML Dialog Generator</h1>
+            </div>
+
+            <div class="columns">
+                <div class="column is-6">
+                    <div class="field">
+                        <label class="label">Input Text :-</label>
+                        <div class="control">
+                            <textarea id="inputText" cols="10" rows="5" class="textarea" oninput="autoCheck()"> Hello Javascript !!!
+                            </textarea>
+                        </div>
+                    </div>
+                    <div class="field">
+                        <div class="control has-text-centered">
+                            <input class="mt-3" type="checkbox" id="myCheck" oninput="autoCheck()" checked> Auto
+                            <button class="button is-primary is-medium" onclick="dialog()">Generate</button>
+                            <button class="button is-medium" onclick="resetButton()">Reset</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="column is-6">
+                    <div class="field">
+                        <label class="label">Preview HTML Dialog Generator :</label>
+                        <div class="card">
+                            <p id="dialogPreview" class="mt-6"></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function dialog() {
+            let inputText = document.getElementById("inputText").value;
+            document.getElementById("dialogPreview").innerHTML = "<dialog open>" + inputText + "</dialog>";
+            
+        }
+
+        function autoCheck()
+        {
+            let checkBox = document.getElementById("myCheck");
+            if (checkBox.checked == true) {
+                dialog();
+            }
+        }
+
+        function resetButton() {
+            document.getElementById("inputText").value = " ";
+            document.getElementById("dialogPreview").innerHTML = " ";
+        }
+        dialog();
+    </script>
+</body>
+
+</html>

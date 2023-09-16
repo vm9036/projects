@@ -67,12 +67,12 @@
 
             let n = Number(document.getElementById("inputStartPrimeNumber").value);
 
-            let noPrime = Number(document.getElementById("inputNPrimeNum").value);
+            // let noPrime = Number(document.getElementById("inputNPrimeNum").value);
             let storeP = " ";
             let pNumber = 0;
             let counter = 0;
 
-            for (let i = n; ; i++) {
+            for (let i = 2; ; i++) {
                 for (let j = 1; j <= i; j++) {
                     if (i % j == 0) {
                         pNumber = pNumber + 1;
@@ -82,7 +82,7 @@
                     storeP = storeP + i + "\t";
                     counter = counter + 1;
                 }
-                if (counter == noPrime) {
+                if (counter == n) {
                     break;
                 }
                 pNumber = 0;

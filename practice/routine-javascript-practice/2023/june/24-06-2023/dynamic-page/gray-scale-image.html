@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- fontawesome library -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css"
+        integrity="sha512-SzlrxWUlpfuzQ+pcUCosxcglQRNAq/DZjVsC0lE40xsADsfeQoEypE+enwcOiGjk/bSuGGKHEyjSoQ1zVisanQ=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <!-- css bulma -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.9.4/css/bulma.min.css"
+        integrity="sha512-HqxHUkJM0SYcbvxUw5P60SzdOTy/QVwA1JJrvaXJv4q7lmbDZCmZaqz01UPOaQveoxfYRv1tHozWGPMcuTBuvQ=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <!-- jquery -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.4/jquery.min.js"
+        integrity="sha512-pumBsjNRGGqkPzKHndZMaAG+bir374sORyzM3uulLV14lN5LyykqNk8eEeUlUkB3U0M4FApyaHraT65ihJhDpQ=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/imgareaselect/0.9.10/js/jquery.imgareaselect.min.js"
+        integrity="sha512-59swnhUs+9AinrKlTPqsoO5ukNPPFbPXFyaf41MAgiTG/fv3LBZwWQWiZNYeksneLhiUo4xjh/leTZ53sZzQ4Q=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <link rel="stylesheet"
+        href="	https://cdnjs.cloudflare.com/ajax/libs/imgareaselect/1.0.0-rc.1/css/imgareaselect-default.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.5.0/jszip.min.js"></script>
+    <style>
+        .column {
+            display: flex;
+            justify-content: center;
+            align-content: center;
+            flex-wrap: wrap;
+        }
+
+        .main-section {
+            min-height: 100vh;
+        }
+
+        .card {
+            padding-top: 10px;
+            margin-top: 30px;
+        }
+
+
+        /* body {
+      background: #f09433;
+      background: -moz-linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%);
+      background: -webkit-linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%);
+      background: linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%);
+      filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#f09433', endColorstr='#bc1888', GradientType=1);
+    } */
+
+        /* end of options container */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        /* body {
+  margin: 0;
+  padding: 0;
+  width: 100vw;
+  height: 150%;
+} */
+
+
+        @import url(//fonts.googleapis.com/css?family=Lato:300:400);
+
+        .header {
+            position: relative;
+            text-align: center;
+            background: linear-gradient(60deg, rgba(84, 58, 183, 1) 0%, rgba(0, 172, 193, 1) 100%);
+            color: white;
+        }
+
+        #tilesContainer {
+            display: grid;
+            overflow-x: auto;
+            gap: 5px 5px;
+            /* grid-template-columns: repeat(auto-fit, minmax(100px, 1fr)); */
+            grid-template-columns: 1fr 1fr 1fr 1fr;
+        }
+
+        .tileContainer img {
+            max-height: 100px;
+            max-width: 100px;
+        }
+
+        /* styling of image-container  */
+    </style>
+    <title>Split Image into Tiles</title>
+</head>
+
+<body>
+
+        <div class="container">
+            <div class="box mt-5">
+                <h1 class="title is-3 has-text-centered">Grayscale Image Online</h1>
+                <div class="columns">
+                    <div class="image-column is-relative column is-block has-text-centered">
+                        <p class="has-text-centered title is-4 is-small">Original Image</p>
+                        <div class="is-absolute top-0">
+                            <canvas id="image-canvas"></canvas>
+                        </div>
+                    </div>
+                    <div class="column is-one-fifth">
+                        <div class="is-flex-direction-column is-flex is-align-items-center flex-wrap mt-5">
+                            <div class="file is-boxed is-centered">
+                                <label class="file-label">
+                                    <input class="file-input" id="file-input" type="file" name="resume">
+                                    <span class="file-cta">
+                                        <span class="file-icon">
+                                            <i class="fas fa-upload"></i>
+                                        </span>
+                                        <span class="file-label">
+                                            Choose a file…
+                                        </span>
+                                    </span>
+                                </label>
+                            </div>
+                            <input type="button" onclick="generateGrayScale()" class="button mt-4 is-primary is-centered"
+                                id="pixelate-btn" value="Convert to Gray Scale">
+                            <div class="mt-5 mb-3">
+                                <p class="has-text-grey has-text-centered">Download</p>
+                            </div>
+                            <div>
+                                <button class="mx-2 button download-btn" id="download-jpg">JPG</button>
+                                <button class="mx-2 button download-btn" id="download-png">PNG</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="column is-block has-text-centered">
+                        <p class="has-text-centered title is-4">Gray Scale Image</p>
+                        <div class="is-align-items-center">
+                            <div id="grayscale-container"></div>
+                        </div>
+                    </div>
+    
+                </div>
+            </div>
+        </div>
+    <script src="gray-scale-image.js"></script>
+</body>
+
+</html>

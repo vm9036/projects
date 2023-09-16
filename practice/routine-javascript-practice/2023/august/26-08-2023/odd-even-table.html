@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
+    <title>Table</title>
+</head>
+<body>
+    <input type="text" id="inValue" value="10">
+    <button onclick="odd()">Odd</button>
+    <button onclick="even()">Even</button>
+    <div id="displayTable"></div>
+    <script>
+        function odd() {
+            // const userValue = 5;
+            // // for(let i=1; i<=)
+            // let storeTable = giveMeTable(userValue);
+            // document.getElementById("displayTable5").innerHTML = storeTable
+            // // let dsplayVishal = vihsal(storeTable)
+
+            let value = Number(document.getElementById("inValue").value);
+            // let storeOdd = "";
+            let str = "";
+            for(let i = 1 ; i<=value; i++)
+            {
+                if(i % 2 != 0)
+                {
+                    let  storeOdd = giveMeTable(i);
+                    str = str + storeOdd
+                    document.getElementById("displayTable").innerHTML = str;
+                    // console.log(storeOdd);
+                }
+            }
+        }
+        function even() {
+            const usyghfjghjer = 6;
+            // for(let i=1; i<=)
+            let storeTable = giveMeTable(usyghfjghjer);
+            document.getElementById("displayTable5").innerHTML = storeTable
+        }
+        function giveMeTable(userValue) {
+            let tableStr = "<table class='table is-bordered'>";
+            for (let i = 1; i <= 10; i++) {
+                tableStr = tableStr + "<tr><td>" + userValue + "*" + i + "=" + userValue * i + "</td>"
+            }
+            tableStr = tableStr + "</tr></table>"
+            return tableStr;
+        }
+    </script>
+</body>
+</html>

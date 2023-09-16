@@ -1,0 +1,79 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Form Builder</title>
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.3/css/bulma.min.css">
+	<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/11.7.0/styles/an-old-hope.min.css">
+</head>
+<body>
+	<div class="container is-fluid mt-5">
+		<div class="block has-text-centered">
+			<h1 class="title">Form Builder</h1>
+		</div>
+		<div class="columns">
+			<div class="column is-6">
+				<div id="build-wrap" class="card has-background-light">
+				</div>
+				<div class="field is-grouped is-grouped-centered buttons mt-3">
+					<div class="control">
+						<label class="checkbox">
+							<input type="checkbox" class="border-dark" id="autoPreview" checked>
+							Auto Preview
+						</label>
+					</div>
+					<div class="control">
+						<button type="button" id="preview" class="button is-primary">Preview</button>
+					</div>
+					<div class="control">
+						<button type="button" id="getHTML" class="button is-success">Get HTML</button>
+					</div>
+					<div class="control">
+						<button type="button" id="getXML" class="button is-warning">Get XML</button>
+					</div>
+					<div class="control">
+						<button type="button" id="getJSON" class="button is-secondary">Get JSON</button>
+					</div>
+					<div class="control">
+						<button type="button" id="clear" class="button is-danger">Clear</button>
+					</div>
+				</div>
+			</div>
+			<div class="column is-6">
+				<div class="card">
+					<header class="card-header">
+						<p class="card-header-title">Preview</p>
+					</header>
+					<div id="build-preview" class="card-content">
+						<form action="#" class="card has-background-light p-3">
+							<div class="card-content"></div>
+						</form>
+					</div>
+				</div>
+				<div class="card mt-3">
+					<header class="card-header p-1">
+						<p class="card-header-title bg-light">Output</p>
+						<button type="button" id="copyButton" class="button is-secondary mx-2">Copy</button>
+					</header>
+					<div class="card-content">
+						<div class="well well-sm border rounded shadow-sm" id="outDiv">
+							<textarea style="height:500px;" class="textarea bg-light" id="out" name="out" disabled></textarea>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/js-beautify/1.14.7/beautify.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/js-beautify/1.14.7/beautify-css.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/js-beautify/1.14.7/beautify-html.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.11.4/jquery-ui.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/jQuery-formBuilder/3.8.3/form-builder.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/jQuery-formBuilder/3.8.3/form-render.min.js"></script>
+	<script src="https://cdn.jsdelivr.net/npm/bulma-extensions/dist/js/bulma-extensions.min.js"></script>
+	<script type="module" src="form-builder.js"></script>
+</body>
+</html>

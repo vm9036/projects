@@ -1,0 +1,80 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Punny Code Convertor</title>
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/styles/default.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.1/css/bulma.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/punycode/2.3.0/punycode.min.js" integrity="sha512-DMxyecgBKZK+k2joQ1F3ok3kIeVjKbhJZjKc+XPSZpkiRDEf7GdwckDwxP71UDZeTubh3K6Fh3pFWE1TLW44/A==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <style>
+        .position-relative {
+    position: relative;
+}
+
+.copy-button {
+    position: absolute;
+    top: 0;
+    right: 12px;
+    margin: 10px;
+    width: 80px;
+    border: none;
+    cursor: pointer;
+}
+
+.copy-button:hover {
+    color: #000;
+    text-decoration: underline;
+}
+
+    </style>
+</head>
+<body>
+    <h1 class="title has-text-centered pt-5" id="h1">PunnyCode Convertor</h1>
+    <div class="container is-fluid mb-5">
+        <div class="columns is-centered">
+            <div class="column is-6">
+                <div class="box">
+                    <p class="title is-size-3 has-text-centered">Input Text</p>
+                    <div class="position-relative">
+                        <textarea class="textarea has-background-dark is-primary has-text-danger" rows="15" id="inputarea"></textarea>
+                        <button class="copy-button button is-primary" onclick="copyText('inputarea')">Copy
+                        </button>
+                    </div>
+                </div>
+            </div>
+            <div class="column is-6">
+                <div class="box">
+                    <p class="title is-size-3 has-text-centered">Punny Code</p>
+                    <div class="position-relative">
+                        <textarea class="textarea is-primary has-background-dark has-text-success" rows="15"
+                            id="outputarea"></textarea>
+                        <button class="copy-button button is-primary" onclick="copyText('outputarea')">
+                            Copy
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="columns">
+            <div class="column is-half has-text-centered">
+                <div class="is-pulled-right is-flex">
+                    <div class="mt-6">
+                        <input type="checkbox" class="checkbox" id="autoPreview" checked>
+                        <label class="mr-3" for="autoPreview">Auto Preview</label>
+                    </div>
+                    <button class="button is-success is-medium mt-5 is-pulled-right" onclick="TextToPunny()">Convert to PunnyCode</button>
+                </div>
+               
+            </div>
+            <div class="column is-3 has-text-centered">
+                <button class="button is-link is-medium mt-5 is-pulled-left" onclick="PunnyToText()">Convert to Text</button>
+            </div>
+        </div>
+    </div>
+    <script src="app.js"></script>
+</body>
+
+</html>

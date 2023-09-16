@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
+    <title>1 to n Table Program</title>
+</head>
+
+<body>
+    <div class="container">
+        <div class="box">
+            <div class="block">
+                <h1 class="title">1 to N Table Program</h1>
+            </div>
+            <div class="columns">
+                <div class="column is-6">
+                    <div class="field">
+                        <label class="label">Starting Table Value :-</label>
+                        <div class="control">
+                            <input type="text" class="input" value="2" id="table-range-start">
+                        </div>
+                    </div>
+                </div>
+                <div class="column is-6">
+                    <div class="field">
+                        <label class="label">Ending Table Value :-</label>
+                        <div class="control">
+                            <input type="text" class="input" value="2" id="table-range-end">
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="field">
+                <div class="control">
+                    <button class="button is-primary" onclick="tableN()">Click</button>
+                </div>
+            </div>
+            <div class="block">
+                <p id="displayTable"></p>
+            </div>
+        </div>
+    </div>
+    </div>
+    <script>
+        function tableN() {
+            let startValue = document.getElementById("table-range-start").value;
+            let endValue = document.getElementById("table-range-end").value;
+
+            let tableSum = 0;
+            let strTable = "<table class='table is-bordered'><tr>";
+
+            for (let j = 1; j <= 10; j++) 
+            {
+                for (let i = startValue; i <= endValue; i++) 
+                {
+                    tableSum = i * j;
+                    strTable = strTable  + "<td>" + i + " X " + j + " = " + tableSum + "</td>";
+                }
+                strTable = strTable + "</tr>"
+            }
+            strTable = strTable + "</table>";
+            document.getElementById("displayTable").innerHTML = strTable;
+
+        }
+    </script>
+</body>
+
+</html>

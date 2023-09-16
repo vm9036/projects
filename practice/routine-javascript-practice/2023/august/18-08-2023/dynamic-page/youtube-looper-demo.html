@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Youtube Looper</title>
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
+    </head>
+    <body>
+        <div class="container">
+            <div class="block has-text-centered">
+                <h1 class="title">Youtube Looper</h1>
+            </div>
+            <div class="columns">
+                <div class="column is-7 is-offset-1">
+                    <div class="field">
+                        <label class="label is-inline ">Enter Youtube Link :</label>
+                        <label class="label is-inline is-pulled-right"><a href="#" class="has-text-black">Sample</a></label>
+                        <div class="control">
+                            <input type="text" class="input is-large is-rounded" placeholder="Enter Youtube Link">
+                        </div>
+                    </div>
+
+                    <div class="field has-text-centered">
+                        <div class="control">
+                            <input type="checkbox" id="" class="mt-3"><span class="ml-2">Auto</span>
+                            <button class="button is-primary">Embed</button>
+                        </div>
+                    </div>  
+                </div>
+                
+            </div>
+            <div class="columns">
+                <div class="column is-7 is-offset-1">
+                    <div class="has-background-black" id="holder" style="height: 336px; width: 100%;">.</div>
+                </div>
+                <div class="column is-5 has-background-black">
+                    
+                        <h1 class="subtitle is-5 ml-4 mb-1" style="color: white;">History</h1>
+                        <hr style="width:50%;text-align:left;margin-left:0; margin-top: 0;">
+                        <div id="link-list"></div>
+                        <h1 class="subtitle is-5 ml-4 mb-1 mt-3 has-text-white">Popular Videos</h1>
+                        <hr class="ml-0 mt-0" style="width: 50%;">
+                        <div id="popular" style="display: flex; flex-direction: column; flex-wrap: wrap;">
+                            <div class="link-item">
+                                <img class="thumbnail-item" src="https://img.youtube.com/vi/ZMnNMBpqyvc/default.jpg"
+                                    alt="Thumbnail" data-link="https://www.youtube.com/watch?v=ZMnNMBpqyvc">
+                                <p data-link="https://www.youtube.com/watch?v=ZMnNMBpqyvc" class="head">
+                                    Bollywood Romantic Love
+                                    Mashup
+                                </p>
+                            </div>
+                            <div class="link-item">
+                                <img class="thumbnail-item" src="https://img.youtube.com/vi/c_rB6nE2gd4/default.jpg"
+                                    alt="Thumbnail" data-link="https://www.youtube.com/watch?v=c_rB6nE2gd4">
+                                <p data-link="https://www.youtube.com/watch?v=c_rB6nE2gd4" class="head">Top pop of the Year</p>
+                            </div>
+                            <div class="link-item">
+                                <img class="thumbnail-item" src="https://img.youtube.com/vi/1Oan0xWzTVo/default.jpg"
+                                    alt="Thumbnail" data-link="https://www.youtube.com/watch?v=1Oan0xWzTVo">
+                                <p data-link="https://www.youtube.com/watch?v=1Oan0xWzTVo" class="head">
+                                    Summer Music Mix 2023
+                                </p>
+                            </div>
+                            <div class="link-item">
+                                <img class="thumbnail-item" src="https://img.youtube.com/vi/C480i6K8OHE/default.jpg"
+                                    alt="Thumbnail" data-link="https://www.youtube.com/watch?v=C480i6K8OHE">
+                                <p data-link="https://www.youtube.com/watch?v=C480i6K8OHE" class="head">Lofi Mashup(slow)</p>
+                            </div>
+                            <div class="link-item">
+                                <img class="thumbnail-item" src="https://img.youtube.com/vi/9bZkp7q19f0/default.jpg"
+                                    alt="Thumbnail" data-link="https://www.youtube.com/watch?v=9bZkp7q19f0">
+                                <p data-link="https://www.youtube.com/watch?v=9bZkp7q19f0" class="head">Gangnam Style</p>
+                            </div>
+                        </div>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>

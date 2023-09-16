@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Instagram Filters</title>
+    <!-- cssgram library for instagram filters -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/cssgram/0.1.12/cssgram.min.css">
+    <!-- fontawesome library -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css">
+    <!-- bulma css -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
+    <!-- custom css -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.13.2/themes/base/jquery-ui.min.css"
+        integrity="sha512-ELV+xyi8IhEApPS/pSj66+Jiw+sOT1Mqkzlh8ExXihe4zfqbWkxPRi8wptXIO9g73FSlhmquFlUOuMSoXz5IRw=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        /* header part */
+
+    
+        /* .img-logo {
+            align-items: center;
+        }
+
+        .img-logo>img {
+            height: 30px;
+            padding-right: 12px;
+        } */
+
+        /* file/image upload section */
+
+        .file-upload .dropzone i {
+            font-size: 32px;
+            margin: 4px;
+        }
+
+        .file-upload .dropzone .box-upload {
+            display: inline-block;
+        }
+
+        .file-upload .dropzone {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+            width: 100%;
+            height: 112px;
+            background: rgb(255, 255, 255);
+            color: rgb(99, 99, 136);
+            border-radius: 8px;
+            border: 2px dashed rgb(187, 187, 222);
+            cursor: pointer;
+            transition: all 0.25s ease 0s;
+        }
+
+        /* image-display section */
+
+        .image-process {
+            justify-content: center;
+            border: 1px solid gray;
+            z-index: 1;
+            border-radius: 8px;
+        }
+
+        .image-process .no-image {
+            flex-direction: column;
+            align-items: center;
+            margin: 40px 0px;
+        }
+
+        /* filters section */
+        .examples {
+            flex-wrap: wrap;
+        }
+
+        .filter {
+            box-sizing: border-box;
+            min-width: max-content;
+            cursor: pointer;
+            padding-left: 4px;
+            padding-right: 4px;
+            margin-bottom: 8px;
+        }
+
+        .filter .filter-name {
+            min-width: 72px;
+            width: 72px;
+            font-size: 14px;
+            text-align: center;
+            color: rgb(99, 99, 136);
+            margin-bottom: 4px;
+        }
+
+
+        .filter .filter-image {
+            width: 72px;
+            /* min-width: 72px; */
+            height: 72px;
+            margin: 0;
+            transition: all 0.2s ease 0s;
+        }
+
+        .filter .figure-style {
+            width: 72px;
+            height: 72px;
+        }
+
+        .filter:hover .filter-name {
+            color: black;
+        }
+
+        .filter .filter-image:hover {
+            border: 2px solid blue;
+        }
+
+        /* reset and download buttons */
+        .download-btns {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1rem;
+            margin: 1rem;
+        }
+
+        #button-reset {
+            padding: 0px 70px;
+        }
+
+        #button-download {
+            padding: 0px 80px;
+            margin: 0px 40px;
+        }
+    </style>
+
+</head>
+
+<body>
+
+
+    <div class="container">
+        <div class="box mt-5">
+            <div class="block">
+                <h1 class="title has-text-centered is-size-3">Instagram Filters</h1>
+            </div>
+            <div class="block">
+                <div class="file-upload my-2" id="file-upload" role="presentation">
+                    <label for="inputTag">
+                        <input id="inputTag" type="file" style="display: none;" />
+                        <br />
+                        <span id="imageName"></span>
+                        <div class="dropzone is-centered">
+                            <i class="fa-solid fa-upload bx-upload"></i>
+                            <div class="text">
+                                <span class="has-text-weight-bold">Upload Image</span>
+                            </div>
+                        </div>
+                    </label>
+                </div>
+            </div>
+            <div class="block">
+                <div class="image-process">
+                    <div class="no-image is-flex">
+                        <img src="" alt="" id="input-image">
+                        <i class="fa-solid fa-sliders" id="slider-icon"></i>
+                        <div id="image-process-text" class="has-text-weight-semibold">Upload an image before starting to apply filters</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="block">
+                <div class="container is-flex examples">
+                    <div class="container is-flex is-flex-direction-column filter">
+                        <div class="filter-name">Normal</div>
+                        <figure class="normal figure-style" onclick="changeFilter(this.getAttribute('class'))">
+                            <img src="asset 26.jpeg" alt="normal-filter" class="filter-image">
+                        </figure>
+                    </div>
+                    <div class="container is-flex is-flex-direction-column filter">
+                        <div class="filter-name">Clarendon</div>
+                        <figure class="clarendon figure-style" onclick="changeFilter(this.getAttribute('class'))">
+                            <img src="asset 26.jpeg" alt="normal-filter" class="filter-image">
+                        </figure>
+                    </div>
+                    <div class="container is-flex is-flex-direction-column filter">
+                        <div class="filter-name">Gingham</div>
+                        <figure class="gingham figure-style" onclick="changeFilter(this.getAttribute('class'))">
+                            <img src="asset 26.jpeg" alt="normal-filter" class="filter-image">
+                        </figure>
+                    </div>
+                    <div class="container is-flex is-flex-direction-column filter">
+                        <div class="filter-name">Moon</div>
+                        <figure class="moon figure-style" onclick="changeFilter(this.getAttribute('class'))">
+                            <img src="asset 26.jpeg" alt="normal-filter" class="filter-image">
+                        </figure>
+                    </div>
+                    <div class="container is-flex is-flex-direction-column filter">
+                        <div class="filter-name">Lark</div>
+                        <figure class="lark figure-style" onclick="changeFilter(this.getAttribute('class'))">
+                            <img src="asset 26.jpeg" alt="normal-filter" class="filter-image">
+                        </figure>
+                    </div>
+                    <div class="container is-flex is-flex-direction-column filter">
+                        <div class="filter-name">Reyes</div>
+                        <figure class="reyes figure-style" onclick="changeFilter(this.getAttribute('class'))">
+                            <img src="asset 26.jpeg" alt="normal-filter" class="filter-image">
+                        </figure>
+                    </div>
+                    <div class="container is-flex is-flex-direction-column filter">
+                        <div class="filter-name">Juno</div>
+                        <figure class="juno figure-style" onclick="changeFilter(this.getAttribute('class'))">
+                            <img src="asset 26.jpeg" alt="normal-filter" class="filter-image">
+                        </figure>
+                    </div>
+                    <div class="container is-flex is-flex-direction-column filter">
+                        <div class="filter-name">Slumber</div>
+                        <figure class="slumber figure-style" onclick="changeFilter(this.getAttribute('class'))">
+                            <img src="asset 26.jpeg" alt="normal-filter" class="filter-image">
+                        </figure>
+                    </div>
+                    <div class="container is-flex is-flex-direction-column filter">
+                        <div class="filter-name">Crema</div>
+                        <figure class="crema figure-style" onclick="changeFilter(this.getAttribute('class'))">
+                            <img src="asset 26.jpeg" alt="normal-filter" class="filter-image">
+                        </figure>
+                    </div>
+                    <div class="container is-flex is-flex-direction-column filter">
+                        <div class="filter-name">Ludwig</div>
+                        <figure class="ludwig figure-style" onclick="changeFilter(this.getAttribute('class'))">
+                            <img src="asset 26.jpeg" alt="normal-filter" class="filter-image">
+                        </figure>
+                    </div>
+                    <div class="container is-flex is-flex-direction-column filter">
+                        <div class="filter-name">Aden</div>
+                        <figure class="aden figure-style" onclick="changeFilter(this.getAttribute('class'))">
+                            <img src="asset 26.jpeg" alt="normal-filter" class="filter-image">
+                        </figure>
+                    </div>
+                    <div class="container is-flex is-flex-direction-column filter">
+                        <div class="filter-name">Perpetua</div>
+                        <figure class="perpetua figure-style" onclick="changeFilter(this.getAttribute('class'))">
+                            <img src="asset 26.jpeg" alt="normal-filter" class="filter-image">
+                        </figure>
+                    </div>
+                </div>
+            </div>
+
+            <div class="block">
+                <div class="buttons is-flex is-justify-content-center">
+                    <button class="button  is-rounded" id="button-reset" onclick="resetImage()">
+                        Reset Image
+                    </button>
+                    <button class="button  is-rounded is-info" id="download-button">
+                        Download Filtered Image
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- <section class="section-body">
+        <div class="container upload-btns is-flex">
+            <button class="button is-link mr-6">
+                <i class="fa-solid fa-folder-open mr-2"></i>
+                Upload File
+            </button>
+            <button class="button is-Light">
+                <i class="fa-solid fa-link mr-2"></i>
+                Upload From URL
+            </button>
+        </div> 
+    </section>-->
+    <!-- example filters -->
+    
+    <script class="jsbin" src="http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.13.2/jquery-ui.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
+    <script src="instagram-filter-tool.js"></script>
+    <!-- external file that can support for download an image so we used 
+        FileSaver external script file. -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/FileSaver.js/2.0.0/FileSaver.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+</body>
+</html>

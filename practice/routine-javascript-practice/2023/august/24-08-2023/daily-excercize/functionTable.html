@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
+        <title>Function Table</title>
+    </head>
+    <body>
+        <input type="text" id="inputTable">
+        <button onclick="printTable()">Click</button>
+        <div id="displayTable"></div>
+        <script>
+        function printTable()
+        {
+            let n = Number(document.getElementById("inputTable").value);
+
+            let printTable = getTable(n);
+            document.getElementById("displayTable").innerHTML = printTable;
+        }
+
+        function getTable(num)
+        {
+            let strTable = "<div class='columns is-multiline'>";
+            let storeTableValue = " ";    
+            for(i=1;i<=num;i++)
+            {
+                strTable = "<div class='column'><table class='table is-bordered'><tr><th> Table</th></tr>"; 
+                
+               for(let j=1;j<=num;j++)
+               {
+                   mulTable = i * j;
+                   strTable = strTable + "<tr><td>"+ i + " " + "X" + " " + j + " " + " = " + mulTable + "</td></tr>";
+               }
+               
+               strTable = strTable + "</table>"+ "</div>";
+               storeTableValue = storeTableValue + strTable;
+            }     
+            return storeTableValue;
+        }
+        </script>
+    </body>
+</html>

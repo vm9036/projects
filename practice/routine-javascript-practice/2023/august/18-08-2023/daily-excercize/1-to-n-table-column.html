@@ -18,7 +18,7 @@
                 <div class="field">
                     <label class="label">Table Value :-</label>
                     <div class="control">
-                        <input type="text" class="input" value="20" id="table-range-end">
+                        <input type="text" class="input" value="10" id="table-range-end">
                     </div>
                 </div>
             </div>
@@ -29,10 +29,10 @@
                 <button class="button is-dark" onclick="oddTable()">Odd</button>
                 <button class="button is-light" onclick="evenTable()">Even</button>
                 <button class="button is-danger" onclick="fiboTable()">fibo</button>
-                <!-- <button class="button is-link" onclick="tableN()">prime</button> -->
+                <button class="button is-link" onclick="primeTable()">prime</button>
             </div>
         </div>
-        <p id="displayTable"></p>
+        <div id="displayTable"></div>
     </div>
     <script>
         function tableN() {
@@ -60,7 +60,9 @@
             let strTable = "<div class='columns is-multiline'>";
 
             for (let i = 1; i <= endValue; i++) {
+                // if(i % 2 != 0){
                 strTable = strTable + "<div class='column'><table class='table is-bordered'><tr><th>table</th><th>ans</th></tr>";
+                // }
                 for (let j = 1; j <= 10; j++) {
                     if (i % 2 != 0) {
                         sumTable = i * j;
@@ -97,23 +99,73 @@
             let endValue = Number(document.getElementById("table-range-end").value);
             let sumTable = 0;
             let strTable = "<div class='columns is-multiline'>";
-            let a = 0, b = 1,c =0;
-            for (let i = 1; i <= endValue; i++) 
-            {
+            let a = 0, b = 1, c = 0;
+            for (let i = 1; i <= endValue; i++) {
                 a = b;
                 b = c;
                 c = a + b;
                 strTable = strTable + "<div class='column'><table class='table is-bordered'><tr><th>table</th><th>ans</th></tr>";
-                for (let j = 1; j <= 10; j++) 
-                {
-                        
+                for (let j = 1; j <= 10; j++) {
+
                     sumTable = c * j;
-                    strTable = strTable + "<tr><td>" + c + "X" + j + "</td>" + "<td>" + sumTable  + "</td></tr>";
+                    strTable = strTable + "<tr><td>" + c + "X" + j + "</td>" + "<td>" + sumTable + "</td></tr>";
                 }
                 strTable = strTable + "</table>" + "</div>";
             }
             strTable = strTable + "</div>";
             document.getElementById("displayTable").innerHTML = strTable;
+        }
+
+        // function primeTable()
+        // {
+
+        //     let endValue = Number(document.getElementById("table-range-end").value);
+        //     let sumTable = 0;
+
+        //     let strTable = "<div class='columns is-multiline'>";
+
+        //     for (let i = 2; i <= endValue; i++) {
+        //         strTable = strTable + "<div class='column'><table class='table is-bordered'><tr><th>table</th><th>ans</th></tr>";
+        //         for (let j = 1; j <= 10; j++) {
+        //             if (i % 2 == 0) {
+        //                 sumTable = i * j;
+        //                 strTable = strTable + "<tr><td>" + i + "X" + j + "</td>" + "<td>" + sumTable + "</td></tr>";
+        //             }
+        //         }
+        //         strTable = strTable + "</table>" + "</div>";
+        //     }
+        //     strTable = strTable + "</div>";
+        //     document.getElementById("displayTable").innerHTML = strTable;
+        // }
+
+
+
+        function primeTable() {
+            // debugger;
+            let endValue = Number(document.getElementById("table-range-end").value);
+            let pNumber = 0;
+            let storePrimeNumber = "<div class='columns is-multiline'>";
+
+            let i, j, c;
+            for (i = 1; i <= endValue; i++) {
+                storePrimeNumber = storePrimeNumber + "<div class='column'><table class='table is-bordered'><tr><th>table</th></tr>";
+                for (j = 1; j <= i; j++) {
+                    if (i % j == 0) {
+                        pNumber = pNumber + 1;
+                    }
+                }
+                if (pNumber == 2) {
+                    for (k = 1; k <= 10; k++) {
+                        c = i * k;
+                        console.log(c);
+                        storePrimeNumber = storePrimeNumber + "<tr><td>" + i + " X " + k + "=" + c + "</td></tr>";
+                    }
+                    storePrimeNumber = storePrimeNumber + "</table>" + "</div>";
+                }
+                pNumber = 0;
+                storePrimeNumber = storePrimeNumber + "</div>";
+                document.getElementById("displayTable").innerHTML = storePrimeNumber;
+            }
         }
     </script>
 </body>

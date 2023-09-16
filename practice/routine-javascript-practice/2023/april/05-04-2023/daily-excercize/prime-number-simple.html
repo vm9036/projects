@@ -16,7 +16,7 @@
             <div class="field">
                 <label class="label">Enter Number :-</label>
                 <div class="control">
-                    <input type="text" class="input" id="firstValue">
+                    <input type="text" class="input" id="firstValue" value="10">
                 </div>
             </div>
             <div class="field">
@@ -37,16 +37,22 @@
             let firstValue = Number(document.getElementById("firstValue").value);
             let pNumber = 0;
             let storePrimeNumber = "";
-            for (let i = 1; i <= firstValue; i++) {
-                for (let j = 1; j <= i; j++) {
+            let i,j;
+            for ( i = 1; i <= firstValue; i++) {
+                for ( j = 1; j <= i; j++) {
                     if (i % j == 0) {
                         pNumber = pNumber + 1;
                     }
                 }
                 if(pNumber == 2){
                     storePrimeNumber = storePrimeNumber + i +"  ";
+                    for(k=1;k<=10;k++)
+                    {
+                        console.log(k*i);
+                    }
                 }
                 pNumber = 0;
+                
             }
             document.getElementById("printPrimeNumber").innerHTML = storePrimeNumber;
         }

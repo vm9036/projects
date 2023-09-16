@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.9.4/css/bulma.min.css">
+    <title>Random Number Tool Generator</title>
+</head>
+<body>
+    <div class="container">
+        <div class="box">
+            <div class="block">
+                <h1 class="title">Random Number Tool Generator</h1>
+            </div>
+
+            <div class="columns">
+                <div class="column is-3">
+                    <div class="field">
+                        <label class="label">Start Number :-</label>
+                        <div class="control">
+                            <input type="text" class="input" value="5" id="startN">
+                        </div>
+                    </div>
+                </div>
+                <div class="column is-3">
+                    <div class="field">
+                        <label class="label">End Number :-</label>
+                        <div class="control">
+                            <input type="text" class="input" value="100" id="endN">
+                        </div>
+                    </div>
+                </div>
+                <div class="column is-3">
+                    <div class="field">
+                        <label class="label">Generate Number :-</label>
+                        <div class="control">
+                            <input type="text" class="input" id="genNum" value="10">
+                        </div>
+                    </div>
+                </div>
+                <div class="column is-3">
+                    <div class="field">
+                        <label class="label">Separator :-</label>
+                        <div class="control">
+                            <input type="text" class="input" id="seprator">
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="field">
+                <div class="control has-text-centered">
+                    <button class="button is-primary" onclick="randomNumbers()">Click</button>
+                </div>
+            </div>
+
+            <div class="field">
+                <label class="label">Display Random Numbers</label>
+                <div class="control">
+                    <textarea id="displayRandomNums" cols="10" rows="5" class="textarea"></textarea>
+                </div>
+            </div>
+            <div class="block has-text-centered">
+                <p class="button is-success" id="displaySum">Sum : 0</p>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function randomNumbers(){
+            let startNum = Number(document.getElementById("startN").value);
+            let endNum = Number(document.getElementById("endN").value);
+            let genNumer = Number(document.getElementById("genNum").value);
+            // let sept = document.getElementById("seprator").value;
+            let counter = 0;
+            let sum = 0;
+
+            let storeNumber = " ";
+            
+            for(let i = startNum; i<=endNum; i++)
+            {
+                let storeP = Math.floor(Math.random() * 100);
+                storeNumber = storeNumber + storeP + "\t";
+                sum  = sum + storeP;
+                counter = counter + 1;
+
+                if(genNumer == counter)
+                {
+                    break;
+                }
+            }
+            document.getElementById("displayRandomNums").value = storeNumber;
+            document.getElementById("displaySum").innerHTML = "Sum : " +sum;
+        }
+    </script>
+</body>
+</html>

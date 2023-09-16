@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Girl Name Generator Tool</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.9.4/css/bulma.min.css" />
+</head>
+
+<body>
+    <div class="container">
+        <div class="box">
+            <h1 class="title">Girl Name Generator</h1>
+
+            <div class="field">
+                <label class="label">Enter Number :-</label>
+                <div class="control">
+                    <input type="text" id="inputN" class="input" />
+                </div>
+            </div>
+            <div class="field">
+                <div class="control">
+                    <button class="button is-primary" onclick="ChanceDemo(true)">
+                        Generate
+                    </button>
+                    <button class="button is-primary" onclick="ChanceDemo(5)">
+                        5 Generate
+                    </button>
+                    <button class="button is-primary" onclick="ChanceDemo(10)">
+                        10 Generate
+                    </button>
+                    <button class="button is-primary" onclick="ChanceDemo(15)">
+                        15 Generate
+                    </button>
+                    <input type="checkbox" name="" id="checkboxG">
+                    us
+                </div>
+            </div>
+            <div class="block">
+                <p id="displayRandomName"></p>
+            </div>
+        </div>
+    </div>
+    <script src="https://chancejs.com/chance.min.js"></script>
+    <script src="https://code.jquery.com/jquery-1.10.1.min.js"></script>
+    <script>
+        function ChanceDemo(n) {
+            if (n == true) {
+                let Value = Number(document.getElementById("inputN").value);
+                n = Value;
+            } else {
+                document.getElementById("inputN").value = n;
+            }
+
+            let language  = 'it';
+        
+
+            let s = "<div class='container'><div class='columns is-multiline is-centered'>";
+            for (let i = 1; i <= n; i++) {
+                s = s + "<div class='column is-narrow'><div class='card has-background-light has-text-centered customize-card'><div class='card-content'><span class='name-text'>" +"Name : "+ chance.first({ nationality: language }) +"</span></br><span class='name-text'>" +"Name : "+ chance.age() +"</span></br></div></div></div>"
+            }
+            s = s + "</div>" + "</div>";
+            document.getElementById("displayRandomName").innerHTML = s;
+        }
+    </script>
+</body>
+
+</html>

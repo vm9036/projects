@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Function With Sum</title>
+</head>
+<body>
+    <input type="text" value="5" id="inputN">
+    <button onclick="oneToNSum()">Click</button>
+    <p id="displaySum"></p>
+
+    <script>
+        function oneToNSum(){
+            let n = Number(document.getElementById("inputN").value);
+
+            let lastSum = sumRetun(n);
+            document.getElementById("displaySum").innerHTML = lastSum;
+
+        }
+
+        // this function is return only sum.
+        function sumRetun(n)
+        {
+            let sum = 0;
+            for(let i = 1; i<=n; i++)
+            {
+                sum = sum + i;
+            }
+            return sum;
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <input type="text" id="primeN">
+    <button onclick="checkPrime()">Click</button>
+    <p id="displayPrime"></p>
+    <script>
+        function checkPrime() {
+            let n = Number(document.getElementById("primeN").value);
+
+            let pNumber = 0;
+            // let count = 1;
+            // for (let i = 2; i <= n; i++) {
+            //     if (n % i == 0) {
+            //         count++;
+            //     }
+            // }
+            // if (count == 2) {
+            //     alert("prime")
+            // }
+            // else {
+            //     alert("not primw")
+            // }
+            // count = 1;
+
+            let store = " ";
+            for(let i = 2; i<=n; i++)
+            {
+                for(j = 1 ; j<= i; j++)
+                {
+                    if(i % j == 0)
+                    {
+                        pNumber = pNumber + 1;
+                    }
+                }
+                if(pNumber == 2)
+                {
+                    // console.log(i);
+                    store = store + i;
+                }
+                
+                pNumber = 0
+                // if(i> 1 && i!=0)
+                // {
+                //     alert("This is prime.");
+                // }
+                // else
+                // {
+                //     alert("This is not prime.");
+                // }
+            }
+            document.getElementById("displayPrime").innerHTML = store;
+            // console.log(store);
+        }
+    </script>
+</body>
+
+</html>

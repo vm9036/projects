@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Random Superhero Generator</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
+</head>
+
+<body>
+    <div class="container">
+        <div class="box">
+            <div class="block">
+                <h1 class="title has-text-centered">Random Superhero Generator</h1>
+            </div>
+
+            <div class="columns">
+                <div class="column is-3">
+                    <div class="field has-addons">
+                        <div class="control">
+                            <input type="text" class="input" value="5">
+                        </div>
+                        <div class="control">
+                            <button class="button is-primary" onclick="randomSuperHero()">Generate</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="column is-9">
+                    <div class="field">
+                        <div class="buttons">
+                            <button class="button is-primary" onclick="randomSuperHero(5)">5 Generate</button>
+                            <button class="button is-link" onclick="randomSuperHero(10)">10 Generate</button>
+                            <button class="button is-light" onclick="randomSuperHero(15)">15 Generate</button>
+                            <button class="button is-danger" onclick="randomSuperHero(20)">20 Generate</button>
+                            <button class="button is-info" onclick="randomSuperHero(25)">25 Generate</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="block">
+                <p id="output"></p>
+            </div>
+        </div>
+    </div>
+
+
+    <script>
+
+        function randomSuperHero(n) {
+            // Fetch the JSON data
+            fetch('superhero-data.json')
+                .then(response => response.json())
+                .then(data => {
+                    // Access the 'users' array from the JSON data
+                    const superHeroArray = data.superhero;
+
+                    // Create an empty array to store user names
+                    const userNames = [];
+
+                    const randomIndex = Math.floor(Math.random() * data.length);
+                    const randomSuperhero = data[randomIndex];
+
+                    // Display the superhero name and power on the webpage
+                    const heroNameElement = document.getElementById('heroName');
+                    // // Loop through the users array and extract the names
+                    superHeroArray.forEach(user => {
+                        userNames.push(user.name);
+                    });
+
+                    // Display the user names on the web page
+                    const outputDiv = document.getElementById('output');
+                    outputDiv.innerHTML = userNames.join('<br>');
+                })
+                .catch(error => console.error('Error fetching JSON data:', error));
+        }
+    </script>
+</body>
+
+</html>

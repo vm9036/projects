@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.9.3/css/bulma.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.0/jquery.min.js"></script>
+
+    <title>Your Page Title</title>
+    <style>
+        canvas {
+            image-rendering: optimizeQuality;
+            image-rendering: -moz-crisp-edges;
+            image-rendering: -webkit-optimize-contrast;
+            image-rendering: crisp-edges;
+            -ms-interpolation-mode: nearest-neighbor;
+        }
+
+        .block {
+            left: 0;
+            height: 30px;
+            width: 80px;
+            background: #2E86C1;
+            border-radius: 5px;
+            position: relative;
+        }
+
+        .custom {
+            background: #FF5733;
+        }
+
+        .moveBox .block {
+            left: calc(100% - 100px);
+        }
+
+        .moveBoxWidth .block {
+            width: 100%;
+        }
+
+        .moveBoxOpacity .block {
+            opacity: 0;
+        }
+
+        #animateBox {
+            margin-left: 30px;
+            margin-top: 15px;
+        }
+
+        #bezier {
+            margin-top: 20px;
+        }
+
+        .clear {
+            clear: both;
+        }
+
+        .c-b-function {
+            color: #666;
+            cursor: pointer;
+        }
+
+        figcaption {
+            text-align: center;
+        }
+
+        .field {
+            width: 35px;
+            text-align: right;
+        }
+
+        span[contenteditable="true"] {
+            border-bottom: 1px dotted #000;
+        }
+
+        span[contenteditable="true"]:focus {
+            padding: 0 10px;
+        }
+
+        .position-relative {
+            position: relative;
+        }
+
+        .copy-button {
+            position: absolute;
+            top: 0;
+            right: 0;
+        }
+
+        .copy-button:hover {
+            color: #000;
+            text-decoration: underline;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container m-5">
+        <div class="box">
+            <h1 class="title">CSS Cubic Bezier Generator</h1>
+            <div class="columns">
+                <div class="column is-5">
+                    <div class="p-6">
+                        <div class="canvas-container" style="position: relative; padding-bottom: 100%;">
+                            <canvas id="bezier" style="position: absolute; width: 180%; height: 100%;"></canvas>
+                        </div>
+                    </div>
+
+                    <div class="has-text-centered">
+                        <p><a href="#" class="button is-primary" id="animateBox">Compare Transitions</a></p>
+                    </div>
+                </div>
+
+                <div class="column is-7 p-5">
+                    <div class="columns is-centered">
+                        <div class="column">
+                            <div>
+                                <label for="cX1">Cordinates X1:</label>
+                                <strong><span id="cX1">0.79</span>s</strong>
+                                <div class="range-slider">
+                                    <input id="input_cX1" class="slider is-fullwidth is-primary form-range"
+                                        data-key="cX1" type="range" value="0.79" min="0" max="1" step=".01">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="column">
+                            <div>
+                                <label for="cY1">Cordinates Y1:</label>
+                                <strong><span id="cY1">0.33</span>s</strong>
+                                <div class="range-slider">
+                                    <input id="input_cY1" class="slider is-fullwidth is-primary form-range"
+                                        data-key="cY1" type="range" value="0.33" min="0" max="1" step="0.01">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="column">
+                            <div>
+                                <label for="cX2">Cordinates X2:</label>
+                                <strong><span id="cX2">0.14</span>s</strong>
+                                <div class="range-slider">
+                                    <input id="input_cX2" class="slider is-fullwidth is-primary form-range"
+                                        data-key="cX2" type="range" value="0.14" min="0" max="1" step=".01">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="column">
+                            <div>
+                                <label for="cY2">Cordinates Y2:</label>
+                                <strong><span id="cY2">0.53</span>s</strong>
+                                <div class="range-slider">
+                                    <input id="input_cY2" class="slider is-fullwidth is-primary form-range"
+                                        data-key="cY2" type="range" value="0.53" min="0" max="1" step=".01">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="block custom mt-5"></div>
+                    <span class=""><a href="#" class="c-b-function" data-easing="0,0,1,1">linear</a></span>
+                    <div class="block linear"></div>
+
+                    <span><a href="#" class="c-b-function" data-easing="0,0,.58,1">ease-out</a></span>
+                    <div class="block ease-out"></div>
+
+                    <span><a href="#" class="c-b-function" data-easing=".42,0,.58,1">ease-in-out</a></span>
+                    <div class="block ease-in-out"></div>
+
+                    <span><a href="#" class="c-b-function" data-easing=".42,0,1,1">ease-in</a></span>
+                    <div class="block ease-in"></div>
+
+
+                    <div class="columns">
+                        <div class="column is-4">
+                            <label for="speed">Transition time:</label>
+                            <strong><span id="speed">1</span>s</strong>
+
+                            <div class="range-slider">
+                                <input class="slider is-fullwidth is-primary form-range" data-key="speed" type="range"
+                                    value="1" min="0" max="10" step=".1">
+                            </div>
+                        </div>
+                        <div class="column is-8">
+                            <div class="field">
+                                <div class="control">
+                                    <div class="field is-grouped">
+                                        <div class="control">
+                                            <label class="radio">
+                                                <input class="is-checkradio" type="radio" id="onevalue"
+                                                    name="animation-type" value="1" checked="checked">
+                                                <span class="checkmark"></span>
+                                                Position
+                                            </label>
+                                        </div>
+                                        <div class="control">
+                                            <label class="radio">
+                                                <input class="is-checkradio" type="radio" id="twovalue"
+                                                    name="animation-type" value="2">
+                                                <span class="checkmark"></span>
+                                                Width
+                                            </label>
+                                        </div>
+                                        <div class="control">
+                                            <label class="radio">
+                                                <input class="is-checkradio" type="radio" id="threevalue"
+                                                    name="animation-type" value="3">
+                                                <span class="checkmark"></span>
+                                                Opacity
+                                            </label>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+            <div class="columns mt-5">
+                <div class="column is-12">
+                    <p class="title is-4">CSS Code</p>
+                    <div class="position-relative">
+                        <pre class="language-css"><code id="code"></code></pre>
+                        <div class="buttons ">
+                            <button class="button is-primary copy-button m-4 copy-to-clipboard-button" type="button"
+                                data-copy-state="copy">
+                                Copy
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="css-cubic-bezier-generator.js"></script>
+</body>
+
+</html>

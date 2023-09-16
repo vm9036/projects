@@ -1,0 +1,220 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>TOML to JSON Converter</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+        integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
+        crossorigin="anonymous" referrerpolicy="no-referrer">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.3/css/bulma.min.css">
+  <style>
+    /* .file.has-name .file-name {
+      padding: 0.25em 0.5em;
+    } */
+    #copyButton {
+      position: absolute;
+      top: 10px;
+      right: 10px;
+    }
+  </style>
+</head>
+<body>
+  <div class="container p-3">
+    <h1 class="title">TOML to JSON Converter</h1>
+    <div class="field">
+      <label class="label">Upload TOML file</label>
+      <div class="file has-name">
+        <label class="file-label">
+          <input id="fileInput" class="file-input" type="file" accept=".toml">
+          <span class="file-cta">
+            <span class="file-icon">
+              <i class="fas fa-upload"></i>
+            </span>
+            <span class="file-label">Choose a file…</span>
+          </span>
+          <!-- <span id="fileName" class="file-name"></span> -->
+        </label>
+      </div>
+    </div>
+    <div class="p-4">
+      <button id="sampleButton" class="button is-info is-pulled-right">Sample</button>
+    </div>
+    <div class="field">
+      <label class="label">TOML</label>
+      <div class="control">
+        <textarea id="tomlInput" class="textarea" rows="10" placeholder="Enter TOML here"></textarea>
+      </div>
+    </div>
+    <div class="columns is-centered">
+      <div class="column is-narrow">
+        <div class="is-flex is-justify-content-flex-start is-align-items-center">
+          <button id="convertButton" class="button is-primary">Convert</button>
+          <label class="checkbox">
+            <input id="auto-checkbox" class="ml-2" type="checkbox" checked>
+            Auto
+          </label>
+        </div>
+      </div>
+    </div>
+
+    <div class="field">
+      <label class="label">JSON</label>
+      <div class="control position-relative">
+        <textarea id="jsonOutput" class="textarea" rows="20" readonly></textarea>
+        <button id="copyButton" class="button is-info" disabled>Copy JSON</button>
+      </div>
+    </div>
+    <div class="field is-grouped is-justify-content-center"></div>
+    <div class="field is-grouped is-justify-content-center">
+      <div class="control">
+        <button id="downloadButton" class="button is-primary" disabled>Download JSON</button>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    const fileInput = document.getElementById('fileInput');
+    const fileName = document.getElementById('fileName');
+    const tomlInput = document.getElementById('tomlInput');
+    const jsonOutput = document.getElementById('jsonOutput');
+    const convertButton = document.getElementById('convertButton');
+    const downloadButton = document.getElementById('downloadButton');
+    const sampleButton = document.getElementById('sampleButton');
+    const copyButton = document.getElementById('copyButton');
+    const auto = document.getElementById('auto-checkbox');
+
+    fileInput.addEventListener('change', handleFileUpload);
+    convertButton.addEventListener('click', convertTOMLtoJSON);
+    downloadButton.addEventListener('click', downloadJSON);
+    sampleButton.addEventListener('click', loadSampleData);
+    copyButton.addEventListener('click', copyJSON);
+
+    function handleFileUpload(event) {
+      const file = event.target.files[0];
+      const reader = new FileReader();
+
+      reader.onload = function (e) {
+        const contents = e.target.result;
+        tomlInput.value = contents;
+        fileName.textContent = file.name;
+        if (auto.checked === true) {
+          convertButton.click();
+        }
+      };
+
+      reader.readAsText(file);
+    }
+
+    function convertTOMLtoJSON() {
+      const tomlData = tomlInput.value.trim();
+
+      try {
+        const parsedData = tomlToJSON(tomlData);
+        const jsonData = JSON.stringify(parsedData, null, 2);
+        jsonOutput.value = jsonData;
+        downloadButton.disabled = false;
+        copyButton.disabled = false;
+      } catch (error) {
+        jsonOutput.value = 'Invalid TOML';
+        downloadButton.disabled = true;
+        copyButton.disabled = true;
+      }
+    }
+
+    function downloadJSON() {
+      const jsonData = jsonOutput.value;
+      const blob = new Blob([jsonData], { type: 'application/json' });
+      const url = URL.createObjectURL(blob);
+      const a = document.createElement('a');
+      a.href = url;
+      a.download = 'converted.json';
+      document.body.appendChild(a);
+      a.click();
+      document.body.removeChild(a);
+    }
+
+    function loadSampleData() {
+      const sampleTOML = `
+title = "My Application"
+version = "1.0"
+
+[server]
+host = "localhost"
+port = 8080
+
+[database]
+name = "mydb"
+
+[database.connection]
+user = "user1"
+password = "password123"
+
+fruits = ["apple", "orange", "banana"]
+is_active = true
+pi = 3.14159
+created_at = "2023-08-02T12:34:56Z"
+`;
+
+      tomlInput.value = sampleTOML;
+      convertTOMLtoJSON();
+    }
+
+    function copyJSON() {
+      jsonOutput.select();
+      document.execCommand('copy');
+      copyButton.textContent = 'Copied!';
+      setTimeout(() => {
+        copyButton.textContent = 'Copy JSON';
+      }, 2000);
+    }
+
+    function tomlToJSON(tomlData) {
+      const lines = tomlData.split('\n');
+      const jsonData = {};
+      let currentSection = jsonData;
+
+      for (const line of lines) {
+        const trimmedLine = line.trim();
+
+        if (!trimmedLine || trimmedLine.startsWith('#')) {
+          continue; // Skip empty lines and comments
+        }
+
+        if (trimmedLine.startsWith('[')) {
+          const sectionName = trimmedLine.slice(1, -1).trim();
+          currentSection[sectionName] = {};
+          currentSection = currentSection[sectionName];
+        } else {
+          const keyValueArr = trimmedLine.split('=').map(item => item.trim());
+          const key = keyValueArr[0];
+          let value = keyValueArr[1];
+
+          if (value.startsWith('"') && value.endsWith('"')) {
+            value = value.slice(1, -1);
+          } else if (value === 'true' || value === 'false') {
+            value = value === 'true';
+          } else if (!isNaN(Date.parse(value))) {
+            value = new Date(value).toISOString();
+          } else if (!isNaN(parseFloat(value))) {
+            value = parseFloat(value);
+          }
+
+          currentSection[key] = value;
+        }
+      }
+
+      return jsonData;
+    }
+
+    tomlInput.addEventListener('input', function () {
+      if (auto.checked === true) {
+        convertButton.click();
+      }
+    });
+
+  </script>
+
+</body>
+</html>

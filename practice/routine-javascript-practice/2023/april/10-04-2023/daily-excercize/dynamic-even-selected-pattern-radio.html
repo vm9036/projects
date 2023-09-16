@@ -21,7 +21,7 @@
             </div>
             <div class="field">
                 <div class="control">
-                    <input type="checkbox" id="checkBox" oninput="patternEvenNum()" checked> "Check Even Number"
+                    <input type="radio" id="radio" oninput="patternEvenNum()" checked> "Check Even Number"
                 </div>
             </div>
             <div class="field">
@@ -47,7 +47,7 @@
             {
                 for(let j = 0; j<=row; j++)
                 {
-                    if(counter%2 == 0 && checkBox.checked == true)
+                    if(counter%2 == 0 && radio.checked == true)
                     {
                         strPattern = strPattern +"<td class='is-selected'>"+ counter + "</td>";
                         counter =counter + 1;
