@@ -28,34 +28,35 @@
     <script>
         function buttonHide(){
             let buttonHide = document.getElementById("main-button");
-
-            if(buttonHide.className == "button is-large is-primary")
-            {
-                buttonHide.className = "is-hidden";
-            }
+            buttonHide.classList.add("is-hidden");
+            
+            // if(buttonHide.className == "button is-large is-primary")
+            // {
+            //     buttonHide.className = "is-hidden";
+            // }
         }
 
         function buttonShow(){
             let buttonHide = document.getElementById("main-button");
-
-            if(buttonHide.className == "is-hidden")
-            {
-                buttonHide.className = "button is-large is-primary";
-            }
+            buttonHide.classList.remove("is-hidden");
+            // if(buttonHide.className == "is-hidden")
+            // {
+            //     buttonHide.className = "button is-large is-primary";
+            // }
 
         }
 
         function buttonToggle(){
             let buttonHide = document.getElementById("main-button");
-
-            if(buttonHide.className == "button is-large is-primary")
-            {
-                buttonHide.className = "button is-large is-info";
-            }
-            else
-            {
-                buttonHide.className = "button is-large is-primary";
-            }
+            buttonHide.classList.toggle("is-hidden");
+            // if(buttonHide.className == "button is-large is-primary")
+            // {
+            //     buttonHide.className = "button is-large is-info";
+            // }
+            // else
+            // {
+            //     buttonHide.className = "button is-large is-primary";
+            // }
 
         }
     </script>
