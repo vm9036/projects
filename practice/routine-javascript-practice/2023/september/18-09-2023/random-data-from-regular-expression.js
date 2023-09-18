@@ -12,7 +12,8 @@ function generateRandomRegExp() {
   var text = [];
   for (var i = 1; i <= results; i++) {
     var r = new RandExp(regex);
-    text.push(r.gen());
+    // text.push(r.gen().);
+    text.push(r.gen().replace(/[\n]/g, ""));
   }
   //   this.output.showStatus("generated");
   let answer = text.join("\n");
