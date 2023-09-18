@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.3/css/bulma.min.css">
+    <script src="random-date-generator.js"></script>
+    <title>Random Date Generator</title>
+</head>
+<body>
+    <h1 class="title">Random Date Generator</h1>
+    <section class="container is-fluid">
+        <hr class="mt-0">
+        <div class="columns"><!-- dont change -->
+            <div class="column is-5 has-text-centered"><!-- dont change -->
+                <textarea id="generatedRandomDateTextArea" class="textarea is-primary is-medium"
+                    placeholder="Generated Random Integer" rows="12"></textarea>
+
+                <button class="button is-primary is-large mt-4" onclick="generateRandomDate();" autofocus>
+                    <span>Generate Random Date</span>
+                </button>
+                <button class="button is-large mt-4" onclick="copyGeneratedRandomInt();">
+                    <span class="icon"><svg class="svgicon">
+                            <use href="#copy"></use>
+                        </svg></span>
+                </button>
+                <button class="button is-large mt-4" onclick="downloadGeneratedData();" title="Download File">
+                    <span class="icon"><svg class="svgicon">
+                            <use href="#downloadfile"></use>
+                        </svg></span>
+                </button>
+            </div>
+            <div class="column is-4"><!-- dont change -->
+
+                <div class="heading">
+                    <h5 class="title is-capitalized is-size-4 is-underlined	">Calendar Date Options</h5>
+                </div>
+                <div class="field">
+                    <label class="label is-size-6">How many dates to generate?
+                    </label>
+                    <div class="control">
+                        <input type="number" class="input" id="count" value="10"
+                            oninput="generateRandomDate();">
+                    </div>
+                </div>
+                <div class="field">
+                    <label class="label is-size-6">Date Output Format
+                    </label>
+                    <div class="select is-fullwidth">
+                        <select id="format" onchange="generateRandomDate();">
+                          <option value="yyyy-mm-dd-hh-mm-ss">YYYY-MM-DD hh:mm:ss</option>
+                          <option value="yyyy-dd-mm-hh-mm-ss">YYYY-DD-MM hh:mm:ss</option>
+                          <option value="mm-dd-yyyy-hh-mm-ss">MM-DD-YYYY hh:mm:ss</option>
+                          <option value="iso8601">ISO 8601</option>
+                          <option value="year-month-date-hh-mm-ss">Year Month Date hh:mm:ss</option>
+                          <option value="year-date-month-hh-mm-ss">Year Date Month hh:mm:ss</option>
+                          <option value="month-date-year-hh-mm-ss">Month Date Year hh:mm:ss</option>
+                          <option value="custom">Custom date format</option>
+                        </select>
+                      </div>
+                </div>
+                <div class="field">
+                    <label class="label is-size-6">Custom date format Use: YYYY YY MM month mon DD d hh h mm m ss s
+                    </label>
+                    <div class="control">
+                        <input type="text" class="input" id="custom-format" value="YY-MM-DD"
+                            oninput="generateRandomDate();">
+                    </div>
+                </div>
+                <div class="field">
+                    <label class="label is-size-6">Start date
+                    </label>
+                    <div class="control">
+                        <input type="text" class="input" id="start" value="1900-01-01 00:00:00"
+                            oninput="generateRandomDate();">
+                    </div>
+                </div>
+                <div class="field">
+                    <label class="label is-size-6">End date
+                    </label>
+                    <div class="control">
+                        <input type="text" class="input" id="end" value="2099-12-31 23:59:59"
+                            oninput="generateRandomDate();">
+                    </div>
+                </div>
+            </div>
+            <div class="column is-3"><!-- dont change -->
+                <div class="has-text-centered">
+                    <?php include ($_SERVER['DOCUMENT_ROOT']."/application/views/bulma/ads/adsense-responsive.php"); ?>
+                </div>
+            </div>
+        </div>
+    </section>
+</body>
+</html>
