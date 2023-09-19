@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.3/css/bulma.min.css">
+    <script src="random-bitmap-generator-methods.js"></script>
+    <script src="random-bitmap-generator.js"></script>
+    <title>Random Bitmap Generator</title>
+</head>
+<body>
+    <h1 class="title">Random Bitmap Generator</h1>
+    <section class="container is-fluid">
+        <hr class="mt-0">
+        <div class="columns"><!-- dont change -->
+            <div class="column is-5 has-text-centered"><!-- dont change -->
+                <canvas class="preview" width="312" height="306"></canvas>
+                <canvas class="data" width="500" height="10"></canvas>
+
+                <button class="button is-primary is-large mt-4" onclick="generateRandomBitmap();" autofocus>
+                    <span>Generate Random Bitmap</span>
+                </button>
+                <button class="button is-large mt-4" onclick="copyGeneratedRandomBitmap();">
+                    <span class="icon"><svg class="svgicon">
+                            <use href="#copy"></use>
+                        </svg></span>
+                </button>
+                <button class="button is-large mt-4" onclick="downloadGeneratedData();" title="Download File">
+                    <span class="icon"><svg class="svgicon">
+                            <use href="#downloadfile"></use>
+                        </svg></span>
+                </button>
+            </div>
+            <div class="column is-4"><!-- dont change -->
+                <div class="columns">
+                    <div class="column is-6">
+                        <div class="heading">
+                            <h5 class="title is-capitalized is-size-4 is-underlined	">Colors  </h5>
+                        </div>
+                        <div class="field">
+                            <label class="label is-size-6">Color Picker
+                            </label>
+                            <div class="control">
+                                <input type="text" class="input" id="color-picker" value="#5581b5"
+                                    oninput="generateRandomBitmap();">
+                            </div>
+                        </div>
+                        <div class="field mt-3">
+                            <label class="label is-size-6">Enter your regular expression here
+                            </label>
+                            <div class="control">
+                                <textarea id="colors" cols="2" rows="2" class="textarea" oninput="generateRandomBitmap();">#808080</textarea>
+                            </div>
+                        </div>
+                        <div class="heading">
+                            <h5 class="title is-capitalized is-size-4 is-underlined	">Shading</h5>
+                        </div>
+                        <div class="control">
+                            <label class="checkbox">
+                                <span class="is-size-4"><input type="checkbox" id="shade" checked onchange="generateRandomBitmap();"></span>
+                                <span class="has-text-black">Enable shading
+                                </span>
+                            </label>
+                        </div>
+                        <div class="field">
+                            <label class="label is-size-6">Number between 0 to 1
+                            </label>
+                            <div class="control">
+                                <input type="text" class="input" id="shade-threshold" value="0.5"
+                                    oninput="generateRandomBitmap();">
+                            </div>
+                        </div>
+
+                    </div>
+                    <div class="column is-6">
+                       
+                        <div class="heading">
+                            <h5 class="title is-capitalized is-size-4 is-underlined	">Sizing </h5>
+                        </div>
+                        <div class="field">
+                            <label class="label is-size-6">Bit Size
+                            </label>
+                            <div class="control">
+                                <input type="number" class="input" id="size" value="10"
+                                    oninput="generateRandomBitmap();">
+                            </div>
+                        </div>
+                        <div class="field">
+                            <label class="label is-size-6">Width
+                            </label>
+                            <div class="control">
+                                <input type="number" class="input" id="width" value="500"
+                                    oninput="generateRandomBitmap();">
+                            </div>
+                        </div>
+                        <div class="field">
+                            <label class="label is-size-6">Height
+                            </label>
+                            <div class="control">
+                                <input type="number" class="input" id="height" value="10"
+                                    oninput="generateRandomBitmap();">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="column is-3"><!-- dont change -->
+                <div class="has-text-centered">
+                    <?php include ($_SERVER['DOCUMENT_ROOT']."/application/views/bulma/ads/adsense-responsive.php"); ?>
+                </div>
+            </div>
+        </div>
+    </section>
+</body>
+</html>
