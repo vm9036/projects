@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -8,83 +9,85 @@
     <script src="csv-to-text-converter.js"></script>
     <title>CSV TO Text Converter</title>
 </head>
+
 <body>
-    <h1 class="title">CSV TO Text Converter</h1>
-    <section class="container is-fluid">
+    <section class="container">
+        <h1 class="title">CSV TO Text Converter</h1>
         <div class="columns"><!-- dont change -->
             <div class="column is-6"><!-- dont change -->
                 <p class="is-size-5 is-inline">CSV</p>
                 <button class="button is-pulled-right is-info" onclick="sampleBtn()">Sample</button>
                 <textarea id="generatedCsvToTextInputTextArea" class="textarea is-primary is-medium"
                     placeholder="Enter Input...." rows="10"></textarea>
+                <div class="control has-text-centered">
+                    <button class="button is-primary is-large mt-4" onclick="csvToText();" autofocus>
+                        <span>Generate CSV To Text</span>
+                    </button>
+                </div>
+                <div class="columns">
+                    <div class="column is-6">
+                        <div class="heading">
+                            <h5 class="title is-capitalized is-size-4 is-underlined	">Characters </h5>
+                        </div>
+                        <div class="field">
+                            <label class="label is-size-6">Column seprating character
+                            </label>
+                            <div class="control">
+                                <input type="text" class="input" id="char-delimiter" value="," oninput="csvToText();">
+                            </div>
+                        </div>
+                        <div class="field">
+                            <label class="label is-size-6">Skip Lines starting with this
+                            </label>
+                            <div class="control">
+                                <input type="text" class="input" id="char-comments" value="#" oninput="csvToText();">
+                            </div>
+                        </div>
+                        <div class="field">
+                            <label class="label is-size-6">Use a custom quote character
+                            </label>
+                            <div class="control">
+                                <input type="text" class="input" id="char-quote" value='"' oninput="csvToText();">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="column is-6">
+                        <div class="heading">
+                            <h5 class="title is-capitalized is-size-4 is-underlined	">Converting </h5>
+                        </div>
+                        <div class="field">
+                            <div class="control">
+                                <label class="checkbox">
+                                    <span class="is-size-4"><input type="checkbox" id="convert-headers" checked
+                                            onchange="csvToText();"></span>
+                                    <span class="has-text-black">Use headers
+                                    </span>
+                                </label>
+                            </div>
+                        </div>
+                        <div class="field">
+                            <div class="control">
+                                <label class="checkbox">
+                                    <span class="is-size-4"><input type="checkbox" id="convert-skip-empty" checked
+                                            onchange="csvToText();"></span>
+                                    <span class="has-text-black">Skip Empty Lines
+                                    </span>
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
-            <div class="column is-6"><!-- dont change -->
+
+            <div class="column is-6 mt-3"><!-- dont change -->
                 <p class="is-size-5">Text</p>
                 <textarea id="generatedCsvToTextOutputTextArea" class="textarea is-primary is-medium"
                     placeholder="Generated Text....." rows="10"></textarea>
-            </div>    
-        </div>
-        <div class="control has-text-centered">
-            <button class="button is-primary is-large mt-4" onclick="csvToText();" autofocus>
-                <span>Generate CSV To Text</span>
-            </button>
-        </div>
-        <div class="columns">
-            <div class="column is-6">
-                <div class="heading">
-                    <h5 class="title is-capitalized is-size-4 is-underlined	">Characters </h5>
-                </div>
-                <div class="field">
-                    <label class="label is-size-6">Column seprating character
-                    </label>
-                    <div class="control">
-                        <input type="text" class="input" id="char-delimiter" value=","
-                            oninput="csvToText();">
-                    </div>
-                </div>
-                <div class="field">
-                    <label class="label is-size-6">Skip Lines starting with this
-                    </label>
-                    <div class="control">
-                        <input type="text" class="input" id="char-comments" value="#"
-                            oninput="csvToText();">
-                    </div>
-                </div>
-                <div class="field">
-                    <label class="label is-size-6">Use a custom quote character
-                    </label>
-                    <div class="control">
-                        <input type="text" class="input" id="char-quote" value='"'
-                            oninput="csvToText();">
-                    </div>
-                </div>
-            </div>
-            <div class="column is-6">
-                <div class="heading">
-                    <h5 class="title is-capitalized is-size-4 is-underlined	">Converting </h5>
-                </div>
-                <div class="field">
-                    <div class="control">
-                        <label class="checkbox">
-                            <span class="is-size-4"><input type="checkbox" id="convert-headers" checked
-                                    onchange="csvToText();"></span>
-                            <span class="has-text-black">Use headers
-                            </span>
-                        </label>
-                    </div>
-                </div>
-                <div class="field">
-                    <div class="control">
-                        <label class="checkbox">
-                            <span class="is-size-4"><input type="checkbox" id="convert-skip-empty" checked
-                                    onchange="csvToText();"></span>
-                            <span class="has-text-black">Skip Empty Lines
-                            </span>
-                        </label>
-                    </div>
-                </div>
             </div>
         </div>
+
+
     </section>
 </body>
+
 </html>
