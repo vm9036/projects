@@ -1,114 +1,120 @@
-!function(a, b) {
-    "function" == typeof define && define.amd ? define([], b) : "object" == typeof module && module.exports ? module.exports = b() : a.Papa = b()
-}(this, function() {
+/*!
+	Papa Parse
+	v4.3.2
+	https://github.com/mholt/PapaParse
+*/
+(function(G, H) {
+    typeof define == "function" && define.amd ? define([], H) : typeof module == "object" && module.exports ? module.exports = H() : G.Papa = H()
+}
+)(this, function() {
     "use strict";
-    function a(a, b) {
-        b = b || {};
-        var c = b.dynamicTyping || !1;
-        if (r(c) && (b.dynamicTypingFunction = c,
-        c = {}),
-        b.dynamicTyping = c,
-        b.worker && z.WORKERS_SUPPORTED) {
-            var h = k();
-            return h.userStep = b.step,
-            h.userChunk = b.chunk,
-            h.userComplete = b.complete,
-            h.userError = b.error,
-            b.step = r(b.step),
-            b.chunk = r(b.chunk),
-            b.complete = r(b.complete),
-            b.error = r(b.error),
-            delete b.worker,
-            void h.postMessage({
-                input: a,
-                config: b,
-                workerId: h.id
+    function G(e, t) {
+        t = t || {};
+        var i = t.dynamicTyping || !1;
+        if (v(i) && (t.dynamicTypingFunction = i,
+        i = {}),
+        t.dynamicTyping = i,
+        t.worker && u.WORKERS_SUPPORTED) {
+            var n = re();
+            return n.userStep = t.step,
+            n.userChunk = t.chunk,
+            n.userComplete = t.complete,
+            n.userError = t.error,
+            t.step = v(t.step),
+            t.chunk = v(t.chunk),
+            t.complete = v(t.complete),
+            t.error = v(t.error),
+            delete t.worker,
+            void n.postMessage({
+                input: e,
+                config: t,
+                workerId: n.id
             })
         }
-        var i = null;
-        return "string" == typeof a ? i = b.download ? new d(b) : new f(b) : a.readable === !0 && r(a.read) && r(a.on) ? i = new g(b) : (t.File && a instanceof File || a instanceof Object) && (i = new e(b)),
-        i.stream(a)
+        var s = null;
+        return typeof e == "string" ? s = t.download ? new K(t) : new q(t) : e.readable === !0 && v(e.read) && v(e.on) ? s = new W(t) : (S.File && e instanceof File || e instanceof Object) && (s = new N(t)),
+        s.stream(e)
     }
-    function b(a, b) {
-        function c() {
-            "object" == typeof b && ("string" == typeof b.delimiter && 1 === b.delimiter.length && z.BAD_DELIMITERS.indexOf(b.delimiter) === -1 && (j = b.delimiter),
-            ("boolean" == typeof b.quotes || b.quotes instanceof Array) && (h = b.quotes),
-            "string" == typeof b.newline && (k = b.newline),
-            "string" == typeof b.quoteChar && (l = b.quoteChar),
-            "boolean" == typeof b.header && (i = b.header))
+    function H(e, t) {
+        function i() {
+            typeof t == "object" && (typeof t.delimiter == "string" && t.delimiter.length === 1 && u.BAD_DELIMITERS.indexOf(t.delimiter) === -1 && (E = t.delimiter),
+            (typeof t.quotes == "boolean" || t.quotes instanceof Array) && (p = t.quotes),
+            typeof t.newline == "string" && (c = t.newline),
+            typeof t.quoteChar == "string" && (x = t.quoteChar),
+            typeof t.header == "boolean" && (o = t.header))
         }
-        function d(a) {
-            if ("object" != typeof a)
+        function n(f) {
+            if (typeof f != "object")
                 return [];
-            var b = [];
-            for (var c in a)
-                b.push(c);
-            return b
+            var m = [];
+            for (var y in f)
+                m.push(y);
+            return m
         }
-        function e(a, b) {
-            var c = "";
-            "string" == typeof a && (a = JSON.parse(a)),
-            "string" == typeof b && (b = JSON.parse(b));
-            var d = a instanceof Array && a.length > 0
-              , e = !(b[0]instanceof Array);
-            if (d && i) {
-                for (var g = 0; g < a.length; g++)
-                    g > 0 && (c += j),
-                    c += f(a[g], g);
-                b.length > 0 && (c += k)
+        function s(f, m) {
+            var y = "";
+            typeof f == "string" && (f = JSON.parse(f)),
+            typeof m == "string" && (m = JSON.parse(m));
+            var k = f instanceof Array && f.length > 0
+              , D = !(m[0]instanceof Array);
+            if (k && o) {
+                for (var z = 0; z < f.length; z++)
+                    z > 0 && (y += E),
+                    y += h(f[z], z);
+                m.length > 0 && (y += c)
             }
-            for (var h = 0; h < b.length; h++) {
-                for (var l = d ? a.length : b[h].length, m = 0; m < l; m++) {
-                    m > 0 && (c += j);
-                    var n = d && e ? a[m] : m;
-                    c += f(b[h][n], m)
+            for (var R = 0; R < m.length; R++) {
+                for (var d = k ? f.length : m[R].length, L = 0; L < d; L++) {
+                    L > 0 && (y += E);
+                    var r = k && D ? f[L] : L;
+                    y += h(m[R][r], L)
                 }
-                h < b.length - 1 && (c += k)
+                R < m.length - 1 && (y += c)
             }
-            return c
+            return y
         }
-        function f(a, b) {
-            if ("undefined" == typeof a || null === a)
+        function h(f, m) {
+            if (typeof f == "undefined" || f === null)
                 return "";
-            a = a.toString().replace(m, l + l);
-            var c = "boolean" == typeof h && h || h instanceof Array && h[b] || g(a, z.BAD_DELIMITERS) || a.indexOf(j) > -1 || " " === a.charAt(0) || " " === a.charAt(a.length - 1);
-            return c ? l + a + l : a
+            f = f.toString().replace(T, x + x);
+            var y = typeof p == "boolean" && p || p instanceof Array && p[m] || l(f, u.BAD_DELIMITERS) || f.indexOf(E) > -1 || f.charAt(0) === " " || f.charAt(f.length - 1) === " ";
+            return y ? x + f + x : f
         }
-        function g(a, b) {
-            for (var c = 0; c < b.length; c++)
-                if (a.indexOf(b[c]) > -1)
+        function l(f, m) {
+            for (var y = 0; y < m.length; y++)
+                if (f.indexOf(m[y]) > -1)
                     return !0;
             return !1
         }
-        var h = !1
-          , i = !0
-          , j = ","
-          , k = "\r\n"
-          , l = '"';
-        c();
-        var m = new RegExp(l,"g");
-        if ("string" == typeof a && (a = JSON.parse(a)),
-        a instanceof Array) {
-            if (!a.length || a[0]instanceof Array)
-                return e(null, a);
-            if ("object" == typeof a[0])
-                return e(d(a[0]), a)
-        } else if ("object" == typeof a)
-            return "string" == typeof a.data && (a.data = JSON.parse(a.data)),
-            a.data instanceof Array && (a.fields || (a.fields = a.meta && a.meta.fields),
-            a.fields || (a.fields = a.data[0]instanceof Array ? a.fields : d(a.data[0])),
-            a.data[0]instanceof Array || "object" == typeof a.data[0] || (a.data = [a.data])),
-            e(a.fields || [], a.data || []);
+        var p = !1
+          , o = !0
+          , E = ","
+          , c = "\r\n"
+          , x = '"';
+        i();
+        var T = new RegExp(x,"g");
+        if (typeof e == "string" && (e = JSON.parse(e)),
+        e instanceof Array) {
+            if (!e.length || e[0]instanceof Array)
+                return s(null, e);
+            if (typeof e[0] == "object")
+                return s(n(e[0]), e)
+        } else if (typeof e == "object")
+            return typeof e.data == "string" && (e.data = JSON.parse(e.data)),
+            e.data instanceof Array && (e.fields || (e.fields = e.meta && e.meta.fields),
+            e.fields || (e.fields = e.data[0]instanceof Array ? e.fields : n(e.data[0])),
+            e.data[0]instanceof Array || typeof e.data[0] == "object" || (e.data = [e.data])),
+            s(e.fields || [], e.data || []);
         throw "exception: Unable to serialize unrecognized input"
     }
-    function c(a) {
-        function b(a) {
-            var b = p(a);
-            b.chunkSize = parseInt(b.chunkSize),
-            a.step || a.chunk || (b.chunkSize = null),
-            this._handle = new h(b),
+    function F(e) {
+        function t(i) {
+            var n = $(i);
+            n.chunkSize = parseInt(n.chunkSize),
+            i.step || i.chunk || (n.chunkSize = null),
+            this._handle = new Z(n),
             this._handle.streamer = this,
-            this._config = b
+            this._config = n
         }
         this._handle = null,
         this._paused = !1,
@@ -125,62 +131,62 @@
             errors: [],
             meta: {}
         },
-        b.call(this, a),
-        this.parseChunk = function(a) {
-            if (this.isFirstChunk && r(this._config.beforeFirstChunk)) {
-                var b = this._config.beforeFirstChunk(a);
-                void 0 !== b && (a = b)
+        t.call(this, e),
+        this.parseChunk = function(i) {
+            if (this.isFirstChunk && v(this._config.beforeFirstChunk)) {
+                var n = this._config.beforeFirstChunk(i);
+                n !== void 0 && (i = n)
             }
             this.isFirstChunk = !1;
-            var c = this._partialLine + a;
+            var s = this._partialLine + i;
             this._partialLine = "";
-            var d = this._handle.parse(c, this._baseIndex, !this._finished);
+            var h = this._handle.parse(s, this._baseIndex, !this._finished);
             if (!this._handle.paused() && !this._handle.aborted()) {
-                var e = d.meta.cursor;
-                this._finished || (this._partialLine = c.substring(e - this._baseIndex),
-                this._baseIndex = e),
-                d && d.data && (this._rowCount += d.data.length);
-                var f = this._finished || this._config.preview && this._rowCount >= this._config.preview;
-                if (v)
-                    t.postMessage({
-                        results: d,
-                        workerId: z.WORKER_ID,
-                        finished: f
+                var l = h.meta.cursor;
+                this._finished || (this._partialLine = s.substring(l - this._baseIndex),
+                this._baseIndex = l),
+                h && h.data && (this._rowCount += h.data.length);
+                var p = this._finished || this._config.preview && this._rowCount >= this._config.preview;
+                if (X)
+                    S.postMessage({
+                        results: h,
+                        workerId: u.WORKER_ID,
+                        finished: p
                     });
-                else if (r(this._config.chunk)) {
-                    if (this._config.chunk(d, this._handle),
+                else if (v(this._config.chunk)) {
+                    if (this._config.chunk(h, this._handle),
                     this._paused)
                         return;
-                    d = void 0,
+                    h = void 0,
                     this._completeResults = void 0
                 }
-                return this._config.step || this._config.chunk || (this._completeResults.data = this._completeResults.data.concat(d.data),
-                this._completeResults.errors = this._completeResults.errors.concat(d.errors),
-                this._completeResults.meta = d.meta),
-                !f || !r(this._config.complete) || d && d.meta.aborted || this._config.complete(this._completeResults, this._input),
-                f || d && d.meta.paused || this._nextChunk(),
-                d
+                return this._config.step || this._config.chunk || (this._completeResults.data = this._completeResults.data.concat(h.data),
+                this._completeResults.errors = this._completeResults.errors.concat(h.errors),
+                this._completeResults.meta = h.meta),
+                !p || !v(this._config.complete) || h && h.meta.aborted || this._config.complete(this._completeResults, this._input),
+                p || h && h.meta.paused || this._nextChunk(),
+                h
             }
         }
         ,
-        this._sendError = function(a) {
-            r(this._config.error) ? this._config.error(a) : v && this._config.error && t.postMessage({
-                workerId: z.WORKER_ID,
-                error: a,
+        this._sendError = function(i) {
+            v(this._config.error) ? this._config.error(i) : X && this._config.error && S.postMessage({
+                workerId: u.WORKER_ID,
+                error: i,
                 finished: !1
             })
         }
     }
-    function d(a) {
-        function b(a) {
-            var b = a.getResponseHeader("Content-Range");
-            return null === b ? -1 : parseInt(b.substr(b.lastIndexOf("/") + 1))
+    function K(e) {
+        function t(n) {
+            var s = n.getResponseHeader("Content-Range");
+            return s === null ? -1 : parseInt(s.substr(s.lastIndexOf("/") + 1))
         }
-        a = a || {},
-        a.chunkSize || (a.chunkSize = z.RemoteChunkSize),
-        c.call(this, a);
-        var d;
-        u ? this._nextChunk = function() {
+        e = e || {},
+        e.chunkSize || (e.chunkSize = u.RemoteChunkSize),
+        F.call(this, e);
+        var i;
+        U ? this._nextChunk = function() {
             this._readChunk(),
             this._chunkLoaded()
         }
@@ -188,62 +194,62 @@
             this._readChunk()
         }
         ,
-        this.stream = function(a) {
-            this._input = a,
+        this.stream = function(n) {
+            this._input = n,
             this._nextChunk()
         }
         ,
         this._readChunk = function() {
             if (this._finished)
                 return void this._chunkLoaded();
-            if (d = new XMLHttpRequest,
-            this._config.withCredentials && (d.withCredentials = this._config.withCredentials),
-            u || (d.onload = q(this._chunkLoaded, this),
-            d.onerror = q(this._chunkError, this)),
-            d.open("GET", this._input, !u),
+            if (i = new XMLHttpRequest,
+            this._config.withCredentials && (i.withCredentials = this._config.withCredentials),
+            U || (i.onload = M(this._chunkLoaded, this),
+            i.onerror = M(this._chunkError, this)),
+            i.open("GET", this._input, !U),
             this._config.downloadRequestHeaders) {
-                var a = this._config.downloadRequestHeaders;
-                for (var b in a)
-                    d.setRequestHeader(b, a[b])
+                var n = this._config.downloadRequestHeaders;
+                for (var s in n)
+                    i.setRequestHeader(s, n[s])
             }
             if (this._config.chunkSize) {
-                var c = this._start + this._config.chunkSize - 1;
-                d.setRequestHeader("Range", "bytes=" + this._start + "-" + c),
-                d.setRequestHeader("If-None-Match", "webkit-no-cache")
+                var h = this._start + this._config.chunkSize - 1;
+                i.setRequestHeader("Range", "bytes=" + this._start + "-" + h),
+                i.setRequestHeader("If-None-Match", "webkit-no-cache")
             }
             try {
-                d.send()
-            } catch (a) {
-                this._chunkError(a.message)
+                i.send()
+            } catch (l) {
+                this._chunkError(l.message)
             }
-            u && 0 === d.status ? this._chunkError() : this._start += this._config.chunkSize
+            U && i.status === 0 ? this._chunkError() : this._start += this._config.chunkSize
         }
         ,
         this._chunkLoaded = function() {
-            if (4 == d.readyState) {
-                if (d.status < 200 || d.status >= 400)
+            if (i.readyState == 4) {
+                if (i.status < 200 || i.status >= 400)
                     return void this._chunkError();
-                this._finished = !this._config.chunkSize || this._start > b(d),
-                this.parseChunk(d.responseText)
+                this._finished = !this._config.chunkSize || this._start > t(i),
+                this.parseChunk(i.responseText)
             }
         }
         ,
-        this._chunkError = function(a) {
-            var b = d.statusText || a;
-            this._sendError(b)
+        this._chunkError = function(n) {
+            var s = i.statusText || n;
+            this._sendError(s)
         }
     }
-    function e(a) {
-        a = a || {},
-        a.chunkSize || (a.chunkSize = z.LocalChunkSize),
-        c.call(this, a);
-        var b, d, e = "undefined" != typeof FileReader;
-        this.stream = function(a) {
-            this._input = a,
-            d = a.slice || a.webkitSlice || a.mozSlice,
-            e ? (b = new FileReader,
-            b.onload = q(this._chunkLoaded, this),
-            b.onerror = q(this._chunkError, this)) : b = new FileReaderSync,
+    function N(e) {
+        e = e || {},
+        e.chunkSize || (e.chunkSize = u.LocalChunkSize),
+        F.call(this, e);
+        var t, i, n = typeof FileReader != "undefined";
+        this.stream = function(s) {
+            this._input = s,
+            i = s.slice || s.webkitSlice || s.mozSlice,
+            n ? (t = new FileReader,
+            t.onload = M(this._chunkLoaded, this),
+            t.onerror = M(this._chunkError, this)) : t = new FileReaderSync,
             this._nextChunk()
         }
         ,
@@ -252,227 +258,227 @@
         }
         ,
         this._readChunk = function() {
-            var a = this._input;
+            var s = this._input;
             if (this._config.chunkSize) {
-                var c = Math.min(this._start + this._config.chunkSize, this._input.size);
-                a = d.call(a, this._start, c)
+                var h = Math.min(this._start + this._config.chunkSize, this._input.size);
+                s = i.call(s, this._start, h)
             }
-            var f = b.readAsText(a, this._config.encoding);
-            e || this._chunkLoaded({
+            var l = t.readAsText(s, this._config.encoding);
+            n || this._chunkLoaded({
                 target: {
-                    result: f
+                    result: l
                 }
             })
         }
         ,
-        this._chunkLoaded = function(a) {
+        this._chunkLoaded = function(s) {
             this._start += this._config.chunkSize,
             this._finished = !this._config.chunkSize || this._start >= this._input.size,
-            this.parseChunk(a.target.result)
+            this.parseChunk(s.target.result)
         }
         ,
         this._chunkError = function() {
-            this._sendError(b.error)
+            this._sendError(t.error)
         }
     }
-    function f(a) {
-        a = a || {},
-        c.call(this, a);
-        var b, d;
-        this.stream = function(a) {
-            return b = a,
-            d = a,
+    function q(e) {
+        e = e || {},
+        F.call(this, e);
+        var t, i;
+        this.stream = function(n) {
+            return t = n,
+            i = n,
             this._nextChunk()
         }
         ,
         this._nextChunk = function() {
             if (!this._finished) {
-                var a = this._config.chunkSize
-                  , b = a ? d.substr(0, a) : d;
-                return d = a ? d.substr(a) : "",
-                this._finished = !d,
-                this.parseChunk(b)
+                var n = this._config.chunkSize
+                  , s = n ? i.substr(0, n) : i;
+                return i = n ? i.substr(n) : "",
+                this._finished = !i,
+                this.parseChunk(s)
             }
         }
     }
-    function g(a) {
-        a = a || {},
-        c.call(this, a);
-        var b = []
-          , d = !0;
-        this.stream = function(a) {
-            this._input = a,
+    function W(e) {
+        e = e || {},
+        F.call(this, e);
+        var t = []
+          , i = !0;
+        this.stream = function(n) {
+            this._input = n,
             this._input.on("data", this._streamData),
             this._input.on("end", this._streamEnd),
             this._input.on("error", this._streamError)
         }
         ,
         this._nextChunk = function() {
-            b.length ? this.parseChunk(b.shift()) : d = !0
+            t.length ? this.parseChunk(t.shift()) : i = !0
         }
         ,
-        this._streamData = q(function(a) {
+        this._streamData = M(function(n) {
             try {
-                b.push("string" == typeof a ? a : a.toString(this._config.encoding)),
-                d && (d = !1,
-                this.parseChunk(b.shift()))
-            } catch (a) {
-                this._streamError(a)
+                t.push(typeof n == "string" ? n : n.toString(this._config.encoding)),
+                i && (i = !1,
+                this.parseChunk(t.shift()))
+            } catch (s) {
+                this._streamError(s)
             }
         }, this),
-        this._streamError = q(function(a) {
+        this._streamError = M(function(n) {
             this._streamCleanUp(),
-            this._sendError(a.message)
+            this._sendError(n.message)
         }, this),
-        this._streamEnd = q(function() {
+        this._streamEnd = M(function() {
             this._streamCleanUp(),
             this._finished = !0,
             this._streamData("")
         }, this),
-        this._streamCleanUp = q(function() {
+        this._streamCleanUp = M(function() {
             this._input.removeListener("data", this._streamData),
             this._input.removeListener("end", this._streamEnd),
             this._input.removeListener("error", this._streamError)
         }, this)
     }
-    function h(a) {
-        function b() {
-            if (x && o && (l("Delimiter", "UndetectableDelimiter", "Unable to auto-detect delimiting character; defaulted to '" + z.DefaultDelimiter + "'"),
-            o = !1),
-            a.skipEmptyLines)
-                for (var b = 0; b < x.data.length; b++)
-                    1 === x.data[b].length && "" === x.data[b][0] && x.data.splice(b--, 1);
-            return c() && d(),
-            g()
+    function Z(e) {
+        function t() {
+            if (d && f && (c("Delimiter", "UndetectableDelimiter", "Unable to auto-detect delimiting character; defaulted to '" + u.DefaultDelimiter + "'"),
+            f = !1),
+            e.skipEmptyLines)
+                for (var r = 0; r < d.data.length; r++)
+                    d.data[r].length === 1 && d.data[r][0] === "" && d.data.splice(r--, 1);
+            return i() && n(),
+            l()
         }
-        function c() {
-            return a.header && 0 === w.length
+        function i() {
+            return e.header && R.length === 0
         }
-        function d() {
-            if (x) {
-                for (var a = 0; c() && a < x.data.length; a++)
-                    for (var b = 0; b < x.data[a].length; b++)
-                        w.push(x.data[a][b]);
-                x.data.splice(0, 1)
+        function n() {
+            if (d) {
+                for (var r = 0; i() && r < d.data.length; r++)
+                    for (var a = 0; a < d.data[r].length; a++)
+                        R.push(d.data[r][a]);
+                d.data.splice(0, 1)
             }
         }
-        function e(b) {
-            return a.dynamicTypingFunction && void 0 === a.dynamicTyping[b] && (a.dynamicTyping[b] = a.dynamicTypingFunction(b)),
-            (a.dynamicTyping[b] || a.dynamicTyping) === !0
+        function s(r) {
+            return e.dynamicTypingFunction && e.dynamicTyping[r] === void 0 && (e.dynamicTyping[r] = e.dynamicTypingFunction(r)),
+            (e.dynamicTyping[r] || e.dynamicTyping) === !0
         }
-        function f(a, b) {
-            return e(a) ? "true" === b || "TRUE" === b || "false" !== b && "FALSE" !== b && k(b) : b
+        function h(r, a) {
+            return s(r) ? a === "true" || a === "TRUE" || a !== "false" && a !== "FALSE" && E(a) : a
         }
-        function g() {
-            if (!x || !a.header && !a.dynamicTyping)
-                return x;
-            for (var b = 0; b < x.data.length; b++) {
-                for (var c = a.header ? {} : [], d = 0; d < x.data[b].length; d++) {
-                    var e = d
-                      , g = x.data[b][d];
-                    a.header && (e = d >= w.length ? "__parsed_extra" : w[d]),
-                    g = f(e, g),
-                    "__parsed_extra" === e ? (c[e] = c[e] || [],
-                    c[e].push(g)) : c[e] = g
+        function l() {
+            if (!d || !e.header && !e.dynamicTyping)
+                return d;
+            for (var r = 0; r < d.data.length; r++) {
+                for (var a = e.header ? {} : [], g = 0; g < d.data[r].length; g++) {
+                    var _ = g
+                      , w = d.data[r][g];
+                    e.header && (_ = g >= R.length ? "__parsed_extra" : R[g]),
+                    w = h(_, w),
+                    _ === "__parsed_extra" ? (a[_] = a[_] || [],
+                    a[_].push(w)) : a[_] = w
                 }
-                x.data[b] = c,
-                a.header && (d > w.length ? l("FieldMismatch", "TooManyFields", "Too many fields: expected " + w.length + " fields but parsed " + d, b) : d < w.length && l("FieldMismatch", "TooFewFields", "Too few fields: expected " + w.length + " fields but parsed " + d, b))
+                d.data[r] = a,
+                e.header && (g > R.length ? c("FieldMismatch", "TooManyFields", "Too many fields: expected " + R.length + " fields but parsed " + g, r) : g < R.length && c("FieldMismatch", "TooFewFields", "Too few fields: expected " + R.length + " fields but parsed " + g, r))
             }
-            return a.header && x.meta && (x.meta.fields = w),
-            x
+            return e.header && d.meta && (d.meta.fields = R),
+            d
         }
-        function h(b, c) {
-            for (var d, e, f, g = [",", "\t", "|", ";", z.RECORD_SEP, z.UNIT_SEP], h = 0; h < g.length; h++) {
-                var j = g[h]
-                  , k = 0
-                  , l = 0;
-                f = void 0;
-                for (var m = new i({
-                    delimiter: j,
-                    newline: c,
+        function p(r, a) {
+            for (var g, _, w, b = [",", "	", "|", ";", u.RECORD_SEP, u.UNIT_SEP], A = 0; A < b.length; A++) {
+                var P = b[A]
+                  , I = 0
+                  , j = 0;
+                w = void 0;
+                for (var C = new Y({
+                    delimiter: P,
+                    newline: a,
                     preview: 10
-                }).parse(b), n = 0; n < m.data.length; n++) {
-                    var o = m.data[n].length;
-                    l += o,
-                    "undefined" != typeof f ? o > 1 && (k += Math.abs(o - f),
-                    f = o) : f = o
+                }).parse(r), Q = 0; Q < C.data.length; Q++) {
+                    var O = C.data[Q].length;
+                    j += O,
+                    typeof w != "undefined" ? O > 1 && (I += Math.abs(O - w),
+                    w = O) : w = O
                 }
-                m.data.length > 0 && (l /= m.data.length),
-                ("undefined" == typeof e || k < e) && l > 1.99 && (e = k,
-                d = j)
+                C.data.length > 0 && (j /= C.data.length),
+                (typeof _ == "undefined" || I < _) && j > 1.99 && (_ = I,
+                g = P)
             }
-            return a.delimiter = d,
+            return e.delimiter = g,
             {
-                successful: !!d,
-                bestDelimiter: d
+                successful: !!g,
+                bestDelimiter: g
             }
         }
-        function j(a) {
-            a = a.substr(0, 1048576);
-            var b = a.split("\r")
-              , c = a.split("\n")
-              , d = c.length > 1 && c[0].length < b[0].length;
-            if (1 === b.length || d)
+        function o(r) {
+            r = r.substr(0, 1048576);
+            var a = r.split("\r")
+              , g = r.split("\n")
+              , _ = g.length > 1 && g[0].length < a[0].length;
+            if (a.length === 1 || _)
                 return "\n";
-            for (var e = 0, f = 0; f < b.length; f++)
-                "\n" === b[f][0] && e++;
-            return e >= b.length / 2 ? "\r\n" : "\r"
+            for (var w = 0, b = 0; b < a.length; b++)
+                a[b][0] === "\n" && w++;
+            return w >= a.length / 2 ? "\r\n" : "\r"
         }
-        function k(a) {
-            var b = q.test(a);
-            return b ? parseFloat(a) : a
+        function E(r) {
+            var a = m.test(r);
+            return a ? parseFloat(r) : r
         }
-        function l(a, b, c, d) {
-            x.errors.push({
-                type: a,
-                code: b,
-                message: c,
-                row: d
+        function c(r, a, g, _) {
+            d.errors.push({
+                type: r,
+                code: a,
+                message: g,
+                row: _
             })
         }
-        var m, n, o, q = /^\s*-?(\d*\.?\d+|\d+\.?\d*)(e[-+]?\d+)?\s*$/i, s = this, t = 0, u = !1, v = !1, w = [], x = {
+        var x, T, f, m = /^\s*-?(\d*\.?\d+|\d+\.?\d*)(e[-+]?\d+)?\s*$/i, y = this, k = 0, D = !1, z = !1, R = [], d = {
             data: [],
             errors: [],
             meta: {}
         };
-        if (r(a.step)) {
-            var y = a.step;
-            a.step = function(d) {
-                if (x = d,
-                c())
-                    b();
+        if (v(e.step)) {
+            var L = e.step;
+            e.step = function(r) {
+                if (d = r,
+                i())
+                    t();
                 else {
-                    if (b(),
-                    0 === x.data.length)
+                    if (t(),
+                    d.data.length === 0)
                         return;
-                    t += d.data.length,
-                    a.preview && t > a.preview ? n.abort() : y(x, s)
+                    k += r.data.length,
+                    e.preview && k > e.preview ? T.abort() : L(d, y)
                 }
             }
         }
-        this.parse = function(c, d, e) {
-            if (a.newline || (a.newline = j(c)),
-            o = !1,
-            a.delimiter)
-                r(a.delimiter) && (a.delimiter = a.delimiter(c),
-                x.meta.delimiter = a.delimiter);
+        this.parse = function(r, a, g) {
+            if (e.newline || (e.newline = o(r)),
+            f = !1,
+            e.delimiter)
+                v(e.delimiter) && (e.delimiter = e.delimiter(r),
+                d.meta.delimiter = e.delimiter);
             else {
-                var f = h(c, a.newline);
-                f.successful ? a.delimiter = f.bestDelimiter : (o = !0,
-                a.delimiter = z.DefaultDelimiter),
-                x.meta.delimiter = a.delimiter
+                var _ = p(r, e.newline);
+                _.successful ? e.delimiter = _.bestDelimiter : (f = !0,
+                e.delimiter = u.DefaultDelimiter),
+                d.meta.delimiter = e.delimiter
             }
-            var g = p(a);
-            return a.preview && a.header && g.preview++,
-            m = c,
-            n = new i(g),
-            x = n.parse(m, d, e),
-            b(),
-            u ? {
+            var w = $(e);
+            return e.preview && e.header && w.preview++,
+            x = r,
+            T = new Y(w),
+            d = T.parse(x, a, g),
+            t(),
+            D ? {
                 meta: {
                     paused: !0
                 }
-            } : x || {
+            } : d || {
                 meta: {
                     paused: !1
                 }
@@ -480,224 +486,224 @@
         }
         ,
         this.paused = function() {
-            return u
+            return D
         }
         ,
         this.pause = function() {
-            u = !0,
-            n.abort(),
-            m = m.substr(n.getCharIndex())
+            D = !0,
+            T.abort(),
+            x = x.substr(T.getCharIndex())
         }
         ,
         this.resume = function() {
-            u = !1,
-            s.streamer.parseChunk(m)
+            D = !1,
+            y.streamer.parseChunk(x)
         }
         ,
         this.aborted = function() {
-            return v
+            return z
         }
         ,
         this.abort = function() {
-            v = !0,
-            n.abort(),
-            x.meta.aborted = !0,
-            r(a.complete) && a.complete(x),
-            m = ""
+            z = !0,
+            T.abort(),
+            d.meta.aborted = !0,
+            v(e.complete) && e.complete(d),
+            x = ""
         }
     }
-    function i(a) {
-        a = a || {};
-        var b = a.delimiter
-          , c = a.newline
-          , d = a.comments
-          , e = a.step
-          , f = a.preview
-          , g = a.fastMode
-          , h = a.quoteChar || '"';
-        if (("string" != typeof b || z.BAD_DELIMITERS.indexOf(b) > -1) && (b = ","),
-        d === b)
+    function Y(e) {
+        e = e || {};
+        var t = e.delimiter
+          , i = e.newline
+          , n = e.comments
+          , s = e.step
+          , h = e.preview
+          , l = e.fastMode
+          , p = e.quoteChar || '"';
+        if ((typeof t != "string" || u.BAD_DELIMITERS.indexOf(t) > -1) && (t = ","),
+        n === t)
             throw "Comment character same as delimiter";
-        d === !0 ? d = "#" : ("string" != typeof d || z.BAD_DELIMITERS.indexOf(d) > -1) && (d = !1),
-        "\n" != c && "\r" != c && "\r\n" != c && (c = "\n");
-        var i = 0
-          , j = !1;
-        this.parse = function(a, k, l) {
-            function m(a) {
-                x.push(a),
-                A = i
+        n === !0 ? n = "#" : (typeof n != "string" || u.BAD_DELIMITERS.indexOf(n) > -1) && (n = !1),
+        i != "\n" && i != "\r" && i != "\r\n" && (i = "\n");
+        var o = 0
+          , E = !1;
+        this.parse = function(c, x, T) {
+            function f(O) {
+                a.push(O),
+                w = o
             }
-            function n(b) {
-                return l ? p() : ("undefined" == typeof b && (b = a.substr(i)),
-                z.push(b),
-                i = s,
-                m(z),
-                w && q(),
-                p())
+            function m(O) {
+                return T || (typeof O == "undefined" && (O = c.substr(o)),
+                _.push(O),
+                o = z,
+                f(_),
+                r && D()),
+                k()
             }
-            function o(b) {
-                i = b,
-                m(z),
-                z = [],
-                E = a.indexOf(c, i)
+            function y(O) {
+                o = O,
+                f(_),
+                _ = [],
+                I = c.indexOf(i, o)
             }
-            function p(a) {
+            function k(O) {
                 return {
-                    data: x,
-                    errors: y,
+                    data: a,
+                    errors: g,
                     meta: {
-                        delimiter: b,
-                        linebreak: c,
-                        aborted: j,
-                        truncated: !!a,
-                        cursor: A + (k || 0)
+                        delimiter: t,
+                        linebreak: i,
+                        aborted: E,
+                        truncated: !!O,
+                        cursor: w + (x || 0)
                     }
                 }
             }
-            function q() {
-                e(p()),
-                x = [],
-                y = []
+            function D() {
+                s(k()),
+                a = [],
+                g = []
             }
-            if ("string" != typeof a)
+            if (typeof c != "string")
                 throw "Input must be a string";
-            var s = a.length
-              , t = b.length
-              , u = c.length
-              , v = d.length
-              , w = r(e);
-            i = 0;
-            var x = []
-              , y = []
-              , z = []
-              , A = 0;
-            if (!a)
-                return p();
-            if (g || g !== !1 && a.indexOf(h) === -1) {
-                for (var B = a.split(c), C = 0; C < B.length; C++) {
-                    var z = B[C];
-                    if (i += z.length,
-                    C !== B.length - 1)
-                        i += c.length;
-                    else if (l)
-                        return p();
-                    if (!d || z.substr(0, v) !== d) {
-                        if (w) {
-                            if (x = [],
-                            m(z.split(b)),
-                            q(),
-                            j)
-                                return p()
+            var z = c.length
+              , R = t.length
+              , d = i.length
+              , L = n.length
+              , r = v(s);
+            o = 0;
+            var a = []
+              , g = []
+              , _ = []
+              , w = 0;
+            if (!c)
+                return k();
+            if (l || l !== !1 && c.indexOf(p) === -1) {
+                for (var b = c.split(i), A = 0; A < b.length; A++) {
+                    var _ = b[A];
+                    if (o += _.length,
+                    A !== b.length - 1)
+                        o += i.length;
+                    else if (T)
+                        return k();
+                    if (!n || _.substr(0, L) !== n) {
+                        if (r) {
+                            if (a = [],
+                            f(_.split(t)),
+                            D(),
+                            E)
+                                return k()
                         } else
-                            m(z.split(b));
-                        if (f && C >= f)
-                            return x = x.slice(0, f),
-                            p(!0)
+                            f(_.split(t));
+                        if (h && A >= h)
+                            return a = a.slice(0, h),
+                            k(!0)
                     }
                 }
-                return p()
+                return k()
             }
-            for (var D = a.indexOf(b, i), E = a.indexOf(c, i), F = new RegExp(h + h,"g"); ; )
-                if (a[i] !== h)
-                    if (d && 0 === z.length && a.substr(i, v) === d) {
-                        if (E === -1)
-                            return p();
-                        i = E + u,
-                        E = a.indexOf(c, i),
-                        D = a.indexOf(b, i)
-                    } else if (D !== -1 && (D < E || E === -1))
-                        z.push(a.substring(i, D)),
-                        i = D + t,
-                        D = a.indexOf(b, i);
+            for (var P = c.indexOf(t, o), I = c.indexOf(i, o), j = new RegExp(p + p,"g"); ; )
+                if (c[o] !== p)
+                    if (n && _.length === 0 && c.substr(o, L) === n) {
+                        if (I === -1)
+                            return k();
+                        o = I + d,
+                        I = c.indexOf(i, o),
+                        P = c.indexOf(t, o)
+                    } else if (P !== -1 && (P < I || I === -1))
+                        _.push(c.substring(o, P)),
+                        o = P + R,
+                        P = c.indexOf(t, o);
                     else {
-                        if (E === -1)
+                        if (I === -1)
                             break;
-                        if (z.push(a.substring(i, E)),
-                        o(E + u),
-                        w && (q(),
-                        j))
-                            return p();
-                        if (f && x.length >= f)
-                            return p(!0)
+                        if (_.push(c.substring(o, I)),
+                        y(I + d),
+                        r && (D(),
+                        E))
+                            return k();
+                        if (h && a.length >= h)
+                            return k(!0)
                     }
                 else {
-                    var G = i;
-                    for (i++; ; ) {
-                        var G = a.indexOf(h, G + 1);
-                        if (G === -1)
-                            return l || y.push({
+                    var C = o;
+                    for (o++; ; ) {
+                        var C = c.indexOf(p, C + 1);
+                        if (C === -1)
+                            return T || g.push({
                                 type: "Quotes",
                                 code: "MissingQuotes",
                                 message: "Quoted field unterminated",
-                                row: x.length,
-                                index: i
+                                row: a.length,
+                                index: o
                             }),
-                            n();
-                        if (G === s - 1) {
-                            var H = a.substring(i, G).replace(F, h);
-                            return n(H)
+                            m();
+                        if (C === z - 1) {
+                            var Q = c.substring(o, C).replace(j, p);
+                            return m(Q)
                         }
-                        if (a[G + 1] !== h) {
-                            if (a[G + 1] === b) {
-                                z.push(a.substring(i, G).replace(F, h)),
-                                i = G + 1 + t,
-                                D = a.indexOf(b, i),
-                                E = a.indexOf(c, i);
+                        if (c[C + 1] !== p) {
+                            if (c[C + 1] === t) {
+                                _.push(c.substring(o, C).replace(j, p)),
+                                o = C + 1 + R,
+                                P = c.indexOf(t, o),
+                                I = c.indexOf(i, o);
                                 break
                             }
-                            if (a.substr(G + 1, u) === c) {
-                                if (z.push(a.substring(i, G).replace(F, h)),
-                                o(G + 1 + u),
-                                D = a.indexOf(b, i),
-                                w && (q(),
-                                j))
-                                    return p();
-                                if (f && x.length >= f)
-                                    return p(!0);
+                            if (c.substr(C + 1, d) === i) {
+                                if (_.push(c.substring(o, C).replace(j, p)),
+                                y(C + 1 + d),
+                                P = c.indexOf(t, o),
+                                r && (D(),
+                                E))
+                                    return k();
+                                if (h && a.length >= h)
+                                    return k(!0);
                                 break
                             }
                         } else
-                            G++
+                            C++
                     }
                 }
-            return n()
+            return m()
         }
         ,
         this.abort = function() {
-            j = !0
+            E = !0
         }
         ,
         this.getCharIndex = function() {
-            return i
+            return o
         }
     }
-    function j() {
-        var a = document.getElementsByTagName("script");
-        return a.length ? a[a.length - 1].src : ""
+    function ne() {
+        var e = document.getElementsByTagName("script");
+        return e.length ? e[e.length - 1].src : ""
     }
-    function k() {
-        if (!z.WORKERS_SUPPORTED)
+    function re() {
+        if (!u.WORKERS_SUPPORTED)
             return !1;
-        if (!w && null === z.SCRIPT_PATH)
+        if (!V && u.SCRIPT_PATH === null)
             throw new Error("Script path cannot be determined automatically when Papa Parse is loaded asynchronously. You need to set Papa.SCRIPT_PATH manually.");
-        var a = z.SCRIPT_PATH || s;
-        a += (a.indexOf("?") !== -1 ? "&" : "?") + "papaworker";
-        var b = new t.Worker(a);
-        return b.onmessage = l,
-        b.id = y++,
-        x[b.id] = b,
-        b
+        var e = u.SCRIPT_PATH || ie;
+        e += (e.indexOf("?") !== -1 ? "&" : "?") + "papaworker";
+        var t = new S.Worker(e);
+        return t.onmessage = se,
+        t.id = ue++,
+        J[t.id] = t,
+        t
     }
-    function l(a) {
-        var b = a.data
-          , c = x[b.workerId]
-          , d = !1;
-        if (b.error)
-            c.userError(b.error, b.file);
-        else if (b.results && b.results.data) {
-            var e = function() {
-                d = !0,
-                m(b.workerId, {
+    function se(e) {
+        var t = e.data
+          , i = J[t.workerId]
+          , n = !1;
+        if (t.error)
+            i.userError(t.error, t.file);
+        else if (t.results && t.results.data) {
+            var s = function() {
+                n = !0,
+                ee(t.workerId, {
                     data: [],
                     errors: [],
                     meta: {
@@ -705,152 +711,152 @@
                     }
                 })
             }
-              , f = {
-                abort: e,
-                pause: n,
-                resume: n
+              , h = {
+                abort: s,
+                pause: te,
+                resume: te
             };
-            if (r(c.userStep)) {
-                for (var g = 0; g < b.results.data.length && (c.userStep({
-                    data: [b.results.data[g]],
-                    errors: b.results.errors,
-                    meta: b.results.meta
-                }, f),
-                !d); g++)
+            if (v(i.userStep)) {
+                for (var l = 0; l < t.results.data.length && (i.userStep({
+                    data: [t.results.data[l]],
+                    errors: t.results.errors,
+                    meta: t.results.meta
+                }, h),
+                !n); l++)
                     ;
-                delete b.results
+                delete t.results
             } else
-                r(c.userChunk) && (c.userChunk(b.results, f, b.file),
-                delete b.results)
+                v(i.userChunk) && (i.userChunk(t.results, h, t.file),
+                delete t.results)
         }
-        b.finished && !d && m(b.workerId, b.results)
+        t.finished && !n && ee(t.workerId, t.results)
     }
-    function m(a, b) {
-        var c = x[a];
-        r(c.userComplete) && c.userComplete(b),
-        c.terminate(),
-        delete x[a]
+    function ee(e, t) {
+        var i = J[e];
+        v(i.userComplete) && i.userComplete(t),
+        i.terminate(),
+        delete J[e]
     }
-    function n() {
+    function te() {
         throw "Not implemented."
     }
-    function o(a) {
-        var b = a.data;
-        if ("undefined" == typeof z.WORKER_ID && b && (z.WORKER_ID = b.workerId),
-        "string" == typeof b.input)
-            t.postMessage({
-                workerId: z.WORKER_ID,
-                results: z.parse(b.input, b.config),
+    function oe(e) {
+        var t = e.data;
+        if (typeof u.WORKER_ID == "undefined" && t && (u.WORKER_ID = t.workerId),
+        typeof t.input == "string")
+            S.postMessage({
+                workerId: u.WORKER_ID,
+                results: u.parse(t.input, t.config),
                 finished: !0
             });
-        else if (t.File && b.input instanceof File || b.input instanceof Object) {
-            var c = z.parse(b.input, b.config);
-            c && t.postMessage({
-                workerId: z.WORKER_ID,
-                results: c,
+        else if (S.File && t.input instanceof File || t.input instanceof Object) {
+            var i = u.parse(t.input, t.config);
+            i && S.postMessage({
+                workerId: u.WORKER_ID,
+                results: i,
                 finished: !0
             })
         }
     }
-    function p(a) {
-        if ("object" != typeof a)
-            return a;
-        var b = a instanceof Array ? [] : {};
-        for (var c in a)
-            b[c] = p(a[c]);
-        return b
+    function $(e) {
+        if (typeof e != "object")
+            return e;
+        var t = e instanceof Array ? [] : {};
+        for (var i in e)
+            t[i] = $(e[i]);
+        return t
     }
-    function q(a, b) {
+    function M(e, t) {
         return function() {
-            a.apply(b, arguments)
+            e.apply(t, arguments)
         }
     }
-    function r(a) {
-        return "function" == typeof a
+    function v(e) {
+        return typeof e == "function"
     }
-    var s, t = function() {
-        return "undefined" != typeof self ? self : "undefined" != typeof window ? window : "undefined" != typeof t ? t : {}
-    }(), u = !t.document && !!t.postMessage, v = u && /(\?|&)papaworker(=|&|$)/.test(t.location.search), w = !1, x = {}, y = 0, z = {};
-    if (z.parse = a,
-    z.unparse = b,
-    z.RECORD_SEP = String.fromCharCode(30),
-    z.UNIT_SEP = String.fromCharCode(31),
-    z.BYTE_ORDER_MARK = "\ufeff",
-    z.BAD_DELIMITERS = ["\r", "\n", '"', z.BYTE_ORDER_MARK],
-    z.WORKERS_SUPPORTED = !u && !!t.Worker,
-    z.SCRIPT_PATH = null,
-    z.LocalChunkSize = 10485760,
-    z.RemoteChunkSize = 5242880,
-    z.DefaultDelimiter = ",",
-    z.Parser = i,
-    z.ParserHandle = h,
-    z.NetworkStreamer = d,
-    z.FileStreamer = e,
-    z.StringStreamer = f,
-    z.ReadableStreamStreamer = g,
-    t.jQuery) {
-        var A = t.jQuery;
-        A.fn.parse = function(a) {
-            function b() {
-                if (0 === f.length)
-                    return void (r(a.complete) && a.complete());
-                var b = f[0];
-                if (r(a.before)) {
-                    var e = a.before(b.file, b.inputElem);
-                    if ("object" == typeof e) {
-                        if ("abort" === e.action)
-                            return void c("AbortError", b.file, b.inputElem, e.reason);
-                        if ("skip" === e.action)
-                            return void d();
-                        "object" == typeof e.config && (b.instanceConfig = A.extend(b.instanceConfig, e.config))
-                    } else if ("skip" === e)
-                        return void d()
+    var ie, S = function() {
+        return typeof self != "undefined" ? self : typeof window != "undefined" ? window : typeof S != "undefined" ? S : {}
+    }(), U = !S.document && !!S.postMessage, X = U && /(\?|&)papaworker(=|&|$)/.test(S.location.search), V = !1, J = {}, ue = 0, u = {};
+    if (u.parse = G,
+    u.unparse = H,
+    u.RECORD_SEP = String.fromCharCode(30),
+    u.UNIT_SEP = String.fromCharCode(31),
+    u.BYTE_ORDER_MARK = "\uFEFF",
+    u.BAD_DELIMITERS = ["\r", "\n", '"', u.BYTE_ORDER_MARK],
+    u.WORKERS_SUPPORTED = !U && !!S.Worker,
+    u.SCRIPT_PATH = null,
+    u.LocalChunkSize = 10485760,
+    u.RemoteChunkSize = 5242880,
+    u.DefaultDelimiter = ",",
+    u.Parser = Y,
+    u.ParserHandle = Z,
+    u.NetworkStreamer = K,
+    u.FileStreamer = N,
+    u.StringStreamer = q,
+    u.ReadableStreamStreamer = W,
+    S.jQuery) {
+        var B = S.jQuery;
+        B.fn.parse = function(e) {
+            function t() {
+                if (h.length === 0)
+                    return void (v(e.complete) && e.complete());
+                var l = h[0];
+                if (v(e.before)) {
+                    var p = e.before(l.file, l.inputElem);
+                    if (typeof p == "object") {
+                        if (p.action === "abort")
+                            return void i("AbortError", l.file, l.inputElem, p.reason);
+                        if (p.action === "skip")
+                            return void n();
+                        typeof p.config == "object" && (l.instanceConfig = B.extend(l.instanceConfig, p.config))
+                    } else if (p === "skip")
+                        return void n()
                 }
-                var g = b.instanceConfig.complete;
-                b.instanceConfig.complete = function(a) {
-                    r(g) && g(a, b.file, b.inputElem),
-                    d()
+                var o = l.instanceConfig.complete;
+                l.instanceConfig.complete = function(E) {
+                    v(o) && o(E, l.file, l.inputElem),
+                    n()
                 }
                 ,
-                z.parse(b.file, b.instanceConfig)
+                u.parse(l.file, l.instanceConfig)
             }
-            function c(b, c, d, e) {
-                r(a.error) && a.error({
-                    name: b
-                }, c, d, e)
+            function i(l, p, o, E) {
+                v(e.error) && e.error({
+                    name: l
+                }, p, o, E)
             }
-            function d() {
-                f.splice(0, 1),
-                b()
+            function n() {
+                h.splice(0, 1),
+                t()
             }
-            var e = a.config || {}
-              , f = [];
-            return this.each(function(a) {
-                var b = "INPUT" === A(this).prop("tagName").toUpperCase() && "file" === A(this).attr("type").toLowerCase() && t.FileReader;
-                if (!b || !this.files || 0 === this.files.length)
+            var s = e.config || {}
+              , h = [];
+            return this.each(function(l) {
+                var p = B(this).prop("tagName").toUpperCase() === "INPUT" && B(this).attr("type").toLowerCase() === "file" && S.FileReader;
+                if (!p || !this.files || this.files.length === 0)
                     return !0;
-                for (var c = 0; c < this.files.length; c++)
-                    f.push({
-                        file: this.files[c],
+                for (var o = 0; o < this.files.length; o++)
+                    h.push({
+                        file: this.files[o],
                         inputElem: this,
-                        instanceConfig: A.extend({}, e)
+                        instanceConfig: B.extend({}, s)
                     })
             }),
-            b(),
+            t(),
             this
         }
     }
-    return v ? t.onmessage = o : z.WORKERS_SUPPORTED && (s = j(),
+    return X ? S.onmessage = oe : u.WORKERS_SUPPORTED && (ie = ne(),
     document.body ? document.addEventListener("DOMContentLoaded", function() {
-        w = !0
-    }, !0) : w = !0),
-    d.prototype = Object.create(c.prototype),
-    d.prototype.constructor = d,
-    e.prototype = Object.create(c.prototype),
-    e.prototype.constructor = e,
-    f.prototype = Object.create(f.prototype),
-    f.prototype.constructor = f,
-    g.prototype = Object.create(c.prototype),
-    g.prototype.constructor = g,
-z});
-;
+        V = !0
+    }, !0) : V = !0),
+    K.prototype = Object.create(F.prototype),
+    K.prototype.constructor = K,
+    N.prototype = Object.create(F.prototype),
+    N.prototype.constructor = N,
+    q.prototype = Object.create(q.prototype),
+    q.prototype.constructor = q,
+    W.prototype = Object.create(F.prototype),
+    W.prototype.constructor = W,
+    u
+});

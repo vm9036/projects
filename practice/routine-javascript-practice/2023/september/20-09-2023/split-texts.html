@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.3/css/bulma.min.css">
+    <script src="split-texts-methods.js"></script>
+    <script src="split-texts.js"></script>
+    <title>Split Texts</title>
+</head>
+
+<body>
+    <section class="container">
+        <h1 class="title">Split Texts</h1>
+        <div class="columns"><!-- dont change -->
+            <div class="column is-6"><!-- dont change -->
+                <p class="is-size-5 is-inline">input Text</p>
+                <button class="button is-pulled-right is-info" onclick="sampleBtn()">Sample</button>
+                <textarea id="generatedSplitTextInputTextArea" class="textarea is-primary is-medium"
+                    placeholder="Enter Input...." rows="6"></textarea>
+
+                <div class="buttons is-centered mt-3">
+                    <label class="checkbox mb-2 mr-2">
+                        <input type="checkbox" id="isAuto" checked> Auto </label>
+                    <button id="defaultAction" onclick="splitText();" class="button is-medium is-primary mr-4">
+                        <span>Generate Split Text</span>
+                    </button>
+                </div>
+
+                <div class="block">
+                    <p class="is-size-5">Pieces</p>
+                    <textarea id="generatedSplitTextOutputTextArea" class="textarea is-primary is-medium"
+                        placeholder="Generated Text....." rows="6"></textarea>
+                </div>
+            </div>
+
+            <div class="column is-6 mt-3"><!-- dont change -->
+                <div class="columns">
+                    <div class="column is-6">
+                        <div class="heading">
+                            <h5 class="title is-capitalized is-size-4 is-underlined">Split Separator Options </h5>
+                        </div>
+                        <div class="field">
+                            <div class="control">
+                                <label class="radio">
+                                    <span class="is-size-4"><input type="radio" name="split" value="split-by-char"
+                                            onchange="splitText()" checked></span>
+                                    <span class="has-text-black">Use a Symbol for Splitting
+                                    </span>
+                                </label>
+                            </div>
+                        </div>
+                        <div class="field">
+                            <div class="control">
+                                <input type="text" class="input" id="char" value="," oninput="splitText();">
+                            </div>
+                            <label class="label is-size-6">Space by default</label>
+                        </div>
+
+                        <div class="field">
+                            <div class="control">
+                                <label class="radio">
+                                    <span class="is-size-4"><input type="radio" name="split" value="split-by-regex"
+                                            onchange="splitText()"></span>
+                                    <span class="has-text-black">Use a Regex for Splitting
+                                    </span>
+                                </label>
+                            </div>
+                        </div>
+                        <div class="field">
+                            <div class="control">
+                                <input type="text" class="input" id="regex" value="[^a-zA-Z]+" oninput="splitText();">
+                            </div>
+                            <label class="label is-size-6">Multiple spaces by default</label>
+                        </div>
+
+                        <div class="field">
+                            <div class="control">
+                                <label class="radio">
+                                    <span class="is-size-4"><input type="radio" name="split" value="split-by-length"
+                                            onchange="splitText()"></span>
+                                    <span class="has-text-black">Use Length for Splitting
+                                    </span>
+                                </label>
+                            </div>
+                        </div>
+                        <div class="field">
+                            <div class="control">
+                                <input type="text" class="input" id="length" value="16" oninput="splitText();">
+                            </div>
+                            <label class="label is-size-6">Length</label>
+                        </div>
+
+                    </div>
+                    <div class="column is-6">
+
+                        <div class="heading">
+                            <h5 class="title is-capitalized is-size-4 is-underlined	">Output Separator Options </h5>
+                        </div>
+                        <div class="field">
+                            <div class="control">
+                                <input type="text" class="input" id="separator" value="\n" oninput="splitText();">
+                            </div>
+                            <label class="label is-size-6">Newline by default</label>
+                        </div>
+
+                        <div class="columns">
+                            <div class="column is-6">
+                                <div class="field">
+                                    <div class="control">
+                                        <input type="text" class="input" id="symbol-before-chunk" value=""
+                                            oninput="splitText();">
+                                    </div>
+                                    <label class="label is-size-6">Character before chunk</label>
+                                </div>
+                            </div>
+                            <div class="column is-6">
+                                <div class="field">
+                                    <div class="control">
+                                        <input type="text" class="input" id="symbol-after-chunk" value=""
+                                            oninput="splitText();">
+                                    </div>
+                                    <label class="label is-size-6">Character after chunk</label>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+</body>
+
+</html>
