@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.3/css/bulma.min.css">
+    <!-- <script src="split-texts-methods.js"></script> -->
+    <script src="trim-text.js"></script>
+    <title>Trim Text</title>
+</head>
+
+<body>
+    <section class="container">
+        <h1 class="title">Trim Text</h1>
+        <div class="columns"><!-- dont change -->
+            <div class="column is-6"><!-- dont change -->
+                <p class="is-size-5 is-inline">input Text</p>
+                <button class="button is-pulled-right is-info" onclick="sampleBtn()">Sample</button>
+                <textarea id="generatedTrimTextInputTextArea" class="textarea is-primary is-medium"
+                    placeholder="Enter Input...." rows="6"></textarea>
+
+                <div class="buttons is-centered mt-3">
+                    <label class="checkbox mb-2 mr-2">
+                        <input type="checkbox" id="isAuto" onchange="trimText()" checked> Auto </label>
+                    <button onclick="trimText();" class="button is-medium is-primary mr-4">
+                        <span>Generate Trim Text</span>
+                    </button>
+                </div>
+
+                <div class="block">
+                    <p class="is-size-5">Trimmed Text</p>
+                    <textarea id="generatedTrimTextOutputTextArea" class="textarea is-primary is-medium"
+                        placeholder="Generated Text....." rows="6"></textarea>
+                </div>
+            </div>
+
+            <div class="column is-3 mt-3"><!-- dont change -->
+
+                <div class="heading">
+                    <h5 class="title is-capitalized is-size-4 is-underlined	">Trimming and Lines </h5>
+                </div>
+                <div class="field">
+                    <div class="control">
+                        <label class="checkbox">
+                            <span class="is-size-4"><input type="checkbox" id="left-trim" checked
+                                    onchange="trimText();"></span>
+                            <span class="has-text-black">Left Side Trimming
+                            </span>
+                        </label>
+                    </div>
+                </div>
+                <div class="field">
+                    <div class="control">
+                        <label class="checkbox">
+                            <span class="is-size-4"><input type="checkbox" id="right-trim" checked
+                                    onchange="trimText();"></span>
+                            <span class="has-text-black">Right Side Trimming
+                            </span>
+                        </label>
+                    </div>
+                </div>
+                <div class="field">
+                    <div class="control">
+                        <label class="checkbox">
+                            <span class="is-size-4"><input type="checkbox" id="multi-line" checked
+                                    onchange="trimText();"></span>
+                            <span class="has-text-black">Line-By-line Trimming
+                            </span>
+                        </label>
+                    </div>
+                </div>
+            </div>
+            <div class="column is-3">
+            </div>
+        </div>
+    </section>
+</body>
+
+</html>
