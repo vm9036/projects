@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.3/css/bulma.min.css">
+    <script src="justify-texts-methods.js"></script>
+    <script src="justify-text.js"></script>
+    <title>Justify Text</title>
+    <style>
+        textarea.customText{
+            overflow-x: auto;
+        }
+    </style>
+</head>
+
+<body>
+    <section class="container">
+        <h1 class="title">Justify Text</h1>
+        <div class="columns"><!-- dont change -->
+            <div class="column is-6"><!-- dont change -->
+                <p class="is-size-5 is-inline">input Text</p>
+                <button class="button is-pulled-right is-info" onclick="sampleBtn()">Sample</button>
+                <textarea id="generatedJustifyTextInputTextArea" class="textarea is-primary is-medium"
+                    placeholder="Enter Input...." rows="6"></textarea>
+
+                <div class="buttons is-centered mt-3">
+                    <label class="checkbox mb-2 mr-2">
+                        <input type="checkbox" id="isAuto" checked oninput="justifyText()"> Auto </label>
+                    <button id="defaultAction" onclick="justifyText();" class="button is-medium is-primary mr-4">
+                        <span>Generate Justify Text</span>
+                    </button>
+                </div>
+
+                <div class="block">
+                    <p class="is-size-5">Justified Text</p>
+                    <textarea id="generatedJustifyTextOutputTextArea" class="textarea is-primary is-medium customText"
+                        placeholder="Generated Text....." rows="6"></textarea>
+                </div>
+            </div>
+
+            <div class="column is-3 mt-3"><!-- dont change -->
+
+                <div class="heading">
+                    <h5 class="title is-capitalized is-size-4 is-underlined	">Text Width </h5>
+                </div>
+                <div class="field">
+                    <div class="control">
+                        <label class="radio">
+                            <span class="is-size-4"><input type="radio" name="use" value="use-specific-length"
+                                    onchange="justifyText()" checked></span>
+                            <span class="has-text-black">Stretch to Specific Length
+                            </span>
+                        </label>
+                    </div>
+                </div>
+                <div class="field">
+                    <div class="control">
+                        <input type="text" class="input" id="line-length" value="60" oninput="justifyText();">
+                    </div>
+                    <label class="label is-size-6">Number of charcters per line</label>
+                </div>
+                <div class="field">
+                    <div class="control">
+                        <label class="radio">
+                            <span class="is-size-4"><input type="radio" name="use" value="use-longest-line"
+                                    onchange="justifyText()"></span>
+                            <span class="has-text-black">Use Currently Longest Line
+                            </span>
+                        </label>
+                    </div>
+                </div>
+                <div class="heading mt-3">
+                    <h5 class="title is-capitalized is-size-4 is-underlined">Word Breaking
+                    </h5>
+                </div>
+                <div class="field">
+                    <div class="control">
+                        <label class="checkbox">
+                            <span class="is-size-4"><input type="checkbox" id="break-words"
+                                    onchange="justifyText();"></span>
+                            <span class="has-text-black">Break Words
+                            </span>
+                        </label>
+                    </div>
+                </div>
+                <div class="heading mt-3">
+                    <h5 class="title is-capitalized is-size-4 is-underlined">Last Line
+                    </h5>
+                </div>
+                <div class="field">
+                    <div class="control">
+                        <label class="checkbox">
+                            <span class="is-size-4"><input type="checkbox" id="justify-last-line" checked
+                                    onchange="justifyText();"></span>
+                            <span class="has-text-black">Justify the Last Line
+                            </span>
+                        </label>
+                    </div>
+                </div>
+            </div>
+            <div class="column is-3">
+            </div>
+        </div>
+    </section>
+</body>
+
+</html>
