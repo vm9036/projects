@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.3/css/bulma.min.css">
+    <script src="filtered-words-methods.js"></script>
+    <script src="filtered-words.js"></script>
+    <title>Filtered Words</title>
+</head>
+
+<body>
+    <section class="container is-fluid">
+        <h1 class="title">Filtered Words</h1>
+        <div class="columns"><!-- dont change -->
+            <div class="column is-6"><!-- dont change -->
+                <p class="is-size-5 is-inline">input Text</p>
+                <button class="button is-pulled-right is-info" onclick="sampleBtn()">Sample</button>
+                <textarea id="generatedFilteredWordsInputTextArea" class="textarea is-primary is-medium"
+                    placeholder="Enter Input...." rows="6"></textarea>
+
+                <div class="buttons is-centered mt-3">
+                    <label class="checkbox mb-2 mr-2">
+                        <input type="checkbox" id="isAuto" checked> Auto </label>
+                    <button id="defaultAction" onclick="filteredWords();" class="button is-medium is-primary mr-4">
+                        <span>Scramble Words</span>
+                    </button>
+                </div>
+
+                <div class="block">
+                    <p class="is-size-5">Scrambled Word</p>
+                    <textarea id="generatedFilteredWordsOutputTextArea" class="textarea is-primary is-medium" placeholder="Generated Text....." rows="6">
+                    </textarea>
+                </div>
+            </div>
+
+            <div class="column is-6 mt-3"><!-- dont change -->
+                <div class="columns">
+                    <div class="column is-6">
+                        <div class="heading">
+                            <h5 class="title is-capitalized is-size-4 is-underlined">Word Filter</h5>
+                        </div>
+
+                        <div class="field">
+                            <div class="control">
+                                <label class="radio">
+                                    <span class="is-size-4"><input type="radio" name="filter" value="filter-by-string"
+                                            onchange="filteredWords()"></span>
+                                    <span class="has-text-black">Use a Pattern
+                                    </span>
+                                </label>
+                            </div>
+                        </div>
+                        <div class="field mt-3">
+                            <div class="control">
+                                <textarea id="strings" cols="2" rows="2" class="textarea"
+                                    oninput="filteredWords()">can
+Can
+                                </textarea>
+                            </div>
+                            <label class="label is-size-6">Substring to use for matching
+                            </label>
+                        </div>
+
+                        <div class="field">
+                            <div class="control">
+                                <label class="radio">
+                                    <span class="is-size-4"><input type="radio" name="filter" value="split-by-regex"
+                                            onchange="filteredWords()" checked></span>
+                                    <span class="has-text-black">Use a Symbol Set
+                                    </span>
+                                </label>
+                            </div>
+                        </div>
+                        <div class="field">
+                            <div class="control">
+                                <input type="text" class="input" id="symbol-set" value="aehst" oninput="filteredWords();">
+                            </div>
+                            <label class="label is-size-6">Words you want to extract</label>
+                        </div>
+
+
+                        <div class="field">
+                            <div class="control">
+                                <label class="radio">
+                                    <span class="is-size-4"><input type="radio" name="filter" value="filter-by-symbol-set"
+                                            onchange="filteredWords()"></span>
+                                    <span class="has-text-black">Use a RegExp
+                                    </span>
+                                </label>
+                            </div>
+                        </div>
+                        <div class="field">
+                            <div class="control">
+                                <input type="text" class="input" id="regex" value="/(\w)\1/i" oninput="filteredWords();">
+                            </div>
+                            <label class="label is-size-6">Regular Expression</label>
+                        </div>
+                    </div>
+                    <div class="column is-6">
+                        <div class="heading">
+                            <h5 class="title is-capitalized is-size-4 is-underlined">Invert Filter </h5>
+                        </div>
+
+                        <div class="field">
+                            <div class="checkbox">
+                                <span class="is-size-4"><input type="checkbox" id="invert"
+                                        onchange="filteredWords()"></span>
+                                <span class="has-text-black">Invert Filter Matches</span>
+                            </div>
+                        </div>
+
+                        <div class="heading">
+                            <h5 class="title is-capitalized is-size-4 is-underlined">Filtered Word Format</h5>
+                        </div>
+
+                        <div class="field">
+                            <div class="control">
+                                <input type="text" class="input" value=", " id="output-separator" oninput="filteredWords();">
+                                <label for="" class="label">Seperated By Chrarcter</label>
+                            </div>
+                        </div>
+
+                        <div class="field">
+                            <div class="checkbox">
+                                <span class="is-size-4"><input type="checkbox" id="make-lowercase"
+                                        onchange="filteredWords()"></span>
+                                <span class="has-text-black">Make Words Lowercase</span>
+                            </div>
+                        </div>
+
+                        <div class="field">
+                            <div class="checkbox">
+                                <span class="is-size-4"><input type="checkbox" id="remove-duplicates"
+                                        onchange="filteredWords()" checked></span>
+                                <span class="has-text-black">Delete Duplicate Words</span>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+        </div>
+    </section>
+</body>
+
+</html>
