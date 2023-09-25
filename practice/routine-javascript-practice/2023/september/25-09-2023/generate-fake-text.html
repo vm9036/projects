@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.3/css/bulma.min.css">
+    <script src="fake-text-methods.js"></script>
+    <script src="fake-texts.js"></script>
+    <title>Generate Fake Text</title>
+</head>
+
+<body>
+    <section class="container is-fluid">
+        <h1 class="title">Generate Fake Text</h1>
+        <div class="columns"><!-- dont change -->
+            <div class="column is-6"><!-- dont change -->
+                <p class="is-size-5 is-inline">input Text</p>
+                <button class="button is-pulled-right is-info" onclick="sampleBtn()">Sample</button>
+                <textarea id="generatedFakeTextInputTextArea" class="textarea is-primary is-medium"
+                    placeholder="Enter Input...." rows="6"></textarea>
+
+                <div class="buttons is-centered mt-3">
+                    <label class="checkbox mb-2 mr-2">
+                        <input type="checkbox" id="isAuto" checked> Auto </label>
+                    <button id="defaultAction" onclick="fakeText();" class="button is-medium is-primary mr-4">
+                        <span>Generate Fake Text</span>
+                    </button>
+                </div>
+
+                <div class="block">
+                    <p class="is-size-5">Pieces</p>
+                    <textarea id="generatedFakeTextOutputTextArea" class="textarea is-primary is-medium"
+                        placeholder="Generated Text....." rows="6"></textarea>
+                </div>
+            </div>
+
+            <div class="column is-6 mt-3"><!-- dont change -->
+                <div class="column is-6">
+                    <div class="heading">
+                        <h5 class="title is-capitalized is-size-4 is-underlined">Fake Punctuation</h5>
+                    </div>
+                    <div class="field">
+                        <div class="control">
+                            <label class="checkbox">
+                                <span class="is-size-4"><input type="checkbox" id="spoof-punctuation"
+                                        onchange="fakeText()"></span>
+                                <span class="has-text-black">Generate Fake Punctuation
+                                </span>
+                            </label>
+                        </div>
+                    </div>
+
+                    <div class="heading">
+                        <h5 class="title is-capitalized is-size-4 is-underlined">Fake Spaces</h5>
+                    </div>
+                    <div class="field">
+                        <div class="checkbox">
+                            <span class="is-size-4"><input type="checkbox" id="spoof-spaces"
+                                    onchange="fakeText()"></span>
+                            <span class="has-text-black">Generate Fake Punctuation</span>
+                        </div>
+                    </div>
+
+                    <div class="field">
+                        <div class="checkbox">
+                            <span class="is-size-4"><input type="checkbox" id="insert-zero-width-spaces"
+                                    onchange="fakeText()"></span>
+                            <span class="has-text-black">Add invisible Spacing</span>
+                        </div>
+                    </div>
+
+                    <div class="heading">
+                        <h5 class="title is-capitalized is-size-4 is-underlined">Visulize Fake Symbols</h5>
+                    </div>
+                    <div class="field">
+                        <div class="checkbox">
+                            <span class="is-size-4"><input type="checkbox" id="preview-spoof"
+                                    onchange="fakeText()"></span>
+                            <span class="has-text-black">Display Fake Characters</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+    </section>
+</body>
+
+</html>
