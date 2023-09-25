@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.3/css/bulma.min.css">
+    <script src="scramble-words-methods.js"></script>
+    <script src="scramble-words.js"></script>
+    <title>Scramble Words</title>
+</head>
+
+<body>
+    <section class="container is-fluid">
+        <h1 class="title">Scramble Words</h1>
+        <div class="columns"><!-- dont change -->
+            <div class="column is-6"><!-- dont change -->
+                <p class="is-size-5 is-inline">input Text</p>
+                <button class="button is-pulled-right is-info" onclick="sampleBtn()">Sample</button>
+                <textarea id="generatedScrambleWordsInputTextArea" class="textarea is-primary is-medium"
+                    placeholder="Enter Input...." rows="6"></textarea>
+
+                <div class="buttons is-centered mt-3">
+                    <label class="checkbox mb-2 mr-2">
+                        <input type="checkbox" id="isAuto" checked> Auto </label>
+                    <button id="defaultAction" onclick="scrambleWords();" class="button is-medium is-primary mr-4">
+                        <span>Scramble Words</span>
+                    </button>
+                </div>
+
+                <div class="block">
+                    <p class="is-size-5">Scrambled Word</p>
+                    <textarea id="generatedScrambleWordsOutputTextArea" class="textarea is-primary is-medium"
+                        placeholder="Generated Text....." rows="6"></textarea>
+                </div>
+            </div>
+
+            <div class="column is-6 mt-3"><!-- dont change -->
+                <div class="columns">
+                    <div class="column is-6">
+                        <div class="heading">
+                            <h5 class="title is-capitalized is-size-4 is-underlined">Freeze First Letters</h5>
+                        </div>
+                        <div class="field">
+                            <div class="checkbox">
+                                <span class="is-size-4"><input type="checkbox" id="freeze-first-letter"
+                                        onchange="scrambleWords()"></span>
+                                <span class="has-text-black">Freeze First Letter</span>
+                            </div>
+                        </div>
+
+                        <div class="field">
+                            <div class="checkbox">
+                                <span class="is-size-4"><input type="checkbox" id="freeze-middle-letter"
+                                        onchange="scrambleWords()"></span>
+                                <span class="has-text-black">Freeze Middle Letter</span>
+                            </div>
+                        </div>
+
+                        <div class="field">
+                            <div class="checkbox">
+                                <span class="is-size-4"><input type="checkbox" id="freeze-last-letter"
+                                        onchange="scrambleWords()"></span>
+                                <span class="has-text-black">Freeze Last Letter</span>
+                            </div>
+                        </div>
+
+                        <div class="heading">
+                            <h5 class="title is-capitalized is-size-4 is-underlined">Hyphens and Apostrophes</h5>
+                        </div>
+
+                        <div class="field">
+                            <div class="select is-fullwidth">
+                                <select id="hyphen-behavior" onchange="scrambleWords();">
+                                    <optgroup label="Hyphen Behavior">
+                                        <option selected value="scramble-hyphens">Scramble Hyphens</option>
+                                        <option value="drop-hyphens">Drop Hyphens</option>
+                                        <option value="preserve-hyphens">Preserve Hyphens</option>
+                                        <option value="put-hyphens-last">Put Hyphens Last</option>
+                                        <option value="put-hyphens-first">Put Hyphens First</option>
+                                    </optgroup>
+                                </select>
+                            </div>
+                            <label class="label is-size-6">Hyphens in words.
+                            </label>
+                        </div>
+                        <div class="field">
+                            <div class="select is-fullwidth">
+                                <select id="apostrophe-behavior" onchange="scrambleWords();">
+                                    <optgroup label="Apostrophe Behavior">
+                                        <option selected value="scramble-apostrophes">Scramble Apostrophes</option>
+                                        <option value="drop-apostrophes">Drop Apostrophes</option>
+                                        <option value="preserve-apostrophes">Preserve Apostrophes</option>
+                                        <option value="put-apostrophes-last">Put Apostrophes Last</option>
+                                        <option value="put-apostrophes-first">Put Apostrophes First</option>
+                                    </optgroup>
+                                </select>
+                            </div>
+                            <label class="label is-size-6">Apostrophes in words.
+                            </label>
+                        </div>
+
+
+                        <div class="heading">
+                            <h5 class="title is-capitalized is-size-4 is-underlined">Letters Groups and Their Case</h5>
+                        </div>
+
+                        <div class="field">
+                            <div class="control">
+                                <input type="text" class="input" value="1" id="group-size" oninput="scrambleWords();">
+                                <label for="" class="label">Move Letter</label>
+                            </div>
+                        </div>
+
+                        <div class="field">
+                            <div class="select is-fullwidth">
+                                <select id="case" onchange="scrambleWords();">
+                                    <optgroup label="Letter Case">
+                                        <option selected value="make-lowercase">Convert to Lowercase</option>
+                                        <option value="make-uppercase">Convert to Uppercase</option>
+                                        <option value="leave-case-unchanged">Leave Letters Unchanged</option>
+                                    </optgroup>
+                                    </optgroup>
+                                </select>
+                            </div>
+                            <label class="label is-size-6">Letter Case
+                            </label>
+                        </div>
+                    </div>
+                    <div class="column is-6">
+
+                    </div>
+                </div>
+            </div>
+        </div>
+        </div>
+    </section>
+</body>
+
+</html>
