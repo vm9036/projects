@@ -17,9 +17,11 @@
             <div class="column is-6"><!-- dont change -->
                 <p class="is-size-5 is-inline">CSV</p>
                 <button class="button is-pulled-right is-info" onclick="sampleBtn()">Sample</button>
-                <textarea id="generatedCsvToTextInputTextArea" class="textarea is-primary is-medium"
-                    placeholder="Enter Input...." rows="10"></textarea>
+                <textarea id="InputTextArea" class="textarea is-primary is-medium"
+                    placeholder="Enter Input...." rows="10" oninput="csvToTextAuto();"></textarea>
                 <div class="control has-text-centered">
+                    <label class="checkbox mb-2 mr-2 mt-5">
+                        <input type="checkbox" id="isAuto" onchange="csvToTextAuto()" checked> Auto </label>
                     <button class="button is-primary is-large mt-4" onclick="csvToText();" autofocus>
                         <span>Generate CSV To Text</span>
                     </button>
@@ -33,21 +35,21 @@
                             <label class="label is-size-6">Column seprating character
                             </label>
                             <div class="control">
-                                <input type="text" class="input" id="char-delimiter" value=", " oninput="csvToText();">
+                                <input type="text" class="input" id="char-delimiter" value="," oninput="csvToTextAuto();">
                             </div>
                         </div>
                         <div class="field">
                             <label class="label is-size-6">Skip Lines starting with this
                             </label>
                             <div class="control">
-                                <input type="text" class="input" id="char-comments" value="#" oninput="csvToText();">
+                                <input type="text" class="input" id="char-comments" value="Mango" oninput="csvToTextAuto();">
                             </div>
                         </div>
                         <div class="field">
-                            <label class="label is-size-6">Use a custom quote character
+                            <label class="label is-size-6">Remove Custom Char.
                             </label>
                             <div class="control">
-                                <input type="text" class="input" id="char-quote" value='"' oninput="csvToText();">
+                                <input type="text" class="input" id="char-quote" value='#' oninput="csvToTextAuto();">
                             </div>
                         </div>
                     </div>
@@ -59,7 +61,7 @@
                             <div class="control">
                                 <label class="checkbox">
                                     <span class="is-size-4"><input type="checkbox" id="convert-headers" checked
-                                            onchange="csvToText();"></span>
+                                            onchange="csvToTextAuto();"></span>
                                     <span class="has-text-black">Use headers
                                     </span>
                                 </label>
@@ -69,7 +71,7 @@
                             <div class="control">
                                 <label class="checkbox">
                                     <span class="is-size-4"><input type="checkbox" id="convert-skip-empty" checked
-                                            onchange="csvToText();"></span>
+                                            onchange="csvToTextAuto();"></span>
                                     <span class="has-text-black">Skip Empty Lines
                                     </span>
                                 </label>
@@ -81,7 +83,7 @@
 
             <div class="column is-6 mt-3"><!-- dont change -->
                 <p class="is-size-5">Text</p>
-                <textarea id="generatedCsvToTextOutputTextArea" class="textarea is-primary is-medium"
+                <textarea id="OutputTextArea" class="textarea is-primary is-medium"
                     placeholder="Generated Text....." rows="10"></textarea>
             </div>
         </div>
