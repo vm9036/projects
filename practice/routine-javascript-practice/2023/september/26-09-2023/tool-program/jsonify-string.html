@@ -5,7 +5,6 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.3/css/bulma.min.css">
-    <!-- <script src="morse-code-translator-methods.js"></script> -->
     <script src="jsonify-string.js"></script>
     <title>Jsonify string</title>
 </head>
@@ -24,8 +23,8 @@
             <div class="column is-2 mt-6">
                 <div class="buttons is-centered mt-6">
                     <label class="checkbox mb-2 mr-2">
-                        <input type="checkbox" id="isAuto" checked> Auto </label>
-                    <button id="defaultAction" onclick="jsonStringify();" class="button is-medium is-primary mr-4">
+                        <input type="checkbox" id="isAuto" onchange="jsonStringifyAuto();" checked> Auto </label>
+                        <button id="defaultAction" onclick="jsonStringify();" class="button is-medium is-primary mr-4">
                         <span>jsonify string</span>
                     </button>
                 </div>

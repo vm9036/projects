@@ -143,3 +143,10 @@ function sampleBtn() {
   document.getElementById("generatedSplitTextInputTextArea").value = testStr;
   splitText();
 }
+
+function splitTextAuto(){
+  if(document.getElementById("isAuto").checked)
+  {
+    splitText();
+  }
+}

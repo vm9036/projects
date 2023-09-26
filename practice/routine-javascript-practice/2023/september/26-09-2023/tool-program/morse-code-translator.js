@@ -19,4 +19,11 @@ function sampleBtn() {
     morseCode();
 }
 
+function morseCodeAuto(){
+    if(document.getElementById("isAuto").checked)
+    {
+        morseCode();
+    };
+}
+
 

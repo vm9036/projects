@@ -22,7 +22,7 @@
 
                 <div class="buttons is-centered mt-3">
                     <label class="checkbox mb-2 mr-2">
-                        <input type="checkbox" id="isAuto" checked> Auto </label>
+                        <input type="checkbox" id="isAuto" onchange="morseCodeAuto()" checked> Auto </label>
                     <button id="defaultAction" onclick="morseCode();" class="button is-medium is-primary mr-4">
                         <span>Morse Code Translator</span>
                     </button>
@@ -44,7 +44,7 @@
 
                         <div class="field">
                             <div class="control">
-                                <input type="text" class="input" id="dot" value="." oninput="morseCode()">
+                                <input type="text" class="input" id="dot" value="." oninput="morseCodeAuto()">
                                 <label for="" class="label">Dot In Morse Code</label>
                             </div>
                         </div>
@@ -55,7 +55,7 @@
 
                         <div class="field">
                             <div class="control">
-                                <input type="text" class="input" id="dash" value="-" oninput="morseCode()">
+                                <input type="text" class="input" id="dash" value="-" oninput="morseCodeAuto()">
                                 <label for="" class="label">Dot In Morse Code</label>
                             </div>
                         </div>

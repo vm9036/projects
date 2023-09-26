@@ -45,7 +45,7 @@
                             <div class="control">
                                 <label class="radio">
                                     <span class="is-size-4"><input type="radio" name="split" value="split-by-char"
-                                            onchange="splitText()" checked></span>
+                                            onchange="splitTextAuto()" checked></span>
                                     <span class="has-text-black">Use a Symbol for Splitting
                                     </span>
                                 </label>
@@ -53,7 +53,7 @@
                         </div>
                         <div class="field">
                             <div class="control">
-                                <input type="text" class="input" id="char" value="," oninput="splitText();">
+                                <input type="text" class="input" id="char" value="," oninput="splitTextAuto();">
                             </div>
                             <label class="label is-size-6">Space by default</label>
                         </div>
@@ -62,7 +62,7 @@
                             <div class="control">
                                 <label class="radio">
                                     <span class="is-size-4"><input type="radio" name="split" value="split-by-regex"
-                                            onchange="splitText()"></span>
+                                            onchange="splitTextAuto()"></span>
                                     <span class="has-text-black">Use a Regex for Splitting
                                     </span>
                                 </label>
@@ -70,7 +70,7 @@
                         </div>
                         <div class="field">
                             <div class="control">
-                                <input type="text" class="input" id="regex" value="[^a-zA-Z]+" oninput="splitText();">
+                                <input type="text" class="input" id="regex" value="[^a-zA-Z]+" oninput="splitTextAuto();">
                             </div>
                             <label class="label is-size-6">Multiple spaces by default</label>
                         </div>
@@ -79,7 +79,7 @@
                             <div class="control">
                                 <label class="radio">
                                     <span class="is-size-4"><input type="radio" name="split" value="split-by-length"
-                                            onchange="splitText()"></span>
+                                            onchange="splitTextAuto()"></span>
                                     <span class="has-text-black">Use Length for Splitting
                                     </span>
                                 </label>
@@ -87,7 +87,7 @@
                         </div>
                         <div class="field">
                             <div class="control">
-                                <input type="text" class="input" id="length" value="16" oninput="splitText();">
+                                <input type="text" class="input" id="length" value="16" oninput="splitTextAuto();">
                             </div>
                             <label class="label is-size-6">Length</label>
                         </div>
@@ -100,7 +100,7 @@
                         </div>
                         <div class="field">
                             <div class="control">
-                                <input type="text" class="input" id="separator" value="\n" oninput="splitText();">
+                                <input type="text" class="input" id="separator" value="\n" oninput="splitTextAuto();">
                             </div>
                             <label class="label is-size-6">Newline by default</label>
                         </div>
@@ -110,7 +110,7 @@
                                 <div class="field">
                                     <div class="control">
                                         <input type="text" class="input" id="symbol-before-chunk" value=""
-                                            oninput="splitText();">
+                                            oninput="splitTextAuto();">
                                     </div>
                                     <label class="label is-size-6">Character before chunk</label>
                                 </div>
@@ -119,7 +119,7 @@
                                 <div class="field">
                                     <div class="control">
                                         <input type="text" class="input" id="symbol-after-chunk" value=""
-                                            oninput="splitText();">
+                                            oninput="splitTextAuto();">
                                     </div>
                                     <label class="label is-size-6">Character after chunk</label>
                                 </div>

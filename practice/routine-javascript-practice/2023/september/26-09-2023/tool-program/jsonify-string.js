@@ -12,13 +12,20 @@ function jsonStringifyLogic(text)
 }
 
 function sampleBtn() {
-    let testStr =`Hakuna Matata!
-What a wonderful phrase
-Hakuna Matata!
-Ain't no passing craze
-Yeah. It's our motto!
-What's a motto?
-\t"Hakuna Matata!"`;
+    let testStr =`var employee = {
+        "name" : "john",
+        "age" : "35" ,
+        "country" : "CANADA",
+        "interests" : "Javascript"
+}`;
 document.getElementById("generatedJsonStringifyInputTextArea").value = testStr;
 jsonStringify();
 }
+
+function jsonStringifyAuto(){
+    if(document.getElementById("isAuto").checked)
+    {
+        jsonStringify();
+    };
+}
+  
