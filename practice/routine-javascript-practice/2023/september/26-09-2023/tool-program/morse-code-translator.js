@@ -1,7 +1,7 @@
 function morseCode() {
-    var text = document.getElementById("generatedMorseCodeInputTextArea").value;
+    var text = document.getElementById("InputTextArea").value;
     let answer = morseCodeLogic(text);
-    document.getElementById("generatedMorseCodeOutputTextArea").value = answer;
+    document.getElementById("OutputTextArea").value = answer;
 }
 
 function morseCodeLogic(text) {
@@ -14,8 +14,8 @@ function morseCodeLogic(text) {
 }
 
 function sampleBtn() {
-    let testStr ="Per unit of time is taken as the duration of one point. The duration of the dash is equal to three points. The pause between elements of the same sign is one point, between the signs in the word - 3 points, between words - 7 points.";
-    document.getElementById("generatedMorseCodeInputTextArea").value = testStr;
+    let testStr ="Humility is the practice of recognizing our limitations and imperfections, and it is essential to personal growth and development. Whether it's acknowledging our mistakes and shortcomings, seeking feedback from others, or approaching new situations with a sense of openness and curiosity, humility can help us learn and grow in meaningful ways.";
+    document.getElementById("InputTextArea").value = testStr;
     morseCode();
 }
 

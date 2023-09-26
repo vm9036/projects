@@ -17,8 +17,8 @@
             <div class="column is-6"><!-- dont change -->
                 <p class="is-size-5 is-inline">input Text</p>
                 <button class="button is-pulled-right is-info" onclick="sampleBtn()">Sample</button>
-                <textarea id="generatedMorseCodeInputTextArea" class="textarea is-primary is-medium"
-                    placeholder="Enter Input...." rows="6"></textarea>
+                <textarea id="InputTextArea" class="textarea is-primary is-medium"
+                    placeholder="Enter Input...." rows="6" oninput="morseCodeAuto()"></textarea>
 
                 <div class="buttons is-centered mt-3">
                     <label class="checkbox mb-2 mr-2">
@@ -30,7 +30,7 @@
 
                 <div class="block">
                     <p class="is-size-5">Sorted Words</p>
-                    <textarea id="generatedMorseCodeOutputTextArea" class="textarea is-primary is-medium"
+                    <textarea id="OutputTextArea" class="textarea is-primary is-medium"
                         placeholder="Generated Text....." rows="6"></textarea>
                 </div>
             </div>
