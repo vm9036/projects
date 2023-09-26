@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.3/css/bulma.min.css">
+    <title>Pattern b5</title>
+</head>
+
+<body>
+    <div class="container">
+        <div class="box">
+            <table class="table is-bordered" id="primeTable">
+                <tr>
+                    <td>2</td>
+                    <td>3</td>
+                    <td>5</td>
+                    <td>7</td>
+                </tr>
+                <tr>
+                    <td>11</td>
+                    <td>13</td>
+                    <td>17</td>
+                    <td>19</td>
+                </tr>
+                <tr>
+                    <td>23</td>
+                    <td>29</td>
+                    <td>31</td>
+                    <td>37</td>
+                </tr>
+                <tr>
+                    <td>41</td>
+                    <td>43</td>
+                    <td>47</td>
+                    <td>49</td>
+                </tr>
+            </table>
+
+            <div class="field is-grouped">
+                <div class="control">
+                    <input type="text" class="input" value="29" id="inputN">
+                </div>
+                <div>
+                    <button class="button" onclick="changeColor()">Change Color</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function changeColor() {
+            // let color = document.getElementById("primeTable").value;
+            let n = document.getElementById("inputN").value;
+
+            document.getElementById("primeTable").innerHTML = "<td class='is-primary'> " + n +"</td>";
+
+        }
+    </script>
+</body>
+
+</html>

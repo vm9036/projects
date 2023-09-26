@@ -1,8 +1,8 @@
 function splitText(){
-    var text = document.getElementById("generatedSplitTextInputTextArea").value;
+    var text = document.getElementById("InputTextArea").value;
     let answer = splitTextLogic(text);
     console.log(answer);
-    document.getElementById("generatedSplitTextOutputTextArea").value =answer;
+    document.getElementById("OutputTextArea").value =answer;
 }
 
 function splitTextLogic(text) {
@@ -139,8 +139,8 @@ function parseOptions(tool) {
 }
 
 function sampleBtn() {
-  let testStr ="1 - eins,2 - zwei,3 - drei,4 - vier,5 - fünf,6 - sechs,7 - sieben,8 - acht,9 - neun,10 - zehn";
-  document.getElementById("generatedSplitTextInputTextArea").value = testStr;
+  let testStr ="1 - Mango,2 - Lemon,3 - Grapes,4 - Watermelon,5 - Orange";
+  document.getElementById("InputTextArea").value = testStr;
   splitText();
 }
 

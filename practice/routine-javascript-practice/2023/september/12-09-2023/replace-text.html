@@ -34,14 +34,14 @@
                     <p class="is-size-4 title">Search Text :</p>
                     <div class="field">
                         <div class="control">
-                            <input type="radio" name="pattern" value="text" checked> find ths pattern in text
+                            <input type="radio" name="pattern" value="text" checked onchange="replacedText()"> find ths pattern in text
                             <input type="text" class="input" id="find" value="Parbat">
                             <label class="label"> enter text pattern that you want to replace</label>
                         </div>
                     </div>
                     <div class="field">
                         <div class="control">
-                            <input type="radio" name="pattern" value="regex"> find a pattern using a regexp
+                            <input type="radio" name="pattern" value="regex" onchange="replacedText()"> find a pattern using a regexp
                             <input type="text" class="input" id="regex" value="/\d+\./g">
                             <label class="label"> enter the regular expression that you want to replace</label>
                         </div>

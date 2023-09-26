@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.3/css/bulma.min.css">
+    <title>Pattern N9</title>
+</head>
+<body>
+    <div class="container">
+        <div class="box">
+            <div class="field">
+                <label for="" class="label">Enter Number :-</label>
+                <div class="control">
+                    <input type="text" class="input is-large" id="inptN" value="5">
+                </div>
+            </div>
+            <div class="field">
+                <div class="control">
+                    <button class="button" onclick="patternN9()">Click</button>
+                </div>
+            </div>
+            <div id="displayPattern"></div>
+        </div>
+    </div>
+
+    <script>
+        function patternN9(){
+            let n = Number(document.getElementById("inptN").value);
+            let strPtn = "";
+           
+            for(let i = 1; i <= 5; i++)
+            {
+                for(let j=1; j<=i; j++)
+                {
+                   
+                    strPtn = strPtn + i + " ";
+                }
+                strPtn = strPtn + "<br>";
+                document.getElementById("displayPattern").innerHTML = strPtn;
+            }
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.9.4/css/bulma.min.css">
+    <title>Document</title>
+</head>
+<body>
+    <div class="container mt-6">
+        <div class="panel">
+            <div class="panel-heading">
+                <h1 class="title has-text-centered">1 to 50 Between Sum And Condition Break Program :-</h1>
+            </div>
+            <div class="box">
+                <div class="columns">
+                    <div class="column is-6">
+                        <div class="field">
+                            <label class="label is-size-4">Start Number :</label>
+                            <div class="control">
+                                <input type="number" id="inputStartNumber" value="1" class="input is-info is-large has-text-weight-semibold">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="column is-6">
+                        <div class="field">
+                            <label class="label is-size-4">Sum Number :</label>
+                            <div class="control">
+                                <input type="number" id="inputsumNumber" value="17" class="input is-info is-large has-text-weight-semibold">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="block">
+                    <div class="field mt-6 mb-6">
+                        <div class="control has-text-centered">
+                            <button class="button is-success is-large has-text-weight-bold" onclick="minusBetWeenSum()">Sum</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="columns">
+                    <div class="column is-6">
+                        <div class="field">
+                            <label class="label is-size-4"><span>Minus</span> Btn StartValue And EndValue and same Sum :-</label>
+                            <div class="control">
+                                <textarea name="" id="displayBetweenNumber" cols="30" rows="5" class="textarea is-success has-text-weight-semibold"></textarea>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <script>
+
+        function minusBetWeenSum(){
+            let startValue = Number(document.getElementById("inputStartNumber").value);
+            let sum = Number(document.getElementById("inputsumNumber").value);
+            let counter = 0;
+            let storeCounter = "";
+            let sumStore = 0;
+
+            for(let i = startValue; ;i++)
+            {
+                if(i == startValue)
+                {
+                    storeCounter = storeCounter + i;
+                }
+                else
+                {
+                    storeCounter = storeCounter + " + " + i ;
+                }
+                counter = counter + i;
+
+                console.log("counter :-> " + counter);
+                let minus;
+                if(i % 2 == 0)
+                {
+                    minus = i - 2;
+                }
+                else
+                {
+                    minus = i - 1;
+                }
+
+                // counter = storeCounter - minus;
+                if(counter > sum || counter == sum)
+                {
+                    sumStore = counter - minus;
+                    document.getElementById("displayBetweenNumber").value = storeCounter + " - " + minus + " = " + sumStore;
+                    break;
+                }
+
+                // if(counter > sum || counter == sum)
+                // {
+                //     counter = counter - 4; 
+                //     document.getElementById("displayBetweenNumber").value = storeCounter + " = " + counter;
+                //     break;
+                // }
+            }
+
+        }
+
+        // function betweenSum(){
+        //     let startValue = Number(document.getElementById("inputStartNumber").value);
+        //     let sum = Number(document.getElementById("inputsumNumber").value);
+        //     let counter = 0;
+        //     let storeCounter = ""
+
+        //     let store;
+
+            
+        //     let storeCounter1 = " ";
+
+        //     for(let i = startValue; ; i++)
+        //     {
+        //         if(i == startValue)
+        //         {
+        //             storeCounter = storeCounter + i;
+        //         }
+        //         else
+        //         {
+        //             storeCounter = storeCounter + " + " + i;
+        //         }
+        //         counter = counter + i;
+                
+        //         console.log("counter :-> "+counter);
+        //         document.getElementById("displayBetweenNumber").value = storeCounter + "= " + counter;
+        //         if(counter >= sum || counter == sum)
+        //         {
+        //             store = i;
+        //             break;
+        //         }
+        //     }
+        //     console.log(store);
+        //     let counter1 = 0;
+        //     console.log("counter1 :-> "+counter1)
+        //     for(let i = store; ;i--)
+        //     {
+        //         if(i == store)
+        //         {
+        //             storeCounter1 = storeCounter1 + i;
+        //         }
+        //         else
+        //         {
+        //             storeCounter1 = storeCounter1 + " + " + i;
+        //         }   
+        //         counter1 = counter1 + i;
+        //         console.log("counter :-> "+counter1);
+        //         document.getElementById("displayReverseBetweenNumber").value = storeCounter1 + "=" + counter1;
+        //         if(counter1 >= sum || counter1 == sum)
+        //         {
+        //             break;
+        //         }
+        //     }         
+        // }
+    </script>
+</body>
+</html>
