@@ -18,7 +18,7 @@ Hakuna Matata!
 Ain't no passing craze
 Yeah. It's our motto!
 What's a motto?
-    "Hakuna Matata!"`;
+\t"Hakuna Matata!"`;
 document.getElementById("generatedJsonStringifyInputTextArea").value = testStr;
 jsonStringify();
 }
