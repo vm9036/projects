@@ -16,8 +16,8 @@
             <div class="column is-5"><!-- dont change -->
                 <p class="is-size-5 is-inline">input Text</p>
                 <button class="button is-pulled-right is-info" onclick="sampleBtn()">Sample</button>
-                <textarea id="generatedJsonStringifyInputTextArea" class="textarea is-primary is-medium"
-                    placeholder="Enter Input...." rows="10"></textarea>   
+                <textarea id="InputTextArea" class="textarea is-primary is-medium"
+                    placeholder="Enter Input...." rows="10" oninput="jsonStringifyAuto()"></textarea>   
             </div>
 
             <div class="column is-2 mt-6">
@@ -33,40 +33,10 @@
             <div class="column is-5">
                 <div class="block mt-2">
                     <p class="is-size-5">Sorted Words</p>
-                    <textarea id="generatedJsonStringifyOutputTextArea" class="textarea is-primary is-medium"
+                    <textarea id="OutputTextArea" class="textarea is-primary is-medium"
                         placeholder="Generated Text....." rows="10"></textarea>
                 </div>
             </div>
-            <!-- <div class="column is-6 mt-3">
-                <div class="columns">
-                    <div class="column is-6">
-                        <div class="heading">
-                            <h5 class="title is-capitalized is-size-4 is-underlined">Short Signal</h5>
-                        </div>
-
-                        <div class="field">
-                            <div class="control">
-                                <input type="text" class="input" id="dot" value="." oninput="morseCode()">
-                                <label for="" class="label">Dot In Morse Code</label>
-                            </div>
-                        </div>
-
-                        <div class="heading">
-                            <h5 class="title is-capitalized is-size-4 is-underlined">Long Signal</h5>
-                        </div>
-
-                        <div class="field">
-                            <div class="control">
-                                <input type="text" class="input" id="dash" value="-" oninput="morseCode()">
-                                <label for="" class="label">Dot In Morse Code</label>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="column is-6">
-
-                    </div>
-                </div>
-            </div> -->
     </section>
 </body>
 

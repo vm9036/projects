@@ -1,9 +1,9 @@
 
 function jsonStringify()
 {
-    var text = document.getElementById("generatedJsonStringifyInputTextArea").value;
+    var text = document.getElementById("InputTextArea").value;
     let answer = jsonStringifyLogic(text);
-    document.getElementById("generatedJsonStringifyOutputTextArea").value = answer;
+    document.getElementById("OutputTextArea").value = answer;
 }
 
 function jsonStringifyLogic(text)
@@ -18,7 +18,7 @@ function sampleBtn() {
         "country" : "CANADA",
         "interests" : "Javascript"
 }`;
-document.getElementById("generatedJsonStringifyInputTextArea").value = testStr;
+document.getElementById("InputTextArea").value = testStr;
 jsonStringify();
 }
 
