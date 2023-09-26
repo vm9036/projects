@@ -1,7 +1,7 @@
 function morseCode() {
     var text = document.getElementById("InputTextArea").value;
     let answer = morseCodeLogic(text);
-    document.getElementById("OutputTextArea").value = answer;
+    document.getElementById("").value = answer;
 }
 
 function morseCodeLogic(text) {
