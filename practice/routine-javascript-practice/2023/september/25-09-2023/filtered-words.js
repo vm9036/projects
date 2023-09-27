@@ -1,8 +1,8 @@
 
 function filteredWords() {
-    var text = document.getElementById("generatedFilteredWordsInputTextArea").value;
+    var text = document.getElementById("InputTextArea").value;
     let answer = filteredWordsLogic(text);
-    document.getElementById("generatedFilteredWordsOutputTextArea").value = answer;
+    document.getElementById("OutputTextArea").value = answer;
 }
 
 function filteredWordsLogic(text) {
@@ -90,10 +90,16 @@ function parseOptions(tool) {
 }
 
 function sampleBtn() {
-    let testStr = "the sun rises in the east and sets in the west";
-    document.getElementById("generatedFilteredWordsInputTextArea").value = testStr;
+    let testStr = "The Sun rises in the East and sets in the West";
+    document.getElementById("InputTextArea").value = testStr;
     filteredWords();
 }
+
+function filteredWordsAuto(){
+    if(document.getElementById("isAuto").checked) {
+        filteredWords();
+    };
+  }
 
 function filterWordsBySubstring(words, strings, invert) {
     var filteredWords = words.filter(word => {

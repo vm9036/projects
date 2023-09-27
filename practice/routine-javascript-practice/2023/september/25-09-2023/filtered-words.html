@@ -17,12 +17,12 @@
             <div class="column is-6"><!-- dont change -->
                 <p class="is-size-5 is-inline">input Text</p>
                 <button class="button is-pulled-right is-info" onclick="sampleBtn()">Sample</button>
-                <textarea id="generatedFilteredWordsInputTextArea" class="textarea is-primary is-medium"
-                    placeholder="Enter Input...." rows="6"></textarea>
+                <textarea id="InputTextArea" class="textarea is-primary is-medium"
+                    placeholder="Enter Input...." rows="6" oninput="filteredWordsAuto()"></textarea>
 
                 <div class="buttons is-centered mt-3">
                     <label class="checkbox mb-2 mr-2">
-                        <input type="checkbox" id="isAuto" checked> Auto </label>
+                        <input type="checkbox" id="isAuto" onchange="filteredWordsAuto()" checked> Auto </label>
                     <button id="defaultAction" onclick="filteredWords();" class="button is-medium is-primary mr-4">
                         <span>Scramble Words</span>
                     </button>
@@ -30,7 +30,7 @@
 
                 <div class="block">
                     <p class="is-size-5">Scrambled Word</p>
-                    <textarea id="generatedFilteredWordsOutputTextArea" class="textarea is-primary is-medium" placeholder="Generated Text....." rows="6">
+                    <textarea id="OutputTextArea" class="textarea is-primary is-medium" placeholder="Generated Text....." rows="6">
                     </textarea>
                 </div>
             </div>
@@ -46,7 +46,7 @@
                             <div class="control">
                                 <label class="radio">
                                     <span class="is-size-4"><input type="radio" name="filter" value="filter-by-string"
-                                            onchange="filteredWords()"></span>
+                                            onchange="filteredWordsAuto()"></span>
                                     <span class="has-text-black">Use a Pattern
                                     </span>
                                 </label>
@@ -55,7 +55,7 @@
                         <div class="field mt-3">
                             <div class="control">
                                 <textarea id="strings" cols="2" rows="2" class="textarea"
-                                    oninput="filteredWords()">can
+                                    oninput="filteredWordsAuto()">can
 Can
                                 </textarea>
                             </div>
@@ -66,8 +66,8 @@ Can
                         <div class="field">
                             <div class="control">
                                 <label class="radio">
-                                    <span class="is-size-4"><input type="radio" name="filter" value="split-by-regex"
-                                            onchange="filteredWords()" checked></span>
+                                    <span class="is-size-4"><input type="radio" name="filter" value="filter-by-symbol-set"
+                                            onchange="filteredWordsAuto()" checked></span>
                                     <span class="has-text-black">Use a Symbol Set
                                     </span>
                                 </label>
@@ -75,7 +75,7 @@ Can
                         </div>
                         <div class="field">
                             <div class="control">
-                                <input type="text" class="input" id="symbol-set" value="aehst" oninput="filteredWords();">
+                                <input type="text" class="input" id="symbol-set" value="aehst" oninput="filteredWordsAuto();">
                             </div>
                             <label class="label is-size-6">Words you want to extract</label>
                         </div>
@@ -84,8 +84,8 @@ Can
                         <div class="field">
                             <div class="control">
                                 <label class="radio">
-                                    <span class="is-size-4"><input type="radio" name="filter" value="filter-by-symbol-set"
-                                            onchange="filteredWords()"></span>
+                                    <span class="is-size-4"><input type="radio" name="filter" value="filter-by-regex"
+                                            onchange="filteredWordsAuto()"></span>
                                     <span class="has-text-black">Use a RegExp
                                     </span>
                                 </label>
@@ -93,7 +93,7 @@ Can
                         </div>
                         <div class="field">
                             <div class="control">
-                                <input type="text" class="input" id="regex" value="/(\w)\1/i" oninput="filteredWords();">
+                                <input type="text" class="input" id="regex" value="/(\w)\1/i" oninput="filteredWordsAuto();">
                             </div>
                             <label class="label is-size-6">Regular Expression</label>
                         </div>
@@ -106,7 +106,7 @@ Can
                         <div class="field">
                             <div class="checkbox">
                                 <span class="is-size-4"><input type="checkbox" id="invert"
-                                        onchange="filteredWords()"></span>
+                                        onchange="filteredWordsAuto()" checked></span>
                                 <span class="has-text-black">Invert Filter Matches</span>
                             </div>
                         </div>
@@ -117,7 +117,7 @@ Can
 
                         <div class="field">
                             <div class="control">
-                                <input type="text" class="input" value=", " id="output-separator" oninput="filteredWords();">
+                                <input type="text" class="input" value=", " id="output-separator" oninput="filteredWordsAuto();">
                                 <label for="" class="label">Seperated By Chrarcter</label>
                             </div>
                         </div>
@@ -125,7 +125,7 @@ Can
                         <div class="field">
                             <div class="checkbox">
                                 <span class="is-size-4"><input type="checkbox" id="make-lowercase"
-                                        onchange="filteredWords()"></span>
+                                        onchange="filteredWordsAuto()"></span>
                                 <span class="has-text-black">Make Words Lowercase</span>
                             </div>
                         </div>
@@ -133,7 +133,7 @@ Can
                         <div class="field">
                             <div class="checkbox">
                                 <span class="is-size-4"><input type="checkbox" id="remove-duplicates"
-                                        onchange="filteredWords()" checked></span>
+                                        onchange="filteredWordsAuto()" checked></span>
                                 <span class="has-text-black">Delete Duplicate Words</span>
                             </div>
                         </div>
