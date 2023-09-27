@@ -1,8 +1,8 @@
 function trimText(){
-    var text = document.getElementById("generatedTrimTextInputTextArea").value;
+    var text = document.getElementById("InputTextArea").value;
     let answer = trimTextLogic(text);
     console.log(answer);
-    document.getElementById("generatedTrimTextOutputTextArea").value = answer;
+    document.getElementById("OutputTextArea").value = answer;
 }
 
 function trimTextLogic(text) {
@@ -44,15 +44,18 @@ function rightTrim(str) {
 }
 
 function sampleBtn(){
-    let testStr ="      It's better to spend time on something useful and interesting than manually removing spaces.";
-    document.getElementById("generatedTrimTextInputTextArea").value = testStr;
+    let testStr =
+`    JAVASCRIPT    
+JAVA  
+    PYTHON
+C# 
+    ASP.NET`
+    document.getElementById("InputTextArea").value = testStr;
     trimText();
 }
 
-function autoClick(){
-    
-    let checkEl = document.getElementById("isAuto").checked;
-    if(checkEl.checked == true) {
+function trimTextAuto(){
+    if(document.getElementById("isAuto").checked) {
         trimText();
-    }
+    };
 }

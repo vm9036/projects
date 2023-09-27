@@ -5,7 +5,6 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.3/css/bulma.min.css">
-    <!-- <script src="split-texts-methods.js"></script> -->
     <script src="trim-text.js"></script>
     <title>Trim Text</title>
 </head>
@@ -17,12 +16,12 @@
             <div class="column is-6"><!-- dont change -->
                 <p class="is-size-5 is-inline">input Text</p>
                 <button class="button is-pulled-right is-info" onclick="sampleBtn()">Sample</button>
-                <textarea id="generatedTrimTextInputTextArea" class="textarea is-primary is-medium"
-                    placeholder="Enter Input...." rows="6"></textarea>
+                <textarea id="InputTextArea" class="textarea is-primary is-medium"
+                    placeholder="Enter Input...." rows="6" oninput="trimTextAuto()"></textarea>
 
                 <div class="buttons is-centered mt-3">
                     <label class="checkbox mb-2 mr-2">
-                        <input type="checkbox" id="isAuto" onchange="trimText()" checked> Auto </label>
+                        <input type="checkbox" id="isAuto" onchange="trimTextAuto()" checked> Auto </label>
                     <button onclick="trimText();" class="button is-medium is-primary mr-4">
                         <span>Generate Trim Text</span>
                     </button>
@@ -30,7 +29,7 @@
 
                 <div class="block">
                     <p class="is-size-5">Trimmed Text</p>
-                    <textarea id="generatedTrimTextOutputTextArea" class="textarea is-primary is-medium"
+                    <textarea id="OutputTextArea" class="textarea is-primary is-medium"
                         placeholder="Generated Text....." rows="6"></textarea>
                 </div>
             </div>
@@ -44,7 +43,7 @@
                     <div class="control">
                         <label class="checkbox">
                             <span class="is-size-4"><input type="checkbox" id="left-trim" checked
-                                    onchange="trimText();"></span>
+                                    onchange="trimTextAuto();"></span>
                             <span class="has-text-black">Left Side Trimming
                             </span>
                         </label>
@@ -54,7 +53,7 @@
                     <div class="control">
                         <label class="checkbox">
                             <span class="is-size-4"><input type="checkbox" id="right-trim" checked
-                                    onchange="trimText();"></span>
+                                    onchange="trimTextAuto();"></span>
                             <span class="has-text-black">Right Side Trimming
                             </span>
                         </label>
@@ -64,7 +63,7 @@
                     <div class="control">
                         <label class="checkbox">
                             <span class="is-size-4"><input type="checkbox" id="multi-line" checked
-                                    onchange="trimText();"></span>
+                                    onchange="trimTextAuto();"></span>
                             <span class="has-text-black">Line-By-line Trimming
                             </span>
                         </label>
