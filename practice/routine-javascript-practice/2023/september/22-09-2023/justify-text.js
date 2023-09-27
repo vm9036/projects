@@ -1,7 +1,7 @@
 function justifyText() {
-   var text = document.getElementById("generatedJustifyTextInputTextArea").value;
+   var text = document.getElementById("InputTextArea").value;
    var answer = justifyTextLogic(text);
-   document.getElementById("generatedJustifyTextOutputTextArea").value = answer;
+   document.getElementById("OutputTextArea").value = answer;
 }
 
 function justifyTextLogic(text){
@@ -87,7 +87,13 @@ function parseOptions(tool) {
 }
 
 function sampleBtn() {
-  let testStr ="About 20% of oxygen is produced by the Amazon rainforest. The Earth's atmosphere is about 78 percent nitrogen, 21 percent oxygen, and about 1 percent other gases. For the existence of most organisms on the planet, oxygen is a necessary element, it provides the body with energy and removes carbon dioxide. Fortunately, plants constantly replenish the oxygen level of our planet thanks to photosynthesis. During this process, carbon dioxide and water are converted into energy, releasing oxygen as a byproduct. The Amazon rainforest covers 5.5 million square kilometers (2.1 million square miles), recycling much of the Earth's oxygen while absorbing large amounts of carbon dioxide.";
-  document.getElementById("generatedJustifyTextInputTextArea").value = testStr;
+  let testStr ="I sat on the bench in the park, watching as children ran and played around me. The sound of laughter filled the air, and I couldn't help but feel a sense of joy and contentment.The use of smart irrigation systems is another exciting development in technology and nature. Smart irrigation systems use data and analytics to optimize water use and reduce waste in agriculture and landscaping.";
+  document.getElementById("InputTextArea").value = testStr;
   justifyText();
+}
+
+function justifyTextAuto(){
+  if(document.getElementById("isAuto").checked) {
+      justifyText();
+  };
 }
