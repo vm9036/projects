@@ -5,7 +5,6 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.3/css/bulma.min.css">
-    <!-- <script src="split-texts-methods.js"></script> -->
     <script src="join-text.js"></script>
     <title>Join Text</title>
 </head>
@@ -17,12 +16,12 @@
             <div class="column is-6"><!-- dont change -->
                 <p class="is-size-5 is-inline">input Text</p>
                 <button class="button is-pulled-right is-info" onclick="sampleBtn()">Sample</button>
-                <textarea id="generatedJoinTextInputTextArea" class="textarea is-primary is-medium"
-                    placeholder="Enter Input...." rows="6"></textarea>
+                <textarea id="InputTextArea" class="textarea is-primary is-medium"
+                    placeholder="Enter Input...." rows="6" oninput="joinTextAuto()"></textarea>
 
                 <div class="buttons is-centered mt-3">
                     <label class="checkbox mb-2 mr-2">
-                        <input type="checkbox" id="isAuto" checked oninput="joinTextMain()"> Auto </label>
+                        <input type="checkbox" id="isAuto" onchange="joinTextAuto()" checked> Auto </label>
                     <button id="defaultAction" onclick="joinTextMain();" class="button is-medium is-primary mr-4">
                         <span>Generate Join Text</span>
                     </button>
@@ -30,7 +29,7 @@
 
                 <div class="block">
                     <p class="is-size-5">Joined Text</p>
-                    <textarea id="generatedJoinTextOutputTextArea" class="textarea is-primary is-medium"
+                    <textarea id="OutputTextArea" class="textarea is-primary is-medium"
                         placeholder="Generated Text....." rows="6"></textarea>
                 </div>
             </div>
@@ -43,7 +42,7 @@
                 <div class="field">
                     <label class="label is-size-6">Symbol that connects broken</label>
                     <div class="control">
-                        <input type="text" class="input" id="char" value=" and " oninput="joinTextMain();">
+                        <input type="text" class="input" id="char" value=" or " oninput="joinTextAuto();">
                     </div>
                 </div>
                 <div class="heading mt-3">
@@ -53,8 +52,8 @@
                 <div class="field">
                     <div class="control">
                         <label class="checkbox">
-                            <span class="is-size-4"><input type="checkbox" id="remove-leading-whitespace" checked
-                                    onchange="joinTextMain();"></span>
+                            <span class="is-size-4"><input type="checkbox" id="remove-empty-lines" 
+                                    onchange="joinTextAuto();" checked></span>
                             <span class="has-text-black">Delete Blank Lines
                             </span>
                         </label>
@@ -63,8 +62,8 @@
                 <div class="field">
                     <div class="control">
                         <label class="checkbox">
-                            <span class="is-size-4"><input type="checkbox" id="remove-trailing-whitespace" checked
-                                    onchange="joinTextMain();"></span>
+                            <span class="is-size-4"><input type="checkbox" id="remove-trailing-whitespace" 
+                                    onchange="joinTextAuto();" checked></span>
                             <span class="has-text-black">Delete Trailing Lines
                             </span>
                         </label>

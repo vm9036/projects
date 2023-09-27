@@ -1,12 +1,12 @@
-function joinTextMain(){
-    var text = document.getElementById("generatedJoinTextInputTextArea").value;
+function joinTextMain() {
+    var text = document.getElementById("InputTextArea").value;
     var answer = joinTextLogic(text);
     console.log(answer);
-    document.getElementById("generatedJoinTextOutputTextArea").value = answer;
+    document.getElementById("OutputTextArea").value = answer;
 }
 
 
-function joinTextLogic(text){
+function joinTextLogic(text) {
     var tool = this;
     var opts = parseOptions(tool);
     if (text.trim().length == 0) {
@@ -60,7 +60,7 @@ function parseOptions(tool) {
     var inputSep = '\n';
     var joinChar = document.getElementById("char").value;
     joinChar = joinChar || '';
-    var leftTrim = document.getElementById("remove-leading-whitespace").checked;
+    // var leftTrim = document.getElementById("remove-leading-whitespace").checked;
     // var leftTrim = options['remove-leading-whitespace'] || options['left-trim'];
     var rightTrim = document.getElementById("remove-trailing-whitespace").checked;
     // var rightTrim = options['remove-trailing-whitespace'] || options['right-trim'];
@@ -68,7 +68,7 @@ function parseOptions(tool) {
         var leftTrim = true;
         var rightTrim = true;
     }
-    var removeEmpty = true;
+    var removeEmpty = document.getElementById("remove-empty-lines").checked;
     if (undefined) {
         var preservePar = true;
         var removeEmpty = false;
@@ -85,7 +85,7 @@ function parseOptions(tool) {
     if (regexpSep) {
         var regexParts = inputSep.match(/^\/(.*?)\/([gimuy]*)$/);
         if (regexParts) {
-            re = new RegExp(regexParts[1],regexParts[2]);
+            re = new RegExp(regexParts[1], regexParts[2]);
         } else {
             re = new RegExp(inputSep);
         }
@@ -107,14 +107,21 @@ function parseOptions(tool) {
     };
 }
 
-function sampleBtn(){
-    let testStr =`clean the house   
+function sampleBtn() {
+    let testStr =
+`clean the home
 
 go shopping   
-feed the cat
+feed the Dog
 
-make dinner   
-build a rocket ship and fly away`;
-    document.getElementById("generatedJoinTextInputTextArea").value = testStr;
+make dinner`;
+    document.getElementById("InputTextArea").value = testStr;
     joinTextMain();
+}
+
+function joinTextAuto(){
+    if(document.getElementById("isAuto").checked)
+    {
+        joinTextMain();
+    }
 }
