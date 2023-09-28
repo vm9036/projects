@@ -1,7 +1,7 @@
 function fakeText() {
-  var text = document.getElementById("generatedFakeTextInputTextArea").value;
+  var text = document.getElementById("InputTextArea").value;
   let answer = fakeTextLogic(text);
-  document.getElementById("generatedFakeTextOutputTextArea").value = answer;
+  document.getElementById("OutputTextArea").value = answer;
 }
 
 function fakeTextLogic(text) {
@@ -41,10 +41,17 @@ function fakeTextLogic(text) {
 }
 
 function sampleBtn() {
-    let testStr ="John Taylor Smith";
-    document.getElementById("generatedFakeTextInputTextArea").value = testStr;
+    let testStr ="You've truly impressed everyone with your remarkable skills. Well done!";
+    document.getElementById("InputTextArea").value = testStr;
+    fakeText();
+}
+
+function fakeTextAuto(){
+  if(document.getElementById("isAuto").checked)
+  {
     fakeText();
   }
+}
 
 function getSpoofChar(char) {
   var letters = {
