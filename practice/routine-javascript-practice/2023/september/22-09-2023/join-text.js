@@ -109,12 +109,14 @@ function parseOptions(tool) {
 
 function sampleBtn() {
     let testStr =
-`clean the home
+`Take out the trash
 
-go shopping   
-feed the Dog
+Don't touch 
+hot stove
 
-make dinner`;
+Listen carefully instructions
+Turn off the lights 
+before leaving`;
     document.getElementById("InputTextArea").value = testStr;
     joinTextMain();
 }
