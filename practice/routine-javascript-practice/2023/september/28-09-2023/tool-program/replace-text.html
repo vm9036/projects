@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.3/css/bulma.min.css">
+    <script src="replace-text.js"></script>
+    <title>Replace Text</title>
+</head>
+
+<body>
+    <div class="container is-fluid">
+        <div class="box">
+            <h1 class="title">Replace Text</h1>
+            <div class="columns">
+                <div class="column is-6">
+                    <div class="field">
+                        <p class="is-size-5 is-inline">Text</p>
+                        <button class="button is-pulled-right is-info" onclick="sampleBtn()">Sample</button>
+                        <div class="control">
+                            <textarea name="" class="textarea" id="InputTextArea" cols="30" rows="10"
+                                placeholder="Please Enter Text....."  oninput="replacedTextAuto()">                              
+                            </textarea>
+                        </div>
+                    </div>
+                    <p class="is-size-4 title">Search Text :</p>
+                    <div class="field">
+                        <div class="control">
+                            <input type="radio" name="pattern" value="text" checked onchange="replacedTextAuto()"> find ths pattern in text
+                            <input type="text" class="input" id="find" value="sound">
+                            <label class="label"> enter text pattern that you want to replace</label>
+                        </div>
+                    </div>
+                    <div class="field">
+                        <div class="control">
+                            <input type="radio" name="pattern" value="regex" onchange="replacedTextAuto()"> find a pattern using a regexp
+                            <input type="text" class="input" id="regex" value="/\d+\./g">
+                            <label class="label"> enter the regular expression that you want to replace</label>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="column is-6">
+                    <div class="field">
+                        <label class="label">Replaced Text</label>
+                        <div class="control">
+                            <textarea name="" class="textarea" id="OutputTextArea" cols="30" rows="10"
+                                placeholder="Replaced Text....."></textarea>
+                        </div>
+                    </div>
+                    
+                    <div class="field">
+                        <div class="buttons is-centered">
+                            <label class="checkbox mb-2 mr-2">
+                                <input type="checkbox" id="isAuto" onchange="replacedTextAuto();" checked> Auto </label>
+                                <button id="defaultAction" onclick="replacedText();" class="button is-medium is-primary mr-4">
+                                <span>Replaced Text</span>
+                            </button>
+                        </div>
+                    </div>
+                    <p class="is-size-4 title"> Replaced Text :</p>
+                    <div class="field">
+                        <div class="control">
+                            <input type="text" class="input" id="new-string" value="music">
+                            <label for="" class="label">Enter the pattern to use for replacement.</label>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+        </div>
+    </div>
+
+    
+</body>
+
+</html>
