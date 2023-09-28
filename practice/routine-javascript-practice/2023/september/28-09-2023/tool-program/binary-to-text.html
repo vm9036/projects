@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.3/css/bulma.min.css">
+    <script src="binary-to-text-methods.js"></script>
+    <script src="binary-to-text.js"></script>
+    <title>Binary To Text</title>
+</head>
+
+<body>
+    <section class="container is-fluid">
+        <h1 class="title">Binary To Text</h1>
+        <div class="columns"><!-- dont change -->
+            <div class="column is-5"><!-- dont change -->
+                <p class="is-size-5 is-inline">Binary Text</p>
+                <button class="button is-pulled-right is-info" onclick="sampleBtn()">Sample</button>
+                <textarea id="InputTextArea" class="textarea is-primary is-medium"
+                    placeholder="Enter Input...." rows="10" oninput="binaryToTextAuto()"></textarea>   
+            </div>
+
+            <div class="column is-2 mt-6">
+                <div class="buttons is-centered mt-6">
+                    <label class="checkbox mb-2 mr-2">
+                        <input type="checkbox" id="isAuto" onchange="binaryToTextAuto();" checked> Auto </label>
+                        <button id="defaultAction" onclick="binaryToText();" class="button is-medium is-primary mr-4">
+                        <span>Binary To Text</span>
+                    </button>
+                </div>
+            </div>
+
+            <div class="column is-5">
+                <div class="block mt-2">
+                    <p class="is-size-5">Text</p>
+                    <textarea id="OutputTextArea" class="textarea is-primary is-medium"
+                        placeholder="Generated Text....." rows="10"></textarea>
+                </div>
+            </div>
+    </section>
+</body>
+
+</html>
