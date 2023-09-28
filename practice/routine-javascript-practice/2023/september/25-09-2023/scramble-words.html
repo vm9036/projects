@@ -17,12 +17,12 @@
             <div class="column is-6"><!-- dont change -->
                 <p class="is-size-5 is-inline">input Text</p>
                 <button class="button is-pulled-right is-info" onclick="sampleBtn()">Sample</button>
-                <textarea id="generatedScrambleWordsInputTextArea" class="textarea is-primary is-medium"
-                    placeholder="Enter Input...." rows="6"></textarea>
+                <textarea id="InputTextArea" class="textarea is-primary is-medium"
+                    placeholder="Enter Input...." rows="6" oninput="scrambleWordsAuto()"></textarea>
 
                 <div class="buttons is-centered mt-3">
                     <label class="checkbox mb-2 mr-2">
-                        <input type="checkbox" id="isAuto" checked> Auto </label>
+                        <input type="checkbox" id="isAuto" onchange="scrambleWordsAuto()" checked> Auto </label>
                     <button id="defaultAction" onclick="scrambleWords();" class="button is-medium is-primary mr-4">
                         <span>Scramble Words</span>
                     </button>
@@ -30,7 +30,7 @@
 
                 <div class="block">
                     <p class="is-size-5">Scrambled Word</p>
-                    <textarea id="generatedScrambleWordsOutputTextArea" class="textarea is-primary is-medium"
+                    <textarea id="OutputTextArea" class="textarea is-primary is-medium"
                         placeholder="Generated Text....." rows="6"></textarea>
                 </div>
             </div>
@@ -44,7 +44,7 @@
                         <div class="field">
                             <div class="checkbox">
                                 <span class="is-size-4"><input type="checkbox" id="freeze-first-letter"
-                                        onchange="scrambleWords()"></span>
+                                        onchange="scrambleWordsAuto()"></span>
                                 <span class="has-text-black">Freeze First Letter</span>
                             </div>
                         </div>
@@ -52,7 +52,7 @@
                         <div class="field">
                             <div class="checkbox">
                                 <span class="is-size-4"><input type="checkbox" id="freeze-middle-letter"
-                                        onchange="scrambleWords()"></span>
+                                        onchange="scrambleWordsAutoAuto()"></span>
                                 <span class="has-text-black">Freeze Middle Letter</span>
                             </div>
                         </div>
@@ -60,7 +60,7 @@
                         <div class="field">
                             <div class="checkbox">
                                 <span class="is-size-4"><input type="checkbox" id="freeze-last-letter"
-                                        onchange="scrambleWords()"></span>
+                                        onchange="scrambleWordsAuto()"></span>
                                 <span class="has-text-black">Freeze Last Letter</span>
                             </div>
                         </div>
@@ -71,7 +71,7 @@
 
                         <div class="field">
                             <div class="select is-fullwidth">
-                                <select id="hyphen-behavior" onchange="scrambleWords();">
+                                <select id="hyphen-behavior" onchange="scrambleWordsAuto();">
                                     <optgroup label="Hyphen Behavior">
                                         <option selected value="scramble-hyphens">Scramble Hyphens</option>
                                         <option value="drop-hyphens">Drop Hyphens</option>
@@ -86,7 +86,7 @@
                         </div>
                         <div class="field">
                             <div class="select is-fullwidth">
-                                <select id="apostrophe-behavior" onchange="scrambleWords();">
+                                <select id="apostrophe-behavior" onchange="scrambleWordsAuto();">
                                     <optgroup label="Apostrophe Behavior">
                                         <option selected value="scramble-apostrophes">Scramble Apostrophes</option>
                                         <option value="drop-apostrophes">Drop Apostrophes</option>
@@ -107,14 +107,14 @@
 
                         <div class="field">
                             <div class="control">
-                                <input type="text" class="input" value="1" id="group-size" oninput="scrambleWords();">
+                                <input type="text" class="input" value="1" id="group-size" oninput="scrambleWordsAuto();">
                                 <label for="" class="label">Move Letter</label>
                             </div>
                         </div>
 
                         <div class="field">
                             <div class="select is-fullwidth">
-                                <select id="case" onchange="scrambleWords();">
+                                <select id="case" onchange="scrambleWordsAuto();">
                                     <optgroup label="Letter Case">
                                         <option selected value="make-lowercase">Convert to Lowercase</option>
                                         <option value="make-uppercase">Convert to Uppercase</option>

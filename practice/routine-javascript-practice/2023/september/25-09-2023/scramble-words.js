@@ -1,7 +1,7 @@
 function scrambleWords() {
-  var text = document.getElementById("generatedScrambleWordsInputTextArea").value;
+  var text = document.getElementById("InputTextArea").value;
   let answer = scrambleWordsLogic(text);
-  document.getElementById("generatedScrambleWordsOutputTextArea").value = answer;
+  document.getElementById("OutputTextArea").value = answer;
 }
 
 function scrambleWordsLogic(text) {
@@ -82,9 +82,17 @@ function parseOptions(tool) {
 }
 
 function sampleBtn() {
-  let testStr = "Rabbit, Lizard, Snake, Bird, Horse, Deer, Fox";
-  document.getElementById("generatedScrambleWordsInputTextArea").value = testStr;
+  let testStr = 
+`Bull, Strange, Little-town, Eastern, Appoinment, Car, Jones's
+The individual who was well-adjusted performed exceptionally well on the test.`;
+  document.getElementById("InputTextArea").value = testStr;
   scrambleWords();
+}
+
+function scrambleWordsAuto() {
+  if(document.getElementById("isAuto").checked) {
+    scrambleWords();
+  };
 }
 
 function restoreApostropheHyphen(scrambled, apostropheHyphen, opts) {
