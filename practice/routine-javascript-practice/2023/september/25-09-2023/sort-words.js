@@ -1,7 +1,7 @@
 function sortWords() {
-  var text = document.getElementById("generatedSortWordsInputTextArea").value;
+  var text = document.getElementById("InputTextArea").value;
   let answer = sortWordsLogic(text);
-  document.getElementById("generatedSortWordsOutputTextArea").value = answer;
+  document.getElementById("OutputTextArea").value = answer;
 }
 
 function sortWordsLogic(text) {
@@ -107,9 +107,20 @@ function parseOptions(tool, error) {
 }
 
 function sampleBtn() {
-  let testStr ="The more I think it over, the more I feel that there is nothing more truly artistic than to love people. Vincent van Goghohn Taylor Smith";
-  document.getElementById("generatedSortWordsInputTextArea").value = testStr;
+  let testStr =
+`The development of precision forestry Is another important application of technology in nature.
+The use of blockchain technology In sustainable supply chain management is another exciting development.
+The sound of a train whistle echoed 
+through the valley, signaling its arrival.
+`;
+  document.getElementById("InputTextArea").value = testStr;
   sortWords();
+}
+
+function sortWordsAuto(){
+  if(document.getElementById("isAuto").checked) {
+    sortWords();
+  };
 }
 
 function removeDuplicates(chars) {
