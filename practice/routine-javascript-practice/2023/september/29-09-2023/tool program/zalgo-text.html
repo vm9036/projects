@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.3/css/bulma.min.css">
+    <script src="zalgo-text-methods.js"></script>
+    <script src="zalgo-text.js"></script>
+    <title>Zalgo Text</title>
+</head>
+
+<body>
+    <section class="container is-fluid">
+        <h1 class="title">Zalgo Text</h1>
+        <div class="columns"><!-- dont change -->
+            <div class="column is-6"><!-- dont change -->
+                <p class="is-size-5 is-inline">Text</p>
+                <button class="button is-pulled-right is-info" onclick="sampleBtn()">Sample</button>
+                <textarea id="InputTextArea" class="textarea is-primary is-medium"
+                    placeholder="Enter Input...." rows="6" oninput="zalgoTextAuto()"></textarea>
+
+                <div class="buttons is-centered mt-3">
+                    <label class="checkbox mb-2 mr-2">
+                    <input type="checkbox" id="isAuto" onchange="zalgoTextAuto()"  checked> Auto </label>
+                    <button id="defaultAction" onclick="zalgoText();" class="button is-medium is-primary mr-4">
+                        <span>Zalgo Text</span>
+                    </button>
+                </div>
+
+                <div class="block">
+                    <p class="is-size-5">Sorted Words</p>
+                    <textarea id="OutputTextArea" class="textarea is-primary is-medium"
+                        placeholder="Generated Text....." rows="6"></textarea>
+                </div>
+            </div>
+
+            <div class="column is-6 mt-3"><!-- dont change -->
+                <div class="columns">
+                    <div class="column is-6">
+                        <div class="heading">
+                            <h5 class="title is-capitalized is-size-4 is-underlined">Chaos Level</h5>
+                        </div>
+
+                        <div class="field">
+                            <div class="control">
+                                <input type="text" class="input" id="minimum-number-of-chars" value="1" oninput="zalgoTextAuto()">
+                                <label for="" class="label">Minimum Number Of Characters</label>
+                            </div>
+                        </div>
+
+                        <div class="field">
+                            <div class="control">
+                                <input type="text" class="input" id="maximum-number-of-chars" value="5" oninput="zalgoTextAuto()">
+                                <label for="" class="label">Maximum Number Of Characters</label>
+                            </div>
+                        </div>
+
+                        <div class="heading">
+                            <h5 class="title is-capitalized is-size-4 is-underlined">Text Damage Area</h5>
+                        </div>
+
+                        <div class="field">
+                            <div class="checkbox">
+                                <span class="is-size-4"><input type="checkbox" id="destroy-top"
+                                        onchange="zalgoTextAuto()" checked></span>
+                                <span class="has-text-black">Above Letters</span>
+                            </div>
+                        </div>
+
+                        <div class="field">
+                            <div class="checkbox">
+                                <span class="is-size-4"><input type="checkbox" id="destroy-middle"
+                                        onchange="zalgoTextAuto()"></span>
+                                <span class="has-text-black">Middle Letters</span>
+                            </div>
+                        </div>
+
+                        <div class="field">
+                            <div class="checkbox">
+                                <span class="is-size-4"><input type="checkbox" id="destroy-bottom"
+                                        onchange="zalgoTextAuto()" checked></span>
+                                <span class="has-text-black">Below Letters</span>
+                            </div>
+                        </div>
+
+                        <div class="heading">
+                            <h5 class="title is-capitalized is-size-4 is-underlined">Craziness Level</h5>
+                        </div>
+
+                        <div class="field">
+                            <div class="control">
+                                <label class="radio">
+                                    <span class="is-size-4"><input type="radio" name="crazy" value="total-random"
+                                            onchange="zalgoTextAuto()" checked></span>
+                                    <span class="has-text-black">Full Craziness
+                                    </span>
+                                </label>
+                            </div>
+                        </div>
+                        <div class="field">
+                            <div class="control">
+                                <label class="radio">
+                                    <span class="is-size-4"><input type="radio" name="crazy" value="partial-random"
+                                            onchange="zalgoTextAuto()"></span>
+                                    <span class="has-text-black">Partial Craziness
+                                    </span>
+                                </label>
+                            </div>
+                        </div>
+                        <div class="field">
+                            <div class="checkbox">
+                                <span class="is-size-4"><input type="checkbox" id="skip-whitespace"
+                                        onchange="zalgoTextAuto()" checked></span>
+                                <span class="has-text-black">Skip Spaces</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="column is-6">
+
+                    </div>
+                </div>
+            </div>
+    </section>
+</body>
+
+</html>
