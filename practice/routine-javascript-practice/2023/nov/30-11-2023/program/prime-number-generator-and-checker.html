@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>prime number generator and checker</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.9.4/css/bulma.min.css">
+    <script src="prime-number-generator-and-checker.js"></script>
+</head>
+
+<body>
+    <div class="container">
+        <div class="box">
+            <div class="heading">
+                <h1 class="title is-capitalized has-text-centered">prime number generator and checker</h1>
+            </div>
+            <div class="columns">
+                <div class="column is-12">
+                    <div class="field">
+                        <label for="" class="label">Enter Number :</label>
+                        <div class="control">
+                            <input type="text" id="inputNumber" class="input is-info is-rounded is-medium" value="5">
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="has-text-centered">
+                <div class="select">
+                    <select onchange="mainPrime()" id="display">
+                        <option value="check">Check Prime</option>
+                        <option value="next">Next Prime</option>
+                        <option value="previous">Previous Prime</option>
+                    </select>
+                </div>
+                <button class="button is-primary" onclick="mainPrime()">Compute</button>
+                
+            </div>
+
+            <div class="block mt-3">
+                <p id="prime" class="has-text-centered has-text-weight-semibold"></p>
+                <!-- <p id="nextPrime" class="has-text-centered has-text-weight-semibold"></p> -->
+            </div>
+        </div>
+    </div>
+
+    
+</body>
+
+</html>
