@@ -10,7 +10,7 @@ function mainPrime(){
     {
         let checkPrime  = isPrime(num);
         if(checkPrime){
-            document.getElementById("prime").innerHTML = num +" is Prime : " + " Position (" +trackPosition(num) + ")";
+            document.getElementById("prime").innerHTML = num +" is Prime : " + " Position (" +trackPosition(num) + getPrimeAtPositionString(num) +")";
         }else{
             document.getElementById("prime").innerHTML = num +" is Not Prime:";
         }
@@ -21,7 +21,7 @@ function mainPrime(){
     {
         let nextPrime  = getMeNextPrime(num);
         if(nextPrime){
-            document.getElementById("prime").innerHTML = nextPrime +" is Next Prime." + " Position (" +trackPosition(nextPrime) + ")";
+            document.getElementById("prime").innerHTML = nextPrime +" is Next Prime." + " Position (" +trackPosition(nextPrime) + getPrimeAtPositionString(nextPrime)+")";
         }
         console.log("nextPrime :-> "+nextPrime);
     }
@@ -30,7 +30,7 @@ function mainPrime(){
         let prePrime  = getMePrePrime(num);
         if(prePrime)
         {
-            document.getElementById("prime").innerHTML = prePrime + " is Previous Prime." + " Position (" +trackPosition(prePrime) + ")";;
+            document.getElementById("prime").innerHTML = prePrime + " is Previous Prime." + " Position (" +trackPosition(prePrime) + getPrimeAtPositionString(prePrime)+")";;
         }
         console.log("nextPrime :-> "+prePrime);
     }
@@ -68,10 +68,10 @@ function getMePrePrime(pre){
     }
 }
 
-function trackPosition(n)
+function trackPosition(position)
 {
     let  count = 0;
-    for(let i = 2; i<=n; i++){
+    for(let i = 2; i<=position; i++){
         if(isPrime(i) == true)
         {
             count++;
@@ -80,4 +80,22 @@ function trackPosition(n)
     return count;
 }
 
+function getPrimeAtPositionString(num){
+    num = trackPosition(num);
 
+    if(num % 10 == 1)
+    {
+        return "st";
+    }
+    else if(num % 10 == 2)
+    {
+        return "nd";
+    }
+    else if(num % 10 == 3)
+    {
+        return "rd";
+    }
+    else{
+        return "th";
+    }
+}
