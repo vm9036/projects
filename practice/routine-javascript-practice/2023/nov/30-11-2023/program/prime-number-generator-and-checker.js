@@ -10,7 +10,7 @@ function mainPrime(){
     {
         let checkPrime  = isPrime(num);
         if(checkPrime){
-            document.getElementById("prime").innerHTML = num +" is Prime:";
+            document.getElementById("prime").innerHTML = num +" is Prime : " + " Position (" +trackPosition(num) + ")";
         }else{
             document.getElementById("prime").innerHTML = num +" is Not Prime:";
         }
@@ -21,7 +21,7 @@ function mainPrime(){
     {
         let nextPrime  = getMeNextPrime(num);
         if(nextPrime){
-            document.getElementById("prime").innerHTML = nextPrime +" is Next Prime.";
+            document.getElementById("prime").innerHTML = nextPrime +" is Next Prime." + " Position (" +trackPosition(nextPrime) + ")";
         }
         console.log("nextPrime :-> "+nextPrime);
     }
@@ -30,7 +30,7 @@ function mainPrime(){
         let prePrime  = getMePrePrime(num);
         if(prePrime)
         {
-            document.getElementById("prime").innerHTML = prePrime + " is Previous Prime.";
+            document.getElementById("prime").innerHTML = prePrime + " is Previous Prime." + " Position (" +trackPosition(prePrime) + ")";;
         }
         console.log("nextPrime :-> "+prePrime);
     }
@@ -66,6 +66,18 @@ function getMePrePrime(pre){
             return i;
         }
     }
+}
+
+function trackPosition(n)
+{
+    let  count = 0;
+    for(let i = 2; i<=n; i++){
+        if(isPrime(i) == true)
+        {
+            count++;
+        }
+    }
+    return count;
 }
 
 
