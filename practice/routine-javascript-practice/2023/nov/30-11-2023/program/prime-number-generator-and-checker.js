@@ -2,9 +2,7 @@
 function primeNumberGenerator(){
 
     let num = parseInt(document.getElementById("inputNumber").value);
-    
     let optionSelect = document.getElementById("display").value;
-    
     
     if(optionSelect === "check")
     {
