@@ -1,62 +1,68 @@
 
 function mainPrime(){
 
-    let num = document.getElementById("inputNumber").value;
+    let num = parseInt(document.getElementById("inputNumber").value);
     console.log("num :->" +num);
     let optionSelect = document.getElementById("display").value;
-    console.log("optionSelect :->" +optionSelect)
+    console.log("optionSelect :->" +optionSelect);
     
     if(optionSelect === "check")
     {
         let checkPrime  = isPrime(num);
-        console.log("checkPrime :-> "+checkPrime)
-        document.getElementById("prime").innerHTML = checkPrime;
+        if(checkPrime){
+            document.getElementById("prime").innerHTML = num +" is Prime:";
+        }else{
+            document.getElementById("prime").innerHTML = num +" is Not Prime:";
+        }
+        console.log("checkPrime :-> "+checkPrime);
+        
     }
     if(optionSelect === "next")
     {
         let nextPrime  = getMeNextPrime(num);
-        console.log("nextPrime :-> "+nextPrime)
-        document.getElementById("prime").innerHTML = nextPrime;
+        if(nextPrime){
+            document.getElementById("prime").innerHTML = nextPrime +" is Next Prime.";
+        }
+        console.log("nextPrime :-> "+nextPrime);
     }
-
+    if(optionSelect === "previous")
+    {
+        let prePrime  = getMePrePrime(num);
+        if(prePrime)
+        {
+            document.getElementById("prime").innerHTML = prePrime + " is Previous Prime.";
+        }
+        console.log("nextPrime :-> "+prePrime);
+    }
 }
 
 function isPrime(n)
 {   
-    let i;
-    for(i = 2; i < n; i++)
+    for(let i = 2; i < n; i++)
     {
         if(n % i == 0)
         {
-            return  n + " is Not Prime";
+            return false;
         }
     }
-    return n + " is Prime";
+    return true;    
 }
 
 function getMeNextPrime(next){
-    let i;
-    for(i = next + 1; ; i++)
+    for(let i = next + 1; ; i++)
     {
-        console.log("i :->"+i);
-        if(isPrime(i))
+        if(isPrime(i) == true)
         {
-            console.log(i);
-            // break;
-           return i + " is Next Prime";
+           return i;
         }
     }
 }
-console.log(getMeNextPrime(5))
-
 
 function getMePrePrime(pre){
-
     for(let i = pre - 1; ; i--)
     {
         if(isPrime(i) == true)
         {
-            // console.log(i);
             return i;
         }
     }
