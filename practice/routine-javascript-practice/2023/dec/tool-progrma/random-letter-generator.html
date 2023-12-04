@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.9.4/css/bulma.min.css">
+    <script src="random-letter-generator.js"></script>
+    <title>Random Letter Generator</title>
+</head>
+
+<body>
+    <div class="container">
+        <div class="box">
+            <h1 class="title has-text-centered">Random Letter generator</h1>
+            <div class="columns">
+                <div class="column is-6">
+                    <div class="field">
+                        <label for="" class="label">Number Of Letters :</label>
+                        <div class="control">
+                            <input type="number" class="input" id="numberOfLetter" value="3">
+                        </div>
+                    </div>
+                    <div class="field">
+                        <div class="control">
+                            <input type="checkbox" id="capitalLetter" onchange="randomLetterGenerator()" checked>
+                            <label for="capitalLetter">Capital Letters</label>
+                        </div>
+                    </div>
+                    <div class="field">
+                        <div class="control">
+                            <input type="checkbox" id="lowerLetter" onchange="randomLetterGenerator()" checked>
+                            <label for="lowerLetter">Lowercase letters</label>
+                        </div>
+                    </div>
+                    <div class="field">
+                        <div class="control">
+                            <button class="button is-primary" onclick="randomLetterGenerator()">Generate Random
+                                Letter</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="column is-6">
+                    <div class="field">
+                        <div class="control">
+                            <textarea id="displayLetter" class="textarea"></textarea>
+                        </div>
+                    </div>
+                    <!-- <p id="displayLetter"></p> -->
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
