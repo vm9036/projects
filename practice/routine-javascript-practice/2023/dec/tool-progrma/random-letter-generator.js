@@ -90,7 +90,6 @@ function updateFontSize() {
     
     if (outputTextAreaElement.value < 3) {
         outputTextAreaElement.style.fontSize = "70px";
-        
     } else{
         outputTextAreaElement.style.fontSize = "20px";
         
