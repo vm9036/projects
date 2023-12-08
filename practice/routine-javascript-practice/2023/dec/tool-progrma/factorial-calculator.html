@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.9.4/css/bulma.min.css">
+    <script src="factorial-calculator.js"></script>
+    <title>Factorial Calculator</title>
+</head>
+
+<body>
+    <div class="container">
+        <div class="box">
+            <h1 class="title has-text-centered">Factorial Calculator</h1>
+            <div class="columns">
+                <div class="column is-6">
+                    <div class="field">
+                        <label for="" class="label">Enter a Non Negative Number :</label>
+                        <div class="control">
+                            <input type="number" class="input" id="factNum" value="1" oninput="factorialCalculator()">
+                        </div>
+                    </div>
+                    
+                    <div class="field">
+                        <div class="control">
+                            <button class="button is-primary" onclick="factorialCalculator()">Compute</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="column is-6">
+                    <div class="field">
+                        <div class="control">
+                            <textarea id="displayFactNum" class="textarea"></textarea>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="block">
+                <p id="displayFontSize" class="has-text-centered"></p>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
