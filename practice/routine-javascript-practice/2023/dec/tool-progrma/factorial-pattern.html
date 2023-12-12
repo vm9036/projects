@@ -39,14 +39,15 @@
     <script>
         function factorialPattern(){
             let n = parseInt(document.getElementById("factNum").value);
-            let factNum = 1
+            let factNum = 1;
             let storeNum = "";
             let ans;
             for(let i = 1; i<=n; i++)
             {
                 for(let j = 1; j<=i; j++)
                 {
-                    storeNum = storeNum + getMeFactorialNumber(factNum);
+                    storeNum = storeNum + getMeFactorialNumber(factNum) + " ";
+                    factNum= factNum + 1;
                 }
                 storeNum = storeNum + "<br>";
             }
@@ -62,6 +63,8 @@
             }
             return fact;
         }
+
+
     </script>
 </body>
 
