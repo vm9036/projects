@@ -1,25 +1,25 @@
 function primeNumber() {
-    // let num = parseInt(document.getElementById("inputN").value);
+    let num = parseInt(document.getElementById("inputN").value);
     // let ans = 1, store = " ";
-    // for(let  i  = 1; i<=num;i++)
+    // for(let  i = 1; i<=num;i++)
     // {
-    //     ans = getMeNextPrime(num);
+    //     ans = getMeNextPrime(ans);
     //     store = store + ans + " ";
-    //     document.getElementById("displayNum").innerHTML = ans;
-    // }
-
-    // let ansPre = 53, store = " ";
-    // for (let i = 1; i <= num; i++) {
-    //     ansPre = getMePrePrime(ansPre);
-    //     if(ansPre < 1)
-    //     {
-    //         alert("negetive number is not valid in prime number.")
-    //         break;
-    //     }
-    //     store = store + ansPre + " ";
     //     document.getElementById("displayNum").innerHTML = store;
     // }
-    printPrime1To100();
+
+    let ansPre = 53, store = " ";
+    for (let i = 1; i <= num; i++) {
+        ansPre = getMePrePrime(ansPre);
+        if(ansPre < 1)
+        {
+            alert("negetive prime number is not print.")
+            break;
+        }
+        store = store + ansPre + " ";
+        document.getElementById("displayNum").innerHTML = store;
+    }
+    // printPrime1To100();
 }
 
 function isPrime(num) {
