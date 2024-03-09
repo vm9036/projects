@@ -1,0 +1,60 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.editorInputContainer{
+    width: 600px;
+    height: 400px;
+    margin-left: 20px;
+    position: relative;
+}
+
+.jsonIn {
+    width: 600px;
+    padding: 5px;
+    margin-left: 20px;
+}
+
+#editorInput {
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    height: 100%;
+    width: 100%;
+    font-size: 20px;
+}
+
+.editorOutputContainer{
+    width: 850px;
+    height: 400px;
+    /* margin-left: 20px; */
+    position: relative;
+}
+
+#editorOutput {
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    height: 100%;
+    width: 100%;
+    font-size: 20px;
+}
+
+.resetBtn {
+    background: transparent;
+    border: none;
+    text-decoration: none;
+    padding-right: 5px;
+}
+
+.jsonOut {
+    width: 850px;
+    padding: 5px;
+    /* margin-left: 20px; */
+}

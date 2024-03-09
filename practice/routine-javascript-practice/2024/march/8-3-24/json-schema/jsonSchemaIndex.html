@@ -1,0 +1,125 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>Starter template - Halfmoon</title>
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+    <!-- Halfmoon CSS -->
+    <!-- <link href="https://cdn.jsdelivr.net/npm/halfmoon@2.0.1/css/halfmoon.min.css" rel="stylesheet"
+        integrity="sha256-SsJizWSIG9JT9Qxbiy8xnYJfjCAkhEQ0hihxRn7jt2M=" crossorigin="anonymous"> -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Halfmoon/1.1.1/css/halfmoon-variables.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Halfmoon/1.1.1/js/halfmoon.min.js"></script>
+    <link rel="stylesheet" href="jsonSchemaStyle.css">
+</head>
+
+<body>
+    <div class="container-fluid">
+        <!-- Navbar -->
+        <!-- Page wrapper with .with-navbar class -->
+        <!-- <div class="page-wrapper with-navbar"> -->
+        <!-- Navbar (immediate child of the page wrapper) -->
+        <div class="menu">
+            <nav class="navbar">
+                <!-- Navbar content (with toggle sidebar button) -->
+
+                <!-- Navbar brand -->
+                <a href="#" class="navbar-brand">
+                    <img src="logo.svg" alt="..." style="height: 40px">
+                    <u>JSON Schema</u>
+                </a>
+                <!-- Navbar form (inline form) -->
+                <form class="form-inline d-none d-md-flex ml-auto" action="..." method="...">
+                    <!-- d-none = display: none, d-md-flex = display: flex on medium screens and up (width > 768px), ml-auto = margin-left: auto -->
+                    <button class="btn btn-light"><a href="https://github.com/login"><i class="fa-brands fa-github"></i>
+                            Github</a></button>
+                    <div class="dropdown with-arrow">
+                        <button class="btn" data-toggle="dropdown" type="button" id="..." aria-haspopup="true"
+                            aria-expanded="false">
+                             <i class="fa-solid fa-user ml-5" aria-hidden="true"></i>
+                        </button>
+                        <div class="dropdown-menu dropdown-menu-right" style="font-size: larger; height: 150px; width: 250px;" aria-labelledby="...">
+                            <p class="m-15">Guest Session</p>
+                            <hr class="bg-light">
+                            <p class="m-15"><u>Manage Schemes</u></p>
+                            <p class="m-15"><u>Sign Out</u></p>
+                        </div>
+                    </div>
+                </form>
+                <div class="navbar-content">
+                    <button class="btn btn-action" type="button" onclick="halfmoon.toggleDarkMode()">
+                        <i class="fa-solid fa-moon" aria-hidden="true"></i>
+                        <span class="sr-only"></span> <!-- sr-only = show only on screen readers -->
+                    </button>
+                </div>
+            </nav>
+        </div>
+        <!-- </div> -->
+
+        <div class="row mt-20">
+            <!-- Ace Input -->
+            <div class="col-5 d-flex flex-column">
+                <div class="jsonIn d-inline-flex justify-content-between border">
+                    <span style="font-size: 20px;" class="p-5"><b>JSON</b></span>
+                    <button class="btn resetBtn" style="font-size: 16px;" class="pt-10"><strong><i
+                                class="fa-solid fa-gear"></i>&nbsp;&nbsp;Setting</strong></p>
+                </div>
+                <div class="jsonIn d-inline-flex justify-content-between border">
+                    <p class="pt-10" style="font-size: 15px;"><i class="fa-solid fa-check"></i>&nbsp;&nbsp;Valid JSON
+                    </p>
+                    <button class="border p-10"><i class="fa-solid fa-align-justify"></i></button>
+                </div>
+                <div class="editorInputContainer border">
+                    <div id="editorInput">// Program to Addition</div>
+                </div>
+                <div class="jsonIn d-inline-flex justify-content-between border">
+                    <span class="p-10">205/20,000 characters</span>
+                    <div class="btn-group mt-5">
+                        <button type="reset" class="btn mr-10 resetBtn"><b>Reset</b></button>
+                        <button class="btn btn-primary" type="submit"><b>Submit</b></button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Ace Output -->
+            <div class="col-7 d-flex flex-column">
+                <div class="jsonOut d-inline-flex justify-content-between border">
+                    <span style="font-size: 20px;" class="p-5"><b>Schema</b></span>
+                    <div class="btn-group">
+                        <button class="btn resetBtn mr-10" style="font-size: 16px;"><strong><i
+                                    class="fa-solid fa-chevron-left"></i><i
+                                    class="fa-solid fa-chevron-right"></i>&nbsp;&nbsp;Syntax</strong></button>
+                        <button class="btn resetBtn" style="font-size: 16px;"><strong><i
+                                    class="fa-solid fa-pencil"></i>&nbsp;&nbsp;Edit</strong></button>
+                    </div>
+                </div>
+                <div class="jsonOut d-inline-flex justify-content-between border">
+                    <p class="pt-10" style="font-size: 15px;"><i>Example JSON Schema</i></p>
+                    <button class="border p-10"><i class="fa-regular fa-paste"></i></button>
+                </div>
+                <div class="editorOutputContainer border">
+                    <div id="editorOutput">// Program to Addition</div>
+                </div>
+                <div class="jsonOut d-inline-flex border">
+                    <span class="p-10">Created: Mar 9, 2024 12:13 PM</span>
+                    <span class="p-10">Updated: Mar 9, 2024 12:13 PM</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+    <!-- Option 1: Bootstrap JS bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/ace/1.32.7/ace.js"></script>
+    <script src="jsonSchemaMain.js"></script>
+</body>
+
+</html>
