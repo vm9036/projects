@@ -37,7 +37,7 @@
                 <!-- Navbar form (inline form) -->
                 <form class="form-inline d-none d-md-flex ml-auto" action="..." method="...">
                     <!-- d-none = display: none, d-md-flex = display: flex on medium screens and up (width > 768px), ml-auto = margin-left: auto -->
-                    <button class="btn btn-light"><a href="https://github.com/login"><i class="fa-brands fa-github"></i>
+                    <button class="btn btn-light"><a href="https://github.com/login"><span class="display-3"><i class="fa-brands fa-github"></i></span>
                             Github</a></button>
                     <div class="dropdown with-arrow">
                         <button class="btn" data-toggle="dropdown" type="button" id="..." aria-haspopup="true"
@@ -62,53 +62,56 @@
         </div>
         <!-- </div> -->
 
-        <div class="row mt-20">
+        <div class="row m-20">
             <!-- Ace Input -->
-            <div class="col-5 d-flex flex-column">
-                <div class="jsonIn d-inline-flex justify-content-between border">
-                    <span style="font-size: 20px;" class="p-5"><b>JSON</b></span>
-                    <button class="btn resetBtn" style="font-size: 16px;" class="pt-10"><strong><i
-                                class="fa-solid fa-gear"></i>&nbsp;&nbsp;Setting</strong></p>
-                </div>
-                <div class="jsonIn d-inline-flex justify-content-between border">
-                    <p class="pt-10" style="font-size: 15px;"><i class="fa-solid fa-check"></i>&nbsp;&nbsp;Valid JSON
-                    </p>
-                    <button class="border p-10"><i class="fa-solid fa-align-justify"></i></button>
-                </div>
-                <div class="editorInputContainer border">
-                    <div id="editorInput">// Program to Addition</div>
-                </div>
-                <div class="jsonIn d-inline-flex justify-content-between border">
-                    <span class="p-10">205/20,000 characters</span>
-                    <div class="btn-group mt-5">
-                        <button type="reset" class="btn mr-10 resetBtn"><b>Reset</b></button>
-                        <button class="btn btn-primary" type="submit"><b>Submit</b></button>
+            <div class="col-md-4 d-flex flex-column input">
+                <div class="m-10">
+                    <div class="jsonIn d-inline-flex justify-content-between border">
+                        <span class="p-5"><b>JSON</b></span>
+                        <button class="btn resetBtn" class="pt-10"><strong><i
+                                    class="fa-solid fa-gear"></i>&nbsp;&nbsp;Setting</strong></p>
+                    </div>
+                    <div class="jsonIn d-inline-flex justify-content-between border">
+                        <p class="pt-10"><i class="fa-solid fa-check"></i>&nbsp;&nbsp;Valid JSON
+                        </p>
+                        <button class="border p-10"><i class="fa-solid fa-align-justify"></i></button>
+                    </div>
+                    <div class="editorInputContainer border">
+                        <div id="editorInput">// Program to Addition</div>
+                    </div>
+                    <div class="jsonIn d-inline-flex justify-content-between border">
+                        <span class="p-10">205/20,000 characters</span>
+                        <div class="mt-5">
+                            <button type="reset" class="btn mr-10 resetBtn"><b>Reset</b></button>
+                            <button class="btn btn-primary" type="submit"><b>Submit</b></button>
+                        </div>
                     </div>
                 </div>
             </div>
-
             <!-- Ace Output -->
-            <div class="col-7 d-flex flex-column">
-                <div class="jsonOut d-inline-flex justify-content-between border">
-                    <span style="font-size: 20px;" class="p-5"><b>Schema</b></span>
-                    <div class="btn-group">
-                        <button class="btn resetBtn mr-10" style="font-size: 16px;"><strong><i
-                                    class="fa-solid fa-chevron-left"></i><i
-                                    class="fa-solid fa-chevron-right"></i>&nbsp;&nbsp;Syntax</strong></button>
-                        <button class="btn resetBtn" style="font-size: 16px;"><strong><i
-                                    class="fa-solid fa-pencil"></i>&nbsp;&nbsp;Edit</strong></button>
+            <div class="col-md-8 d-flex flex-column output">
+                <div class="m-10">
+                    <div class="jsonOut d-inline-flex justify-content-between border">
+                        <span class="p-5"><b>Schema</b></span>
+                        <div class="btn-group">
+                            <button class="btn resetBtn mr-10"><strong><i
+                                        class="fa-solid fa-chevron-left"></i><i
+                                        class="fa-solid fa-chevron-right"></i>&nbsp;&nbsp;Syntax</strong></button>
+                            <button class="btn resetBtn"><strong><i
+                                        class="fa-solid fa-pencil"></i>&nbsp;&nbsp;Edit</strong></button>
+                        </div>
                     </div>
-                </div>
-                <div class="jsonOut d-inline-flex justify-content-between border">
-                    <p class="pt-10" style="font-size: 15px;"><i>Example JSON Schema</i></p>
-                    <button class="border p-10"><i class="fa-regular fa-paste"></i></button>
-                </div>
-                <div class="editorOutputContainer border">
-                    <div id="editorOutput">// Program to Addition</div>
-                </div>
-                <div class="jsonOut d-inline-flex border">
-                    <span class="p-10">Created: Mar 9, 2024 12:13 PM</span>
-                    <span class="p-10">Updated: Mar 9, 2024 12:13 PM</span>
+                    <div class="jsonOut d-inline-flex justify-content-between border">
+                        <p class="pt-10"><i>Example JSON Schema</i></p>
+                        <button class="border p-10"><i class="fa-regular fa-paste"></i></button>
+                    </div>
+                    <div class="editorOutputContainer border">
+                        <div id="editorOutput">// Program to Addition</div>
+                    </div>
+                    <div class="jsonOut d-inline-flex border">
+                        <span class="p-10">Created: Mar 9, 2024 12:13 PM</span>
+                        <span class="p-10">Updated: Mar 9, 2024 12:13 PM</span>
+                    </div>
                 </div>
             </div>
         </div>

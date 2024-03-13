@@ -5,16 +5,14 @@
 }
 
 .editorInputContainer{
-    width: 600px;
-    height: 400px;
-    margin-left: 20px;
+    width: 100%;
+    height: 60vh;
     position: relative;
 }
 
 .jsonIn {
-    width: 600px;
+    width: 100%;
     padding: 5px;
-    margin-left: 20px;
 }
 
 #editorInput {
@@ -23,15 +21,12 @@
     right: 0;
     top: 0;
     bottom: 0;
-    height: 100%;
-    width: 100%;
     font-size: 20px;
 }
 
 .editorOutputContainer{
-    width: 850px;
-    height: 400px;
-    /* margin-left: 20px; */
+    width: 100%;
+    height: 60vh;
     position: relative;
 }
 
@@ -41,8 +36,6 @@
     right: 0;
     top: 0;
     bottom: 0;
-    height: 100%;
-    width: 100%;
     font-size: 20px;
 }
 
@@ -54,7 +47,9 @@
 }
 
 .jsonOut {
-    width: 850px;
+    width: 100%;
     padding: 5px;
-    /* margin-left: 20px; */
 }
+
+
+
