@@ -3,13 +3,18 @@ const quoteDisplayElement = document.getElementById('quoteDisplay')
 const quoteInputElement = document.getElementById('quoteInput')
 const timerElement = document.getElementById('timer')
 
+function totalCharCount(){
+    let storeSpan = document.querySelectorAll('span')
+    console.log(storeSpan);
+}
+console.log(totalCharCount());
+
 quoteInputElement.addEventListener('input', () => {
     const arrayQuote = quoteDisplayElement.querySelectorAll('span')
     const arrayValue = quoteInputElement.value.split('')
-
-    let correct = true
+    let correct = true;
     arrayQuote.forEach((characterSpan, index) => {
-        const character = arrayValue[index]
+        const character = arrayValue[index];
         if (character == null) {
             characterSpan.classList.remove('correct')
             characterSpan.classList.remove('incorrect')
@@ -22,8 +27,8 @@ quoteInputElement.addEventListener('input', () => {
             characterSpan.classList.add('incorrect')
             correct = false
         }
+        
     })
-
     if (correct) renderNewQuote()
 })
 
