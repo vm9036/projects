@@ -4,31 +4,43 @@ const quoteInputElement = document.getElementById('quoteInput')
 const timerElement = document.getElementById('timer')
 
 function totalCharCount(){
-    let storeSpan = document.querySelectorAll('span')
+    let storeSpan = document.querySelectorAll('span');
     console.log(storeSpan);
 }
 console.log(totalCharCount());
 
+var redCount = 0;
+var greenCount = 0;
+ 
 quoteInputElement.addEventListener('input', () => {
     const arrayQuote = quoteDisplayElement.querySelectorAll('span')
     const arrayValue = quoteInputElement.value.split('')
     let correct = true;
+    greenCount = 0;
+    redCount = 0;
     arrayQuote.forEach((characterSpan, index) => {
         const character = arrayValue[index];
         if (character == null) {
             characterSpan.classList.remove('correct')
             characterSpan.classList.remove('incorrect')
-            correct = false
+            correct = false;
+            redCount++;
         } else if (character === characterSpan.innerText) {
             characterSpan.classList.add('correct')
             characterSpan.classList.remove('incorrect')
+            greenCount++;
         } else {
             characterSpan.classList.remove('correct')
             characterSpan.classList.add('incorrect')
-            correct = false
+            correct = false;
+            redCount++;
         }
-        
     })
+    document.getElementById("totalCharCount").innerHTML = "Total character Count : " + ( greenCount + redCount );
+    document.getElementById("greenTextCount").innerHTML = "Green Text Count :" + greenCount;
+    document.getElementById("redTextCount").innerHTML = " Red Text Count : " + redCount;
+    // console.log("Red Count :-> "+redCount);
+    // console.log("GreenCount :-> " +greenCount);
     if (correct) renderNewQuote()
 })
 
