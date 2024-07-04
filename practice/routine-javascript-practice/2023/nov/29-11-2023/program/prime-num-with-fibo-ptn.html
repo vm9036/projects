@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prime Number With Function</title>
+</head>
+
+<body>
+    <script>
+
+        function primePyramidPtn() {
+            let n = 5;
+            let ans = 1;
+            // let revAns = 30;
+            let n1 = 0, n2 = 1, n3 = 0;
+            for (let i = 1; i <= n; i++) {
+                for (let j = n - i; j >= 1; j--) {
+                    document.write("- ");
+                }
+                for (let k = 1; k <= i; k++) {
+                    ans = getMeNextPrime(ans);
+                    document.write(ans + " ");
+                }
+                document.write("<br>")
+            }
+            for (let i = n - 1; i >= 1; i--) {
+                for (let j = 1; j <= n - i; j++) {
+                    document.write("- ");
+                }
+                for (let k = 1; k <= i; k++) 
+                {
+                    n1 = n2;
+                    n2 = n3;
+                    n3 = getMeNextFibo(n1, n2);
+                    document.write(n3 + " ");
+                }
+                document.write("</br>")
+            }
+        }
+        primePyramidPtn();
+
+        function getMeNextPrime(next) {
+            for (i = next + 1; ; i++) {
+                if (isPrime(i) == true) {
+                    return i;
+                    break
+                }
+            }
+        }
+
+        // function getMePreviousPrime(pre) {
+        //     for (i = pre - 1; ; i--) {
+        //         if (isPrime(i) == true) {
+        //             return i;
+        //             break;
+        //         }
+        //     }
+        // }
+
+        function isPrime(n) {
+            for (let i = 2; i < n; i++) {
+                if (n % i == 0) {
+                    return false;
+                }
+            }
+            return true;
+        }
+
+        function getMeNextFibo(n1, n2) {
+            let fibo = n1 + n2;
+            return fibo;
+        }
+
+    </script>
+</body>
+
+</html>

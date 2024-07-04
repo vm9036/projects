@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Series pattern</title>
+</head>
+
+<body>
+    <script>
+        function seriesptn() {
+            let n = 10;
+            let num = 0;
+            let store = " ";
+            let sum = 0;
+            for (i = 1; i <= n; i++) {
+                if (i == 1) {
+                    startVal = 2;
+                    console.log(startVal + " ");
+                }
+                num = i * 13;
+                sum = parseInt(startVal) + parseInt(num);
+                store = store + sum + " ";
+            }
+            console.log(store);
+
+            console.log("\n");
+        }
+        seriesptn();
+    </script>
+</body>
+
+</html>
+<!--
+    let n = 13;
+let user = 10;
+let sum = 2;
+for (let i = 1; i <= user; i++) {
+	console.log(sum);
+	s = i * n;
+	sum = sum + s;
+}
+-->

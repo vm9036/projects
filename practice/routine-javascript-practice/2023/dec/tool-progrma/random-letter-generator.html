@@ -18,7 +18,7 @@
                     <div class="field">
                         <label for="" class="label">Number Of Letters :</label>
                         <div class="control">
-                            <input type="number" class="input" id="numberOfLetter" value="3">
+                            <input type="number" class="input" id="numberOfLetter" value="5" oninput="randomLetterGenerator()">
                         </div>
                     </div>
                     <div class="field">
@@ -36,13 +36,12 @@
                     <div class="field">
                         <label for="" class="label">Seprator :</label>
                         <div class="control">
-                            <input type="text" class="input" id="separator" value="\n">
+                            <input type="text" class="input" id="separator" value="\n" oninput="randomLetterGenerator()">
                         </div>
                     </div>
                     <div class="field">
                         <div class="control">
-                            <button class="button is-primary" onclick="randomLetterGenerator()">Generate Random
-                                Letter</button>
+                            <button class="button is-primary" onclick="randomLetterGenerator()">Generate Random Letter</button>
                         </div>
                     </div>
                 </div>

@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>first n prime number</title>
+</head>
+<body>
+    <script>
+        
+        function print1To100()
+        {
+            for(let i = 1; i<= 100; i++)
+            {
+                if(isPrime(i) == true)
+                {
+                    document.write(i + " ");
+                }
+            }
+        }
+        print1To100();
+
+        function isPrime(n){
+            for(let i = 2; i<n; i++)
+            {
+                if(n % i == 0)
+                {
+                    return false;
+                }
+            }
+            return true;
+        }   
+        // console.log(isPrime(4));
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,26 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+.navbar{
+    height: 66px;
+    place-content: center space-between;
+    padding: 0 16px;
+    border-bottom: solid 1px hsl(0deg, 0%, 90%);
+}
+
+.navbar-brand img{
+    height: 40px;
+}
+
+.navbar-brand {
+    /* font-size: var(--navbar-brand-font-size); */
+    /* font-weight: var(--navbar-brand-font-weight); */
+    color: var(--lm-navbar-brand-text-color);
+    font: 500 20px / 32px Roboto, sans-serif;
+    /* letter-spacing: normal; */
+}
+

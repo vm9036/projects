@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>pattern22</title>
+</head>
+
+<body>
+    <script>
+        function pattern22() {
+            let n = 4;
+
+            for (let i = n; i >= 1; i--) {
+                for (let j = 1; j <= i; j++) {
+                    console.log(" " + j);
+                }
+                for (let k = 2; k <= n - i + 1; k++) {
+                    console.log(" .");
+                }
+                for (let l = 2; l <= n - i + 1; l++) {
+                    console.log(" .");
+                }
+                for (let m = i; m >= 1; m--) {
+                    console.log(" " + m);
+                }
+                console.log("\n");
+            }
+        }
+        pattern22();
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,20 @@
+<script>
+
+    function isPalindrome(){
+        var number = 16461
+          var reverse = 0;
+          var reminder = 0;
+          var original = number;
+          while (number > 0) {
+              reminder = number % 10;
+              number = parseInt(number / 10);
+              reverse = reverse * 10 + reminder;
+          }
+          if (reverse == original) {
+               console.log("it is plaindrome number." + " " + original);
+          } else {
+               console.log("it is not palindrome number." + " " + original);
+          }
+    }
+    isPalindrome();
+</script>

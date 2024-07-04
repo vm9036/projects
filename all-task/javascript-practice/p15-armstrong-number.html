@@ -1,0 +1,22 @@
+
+<script>
+
+function isArmstrongNumber(number){
+    const numStr = number.toString();
+    const numDigits = numStr.length;
+    let sum = 0;
+    
+    for(let i=0; i<numDigits; i++)
+    {
+        const digits = parseInt(numStr[i]);
+        sum = sum + Math.pow(digits,numDigits);
+    }
+    
+    return sum === number;
+}
+
+var num = 153;
+console.log(isArmstrongNumber(num));
+
+</script>
+

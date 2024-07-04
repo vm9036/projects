@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prime Pattern</title>
+</head>
+<body>
+    <div id="display"></div>
+
+    <script>
+        function ptn(){
+            let n=5;
+            let str = "";
+            let ans = 1;
+            for(let i = 1; i<=n ;i++)
+            {
+                for(let j = 1; j<=i ;j++)
+                {   
+                    ans = getMeNextPrime(ans);
+                    str = str + ans + " ";
+                }
+                str = str + "<br>";
+            }
+            document.getElementById("display").innerHTML = str;
+        }
+        ptn();
+
+        function isPrime(n){
+            for(let i = 2; i<n; i++)
+            {
+                if(n % i == 0)
+                {
+                    return false;
+                }
+            }
+            return true;
+        }
+
+        // console.log(isPrime());
+
+        function getMeNextPrime(n)
+        {
+            for(let i = n + 1; ; i++)
+            {
+                if(isPrime(i) == true)
+                {
+                    return i;
+                    break;
+                }
+            }
+        }
+        // console.log(getMeNextPrime(7));
+        
+    </script>
+
+</body>
+</html>

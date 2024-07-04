@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>pattern42</title>
+</head>
+
+<body>
+    <script>
+        function pattern42() {
+            let n = 5;
+
+            for (let i = n; i >= 1; i--) {
+                for (let j = 1; j <= i; j++) {
+
+                    if (i % 2 == 0) {
+                        console.log("0");
+                    }
+                    else {
+                        console.log("1");
+                    }
+                }
+                console.log("\n");
+            }
+        }
+        pattern42();
+    </script>
+</body>
+<!-- 
+    let n = 5;
+    for (let i = 1; i <= n; i++) {
+        let tempVal = i;
+        s = i;
+        for (let j = 1; j <= n; j++) {
+            if(tempVal>n){
+            //  tempVal = i - 1;
+            s--
+                console.log(s);
+            }
+            if (tempVal <= n) {
+                console.log(tempVal);
+                tempVal++;
+            }
+        }
+    // 	tempVal = i;
+        console.log("\n")
+    }
+ -->
+
+</html>

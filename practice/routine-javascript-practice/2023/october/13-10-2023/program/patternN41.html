@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>pattern41</title>
+</head>
+
+<body>
+    <script>
+        function pattern41() {
+            let n = 4;
+            for (let i = 1; i <= n; i++) {
+                temp = i;
+                for (let j = n; j >= 1; j--) {
+                    if (j < i) {
+                        console.log(j + " ");
+                    }
+                    else {
+                        console.log(temp + " ")
+                        temp++;
+                    }
+                }
+                console.log("\n");
+            }
+        }
+        pattern41();
+    </script>
+</body>
+<!-- 
+    let n = 5;
+    for (let i = 1; i <= n; i++) {
+        let tempVal = i;
+        s = i;
+        for (let j = 1; j <= n; j++) {
+            if(tempVal>n){
+            //  tempVal = i - 1;
+            s--
+                console.log(s);
+            }
+            if (tempVal <= n) {
+                console.log(tempVal);
+                tempVal++;
+            }
+        }
+    // 	tempVal = i;
+        console.log("\n")
+    }
+ -->
+
+</html>

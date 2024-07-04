@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>pattern37</title>
+</head>
+
+<body>
+    <script>
+        function pattern37() {
+            let n = 5;
+            for (let i = 1; i <= n; i++) {
+                let counter = 5;
+                for (let s = 1; s <= n - i; s++) {
+                    console.log("  ")
+                }
+                for (let j = 1; j <= i; j++) {
+                    console.log(counter + " ");
+                    counter--;
+                }
+                console.log("\n");
+            }
+        }
+        pattern37();
+    </script>
+</body>
+
+</html>

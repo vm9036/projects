@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prime Pattern</title>
+</head>
+
+<body>
+    <div id="display"></div>
+    <script>
+        // function primePattern() {
+
+        //     let n = 5;
+        //     let currentPrime = 2;
+        //     let str = "";
+        //     for (let row = 1; row <= n; row++) {
+        //         for (let col = 1; col <= row; col++) {
+        //             for (; ;) {
+        //                 let isPrime = true;
+        //                 for (let i = 2; i < currentPrime; i++) {
+        //                     if (currentPrime % i == 0) {
+        //                         isPrime = false;
+        //                         break;
+        //                     }
+        //                 }
+        //                 if (isPrime) {
+        //                     str = str + currentPrime + " ";
+        //                     currentPrime++;
+        //                     break;
+        //                 }
+        //                 currentPrime++;
+        //             }
+        //         }
+        //         str = str + "<br>";
+        //     }
+        //     document.getElementById("display").innerHTML = str;
+        // }
+        // primePattern();
+
+        function primePattern() {
+
+            let n = 5;
+            let currentPrime = 2;
+            let str = "";
+            let i, j, counter = 0, pNumber = 1;
+            for (let row = 1; row <= n; row++) {
+                for (let col = 1; col <= row; col++) {
+                    for (i = currentPrime; ; i++) {
+                        for (j = 2; j <= i; j++) {
+                            if (i % j == 0) {
+                                pNumber = pNumber + 1;
+                            }
+                        }
+                        if (pNumber == currentPrime) {                            
+                            counter = counter + 1;
+                        }
+                        if (counter == 1) {
+                           str = str + i;
+                           currentPrime++;
+                           counter = 0;
+                           break;
+                            // return i;
+                        }
+                        pNumber = pNumber - row + 1;
+                        counter = 0;
+                        currentPrime ++;
+                    }
+                }
+                str = str + "<br>";
+            }
+            document.getElementById("display").innerHTML = str;
+        }
+        primePattern();
+    </script>
+</body>
+
+</html>
+<!-- 
+    // const numRows = 5;
+        // let currentPrime = 2;
+
+        // for (let row = 1; row <= numRows; row++) {
+        //     let rowString = '';
+        //     for (let col = 1; col <= row; col++) {
+        //         // Find the next prime number
+        //         while (true) {
+        //             let isPrime = true;
+        //             for (let i = 2; i < currentPrime; i++) {
+        //                 if (currentPrime % i === 0) {
+        //                     isPrime = false;
+        //                     break;
+        //                 }
+        //             }
+        //             if (isPrime) {
+        //                 break;
+        //             }
+        //             currentPrime++;
+        //         }
+        //         rowString += currentPrime + ' ';
+        //         currentPrime++;
+        //     }
+        //     console.log(rowString);
+        //     console.log("\n");
+        // }
+
+ -->

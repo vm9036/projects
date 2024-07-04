@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>pattern42</title>
+</head>
+
+<body>
+    <script>
+        function pattern43() {
+            let n = 5;
+            let count = 1;
+            let counter = 1;
+            let square = 0;
+            for (let i = 1; i <= n; i++) {
+                for (let s = 1; s <= n - i; s++) {
+                    console.log("- ");
+                }
+                for (let j = 1; j <= count; j++) {
+                    square = counter * counter;
+                    console.log(square + " ");
+                    counter++;
+                }
+                count = count + 2;
+                console.log("\n");
+            }
+        }
+        pattern43();
+    </script>
+</body>
+</html>

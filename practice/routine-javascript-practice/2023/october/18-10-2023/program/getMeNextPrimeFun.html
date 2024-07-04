@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>IsPrime Function</title>
+</head>
+
+<body>
+    <script>
+        function isPrime(n) {
+            for (let i = 2; i < n; i++) {
+                if (n % i == 0) {
+                    return false;
+                }
+            }
+            return true;
+        }
+
+        // let n = 7;
+        function getMeNextPrime(n) {
+            n1 = n + 1;
+            let str;
+            let counter = 0;
+            for (let i = n1; ; i++) {
+                // if(){
+                str = isPrime(n1);
+                counter++;
+                // }
+                if (counter == 2) {
+                    console.log(i);
+                    break;
+                }
+            }
+        }
+        getMeNextPrime(7);
+        // isPrime();
+        // console.log(isPrime(7));
+        // console.log(isPrime(8));
+        // console.log(isPrime(9));
+    </script>
+    <!-- cg
+         // function isPrime(number) {
+//   if (number <= 1) return false;
+//   if (number <= 3) return true;
+//   if (number % 2 === 0 || number % 3 === 0) return false;
+
+//   for (let i = 5; i * i <= number; i += 6) {
+//     if (number % i === 0 || number % (i + 2) === 0) return false;
+//   }
+
+//   return true;
+// }
+
+
+
+
+// function getNextPrimeNumber(current) {
+//   for (let next = current + 1; ; next++) {
+//     if (isPrime(next)) {
+//       return next;
+//     }
+//   }
+// }
+
+// // Example usage:
+// const currentPrime = 7; 
+// const nextPrime = getNextPrimeNumber(currentPrime);
+// console.log(`The next prime number after ${currentPrime} is ${nextPrime}`); -->
+</body>
+
+</html>

@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prime Pattern</title>
+</head>
+
+<body>
+    <div id="dis"></div>
+    <script>
+        let n = 5;
+        let ans = 1;
+        let str = '';
+        for (let i = 1; i <= n; i++) {
+            
+            for (let j = 1; j <= i; j++) {
+                ans = getMeNextPrime(ans);
+                str = str + ans + " ";
+                // console.log(str + " ");
+            }
+            document.getElementById("dis").innerHTML = str;
+            // console.log("\n");
+            str = str + "<br>";
+        }
+
+       
+        function isPrime(n) {
+            for (let i = 2; i < n; i++) {
+                if (n % i == 0) {
+                    return false;
+                }
+            }
+            return true;
+        }
+
+        function getMeNextPrime(n) {
+
+            for (let i = n + 1; ; i++) {
+
+                if (isPrime(i) == true) {
+                    // console.log(i);
+                    return i;
+                    break;
+                }
+            }
+        }
+    </script>
+</body>
+<!-- function primePtn() {
+	let n = 5;
+	let ans = 1;
+	for (let i = 1; i <= n; i++) {
+	
+		for (let j = 1; j <= i; j++) {
+		    ans=getMeNextPrime(ans);
+			console.log(ans + " ");
+		
+		}
+		console.log("\n");
+	}
+}
+primePtn();
+ans=getMeNextPrime(1);
+console.log(ans+" ");
+
+ans=getMeNextPrime(ans);
+console.log(ans+" ");
+
+ans=getMeNextPrime(ans);
+console.log(ans+" ");
+
+ans=getMeNextPrime(ans);
+console.log(ans+" ");
+
+ans=getMeNextPrime(ans);
+console.log(ans+" ");
+
+ans=getMeNextPrime(ans);
+console.log(ans+" ");
+
+ans=getMeNextPrime(ans);
+console.log(ans+" ");
+
+ans=getMeNextPrime(ans);
+console.log(ans+" ");
+
+ans=getMeNextPrime(ans);
+console.log(ans+" ");
+
+ans=getMeNextPrime(ans);
+console.log(ans+" ");
+
+ans=getMeNextPrime(ans);
+console.log(ans+" ");
+
+ans=getMeNextPrime(ans);
+console.log(ans+" ");
+
+ans=getMeNextPrime(ans);
+console.log(ans+" ");
+
+ans=getMeNextPrime(ans);
+console.log(ans+" ");
+
+ans=getMeNextPrime(ans);
+console.log(ans+" ");
+
+ans=getMeNextPrime(ans);
+console.log(ans+" ");
+
+ans=getMeNextPrime(ans);
+console.log(ans+" ");
+
+function isPrime(n) {
+	for (let i = 2; i < n; i++) {
+		if (n % i == 0) {
+			return false;
+		}
+	}
+	return true;
+}
+
+function getMeNextPrime(n) {
+
+	for (let i = n + 1;; i++) {
+
+		if (isPrime(i) == true) {
+			return i;
+			break;
+			// console.log(i);
+		}
+	}
+} -->
+</html>

@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>pattern45</title>
+</head>
+
+<body>
+    <script>
+        function pattern45() {
+            function printPascalTriangle(rows) {
+                for (let i = 0; i < rows; i++) {
+                    let number = 1;
+                    for (let j = 0; j <= i; j++) {
+                        console.log(number + " ");
+                        number = number * (i - j) / (j + 1);
+                    }
+                    console.log("\n");
+                }
+            }
+
+            const numberOfRows = 5; // You can change this to the number of rows you want to generate
+            printPascalTriangle(numberOfRows);
+        }
+        pattern45();
+
+    </script>
+    <!--
+            // Chat gpt help creater both pattern
+            let n = 6;
+for (let i = 0; i < n; i++) {
+  let number = 1;
+  for (let j = 0; j <= i; j++) 
+  {
+    if (j === 0 || j === i) 
+    {
+      console.log("1" + " ");
+    } else 
+    {
+      number = number * (i - j + 1) / j;
+     console.log(number+ " ");
+    }
+  }
+  console.log("\n");
+}
+            -->
+</body>
+
+</html>

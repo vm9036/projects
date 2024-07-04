@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Palindrome Number</title>
+</head>
+
+<body>
+    <input type="text" id="inputNumber" value="369">
+    <button onclick="palindromeNum()">Click</button>
+    <p id="displayPalindrome"></p>
+
+
+    <script>
+        function palindromeNum() {
+            let original = Number(document.getElementById("inputNumber").value);
+
+            let reverseNum = 0;
+            let tempOriginal = original;
+
+            while (tempOriginal > 0) {
+
+                let lastDigit = tempOriginal % 10;
+                console.log("lastDigit : "+lastDigit);
+                reverseNum = reverseNum * 10 + lastDigit;
+                console.log("lastDigit : "+lastDigit);
+                tempOriginal = tempOriginal / 10;
+                console.log("tempOriginal : "+tempOriginal);
+            }
+
+            if (original == reverseNum) {
+                return true;
+            } else {
+                return false;
+            }
+        }
+    </script>
+</body>
+
+</html>

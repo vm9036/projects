@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>pattern31</title>
+</head>
+
+<body>
+    <script>
+        function pattern31() {
+            let n = 9;
+            for (let i = 1; i <= n; i++) {
+                for (let j = 1; j <= n; j++) {
+                    if (j <= i) {
+                        console.log(j + " ");
+                    }
+                    else {
+                        console.log("  ");
+                    }
+                }
+                for (let k = n; k >= 1; k--) {
+                    if (k <= i) {
+                        console.log(k + " ");
+                    }
+                    else {
+                        console.log("  ");
+                    }
+                }
+
+                console.log("\n");
+            }
+
+        }
+        pattern31();
+    </script>
+</body>
+
+</html>

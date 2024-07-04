@@ -11,11 +11,12 @@ console.log(totalCharCount());
 
 var redCount = 0;
 var greenCount = 0;
- 
 quoteInputElement.addEventListener('input', () => {
     const arrayQuote = quoteDisplayElement.querySelectorAll('span')
     const arrayValue = quoteInputElement.value.split('')
     let correct = true;
+    
+    var total = 0;
     greenCount = 0;
     redCount = 0;
     arrayQuote.forEach((characterSpan, index) => {
@@ -24,7 +25,7 @@ quoteInputElement.addEventListener('input', () => {
             characterSpan.classList.remove('correct')
             characterSpan.classList.remove('incorrect')
             correct = false;
-            redCount++;
+            // redCount++;
         } else if (character === characterSpan.innerText) {
             characterSpan.classList.add('correct')
             characterSpan.classList.remove('incorrect')
@@ -35,8 +36,11 @@ quoteInputElement.addEventListener('input', () => {
             correct = false;
             redCount++;
         }
+        total++;
     })
-    document.getElementById("totalCharCount").innerHTML = "Total character Count : " + ( greenCount + redCount );
+    console.log("Total :-> "+ total);
+    document.getElementById("totalCount").innerHTML = "Total : " + total;
+    document.getElementById("totalCharCount").innerHTML = "Textarea Total character Count : " + ( greenCount + redCount);
     document.getElementById("greenTextCount").innerHTML = "Green Text Count :" + greenCount;
     document.getElementById("redTextCount").innerHTML = " Red Text Count : " + redCount;
     // console.log("Red Count :-> "+redCount);

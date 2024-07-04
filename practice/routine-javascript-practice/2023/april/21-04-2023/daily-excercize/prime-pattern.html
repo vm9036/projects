@@ -18,11 +18,12 @@
         function primePattern() {
             let n = document.getElementById("inputPrime").value;
             let storePrime = " ";
-            let prime = 1;
+            let primeN = 1;
 
             for (let i = 1; i <= n; i++) {
                 for (let j = 1; j <= i; j++) {
-                    storePrime = storePrime + getMeNextPrimeNum(i) + "\t";
+                    primeN = getMeNextPrimeNum(primeN);
+                    storePrime = storePrime + primeN + "\t";
                     console.log("2.storePrime :-> " + storePrime);
                 }
                 storePrime = storePrime + "<br>";
@@ -33,7 +34,7 @@
         function getMeNextPrimeNum(prime) {
             let i, j, counter = 0, pNumber = 0, storePrimeNumber = " ";
             // prime = num + 1;
-            for (i = prime; ; i++) {
+            for (i = prime + 1; ; i++) {
                 for (j = 1; j <= i; j++) {
                     if (i % j == 0) {
                         pNumber = pNumber + 1;

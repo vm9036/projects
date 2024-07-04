@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Text Analytics</title>
+</head>
+<body>
+    <textarea id="inputText" placeholder="Enter text here..."></textarea>
+    <button onclick="analyzeText()">Analyze Text</button>
+    <div id="result">
+        <p>Number of sentences: <span id="sentenceCount">0</span></p>
+        <p>Number of words: <span id="wordCount">0</span></p>
+        <p>Number of characters: <span id="charCount">0</span></p>
+        <p>Read time: <span id="readTime">0</span> minutes</p>
+        <p>Number of characters (excluding spaces): <span id="charCountNoSpace">0</span></p>
+    </div>
+
+    <script>
+        function analyzeText() {
+            // Get the input text from the textarea
+            const inputText = document.getElementById('inputText').value;
+
+            // Check for empty input
+            if (!inputText.trim()) {
+                alert('Please enter some text.');
+                return;
+            }
+
+            // Sentence count
+            const sentences = inputText.split('.');
+            const nonEmptySentences = sentences.filter(sentence => sentence.trim() !== '');
+            const sentenceCount = nonEmptySentences.length;
+            document.getElementById('sentenceCount').textContent = sentenceCount;
+
+            // Word count
+            const words = inputText.split(/\s+/);
+            const nonEmptyWords = words.filter(word => word.trim() !== '');
+            const wordCount = nonEmptyWords.length;
+            document.getElementById('wordCount').textContent = wordCount;
+
+            // Character count
+            const charCount = inputText.length;
+            document.getElementById('charCount').textContent = charCount;
+
+            // Read time (assumes average reading speed of 200 words per minute)
+            const avgWordsPerMinute = 200;
+            const estimatedReadTime = Math.ceil(wordCount / avgWordsPerMinute);
+            document.getElementById('readTime').textContent = estimatedReadTime;
+
+            // Character count without spaces
+            const charCountNoSpace = inputText.replace(/\s/g, '').length;
+            document.getElementById('charCountNoSpace').textContent = charCountNoSpace;
+        }
+    </script>
+</body>
+</html>

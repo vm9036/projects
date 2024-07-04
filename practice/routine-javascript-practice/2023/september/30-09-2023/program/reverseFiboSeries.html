@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.3/css/bulma.min.css">
+    <title>Reverse Fibonacci Series</title>
+</head>
+
+<body>
+    <div class="container">
+        <div class="box">
+            <div class="field">
+                <label for="" class="label">Enter Number :-</label>
+                <div class="control">
+                    <input type="text" class="input is-large" id="inptN" value="10">
+                </div>
+            </div>
+            <div class="field">
+                <div class="control">
+                    <button class="button" onclick="revrseFiboSeries()">Click</button>
+                </div>
+            </div>
+            <div id="displayfibo"></div>
+        </div>
+    </div>
+
+    <script>
+
+        function revrseFiboSeries() {
+            let n = Number(document.getElementById("inptN").value);
+            let stroreFiboVal = "";
+            let n1 = 0; n2 = 0; fibo = 1;
+
+            for (let i = 1; i <= n; i++) {
+                
+                n1 = n2;
+                n2 = fibo;
+                fibo = n1 + n2;
+                stroreFiboVal = stroreFiboVal + fibo + " ";
+
+            }
+            
+            let revFibo , storeRevVal = "";
+            let lastValue = fibo;
+            console.log(lastValue);
+
+            let previousValue = n2;
+            console.log(previousValue);
+
+            for(let i = 1; i<=n; i++)
+            {
+                storeRevVal = storeRevVal + previousValue + " ";
+                revFibo = lastValue;
+                lastValue = previousValue;
+                previousValue = revFibo - lastValue;
+            }   
+            document.getElementById("displayfibo").innerHTML = storeRevVal;
+        }
+
+    </script>
+</body>
+
+</html>

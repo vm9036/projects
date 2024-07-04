@@ -1,0 +1,27 @@
+let n = 5;
+
+for(let i = 1; i<=n; i++)
+{
+   let printV=0;
+   let start = n;
+   let tempI=i;
+    for(let j = 1; j<=i; j++)
+    {
+      if(printV!=0){
+          tempI = printV;
+      }
+        if(j==1)
+        {
+            printV=tempI;
+        }else
+        {
+            printV = tempI+start;
+        }
+         
+         console.log(" "+printV);
+         
+          start--;
+    }
+    console.log("\n");
+   
+}

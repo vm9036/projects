@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>pattern38</title>
+</head>
+
+<body>
+    <script>
+        function pattern38() {
+            let n = 5;
+            let count = 1;
+            for (let i = 1; i <= n; i++) {
+                let temp = i;
+                let newTemp = 1;
+                for (j = 1; j <= count; j++) {
+                    if (j > i) {
+                        newTemp++;
+                        console.log(newTemp);
+                    }
+                    else {
+                        console.log(temp);
+                        temp--;
+                    }
+
+                }
+                count = count + 2;
+                console.log("\n");
+            }
+        }
+        pattern38();
+    </script>
+</body>
+
+</html>

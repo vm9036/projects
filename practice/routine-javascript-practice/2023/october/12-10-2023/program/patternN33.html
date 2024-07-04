@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>pattern33</title>
+</head>
+
+<body>
+    <script>
+        function pattern33() {
+            let n = 5;
+            let tempN = 1;
+            let counter = 1;
+            for (let i = 1; i <= n; i++) {
+
+                let tempCounter = counter;
+                for (let j = 1; j <= tempN; j++) {
+
+                    if (j > i) {
+                        tempCounter--;
+                        console.log(tempCounter + " ");
+
+                    } else {
+                        if(i>j)
+                        {
+                            console.log(tempCounter + " ");
+                            tempCounter++;
+                        }
+                        else
+                        {
+                            console.log(tempCounter);
+                        }
+                    }
+
+                }
+                counter = counter + i;
+                tempN = tempN + 2;
+                console.log("\n");
+            }
+        }
+        pattern33();
+    </script>
+</body>
+
+</html>

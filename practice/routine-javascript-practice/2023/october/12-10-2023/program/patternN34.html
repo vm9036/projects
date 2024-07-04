@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>pattern34</title>
+</head>
+
+<body>
+    <script>
+        function pattern34() {
+            let n = 4;
+            let tempN = 1;
+            let temp = 7
+            for (let i = 1; i <= n; i++) {
+
+                for (let j = 1; j <= tempN; j++) {
+
+                    if (j % 2 == 0) {
+                        console.log("* ")
+                    }
+                    else {
+                        console.log(i + " ");
+                    }
+                }
+                tempN = tempN + 2;
+                console.log("\n");
+            }
+            for (let i = n; i >= 1; i--) {
+                for (let j = 1; j <= temp; j++) {
+                    if (j % 2 == 0) {
+                        console.log("* ");
+                    }
+                    else {
+                        console.log(i + " ");
+                    }
+
+                }
+                temp = temp - 2;
+                console.log("\n");
+            }
+        }
+        pattern34();
+    </script>
+</body>
+
+</html>

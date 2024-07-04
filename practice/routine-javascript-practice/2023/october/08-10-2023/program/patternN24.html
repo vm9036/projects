@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>pattern24</title>
+</head>
+
+<body>
+    <script>
+        function pattern24() {
+            let n = 5;
+            let tempI = 0;
+            for (i = 1; i <= n; i++) {
+
+                tempI = i;
+                if (tempI == 4) {
+                    tempI = tempI - 2;
+                }
+                if (tempI == 5) {
+                    tempI = tempI - 4;
+                }
+                for (j = i; j <= n; j++) {
+                    console.log(" " + tempI);
+                }
+
+                console.log("\n");
+            }
+        }
+        pattern24();
+    </script>
+</body>
+
+</html>

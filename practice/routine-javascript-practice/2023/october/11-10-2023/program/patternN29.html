@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>pattern29</title>
+</head>
+
+<body>
+    <script>
+        function pattern29() {
+            let n = 10;
+            let tempCount = 1;
+            let tempNum = 10;
+            for (let i = 1; i <= n; i++) {
+                newPlus = tempNum;
+                for (let j = 1; j <= tempCount; j++) {
+                    if (i == j) {
+                        console.log("0 ");
+                    }
+                    else if (i > j) {
+                        console.log(newPlus + " ");
+                        newPlus++;
+
+                    }
+                    else {
+                        newPlus--;
+                        console.log(newPlus + " ");
+                    }
+
+                }
+                tempNum--;
+                tempCount = tempCount + 2;
+                console.log("\n");
+            }
+        }
+        pattern29();
+    </script>
+</body>
+
+</html>

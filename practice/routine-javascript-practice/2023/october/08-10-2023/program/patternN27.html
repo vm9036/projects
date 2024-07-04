@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>pattern27</title>
+</head>
+
+<body>
+
+    <button onclick="pattern27()">Click</button>
+    <p id="displayPtn"></p>
+
+    <script>
+        // function pattern27() {
+        //     let n = 10;
+        //     let strPtn = " ";
+        //     let s = 1;
+
+        //     for (i = 0; i < n; i++) {
+        //         for (j = 1; j <= s; j++) {
+        //             if (j == i) {
+        //                 strPtn = strPtn + "0";
+        //             }
+        //             else {
+        //                 strPtn = strPtn + i;
+        //             }
+        //         }
+        //         s = s + 2;
+        //         strPtn = strPtn + "<br>";
+        //     }
+        //     document.getElementById("displayPtn").innerHTML = strPtn;
+        // }
+
+        function pattern27() {
+            let n = 10;
+            let tempCount = 1;
+            let tempNum = 10;
+            for (let i = 1; i <= n; i++) {
+                for (let j = 1; j <= tempCount; j++) {
+                    if (i == j) {
+                        console.log("0 ");
+                    }
+                    else if (i > j) {
+                        console.log(tempNum + " ");
+                    }
+                    else {
+                        console.log("-");
+                    }
+                }
+                tempNum--;
+                tempCount = tempCount + 2;
+                console.log("\n");
+            }
+        }
+
+    </script>
+</body>
+
+</html>

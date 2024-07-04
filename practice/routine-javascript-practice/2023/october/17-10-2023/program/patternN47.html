@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>pattern46</title>
+</head>
+
+<body>
+    <script>
+        function pattern46() {
+            let n = 4;
+            let num = 9;
+            let p = num;
+            for (let i = 1; i <= n; i++) {
+                for (let j = 1; j <= num; j++) {
+
+                    if (i == j || j == 5 || p == j) {
+                        console.log("* ");
+                    }
+                    else {
+                        console.log("0 ");
+                    }
+                }
+                p--;
+                console.log("\n");
+            }
+        }
+        pattern46();
+    </script>
+    <!-- let n = 6;
+let num = 13;
+let p=num;
+for (let i = 1; i <= n; i++) 
+{
+	for (let j = 1; j <= num; j++) 
+	{
+	       
+		if (i == j || j == num/2+0.5 ||p==j) 
+		{
+			console.log("* ");
+		}
+		else 
+		{
+			console.log("0 ");
+		}
+	}
+    p--;
+	console.log("\n");
+} -->
+</body>
+
+</html>

@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>pattern46</title>
+</head>
+
+<body>
+    <script>
+        function pattern54() {
+            let n = 5;
+            let odd = 1;
+            for (let i = 1; i <= n; i++) {
+                count = i
+                for (let j = 1; j <= odd; j++) {
+                    if (i == j) {
+                        console.log(count + " ");
+                        count--;
+                    }
+                    else if (j > i) {
+                        console.log(count + " ");
+                        count--;
+                    }
+                    else {
+                        console.log(count + " ");
+                        count++;
+                    }
+                }
+                odd = odd + 2;
+                console.log("\n");
+            }
+        }
+        pattern54();
+    </script>
+</body>
+
+</html>

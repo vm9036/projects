@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fibo Program With Function</title>
+</head>
+<body>
+    <script>
+
+        function fibo()
+        {
+            let n = 10;
+            let f1 = 0 , f2 = 1,f3 = 1;
+            let ans = " "
+            for(let i = 1 ; i<=n; i++)
+            {
+                f1 = f2;
+                f2 = f3;
+                f3 = f1 + f2;
+                document.write(f1);
+            }
+        }
+        fibo()
+    </script>
+</body>
+</html>

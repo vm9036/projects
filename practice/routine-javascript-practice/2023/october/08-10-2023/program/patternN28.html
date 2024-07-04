@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>pattern27</title>
+</head>
+
+<body>
+
+    <button onclick="pattern28()">Click</button>
+    <p id="displayPtn"></p>
+
+    <script>
+        function pattern28() {
+            let n = 10;
+            let strPtn = " ";
+            let s = 1;
+
+            for (i = 0; i<n; i++) 
+            {
+                for(j=1; j<=s; j++)
+                {
+                    if(j==i)
+                    {
+                        strPtn = strPtn + "0";
+                    }
+                    else
+                    {
+                        strPtn = strPtn + i;
+                    }
+                }
+                s = s + 2;
+                strPtn = strPtn + "<br>";
+            }
+            document.getElementById("displayPtn").innerHTML = strPtn;
+        }
+       
+    </script>
+</body>
+
+</html>

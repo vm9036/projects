@@ -1,0 +1,31 @@
+<script>
+
+    function checkPalindrome() {
+
+        let n = 121;
+        let palNum = n;
+        let reverse = "";
+
+        // for( ;n>0; ){
+        while (n > 0) {
+            reminder = n % 10;
+            console.log("\n" + "reminder :->" + reminder);
+            console.log("\n");
+
+            n = parseInt(n / 10);
+            console.log("n :->" + n);
+            console.log("\n");
+
+            reverse = reverse + reminder;
+            console.log("Reverse :-> " + reverse);
+        }
+        
+        if (palNum == reverse) {
+            console.log("\n" + palNum + " is palindrome Number")
+        }
+        else {
+            console.log("\n" + palNum + " is not palindrome Number")
+        }
+    }
+    checkPalindrome();
+</script>

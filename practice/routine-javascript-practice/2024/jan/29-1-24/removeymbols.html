@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Remove Symbols</title>
+</head>
+
+<body>
+    <div style="display: flex; justify-content: space-evenly">
+        <textarea name="" id="input" cols="30" rows="10">hello % world</textarea>
+        <textarea name="" id="output" cols="30" rows="10"></textarea>
+    </div>
+
+    <div style="display: flex; justify-content: center">
+        <div>
+            <input type="checkbox" name="" id="percent" onchange="removeSymbols()"> Percentage
+        </div>
+        <div>
+            <input type="checkbox" name="" id="dollar" onchange="removeSymbols()"> Dollar
+        </div>
+    </div>
+
+    <script>
+        function removeSymbols() {
+            let input = document.getElementById("input").value;
+            let checkPercent = document.getElementById("percent").checked;
+            let checkDollar = document.getElementById("dollar").checked;
+
+            let symbolsToRemove = input;
+            if (checkPercent) {
+                symbolsToRemove = symbolsToRemove.replace(/%/g, "");
+            }
+            if (checkDollar) {
+                symbolsToRemove = symbolsToRemove.replace(/\$/g, "");
+            }
+
+            document.getElementById("output").value = symbolsToRemove;
+        }
+    </script>
+</body>
+
+</html>

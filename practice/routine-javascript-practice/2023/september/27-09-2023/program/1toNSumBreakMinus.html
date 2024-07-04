@@ -35,6 +35,8 @@
                     <div class="field mt-6 mb-6">
                         <div class="control has-text-centered">
                             <button class="button is-success is-large has-text-weight-bold" onclick="minusBetWeenSum()">Sum</button>
+                            <button class="button is-success is-large has-text-weight-bold" onclick="minusBetWeenSum()">Odd Sum</button>
+                            <button class="button is-success is-large has-text-weight-bold" onclick="minusBetWeenSum()">Even Sum</button>
                         </div>
                     </div>
                 </div>
@@ -43,7 +45,15 @@
                         <div class="field">
                             <label class="label is-size-4"><span>Minus</span> Btn StartValue And EndValue and same Sum :-</label>
                             <div class="control">
-                                <textarea name="" id="displayBetweenNumber" cols="30" rows="5" class="textarea is-success has-text-weight-semibold"></textarea>
+                                <textarea name="" id="displayBtnNum" cols="30" rows="5" class="textarea is-success has-text-weight-semibold"></textarea>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="column is-6">
+                        <div class="field">
+                            <label class="label is-size-4"><span>Minus</span>Reverse Btn StartVal And EndVal and same Sum :-</label>
+                            <div class="control">
+                                <textarea name="" id="displayBtnRevNum" cols="30" rows="5" class="textarea is-success has-text-weight-semibold"></textarea>
                             </div>
                         </div>
                     </div>
@@ -52,38 +62,80 @@
         </div>
     </div>
     <script>
+        
         function minusBetWeenSum(){
             let startValue = Number(document.getElementById("inputStartNumber").value);
             let sum = Number(document.getElementById("inputsumNumber").value);
             let tmpSum = 0;
-            let storeCounter = " ";
+            let storeVal = " ";
             let sumStore = 0;
+
+            let lastValue;
+            let tmpSum1 = 0;
+            let sumStore1 = 0;
+            let storeVal1 = " ";
+
             for(let i = startValue; ;i++)
             {
                 if(i == startValue)
                 {
-                    storeCounter = storeCounter + i;
+                    storeVal = storeVal + i;
                 }
                 else
                 {
-                    storeCounter = storeCounter + " + " + i ;
+                    storeVal = storeVal + " + " + i ;
                 }
                 tmpSum = tmpSum + i;
                 console.log("tmpSum :-> " + tmpSum);
                 let minus;
                 if(tmpSum > sum)
                 {
+                    lastValue = i;
+                    console.log("LAstValue  :-> "+lastValue);
                     minus = tmpSum - sum;
-                    document.getElementById("displayBetweenNumber").value = storeCounter + " - " + minus + " = " + sum;
+                    console.log("minus  :-> "+minus);
+                    document.getElementById("displayBtnNum").value = storeVal + " - " + minus + " = " + sum;
                     break;
                 }
 
                 if(tmpSum == sum)
                 {
-                    document.getElementById("displayBetweenNumber").value = storeCounter + " = " + sum;
+                    lastValue = i;
+                    console.log("LAstValue  :-> "+lastValue);
+                    document.getElementById("displayBtnNum").value = storeVal + " = " + sum;
                     break;
                 }
 
+            }
+
+            for(let i = lastValue; i >= 1; i--)
+            {
+                if(i == lastValue)
+                {
+                    storeVal1 = storeVal1 + i;
+                }
+                else
+                {
+                    storeVal1 = storeVal1 + " + " + i;
+                }
+                tmpSum1 = tmpSum1 + i;
+                console.log("tmpSum1 :-> "+tmpSum1);
+
+                let minusValue;
+
+                if(tmpSum1 > sum)
+                {
+                    minusValue = tmpSum1 - sum;
+                    console.log("minusValue :-> "+minusValue);
+                    document.getElementById("displayBtnRevNum").value = minusValue + " - " + storeVal1 + " = " + sum;
+                    break;
+                }
+
+                if(tmpSum1 == sum)
+                {
+                    document.getElementById("displayBtnRevNum").value = storeVal1 + " = " + sum;
+                    break;
+                }
             }
         }
     </script>

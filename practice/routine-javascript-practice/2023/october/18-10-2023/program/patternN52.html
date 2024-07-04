@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>pattern46</title>
+</head>
+
+<body>
+    <script>
+        function pattern51() {
+            let n = 5;
+            let counter;
+            for (let i = 1; i <= n; i++) {
+                counter = i;
+                for (let j = 1; j <= n; j++) {
+                    if (i > j) {
+                        console.log(counter)
+                        counter--;
+                    }
+                    else {
+                        console.log(counter);
+                        counter++;
+                    }
+                }
+                console.log("\n");
+            }
+        }
+        pattern49();
+    </script>
+</body>
+
+</html>
